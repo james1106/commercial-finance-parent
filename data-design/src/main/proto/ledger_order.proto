@@ -1,0 +1,154 @@
+
+// 账本链上融资申请订单数据结构定义
+
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "ledger_common.proto";
+import "ledger_order_config.proto";
+
+package domain;
+option java_package = "com.xiangna.www.core.domain";
+
+// 三方机构关系上链数据定义
+message FinancingRelation{
+    string ledger_id = 1;                                           // 账本的channel名称
+
+    // 三方机构的信息
+    // 供应商需要在扩展字段中保留供应商扩展信息
+    CommercialOrg supplier = 2;                                     // 供应商信息
+    CommercialOrg enterprise = 3;                                   // 核心企业信息
+    CommercialOrg bank_factor = 4;                                  // 保理公司信息
+
+    // 三方机构关系确立时可以设定默认的融资利率
+    int64 rate = 5;                                                 // 默认的融资利率, 加密隔离
+    repeated LedgerFile order_files_encrypt = 6;                    // 合同文件, 加密隔离
+
+    // 三方机构关系确立的相关合同文件
+    repeated LedgerFile order_files = 7;                            // 三方公开的合同文件
+
+    // 保理向银行融资贷款时,勾选此三方的融资订单为质押
+    // 银行需要拥有此三方账本,此字段只是备注记录,不做他用
+    repeated CommercialOrgVo banks = 8;                             // 关联银行
+
+    repeated FinancingOrderStepNode steps = 9;                      // 融资申请订单状态流配置
+}
+
+// 银行保理双方关系上链数据定义
+message BankLoanRelation{
+    string ledger_id = 1;                                           // 账本的channel名称
+
+    // 银行和保理双方机构的信息
+    CommercialOrgVo bank_factor = 2;                                // 保理公司信息
+    CommercialOrgVo bank_info = 3;                                  // 银行信息
+
+    // 双方机构关系确立时可以设定默认的融资利率
+    int64 rate = 4;                                                 // 默认的融资利率
+
+    // 双方机构关系确立的相关合同文件
+    repeated LedgerFile order_files = 5;                            // 合同文件
+
+    repeated FinancingOrderStepNode steps = 6;                      // 融资申请订单状态流配置
+}
+
+// 订单表单数据
+message OrderFormData{
+    // 发起申请方维护字段
+    int64 expect_amount = 1;                                        // 供应商|保理 申请融资金额
+    int32 financing_period = 2;                                     // 融资期限(天)
+    google.protobuf.Timestamp expect_expired_time = 3;              // 供应商|保理 申请融资到期时间
+
+    // 最终放款方维护字段
+    int64 confirmed_amount = 4;                                     // 保理|银行 最终审核融资金额
+    google.protobuf.Timestamp confirmed_expired_time = 5;           // 保理|银行 最终审核融资到期时间
+    int64 confirmed_rate = 6;                                       // 保理|银行 最终审核融资利率, 加密隔离
+    repeated LedgerFile order_files = 7;                            // 融资申请相关文件, 公开的
+}
+
+// 订单状态
+message OrderStatus{
+    FinancingOrderStep step = 1;                                    // 订单阶段
+    string description = 2;                                         // 状态描述(例如:保理审核中,保理待确认)
+    bool is_confirm = 3;                                            // 是否已通过认所有确认项
+    repeated OrderVerifyInfo verify_infos = 4;                      // 申请订单各项确认列表(历史记录)
+    repeated OrderCheckFlowInfo check_flow_infos = 5;               // 申请订单审批流数据(历史记录)
+    repeated OrderOperationLog operate_logs = 6;                    // 申请订单操作日志
+    repeated FinancingOrderStepNode step_history = 7;               // 订单阶段历史记录
+    repeated FinancingOrderStepNode steps = 8;                      // 融资申请订单状态流配置
+}
+
+// 供应商到保理融资申请订单
+message FinancingOrder{
+    string order_no = 1;                                            // 订单编号
+
+    CommercialOrgVo supplier = 2;                                   // 供应商信息
+    CommercialOrgVo enterprise = 3;                                 // 核心企业信息
+    CommercialOrgVo bank_factor = 4;                                // 保理公司信息
+
+    OrderFormData order_data = 5;                                   // 订单数据
+    repeated Invoice invoices = 6;                                  // 供应商提供的发票数据
+    repeated LedgerFile order_files_encrypt = 7;                    // 融资申请相关文件, 加密隔离
+    OrderMoneyCount order_money_count = 8;                          // 订单金额汇总
+
+    OrderStatus order_status = 9;                                   // 订单状态
+    OperateInfo operate_info = 10;                                  // 数据操作信息
+
+}
+
+// 保理到银行贷款融资申请订单
+message BankLoanOrder{
+    string order_no = 1;                                            // 订单编号
+
+    CommercialOrgVo bank_factor = 2;                                // 保理公司信息
+    CommercialOrgVo bank_info = 3;                                  // 银行信息
+
+    OrderFormData order_data = 4;                                   // 订单数据
+    repeated FinancingOrderReview financing_order_reviews = 5;      // 质押的供应商到保理融资申请订单
+    OrderMoneyCount order_money_count = 6;                          // 订单金额汇总
+
+    OrderStatus order_status = 7;                                   // 订单状态
+    OperateInfo operate_info = 8;                                   // 数据操作信息
+
+}
+
+// 保理到银行贷款融资申请订单质押的供应商融资申请订单
+message FinancingOrderReview{
+    string order_no = 1;                                            // 质押的融资订单编号
+    int64 order_amount = 2;                                         // 质押的融资订单融资总金额
+    int32 financing_period = 3;                                     // 融资期限(天)
+    google.protobuf.Timestamp order_expired_time = 4;               // 质押的融资订单的过期时间
+
+    // 保理申请的融资金额
+    int64 expect_amount = 5;                                        // 保理申请的融资金额
+    int64 expect_rate = 6;                                          // 保理申请的融资利率
+
+    // 银行审批确认的融资金额
+    int64 confirm_amount = 7;                                       // 银行审批确认的融资金额
+    int64 confirm_rate = 8;                                         // 银行审批确认的融资利率
+    CommercialOrgVo supplier = 9;                                   // 质押的融资订单的供应商
+    CommercialOrgVo enterprise = 10;                                // 质押的融资订单的核心企业
+    CommercialOrgVo bank_factor = 11;                               // 质押的融资订单的保理
+    google.protobuf.Timestamp confirm_expired_time = 12;            // 银行审批确认的融资过期时间
+
+}
+
+// 订单款项金额汇总
+message OrderMoneyCount{
+    // 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
+    // 放款
+    int64 need_pay_amount = 1;                                      // 实际需要支付的总金额
+    int64 expenses_amount = 2;                                      // 实际已支付的总金额
+    int64 income_amount = 3;                                        // 实际已收入的总金额
+
+    // 还款
+    int64 need_payback_loan_amount = 4;                             // 实际需要还款的总金额
+    int64 payback_expenses_amount = 5;                              // 实际已还款的总金额
+    int64 payback_income_amount = 6;                                // 实际已收入的总金额
+
+    // 所有在申请订单内发生的金额交易(转账)都应该在此处有明确的流水
+    repeated OrderTransactionDetail transaction_details = 7;        // 申请订单中的交易明细
+}
+
+
+
+
