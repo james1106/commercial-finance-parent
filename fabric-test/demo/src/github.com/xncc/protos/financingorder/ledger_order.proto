@@ -1,0 +1,183 @@
+// 账本订单数据定义
+
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "financingorder/common.proto";
+import "financingorder/configuration.proto";
+
+
+option go_package = "github.com/xncc/protos/financingorder";
+option java_package = "com.xiangna.www.protos.financingorder";
+
+package protos;
+
+// ======================================三方账本融资申请订单数据=============================================
+// 供应商到保理融资申请订单
+message FinancingOrder {
+    string order_no = 1; // 订单编号
+
+    AppVo supplier = 2; // 供应商信息
+    AppVo enterprise = 3; // 核心企业信息
+    AppVo bank_factor = 4; // 保理公司信息
+
+    OrderFormData order_data = 5; // 订单数据
+    repeated FinancingInvoice invoices = 6; // 供应商提供的发票数据
+    repeated LedgerFile order_files_encrypt = 7; // 融资申请相关文件, 加密隔离
+    OrderMoneyCount order_money_count = 8; // 订单金额汇总
+
+    OrderStatus order_status = 9; // 订单状态
+    OperateInfo operate_info = 10; // 数据操作信息
+
+}
+
+// 订单表单数据
+message OrderFormData {
+    // 发起申请方维护字段
+    int64 expect_amount = 1; // 供应商|保理 申请融资金额
+    int32 financing_period = 2; // 融资期限(天)
+    google.protobuf.Timestamp expect_expired_time = 3; // 供应商|保理 申请融资到期时间
+
+    // 最终放款方维护字段
+    int64 confirmed_amount = 4; // 保理|银行 最终审核融资金额
+    google.protobuf.Timestamp confirmed_expired_time = 5; // 保理|银行 最终审核融资到期时间
+    int64 confirmed_rate = 6; // 保理|银行 最终审核融资利率, 加密隔离
+    repeated LedgerFile order_files = 7; // 融资申请相关文件, 公开的
+}
+
+// 一张发票的融资信息
+message FinancingInvoice {
+    Invoice invoice = 1; // 供应商发票信息
+    int64 expect_amount = 2; // 申请融资金额
+    int64 confirm_amount = 3; // 审核确认可融资金额
+    int64 confirm_rate = 4; // 融资利率
+    google.protobuf.Timestamp confirm_pay_time = 5; // 保理融资发放日期
+    google.protobuf.Timestamp confirm_return_time = 6; // 应收账款还款日期
+    google.protobuf.Timestamp confirm_end_time = 7; // 保理融资到期日期
+    string confirm_rate_desc = 8; // 利息计收方式
+    string confirm_urge_return_desc = 9; // 应收账款催收方式
+}
+
+// 供应商发票信息
+message Invoice {
+    string invoice_no = 1; // 发票编号
+    int64 invoice_amount = 2; // 应收账款发票金额
+    google.protobuf.Timestamp invoice_time = 3; // 开票日期
+    AppVo supplier = 4; // 销售方
+    AppVo enterprise = 5; // 购买方
+    string remark = 6; // 备注
+    repeated LedgerFile notes = 7; // 发票扫描件(图)
+    OperateInfo operate_info = 8; // 数据操作信息
+}
+
+// 订单款项金额汇总
+message OrderMoneyCount {
+    // 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
+    // 放款
+    int64 need_pay_amount = 1; // 实际需要支付的总金额
+    int64 expenses_amount = 2; // 实际已支付的总金额
+    int64 income_amount = 3; // 实际已收入的总金额
+
+    // 还款
+    int64 need_payback_loan_amount = 4; // 实际需要还款的总金额
+    int64 payback_expenses_amount = 5; // 实际已还款的总金额
+    int64 payback_income_amount = 6; // 实际已收入的总金额
+
+    // 所有在申请订单内发生的金额交易(转账)都应该在此处有明确的流水
+    repeated OrderTransactionDetail transaction_details = 7; // 申请订单中的交易明细
+}
+
+// 订单款项转移金额流水
+message OrderTransactionDetail {
+    AppVo expenses = 1; // 支出方信息
+    int64 expenses_amount = 2; // 支出金额
+    OrgBankAccount expenses_account = 3; // 支出账户
+
+    AppVo income = 4; // 收入方信息
+    OrgBankAccount income_account = 6; // 收入方账户
+    string tansaction_remark = 7; // 交易备注
+    repeated LedgerFile tansaction_notes = 8; // 交易票据(图)
+    google.protobuf.Timestamp tansaction_time = 9; // 交易时间
+
+    bool incom_confirm = 10; // 收入方确认
+    OperateInfo operate_info = 11; // 数据操作信息
+}
+
+// 订单状态
+message OrderStatus {
+    FinancingOrderStep current_step = 1; // 当前订单阶段
+    repeated OrderStepCheckData check_datas = 2; // 是否已通过认所有确认项
+    repeated OrderCheckFlowInfo check_flow_infos = 3; // 申请订单审批流数据(历史记录)
+    repeated FinancingOrderStep step_history = 5; // 订单阶段历史记录
+}
+
+// ========================================银行保理双方账本数据定义===========================================
+// 融资申请订单
+// 保理到银行贷款融资申请订单
+message BankLoanOrder {
+    string order_no = 1; // 订单编号
+
+    AppVo bank_factor = 2; // 保理公司信息
+    AppVo bank_info = 3; // 银行信息
+
+    OrderFormData order_data = 4; // 订单数据
+    repeated FinancingOrderReview financing_order_reviews = 5; // 质押的供应商到保理融资申请订单
+    OrderMoneyCount order_money_count = 6; // 订单金额汇总
+
+    OrderStatus order_status = 7; // 订单状态
+    OperateInfo operate_info = 8; // 数据操作信息
+
+}
+
+// 保理到银行贷款融资申请订单质押的供应商融资申请订单
+message FinancingOrderReview {
+    string order_no = 1; // 质押的融资订单编号
+    int64 order_amount = 2; // 质押的融资订单融资总金额
+    int32 financing_period = 3; // 融资期限(天)
+    google.protobuf.Timestamp order_expired_time = 4; // 质押的融资订单的过期时间
+
+    // 保理申请的融资金额
+    int64 expect_amount = 5; // 保理申请的融资金额
+    int64 expect_rate = 6; // 保理申请的融资利率
+
+    // 银行审批确认的融资金额
+    int64 confirm_amount = 7; // 银行审批确认的融资金额
+    int64 confirm_rate = 8; // 银行审批确认的融资利率
+    AppVo supplier = 9; // 质押的融资订单的供应商
+    AppVo enterprise = 10; // 质押的融资订单的核心企业
+    AppVo bank_factor = 11; // 质押的融资订单的保理
+    google.protobuf.Timestamp confirm_expired_time = 12; // 银行审批确认的融资过期时间
+
+}
+
+// ==============================订单流程记录=====================================================
+// 订单审核流程信息
+message OrderCheckFlowInfo {
+    FinancingOrderStep order_step = 1; // 订单阶段
+    OrderCheckFlowData check_flow_datas = 2; // 订单审核流程数据
+}
+
+// 订单审核流程数据
+message OrderCheckFlowData {
+    AppVo check_app = 1; // 审核App
+    string check_user_name = 2; // 审核操作员名称
+    string check_user_mobile = 3; // 审核操作员手机号
+    google.protobuf.Timestamp check_time = 4; // 审核时间
+    string check_ip = 5; // 审核操作员IP
+    string status = 6; // 流程审批状态
+    string remark = 7; // 流程审批备注
+}
+
+// 具体阶段的检查确认项
+message OrderStepCheckData {
+    FinancingOrderStep current_step = 1;
+    repeated CheckData check_datas = 2;
+}
+
+// 检查项的内容
+message CheckData {
+    AppVo org = 1; // 此阶段分属机构
+    string title = 2; // 确认项
+    string value = 3; //确认结果
+
+}

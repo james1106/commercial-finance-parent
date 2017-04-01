@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "github.com/xncc/protos/common";
+option java_package = "com.xiangna.www.protos.common";
+
+package common;
+
+// 调用 cc 返回的数据格式定义(通用)
+message ChainCodeResponse {
+    int32 code = 1; // 状态编码
+    string message = 2; // 状态消息说明
+    bytes result = 3; // 返回数据
+
+}

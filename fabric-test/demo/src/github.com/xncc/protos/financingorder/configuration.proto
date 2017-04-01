@@ -1,0 +1,156 @@
+syntax = "proto3";
+
+import "financingorder/common.proto";
+
+option go_package = "github.com/xncc/protos/financingorder";
+option java_package = "com.xiangna.www.protos.financingorder";
+
+package protos;
+
+
+//======================================================全局配置信息=======================================
+//APPID 作为 key， APPConfigBrief为 value存在链上
+message APPConfigBrief {
+    string appId = 1; // 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
+    string appName = 2; // 该应用的名称，例如香纳保理业务系统
+}
+
+//======================================================私有配置信息=======================================
+//APPConfig 是不公开的
+message APPConfig {
+    string appId = 1; // 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
+    string appKey = 2; // 分配的密钥，用于和区块链系统之间的一些加密、验证用途
+    string appName = 3; // 该应用的名称，例如香纳保理业务系统
+    string appType = 4; // 该应用的类型，例如供应商、保理、核心企业、银行
+    string appCallbackUrl = 5; // 调用OA系统的url地址
+    string secureIp = 6; // 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+
+    repeated nodeConfig nodeConfigs = 7; //节点信息，可能存在多个节点
+
+    string orgName = 8; // 机构名称
+    string orgAddress = 9; // 机构地址
+    string bizContactName = 10; // 业务接口人姓名，与User表没联系
+    string bizContactTel = 11; // 业务接口人电话
+    string bizContaceEmail = 12; // 业务接口人email
+    string techContactName = 13; // 技术接口人姓名，与User表没联系
+    string techContactTel = 14; // 技术接口人电话
+    string techContactEmail = 15; // 技术接口人电话email
+
+    OperateInfo opInfo = 16;
+}
+
+// 节点信息
+message nodeConfig {
+    //一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
+    string pem = 1; //peer 公钥信息
+    string sdkCert = 2; //sdk  证书信息
+    string sdkUserName = 3; //sdk  用户名
+    string sdkUserPWD = 4; //sdk  密码
+}
+
+//======================================================三方关系配置信息=======================================
+// 机构信息，在入三方账本时放到账本中公开
+message CommercialOrg {
+    string appId = 1; // 机构编号
+    string appName = 2; // 机构名称
+    string appType = 3; // 机构类型(供应商,核心企业,保理公司,银行)
+
+    // 如果三证合一只需要填写统一社会信用代码
+    string org_code = 4; // 机构代码或统一社会信用代码
+    string registed_no = 5; // 工商营业执照编号
+    string tax_registration_certificate_no = 6; // 税务登记证编号
+
+    // 机构基本信息
+    string org_corporate = 7; // 机构法人代表
+
+    // 机构联系人
+    message OrgContactPerson {
+        string name = 1; // 联系人姓名
+        string telephone = 2; // 联系电话
+        string email = 3; // 邮箱
+    }
+
+    repeated OrgContactPerson contact_person = 8; // 机构联系人
+    string introduction = 9; // 机构简介
+    string register_address = 10; // 注册地址
+    string current_address = 11; // 当前机构地址
+    string telephone = 12; // 联系电话
+    string email = 13; // 邮箱
+    string org_category = 14; // 机构所属行业分类
+
+    // 三方账本时:
+    //           供应商维护两个账户
+    //           核心企业维护一个还款账户到结算账户
+    //           保理公司维护两个账户:一个放款账户到结算账户,一个收还款账户
+    // 双方账本时：
+    //           保理公司维护两个账户
+    //           保理公司维护两个账户:一个放款账户到结算账户,一个收还款账户
+    OrgBankAccount settlement_account = 15; // 结算账户
+    OrgBankAccount policy_account = 16; // 保理账户
+    repeated LedgerFile org_files = 17; // 机构相关文件存放
+    OperateInfo operate_info = 18; // 数据操作信息
+
+}
+
+// 三方机构关系上链数据定义
+message FinancingRelation {
+    string ledger_id = 1; // 账本的channel名称
+
+    // 三方机构的信息
+    // 供应商需要在扩展字段中保留供应商扩展信息
+    CommercialOrg supplier = 2; // 供应商信息
+    CommercialOrg enterprise = 3; // 核心企业信息
+    CommercialOrg bank_factor = 4; // 保理公司信息
+
+    // 三方机构关系确立时可以设定默认的融资利率
+    int64 rate = 5; // 默认的融资利率, 加密隔离
+    repeated LedgerFile order_files_encrypt = 6; // 合同文件, 加密隔离
+
+    // 三方机构关系确立的相关合同文件
+    repeated LedgerFile order_files = 7; // 三方公开的合同文件
+
+    // 保理向银行融资贷款时,勾选此三方的融资订单为质押
+    // 银行需要拥有此三方账本,此字段只是备注记录,不做他用
+    repeated AppVo banks = 8; // 关联银行
+
+    FinancingOrderStepFlow step_flow = 9; // 订单流程数据
+
+}
+
+// 银行保理双方关系上链数据定义
+message BankLoanRelation {
+    string ledger_id = 1; // 账本的channel名称
+
+    // 银行和保理双方机构的信息
+    CommercialOrg bank_factor = 2; // 保理公司信息
+    CommercialOrg bank_info = 3; // 银行信息
+
+    // 双方机构关系确立时可以设定默认的融资利率
+    int64 rate = 4; // 默认的融资利率
+
+    // 双方机构关系确立的相关合同文件
+    repeated LedgerFile order_files = 5; // 合同文件
+
+    FinancingOrderStepFlow step_flow = 6; // 订单流程数据
+}
+
+//======================================================订单流程信息=======================================
+
+// 订单节点数据
+message FinancingOrderStep {
+    string step_id = 1; // 订单阶段ID
+    string step_name = 2; // 订单阶段名称
+    AppVo org = 3; // 此阶段分属机构
+    string remark = 4; // 备注
+    bool is_start_node = 5; // 是否是开始节点
+    bool is_end_node = 6; // 是否是结束节点
+    string oa_url = 7; // 每个节点都可以调用外部 URL
+    OperateInfo operate_info = 8;
+}
+
+// 订单流程数据
+message FinancingOrderStepFlow {
+    FinancingOrderStep current_step = 1;
+    FinancingOrderStep next = 2;
+    OperateInfo operate_info = 3;
+}
