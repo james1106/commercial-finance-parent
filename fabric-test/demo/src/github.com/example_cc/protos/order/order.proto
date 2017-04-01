@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/example_cc/protos/order";
+option java_package = "com.github.example.protos.order";
+
+package order;
+
+message OrderExample {
+    string no = 1;
+    int32 days = 2;
+    int64 money = 3;
+    int64 time = 4;
+    google.protobuf.Timestamp timestamp = 5;
+}
+

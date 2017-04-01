@@ -1,0 +1,16 @@
+version: '2'
+
+#
+#
+#
+
+services:
+  ccenv_latest:
+    container_name: ccenv_latest
+    build: ./ccenv
+    image: hyperledger/fabric-ccenv:latest
+
+  ccenv_snapshot:
+    container_name: ccenv_snapshot
+    build: ./ccenv
+    image: hyperledger/fabric-ccenv:x86_64-1.0.0-alpha
