@@ -12,11 +12,11 @@ import org.hyperledger.fabric.sdk.EventHub;
 import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric.sdk.InstallProposalRequest;
 import org.hyperledger.fabric.sdk.InstantiateProposalRequest;
-import org.hyperledger.fabric.sdk.InvokeProposalRequest;
 import org.hyperledger.fabric.sdk.Orderer;
 import org.hyperledger.fabric.sdk.Peer;
 import org.hyperledger.fabric.sdk.ProposalResponse;
-import org.hyperledger.fabric.sdk.QueryProposalRequest;
+import org.hyperledger.fabric.sdk.QueryByChaincodeRequest;
+import org.hyperledger.fabric.sdk.TransactionProposalRequest;
 import org.hyperledger.fabric.sdk.User;
 import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
 import org.hyperledger.fabric.sdk.exception.ProposalException;
@@ -29,7 +29,11 @@ import org.hyperledger.fabric_ca.sdk.exception.EnrollmentException;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -38,8 +42,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class ChainCodeDemo {
 
-    final Logger logger = Logger.getLogger(ChainCodeDemo.class);
     static final String CHARSET = "UTF-8";
+    final Logger logger = Logger.getLogger(ChainCodeDemo.class);
 
     /**
      * 获取用户信息
@@ -51,10 +55,10 @@ public class ChainCodeDemo {
      * @throws EnrollmentException
      * @throws InvalidArgumentException
      */
-    User getUser(String name,
-                 String passwd,
-                 String mspid,
-                 HFCAClient caClient) throws EnrollmentException, InvalidArgumentException {
+    public User getUser(String name,
+                        String passwd,
+                        String mspid,
+                        HFCAClient caClient) throws EnrollmentException, InvalidArgumentException {
         CaUser user = new CaUser(name);
         user.setEnrollment(caClient.enroll(name, passwd));
         user.setMSPID(mspid);
@@ -71,10 +75,10 @@ public class ChainCodeDemo {
      * @return
      * @throws Exception
      */
-    String registerUser(String name,
-                        String affiliation,
-                        User registrar,
-                        HFCAClient caClient) throws Exception {
+    public String registerUser(String name,
+                               String affiliation,
+                               User registrar,
+                               HFCAClient caClient) throws Exception {
         RegistrationRequest rr = new RegistrationRequest(name, affiliation);
         return caClient.register(rr, registrar);
     }
@@ -88,7 +92,7 @@ public class ChainCodeDemo {
      * @return
      * @throws InvalidArgumentException
      */
-    Orderer getOrderer(HFClient client, String name, String grpcURL) throws InvalidArgumentException {
+    public Orderer getOrderer(HFClient client, String name, String grpcURL) throws InvalidArgumentException {
         return client.newOrderer(name, grpcURL);
     }
 
@@ -101,7 +105,7 @@ public class ChainCodeDemo {
      * @return
      * @throws InvalidArgumentException
      */
-    Peer getPeer(HFClient client, String name, String grpcURL) throws InvalidArgumentException {
+    public Peer getPeer(HFClient client, String name, String grpcURL) throws InvalidArgumentException {
         return client.newPeer(name, grpcURL);
     }
 
@@ -114,7 +118,7 @@ public class ChainCodeDemo {
      * @return
      * @throws InvalidArgumentException
      */
-    EventHub getEventHub(HFClient client, String name, String grpcURL) throws InvalidArgumentException {
+    public EventHub getEventHub(HFClient client, String name, String grpcURL) throws InvalidArgumentException {
         return client.newEventHub(name, grpcURL);
     }
 
@@ -161,11 +165,11 @@ public class ChainCodeDemo {
      * @return
      * @throws InvalidArgumentException
      */
-    Chain getChain(String name,
-                   List<Orderer> orderers,
-                   List<Peer> peers,
-                   List<EventHub> eventHubs,
-                   HFClient client) throws InvalidArgumentException, TransactionException, ProposalException {
+    public Chain getChain(String name,
+                          List<Orderer> orderers,
+                          List<Peer> peers,
+                          List<EventHub> eventHubs,
+                          HFClient client) throws InvalidArgumentException, TransactionException, ProposalException {
         Chain chain = client.newChain(name);
         initializeChain(chain, orderers, peers, eventHubs, false);
         if (chain.isInitialized()) {
@@ -188,15 +192,15 @@ public class ChainCodeDemo {
      * @throws IOException
      * @throws TransactionException
      */
-    Chain initChain(String name,
-                    File txFile,
-                    List<Orderer> orderers,
-                    List<Peer> peers,
-                    List<EventHub> eventHubs,
-                    HFClient client) throws InvalidArgumentException, IOException, TransactionException, ProposalException {
+    public Chain initChain(String name,
+                           File txFile,
+                           List<Orderer> orderers,
+                           List<Peer> peers,
+                           List<EventHub> eventHubs,
+                           HFClient client) throws InvalidArgumentException, IOException, TransactionException, ProposalException {
 
         Chain chain = client.newChain(name, orderers.iterator().next(), new ChainConfiguration(txFile));
-        initializeChain(chain, orderers, peers, eventHubs,true);
+        initializeChain(chain, orderers, peers, eventHubs, true);
         if (chain.isInitialized()) {
             return chain;
         }
@@ -211,9 +215,9 @@ public class ChainCodeDemo {
      * @param chainCodeVersion
      * @return
      */
-    ChainCodeID getChainCodeId(String chainCodeName,
-                               String chainCodePath,
-                               String chainCodeVersion) {
+    public ChainCodeID getChainCodeId(String chainCodeName,
+                                      String chainCodePath,
+                                      String chainCodeVersion) {
 
         return ChainCodeID.newBuilder().setName(chainCodeName)
                 .setVersion(chainCodeVersion)
@@ -230,10 +234,10 @@ public class ChainCodeDemo {
      * @throws InvalidArgumentException
      * @throws ProposalException
      */
-    ProposalResponseResult install(File chainCodeFile,
-                                   ChainCodeID chainCodeID,
-                                   HFClient client,
-                                   Chain chain) throws InvalidArgumentException, ProposalException {
+    public ProposalResponseResult install(File chainCodeFile,
+                                          ChainCodeID chainCodeID,
+                                          HFClient client,
+                                          Chain chain) throws InvalidArgumentException, ProposalException {
 
         InstallProposalRequest installProposalRequest = client.newInstallProposalRequest();
         installProposalRequest.setChaincodeID(chainCodeID);
@@ -257,7 +261,7 @@ public class ChainCodeDemo {
         return result;
     }
 
-    private ArrayList<byte[]> formatArgs(ArrayList<Object> args) throws UnsupportedEncodingException {
+    private ArrayList<byte[]> formatArgs(List<Object> args) throws UnsupportedEncodingException {
         ArrayList<byte[]> result = new ArrayList<>(args.size());
         for (Object arg : args) {
             if (arg instanceof String) {
@@ -273,11 +277,11 @@ public class ChainCodeDemo {
 
     }
 
-    ProposalResponseResult instantiate(File policyFile,
-                                       ArrayList<String> args,
-                                       ChainCodeID chainCodeID,
-                                       HFClient client,
-                                       Chain chain) throws Exception {
+    public ProposalResponseResult instantiate(File policyFile,
+                                              ArrayList<String> args,
+                                              ChainCodeID chainCodeID,
+                                              HFClient client,
+                                              Chain chain) throws Exception {
 
         InstantiateProposalRequest instantiateProposalRequest = client.newInstantiationProposalRequest();
         instantiateProposalRequest.setChaincodeID(chainCodeID);
@@ -321,18 +325,41 @@ public class ChainCodeDemo {
 
     }
 
-    ProposalResponseResult invoke(ChainCodeID chainCodeID,
-                                  ArrayList<Object> args,
-                                  HFClient client,
-                                  Chain chain) throws Exception {
+    public ProposalResponseResult invoke(ChainCodeID chainCodeID,
+                                         String[] args,
+                                         HFClient client,
+                                         Chain chain) throws Exception {
+        TransactionProposalRequest transactionProposalRequest = client.newTransactionProposalRequest();
+        transactionProposalRequest.setChaincodeID(chainCodeID);
+        transactionProposalRequest.setFcn("invoke");
+        transactionProposalRequest.setArgs(args);
+        transactionProposalRequest.setProposalWaitTime(chain.getTransactionWaitTime());
+        return invoke(transactionProposalRequest, chain);
+    }
 
-        InvokeProposalRequest invokeProposalRequest = client.newInvokeProposalRequest();
-        invokeProposalRequest.setChaincodeID(chainCodeID);
-        invokeProposalRequest.setFcn("invoke");
-        invokeProposalRequest.setArgBytes(formatArgs(args));
-        invokeProposalRequest.setProposalWaitTime(chain.getInvokeWaitTime());
+    public ProposalResponseResult invoke(ChainCodeID chainCodeID,
+                                         List<Object> args,
+                                         HFClient client,
+                                         Chain chain) throws Exception {
+        return invoke(chainCodeID, formatArgs(args), client, chain);
+    }
 
-        Collection<ProposalResponse> responses = chain.sendInvokeProposal(invokeProposalRequest, chain.getPeers());
+    public ProposalResponseResult invoke(ChainCodeID chainCodeID,
+                                         ArrayList<byte[]> args,
+                                         HFClient client,
+                                         Chain chain) throws Exception {
+        TransactionProposalRequest transactionProposalRequest = client.newTransactionProposalRequest();
+        transactionProposalRequest.setChaincodeID(chainCodeID);
+        transactionProposalRequest.setFcn("invoke");
+        transactionProposalRequest.setArgBytes(args);
+        transactionProposalRequest.setProposalWaitTime(chain.getTransactionWaitTime());
+        return invoke(transactionProposalRequest, chain);
+    }
+
+
+    private ProposalResponseResult invoke(TransactionProposalRequest transactionProposalRequest, Chain chain) throws Exception {
+
+        Collection<ProposalResponse> responses = chain.sendTransactionProposal(transactionProposalRequest, chain.getPeers());
 
         final ProposalResponseResult result = new ProposalResponseResult();
         for (ProposalResponse response : responses) {
@@ -361,16 +388,40 @@ public class ChainCodeDemo {
         return result;
     }
 
-    ProposalResponseResult query(ChainCodeID chainCodeID,
-                                 ArrayList<Object> args,
-                                 HFClient client,
-                                 Chain chain) throws Exception {
-
-        QueryProposalRequest queryProposalRequest = client.newQueryProposalRequest();
+    public ProposalResponseResult query(ChainCodeID chainCodeID,
+                                        String[] args,
+                                        HFClient client,
+                                        Chain chain) throws Exception {
+        QueryByChaincodeRequest queryProposalRequest = client.newQueryProposalRequest();
         queryProposalRequest.setChaincodeID(chainCodeID);
         queryProposalRequest.setFcn("invoke");
-        queryProposalRequest.setArgBytes(formatArgs(args));
-        Collection<ProposalResponse> responses = chain.sendQueryProposal(queryProposalRequest, chain.getPeers());
+        queryProposalRequest.setArgs(args);
+        return query(queryProposalRequest, chain);
+    }
+
+    public ProposalResponseResult query(ChainCodeID chainCodeID,
+                                        List<Object> args,
+                                        HFClient client,
+                                        Chain chain) throws Exception {
+        return query(chainCodeID, formatArgs(args), client, chain);
+    }
+
+    public ProposalResponseResult query(ChainCodeID chainCodeID,
+                                        ArrayList<byte[]> args,
+                                        HFClient client,
+                                        Chain chain) throws Exception {
+        QueryByChaincodeRequest queryProposalRequest = client.newQueryProposalRequest();
+        queryProposalRequest.setChaincodeID(chainCodeID);
+        queryProposalRequest.setFcn("invoke");
+        queryProposalRequest.setArgBytes(args);
+        return query(queryProposalRequest, chain);
+    }
+
+    public ProposalResponseResult query(QueryByChaincodeRequest queryByChaincodeRequest,
+                                        Chain chain) throws Exception {
+
+
+        Collection<ProposalResponse> responses = chain.queryByChaincode(queryByChaincodeRequest, chain.getPeers());
 
         final ProposalResponseResult result = new ProposalResponseResult();
         for (ProposalResponse response : responses) {

@@ -1,52 +1,12 @@
 syntax = "proto3";
 
-import "financingorder/common.proto";
+import "common/common.proto";
+import "configuration/contractflow.proto";
 
-option go_package = "github.com/xncc/protos/financingorder";
-option java_package = "com.xiangna.www.protos.financingorder";
+option go_package = "github.com/xncc/protos/configuration";
+option java_package = "com.xiangna.www.protos.configuration";
 
 package protos;
-
-
-//======================================================全局配置信息=======================================
-//APPID 作为 key， APPConfigBrief为 value存在链上
-message APPConfigBrief {
-    string appId = 1; // 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-    string appName = 2; // 该应用的名称，例如香纳保理业务系统
-}
-
-//======================================================私有配置信息=======================================
-//APPConfig 是不公开的
-message APPConfig {
-    string appId = 1; // 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-    string appKey = 2; // 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-    string appName = 3; // 该应用的名称，例如香纳保理业务系统
-    string appType = 4; // 该应用的类型，例如供应商、保理、核心企业、银行
-    string appCallbackUrl = 5; // 调用OA系统的url地址
-    string secureIp = 6; // 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-
-    repeated nodeConfig nodeConfigs = 7; //节点信息，可能存在多个节点
-
-    string orgName = 8; // 机构名称
-    string orgAddress = 9; // 机构地址
-    string bizContactName = 10; // 业务接口人姓名，与User表没联系
-    string bizContactTel = 11; // 业务接口人电话
-    string bizContaceEmail = 12; // 业务接口人email
-    string techContactName = 13; // 技术接口人姓名，与User表没联系
-    string techContactTel = 14; // 技术接口人电话
-    string techContactEmail = 15; // 技术接口人电话email
-
-    OperateInfo opInfo = 16;
-}
-
-// 节点信息
-message nodeConfig {
-    //一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-    string pem = 1; //peer 公钥信息
-    string sdkCert = 2; //sdk  证书信息
-    string sdkUserName = 3; //sdk  用户名
-    string sdkUserPWD = 4; //sdk  密码
-}
 
 //======================================================三方关系配置信息=======================================
 // 机构信息，在入三方账本时放到账本中公开
@@ -113,7 +73,7 @@ message FinancingRelation {
     // 银行需要拥有此三方账本,此字段只是备注记录,不做他用
     repeated AppVo banks = 8; // 关联银行
 
-    FinancingOrderStepFlow step_flow = 9; // 订单流程数据
+    ContractFlow step_flow = 9; // 订单流程数据
 
 }
 
@@ -131,26 +91,5 @@ message BankLoanRelation {
     // 双方机构关系确立的相关合同文件
     repeated LedgerFile order_files = 5; // 合同文件
 
-    FinancingOrderStepFlow step_flow = 6; // 订单流程数据
-}
-
-//======================================================订单流程信息=======================================
-
-// 订单节点数据
-message FinancingOrderStep {
-    string step_id = 1; // 订单阶段ID
-    string step_name = 2; // 订单阶段名称
-    AppVo org = 3; // 此阶段分属机构
-    string remark = 4; // 备注
-    bool is_start_node = 5; // 是否是开始节点
-    bool is_end_node = 6; // 是否是结束节点
-    string oa_url = 7; // 每个节点都可以调用外部 URL
-    OperateInfo operate_info = 8;
-}
-
-// 订单流程数据
-message FinancingOrderStepFlow {
-    FinancingOrderStep current_step = 1;
-    FinancingOrderStep next = 2;
-    OperateInfo operate_info = 3;
+    ContractFlow step_flow = 6; // 订单流程数据
 }

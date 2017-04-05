@@ -7,7 +7,12 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 /**
- * Created by liuzhudong on 2017/3/31.
+ * cc 操作返回结果集封装
+ *
+ * @Creater liuzhudong
+ * @Date 2017/3/31 10:06
+ * @Version 1.0
+ * @Copyright
  */
 public class ProposalResponseResult {
 

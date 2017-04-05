@@ -6,7 +6,11 @@ import org.hyperledger.fabric.sdk.User;
 import java.util.ArrayList;
 
 /**
- * Created by liuzhudong on 2017/3/31.
+ * ca 用户数据定义
+ * @Creater liuzhudong
+ * @Date 2017/3/31 10:05
+ * @Version 1.0
+ * @Copyright
  */
 public class CaUser implements User {
     private String name;

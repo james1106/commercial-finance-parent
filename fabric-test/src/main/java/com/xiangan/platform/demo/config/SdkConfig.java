@@ -1,7 +1,5 @@
 package com.xiangan.platform.demo.config;
 
-import org.hyperledger.fabric.sdk.Peer;
-
 import java.util.List;
 
 /**

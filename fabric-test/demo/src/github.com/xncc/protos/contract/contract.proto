@@ -1,38 +1,35 @@
-// 账本订单数据定义
-
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
-import "financingorder/common.proto";
-import "financingorder/configuration.proto";
+import "common/common.proto";
+import "configuration/contractflow.proto";
 
-
-option go_package = "github.com/xncc/protos/financingorder";
-option java_package = "com.xiangna.www.protos.financingorder";
+option go_package = "github.com/xncc/protos/contract";
+option java_package = "com.xiangna.www.protos.contract";
 
 package protos;
 
 // ======================================三方账本融资申请订单数据=============================================
 // 供应商到保理融资申请订单
-message FinancingOrder {
+message FinancingContract {
     string order_no = 1; // 订单编号
 
     AppVo supplier = 2; // 供应商信息
     AppVo enterprise = 3; // 核心企业信息
     AppVo bank_factor = 4; // 保理公司信息
 
-    OrderFormData order_data = 5; // 订单数据
+    ContractData contract_data = 5; // 订单数据
     repeated FinancingInvoice invoices = 6; // 供应商提供的发票数据
     repeated LedgerFile order_files_encrypt = 7; // 融资申请相关文件, 加密隔离
-    OrderMoneyCount order_money_count = 8; // 订单金额汇总
+    ContractMoneyCount money_count = 8; // 订单金额汇总
 
-    OrderStatus order_status = 9; // 订单状态
+    ContractStatus contract_status = 9; // 订单状态
     OperateInfo operate_info = 10; // 数据操作信息
 
 }
 
 // 订单表单数据
-message OrderFormData {
+message ContractData {
     // 发起申请方维护字段
     int64 expect_amount = 1; // 供应商|保理 申请融资金额
     int32 financing_period = 2; // 融资期限(天)
@@ -71,7 +68,7 @@ message Invoice {
 }
 
 // 订单款项金额汇总
-message OrderMoneyCount {
+message ContractMoneyCount {
     // 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
     // 放款
     int64 need_pay_amount = 1; // 实际需要支付的总金额
@@ -84,11 +81,11 @@ message OrderMoneyCount {
     int64 payback_income_amount = 6; // 实际已收入的总金额
 
     // 所有在申请订单内发生的金额交易(转账)都应该在此处有明确的流水
-    repeated OrderTransactionDetail transaction_details = 7; // 申请订单中的交易明细
+    repeated ContractTransactionDetail transaction_details = 7; // 申请订单中的交易明细
 }
 
 // 订单款项转移金额流水
-message OrderTransactionDetail {
+message ContractTransactionDetail {
     AppVo expenses = 1; // 支出方信息
     int64 expenses_amount = 2; // 支出金额
     OrgBankAccount expenses_account = 3; // 支出账户
@@ -104,33 +101,33 @@ message OrderTransactionDetail {
 }
 
 // 订单状态
-message OrderStatus {
-    FinancingOrderStep current_step = 1; // 当前订单阶段
-    repeated OrderStepCheckData check_datas = 2; // 是否已通过认所有确认项
-    repeated OrderCheckFlowInfo check_flow_infos = 3; // 申请订单审批流数据(历史记录)
-    repeated FinancingOrderStep step_history = 5; // 订单阶段历史记录
+message ContractStatus {
+    ContractStep current_step = 1; // 当前订单阶段
+    repeated ContractStepCheckData check_datas = 2; // 是否已通过认所有确认项
+    repeated ContractCheckFlowInfo check_flow_infos = 3; // 申请订单审批流数据(历史记录)
+    repeated ContractStep step_history = 5; // 订单阶段历史记录
 }
 
 // ========================================银行保理双方账本数据定义===========================================
 // 融资申请订单
 // 保理到银行贷款融资申请订单
-message BankLoanOrder {
+message BankLoanContract {
     string order_no = 1; // 订单编号
 
     AppVo bank_factor = 2; // 保理公司信息
     AppVo bank_info = 3; // 银行信息
 
-    OrderFormData order_data = 4; // 订单数据
-    repeated FinancingOrderReview financing_order_reviews = 5; // 质押的供应商到保理融资申请订单
-    OrderMoneyCount order_money_count = 6; // 订单金额汇总
+    ContractData contract_data = 4; // 订单数据
+    repeated FinancingContractReview financing_contract_reviews = 5; // 质押的供应商到保理融资申请订单
+    ContractMoneyCount money_count = 6; // 订单金额汇总
 
-    OrderStatus order_status = 7; // 订单状态
+    ContractStatus contract_status = 7; // 订单状态
     OperateInfo operate_info = 8; // 数据操作信息
 
 }
 
 // 保理到银行贷款融资申请订单质押的供应商融资申请订单
-message FinancingOrderReview {
+message FinancingContractReview {
     string order_no = 1; // 质押的融资订单编号
     int64 order_amount = 2; // 质押的融资订单融资总金额
     int32 financing_period = 3; // 融资期限(天)
@@ -152,13 +149,13 @@ message FinancingOrderReview {
 
 // ==============================订单流程记录=====================================================
 // 订单审核流程信息
-message OrderCheckFlowInfo {
-    FinancingOrderStep order_step = 1; // 订单阶段
-    OrderCheckFlowData check_flow_datas = 2; // 订单审核流程数据
+message ContractCheckFlowInfo {
+    ContractStep contract_step = 1; // 订单阶段
+    ContractCheckFlowData check_flow_datas = 2; // 订单审核流程数据
 }
 
 // 订单审核流程数据
-message OrderCheckFlowData {
+message ContractCheckFlowData {
     AppVo check_app = 1; // 审核App
     string check_user_name = 2; // 审核操作员名称
     string check_user_mobile = 3; // 审核操作员手机号
@@ -169,8 +166,8 @@ message OrderCheckFlowData {
 }
 
 // 具体阶段的检查确认项
-message OrderStepCheckData {
-    FinancingOrderStep current_step = 1;
+message ContractStepCheckData {
+    ContractStep current_step = 1; // 订单阶段
     repeated CheckData check_datas = 2;
 }
 
@@ -181,3 +178,4 @@ message CheckData {
     string value = 3; //确认结果
 
 }
+
