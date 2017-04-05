@@ -2,10 +2,27 @@ syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
 
-package protos;
-option java_package = "com.xiangna.www.core.protos";
+option go_package = "github.com/xncc/protos/common";
+option java_package = "com.xiangna.www.protos.common";
 
-//======================================================通用数据=======================================
+package protos;
+
+// 调用 cc 返回的数据格式定义(通用)
+message ChainCodeResponse {
+    // 状态编码定义:
+    // 0 = 成功
+    // !0 = 失败错误码定义
+    //      1000 = 参数格式错误
+    //      1001 = 未知方法错误
+    //      1002 = protobuf数据转换错误
+    //      4004 = 数据不存在错误
+    //      5000 = cc服务执行错误
+    //      可以根据具体业务新增错误编码,编码格式统一定义在6000以后
+    int32 code = 1; // 状态编码
+    string message = 2; // 状态编码具体错误描述
+    bytes result = 3; // 返回数据
+
+}
 
 // 机构摘要
 message AppVo {
