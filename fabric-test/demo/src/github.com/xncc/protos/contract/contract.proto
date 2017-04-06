@@ -16,11 +16,11 @@ message FinancingContract {
 
     AppVo supplier = 2; // 供应商信息
     AppVo enterprise = 3; // 核心企业信息
-    AppVo bank_factor = 4; // 保理公司信息
+    AppVo factoring = 4; // 保理公司信息
 
     ContractData contract_data = 5; // 订单数据
     repeated FinancingInvoice invoices = 6; // 供应商提供的发票数据
-    repeated LedgerFile order_files_encrypt = 7; // 融资申请相关文件, 加密隔离
+    LedgerFileMap order_files_encrypt = 7; // 融资申请相关文件, 加密隔离
     ContractMoneyCount money_count = 8; // 订单金额汇总
 
     ContractStatus contract_status = 9; // 订单状态
@@ -39,7 +39,7 @@ message ContractData {
     int64 confirmed_amount = 4; // 保理|银行 最终审核融资金额
     google.protobuf.Timestamp confirmed_expired_time = 5; // 保理|银行 最终审核融资到期时间
     int64 confirmed_rate = 6; // 保理|银行 最终审核融资利率, 加密隔离
-    repeated LedgerFile order_files = 7; // 融资申请相关文件, 公开的
+    LedgerFileMap order_files = 7; // 融资申请相关文件, 公开的
 }
 
 // 一张发票的融资信息
@@ -114,7 +114,7 @@ message ContractStatus {
 message BankLoanContract {
     string order_no = 1; // 订单编号
 
-    AppVo bank_factor = 2; // 保理公司信息
+    AppVo factoring = 2; // 保理公司信息
     AppVo bank_info = 3; // 银行信息
 
     ContractData contract_data = 4; // 订单数据

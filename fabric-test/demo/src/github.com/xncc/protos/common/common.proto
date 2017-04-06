@@ -52,7 +52,14 @@ message LedgerFile {
     string name = 4; // 文件名称
     int64 size = 5; // 文件大小
     string type = 6; // 文件类型
-    OperateInfo operate_info = 7; // 数据操作信息
+    bool isEncrypted = 7; // 是否加密
+    OperateInfo operate_info = 8; // 数据操作信息
+}
+
+// 账本链上文件集合
+message LedgerFileMap {
+    map<string, LedgerFile> files = 1;
+
 }
 
 // 银行账户信息
