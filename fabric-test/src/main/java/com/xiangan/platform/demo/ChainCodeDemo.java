@@ -290,7 +290,9 @@ public class ChainCodeDemo {
         instantiateProposalRequest.setProposalWaitTime(chain.getDeployWaitTime());
 
         if (policyFile != null) {
-            ChaincodeEndorsementPolicy chaincodeEndorsementPolicy = new ChaincodeEndorsementPolicy(policyFile);
+            ChaincodeEndorsementPolicy chaincodeEndorsementPolicy = new ChaincodeEndorsementPolicy();
+//            chaincodeEndorsementPolicy.fromFile(policyFile);
+            chaincodeEndorsementPolicy.fromYamlFile(policyFile);
             instantiateProposalRequest.setChaincodeEndorsementPolicy(chaincodeEndorsementPolicy);
         }
 
@@ -392,36 +394,58 @@ public class ChainCodeDemo {
                                         String[] args,
                                         HFClient client,
                                         Chain chain) throws Exception {
+        return query(chainCodeID, args, client, chain, chain.getPeers());
+    }
+
+    public ProposalResponseResult query(ChainCodeID chainCodeID,
+                                        String[] args,
+                                        HFClient client,
+                                        Chain chain,
+                                        Collection<Peer> peers) throws Exception {
         QueryByChaincodeRequest queryProposalRequest = client.newQueryProposalRequest();
         queryProposalRequest.setChaincodeID(chainCodeID);
         queryProposalRequest.setFcn("invoke");
         queryProposalRequest.setArgs(args);
-        return query(queryProposalRequest, chain);
+        Set<Peer> peerSet = new HashSet<>(peers);
+        return query(queryProposalRequest, chain, peerSet);
     }
 
     public ProposalResponseResult query(ChainCodeID chainCodeID,
                                         List<Object> args,
                                         HFClient client,
                                         Chain chain) throws Exception {
-        return query(chainCodeID, formatArgs(args), client, chain);
+
+        return query(chainCodeID, args, client, chain, chain.getPeers());
+    }
+
+    public ProposalResponseResult query(ChainCodeID chainCodeID,
+                                        List<Object> args,
+                                        HFClient client,
+                                        Chain chain,
+                                        Collection<Peer> peers) throws Exception {
+        Set<Peer> peerSet = new HashSet<>(peers);
+        return query(chainCodeID, formatArgs(args), client, chain, peerSet);
     }
 
     public ProposalResponseResult query(ChainCodeID chainCodeID,
                                         ArrayList<byte[]> args,
                                         HFClient client,
-                                        Chain chain) throws Exception {
+                                        Chain chain,
+                                        Set<Peer> peers) throws Exception {
         QueryByChaincodeRequest queryProposalRequest = client.newQueryProposalRequest();
         queryProposalRequest.setChaincodeID(chainCodeID);
         queryProposalRequest.setFcn("invoke");
         queryProposalRequest.setArgBytes(args);
-        return query(queryProposalRequest, chain);
+
+        return query(queryProposalRequest, chain, peers);
     }
 
     public ProposalResponseResult query(QueryByChaincodeRequest queryByChaincodeRequest,
-                                        Chain chain) throws Exception {
+                                        Chain chain,
+                                        Set<Peer> peers) throws Exception {
 
-
-        Collection<ProposalResponse> responses = chain.queryByChaincode(queryByChaincodeRequest, chain.getPeers());
+        queryByChaincodeRequest.setProposalWaitTime(chain.getTransactionWaitTime());
+        Collection<ProposalResponse> responses = chain.queryByChaincode(queryByChaincodeRequest, peers);
 
         final ProposalResponseResult result = new ProposalResponseResult();
         for (ProposalResponse response : responses) {
