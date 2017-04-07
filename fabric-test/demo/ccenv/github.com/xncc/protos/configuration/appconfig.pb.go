@@ -8,7 +8,6 @@ Package configuration is a generated protocol buffer package.
 It is generated from these files:
 	configuration/appconfig.proto
 	configuration/contractflow.proto
-	configuration/globalconfig.proto
 	configuration/modelconfig.proto
 
 It has these top-level messages:
@@ -17,7 +16,6 @@ It has these top-level messages:
 	APPConfig
 	ContractStep
 	ContractFlow
-	APPConfigBrief
 	CommercialOrg
 	FinancingRelation
 	Banks

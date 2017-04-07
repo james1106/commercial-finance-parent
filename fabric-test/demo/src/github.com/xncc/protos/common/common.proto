@@ -62,6 +62,13 @@ message LedgerFileData {
     bytes data = 1; // 文件数据
 }
 
+// 文件列表
+// 用于查询单独返回文件列表
+message LedgerFileList{
+    repeated LedgerFile files = 1;
+}
+
+
 // 银行账户信息
 message OrgBankAccount {
     string account = 1; // 银行账户

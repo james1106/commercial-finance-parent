@@ -9,8 +9,8 @@ import (
 	"github.com/xncc/protos/common"
 	"github.com/xncc/protos/configuration"
 	"github.com/xncc/protos/contract"
-	"github.com/xncc/util/ledgerfile"
 	"github.com/xncc/util/ccutil"
+	"github.com/xncc/util/ledgerfile"
 )
 
 // SimpleChaincode example simple Chaincode implementation
@@ -200,9 +200,10 @@ func (t *SimpleChaincode) query(stub shim.ChaincodeStubInterface, data []byte) p
 
 	switch request.Type {
 	case contract.ContractQueryRequest_ALL:
+		// 合约数据查询
 		out, err := proto.Marshal(contractData)
 		if err != nil {
-			return shim.Error("组装返回结果数据序列化成protobuf数据错误:" + err.Error())
+			return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_ENCODE, "合约数据序列化错误:"+err.Error(), nil)
 		}
 		return ccutil.Response(ccutil.CODE_OK, "OK", out)
 
@@ -210,6 +211,16 @@ func (t *SimpleChaincode) query(stub shim.ChaincodeStubInterface, data []byte) p
 		// 合约相关文件具体查询
 		file := t.getFile(contractData, request.FileKey, stub)
 		return ccutil.ResponseOut(file)
+
+	case contract.ContractQueryRequest_FILELILST:
+		// 合约文件列表查询
+		fileList := t.queryFileList(contractData)
+		out, err := proto.Marshal(fileList)
+		if err != nil {
+			return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_ENCODE, "合约文件列表序列化错误:"+err.Error(), nil)
+		}
+		return ccutil.Response(ccutil.CODE_OK, "OK", out)
+
 	default:
 		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数错误:", nil)
 	}
@@ -220,7 +231,16 @@ func (t *SimpleChaincode) query(stub shim.ChaincodeStubInterface, data []byte) p
 func (t *SimpleChaincode) getFile(order *contract.FinancingContract, fileKey string, stub shim.ChaincodeStubInterface) *common.ChainCodeResponse {
 	// 移除文件数据,只保留文件key
 	// 点开查看具体文件时在查询具体文件
-	files := order.ContractData.OrderFiles
+	fileList := t.queryFileList(order)
+	files := fileList.Files
+
+	if files == nil {
+		return &common.ChainCodeResponse{
+			Code:    ccutil.CODE_DATA_NOT_FOUND,
+			Message: "合约不存在指定文件",
+		}
+	}
+
 	for _, file := range files {
 		if file != nil && file.Sha256 == fileKey {
 			return ledgerfile.GetFileToView(stub, fileKey)
@@ -231,6 +251,17 @@ func (t *SimpleChaincode) getFile(order *contract.FinancingContract, fileKey str
 		Code:    ccutil.CODE_DATA_NOT_FOUND,
 		Message: "合约不存在指定文件",
 	}
+}
+
+// 查询合约的文件列表
+func (t *SimpleChaincode) queryFileList(order *contract.FinancingContract) *common.LedgerFileList {
+	result := &common.LedgerFileList{}
+
+	if order.ContractData != nil {
+		result.Files = order.ContractData.OrderFiles
+	}
+
+	return result
 }
 
 // 合约数据查询

@@ -49,7 +49,7 @@ type CommercialOrg struct {
 func (m *CommercialOrg) Reset()                    { *m = CommercialOrg{} }
 func (m *CommercialOrg) String() string            { return proto.CompactTextString(m) }
 func (*CommercialOrg) ProtoMessage()               {}
-func (*CommercialOrg) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{0} }
+func (*CommercialOrg) Descriptor() ([]byte, []int) { return fileDescriptor2, []int{0} }
 
 func (m *CommercialOrg) GetContactPerson() []*CommercialOrg_OrgContactPerson {
 	if m != nil {
@@ -97,7 +97,7 @@ func (m *CommercialOrg_OrgContactPerson) Reset()         { *m = CommercialOrg_Or
 func (m *CommercialOrg_OrgContactPerson) String() string { return proto.CompactTextString(m) }
 func (*CommercialOrg_OrgContactPerson) ProtoMessage()    {}
 func (*CommercialOrg_OrgContactPerson) Descriptor() ([]byte, []int) {
-	return fileDescriptor3, []int{0, 0}
+	return fileDescriptor2, []int{0, 0}
 }
 
 // 三方机构关系上链数据定义
@@ -120,7 +120,7 @@ type FinancingRelation struct {
 func (m *FinancingRelation) Reset()                    { *m = FinancingRelation{} }
 func (m *FinancingRelation) String() string            { return proto.CompactTextString(m) }
 func (*FinancingRelation) ProtoMessage()               {}
-func (*FinancingRelation) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{1} }
+func (*FinancingRelation) Descriptor() ([]byte, []int) { return fileDescriptor2, []int{1} }
 
 func (m *FinancingRelation) GetSupplier() *CommercialOrg {
 	if m != nil {
@@ -165,7 +165,7 @@ type Banks struct {
 func (m *Banks) Reset()                    { *m = Banks{} }
 func (m *Banks) String() string            { return proto.CompactTextString(m) }
 func (*Banks) ProtoMessage()               {}
-func (*Banks) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{2} }
+func (*Banks) Descriptor() ([]byte, []int) { return fileDescriptor2, []int{2} }
 
 func (m *Banks) GetBanks() []*protos.AppVo {
 	if m != nil {
@@ -189,7 +189,7 @@ type BankLoanRelation struct {
 func (m *BankLoanRelation) Reset()                    { *m = BankLoanRelation{} }
 func (m *BankLoanRelation) String() string            { return proto.CompactTextString(m) }
 func (*BankLoanRelation) ProtoMessage()               {}
-func (*BankLoanRelation) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{3} }
+func (*BankLoanRelation) Descriptor() ([]byte, []int) { return fileDescriptor2, []int{3} }
 
 func (m *BankLoanRelation) GetFactoring() *CommercialOrg {
 	if m != nil {
@@ -220,9 +220,9 @@ func init() {
 	proto.RegisterType((*BankLoanRelation)(nil), "protos.BankLoanRelation")
 }
 
-func init() { proto.RegisterFile("configuration/modelconfig.proto", fileDescriptor3) }
+func init() { proto.RegisterFile("configuration/modelconfig.proto", fileDescriptor2) }
 
-var fileDescriptor3 = []byte{
+var fileDescriptor2 = []byte{
 	// 730 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x8c, 0x95, 0xdf, 0x4e, 0x2b, 0x37,
 	0x10, 0xc6, 0x95, 0x84, 0xe4, 0x24, 0xb3, 0x49, 0x08, 0x3e, 0x6d, 0xe5, 0x9e, 0x1e, 0x09, 0x1a,

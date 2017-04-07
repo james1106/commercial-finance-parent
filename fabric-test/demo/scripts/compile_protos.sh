@@ -22,10 +22,15 @@ PROJECT_JAVA_SRC=${PROJECT_BASE_PATH}"/data-design"
 echo "project java path: $PROJECT_JAVA_SRC"
 
 PROTO_OUT_PATH=${PROJECT_BASE_PATH}"/fabric-test/demo/src"
-echo "project java path: $PROTO_OUT_PATH"
+echo "protoc out go path: $PROTO_OUT_PATH"
+
+PROTO_OUT_JAVA_PATH=${PROJECT_BASE_PATH}"/server-protobuf-data/src/main/java/"
+echo "protoc out java path: "${PROTO_OUT_JAVA_PATH}
 
 PROTOC_PATH=${PROJECT_BASE_PATH}"/fabric-test/demo/src/github.com/xncc/"
-echo "project java path: $PROTOC_PATH"
+echo "protos source path: $PROTOC_PATH"
+
+
 
 cd ${PROTOC_PATH}
 
@@ -38,8 +43,7 @@ for file in ${PROTO_GO_FILES} ; do
 done
 
 echo " --------------- sync protos to java module -----------------"
-cp -r protos/* ${PROJECT_JAVA_SRC}/src/main/proto/
-cp -r protos/* ${PROJECT_BASE_PATH}/fabric-test/src/main/proto/
+cp -r protos/* ${PROJECT_BASE_PATH}/server-protobuf-data/src/main/proto/
 
 echo " --------------- compile protobuf to go -----------------"
 ## 编译protobuf go 文件
@@ -48,14 +52,13 @@ PROTO_FILES="$(find protos -name '*.proto' -exec dirname \{\} \; | sort |uniq)"
 for dir in ${PROTO_FILES} ; do
     echo "-path $dir" ;
     protoc --proto_path ${PROTOC_PATH}/protos --go_out=${PROTO_OUT_PATH} ${PROTOC_PATH}/${dir}/*.proto
+    protoc --proto_path ${PROTOC_PATH}/protos --java_out=${PROTO_OUT_JAVA_PATH} ${PROTOC_PATH}/${dir}/*.proto
 done
 
 ## 编译java的代码
 echo " --------------- compile protobuf to java -----------------"
-#cd ${PROJECT_JAVA_SRC}
-#mvn clean package
-cd ${PROJECT_BASE_PATH}/fabric-test/
-mvn clean package -Dmaven.test.skip=true
+cd ${PROJECT_BASE_PATH}/server-protobuf-data
+mvn clean install -Dmaven.test.skip=true
 
 ## 重新编译ccenv的docker image
 echo " --------------- build ccenv -----------------"

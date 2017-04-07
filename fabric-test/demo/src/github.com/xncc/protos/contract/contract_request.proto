@@ -27,8 +27,9 @@ message ContractQueryRequest {
 
     // 查询类型
     enum QueryType {
-        ALL = 0;
-        FILE = 1;
+        ALL = 0; // 查询所有合约数据
+        FILE = 1; // 查询具体的文件详情(返回文件流)
+        FILELILST = 2; // 查询合约的文件列表(不包含文件流)
 
     }
 
