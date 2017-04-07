@@ -34,7 +34,7 @@ func (x ContractQueryRequest_QueryType) String() string {
 	return proto.EnumName(ContractQueryRequest_QueryType_name, int32(x))
 }
 func (ContractQueryRequest_QueryType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor1, []int{2, 0}
+	return fileDescriptor3, []int{2, 0}
 }
 
 // 执行合约请求参数
@@ -47,7 +47,7 @@ type ContractExcuteRequest struct {
 func (m *ContractExcuteRequest) Reset()                    { *m = ContractExcuteRequest{} }
 func (m *ContractExcuteRequest) String() string            { return proto.CompactTextString(m) }
 func (*ContractExcuteRequest) ProtoMessage()               {}
-func (*ContractExcuteRequest) Descriptor() ([]byte, []int) { return fileDescriptor1, []int{0} }
+func (*ContractExcuteRequest) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{0} }
 
 // 合约新增审批日志请求参数
 type ContractAddCheckLogRequest struct {
@@ -59,7 +59,7 @@ type ContractAddCheckLogRequest struct {
 func (m *ContractAddCheckLogRequest) Reset()                    { *m = ContractAddCheckLogRequest{} }
 func (m *ContractAddCheckLogRequest) String() string            { return proto.CompactTextString(m) }
 func (*ContractAddCheckLogRequest) ProtoMessage()               {}
-func (*ContractAddCheckLogRequest) Descriptor() ([]byte, []int) { return fileDescriptor1, []int{1} }
+func (*ContractAddCheckLogRequest) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{1} }
 
 // 合约查询请求参数
 type ContractQueryRequest struct {
@@ -71,7 +71,7 @@ type ContractQueryRequest struct {
 func (m *ContractQueryRequest) Reset()                    { *m = ContractQueryRequest{} }
 func (m *ContractQueryRequest) String() string            { return proto.CompactTextString(m) }
 func (*ContractQueryRequest) ProtoMessage()               {}
-func (*ContractQueryRequest) Descriptor() ([]byte, []int) { return fileDescriptor1, []int{2} }
+func (*ContractQueryRequest) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{2} }
 
 func init() {
 	proto.RegisterType((*ContractExcuteRequest)(nil), "protos.ContractExcuteRequest")
@@ -80,9 +80,9 @@ func init() {
 	proto.RegisterEnum("protos.ContractQueryRequest_QueryType", ContractQueryRequest_QueryType_name, ContractQueryRequest_QueryType_value)
 }
 
-func init() { proto.RegisterFile("contract/contract_request.proto", fileDescriptor1) }
+func init() { proto.RegisterFile("contract/contract_request.proto", fileDescriptor3) }
 
-var fileDescriptor1 = []byte{
+var fileDescriptor3 = []byte{
 	// 292 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0x74, 0x91, 0xc1, 0x4b, 0xc3, 0x30,
 	0x14, 0xc6, 0x4d, 0x37, 0x36, 0xf7, 0x18, 0x63, 0x04, 0x27, 0xc5, 0x83, 0x1b, 0x3d, 0xc8, 0x4e,

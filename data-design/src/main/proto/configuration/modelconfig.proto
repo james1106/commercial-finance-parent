@@ -46,7 +46,7 @@ message CommercialOrg {
     //           保理公司维护两个账户:一个放款账户到结算账户,一个收还款账户
     OrgBankAccount settlement_account = 15; // 结算账户
     OrgBankAccount policy_account = 16; // 保理账户
-    LedgerFileMap org_files = 17; // 机构相关文件存放
+    repeated LedgerFile org_files = 17; // 机构相关文件存放
     OperateInfo operate_info = 18; // 数据操作信息
 
 }
@@ -63,14 +63,13 @@ message FinancingRelation {
 
     // 三方机构关系确立时可以设定默认的融资利率
     int64 rate = 5; // 默认的融资利率, 加密隔离
-    repeated LedgerFile order_files_encrypt = 6; // 合同文件, 加密隔离
 
     // 三方机构关系确立的相关合同文件
-    LedgerFileMap order_files = 7; // 三方公开的合同文件
+    repeated LedgerFile files = 6; // 三方合同文件
 
      // 保理向银行融资贷款时,勾选此三方的融资订单为质押
      // 银行需要拥有此三方账本,此字段只是备注记录,不做他用
-    Banks banks = 8; // 关联银行
+    Banks banks = 7; // 关联银行
 
 }
 
@@ -91,6 +90,6 @@ message BankLoanRelation {
     int64 rate = 4; // 默认的融资利率
 
     // 双方机构关系确立的相关合同文件
-    LedgerFileMap order_files = 5; // 合同文件
+    repeated LedgerFile files = 5; // 合同文件
 
 }

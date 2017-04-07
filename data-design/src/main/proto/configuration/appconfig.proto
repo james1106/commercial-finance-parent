@@ -38,5 +38,7 @@ message APPConfig {
     string techContactTel = 13; // 技术接口人电话
     string techContactEmail = 14; // 技术接口人电话email
 
-    OperateInfo opInfo = 15;
+    NodeConfigs nodeConfigs = 15; // 节点信息
+
+    OperateInfo opInfo = 16;
 }

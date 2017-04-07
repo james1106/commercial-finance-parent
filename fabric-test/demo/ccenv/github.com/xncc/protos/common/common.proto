@@ -47,19 +47,19 @@ message OperateInfo {
 // 账本链上文件
 message LedgerFile {
     string url = 1; // 文件地址
-    bytes data = 2; // 文件数据
-    string sha256 = 3; // 文件的sha256值
-    string name = 4; // 文件名称
-    int64 size = 5; // 文件大小
-    string type = 6; // 文件类型
-    bool isEncrypted = 7; // 是否加密
+    string sha256 = 2; // 文件的sha256值
+    string name = 3; // 文件名称
+    int64 size = 4; // 文件大小
+    string type = 5; // 文件类型
+    bool isEncrypted = 6; // 是否加密
+    repeated string appIds = 7; // 可解密appid
     OperateInfo operate_info = 8; // 数据操作信息
 }
 
-// 账本链上文件集合
-message LedgerFileMap {
-    map<string, LedgerFile> files = 1;
-
+// 账本链上文件流
+// key = LedgerFile#sha256
+message LedgerFileData {
+    bytes data = 1; // 文件数据
 }
 
 // 银行账户信息

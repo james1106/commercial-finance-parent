@@ -9,7 +9,8 @@ import (
 	"github.com/xncc/protos/common"
 	"github.com/xncc/protos/configuration"
 	"github.com/xncc/protos/contract"
-	"github.com/xncc/util"
+	"github.com/xncc/util/ledgerfile"
+	"github.com/xncc/util/ccutil"
 )
 
 // SimpleChaincode example simple Chaincode implementation
@@ -19,30 +20,30 @@ type SimpleChaincode struct {
 // cc deploy 执行方法
 func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 	fmt.Println("########### ChainCode Init ###########")
-	_, _, err := util.GetFunctionAndParameters(stub.GetArgs())
+	_, _, err := ccutil.GetFunctionAndParameters(stub.GetArgs())
 	if err != nil {
-		return util.Response(util.CODE_PARAM_ERROR, err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_PARAM_ERROR, err.Error(), nil)
 	}
 
-	return util.Response(util.CODE_OK, "OK", nil)
+	return ccutil.Response(ccutil.CODE_OK, "OK", nil)
 }
 
 // cc 执行操作统一入口
 func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	fmt.Println("########### ChainCode Invoke ###########")
 
-	function, args, err := util.GetFunctionAndParameters(stub.GetArgs())
+	function, args, err := ccutil.GetFunctionAndParameters(stub.GetArgs())
 	if err != nil {
-		return util.Response(util.CODE_PARAM_ERROR, err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_PARAM_ERROR, err.Error(), nil)
 	}
 
 	if function != "invoke" {
-		return util.Response(util.CODE_UNKNOWN_FUNCTION, "Unknown function call", nil)
+		return ccutil.Response(ccutil.CODE_UNKNOWN_FUNCTION, "Unknown function call", nil)
 	}
 
-	action, params, err := util.GetActionAndParameters(args)
+	action, params, err := ccutil.GetActionAndParameters(args)
 	if err != nil {
-		return util.Response(util.CODE_UNKNOWN_FUNCTION, err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_UNKNOWN_FUNCTION, err.Error(), nil)
 	}
 
 	// 请求参数转换为对象
@@ -54,15 +55,15 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 		return t.excute(stub, params[0])
 	case "update":
 		// TODO
-		return nil
+		return ccutil.Response(ccutil.CODE_OK, "OK", nil)
 	// 添加流程审批记录
 	case "addCheckLog":
-		return util.Response(util.CODE_OK, "OK", nil)
+		return ccutil.Response(ccutil.CODE_OK, "OK", nil)
 	// 查询合约
 	case "query":
 		return t.query(stub, params[0])
 	default:
-		return util.Response(util.CODE_UNKNOWN_FUNCTION, "未知操作", nil)
+		return ccutil.Response(ccutil.CODE_UNKNOWN_FUNCTION, "未知操作", nil)
 	}
 }
 
@@ -78,19 +79,17 @@ func main() {
 // 操作包括:初始申请，申请状态流转
 func (t *SimpleChaincode) excute(stub shim.ChaincodeStubInterface, data []byte) pb.Response {
 	request := &contract.ContractExcuteRequest{}
-	if err := proto.Unmarshal(data, request); err != nil {
-		return util.Response(util.CODE_PROTOBUF_DATA_PARSE, "请求参数错误", nil)
+	if err := proto.Unmarshal(data, request); err != nil || request == nil {
+		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数错误", nil)
 	}
 
-	action := request.GetAction()
-
-	switch action {
+	switch request.Action {
 	case "init":
-		return t.init(stub, request.GetContractData())
+		return t.init(stub, request.ContractData)
 	case "check":
-		return t.check(stub, request.GetNo(), request.GetContractData())
+		return t.check(stub, request.No, request.ContractData)
 	default:
-		return util.Response(util.CODE_UNKNOWN_FUNCTION, "未知操作", nil)
+		return ccutil.Response(ccutil.CODE_UNKNOWN_FUNCTION, "未知操作", nil)
 	}
 
 }
@@ -100,20 +99,20 @@ func (t *SimpleChaincode) init(stub shim.ChaincodeStubInterface, data []byte) pb
 	// 将数据解码用于数据操作
 	request := &contract.FinancingContract{}
 	if err := proto.Unmarshal(data, request); err != nil {
-		return util.Response(util.CODE_PROTOBUF_DATA_PARSE, "请求参数错误", nil)
+		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数错误", nil)
 	}
 
 	fmt.Printf("合约数据初始化编号: %s", request.OrderNo)
 	// 数据编码存储
 	out, err := proto.Marshal(request)
 	if err != nil {
-		return util.Response(util.CODE_PROTOBUF_DATA_ENCODE, "合约数据序列化保存错误:"+err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_ENCODE, "合约数据序列化保存错误:"+err.Error(), nil)
 	}
 	err = stub.PutState(request.OrderNo, out)
 	if err != nil {
-		return util.Response(util.CODE_SERVER_ERROR, "合约数据保存错误:"+err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_SERVER_ERROR, "合约数据保存错误:"+err.Error(), nil)
 	}
-	return util.Response(util.CODE_OK, "OK", nil)
+	return ccutil.Response(ccutil.CODE_OK, "OK", nil)
 }
 
 // 合约审核
@@ -124,7 +123,7 @@ func (t *SimpleChaincode) check(stub shim.ChaincodeStubInterface, key string, da
 	fmt.Printf("合约数据编号: %s\n", key)
 	order, result := t.getContract(stub, key)
 	if result.Code != 0 {
-		return util.ResponseOut(result)
+		return ccutil.ResponseOut(result)
 	}
 
 	// 获取合约的当前阶段
@@ -133,13 +132,13 @@ func (t *SimpleChaincode) check(stub shim.ChaincodeStubInterface, key string, da
 
 	// 校验用户
 	if err := t.valiCreator(stub, currentStep.GetOrg()); err != nil {
-		return util.Response(util.CODE_UNAUTHORIZED, "用户未授权:"+err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_UNAUTHORIZED, "用户未授权:"+err.Error(), nil)
 	}
 
 	// 获取合约的下一阶段
 	nextStep, err := t.getNextStep(stub, currentStep)
 	if err != nil {
-		return util.Response(util.CODE_SERVER_ERROR, err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_SERVER_ERROR, err.Error(), nil)
 	}
 	order.ContractStatus.CurrentStep = nextStep
 
@@ -152,13 +151,13 @@ func (t *SimpleChaincode) check(stub shim.ChaincodeStubInterface, key string, da
 	// 数据编码存储
 	out, err := proto.Marshal(order)
 	if err != nil {
-		return util.Response(util.CODE_PROTOBUF_DATA_ENCODE, "合约数据序列化保存错误:"+err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_ENCODE, "合约数据序列化保存错误:"+err.Error(), nil)
 	}
 	err = stub.PutState(key, out)
 	if err != nil {
-		return util.Response(util.CODE_SERVER_ERROR, "合约数据保存错误:"+err.Error(), nil)
+		return ccutil.Response(ccutil.CODE_SERVER_ERROR, "合约数据保存错误:"+err.Error(), nil)
 	}
-	return util.Response(util.CODE_OK, "OK", nil)
+	return ccutil.Response(ccutil.CODE_OK, "OK", nil)
 }
 
 // 获取当前阶段的下一阶段
@@ -188,59 +187,50 @@ func (t *SimpleChaincode) getNextStep(stub shim.ChaincodeStubInterface, currentS
 // 合约查询
 func (t *SimpleChaincode) query(stub shim.ChaincodeStubInterface, data []byte) pb.Response {
 	request := &contract.ContractQueryRequest{}
-	if err := proto.Unmarshal(data, request); err != nil {
-		return util.Response(util.CODE_PROTOBUF_DATA_PARSE, "请求参数格式错误:"+err.Error(), nil)
+	if err := proto.Unmarshal(data, request); err != nil || request == nil {
+		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数格式错误:"+err.Error(), nil)
 	}
 
-	contractData, result := t.getContract(stub, request.GetNo())
+	contractData, result := t.getContract(stub, request.No)
 	if result.Code != 0 {
-		return util.ResponseOut(result)
+		return ccutil.ResponseOut(result)
 	}
-	switch request.GetType() {
+
+	fmt.Printf("合约数据: %s \n", contractData.String())
+
+	switch request.Type {
 	case contract.ContractQueryRequest_ALL:
-		contractData = t.getAll(contractData)
-		out, err := proto.Marshal(result)
+		out, err := proto.Marshal(contractData)
 		if err != nil {
 			return shim.Error("组装返回结果数据序列化成protobuf数据错误:" + err.Error())
 		}
-		return util.Response(util.CODE_OK, "OK", out)
+		return ccutil.Response(ccutil.CODE_OK, "OK", out)
 
 	case contract.ContractQueryRequest_FILE:
-		file := t.getFile(contractData, request.GetFileKey())
-		out, err := proto.Marshal(file)
-		if err != nil {
-			return shim.Error("组装返回结果数据序列化成protobuf数据错误:" + err.Error())
-		}
-		return util.Response(util.CODE_OK, "OK", out)
+		// 合约相关文件具体查询
+		file := t.getFile(contractData, request.FileKey, stub)
+		return ccutil.ResponseOut(file)
 	default:
-		return util.Response(util.CODE_PROTOBUF_DATA_PARSE, "请求参数错误:", nil)
+		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数错误:", nil)
 	}
 
-}
-
-// 返回所有合约字段数据
-func (t *SimpleChaincode) getAll(order *contract.FinancingContract) *contract.FinancingContract {
-	// 移除文件数据,只保留文件key
-	// 点开查看具体文件时在查询具体文件
-	files := order.GetContractData().GetOrderFiles().GetFiles()
-	for key := range files {
-		files[key] = nil
-	}
-	order.ContractData.OrderFiles.Files = files
-	return order
 }
 
 // 返回具体的文件数据
-func (t *SimpleChaincode) getFile(order *contract.FinancingContract, fileKey string) *common.LedgerFile {
+func (t *SimpleChaincode) getFile(order *contract.FinancingContract, fileKey string, stub shim.ChaincodeStubInterface) *common.ChainCodeResponse {
 	// 移除文件数据,只保留文件key
 	// 点开查看具体文件时在查询具体文件
-	files := order.GetContractData().GetOrderFiles().GetFiles()
-	for key, file := range files {
-		if key == fileKey {
-			return file
+	files := order.ContractData.OrderFiles
+	for _, file := range files {
+		if file != nil && file.Sha256 == fileKey {
+			return ledgerfile.GetFileToView(stub, fileKey)
 		}
 	}
-	return nil
+
+	return &common.ChainCodeResponse{
+		Code:    ccutil.CODE_DATA_NOT_FOUND,
+		Message: "合约不存在指定文件",
+	}
 }
 
 // 合约数据查询
@@ -256,7 +246,7 @@ func (t *SimpleChaincode) getContract(stub shim.ChaincodeStubInterface, key stri
 	// 反序列化合约数据进行操作处理
 	order := &contract.FinancingContract{}
 	if err := proto.Unmarshal(result.Result, order); err != nil {
-		result.Code = util.CODE_PROTOBUF_DATA_PARSE
+		result.Code = ccutil.CODE_PROTOBUF_DATA_PARSE
 		result.Message = "合约数据反序列化错误:" + err.Error()
 		return nil, result
 	}
@@ -273,20 +263,20 @@ func (t *SimpleChaincode) getLedger(stub shim.ChaincodeStubInterface, key string
 	data, err := stub.GetState(key)
 	if err != nil {
 		return &common.ChainCodeResponse{
-			Code:    util.CODE_SERVER_ERROR,
+			Code:    ccutil.CODE_SERVER_ERROR,
 			Message: baseMessage + ":获取数据错误:" + err.Error(),
 		}
 	}
 
 	if data == nil {
 		return &common.ChainCodeResponse{
-			Code:    util.CODE_DATA_NOT_FOUND,
+			Code:    ccutil.CODE_DATA_NOT_FOUND,
 			Message: baseMessage + "：数据不存在",
 		}
 	}
 
 	return &common.ChainCodeResponse{
-		Code:    util.CODE_OK,
+		Code:    ccutil.CODE_OK,
 		Message: "OK",
 		Result:  data,
 	}

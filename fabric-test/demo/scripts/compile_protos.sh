@@ -50,19 +50,28 @@ for dir in ${PROTO_FILES} ; do
     protoc --proto_path ${PROTOC_PATH}/protos --go_out=${PROTO_OUT_PATH} ${PROTOC_PATH}/${dir}/*.proto
 done
 
-
+## 编译java的代码
 echo " --------------- compile protobuf to java -----------------"
 #cd ${PROJECT_JAVA_SRC}
 #mvn clean package
 cd ${PROJECT_BASE_PATH}/fabric-test/
 mvn clean package -Dmaven.test.skip=true
 
+## 重新编译ccenv的docker image
 echo " --------------- build ccenv -----------------"
 mkdir -p ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 cp -r ${PROTOC_PATH}/protos ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 cp -r ${PROTOC_PATH}/util ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 
 docker-compose -f ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv-build.yaml build
+
+## 删除空的docker image
+echo " --------------- remove docker image none -----------------"
+DOCKER_IMAGES_NONE="$(docker images | grep \<none\> | awk '{print $3}')"
+for image in ${DOCKER_IMAGES_NONE} ; do
+    echo "remove docker image: "${image}
+    docker rmi ${image}
+done
 
 echo "end"
 
