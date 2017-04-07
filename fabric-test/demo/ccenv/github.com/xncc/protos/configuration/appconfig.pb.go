@@ -56,34 +56,6 @@ func (m *NodeConfig) String() string            { return proto.CompactTextString
 func (*NodeConfig) ProtoMessage()               {}
 func (*NodeConfig) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
 
-func (m *NodeConfig) GetPem() string {
-	if m != nil {
-		return m.Pem
-	}
-	return ""
-}
-
-func (m *NodeConfig) GetSdkCert() string {
-	if m != nil {
-		return m.SdkCert
-	}
-	return ""
-}
-
-func (m *NodeConfig) GetSdkUserName() string {
-	if m != nil {
-		return m.SdkUserName
-	}
-	return ""
-}
-
-func (m *NodeConfig) GetSdkUserPWD() string {
-	if m != nil {
-		return m.SdkUserPWD
-	}
-	return ""
-}
-
 type NodeConfigs struct {
 	NodeConfigs []*NodeConfig `protobuf:"bytes,1,rep,name=nodeConfigs" json:"nodeConfigs,omitempty"`
 }
@@ -123,104 +95,6 @@ func (m *APPConfig) Reset()                    { *m = APPConfig{} }
 func (m *APPConfig) String() string            { return proto.CompactTextString(m) }
 func (*APPConfig) ProtoMessage()               {}
 func (*APPConfig) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{2} }
-
-func (m *APPConfig) GetAppId() string {
-	if m != nil {
-		return m.AppId
-	}
-	return ""
-}
-
-func (m *APPConfig) GetAppKey() string {
-	if m != nil {
-		return m.AppKey
-	}
-	return ""
-}
-
-func (m *APPConfig) GetAppName() string {
-	if m != nil {
-		return m.AppName
-	}
-	return ""
-}
-
-func (m *APPConfig) GetAppType() string {
-	if m != nil {
-		return m.AppType
-	}
-	return ""
-}
-
-func (m *APPConfig) GetAppCallbackUrl() string {
-	if m != nil {
-		return m.AppCallbackUrl
-	}
-	return ""
-}
-
-func (m *APPConfig) GetSecureIp() string {
-	if m != nil {
-		return m.SecureIp
-	}
-	return ""
-}
-
-func (m *APPConfig) GetOrgName() string {
-	if m != nil {
-		return m.OrgName
-	}
-	return ""
-}
-
-func (m *APPConfig) GetOrgAddress() string {
-	if m != nil {
-		return m.OrgAddress
-	}
-	return ""
-}
-
-func (m *APPConfig) GetBizContactName() string {
-	if m != nil {
-		return m.BizContactName
-	}
-	return ""
-}
-
-func (m *APPConfig) GetBizContactTel() string {
-	if m != nil {
-		return m.BizContactTel
-	}
-	return ""
-}
-
-func (m *APPConfig) GetBizContaceEmail() string {
-	if m != nil {
-		return m.BizContaceEmail
-	}
-	return ""
-}
-
-func (m *APPConfig) GetTechContactName() string {
-	if m != nil {
-		return m.TechContactName
-	}
-	return ""
-}
-
-func (m *APPConfig) GetTechContactTel() string {
-	if m != nil {
-		return m.TechContactTel
-	}
-	return ""
-}
-
-func (m *APPConfig) GetTechContactEmail() string {
-	if m != nil {
-		return m.TechContactEmail
-	}
-	return ""
-}
 
 func (m *APPConfig) GetOpInfo() *protos.OperateInfo {
 	if m != nil {

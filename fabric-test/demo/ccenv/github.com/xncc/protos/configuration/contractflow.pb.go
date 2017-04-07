@@ -33,53 +33,11 @@ func (m *ContractStep) String() string            { return proto.CompactTextStri
 func (*ContractStep) ProtoMessage()               {}
 func (*ContractStep) Descriptor() ([]byte, []int) { return fileDescriptor1, []int{0} }
 
-func (m *ContractStep) GetStepId() string {
-	if m != nil {
-		return m.StepId
-	}
-	return ""
-}
-
-func (m *ContractStep) GetStepName() string {
-	if m != nil {
-		return m.StepName
-	}
-	return ""
-}
-
 func (m *ContractStep) GetOrg() *protos.AppVo {
 	if m != nil {
 		return m.Org
 	}
 	return nil
-}
-
-func (m *ContractStep) GetRemark() string {
-	if m != nil {
-		return m.Remark
-	}
-	return ""
-}
-
-func (m *ContractStep) GetIsStartNode() bool {
-	if m != nil {
-		return m.IsStartNode
-	}
-	return false
-}
-
-func (m *ContractStep) GetIsEndNode() bool {
-	if m != nil {
-		return m.IsEndNode
-	}
-	return false
-}
-
-func (m *ContractStep) GetOaUrl() string {
-	if m != nil {
-		return m.OaUrl
-	}
-	return ""
 }
 
 func (m *ContractStep) GetNext() *ContractStep {

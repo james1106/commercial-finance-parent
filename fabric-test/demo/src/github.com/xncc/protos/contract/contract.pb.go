@@ -67,13 +67,6 @@ func (m *FinancingContract) String() string            { return proto.CompactTex
 func (*FinancingContract) ProtoMessage()               {}
 func (*FinancingContract) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
 
-func (m *FinancingContract) GetOrderNo() string {
-	if m != nil {
-		return m.OrderNo
-	}
-	return ""
-}
-
 func (m *FinancingContract) GetSupplier() *protos.AppVo {
 	if m != nil {
 		return m.Supplier
@@ -155,20 +148,6 @@ func (m *ContractData) String() string            { return proto.CompactTextStri
 func (*ContractData) ProtoMessage()               {}
 func (*ContractData) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
 
-func (m *ContractData) GetExpectAmount() int64 {
-	if m != nil {
-		return m.ExpectAmount
-	}
-	return 0
-}
-
-func (m *ContractData) GetFinancingPeriod() int32 {
-	if m != nil {
-		return m.FinancingPeriod
-	}
-	return 0
-}
-
 func (m *ContractData) GetExpectExpiredTime() *google_protobuf.Timestamp {
 	if m != nil {
 		return m.ExpectExpiredTime
@@ -176,25 +155,11 @@ func (m *ContractData) GetExpectExpiredTime() *google_protobuf.Timestamp {
 	return nil
 }
 
-func (m *ContractData) GetConfirmedAmount() int64 {
-	if m != nil {
-		return m.ConfirmedAmount
-	}
-	return 0
-}
-
 func (m *ContractData) GetConfirmedExpiredTime() *google_protobuf.Timestamp {
 	if m != nil {
 		return m.ConfirmedExpiredTime
 	}
 	return nil
-}
-
-func (m *ContractData) GetConfirmedRate() int64 {
-	if m != nil {
-		return m.ConfirmedRate
-	}
-	return 0
 }
 
 func (m *ContractData) GetOrderFiles() *protos.LedgerFileMap {
@@ -229,27 +194,6 @@ func (m *FinancingInvoice) GetInvoice() *Invoice {
 	return nil
 }
 
-func (m *FinancingInvoice) GetExpectAmount() int64 {
-	if m != nil {
-		return m.ExpectAmount
-	}
-	return 0
-}
-
-func (m *FinancingInvoice) GetConfirmAmount() int64 {
-	if m != nil {
-		return m.ConfirmAmount
-	}
-	return 0
-}
-
-func (m *FinancingInvoice) GetConfirmRate() int64 {
-	if m != nil {
-		return m.ConfirmRate
-	}
-	return 0
-}
-
 func (m *FinancingInvoice) GetConfirmPayTime() *google_protobuf.Timestamp {
 	if m != nil {
 		return m.ConfirmPayTime
@@ -271,20 +215,6 @@ func (m *FinancingInvoice) GetConfirmEndTime() *google_protobuf.Timestamp {
 	return nil
 }
 
-func (m *FinancingInvoice) GetConfirmRateDesc() string {
-	if m != nil {
-		return m.ConfirmRateDesc
-	}
-	return ""
-}
-
-func (m *FinancingInvoice) GetConfirmUrgeReturnDesc() string {
-	if m != nil {
-		return m.ConfirmUrgeReturnDesc
-	}
-	return ""
-}
-
 // 供应商发票信息
 type Invoice struct {
 	InvoiceNo     string                     `protobuf:"bytes,1,opt,name=invoice_no,json=invoiceNo" json:"invoice_no,omitempty"`
@@ -301,20 +231,6 @@ func (m *Invoice) Reset()                    { *m = Invoice{} }
 func (m *Invoice) String() string            { return proto.CompactTextString(m) }
 func (*Invoice) ProtoMessage()               {}
 func (*Invoice) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{3} }
-
-func (m *Invoice) GetInvoiceNo() string {
-	if m != nil {
-		return m.InvoiceNo
-	}
-	return ""
-}
-
-func (m *Invoice) GetInvoiceAmount() int64 {
-	if m != nil {
-		return m.InvoiceAmount
-	}
-	return 0
-}
 
 func (m *Invoice) GetInvoiceTime() *google_protobuf.Timestamp {
 	if m != nil {
@@ -335,13 +251,6 @@ func (m *Invoice) GetEnterprise() *protos.AppVo {
 		return m.Enterprise
 	}
 	return nil
-}
-
-func (m *Invoice) GetRemark() string {
-	if m != nil {
-		return m.Remark
-	}
-	return ""
 }
 
 func (m *Invoice) GetNotes() []*protos.LedgerFile {
@@ -378,48 +287,6 @@ func (m *ContractMoneyCount) String() string            { return proto.CompactTe
 func (*ContractMoneyCount) ProtoMessage()               {}
 func (*ContractMoneyCount) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{4} }
 
-func (m *ContractMoneyCount) GetNeedPayAmount() int64 {
-	if m != nil {
-		return m.NeedPayAmount
-	}
-	return 0
-}
-
-func (m *ContractMoneyCount) GetExpensesAmount() int64 {
-	if m != nil {
-		return m.ExpensesAmount
-	}
-	return 0
-}
-
-func (m *ContractMoneyCount) GetIncomeAmount() int64 {
-	if m != nil {
-		return m.IncomeAmount
-	}
-	return 0
-}
-
-func (m *ContractMoneyCount) GetNeedPaybackLoanAmount() int64 {
-	if m != nil {
-		return m.NeedPaybackLoanAmount
-	}
-	return 0
-}
-
-func (m *ContractMoneyCount) GetPaybackExpensesAmount() int64 {
-	if m != nil {
-		return m.PaybackExpensesAmount
-	}
-	return 0
-}
-
-func (m *ContractMoneyCount) GetPaybackIncomeAmount() int64 {
-	if m != nil {
-		return m.PaybackIncomeAmount
-	}
-	return 0
-}
-
 func (m *ContractMoneyCount) GetTransactionDetails() []*ContractTransactionDetail {
 	if m != nil {
 		return m.TransactionDetails
@@ -453,13 +320,6 @@ func (m *ContractTransactionDetail) GetExpenses() *protos.AppVo {
 	return nil
 }
 
-func (m *ContractTransactionDetail) GetExpensesAmount() int64 {
-	if m != nil {
-		return m.ExpensesAmount
-	}
-	return 0
-}
-
 func (m *ContractTransactionDetail) GetExpensesAccount() *protos.OrgBankAccount {
 	if m != nil {
 		return m.ExpensesAccount
@@ -481,13 +341,6 @@ func (m *ContractTransactionDetail) GetIncomeAccount() *protos.OrgBankAccount {
 	return nil
 }
 
-func (m *ContractTransactionDetail) GetTansactionRemark() string {
-	if m != nil {
-		return m.TansactionRemark
-	}
-	return ""
-}
-
 func (m *ContractTransactionDetail) GetTansactionNotes() []*protos.LedgerFile {
 	if m != nil {
 		return m.TansactionNotes
@@ -500,13 +353,6 @@ func (m *ContractTransactionDetail) GetTansactionTime() *google_protobuf.Timesta
 		return m.TansactionTime
 	}
 	return nil
-}
-
-func (m *ContractTransactionDetail) GetIncomConfirm() bool {
-	if m != nil {
-		return m.IncomConfirm
-	}
-	return false
 }
 
 func (m *ContractTransactionDetail) GetOperateInfo() *protos.OperateInfo {
@@ -575,13 +421,6 @@ func (m *BankLoanContract) Reset()                    { *m = BankLoanContract{} 
 func (m *BankLoanContract) String() string            { return proto.CompactTextString(m) }
 func (*BankLoanContract) ProtoMessage()               {}
 func (*BankLoanContract) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{7} }
-
-func (m *BankLoanContract) GetOrderNo() string {
-	if m != nil {
-		return m.OrderNo
-	}
-	return ""
-}
 
 func (m *BankLoanContract) GetFactoring() *protos.AppVo {
 	if m != nil {
@@ -655,60 +494,11 @@ func (m *FinancingContractReview) String() string            { return proto.Comp
 func (*FinancingContractReview) ProtoMessage()               {}
 func (*FinancingContractReview) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{8} }
 
-func (m *FinancingContractReview) GetOrderNo() string {
-	if m != nil {
-		return m.OrderNo
-	}
-	return ""
-}
-
-func (m *FinancingContractReview) GetOrderAmount() int64 {
-	if m != nil {
-		return m.OrderAmount
-	}
-	return 0
-}
-
-func (m *FinancingContractReview) GetFinancingPeriod() int32 {
-	if m != nil {
-		return m.FinancingPeriod
-	}
-	return 0
-}
-
 func (m *FinancingContractReview) GetOrderExpiredTime() *google_protobuf.Timestamp {
 	if m != nil {
 		return m.OrderExpiredTime
 	}
 	return nil
-}
-
-func (m *FinancingContractReview) GetExpectAmount() int64 {
-	if m != nil {
-		return m.ExpectAmount
-	}
-	return 0
-}
-
-func (m *FinancingContractReview) GetExpectRate() int64 {
-	if m != nil {
-		return m.ExpectRate
-	}
-	return 0
-}
-
-func (m *FinancingContractReview) GetConfirmAmount() int64 {
-	if m != nil {
-		return m.ConfirmAmount
-	}
-	return 0
-}
-
-func (m *FinancingContractReview) GetConfirmRate() int64 {
-	if m != nil {
-		return m.ConfirmRate
-	}
-	return 0
 }
 
 func (m *FinancingContractReview) GetSupplier() *protos.AppVo {
@@ -788,46 +578,11 @@ func (m *ContractCheckFlowData) GetCheckApp() *protos.AppVo {
 	return nil
 }
 
-func (m *ContractCheckFlowData) GetCheckUserName() string {
-	if m != nil {
-		return m.CheckUserName
-	}
-	return ""
-}
-
-func (m *ContractCheckFlowData) GetCheckUserMobile() string {
-	if m != nil {
-		return m.CheckUserMobile
-	}
-	return ""
-}
-
 func (m *ContractCheckFlowData) GetCheckTime() *google_protobuf.Timestamp {
 	if m != nil {
 		return m.CheckTime
 	}
 	return nil
-}
-
-func (m *ContractCheckFlowData) GetCheckIp() string {
-	if m != nil {
-		return m.CheckIp
-	}
-	return ""
-}
-
-func (m *ContractCheckFlowData) GetStatus() string {
-	if m != nil {
-		return m.Status
-	}
-	return ""
-}
-
-func (m *ContractCheckFlowData) GetRemark() string {
-	if m != nil {
-		return m.Remark
-	}
-	return ""
 }
 
 // 具体阶段的检查确认项
@@ -872,20 +627,6 @@ func (m *CheckData) GetOrg() *protos.AppVo {
 		return m.Org
 	}
 	return nil
-}
-
-func (m *CheckData) GetTitle() string {
-	if m != nil {
-		return m.Title
-	}
-	return ""
-}
-
-func (m *CheckData) GetValue() string {
-	if m != nil {
-		return m.Value
-	}
-	return ""
 }
 
 func init() {

@@ -55,27 +55,6 @@ func (m *ChainCodeResponse) String() string            { return proto.CompactTex
 func (*ChainCodeResponse) ProtoMessage()               {}
 func (*ChainCodeResponse) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
 
-func (m *ChainCodeResponse) GetCode() int32 {
-	if m != nil {
-		return m.Code
-	}
-	return 0
-}
-
-func (m *ChainCodeResponse) GetMessage() string {
-	if m != nil {
-		return m.Message
-	}
-	return ""
-}
-
-func (m *ChainCodeResponse) GetResult() []byte {
-	if m != nil {
-		return m.Result
-	}
-	return nil
-}
-
 // 机构摘要
 type AppVo struct {
 	AppId   string `protobuf:"bytes,1,opt,name=appId" json:"appId,omitempty"`
@@ -87,27 +66,6 @@ func (m *AppVo) Reset()                    { *m = AppVo{} }
 func (m *AppVo) String() string            { return proto.CompactTextString(m) }
 func (*AppVo) ProtoMessage()               {}
 func (*AppVo) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{1} }
-
-func (m *AppVo) GetAppId() string {
-	if m != nil {
-		return m.AppId
-	}
-	return ""
-}
-
-func (m *AppVo) GetAppName() string {
-	if m != nil {
-		return m.AppName
-	}
-	return ""
-}
-
-func (m *AppVo) GetType() string {
-	if m != nil {
-		return m.Type
-	}
-	return ""
-}
 
 // 数据操作信息
 type OperateInfo struct {
@@ -140,13 +98,6 @@ func (m *OperateInfo) GetCreateTime() *google_protobuf.Timestamp {
 	return nil
 }
 
-func (m *OperateInfo) GetCreaterIp() string {
-	if m != nil {
-		return m.CreaterIp
-	}
-	return ""
-}
-
 func (m *OperateInfo) GetLastUser() *AppVo {
 	if m != nil {
 		return m.LastUser
@@ -159,13 +110,6 @@ func (m *OperateInfo) GetLastTime() *google_protobuf.Timestamp {
 		return m.LastTime
 	}
 	return nil
-}
-
-func (m *OperateInfo) GetLastIp() string {
-	if m != nil {
-		return m.LastIp
-	}
-	return ""
 }
 
 // 账本链上文件
@@ -184,55 +128,6 @@ func (m *LedgerFile) Reset()                    { *m = LedgerFile{} }
 func (m *LedgerFile) String() string            { return proto.CompactTextString(m) }
 func (*LedgerFile) ProtoMessage()               {}
 func (*LedgerFile) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{3} }
-
-func (m *LedgerFile) GetUrl() string {
-	if m != nil {
-		return m.Url
-	}
-	return ""
-}
-
-func (m *LedgerFile) GetData() []byte {
-	if m != nil {
-		return m.Data
-	}
-	return nil
-}
-
-func (m *LedgerFile) GetSha256() string {
-	if m != nil {
-		return m.Sha256
-	}
-	return ""
-}
-
-func (m *LedgerFile) GetName() string {
-	if m != nil {
-		return m.Name
-	}
-	return ""
-}
-
-func (m *LedgerFile) GetSize() int64 {
-	if m != nil {
-		return m.Size
-	}
-	return 0
-}
-
-func (m *LedgerFile) GetType() string {
-	if m != nil {
-		return m.Type
-	}
-	return ""
-}
-
-func (m *LedgerFile) GetIsEncrypted() bool {
-	if m != nil {
-		return m.IsEncrypted
-	}
-	return false
-}
 
 func (m *LedgerFile) GetOperateInfo() *OperateInfo {
 	if m != nil {
@@ -269,27 +164,6 @@ func (m *OrgBankAccount) Reset()                    { *m = OrgBankAccount{} }
 func (m *OrgBankAccount) String() string            { return proto.CompactTextString(m) }
 func (*OrgBankAccount) ProtoMessage()               {}
 func (*OrgBankAccount) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{5} }
-
-func (m *OrgBankAccount) GetAccount() string {
-	if m != nil {
-		return m.Account
-	}
-	return ""
-}
-
-func (m *OrgBankAccount) GetBankName() string {
-	if m != nil {
-		return m.BankName
-	}
-	return ""
-}
-
-func (m *OrgBankAccount) GetBankBranch() string {
-	if m != nil {
-		return m.BankBranch
-	}
-	return ""
-}
 
 func init() {
 	proto.RegisterType((*ChainCodeResponse)(nil), "protos.ChainCodeResponse")

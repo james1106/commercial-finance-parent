@@ -3,7 +3,7 @@
 ## 设置项目的基路径
 PROJECT_BASE_PATH=$1
 if [ -z "$1" ]; then
-	PROJECT_BASE_PATH="/Users/liuzhudong/go/src/github.com/hyperledger/commercial-finance"
+	PROJECT_BASE_PATH="/Users/liuzhudong/06git/xn/commercial-finance"
 	echo "set project base path to default: "${PROJECT_BASE_PATH}
 fi
 

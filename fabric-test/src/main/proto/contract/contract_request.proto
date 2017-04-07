@@ -22,7 +22,16 @@ message ContractAddCheckLogRequest {
 }
 
 // 合约查询请求参数
-message ContractQueryRequest{
+message ContractQueryRequest {
     string no = 1; // 合约编号
 
+    // 查询类型
+    enum QueryType {
+        ALL = 0;
+        FILE = 1;
+
+    }
+
+    QueryType type = 2;
+    string fileKey = 3; // 查询文件的key
 }

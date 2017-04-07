@@ -2,26 +2,14 @@ package util
 
 import (
 	"errors"
+	"fmt"
 	"github.com/golang/protobuf/proto"
-	"github.com/hyperledger/commercial-finance/fabric-test/demo/src/github.com/xncc/protos/common"
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	pb "github.com/hyperledger/fabric/protos/peer"
-	"log"
+	"github.com/xncc/protos/common"
 )
 
-type ResponseCode struct {
-	code    int32
-	message string
-}
-
 // 状态编码定义:
-// 0 = 成功
-// !0 = 失败错误码定义
-// 	1000 = 参数格式错误
-//      1001 = 未知方法错误
-//      1002 = protobuf数据转换错误
-//      4004 = 数据不存在错误
-//      5000 = cc服务执行错误
 const (
 	CODE_OK                   = 0    // 成功
 	CODE_UNAUTHORIZED         = 999  // 用户未授权
@@ -57,15 +45,25 @@ func GetActionAndParameters(args [][]byte) (action string, params [][]byte, err 
 
 // 返回数据封装（返回结果需要统一格式）
 func Response(code int32, message string, data []byte) pb.Response {
-	// 组装方法返回数据
 	result := &common.ChainCodeResponse{
 		Code:    code,
 		Message: message,
 		Result:  data,
 	}
+
+	return ResponseOut(result)
+}
+
+// 返回数据封装（返回结果需要统一格式）
+func ResponseOut(result *common.ChainCodeResponse) pb.Response {
+
+	fmt.Println("返回结果:")
+	fmt.Printf("code = %d message = %s \n", result.Code, result.Message)
+	fmt.Println(result.String())
+
 	out, err := proto.Marshal(result)
 	if err != nil {
-		log.Fatalln("Failed to encode address book:", err)
+		return shim.Error("组装返回结果数据序列化成protobuf数据错误:" + err.Error())
 	}
 
 	return shim.Success(out)

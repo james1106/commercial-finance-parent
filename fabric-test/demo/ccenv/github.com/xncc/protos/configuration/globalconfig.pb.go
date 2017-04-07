@@ -25,20 +25,6 @@ func (m *APPConfigBrief) String() string            { return proto.CompactTextSt
 func (*APPConfigBrief) ProtoMessage()               {}
 func (*APPConfigBrief) Descriptor() ([]byte, []int) { return fileDescriptor2, []int{0} }
 
-func (m *APPConfigBrief) GetAppId() string {
-	if m != nil {
-		return m.AppId
-	}
-	return ""
-}
-
-func (m *APPConfigBrief) GetAppName() string {
-	if m != nil {
-		return m.AppName
-	}
-	return ""
-}
-
 func init() {
 	proto.RegisterType((*APPConfigBrief)(nil), "protos.APPConfigBrief")
 }

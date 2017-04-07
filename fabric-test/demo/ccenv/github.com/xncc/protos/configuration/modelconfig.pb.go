@@ -51,102 +51,11 @@ func (m *CommercialOrg) String() string            { return proto.CompactTextStr
 func (*CommercialOrg) ProtoMessage()               {}
 func (*CommercialOrg) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{0} }
 
-func (m *CommercialOrg) GetAppId() string {
-	if m != nil {
-		return m.AppId
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetAppName() string {
-	if m != nil {
-		return m.AppName
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetAppType() string {
-	if m != nil {
-		return m.AppType
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetOrgCode() string {
-	if m != nil {
-		return m.OrgCode
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetRegistedNo() string {
-	if m != nil {
-		return m.RegistedNo
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetTaxRegistrationCertificateNo() string {
-	if m != nil {
-		return m.TaxRegistrationCertificateNo
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetOrgCorporate() string {
-	if m != nil {
-		return m.OrgCorporate
-	}
-	return ""
-}
-
 func (m *CommercialOrg) GetContactPerson() []*CommercialOrg_OrgContactPerson {
 	if m != nil {
 		return m.ContactPerson
 	}
 	return nil
-}
-
-func (m *CommercialOrg) GetIntroduction() string {
-	if m != nil {
-		return m.Introduction
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetRegisterAddress() string {
-	if m != nil {
-		return m.RegisterAddress
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetCurrentAddress() string {
-	if m != nil {
-		return m.CurrentAddress
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetTelephone() string {
-	if m != nil {
-		return m.Telephone
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetEmail() string {
-	if m != nil {
-		return m.Email
-	}
-	return ""
-}
-
-func (m *CommercialOrg) GetOrgCategory() string {
-	if m != nil {
-		return m.OrgCategory
-	}
-	return ""
 }
 
 func (m *CommercialOrg) GetSettlementAccount() *protos.OrgBankAccount {
@@ -191,27 +100,6 @@ func (*CommercialOrg_OrgContactPerson) Descriptor() ([]byte, []int) {
 	return fileDescriptor3, []int{0, 0}
 }
 
-func (m *CommercialOrg_OrgContactPerson) GetName() string {
-	if m != nil {
-		return m.Name
-	}
-	return ""
-}
-
-func (m *CommercialOrg_OrgContactPerson) GetTelephone() string {
-	if m != nil {
-		return m.Telephone
-	}
-	return ""
-}
-
-func (m *CommercialOrg_OrgContactPerson) GetEmail() string {
-	if m != nil {
-		return m.Email
-	}
-	return ""
-}
-
 // 三方机构关系上链数据定义
 type FinancingRelation struct {
 	LedgerId string `protobuf:"bytes,1,opt,name=ledger_id,json=ledgerId" json:"ledger_id,omitempty"`
@@ -235,13 +123,6 @@ func (m *FinancingRelation) String() string            { return proto.CompactTex
 func (*FinancingRelation) ProtoMessage()               {}
 func (*FinancingRelation) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{1} }
 
-func (m *FinancingRelation) GetLedgerId() string {
-	if m != nil {
-		return m.LedgerId
-	}
-	return ""
-}
-
 func (m *FinancingRelation) GetSupplier() *CommercialOrg {
 	if m != nil {
 		return m.Supplier
@@ -261,13 +142,6 @@ func (m *FinancingRelation) GetFactoring() *CommercialOrg {
 		return m.Factoring
 	}
 	return nil
-}
-
-func (m *FinancingRelation) GetRate() int64 {
-	if m != nil {
-		return m.Rate
-	}
-	return 0
 }
 
 func (m *FinancingRelation) GetOrderFilesEncrypt() []*protos.LedgerFile {
@@ -325,13 +199,6 @@ func (m *BankLoanRelation) String() string            { return proto.CompactText
 func (*BankLoanRelation) ProtoMessage()               {}
 func (*BankLoanRelation) Descriptor() ([]byte, []int) { return fileDescriptor3, []int{3} }
 
-func (m *BankLoanRelation) GetLedgerId() string {
-	if m != nil {
-		return m.LedgerId
-	}
-	return ""
-}
-
 func (m *BankLoanRelation) GetFactoring() *CommercialOrg {
 	if m != nil {
 		return m.Factoring
@@ -344,13 +211,6 @@ func (m *BankLoanRelation) GetBankInfo() *CommercialOrg {
 		return m.BankInfo
 	}
 	return nil
-}
-
-func (m *BankLoanRelation) GetRate() int64 {
-	if m != nil {
-		return m.Rate
-	}
-	return 0
 }
 
 func (m *BankLoanRelation) GetOrderFiles() *protos.LedgerFileMap {

@@ -125,17 +125,33 @@ public class ChainCodeDemoTest {
         String userPasswd = "adminpw";
 
 
-        User admin = demo.getUser(userName, userPasswd, mspid, caClient);
-        System.out.println(admin);
+//        User admin = demo.getUser(userName, userPasswd, mspid, caClient);
+//        System.out.println(admin);
 
-        userName = "wkxxsaas";
-        String affiliation = "org1";
-        userPasswd = demo.registerUser(userName, affiliation, admin, caClient);
-        System.out.println(userPasswd);
+        userName = "wkxxsaas6";
+//        String affiliation = "org1";
+//        userPasswd = demo.registerUser(userName, affiliation, admin, caClient);
+//        System.out.println(userPasswd);
 
-//        userPasswd = "ZysMlHRrlaAv";
+        userPasswd = "gzyDWrzMLmzW";
         User user1 = demo.getUser(userName, userPasswd, mspid, caClient);
+
         System.out.println(user1);
+
+//        User user2 = new CaUser(userName);
+//        user2.
+
+//        caClient.reenroll(user1);
+//        System.out.println(user1);
+
+//        Thread.sleep(5000L);
+//
+//        caClient.revoke(admin, user1.getEnrollment(), 1);
+//        System.out.println(user1);
+//
+//        Thread.sleep(5000L);
+//        caClient.reenroll(user1);
+//        System.out.println(user1);
 
 
     }
@@ -149,7 +165,12 @@ public class ChainCodeDemoTest {
         client.setMemberServices(caClient);
         logger.info("ca service init OK ............");
 
-        client.setUserContext(demo.getUser("admin", "adminpw", orgConfig.getMspid(), caClient));
+        String userName = "wkxxsaas6";
+        String userPasswd = "gzyDWrzMLmzW";
+
+        User user = demo.getUser(userName, userPasswd, orgConfig.getMspid(), caClient);
+        out("user info:\n %s \n========================", user);
+        client.setUserContext(user);
         logger.info("set user context OK .............");
 
         return client;

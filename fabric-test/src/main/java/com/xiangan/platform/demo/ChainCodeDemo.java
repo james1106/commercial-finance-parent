@@ -12,6 +12,7 @@ import org.hyperledger.fabric.sdk.EventHub;
 import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric.sdk.InstallProposalRequest;
 import org.hyperledger.fabric.sdk.InstantiateProposalRequest;
+import org.hyperledger.fabric.sdk.MemberServices;
 import org.hyperledger.fabric.sdk.Orderer;
 import org.hyperledger.fabric.sdk.Peer;
 import org.hyperledger.fabric.sdk.ProposalResponse;
@@ -22,7 +23,6 @@ import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
 import org.hyperledger.fabric.sdk.exception.ProposalException;
 import org.hyperledger.fabric.sdk.exception.TransactionEventException;
 import org.hyperledger.fabric.sdk.exception.TransactionException;
-import org.hyperledger.fabric_ca.sdk.HFCAClient;
 import org.hyperledger.fabric_ca.sdk.RegistrationRequest;
 import org.hyperledger.fabric_ca.sdk.exception.EnrollmentException;
 
@@ -58,9 +58,9 @@ public class ChainCodeDemo {
     public User getUser(String name,
                         String passwd,
                         String mspid,
-                        HFCAClient caClient) throws EnrollmentException, InvalidArgumentException {
+                        MemberServices memberServices) throws EnrollmentException, InvalidArgumentException {
         CaUser user = new CaUser(name);
-        user.setEnrollment(caClient.enroll(name, passwd));
+        user.setEnrollment(memberServices.enroll(name, passwd));
         user.setMSPID(mspid);
         return user;
     }
@@ -71,16 +71,16 @@ public class ChainCodeDemo {
      * @param name
      * @param affiliation
      * @param registrar
-     * @param caClient
+     * @param memberServices
      * @return
      * @throws Exception
      */
     public String registerUser(String name,
                                String affiliation,
                                User registrar,
-                               HFCAClient caClient) throws Exception {
+                               MemberServices memberServices) throws Exception {
         RegistrationRequest rr = new RegistrationRequest(name, affiliation);
-        return caClient.register(rr, registrar);
+        return memberServices.register(rr, registrar);
     }
 
     /**
