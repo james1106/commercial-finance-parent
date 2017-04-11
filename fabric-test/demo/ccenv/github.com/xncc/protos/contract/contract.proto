@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 import "contract/contract_data.proto";
 import "contract/contract_status.proto";
@@ -19,8 +18,8 @@ message FinancingContract {
     AppVo enterprise = 3; // 核心企业信息
     AppVo factoring = 4; // 保理公司信息
 
-    ContractData contract_data = 5; // 订单数据
-    repeated FinancingInvoice invoices = 6; // 供应商提供的发票数据
+    ContractFormData contract_data = 5; // 订单数据
+    repeated Invoice invoices = 6; // 供应商提供的发票数据
     ContractMoneyCount money_count = 8; // 订单金额汇总
 
     ContractStatus contract_status = 9; // 订单状态
@@ -29,29 +28,44 @@ message FinancingContract {
 }
 
 // 一张发票的融资信息
-message FinancingInvoice {
-    Invoice invoice = 1; // 供应商发票信息
-    int64 expect_amount = 2; // 申请融资金额
-    int64 confirm_amount = 3; // 审核确认可融资金额
-    int64 confirm_rate = 4; // 融资利率
-    google.protobuf.Timestamp confirm_pay_time = 5; // 保理融资发放日期
-    google.protobuf.Timestamp confirm_return_time = 6; // 应收账款还款日期
-    google.protobuf.Timestamp confirm_end_time = 7; // 保理融资到期日期
-    string confirm_rate_desc = 8; // 利息计收方式
-    string confirm_urge_return_desc = 9; // 应收账款催收方式
-}
-
-// 供应商发票信息
 message Invoice {
+    // 发票基本信息
     string invoice_no = 1; // 发票编号
     int64 invoice_amount = 2; // 应收账款发票金额
-    google.protobuf.Timestamp invoice_time = 3; // 开票日期
-    AppVo supplier = 4; // 销售方
-    AppVo enterprise = 5; // 购买方
-    string remark = 6; // 备注
-    repeated LedgerFile notes = 7; // 发票扫描件(图)
-    OperateInfo operate_info = 8; // 数据操作信息
+    int64 invoice_time = 3; // 开票日期(unix时间戳)
+
+    // 发票关联机构信息
+    message InvoiceCommercial {
+        string name = 1; // 名称
+        string key = 2; // 机构唯一识别码
+        string address = 3; // 地址
+        string phone = 4; // 电话
+        string bankName = 5; // 开户银行名称(具体到支行)
+        string bankAccount = 6; // 开户银行账户
+
+    }
+
+    InvoiceCommercial seller = 4; // 销售方
+    InvoiceCommercial purchaser = 5; // 购买方
+    string invoice_remark = 6; // 发票备注备注
+    repeated bytes invoice_images = 7; // 发票扫描件(图)
+
+    // 供应商维护字段
+    int64 expe_loan_amount = 8; // 期望融资金额
+    int64 expe_loan_rate = 9; // 期望融资利率
+
+    // 保理维护字段
+    int64 confirm_loan_amount = 10; // 审核确认可融资金额
+    int64 confirm_loan_rate = 11; // 确认融资利率
+    int64 confirm_pay_time = 12; // 保理融资发放日期(unix时间戳)
+    int64 confirm_return_time = 13; // 应收账款还款日期(unix时间戳)
+    int64 confirm_end_time = 14; // 保理融资到期日期(unix时间戳)
+    string confirm_rate_desc = 15; // 利息计收方式
+    string confirm_urge_return_desc = 16; // 应收账款催收方式
+
+    OperateInfo operate_info = 17; // 数据操作信息
 }
+
 
 
 

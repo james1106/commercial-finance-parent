@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 import "contract/contract_data.proto";
 import "contract/contract_status.proto";
@@ -19,7 +18,7 @@ message BankLoanContract {
     AppVo factoring = 2; // 保理公司信息
     AppVo bank_info = 3; // 银行信息
 
-    ContractData contract_data = 4; // 订单数据
+    ContractFormData contract_data = 4; // 订单数据
     repeated FinancingContractReview financing_contract_reviews = 5; // 质押的供应商到保理融资申请订单
     ContractMoneyCount money_count = 6; // 订单金额汇总
 
@@ -33,7 +32,7 @@ message FinancingContractReview {
     string financing_order_no = 1; // 质押的融资订单编号
     int64 order_amount = 2; // 质押的融资订单融资总金额
     int32 financing_period = 3; // 融资期限(天)
-    google.protobuf.Timestamp order_expired_time = 4; // 质押的融资订单的过期时间
+    int64 order_expired_time = 4; // 质押的融资订单的过期时间(unix时间戳)
 
     // 保理申请的融资金额
     int64 expect_amount = 5; // 保理申请的融资金额
@@ -45,6 +44,6 @@ message FinancingContractReview {
     AppVo supplier = 9; // 质押的融资订单的供应商
     AppVo enterprise = 10; // 质押的融资订单的核心企业
     AppVo bank_factor = 11; // 质押的融资订单的保理
-    google.protobuf.Timestamp confirm_expired_time = 12; // 银行审批确认的融资过期时间
+    int64 confirm_expired_time = 12; // 银行审批确认的融资过期时间(unix时间戳)
 
 }

@@ -62,6 +62,15 @@ public final class ContractRequest {
      * <code>optional bytes contractData = 3;</code>
      */
     com.google.protobuf.ByteString getContractData();
+
+    /**
+     * <pre>
+     * 合约文件
+     * </pre>
+     *
+     * <code>optional bytes contractFile = 4;</code>
+     */
+    com.google.protobuf.ByteString getContractFile();
   }
   /**
    * <pre>
@@ -82,6 +91,7 @@ public final class ContractRequest {
       action_ = "";
       no_ = "";
       contractData_ = com.google.protobuf.ByteString.EMPTY;
+      contractFile_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -124,6 +134,11 @@ public final class ContractRequest {
             case 26: {
 
               contractData_ = input.readBytes();
+              break;
+            }
+            case 34: {
+
+              contractFile_ = input.readBytes();
               break;
             }
           }
@@ -246,6 +261,19 @@ public final class ContractRequest {
       return contractData_;
     }
 
+    public static final int CONTRACTFILE_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString contractFile_;
+    /**
+     * <pre>
+     * 合约文件
+     * </pre>
+     *
+     * <code>optional bytes contractFile = 4;</code>
+     */
+    public com.google.protobuf.ByteString getContractFile() {
+      return contractFile_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -267,6 +295,9 @@ public final class ContractRequest {
       if (!contractData_.isEmpty()) {
         output.writeBytes(3, contractData_);
       }
+      if (!contractFile_.isEmpty()) {
+        output.writeBytes(4, contractFile_);
+      }
     }
 
     public int getSerializedSize() {
@@ -283,6 +314,10 @@ public final class ContractRequest {
       if (!contractData_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, contractData_);
+      }
+      if (!contractFile_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, contractFile_);
       }
       memoizedSize = size;
       return size;
@@ -306,6 +341,8 @@ public final class ContractRequest {
           .equals(other.getNo());
       result = result && getContractData()
           .equals(other.getContractData());
+      result = result && getContractFile()
+          .equals(other.getContractFile());
       return result;
     }
 
@@ -322,6 +359,8 @@ public final class ContractRequest {
       hash = (53 * hash) + getNo().hashCode();
       hash = (37 * hash) + CONTRACTDATA_FIELD_NUMBER;
       hash = (53 * hash) + getContractData().hashCode();
+      hash = (37 * hash) + CONTRACTFILE_FIELD_NUMBER;
+      hash = (53 * hash) + getContractFile().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -450,6 +489,8 @@ public final class ContractRequest {
 
         contractData_ = com.google.protobuf.ByteString.EMPTY;
 
+        contractFile_ = com.google.protobuf.ByteString.EMPTY;
+
         return this;
       }
 
@@ -475,6 +516,7 @@ public final class ContractRequest {
         result.action_ = action_;
         result.no_ = no_;
         result.contractData_ = contractData_;
+        result.contractFile_ = contractFile_;
         onBuilt();
         return result;
       }
@@ -526,6 +568,9 @@ public final class ContractRequest {
         }
         if (other.getContractData() != com.google.protobuf.ByteString.EMPTY) {
           setContractData(other.getContractData());
+        }
+        if (other.getContractFile() != com.google.protobuf.ByteString.EMPTY) {
+          setContractFile(other.getContractFile());
         }
         onChanged();
         return this;
@@ -771,6 +816,47 @@ public final class ContractRequest {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.ByteString contractFile_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * 合约文件
+       * </pre>
+       *
+       * <code>optional bytes contractFile = 4;</code>
+       */
+      public com.google.protobuf.ByteString getContractFile() {
+        return contractFile_;
+      }
+      /**
+       * <pre>
+       * 合约文件
+       * </pre>
+       *
+       * <code>optional bytes contractFile = 4;</code>
+       */
+      public Builder setContractFile(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contractFile_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 合约文件
+       * </pre>
+       *
+       * <code>optional bytes contractFile = 4;</code>
+       */
+      public Builder clearContractFile() {
+        
+        contractFile_ = getDefaultInstance().getContractFile();
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -815,6 +901,1516 @@ public final class ContractRequest {
     }
 
     public com.xiangna.www.protos.contract.ContractRequest.ContractExcuteRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FileAddRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.FileAddRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 合约编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    java.lang.String getNo();
+    /**
+     * <pre>
+     * 合约编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNoBytes();
+
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    java.util.List<com.xiangna.www.protos.common.Common.LedgerFileData> 
+        getFileDatasList();
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFileData getFileDatas(int index);
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    int getFileDatasCount();
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder> 
+        getFileDatasOrBuilderList();
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder getFileDatasOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> 
+        getFileInfosList();
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFile getFileInfos(int index);
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    int getFileInfosCount();
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+        getFileInfosOrBuilderList();
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFileInfosOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 执行文件新增请求参数
+   * </pre>
+   *
+   * Protobuf type {@code protos.FileAddRequest}
+   */
+  public  static final class FileAddRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protos.FileAddRequest)
+      FileAddRequestOrBuilder {
+    // Use FileAddRequest.newBuilder() to construct.
+    private FileAddRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FileAddRequest() {
+      no_ = "";
+      fileDatas_ = java.util.Collections.emptyList();
+      fileInfos_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private FileAddRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              no_ = s;
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                fileDatas_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFileData>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              fileDatas_.add(
+                  input.readMessage(com.xiangna.www.protos.common.Common.LedgerFileData.parser(), extensionRegistry));
+              break;
+            }
+            case 26: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                fileInfos_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              fileInfos_.add(
+                  input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          fileDatas_ = java.util.Collections.unmodifiableList(fileDatas_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          fileInfos_ = java.util.Collections.unmodifiableList(fileInfos_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_FileAddRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_FileAddRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.xiangna.www.protos.contract.ContractRequest.FileAddRequest.class, com.xiangna.www.protos.contract.ContractRequest.FileAddRequest.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NO_FIELD_NUMBER = 1;
+    private volatile java.lang.Object no_;
+    /**
+     * <pre>
+     * 合约编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    public java.lang.String getNo() {
+      java.lang.Object ref = no_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        no_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 合约编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNoBytes() {
+      java.lang.Object ref = no_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        no_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FILEDATAS_FIELD_NUMBER = 2;
+    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFileData> fileDatas_;
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFileData> getFileDatasList() {
+      return fileDatas_;
+    }
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder> 
+        getFileDatasOrBuilderList() {
+      return fileDatas_;
+    }
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    public int getFileDatasCount() {
+      return fileDatas_.size();
+    }
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFileData getFileDatas(int index) {
+      return fileDatas_.get(index);
+    }
+    /**
+     * <pre>
+     * 文件流
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder getFileDatasOrBuilder(
+        int index) {
+      return fileDatas_.get(index);
+    }
+
+    public static final int FILEINFOS_FIELD_NUMBER = 3;
+    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> fileInfos_;
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFileInfosList() {
+      return fileInfos_;
+    }
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+        getFileInfosOrBuilderList() {
+      return fileInfos_;
+    }
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    public int getFileInfosCount() {
+      return fileInfos_.size();
+    }
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFile getFileInfos(int index) {
+      return fileInfos_.get(index);
+    }
+    /**
+     * <pre>
+     * 文件信息
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFileInfosOrBuilder(
+        int index) {
+      return fileInfos_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, no_);
+      }
+      for (int i = 0; i < fileDatas_.size(); i++) {
+        output.writeMessage(2, fileDatas_.get(i));
+      }
+      for (int i = 0; i < fileInfos_.size(); i++) {
+        output.writeMessage(3, fileInfos_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, no_);
+      }
+      for (int i = 0; i < fileDatas_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, fileDatas_.get(i));
+      }
+      for (int i = 0; i < fileInfos_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, fileInfos_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.xiangna.www.protos.contract.ContractRequest.FileAddRequest)) {
+        return super.equals(obj);
+      }
+      com.xiangna.www.protos.contract.ContractRequest.FileAddRequest other = (com.xiangna.www.protos.contract.ContractRequest.FileAddRequest) obj;
+
+      boolean result = true;
+      result = result && getNo()
+          .equals(other.getNo());
+      result = result && getFileDatasList()
+          .equals(other.getFileDatasList());
+      result = result && getFileInfosList()
+          .equals(other.getFileInfosList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + NO_FIELD_NUMBER;
+      hash = (53 * hash) + getNo().hashCode();
+      if (getFileDatasCount() > 0) {
+        hash = (37 * hash) + FILEDATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getFileDatasList().hashCode();
+      }
+      if (getFileInfosCount() > 0) {
+        hash = (37 * hash) + FILEINFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getFileInfosList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractRequest.FileAddRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 执行文件新增请求参数
+     * </pre>
+     *
+     * Protobuf type {@code protos.FileAddRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protos.FileAddRequest)
+        com.xiangna.www.protos.contract.ContractRequest.FileAddRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_FileAddRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_FileAddRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.xiangna.www.protos.contract.ContractRequest.FileAddRequest.class, com.xiangna.www.protos.contract.ContractRequest.FileAddRequest.Builder.class);
+      }
+
+      // Construct using com.xiangna.www.protos.contract.ContractRequest.FileAddRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getFileDatasFieldBuilder();
+          getFileInfosFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        no_ = "";
+
+        if (fileDatasBuilder_ == null) {
+          fileDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          fileDatasBuilder_.clear();
+        }
+        if (fileInfosBuilder_ == null) {
+          fileInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          fileInfosBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_FileAddRequest_descriptor;
+      }
+
+      public com.xiangna.www.protos.contract.ContractRequest.FileAddRequest getDefaultInstanceForType() {
+        return com.xiangna.www.protos.contract.ContractRequest.FileAddRequest.getDefaultInstance();
+      }
+
+      public com.xiangna.www.protos.contract.ContractRequest.FileAddRequest build() {
+        com.xiangna.www.protos.contract.ContractRequest.FileAddRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.xiangna.www.protos.contract.ContractRequest.FileAddRequest buildPartial() {
+        com.xiangna.www.protos.contract.ContractRequest.FileAddRequest result = new com.xiangna.www.protos.contract.ContractRequest.FileAddRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.no_ = no_;
+        if (fileDatasBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            fileDatas_ = java.util.Collections.unmodifiableList(fileDatas_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.fileDatas_ = fileDatas_;
+        } else {
+          result.fileDatas_ = fileDatasBuilder_.build();
+        }
+        if (fileInfosBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            fileInfos_ = java.util.Collections.unmodifiableList(fileInfos_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.fileInfos_ = fileInfos_;
+        } else {
+          result.fileInfos_ = fileInfosBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.xiangna.www.protos.contract.ContractRequest.FileAddRequest) {
+          return mergeFrom((com.xiangna.www.protos.contract.ContractRequest.FileAddRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractRequest.FileAddRequest other) {
+        if (other == com.xiangna.www.protos.contract.ContractRequest.FileAddRequest.getDefaultInstance()) return this;
+        if (!other.getNo().isEmpty()) {
+          no_ = other.no_;
+          onChanged();
+        }
+        if (fileDatasBuilder_ == null) {
+          if (!other.fileDatas_.isEmpty()) {
+            if (fileDatas_.isEmpty()) {
+              fileDatas_ = other.fileDatas_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureFileDatasIsMutable();
+              fileDatas_.addAll(other.fileDatas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.fileDatas_.isEmpty()) {
+            if (fileDatasBuilder_.isEmpty()) {
+              fileDatasBuilder_.dispose();
+              fileDatasBuilder_ = null;
+              fileDatas_ = other.fileDatas_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              fileDatasBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFileDatasFieldBuilder() : null;
+            } else {
+              fileDatasBuilder_.addAllMessages(other.fileDatas_);
+            }
+          }
+        }
+        if (fileInfosBuilder_ == null) {
+          if (!other.fileInfos_.isEmpty()) {
+            if (fileInfos_.isEmpty()) {
+              fileInfos_ = other.fileInfos_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureFileInfosIsMutable();
+              fileInfos_.addAll(other.fileInfos_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.fileInfos_.isEmpty()) {
+            if (fileInfosBuilder_.isEmpty()) {
+              fileInfosBuilder_.dispose();
+              fileInfosBuilder_ = null;
+              fileInfos_ = other.fileInfos_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              fileInfosBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFileInfosFieldBuilder() : null;
+            } else {
+              fileInfosBuilder_.addAllMessages(other.fileInfos_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.xiangna.www.protos.contract.ContractRequest.FileAddRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.xiangna.www.protos.contract.ContractRequest.FileAddRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object no_ = "";
+      /**
+       * <pre>
+       * 合约编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public java.lang.String getNo() {
+        java.lang.Object ref = no_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          no_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 合约编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNoBytes() {
+        java.lang.Object ref = no_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          no_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 合约编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public Builder setNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        no_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 合约编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public Builder clearNo() {
+        
+        no_ = getDefaultInstance().getNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 合约编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public Builder setNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        no_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFileData> fileDatas_ =
+        java.util.Collections.emptyList();
+      private void ensureFileDatasIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          fileDatas_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFileData>(fileDatas_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFileData, com.xiangna.www.protos.common.Common.LedgerFileData.Builder, com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder> fileDatasBuilder_;
+
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFileData> getFileDatasList() {
+        if (fileDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(fileDatas_);
+        } else {
+          return fileDatasBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public int getFileDatasCount() {
+        if (fileDatasBuilder_ == null) {
+          return fileDatas_.size();
+        } else {
+          return fileDatasBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileData getFileDatas(int index) {
+        if (fileDatasBuilder_ == null) {
+          return fileDatas_.get(index);
+        } else {
+          return fileDatasBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder setFileDatas(
+          int index, com.xiangna.www.protos.common.Common.LedgerFileData value) {
+        if (fileDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFileDatasIsMutable();
+          fileDatas_.set(index, value);
+          onChanged();
+        } else {
+          fileDatasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder setFileDatas(
+          int index, com.xiangna.www.protos.common.Common.LedgerFileData.Builder builderForValue) {
+        if (fileDatasBuilder_ == null) {
+          ensureFileDatasIsMutable();
+          fileDatas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          fileDatasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder addFileDatas(com.xiangna.www.protos.common.Common.LedgerFileData value) {
+        if (fileDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFileDatasIsMutable();
+          fileDatas_.add(value);
+          onChanged();
+        } else {
+          fileDatasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder addFileDatas(
+          int index, com.xiangna.www.protos.common.Common.LedgerFileData value) {
+        if (fileDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFileDatasIsMutable();
+          fileDatas_.add(index, value);
+          onChanged();
+        } else {
+          fileDatasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder addFileDatas(
+          com.xiangna.www.protos.common.Common.LedgerFileData.Builder builderForValue) {
+        if (fileDatasBuilder_ == null) {
+          ensureFileDatasIsMutable();
+          fileDatas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          fileDatasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder addFileDatas(
+          int index, com.xiangna.www.protos.common.Common.LedgerFileData.Builder builderForValue) {
+        if (fileDatasBuilder_ == null) {
+          ensureFileDatasIsMutable();
+          fileDatas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          fileDatasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder addAllFileDatas(
+          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.LedgerFileData> values) {
+        if (fileDatasBuilder_ == null) {
+          ensureFileDatasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, fileDatas_);
+          onChanged();
+        } else {
+          fileDatasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder clearFileDatas() {
+        if (fileDatasBuilder_ == null) {
+          fileDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          fileDatasBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public Builder removeFileDatas(int index) {
+        if (fileDatasBuilder_ == null) {
+          ensureFileDatasIsMutable();
+          fileDatas_.remove(index);
+          onChanged();
+        } else {
+          fileDatasBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileData.Builder getFileDatasBuilder(
+          int index) {
+        return getFileDatasFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder getFileDatasOrBuilder(
+          int index) {
+        if (fileDatasBuilder_ == null) {
+          return fileDatas_.get(index);  } else {
+          return fileDatasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder> 
+           getFileDatasOrBuilderList() {
+        if (fileDatasBuilder_ != null) {
+          return fileDatasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(fileDatas_);
+        }
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileData.Builder addFileDatasBuilder() {
+        return getFileDatasFieldBuilder().addBuilder(
+            com.xiangna.www.protos.common.Common.LedgerFileData.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileData.Builder addFileDatasBuilder(
+          int index) {
+        return getFileDatasFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.common.Common.LedgerFileData.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 文件流
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFileData fileDatas = 2;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFileData.Builder> 
+           getFileDatasBuilderList() {
+        return getFileDatasFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFileData, com.xiangna.www.protos.common.Common.LedgerFileData.Builder, com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder> 
+          getFileDatasFieldBuilder() {
+        if (fileDatasBuilder_ == null) {
+          fileDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.LedgerFileData, com.xiangna.www.protos.common.Common.LedgerFileData.Builder, com.xiangna.www.protos.common.Common.LedgerFileDataOrBuilder>(
+                  fileDatas_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          fileDatas_ = null;
+        }
+        return fileDatasBuilder_;
+      }
+
+      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> fileInfos_ =
+        java.util.Collections.emptyList();
+      private void ensureFileInfosIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          fileInfos_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(fileInfos_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> fileInfosBuilder_;
+
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFileInfosList() {
+        if (fileInfosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(fileInfos_);
+        } else {
+          return fileInfosBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public int getFileInfosCount() {
+        if (fileInfosBuilder_ == null) {
+          return fileInfos_.size();
+        } else {
+          return fileInfosBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile getFileInfos(int index) {
+        if (fileInfosBuilder_ == null) {
+          return fileInfos_.get(index);
+        } else {
+          return fileInfosBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder setFileInfos(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (fileInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFileInfosIsMutable();
+          fileInfos_.set(index, value);
+          onChanged();
+        } else {
+          fileInfosBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder setFileInfos(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (fileInfosBuilder_ == null) {
+          ensureFileInfosIsMutable();
+          fileInfos_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          fileInfosBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder addFileInfos(com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (fileInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFileInfosIsMutable();
+          fileInfos_.add(value);
+          onChanged();
+        } else {
+          fileInfosBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder addFileInfos(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (fileInfosBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFileInfosIsMutable();
+          fileInfos_.add(index, value);
+          onChanged();
+        } else {
+          fileInfosBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder addFileInfos(
+          com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (fileInfosBuilder_ == null) {
+          ensureFileInfosIsMutable();
+          fileInfos_.add(builderForValue.build());
+          onChanged();
+        } else {
+          fileInfosBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder addFileInfos(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (fileInfosBuilder_ == null) {
+          ensureFileInfosIsMutable();
+          fileInfos_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          fileInfosBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder addAllFileInfos(
+          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.LedgerFile> values) {
+        if (fileInfosBuilder_ == null) {
+          ensureFileInfosIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, fileInfos_);
+          onChanged();
+        } else {
+          fileInfosBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder clearFileInfos() {
+        if (fileInfosBuilder_ == null) {
+          fileInfos_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          fileInfosBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public Builder removeFileInfos(int index) {
+        if (fileInfosBuilder_ == null) {
+          ensureFileInfosIsMutable();
+          fileInfos_.remove(index);
+          onChanged();
+        } else {
+          fileInfosBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder getFileInfosBuilder(
+          int index) {
+        return getFileInfosFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFileInfosOrBuilder(
+          int index) {
+        if (fileInfosBuilder_ == null) {
+          return fileInfos_.get(index);  } else {
+          return fileInfosBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+           getFileInfosOrBuilderList() {
+        if (fileInfosBuilder_ != null) {
+          return fileInfosBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(fileInfos_);
+        }
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFileInfosBuilder() {
+        return getFileInfosFieldBuilder().addBuilder(
+            com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFileInfosBuilder(
+          int index) {
+        return getFileInfosFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 文件信息
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile fileInfos = 3;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile.Builder> 
+           getFileInfosBuilderList() {
+        return getFileInfosFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+          getFileInfosFieldBuilder() {
+        if (fileInfosBuilder_ == null) {
+          fileInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder>(
+                  fileInfos_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          fileInfos_ = null;
+        }
+        return fileInfosBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protos.FileAddRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:protos.FileAddRequest)
+    private static final com.xiangna.www.protos.contract.ContractRequest.FileAddRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractRequest.FileAddRequest();
+    }
+
+    public static com.xiangna.www.protos.contract.ContractRequest.FileAddRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FileAddRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FileAddRequest>() {
+      public FileAddRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new FileAddRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FileAddRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FileAddRequest> getParserForType() {
+      return PARSER;
+    }
+
+    public com.xiangna.www.protos.contract.ContractRequest.FileAddRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2406,6 +4002,11 @@ public final class ContractRequest {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protos_ContractExcuteRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protos_FileAddRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protos_FileAddRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protos_ContractAddCheckLogRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -2425,16 +4026,20 @@ public final class ContractRequest {
   static {
     java.lang.String[] descriptorData = {
       "\n\037contract/contract_request.proto\022\006proto" +
-      "s\"I\n\025ContractExcuteRequest\022\016\n\006action\030\001 \001" +
-      "(\t\022\n\n\002no\030\002 \001(\t\022\024\n\014contractData\030\003 \001(\014\"G\n\032" +
-      "ContractAddCheckLogRequest\022\n\n\002no\030\001 \001(\t\022\035" +
-      "\n\025contractCheckFlowData\030\002 \001(\014\"\230\001\n\024Contra" +
-      "ctQueryRequest\022\n\n\002no\030\001 \001(\t\0224\n\004type\030\002 \001(\016" +
-      "2&.protos.ContractQueryRequest.QueryType" +
-      "\022\017\n\007fileKey\030\003 \001(\t\"-\n\tQueryType\022\007\n\003ALL\020\000\022" +
-      "\010\n\004FILE\020\001\022\r\n\tFILELILST\020\002BB\n\037com.xiangna." +
-      "www.protos.contractZ\037github.com/xncc/pro",
-      "tos/contractb\006proto3"
+      "s\032\023common/common.proto\"_\n\025ContractExcute" +
+      "Request\022\016\n\006action\030\001 \001(\t\022\n\n\002no\030\002 \001(\t\022\024\n\014c" +
+      "ontractData\030\003 \001(\014\022\024\n\014contractFile\030\004 \001(\014\"" +
+      "n\n\016FileAddRequest\022\n\n\002no\030\001 \001(\t\022)\n\tfileDat" +
+      "as\030\002 \003(\0132\026.protos.LedgerFileData\022%\n\tfile" +
+      "Infos\030\003 \003(\0132\022.protos.LedgerFile\"G\n\032Contr" +
+      "actAddCheckLogRequest\022\n\n\002no\030\001 \001(\t\022\035\n\025con" +
+      "tractCheckFlowData\030\002 \001(\014\"\230\001\n\024ContractQue" +
+      "ryRequest\022\n\n\002no\030\001 \001(\t\0224\n\004type\030\002 \001(\0162&.pr",
+      "otos.ContractQueryRequest.QueryType\022\017\n\007f" +
+      "ileKey\030\003 \001(\t\"-\n\tQueryType\022\007\n\003ALL\020\000\022\010\n\004FI" +
+      "LE\020\001\022\r\n\tFILELILST\020\002BB\n\037com.xiangna.www.p" +
+      "rotos.contractZ\037github.com/xncc/protos/c" +
+      "ontractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2447,25 +4052,33 @@ public final class ContractRequest {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.xiangna.www.protos.common.Common.getDescriptor(),
         }, assigner);
     internal_static_protos_ContractExcuteRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_protos_ContractExcuteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractExcuteRequest_descriptor,
-        new java.lang.String[] { "Action", "No", "ContractData", });
-    internal_static_protos_ContractAddCheckLogRequest_descriptor =
+        new java.lang.String[] { "Action", "No", "ContractData", "ContractFile", });
+    internal_static_protos_FileAddRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_protos_FileAddRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protos_FileAddRequest_descriptor,
+        new java.lang.String[] { "No", "FileDatas", "FileInfos", });
+    internal_static_protos_ContractAddCheckLogRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_protos_ContractAddCheckLogRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractAddCheckLogRequest_descriptor,
         new java.lang.String[] { "No", "ContractCheckFlowData", });
     internal_static_protos_ContractQueryRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_protos_ContractQueryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractQueryRequest_descriptor,
         new java.lang.String[] { "No", "Type", "FileKey", });
+    com.xiangna.www.protos.common.Common.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

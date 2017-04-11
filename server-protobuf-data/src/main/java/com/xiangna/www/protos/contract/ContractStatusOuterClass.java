@@ -3033,28 +3033,12 @@ public final class ContractStatusOuterClass {
 
     /**
      * <pre>
-     * 审核时间
+     * 审核时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
+     * <code>optional int64 check_time = 4;</code>
      */
-    boolean hasCheckTime();
-    /**
-     * <pre>
-     * 审核时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-     */
-    com.google.protobuf.Timestamp getCheckTime();
-    /**
-     * <pre>
-     * 审核时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getCheckTimeOrBuilder();
+    long getCheckTime();
 
     /**
      * <pre>
@@ -3128,6 +3112,7 @@ public final class ContractStatusOuterClass {
     private ContractCheckFlowData() {
       checkUserName_ = "";
       checkUserMobile_ = "";
+      checkTime_ = 0L;
       checkIp_ = "";
       status_ = "";
       remark_ = "";
@@ -3183,17 +3168,9 @@ public final class ContractStatusOuterClass {
               checkUserMobile_ = s;
               break;
             }
-            case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (checkTime_ != null) {
-                subBuilder = checkTime_.toBuilder();
-              }
-              checkTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(checkTime_);
-                checkTime_ = subBuilder.buildPartial();
-              }
+            case 32: {
 
+              checkTime_ = input.readInt64();
               break;
             }
             case 42: {
@@ -3355,36 +3332,16 @@ public final class ContractStatusOuterClass {
     }
 
     public static final int CHECK_TIME_FIELD_NUMBER = 4;
-    private com.google.protobuf.Timestamp checkTime_;
+    private long checkTime_;
     /**
      * <pre>
-     * 审核时间
+     * 审核时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
+     * <code>optional int64 check_time = 4;</code>
      */
-    public boolean hasCheckTime() {
-      return checkTime_ != null;
-    }
-    /**
-     * <pre>
-     * 审核时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-     */
-    public com.google.protobuf.Timestamp getCheckTime() {
-      return checkTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : checkTime_;
-    }
-    /**
-     * <pre>
-     * 审核时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getCheckTimeOrBuilder() {
-      return getCheckTime();
+    public long getCheckTime() {
+      return checkTime_;
     }
 
     public static final int CHECK_IP_FIELD_NUMBER = 5;
@@ -3534,8 +3491,8 @@ public final class ContractStatusOuterClass {
       if (!getCheckUserMobileBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, checkUserMobile_);
       }
-      if (checkTime_ != null) {
-        output.writeMessage(4, getCheckTime());
+      if (checkTime_ != 0L) {
+        output.writeInt64(4, checkTime_);
       }
       if (!getCheckIpBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, checkIp_);
@@ -3563,9 +3520,9 @@ public final class ContractStatusOuterClass {
       if (!getCheckUserMobileBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, checkUserMobile_);
       }
-      if (checkTime_ != null) {
+      if (checkTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getCheckTime());
+          .computeInt64Size(4, checkTime_);
       }
       if (!getCheckIpBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, checkIp_);
@@ -3601,11 +3558,8 @@ public final class ContractStatusOuterClass {
           .equals(other.getCheckUserName());
       result = result && getCheckUserMobile()
           .equals(other.getCheckUserMobile());
-      result = result && (hasCheckTime() == other.hasCheckTime());
-      if (hasCheckTime()) {
-        result = result && getCheckTime()
-            .equals(other.getCheckTime());
-      }
+      result = result && (getCheckTime()
+          == other.getCheckTime());
       result = result && getCheckIp()
           .equals(other.getCheckIp());
       result = result && getStatus()
@@ -3630,10 +3584,9 @@ public final class ContractStatusOuterClass {
       hash = (53 * hash) + getCheckUserName().hashCode();
       hash = (37 * hash) + CHECK_USER_MOBILE_FIELD_NUMBER;
       hash = (53 * hash) + getCheckUserMobile().hashCode();
-      if (hasCheckTime()) {
-        hash = (37 * hash) + CHECK_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getCheckTime().hashCode();
-      }
+      hash = (37 * hash) + CHECK_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCheckTime());
       hash = (37 * hash) + CHECK_IP_FIELD_NUMBER;
       hash = (53 * hash) + getCheckIp().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -3772,12 +3725,8 @@ public final class ContractStatusOuterClass {
 
         checkUserMobile_ = "";
 
-        if (checkTimeBuilder_ == null) {
-          checkTime_ = null;
-        } else {
-          checkTime_ = null;
-          checkTimeBuilder_ = null;
-        }
+        checkTime_ = 0L;
+
         checkIp_ = "";
 
         status_ = "";
@@ -3813,11 +3762,7 @@ public final class ContractStatusOuterClass {
         }
         result.checkUserName_ = checkUserName_;
         result.checkUserMobile_ = checkUserMobile_;
-        if (checkTimeBuilder_ == null) {
-          result.checkTime_ = checkTime_;
-        } else {
-          result.checkTime_ = checkTimeBuilder_.build();
-        }
+        result.checkTime_ = checkTime_;
         result.checkIp_ = checkIp_;
         result.status_ = status_;
         result.remark_ = remark_;
@@ -3873,8 +3818,8 @@ public final class ContractStatusOuterClass {
           checkUserMobile_ = other.checkUserMobile_;
           onChanged();
         }
-        if (other.hasCheckTime()) {
-          mergeCheckTime(other.getCheckTime());
+        if (other.getCheckTime() != 0L) {
+          setCheckTime(other.getCheckTime());
         }
         if (!other.getCheckIp().isEmpty()) {
           checkIp_ = other.checkIp_;
@@ -4245,157 +4190,42 @@ public final class ContractStatusOuterClass {
         return this;
       }
 
-      private com.google.protobuf.Timestamp checkTime_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> checkTimeBuilder_;
+      private long checkTime_ ;
       /**
        * <pre>
-       * 审核时间
+       * 审核时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
+       * <code>optional int64 check_time = 4;</code>
        */
-      public boolean hasCheckTime() {
-        return checkTimeBuilder_ != null || checkTime_ != null;
+      public long getCheckTime() {
+        return checkTime_;
       }
       /**
        * <pre>
-       * 审核时间
+       * 审核时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
+       * <code>optional int64 check_time = 4;</code>
        */
-      public com.google.protobuf.Timestamp getCheckTime() {
-        if (checkTimeBuilder_ == null) {
-          return checkTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : checkTime_;
-        } else {
-          return checkTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 审核时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-       */
-      public Builder setCheckTime(com.google.protobuf.Timestamp value) {
-        if (checkTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          checkTime_ = value;
-          onChanged();
-        } else {
-          checkTimeBuilder_.setMessage(value);
-        }
-
+      public Builder setCheckTime(long value) {
+        
+        checkTime_ = value;
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * 审核时间
+       * 审核时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-       */
-      public Builder setCheckTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (checkTimeBuilder_ == null) {
-          checkTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          checkTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 审核时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-       */
-      public Builder mergeCheckTime(com.google.protobuf.Timestamp value) {
-        if (checkTimeBuilder_ == null) {
-          if (checkTime_ != null) {
-            checkTime_ =
-              com.google.protobuf.Timestamp.newBuilder(checkTime_).mergeFrom(value).buildPartial();
-          } else {
-            checkTime_ = value;
-          }
-          onChanged();
-        } else {
-          checkTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 审核时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
+       * <code>optional int64 check_time = 4;</code>
        */
       public Builder clearCheckTime() {
-        if (checkTimeBuilder_ == null) {
-          checkTime_ = null;
-          onChanged();
-        } else {
-          checkTime_ = null;
-          checkTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 审核时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getCheckTimeBuilder() {
         
+        checkTime_ = 0L;
         onChanged();
-        return getCheckTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 审核时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getCheckTimeOrBuilder() {
-        if (checkTimeBuilder_ != null) {
-          return checkTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return checkTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : checkTime_;
-        }
-      }
-      /**
-       * <pre>
-       * 审核时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp check_time = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getCheckTimeFieldBuilder() {
-        if (checkTimeBuilder_ == null) {
-          checkTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getCheckTime(),
-                  getParentForChildren(),
-                  isClean());
-          checkTime_ = null;
-        }
-        return checkTimeBuilder_;
+        return this;
       }
 
       private java.lang.Object checkIp_ = "";
@@ -6722,29 +6552,27 @@ public final class ContractStatusOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\036contract/contract_status.proto\022\006protos" +
-      "\032\037google/protobuf/timestamp.proto\032\023commo" +
-      "n/common.proto\032 configuration/contractfl" +
-      "ow.proto\"\325\001\n\016ContractStatus\022*\n\014current_s" +
-      "tep\030\001 \001(\0132\024.protos.ContractStep\0222\n\013check" +
-      "_datas\030\002 \003(\0132\035.protos.ContractStepCheckD" +
-      "ata\0227\n\020check_flow_infos\030\003 \003(\0132\035.protos.C" +
-      "ontractCheckFlowInfo\022*\n\014step_history\030\005 \003" +
-      "(\0132\024.protos.ContractStep\"}\n\025ContractChec" +
-      "kFlowInfo\022+\n\rcontract_step\030\001 \001(\0132\024.proto",
-      "s.ContractStep\0227\n\020check_flow_datas\030\002 \001(\013" +
-      "2\035.protos.ContractCheckFlowData\"\317\001\n\025Cont" +
-      "ractCheckFlowData\022 \n\tcheck_app\030\001 \001(\0132\r.p" +
-      "rotos.AppVo\022\027\n\017check_user_name\030\002 \001(\t\022\031\n\021" +
-      "check_user_mobile\030\003 \001(\t\022.\n\ncheck_time\030\004 " +
-      "\001(\0132\032.google.protobuf.Timestamp\022\020\n\010check" +
-      "_ip\030\005 \001(\t\022\016\n\006status\030\006 \001(\t\022\016\n\006remark\030\007 \001(" +
-      "\t\"k\n\025ContractStepCheckData\022*\n\014current_st" +
-      "ep\030\001 \001(\0132\024.protos.ContractStep\022&\n\013check_" +
-      "datas\030\002 \003(\0132\021.protos.CheckData\"E\n\tCheckD",
-      "ata\022\032\n\003org\030\001 \001(\0132\r.protos.AppVo\022\r\n\005title" +
-      "\030\002 \001(\t\022\r\n\005value\030\003 \001(\tBB\n\037com.xiangna.www" +
-      ".protos.contractZ\037github.com/xncc/protos" +
-      "/contractb\006proto3"
+      "\032\023common/common.proto\032 configuration/con" +
+      "tractflow.proto\"\325\001\n\016ContractStatus\022*\n\014cu" +
+      "rrent_step\030\001 \001(\0132\024.protos.ContractStep\0222" +
+      "\n\013check_datas\030\002 \003(\0132\035.protos.ContractSte" +
+      "pCheckData\0227\n\020check_flow_infos\030\003 \003(\0132\035.p" +
+      "rotos.ContractCheckFlowInfo\022*\n\014step_hist" +
+      "ory\030\005 \003(\0132\024.protos.ContractStep\"}\n\025Contr" +
+      "actCheckFlowInfo\022+\n\rcontract_step\030\001 \001(\0132" +
+      "\024.protos.ContractStep\0227\n\020check_flow_data",
+      "s\030\002 \001(\0132\035.protos.ContractCheckFlowData\"\263" +
+      "\001\n\025ContractCheckFlowData\022 \n\tcheck_app\030\001 " +
+      "\001(\0132\r.protos.AppVo\022\027\n\017check_user_name\030\002 " +
+      "\001(\t\022\031\n\021check_user_mobile\030\003 \001(\t\022\022\n\ncheck_" +
+      "time\030\004 \001(\003\022\020\n\010check_ip\030\005 \001(\t\022\016\n\006status\030\006" +
+      " \001(\t\022\016\n\006remark\030\007 \001(\t\"k\n\025ContractStepChec" +
+      "kData\022*\n\014current_step\030\001 \001(\0132\024.protos.Con" +
+      "tractStep\022&\n\013check_datas\030\002 \003(\0132\021.protos." +
+      "CheckData\"E\n\tCheckData\022\032\n\003org\030\001 \001(\0132\r.pr" +
+      "otos.AppVo\022\r\n\005title\030\002 \001(\t\022\r\n\005value\030\003 \001(\t",
+      "BB\n\037com.xiangna.www.protos.contractZ\037git" +
+      "hub.com/xncc/protos/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6757,7 +6585,6 @@ public final class ContractStatusOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
           com.xiangna.www.protos.common.Common.getDescriptor(),
           com.xiangna.www.protos.configuration.Contractflow.getDescriptor(),
         }, assigner);
@@ -6791,7 +6618,6 @@ public final class ContractStatusOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_CheckData_descriptor,
         new java.lang.String[] { "Org", "Title", "Value", });
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.configuration.Contractflow.getDescriptor();
   }

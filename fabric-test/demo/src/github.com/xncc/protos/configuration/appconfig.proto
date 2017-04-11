@@ -7,20 +7,42 @@ option java_package = "com.xiangna.www.protos.configuration";
 
 package protos;
 //======================================================私有配置信息=======================================
+//所有这些信息都是不公开的，加密存储在"GlobalConfig"账本中, GlobalConfig 为公有账本
 // 节点信息
-message NodeConfig {
+
+message MultiPartiesInfo {
+    string ledgerID = 1;
+    AppVo enterprise = 2;
+    AppVo factoring = 3;
+    AppVo supplier = 4;
+    repeated AppVo banks = 5; // 关联银行
+}
+
+message TwoPartiesInfo {
+    string ledgerID = 1;
+    AppVo bank = 2;
+    AppVo factoring = 3;
+}
+
+//key 为 HAMC(APPID, "MultiPartiesInfos")
+message MultiPartiesInfoList{
+    repeated MultiPartiesInfo multiInfoList = 1;
+}
+
+//key 为 HAMC(APPID, "TwoPartiesInfoList")
+message TwoPartiesInfoList{
+    repeated TwoPartiesInfo TwoPartiesInfoList = 1;
+}
+
+//key 为 HAMC(APPID, "SDKUserInfo")
+message SDKUserInfo {
     //一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-    string pem = 1; //peer 公钥信息
-    string sdkCert = 2; //sdk  证书信息
-    string sdkUserName = 3; //sdk  用户名
-    string sdkUserPWD = 4; //sdk  密码
+    string sdkUserName = 1; //sdk  用户名
+    string sdkUserPWD = 2; //sdk  密码
+    string sdkEnrollment = 3; //sdk  证书信息
 }
 
-message NodeConfigs {
-    repeated NodeConfig nodeConfigs = 1; //节点信息，可能存在多个节点
-}
-
-//APPConfig 是不公开的
+//key 为 HAMC(APPID, "APPConfig")
 message APPConfig {
     string appId = 1; // 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
     string appKey = 2; // 分配的密钥，用于和区块链系统之间的一些加密、验证用途
@@ -38,7 +60,5 @@ message APPConfig {
     string techContactTel = 13; // 技术接口人电话
     string techContactEmail = 14; // 技术接口人电话email
 
-    NodeConfigs nodeConfigs = 15; // 节点信息
-
-    OperateInfo opInfo = 16;
+    OperateInfo opInfo = 15;
 }

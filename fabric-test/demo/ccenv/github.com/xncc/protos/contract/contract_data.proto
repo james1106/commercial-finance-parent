@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 import "configuration/contractflow.proto";
 
@@ -11,22 +10,27 @@ package protos;
 
 // ======================================融资订单数据=============================================
 // 订单表单数据
-message ContractData {
+message ContractFormData {
     // 发起申请方维护字段
-    int64 expect_amount = 1; // 供应商|保理 申请融资金额
-    int32 financing_period = 2; // 融资期限(天)
-    google.protobuf.Timestamp expect_expired_time = 3; // 供应商|保理 申请融资到期时间
+    int64 expect_loan_amount = 1; // 申请融资金额
+    int32 expect_loan_period = 2; // 融资期限(天)
+    int64 expect_loan_rate = 3; // 融资利率
+    int64 expect_loan_end_time = 4; // 申请融资到期时间(unix时间戳)
 
     // 最终放款方维护字段
-    int64 confirmed_amount = 4; // 保理|银行 最终审核融资金额
-    google.protobuf.Timestamp confirmed_expired_time = 5; // 保理|银行 最终审核融资到期时间
-    int64 confirmed_rate = 6; // 保理|银行 最终审核融资利率, 加密隔离
-    repeated LedgerFile order_files = 7; // 融资申请相关文件, 公开的
+    int64 confirm_loan_amount = 5; // 确认融资金额
+    int32 confirm_loan_period = 6; // 确认融资期限(天)
+    int64 confirm_loan_rate = 7; // 确认融资利率
+    int64 confirm_loan_end_time = 8; // 确认融资到期时间(unix时间戳)
+
+    // 所有参与方维护
+    repeated LedgerFile files = 9; // 融资申请相关文件
 }
 
 // 订单款项金额汇总
 message ContractMoneyCount {
     // 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
+
     // 放款
     int64 need_pay_amount = 1; // 实际需要支付的总金额
     int64 expenses_amount = 2; // 实际已支付的总金额
@@ -51,7 +55,7 @@ message ContractTransactionDetail {
     OrgBankAccount income_account = 6; // 收入方账户
     string tansaction_remark = 7; // 交易备注
     repeated LedgerFile tansaction_notes = 8; // 交易票据(图)
-    google.protobuf.Timestamp tansaction_time = 9; // 交易时间
+    int64 tansaction_time = 9; // 交易时间(unix时间戳)
 
     bool incom_confirm = 10; // 收入方确认
     OperateInfo operate_info = 11; // 数据操作信息
