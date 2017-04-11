@@ -62,6 +62,16 @@ mvn clean install -Dmaven.test.skip=true
 
 ## 重新编译ccenv的docker image
 echo " --------------- build ccenv -----------------"
+cd ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/
+
+## 删除已存在的ccenv依赖编译环境
+CCENV_GO_FILE_DIR="$(find xncc -name '*.go' -exec dirname \{\} \; | sort |uniq)"
+for dir in ${CCENV_GO_FILE_DIR} ; do
+    echo "----- delete ccenv gopath files: $dir/*"
+    rm -r ${dir}
+done
+
+## 同步新的ccenv依赖编译环境文件
 mkdir -p ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 cp -r ${PROTOC_PATH}/protos ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 cp -r ${PROTOC_PATH}/util ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
