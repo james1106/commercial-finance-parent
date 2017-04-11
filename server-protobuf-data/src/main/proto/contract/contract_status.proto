@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 import "configuration/contractflow.proto";
 
@@ -30,7 +29,7 @@ message ContractCheckFlowData {
     AppVo check_app = 1; // 审核App
     string check_user_name = 2; // 审核操作员名称
     string check_user_mobile = 3; // 审核操作员手机号
-    google.protobuf.Timestamp check_time = 4; // 审核时间
+    int64 check_time = 4; // 审核时间(unix时间戳)
     string check_ip = 5; // 审核操作员IP
     string status = 6; // 流程审批状态
     string remark = 7; // 流程审批备注

@@ -3,8 +3,8 @@
 
 package com.xiangna.www.protos.contract;
 
-public final class ContractDataOuterClass {
-  private ContractDataOuterClass() {}
+public final class ContractData {
+  private ContractData() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -14,8 +14,8 @@ public final class ContractDataOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ContractDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protos.ContractData)
+  public interface ContractFormDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.ContractFormData)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -23,129 +23,115 @@ public final class ContractDataOuterClass {
      * 发起申请方维护字段
      * </pre>
      *
-     * <code>optional int64 expect_amount = 1;</code>
+     * <code>optional int64 expect_loan_amount = 1;</code>
      */
-    long getExpectAmount();
+    long getExpectLoanAmount();
 
     /**
      * <pre>
      * 融资期限(天)
      * </pre>
      *
-     * <code>optional int32 financing_period = 2;</code>
+     * <code>optional int32 expect_loan_period = 2;</code>
      */
-    int getFinancingPeriod();
+    int getExpectLoanPeriod();
 
     /**
      * <pre>
-     * 供应商|保理 申请融资到期时间
+     * 融资利率
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
+     * <code>optional int64 expect_loan_rate = 3;</code>
      */
-    boolean hasExpectExpiredTime();
+    long getExpectLoanRate();
+
     /**
      * <pre>
-     * 供应商|保理 申请融资到期时间
+     * 申请融资到期时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
+     * <code>optional int64 expect_loan_end_time = 4;</code>
      */
-    com.google.protobuf.Timestamp getExpectExpiredTime();
-    /**
-     * <pre>
-     * 供应商|保理 申请融资到期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getExpectExpiredTimeOrBuilder();
+    long getExpectLoanEndTime();
 
     /**
      * <pre>
      * 最终放款方维护字段
      * </pre>
      *
-     * <code>optional int64 confirmed_amount = 4;</code>
+     * <code>optional int64 confirm_loan_amount = 5;</code>
      */
-    long getConfirmedAmount();
+    long getConfirmLoanAmount();
 
     /**
      * <pre>
-     * 保理|银行 最终审核融资到期时间
+     * 确认融资期限(天)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
+     * <code>optional int32 confirm_loan_period = 6;</code>
      */
-    boolean hasConfirmedExpiredTime();
-    /**
-     * <pre>
-     * 保理|银行 最终审核融资到期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-     */
-    com.google.protobuf.Timestamp getConfirmedExpiredTime();
-    /**
-     * <pre>
-     * 保理|银行 最终审核融资到期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getConfirmedExpiredTimeOrBuilder();
+    int getConfirmLoanPeriod();
 
     /**
      * <pre>
-     * 保理|银行 最终审核融资利率, 加密隔离
+     * 确认融资利率
      * </pre>
      *
-     * <code>optional int64 confirmed_rate = 6;</code>
+     * <code>optional int64 confirm_loan_rate = 7;</code>
      */
-    long getConfirmedRate();
+    long getConfirmLoanRate();
 
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 确认融资到期时间(unix时间戳)
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>optional int64 confirm_loan_end_time = 8;</code>
+     */
+    long getConfirmLoanEndTime();
+
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
     java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> 
-        getOrderFilesList();
+        getFilesList();
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
-    com.xiangna.www.protos.common.Common.LedgerFile getOrderFiles(int index);
+    com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index);
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
-    int getOrderFilesCount();
+    int getFilesCount();
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
     java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-        getOrderFilesOrBuilderList();
+        getFilesOrBuilderList();
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
-    com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getOrderFilesOrBuilder(
+    com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
         int index);
   }
   /**
@@ -154,22 +140,26 @@ public final class ContractDataOuterClass {
    * 订单表单数据
    * </pre>
    *
-   * Protobuf type {@code protos.ContractData}
+   * Protobuf type {@code protos.ContractFormData}
    */
-  public  static final class ContractData extends
+  public  static final class ContractFormData extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protos.ContractData)
-      ContractDataOrBuilder {
-    // Use ContractData.newBuilder() to construct.
-    private ContractData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:protos.ContractFormData)
+      ContractFormDataOrBuilder {
+    // Use ContractFormData.newBuilder() to construct.
+    private ContractFormData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private ContractData() {
-      expectAmount_ = 0L;
-      financingPeriod_ = 0;
-      confirmedAmount_ = 0L;
-      confirmedRate_ = 0L;
-      orderFiles_ = java.util.Collections.emptyList();
+    private ContractFormData() {
+      expectLoanAmount_ = 0L;
+      expectLoanPeriod_ = 0;
+      expectLoanRate_ = 0L;
+      expectLoanEndTime_ = 0L;
+      confirmLoanAmount_ = 0L;
+      confirmLoanPeriod_ = 0;
+      confirmLoanRate_ = 0L;
+      confirmLoanEndTime_ = 0L;
+      files_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -177,7 +167,7 @@ public final class ContractDataOuterClass {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private ContractData(
+    private ContractFormData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -199,56 +189,50 @@ public final class ContractDataOuterClass {
             }
             case 8: {
 
-              expectAmount_ = input.readInt64();
+              expectLoanAmount_ = input.readInt64();
               break;
             }
             case 16: {
 
-              financingPeriod_ = input.readInt32();
+              expectLoanPeriod_ = input.readInt32();
               break;
             }
-            case 26: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (expectExpiredTime_ != null) {
-                subBuilder = expectExpiredTime_.toBuilder();
-              }
-              expectExpiredTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(expectExpiredTime_);
-                expectExpiredTime_ = subBuilder.buildPartial();
-              }
+            case 24: {
 
+              expectLoanRate_ = input.readInt64();
               break;
             }
             case 32: {
 
-              confirmedAmount_ = input.readInt64();
+              expectLoanEndTime_ = input.readInt64();
               break;
             }
-            case 42: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (confirmedExpiredTime_ != null) {
-                subBuilder = confirmedExpiredTime_.toBuilder();
-              }
-              confirmedExpiredTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(confirmedExpiredTime_);
-                confirmedExpiredTime_ = subBuilder.buildPartial();
-              }
+            case 40: {
 
+              confirmLoanAmount_ = input.readInt64();
               break;
             }
             case 48: {
 
-              confirmedRate_ = input.readInt64();
+              confirmLoanPeriod_ = input.readInt32();
               break;
             }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                orderFiles_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
-                mutable_bitField0_ |= 0x00000040;
+            case 56: {
+
+              confirmLoanRate_ = input.readInt64();
+              break;
+            }
+            case 64: {
+
+              confirmLoanEndTime_ = input.readInt64();
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                files_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
+                mutable_bitField0_ |= 0x00000100;
               }
-              orderFiles_.add(
+              files_.add(
                   input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
               break;
             }
@@ -260,196 +244,182 @@ public final class ContractDataOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-          orderFiles_ = java.util.Collections.unmodifiableList(orderFiles_);
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          files_ = java.util.Collections.unmodifiableList(files_);
         }
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractData_descriptor;
+      return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractFormData_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractData_fieldAccessorTable
+      return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractFormData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.class, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder.class);
+              com.xiangna.www.protos.contract.ContractData.ContractFormData.class, com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder.class);
     }
 
     private int bitField0_;
-    public static final int EXPECT_AMOUNT_FIELD_NUMBER = 1;
-    private long expectAmount_;
+    public static final int EXPECT_LOAN_AMOUNT_FIELD_NUMBER = 1;
+    private long expectLoanAmount_;
     /**
      * <pre>
      * 发起申请方维护字段
      * </pre>
      *
-     * <code>optional int64 expect_amount = 1;</code>
+     * <code>optional int64 expect_loan_amount = 1;</code>
      */
-    public long getExpectAmount() {
-      return expectAmount_;
+    public long getExpectLoanAmount() {
+      return expectLoanAmount_;
     }
 
-    public static final int FINANCING_PERIOD_FIELD_NUMBER = 2;
-    private int financingPeriod_;
+    public static final int EXPECT_LOAN_PERIOD_FIELD_NUMBER = 2;
+    private int expectLoanPeriod_;
     /**
      * <pre>
      * 融资期限(天)
      * </pre>
      *
-     * <code>optional int32 financing_period = 2;</code>
+     * <code>optional int32 expect_loan_period = 2;</code>
      */
-    public int getFinancingPeriod() {
-      return financingPeriod_;
+    public int getExpectLoanPeriod() {
+      return expectLoanPeriod_;
     }
 
-    public static final int EXPECT_EXPIRED_TIME_FIELD_NUMBER = 3;
-    private com.google.protobuf.Timestamp expectExpiredTime_;
+    public static final int EXPECT_LOAN_RATE_FIELD_NUMBER = 3;
+    private long expectLoanRate_;
     /**
      * <pre>
-     * 供应商|保理 申请融资到期时间
+     * 融资利率
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
+     * <code>optional int64 expect_loan_rate = 3;</code>
      */
-    public boolean hasExpectExpiredTime() {
-      return expectExpiredTime_ != null;
-    }
-    /**
-     * <pre>
-     * 供应商|保理 申请融资到期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-     */
-    public com.google.protobuf.Timestamp getExpectExpiredTime() {
-      return expectExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expectExpiredTime_;
-    }
-    /**
-     * <pre>
-     * 供应商|保理 申请融资到期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getExpectExpiredTimeOrBuilder() {
-      return getExpectExpiredTime();
+    public long getExpectLoanRate() {
+      return expectLoanRate_;
     }
 
-    public static final int CONFIRMED_AMOUNT_FIELD_NUMBER = 4;
-    private long confirmedAmount_;
+    public static final int EXPECT_LOAN_END_TIME_FIELD_NUMBER = 4;
+    private long expectLoanEndTime_;
+    /**
+     * <pre>
+     * 申请融资到期时间(unix时间戳)
+     * </pre>
+     *
+     * <code>optional int64 expect_loan_end_time = 4;</code>
+     */
+    public long getExpectLoanEndTime() {
+      return expectLoanEndTime_;
+    }
+
+    public static final int CONFIRM_LOAN_AMOUNT_FIELD_NUMBER = 5;
+    private long confirmLoanAmount_;
     /**
      * <pre>
      * 最终放款方维护字段
      * </pre>
      *
-     * <code>optional int64 confirmed_amount = 4;</code>
+     * <code>optional int64 confirm_loan_amount = 5;</code>
      */
-    public long getConfirmedAmount() {
-      return confirmedAmount_;
+    public long getConfirmLoanAmount() {
+      return confirmLoanAmount_;
     }
 
-    public static final int CONFIRMED_EXPIRED_TIME_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp confirmedExpiredTime_;
+    public static final int CONFIRM_LOAN_PERIOD_FIELD_NUMBER = 6;
+    private int confirmLoanPeriod_;
     /**
      * <pre>
-     * 保理|银行 最终审核融资到期时间
+     * 确认融资期限(天)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
+     * <code>optional int32 confirm_loan_period = 6;</code>
      */
-    public boolean hasConfirmedExpiredTime() {
-      return confirmedExpiredTime_ != null;
-    }
-    /**
-     * <pre>
-     * 保理|银行 最终审核融资到期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-     */
-    public com.google.protobuf.Timestamp getConfirmedExpiredTime() {
-      return confirmedExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : confirmedExpiredTime_;
-    }
-    /**
-     * <pre>
-     * 保理|银行 最终审核融资到期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getConfirmedExpiredTimeOrBuilder() {
-      return getConfirmedExpiredTime();
+    public int getConfirmLoanPeriod() {
+      return confirmLoanPeriod_;
     }
 
-    public static final int CONFIRMED_RATE_FIELD_NUMBER = 6;
-    private long confirmedRate_;
+    public static final int CONFIRM_LOAN_RATE_FIELD_NUMBER = 7;
+    private long confirmLoanRate_;
     /**
      * <pre>
-     * 保理|银行 最终审核融资利率, 加密隔离
+     * 确认融资利率
      * </pre>
      *
-     * <code>optional int64 confirmed_rate = 6;</code>
+     * <code>optional int64 confirm_loan_rate = 7;</code>
      */
-    public long getConfirmedRate() {
-      return confirmedRate_;
+    public long getConfirmLoanRate() {
+      return confirmLoanRate_;
     }
 
-    public static final int ORDER_FILES_FIELD_NUMBER = 7;
-    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> orderFiles_;
+    public static final int CONFIRM_LOAN_END_TIME_FIELD_NUMBER = 8;
+    private long confirmLoanEndTime_;
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 确认融资到期时间(unix时间戳)
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>optional int64 confirm_loan_end_time = 8;</code>
      */
-    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getOrderFilesList() {
-      return orderFiles_;
+    public long getConfirmLoanEndTime() {
+      return confirmLoanEndTime_;
+    }
+
+    public static final int FILES_FIELD_NUMBER = 9;
+    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> files_;
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 9;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFilesList() {
+      return files_;
     }
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
     public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-        getOrderFilesOrBuilderList() {
-      return orderFiles_;
+        getFilesOrBuilderList() {
+      return files_;
     }
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
-    public int getOrderFilesCount() {
-      return orderFiles_.size();
+    public int getFilesCount() {
+      return files_.size();
     }
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
-    public com.xiangna.www.protos.common.Common.LedgerFile getOrderFiles(int index) {
-      return orderFiles_.get(index);
+    public com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index) {
+      return files_.get(index);
     }
     /**
      * <pre>
-     * 融资申请相关文件, 公开的
+     * 所有参与方维护
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile order_files = 7;</code>
+     * <code>repeated .protos.LedgerFile files = 9;</code>
      */
-    public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getOrderFilesOrBuilder(
+    public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
         int index) {
-      return orderFiles_.get(index);
+      return files_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -464,26 +434,32 @@ public final class ContractDataOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (expectAmount_ != 0L) {
-        output.writeInt64(1, expectAmount_);
+      if (expectLoanAmount_ != 0L) {
+        output.writeInt64(1, expectLoanAmount_);
       }
-      if (financingPeriod_ != 0) {
-        output.writeInt32(2, financingPeriod_);
+      if (expectLoanPeriod_ != 0) {
+        output.writeInt32(2, expectLoanPeriod_);
       }
-      if (expectExpiredTime_ != null) {
-        output.writeMessage(3, getExpectExpiredTime());
+      if (expectLoanRate_ != 0L) {
+        output.writeInt64(3, expectLoanRate_);
       }
-      if (confirmedAmount_ != 0L) {
-        output.writeInt64(4, confirmedAmount_);
+      if (expectLoanEndTime_ != 0L) {
+        output.writeInt64(4, expectLoanEndTime_);
       }
-      if (confirmedExpiredTime_ != null) {
-        output.writeMessage(5, getConfirmedExpiredTime());
+      if (confirmLoanAmount_ != 0L) {
+        output.writeInt64(5, confirmLoanAmount_);
       }
-      if (confirmedRate_ != 0L) {
-        output.writeInt64(6, confirmedRate_);
+      if (confirmLoanPeriod_ != 0) {
+        output.writeInt32(6, confirmLoanPeriod_);
       }
-      for (int i = 0; i < orderFiles_.size(); i++) {
-        output.writeMessage(7, orderFiles_.get(i));
+      if (confirmLoanRate_ != 0L) {
+        output.writeInt64(7, confirmLoanRate_);
+      }
+      if (confirmLoanEndTime_ != 0L) {
+        output.writeInt64(8, confirmLoanEndTime_);
+      }
+      for (int i = 0; i < files_.size(); i++) {
+        output.writeMessage(9, files_.get(i));
       }
     }
 
@@ -492,33 +468,41 @@ public final class ContractDataOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (expectAmount_ != 0L) {
+      if (expectLoanAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, expectAmount_);
+          .computeInt64Size(1, expectLoanAmount_);
       }
-      if (financingPeriod_ != 0) {
+      if (expectLoanPeriod_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, financingPeriod_);
+          .computeInt32Size(2, expectLoanPeriod_);
       }
-      if (expectExpiredTime_ != null) {
+      if (expectLoanRate_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getExpectExpiredTime());
+          .computeInt64Size(3, expectLoanRate_);
       }
-      if (confirmedAmount_ != 0L) {
+      if (expectLoanEndTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, confirmedAmount_);
+          .computeInt64Size(4, expectLoanEndTime_);
       }
-      if (confirmedExpiredTime_ != null) {
+      if (confirmLoanAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getConfirmedExpiredTime());
+          .computeInt64Size(5, confirmLoanAmount_);
       }
-      if (confirmedRate_ != 0L) {
+      if (confirmLoanPeriod_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, confirmedRate_);
+          .computeInt32Size(6, confirmLoanPeriod_);
       }
-      for (int i = 0; i < orderFiles_.size(); i++) {
+      if (confirmLoanRate_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, orderFiles_.get(i));
+          .computeInt64Size(7, confirmLoanRate_);
+      }
+      if (confirmLoanEndTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, confirmLoanEndTime_);
+      }
+      for (int i = 0; i < files_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, files_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -530,32 +514,30 @@ public final class ContractDataOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData)) {
+      if (!(obj instanceof com.xiangna.www.protos.contract.ContractData.ContractFormData)) {
         return super.equals(obj);
       }
-      com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData other = (com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData) obj;
+      com.xiangna.www.protos.contract.ContractData.ContractFormData other = (com.xiangna.www.protos.contract.ContractData.ContractFormData) obj;
 
       boolean result = true;
-      result = result && (getExpectAmount()
-          == other.getExpectAmount());
-      result = result && (getFinancingPeriod()
-          == other.getFinancingPeriod());
-      result = result && (hasExpectExpiredTime() == other.hasExpectExpiredTime());
-      if (hasExpectExpiredTime()) {
-        result = result && getExpectExpiredTime()
-            .equals(other.getExpectExpiredTime());
-      }
-      result = result && (getConfirmedAmount()
-          == other.getConfirmedAmount());
-      result = result && (hasConfirmedExpiredTime() == other.hasConfirmedExpiredTime());
-      if (hasConfirmedExpiredTime()) {
-        result = result && getConfirmedExpiredTime()
-            .equals(other.getConfirmedExpiredTime());
-      }
-      result = result && (getConfirmedRate()
-          == other.getConfirmedRate());
-      result = result && getOrderFilesList()
-          .equals(other.getOrderFilesList());
+      result = result && (getExpectLoanAmount()
+          == other.getExpectLoanAmount());
+      result = result && (getExpectLoanPeriod()
+          == other.getExpectLoanPeriod());
+      result = result && (getExpectLoanRate()
+          == other.getExpectLoanRate());
+      result = result && (getExpectLoanEndTime()
+          == other.getExpectLoanEndTime());
+      result = result && (getConfirmLoanAmount()
+          == other.getConfirmLoanAmount());
+      result = result && (getConfirmLoanPeriod()
+          == other.getConfirmLoanPeriod());
+      result = result && (getConfirmLoanRate()
+          == other.getConfirmLoanRate());
+      result = result && (getConfirmLoanEndTime()
+          == other.getConfirmLoanEndTime());
+      result = result && getFilesList()
+          .equals(other.getFilesList());
       return result;
     }
 
@@ -566,86 +548,89 @@ public final class ContractDataOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + EXPECT_AMOUNT_FIELD_NUMBER;
+      hash = (37 * hash) + EXPECT_LOAN_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpectAmount());
-      hash = (37 * hash) + FINANCING_PERIOD_FIELD_NUMBER;
-      hash = (53 * hash) + getFinancingPeriod();
-      if (hasExpectExpiredTime()) {
-        hash = (37 * hash) + EXPECT_EXPIRED_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getExpectExpiredTime().hashCode();
-      }
-      hash = (37 * hash) + CONFIRMED_AMOUNT_FIELD_NUMBER;
+          getExpectLoanAmount());
+      hash = (37 * hash) + EXPECT_LOAN_PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + getExpectLoanPeriod();
+      hash = (37 * hash) + EXPECT_LOAN_RATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConfirmedAmount());
-      if (hasConfirmedExpiredTime()) {
-        hash = (37 * hash) + CONFIRMED_EXPIRED_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getConfirmedExpiredTime().hashCode();
-      }
-      hash = (37 * hash) + CONFIRMED_RATE_FIELD_NUMBER;
+          getExpectLoanRate());
+      hash = (37 * hash) + EXPECT_LOAN_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getConfirmedRate());
-      if (getOrderFilesCount() > 0) {
-        hash = (37 * hash) + ORDER_FILES_FIELD_NUMBER;
-        hash = (53 * hash) + getOrderFilesList().hashCode();
+          getExpectLoanEndTime());
+      hash = (37 * hash) + CONFIRM_LOAN_AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConfirmLoanAmount());
+      hash = (37 * hash) + CONFIRM_LOAN_PERIOD_FIELD_NUMBER;
+      hash = (53 * hash) + getConfirmLoanPeriod();
+      hash = (37 * hash) + CONFIRM_LOAN_RATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConfirmLoanRate());
+      hash = (37 * hash) + CONFIRM_LOAN_END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConfirmLoanEndTime());
+      if (getFilesCount() > 0) {
+        hash = (37 * hash) + FILES_FIELD_NUMBER;
+        hash = (53 * hash) + getFilesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(byte[] data)
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseDelimitedFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseDelimitedFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -657,7 +642,7 @@ public final class ContractDataOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData prototype) {
+    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractData.ContractFormData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -677,25 +662,25 @@ public final class ContractDataOuterClass {
      * 订单表单数据
      * </pre>
      *
-     * Protobuf type {@code protos.ContractData}
+     * Protobuf type {@code protos.ContractFormData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protos.ContractData)
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractDataOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protos.ContractFormData)
+        com.xiangna.www.protos.contract.ContractData.ContractFormDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractData_descriptor;
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractFormData_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractData_fieldAccessorTable
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractFormData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.class, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder.class);
+                com.xiangna.www.protos.contract.ContractData.ContractFormData.class, com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder.class);
       }
 
-      // Construct using com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.newBuilder()
+      // Construct using com.xiangna.www.protos.contract.ContractData.ContractFormData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -708,83 +693,73 @@ public final class ContractDataOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getOrderFilesFieldBuilder();
+          getFilesFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        expectAmount_ = 0L;
+        expectLoanAmount_ = 0L;
 
-        financingPeriod_ = 0;
+        expectLoanPeriod_ = 0;
 
-        if (expectExpiredTimeBuilder_ == null) {
-          expectExpiredTime_ = null;
+        expectLoanRate_ = 0L;
+
+        expectLoanEndTime_ = 0L;
+
+        confirmLoanAmount_ = 0L;
+
+        confirmLoanPeriod_ = 0;
+
+        confirmLoanRate_ = 0L;
+
+        confirmLoanEndTime_ = 0L;
+
+        if (filesBuilder_ == null) {
+          files_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
-          expectExpiredTime_ = null;
-          expectExpiredTimeBuilder_ = null;
-        }
-        confirmedAmount_ = 0L;
-
-        if (confirmedExpiredTimeBuilder_ == null) {
-          confirmedExpiredTime_ = null;
-        } else {
-          confirmedExpiredTime_ = null;
-          confirmedExpiredTimeBuilder_ = null;
-        }
-        confirmedRate_ = 0L;
-
-        if (orderFilesBuilder_ == null) {
-          orderFiles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
-        } else {
-          orderFilesBuilder_.clear();
+          filesBuilder_.clear();
         }
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractData_descriptor;
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractFormData_descriptor;
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData getDefaultInstanceForType() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.getDefaultInstance();
+      public com.xiangna.www.protos.contract.ContractData.ContractFormData getDefaultInstanceForType() {
+        return com.xiangna.www.protos.contract.ContractData.ContractFormData.getDefaultInstance();
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData build() {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData result = buildPartial();
+      public com.xiangna.www.protos.contract.ContractData.ContractFormData build() {
+        com.xiangna.www.protos.contract.ContractData.ContractFormData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData buildPartial() {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData result = new com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData(this);
+      public com.xiangna.www.protos.contract.ContractData.ContractFormData buildPartial() {
+        com.xiangna.www.protos.contract.ContractData.ContractFormData result = new com.xiangna.www.protos.contract.ContractData.ContractFormData(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        result.expectAmount_ = expectAmount_;
-        result.financingPeriod_ = financingPeriod_;
-        if (expectExpiredTimeBuilder_ == null) {
-          result.expectExpiredTime_ = expectExpiredTime_;
-        } else {
-          result.expectExpiredTime_ = expectExpiredTimeBuilder_.build();
-        }
-        result.confirmedAmount_ = confirmedAmount_;
-        if (confirmedExpiredTimeBuilder_ == null) {
-          result.confirmedExpiredTime_ = confirmedExpiredTime_;
-        } else {
-          result.confirmedExpiredTime_ = confirmedExpiredTimeBuilder_.build();
-        }
-        result.confirmedRate_ = confirmedRate_;
-        if (orderFilesBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
-            orderFiles_ = java.util.Collections.unmodifiableList(orderFiles_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+        result.expectLoanAmount_ = expectLoanAmount_;
+        result.expectLoanPeriod_ = expectLoanPeriod_;
+        result.expectLoanRate_ = expectLoanRate_;
+        result.expectLoanEndTime_ = expectLoanEndTime_;
+        result.confirmLoanAmount_ = confirmLoanAmount_;
+        result.confirmLoanPeriod_ = confirmLoanPeriod_;
+        result.confirmLoanRate_ = confirmLoanRate_;
+        result.confirmLoanEndTime_ = confirmLoanEndTime_;
+        if (filesBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+            files_ = java.util.Collections.unmodifiableList(files_);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
-          result.orderFiles_ = orderFiles_;
+          result.files_ = files_;
         } else {
-          result.orderFiles_ = orderFilesBuilder_.build();
+          result.files_ = filesBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -818,57 +793,63 @@ public final class ContractDataOuterClass {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData) {
-          return mergeFrom((com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData)other);
+        if (other instanceof com.xiangna.www.protos.contract.ContractData.ContractFormData) {
+          return mergeFrom((com.xiangna.www.protos.contract.ContractData.ContractFormData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData other) {
-        if (other == com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.getDefaultInstance()) return this;
-        if (other.getExpectAmount() != 0L) {
-          setExpectAmount(other.getExpectAmount());
+      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractData.ContractFormData other) {
+        if (other == com.xiangna.www.protos.contract.ContractData.ContractFormData.getDefaultInstance()) return this;
+        if (other.getExpectLoanAmount() != 0L) {
+          setExpectLoanAmount(other.getExpectLoanAmount());
         }
-        if (other.getFinancingPeriod() != 0) {
-          setFinancingPeriod(other.getFinancingPeriod());
+        if (other.getExpectLoanPeriod() != 0) {
+          setExpectLoanPeriod(other.getExpectLoanPeriod());
         }
-        if (other.hasExpectExpiredTime()) {
-          mergeExpectExpiredTime(other.getExpectExpiredTime());
+        if (other.getExpectLoanRate() != 0L) {
+          setExpectLoanRate(other.getExpectLoanRate());
         }
-        if (other.getConfirmedAmount() != 0L) {
-          setConfirmedAmount(other.getConfirmedAmount());
+        if (other.getExpectLoanEndTime() != 0L) {
+          setExpectLoanEndTime(other.getExpectLoanEndTime());
         }
-        if (other.hasConfirmedExpiredTime()) {
-          mergeConfirmedExpiredTime(other.getConfirmedExpiredTime());
+        if (other.getConfirmLoanAmount() != 0L) {
+          setConfirmLoanAmount(other.getConfirmLoanAmount());
         }
-        if (other.getConfirmedRate() != 0L) {
-          setConfirmedRate(other.getConfirmedRate());
+        if (other.getConfirmLoanPeriod() != 0) {
+          setConfirmLoanPeriod(other.getConfirmLoanPeriod());
         }
-        if (orderFilesBuilder_ == null) {
-          if (!other.orderFiles_.isEmpty()) {
-            if (orderFiles_.isEmpty()) {
-              orderFiles_ = other.orderFiles_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+        if (other.getConfirmLoanRate() != 0L) {
+          setConfirmLoanRate(other.getConfirmLoanRate());
+        }
+        if (other.getConfirmLoanEndTime() != 0L) {
+          setConfirmLoanEndTime(other.getConfirmLoanEndTime());
+        }
+        if (filesBuilder_ == null) {
+          if (!other.files_.isEmpty()) {
+            if (files_.isEmpty()) {
+              files_ = other.files_;
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
-              ensureOrderFilesIsMutable();
-              orderFiles_.addAll(other.orderFiles_);
+              ensureFilesIsMutable();
+              files_.addAll(other.files_);
             }
             onChanged();
           }
         } else {
-          if (!other.orderFiles_.isEmpty()) {
-            if (orderFilesBuilder_.isEmpty()) {
-              orderFilesBuilder_.dispose();
-              orderFilesBuilder_ = null;
-              orderFiles_ = other.orderFiles_;
-              bitField0_ = (bitField0_ & ~0x00000040);
-              orderFilesBuilder_ = 
+          if (!other.files_.isEmpty()) {
+            if (filesBuilder_.isEmpty()) {
+              filesBuilder_.dispose();
+              filesBuilder_ = null;
+              files_ = other.files_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              filesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getOrderFilesFieldBuilder() : null;
+                   getFilesFieldBuilder() : null;
             } else {
-              orderFilesBuilder_.addAllMessages(other.orderFiles_);
+              filesBuilder_.addAllMessages(other.files_);
             }
           }
         }
@@ -884,11 +865,11 @@ public final class ContractDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData parsedMessage = null;
+        com.xiangna.www.protos.contract.ContractData.ContractFormData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData) e.getUnfinishedMessage();
+          parsedMessage = (com.xiangna.www.protos.contract.ContractData.ContractFormData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -899,65 +880,65 @@ public final class ContractDataOuterClass {
       }
       private int bitField0_;
 
-      private long expectAmount_ ;
+      private long expectLoanAmount_ ;
       /**
        * <pre>
        * 发起申请方维护字段
        * </pre>
        *
-       * <code>optional int64 expect_amount = 1;</code>
+       * <code>optional int64 expect_loan_amount = 1;</code>
        */
-      public long getExpectAmount() {
-        return expectAmount_;
-      }
-      /**
-       * <pre>
-       * 发起申请方维护字段
-       * </pre>
-       *
-       * <code>optional int64 expect_amount = 1;</code>
-       */
-      public Builder setExpectAmount(long value) {
-        
-        expectAmount_ = value;
-        onChanged();
-        return this;
+      public long getExpectLoanAmount() {
+        return expectLoanAmount_;
       }
       /**
        * <pre>
        * 发起申请方维护字段
        * </pre>
        *
-       * <code>optional int64 expect_amount = 1;</code>
+       * <code>optional int64 expect_loan_amount = 1;</code>
        */
-      public Builder clearExpectAmount() {
+      public Builder setExpectLoanAmount(long value) {
         
-        expectAmount_ = 0L;
+        expectLoanAmount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 发起申请方维护字段
+       * </pre>
+       *
+       * <code>optional int64 expect_loan_amount = 1;</code>
+       */
+      public Builder clearExpectLoanAmount() {
+        
+        expectLoanAmount_ = 0L;
         onChanged();
         return this;
       }
 
-      private int financingPeriod_ ;
+      private int expectLoanPeriod_ ;
       /**
        * <pre>
        * 融资期限(天)
        * </pre>
        *
-       * <code>optional int32 financing_period = 2;</code>
+       * <code>optional int32 expect_loan_period = 2;</code>
        */
-      public int getFinancingPeriod() {
-        return financingPeriod_;
+      public int getExpectLoanPeriod() {
+        return expectLoanPeriod_;
       }
       /**
        * <pre>
        * 融资期限(天)
        * </pre>
        *
-       * <code>optional int32 financing_period = 2;</code>
+       * <code>optional int32 expect_loan_period = 2;</code>
        */
-      public Builder setFinancingPeriod(int value) {
+      public Builder setExpectLoanPeriod(int value) {
         
-        financingPeriod_ = value;
+        expectLoanPeriod_ = value;
         onChanged();
         return this;
       }
@@ -966,189 +947,112 @@ public final class ContractDataOuterClass {
        * 融资期限(天)
        * </pre>
        *
-       * <code>optional int32 financing_period = 2;</code>
+       * <code>optional int32 expect_loan_period = 2;</code>
        */
-      public Builder clearFinancingPeriod() {
+      public Builder clearExpectLoanPeriod() {
         
-        financingPeriod_ = 0;
+        expectLoanPeriod_ = 0;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Timestamp expectExpiredTime_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expectExpiredTimeBuilder_;
+      private long expectLoanRate_ ;
       /**
        * <pre>
-       * 供应商|保理 申请融资到期时间
+       * 融资利率
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
+       * <code>optional int64 expect_loan_rate = 3;</code>
        */
-      public boolean hasExpectExpiredTime() {
-        return expectExpiredTimeBuilder_ != null || expectExpiredTime_ != null;
+      public long getExpectLoanRate() {
+        return expectLoanRate_;
       }
       /**
        * <pre>
-       * 供应商|保理 申请融资到期时间
+       * 融资利率
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
+       * <code>optional int64 expect_loan_rate = 3;</code>
        */
-      public com.google.protobuf.Timestamp getExpectExpiredTime() {
-        if (expectExpiredTimeBuilder_ == null) {
-          return expectExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expectExpiredTime_;
-        } else {
-          return expectExpiredTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 供应商|保理 申请融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-       */
-      public Builder setExpectExpiredTime(com.google.protobuf.Timestamp value) {
-        if (expectExpiredTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          expectExpiredTime_ = value;
-          onChanged();
-        } else {
-          expectExpiredTimeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 供应商|保理 申请融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-       */
-      public Builder setExpectExpiredTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (expectExpiredTimeBuilder_ == null) {
-          expectExpiredTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          expectExpiredTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 供应商|保理 申请融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-       */
-      public Builder mergeExpectExpiredTime(com.google.protobuf.Timestamp value) {
-        if (expectExpiredTimeBuilder_ == null) {
-          if (expectExpiredTime_ != null) {
-            expectExpiredTime_ =
-              com.google.protobuf.Timestamp.newBuilder(expectExpiredTime_).mergeFrom(value).buildPartial();
-          } else {
-            expectExpiredTime_ = value;
-          }
-          onChanged();
-        } else {
-          expectExpiredTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 供应商|保理 申请融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-       */
-      public Builder clearExpectExpiredTime() {
-        if (expectExpiredTimeBuilder_ == null) {
-          expectExpiredTime_ = null;
-          onChanged();
-        } else {
-          expectExpiredTime_ = null;
-          expectExpiredTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 供应商|保理 申请融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getExpectExpiredTimeBuilder() {
+      public Builder setExpectLoanRate(long value) {
         
+        expectLoanRate_ = value;
         onChanged();
-        return getExpectExpiredTimeFieldBuilder().getBuilder();
+        return this;
       }
       /**
        * <pre>
-       * 供应商|保理 申请融资到期时间
+       * 融资利率
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
+       * <code>optional int64 expect_loan_rate = 3;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getExpectExpiredTimeOrBuilder() {
-        if (expectExpiredTimeBuilder_ != null) {
-          return expectExpiredTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return expectExpiredTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : expectExpiredTime_;
-        }
-      }
-      /**
-       * <pre>
-       * 供应商|保理 申请融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp expect_expired_time = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getExpectExpiredTimeFieldBuilder() {
-        if (expectExpiredTimeBuilder_ == null) {
-          expectExpiredTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getExpectExpiredTime(),
-                  getParentForChildren(),
-                  isClean());
-          expectExpiredTime_ = null;
-        }
-        return expectExpiredTimeBuilder_;
+      public Builder clearExpectLoanRate() {
+        
+        expectLoanRate_ = 0L;
+        onChanged();
+        return this;
       }
 
-      private long confirmedAmount_ ;
+      private long expectLoanEndTime_ ;
+      /**
+       * <pre>
+       * 申请融资到期时间(unix时间戳)
+       * </pre>
+       *
+       * <code>optional int64 expect_loan_end_time = 4;</code>
+       */
+      public long getExpectLoanEndTime() {
+        return expectLoanEndTime_;
+      }
+      /**
+       * <pre>
+       * 申请融资到期时间(unix时间戳)
+       * </pre>
+       *
+       * <code>optional int64 expect_loan_end_time = 4;</code>
+       */
+      public Builder setExpectLoanEndTime(long value) {
+        
+        expectLoanEndTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 申请融资到期时间(unix时间戳)
+       * </pre>
+       *
+       * <code>optional int64 expect_loan_end_time = 4;</code>
+       */
+      public Builder clearExpectLoanEndTime() {
+        
+        expectLoanEndTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long confirmLoanAmount_ ;
       /**
        * <pre>
        * 最终放款方维护字段
        * </pre>
        *
-       * <code>optional int64 confirmed_amount = 4;</code>
+       * <code>optional int64 confirm_loan_amount = 5;</code>
        */
-      public long getConfirmedAmount() {
-        return confirmedAmount_;
+      public long getConfirmLoanAmount() {
+        return confirmLoanAmount_;
       }
       /**
        * <pre>
        * 最终放款方维护字段
        * </pre>
        *
-       * <code>optional int64 confirmed_amount = 4;</code>
+       * <code>optional int64 confirm_loan_amount = 5;</code>
        */
-      public Builder setConfirmedAmount(long value) {
+      public Builder setConfirmLoanAmount(long value) {
         
-        confirmedAmount_ = value;
+        confirmLoanAmount_ = value;
         onChanged();
         return this;
       }
@@ -1157,516 +1061,439 @@ public final class ContractDataOuterClass {
        * 最终放款方维护字段
        * </pre>
        *
-       * <code>optional int64 confirmed_amount = 4;</code>
+       * <code>optional int64 confirm_loan_amount = 5;</code>
        */
-      public Builder clearConfirmedAmount() {
+      public Builder clearConfirmLoanAmount() {
         
-        confirmedAmount_ = 0L;
+        confirmLoanAmount_ = 0L;
         onChanged();
         return this;
       }
 
-      private com.google.protobuf.Timestamp confirmedExpiredTime_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> confirmedExpiredTimeBuilder_;
+      private int confirmLoanPeriod_ ;
       /**
        * <pre>
-       * 保理|银行 最终审核融资到期时间
+       * 确认融资期限(天)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
+       * <code>optional int32 confirm_loan_period = 6;</code>
        */
-      public boolean hasConfirmedExpiredTime() {
-        return confirmedExpiredTimeBuilder_ != null || confirmedExpiredTime_ != null;
+      public int getConfirmLoanPeriod() {
+        return confirmLoanPeriod_;
       }
       /**
        * <pre>
-       * 保理|银行 最终审核融资到期时间
+       * 确认融资期限(天)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
+       * <code>optional int32 confirm_loan_period = 6;</code>
        */
-      public com.google.protobuf.Timestamp getConfirmedExpiredTime() {
-        if (confirmedExpiredTimeBuilder_ == null) {
-          return confirmedExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : confirmedExpiredTime_;
-        } else {
-          return confirmedExpiredTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-       */
-      public Builder setConfirmedExpiredTime(com.google.protobuf.Timestamp value) {
-        if (confirmedExpiredTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          confirmedExpiredTime_ = value;
-          onChanged();
-        } else {
-          confirmedExpiredTimeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-       */
-      public Builder setConfirmedExpiredTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (confirmedExpiredTimeBuilder_ == null) {
-          confirmedExpiredTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          confirmedExpiredTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-       */
-      public Builder mergeConfirmedExpiredTime(com.google.protobuf.Timestamp value) {
-        if (confirmedExpiredTimeBuilder_ == null) {
-          if (confirmedExpiredTime_ != null) {
-            confirmedExpiredTime_ =
-              com.google.protobuf.Timestamp.newBuilder(confirmedExpiredTime_).mergeFrom(value).buildPartial();
-          } else {
-            confirmedExpiredTime_ = value;
-          }
-          onChanged();
-        } else {
-          confirmedExpiredTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-       */
-      public Builder clearConfirmedExpiredTime() {
-        if (confirmedExpiredTimeBuilder_ == null) {
-          confirmedExpiredTime_ = null;
-          onChanged();
-        } else {
-          confirmedExpiredTime_ = null;
-          confirmedExpiredTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getConfirmedExpiredTimeBuilder() {
+      public Builder setConfirmLoanPeriod(int value) {
         
-        onChanged();
-        return getConfirmedExpiredTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getConfirmedExpiredTimeOrBuilder() {
-        if (confirmedExpiredTimeBuilder_ != null) {
-          return confirmedExpiredTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return confirmedExpiredTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : confirmedExpiredTime_;
-        }
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资到期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirmed_expired_time = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getConfirmedExpiredTimeFieldBuilder() {
-        if (confirmedExpiredTimeBuilder_ == null) {
-          confirmedExpiredTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getConfirmedExpiredTime(),
-                  getParentForChildren(),
-                  isClean());
-          confirmedExpiredTime_ = null;
-        }
-        return confirmedExpiredTimeBuilder_;
-      }
-
-      private long confirmedRate_ ;
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资利率, 加密隔离
-       * </pre>
-       *
-       * <code>optional int64 confirmed_rate = 6;</code>
-       */
-      public long getConfirmedRate() {
-        return confirmedRate_;
-      }
-      /**
-       * <pre>
-       * 保理|银行 最终审核融资利率, 加密隔离
-       * </pre>
-       *
-       * <code>optional int64 confirmed_rate = 6;</code>
-       */
-      public Builder setConfirmedRate(long value) {
-        
-        confirmedRate_ = value;
+        confirmLoanPeriod_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 保理|银行 最终审核融资利率, 加密隔离
+       * 确认融资期限(天)
        * </pre>
        *
-       * <code>optional int64 confirmed_rate = 6;</code>
+       * <code>optional int32 confirm_loan_period = 6;</code>
        */
-      public Builder clearConfirmedRate() {
+      public Builder clearConfirmLoanPeriod() {
         
-        confirmedRate_ = 0L;
+        confirmLoanPeriod_ = 0;
         onChanged();
         return this;
       }
 
-      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> orderFiles_ =
+      private long confirmLoanRate_ ;
+      /**
+       * <pre>
+       * 确认融资利率
+       * </pre>
+       *
+       * <code>optional int64 confirm_loan_rate = 7;</code>
+       */
+      public long getConfirmLoanRate() {
+        return confirmLoanRate_;
+      }
+      /**
+       * <pre>
+       * 确认融资利率
+       * </pre>
+       *
+       * <code>optional int64 confirm_loan_rate = 7;</code>
+       */
+      public Builder setConfirmLoanRate(long value) {
+        
+        confirmLoanRate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 确认融资利率
+       * </pre>
+       *
+       * <code>optional int64 confirm_loan_rate = 7;</code>
+       */
+      public Builder clearConfirmLoanRate() {
+        
+        confirmLoanRate_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long confirmLoanEndTime_ ;
+      /**
+       * <pre>
+       * 确认融资到期时间(unix时间戳)
+       * </pre>
+       *
+       * <code>optional int64 confirm_loan_end_time = 8;</code>
+       */
+      public long getConfirmLoanEndTime() {
+        return confirmLoanEndTime_;
+      }
+      /**
+       * <pre>
+       * 确认融资到期时间(unix时间戳)
+       * </pre>
+       *
+       * <code>optional int64 confirm_loan_end_time = 8;</code>
+       */
+      public Builder setConfirmLoanEndTime(long value) {
+        
+        confirmLoanEndTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 确认融资到期时间(unix时间戳)
+       * </pre>
+       *
+       * <code>optional int64 confirm_loan_end_time = 8;</code>
+       */
+      public Builder clearConfirmLoanEndTime() {
+        
+        confirmLoanEndTime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> files_ =
         java.util.Collections.emptyList();
-      private void ensureOrderFilesIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          orderFiles_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(orderFiles_);
-          bitField0_ |= 0x00000040;
+      private void ensureFilesIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          files_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(files_);
+          bitField0_ |= 0x00000100;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> orderFilesBuilder_;
+          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> filesBuilder_;
 
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getOrderFilesList() {
-        if (orderFilesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(orderFiles_);
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFilesList() {
+        if (filesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(files_);
         } else {
-          return orderFilesBuilder_.getMessageList();
+          return filesBuilder_.getMessageList();
         }
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public int getOrderFilesCount() {
-        if (orderFilesBuilder_ == null) {
-          return orderFiles_.size();
+      public int getFilesCount() {
+        if (filesBuilder_ == null) {
+          return files_.size();
         } else {
-          return orderFilesBuilder_.getCount();
+          return filesBuilder_.getCount();
         }
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public com.xiangna.www.protos.common.Common.LedgerFile getOrderFiles(int index) {
-        if (orderFilesBuilder_ == null) {
-          return orderFiles_.get(index);
+      public com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index) {
+        if (filesBuilder_ == null) {
+          return files_.get(index);
         } else {
-          return orderFilesBuilder_.getMessage(index);
+          return filesBuilder_.getMessage(index);
         }
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder setOrderFiles(
+      public Builder setFiles(
           int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (orderFilesBuilder_ == null) {
+        if (filesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrderFilesIsMutable();
-          orderFiles_.set(index, value);
+          ensureFilesIsMutable();
+          files_.set(index, value);
           onChanged();
         } else {
-          orderFilesBuilder_.setMessage(index, value);
+          filesBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder setOrderFiles(
+      public Builder setFiles(
           int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (orderFilesBuilder_ == null) {
-          ensureOrderFilesIsMutable();
-          orderFiles_.set(index, builderForValue.build());
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.set(index, builderForValue.build());
           onChanged();
         } else {
-          orderFilesBuilder_.setMessage(index, builderForValue.build());
+          filesBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder addOrderFiles(com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (orderFilesBuilder_ == null) {
+      public Builder addFiles(com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (filesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrderFilesIsMutable();
-          orderFiles_.add(value);
+          ensureFilesIsMutable();
+          files_.add(value);
           onChanged();
         } else {
-          orderFilesBuilder_.addMessage(value);
+          filesBuilder_.addMessage(value);
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder addOrderFiles(
+      public Builder addFiles(
           int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (orderFilesBuilder_ == null) {
+        if (filesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureOrderFilesIsMutable();
-          orderFiles_.add(index, value);
+          ensureFilesIsMutable();
+          files_.add(index, value);
           onChanged();
         } else {
-          orderFilesBuilder_.addMessage(index, value);
+          filesBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder addOrderFiles(
+      public Builder addFiles(
           com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (orderFilesBuilder_ == null) {
-          ensureOrderFilesIsMutable();
-          orderFiles_.add(builderForValue.build());
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.add(builderForValue.build());
           onChanged();
         } else {
-          orderFilesBuilder_.addMessage(builderForValue.build());
+          filesBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder addOrderFiles(
+      public Builder addFiles(
           int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (orderFilesBuilder_ == null) {
-          ensureOrderFilesIsMutable();
-          orderFiles_.add(index, builderForValue.build());
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.add(index, builderForValue.build());
           onChanged();
         } else {
-          orderFilesBuilder_.addMessage(index, builderForValue.build());
+          filesBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder addAllOrderFiles(
+      public Builder addAllFiles(
           java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.LedgerFile> values) {
-        if (orderFilesBuilder_ == null) {
-          ensureOrderFilesIsMutable();
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, orderFiles_);
+              values, files_);
           onChanged();
         } else {
-          orderFilesBuilder_.addAllMessages(values);
+          filesBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder clearOrderFiles() {
-        if (orderFilesBuilder_ == null) {
-          orderFiles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+      public Builder clearFiles() {
+        if (filesBuilder_ == null) {
+          files_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
-          orderFilesBuilder_.clear();
+          filesBuilder_.clear();
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public Builder removeOrderFiles(int index) {
-        if (orderFilesBuilder_ == null) {
-          ensureOrderFilesIsMutable();
-          orderFiles_.remove(index);
+      public Builder removeFiles(int index) {
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.remove(index);
           onChanged();
         } else {
-          orderFilesBuilder_.remove(index);
+          filesBuilder_.remove(index);
         }
         return this;
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder getOrderFilesBuilder(
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder getFilesBuilder(
           int index) {
-        return getOrderFilesFieldBuilder().getBuilder(index);
+        return getFilesFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getOrderFilesOrBuilder(
+      public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
           int index) {
-        if (orderFilesBuilder_ == null) {
-          return orderFiles_.get(index);  } else {
-          return orderFilesBuilder_.getMessageOrBuilder(index);
+        if (filesBuilder_ == null) {
+          return files_.get(index);  } else {
+          return filesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
       public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-           getOrderFilesOrBuilderList() {
-        if (orderFilesBuilder_ != null) {
-          return orderFilesBuilder_.getMessageOrBuilderList();
+           getFilesOrBuilderList() {
+        if (filesBuilder_ != null) {
+          return filesBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(orderFiles_);
+          return java.util.Collections.unmodifiableList(files_);
         }
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addOrderFilesBuilder() {
-        return getOrderFilesFieldBuilder().addBuilder(
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFilesBuilder() {
+        return getFilesFieldBuilder().addBuilder(
             com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addOrderFilesBuilder(
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFilesBuilder(
           int index) {
-        return getOrderFilesFieldBuilder().addBuilder(
+        return getFilesFieldBuilder().addBuilder(
             index, com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
       }
       /**
        * <pre>
-       * 融资申请相关文件, 公开的
+       * 所有参与方维护
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile order_files = 7;</code>
+       * <code>repeated .protos.LedgerFile files = 9;</code>
        */
       public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile.Builder> 
-           getOrderFilesBuilderList() {
-        return getOrderFilesFieldBuilder().getBuilderList();
+           getFilesBuilderList() {
+        return getFilesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-          getOrderFilesFieldBuilder() {
-        if (orderFilesBuilder_ == null) {
-          orderFilesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getFilesFieldBuilder() {
+        if (filesBuilder_ == null) {
+          filesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder>(
-                  orderFiles_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  files_,
+                  ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
                   isClean());
-          orderFiles_ = null;
+          files_ = null;
         }
-        return orderFilesBuilder_;
+        return filesBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1679,39 +1506,39 @@ public final class ContractDataOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protos.ContractData)
+      // @@protoc_insertion_point(builder_scope:protos.ContractFormData)
     }
 
-    // @@protoc_insertion_point(class_scope:protos.ContractData)
-    private static final com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protos.ContractFormData)
+    private static final com.xiangna.www.protos.contract.ContractData.ContractFormData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData();
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractData.ContractFormData();
     }
 
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData getDefaultInstance() {
+    public static com.xiangna.www.protos.contract.ContractData.ContractFormData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ContractData>
-        PARSER = new com.google.protobuf.AbstractParser<ContractData>() {
-      public ContractData parsePartialFrom(
+    private static final com.google.protobuf.Parser<ContractFormData>
+        PARSER = new com.google.protobuf.AbstractParser<ContractFormData>() {
+      public ContractFormData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ContractData(input, extensionRegistry);
+          return new ContractFormData(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<ContractData> parser() {
+    public static com.google.protobuf.Parser<ContractFormData> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ContractData> getParserForType() {
+    public com.google.protobuf.Parser<ContractFormData> getParserForType() {
       return PARSER;
     }
 
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData getDefaultInstanceForType() {
+    public com.xiangna.www.protos.contract.ContractData.ContractFormData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1723,7 +1550,6 @@ public final class ContractDataOuterClass {
 
     /**
      * <pre>
-     * 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
      * 放款
      * </pre>
      *
@@ -1783,7 +1609,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    java.util.List<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail> 
+    java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> 
         getTransactionDetailsList();
     /**
      * <pre>
@@ -1792,7 +1618,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail getTransactionDetails(int index);
+    com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getTransactionDetails(int index);
     /**
      * <pre>
      * 所有在申请订单内发生的金额交易(转账)都应该在此处有明确的流水
@@ -1808,7 +1634,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    java.util.List<? extends com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder> 
+    java.util.List<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
         getTransactionDetailsOrBuilderList();
     /**
      * <pre>
@@ -1817,7 +1643,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder getTransactionDetailsOrBuilder(
+    com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder getTransactionDetailsOrBuilder(
         int index);
   }
   /**
@@ -1902,11 +1728,11 @@ public final class ContractDataOuterClass {
             }
             case 58: {
               if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                transactionDetails_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail>();
+                transactionDetails_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail>();
                 mutable_bitField0_ |= 0x00000040;
               }
               transactionDetails_.add(
-                  input.readMessage(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.parser(), extensionRegistry));
+                  input.readMessage(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.parser(), extensionRegistry));
               break;
             }
           }
@@ -1925,14 +1751,14 @@ public final class ContractDataOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractMoneyCount_descriptor;
+      return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractMoneyCount_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractMoneyCount_fieldAccessorTable
+      return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractMoneyCount_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.class, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder.class);
+              com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.class, com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder.class);
     }
 
     private int bitField0_;
@@ -1940,7 +1766,6 @@ public final class ContractDataOuterClass {
     private long needPayAmount_;
     /**
      * <pre>
-     * 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
      * 放款
      * </pre>
      *
@@ -2016,7 +1841,7 @@ public final class ContractDataOuterClass {
     }
 
     public static final int TRANSACTION_DETAILS_FIELD_NUMBER = 7;
-    private java.util.List<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail> transactionDetails_;
+    private java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> transactionDetails_;
     /**
      * <pre>
      * 所有在申请订单内发生的金额交易(转账)都应该在此处有明确的流水
@@ -2024,7 +1849,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    public java.util.List<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail> getTransactionDetailsList() {
+    public java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> getTransactionDetailsList() {
       return transactionDetails_;
     }
     /**
@@ -2034,7 +1859,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    public java.util.List<? extends com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder> 
+    public java.util.List<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
         getTransactionDetailsOrBuilderList() {
       return transactionDetails_;
     }
@@ -2055,7 +1880,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail getTransactionDetails(int index) {
+    public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getTransactionDetails(int index) {
       return transactionDetails_.get(index);
     }
     /**
@@ -2065,7 +1890,7 @@ public final class ContractDataOuterClass {
      *
      * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
      */
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder getTransactionDetailsOrBuilder(
+    public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder getTransactionDetailsOrBuilder(
         int index) {
       return transactionDetails_.get(index);
     }
@@ -2148,10 +1973,10 @@ public final class ContractDataOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount)) {
+      if (!(obj instanceof com.xiangna.www.protos.contract.ContractData.ContractMoneyCount)) {
         return super.equals(obj);
       }
-      com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount other = (com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount) obj;
+      com.xiangna.www.protos.contract.ContractData.ContractMoneyCount other = (com.xiangna.www.protos.contract.ContractData.ContractMoneyCount) obj;
 
       boolean result = true;
       result = result && (getNeedPayAmount()
@@ -2205,58 +2030,58 @@ public final class ContractDataOuterClass {
       return hash;
     }
 
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(byte[] data)
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseDelimitedFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseDelimitedFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2268,7 +2093,7 @@ public final class ContractDataOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount prototype) {
+    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractData.ContractMoneyCount prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2292,20 +2117,20 @@ public final class ContractDataOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protos.ContractMoneyCount)
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCountOrBuilder {
+        com.xiangna.www.protos.contract.ContractData.ContractMoneyCountOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractMoneyCount_descriptor;
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractMoneyCount_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractMoneyCount_fieldAccessorTable
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractMoneyCount_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.class, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder.class);
+                com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.class, com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder.class);
       }
 
-      // Construct using com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.newBuilder()
+      // Construct using com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2346,23 +2171,23 @@ public final class ContractDataOuterClass {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractMoneyCount_descriptor;
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractMoneyCount_descriptor;
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount getDefaultInstanceForType() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.getDefaultInstance();
+      public com.xiangna.www.protos.contract.ContractData.ContractMoneyCount getDefaultInstanceForType() {
+        return com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.getDefaultInstance();
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount build() {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount result = buildPartial();
+      public com.xiangna.www.protos.contract.ContractData.ContractMoneyCount build() {
+        com.xiangna.www.protos.contract.ContractData.ContractMoneyCount result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount buildPartial() {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount result = new com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount(this);
+      public com.xiangna.www.protos.contract.ContractData.ContractMoneyCount buildPartial() {
+        com.xiangna.www.protos.contract.ContractData.ContractMoneyCount result = new com.xiangna.www.protos.contract.ContractData.ContractMoneyCount(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.needPayAmount_ = needPayAmount_;
@@ -2412,16 +2237,16 @@ public final class ContractDataOuterClass {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount) {
-          return mergeFrom((com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount)other);
+        if (other instanceof com.xiangna.www.protos.contract.ContractData.ContractMoneyCount) {
+          return mergeFrom((com.xiangna.www.protos.contract.ContractData.ContractMoneyCount)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount other) {
-        if (other == com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractData.ContractMoneyCount other) {
+        if (other == com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.getDefaultInstance()) return this;
         if (other.getNeedPayAmount() != 0L) {
           setNeedPayAmount(other.getNeedPayAmount());
         }
@@ -2478,11 +2303,11 @@ public final class ContractDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount parsedMessage = null;
+        com.xiangna.www.protos.contract.ContractData.ContractMoneyCount parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount) e.getUnfinishedMessage();
+          parsedMessage = (com.xiangna.www.protos.contract.ContractData.ContractMoneyCount) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2496,7 +2321,6 @@ public final class ContractDataOuterClass {
       private long needPayAmount_ ;
       /**
        * <pre>
-       * 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
        * 放款
        * </pre>
        *
@@ -2507,7 +2331,6 @@ public final class ContractDataOuterClass {
       }
       /**
        * <pre>
-       * 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
        * 放款
        * </pre>
        *
@@ -2521,7 +2344,6 @@ public final class ContractDataOuterClass {
       }
       /**
        * <pre>
-       * 下面为结算字段,具体流水记录到交易明细,此处体现订单总金额
        * 放款
        * </pre>
        *
@@ -2724,17 +2546,17 @@ public final class ContractDataOuterClass {
         return this;
       }
 
-      private java.util.List<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail> transactionDetails_ =
+      private java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> transactionDetails_ =
         java.util.Collections.emptyList();
       private void ensureTransactionDetailsIsMutable() {
         if (!((bitField0_ & 0x00000040) == 0x00000040)) {
-          transactionDetails_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail>(transactionDetails_);
+          transactionDetails_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail>(transactionDetails_);
           bitField0_ |= 0x00000040;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder> transactionDetailsBuilder_;
+          com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> transactionDetailsBuilder_;
 
       /**
        * <pre>
@@ -2743,7 +2565,7 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail> getTransactionDetailsList() {
+      public java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> getTransactionDetailsList() {
         if (transactionDetailsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(transactionDetails_);
         } else {
@@ -2771,7 +2593,7 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail getTransactionDetails(int index) {
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getTransactionDetails(int index) {
         if (transactionDetailsBuilder_ == null) {
           return transactionDetails_.get(index);
         } else {
@@ -2786,7 +2608,7 @@ public final class ContractDataOuterClass {
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
       public Builder setTransactionDetails(
-          int index, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail value) {
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail value) {
         if (transactionDetailsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2807,7 +2629,7 @@ public final class ContractDataOuterClass {
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
       public Builder setTransactionDetails(
-          int index, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder builderForValue) {
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder builderForValue) {
         if (transactionDetailsBuilder_ == null) {
           ensureTransactionDetailsIsMutable();
           transactionDetails_.set(index, builderForValue.build());
@@ -2824,7 +2646,7 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public Builder addTransactionDetails(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail value) {
+      public Builder addTransactionDetails(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail value) {
         if (transactionDetailsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2845,7 +2667,7 @@ public final class ContractDataOuterClass {
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
       public Builder addTransactionDetails(
-          int index, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail value) {
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail value) {
         if (transactionDetailsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2866,7 +2688,7 @@ public final class ContractDataOuterClass {
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
       public Builder addTransactionDetails(
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder builderForValue) {
+          com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder builderForValue) {
         if (transactionDetailsBuilder_ == null) {
           ensureTransactionDetailsIsMutable();
           transactionDetails_.add(builderForValue.build());
@@ -2884,7 +2706,7 @@ public final class ContractDataOuterClass {
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
       public Builder addTransactionDetails(
-          int index, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder builderForValue) {
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder builderForValue) {
         if (transactionDetailsBuilder_ == null) {
           ensureTransactionDetailsIsMutable();
           transactionDetails_.add(index, builderForValue.build());
@@ -2902,7 +2724,7 @@ public final class ContractDataOuterClass {
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
       public Builder addAllTransactionDetails(
-          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail> values) {
+          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> values) {
         if (transactionDetailsBuilder_ == null) {
           ensureTransactionDetailsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2954,7 +2776,7 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder getTransactionDetailsBuilder(
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder getTransactionDetailsBuilder(
           int index) {
         return getTransactionDetailsFieldBuilder().getBuilder(index);
       }
@@ -2965,7 +2787,7 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder getTransactionDetailsOrBuilder(
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder getTransactionDetailsOrBuilder(
           int index) {
         if (transactionDetailsBuilder_ == null) {
           return transactionDetails_.get(index);  } else {
@@ -2979,7 +2801,7 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public java.util.List<? extends com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder> 
+      public java.util.List<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
            getTransactionDetailsOrBuilderList() {
         if (transactionDetailsBuilder_ != null) {
           return transactionDetailsBuilder_.getMessageOrBuilderList();
@@ -2994,9 +2816,9 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder addTransactionDetailsBuilder() {
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder addTransactionDetailsBuilder() {
         return getTransactionDetailsFieldBuilder().addBuilder(
-            com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.getDefaultInstance());
+            com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3005,10 +2827,10 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder addTransactionDetailsBuilder(
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder addTransactionDetailsBuilder(
           int index) {
         return getTransactionDetailsFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.getDefaultInstance());
+            index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3017,16 +2839,16 @@ public final class ContractDataOuterClass {
        *
        * <code>repeated .protos.ContractTransactionDetail transaction_details = 7;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder> 
+      public java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder> 
            getTransactionDetailsBuilderList() {
         return getTransactionDetailsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder> 
+          com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
           getTransactionDetailsFieldBuilder() {
         if (transactionDetailsBuilder_ == null) {
           transactionDetailsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder>(
+              com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder>(
                   transactionDetails_,
                   ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
@@ -3050,12 +2872,12 @@ public final class ContractDataOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:protos.ContractMoneyCount)
-    private static final com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount DEFAULT_INSTANCE;
+    private static final com.xiangna.www.protos.contract.ContractData.ContractMoneyCount DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount();
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractData.ContractMoneyCount();
     }
 
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount getDefaultInstance() {
+    public static com.xiangna.www.protos.contract.ContractData.ContractMoneyCount getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3078,7 +2900,7 @@ public final class ContractDataOuterClass {
       return PARSER;
     }
 
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount getDefaultInstanceForType() {
+    public com.xiangna.www.protos.contract.ContractData.ContractMoneyCount getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3261,28 +3083,12 @@ public final class ContractDataOuterClass {
 
     /**
      * <pre>
-     * 交易时间
+     * 交易时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
+     * <code>optional int64 tansaction_time = 9;</code>
      */
-    boolean hasTansactionTime();
-    /**
-     * <pre>
-     * 交易时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-     */
-    com.google.protobuf.Timestamp getTansactionTime();
-    /**
-     * <pre>
-     * 交易时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getTansactionTimeOrBuilder();
+    long getTansactionTime();
 
     /**
      * <pre>
@@ -3337,6 +3143,7 @@ public final class ContractDataOuterClass {
       expensesAmount_ = 0L;
       tansactionRemark_ = "";
       tansactionNotes_ = java.util.Collections.emptyList();
+      tansactionTime_ = 0L;
       incomConfirm_ = false;
     }
 
@@ -3437,17 +3244,9 @@ public final class ContractDataOuterClass {
                   input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
               break;
             }
-            case 74: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (tansactionTime_ != null) {
-                subBuilder = tansactionTime_.toBuilder();
-              }
-              tansactionTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(tansactionTime_);
-                tansactionTime_ = subBuilder.buildPartial();
-              }
+            case 72: {
 
+              tansactionTime_ = input.readInt64();
               break;
             }
             case 80: {
@@ -3484,14 +3283,14 @@ public final class ContractDataOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractTransactionDetail_descriptor;
+      return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractTransactionDetail_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractTransactionDetail_fieldAccessorTable
+      return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractTransactionDetail_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.class, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder.class);
+              com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.class, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder.class);
     }
 
     private int bitField0_;
@@ -3738,36 +3537,16 @@ public final class ContractDataOuterClass {
     }
 
     public static final int TANSACTION_TIME_FIELD_NUMBER = 9;
-    private com.google.protobuf.Timestamp tansactionTime_;
+    private long tansactionTime_;
     /**
      * <pre>
-     * 交易时间
+     * 交易时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
+     * <code>optional int64 tansaction_time = 9;</code>
      */
-    public boolean hasTansactionTime() {
-      return tansactionTime_ != null;
-    }
-    /**
-     * <pre>
-     * 交易时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-     */
-    public com.google.protobuf.Timestamp getTansactionTime() {
-      return tansactionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : tansactionTime_;
-    }
-    /**
-     * <pre>
-     * 交易时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getTansactionTimeOrBuilder() {
-      return getTansactionTime();
+    public long getTansactionTime() {
+      return tansactionTime_;
     }
 
     public static final int INCOM_CONFIRM_FIELD_NUMBER = 10;
@@ -3849,8 +3628,8 @@ public final class ContractDataOuterClass {
       for (int i = 0; i < tansactionNotes_.size(); i++) {
         output.writeMessage(8, tansactionNotes_.get(i));
       }
-      if (tansactionTime_ != null) {
-        output.writeMessage(9, getTansactionTime());
+      if (tansactionTime_ != 0L) {
+        output.writeInt64(9, tansactionTime_);
       }
       if (incomConfirm_ != false) {
         output.writeBool(10, incomConfirm_);
@@ -3892,9 +3671,9 @@ public final class ContractDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, tansactionNotes_.get(i));
       }
-      if (tansactionTime_ != null) {
+      if (tansactionTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getTansactionTime());
+          .computeInt64Size(9, tansactionTime_);
       }
       if (incomConfirm_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -3914,10 +3693,10 @@ public final class ContractDataOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail)) {
+      if (!(obj instanceof com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail)) {
         return super.equals(obj);
       }
-      com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail other = (com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail) obj;
+      com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail other = (com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail) obj;
 
       boolean result = true;
       result = result && (hasExpenses() == other.hasExpenses());
@@ -3946,11 +3725,8 @@ public final class ContractDataOuterClass {
           .equals(other.getTansactionRemark());
       result = result && getTansactionNotesList()
           .equals(other.getTansactionNotesList());
-      result = result && (hasTansactionTime() == other.hasTansactionTime());
-      if (hasTansactionTime()) {
-        result = result && getTansactionTime()
-            .equals(other.getTansactionTime());
-      }
+      result = result && (getTansactionTime()
+          == other.getTansactionTime());
       result = result && (getIncomConfirm()
           == other.getIncomConfirm());
       result = result && (hasOperateInfo() == other.hasOperateInfo());
@@ -3993,10 +3769,9 @@ public final class ContractDataOuterClass {
         hash = (37 * hash) + TANSACTION_NOTES_FIELD_NUMBER;
         hash = (53 * hash) + getTansactionNotesList().hashCode();
       }
-      if (hasTansactionTime()) {
-        hash = (37 * hash) + TANSACTION_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getTansactionTime().hashCode();
-      }
+      hash = (37 * hash) + TANSACTION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTansactionTime());
       hash = (37 * hash) + INCOM_CONFIRM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIncomConfirm());
@@ -4009,58 +3784,58 @@ public final class ContractDataOuterClass {
       return hash;
     }
 
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(byte[] data)
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseDelimitedFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseDelimitedFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parseFrom(
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4072,7 +3847,7 @@ public final class ContractDataOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail prototype) {
+    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4096,20 +3871,20 @@ public final class ContractDataOuterClass {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:protos.ContractTransactionDetail)
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetailOrBuilder {
+        com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractTransactionDetail_descriptor;
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractTransactionDetail_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractTransactionDetail_fieldAccessorTable
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractTransactionDetail_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.class, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.Builder.class);
+                com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.class, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder.class);
       }
 
-      // Construct using com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.newBuilder()
+      // Construct using com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4161,12 +3936,8 @@ public final class ContractDataOuterClass {
         } else {
           tansactionNotesBuilder_.clear();
         }
-        if (tansactionTimeBuilder_ == null) {
-          tansactionTime_ = null;
-        } else {
-          tansactionTime_ = null;
-          tansactionTimeBuilder_ = null;
-        }
+        tansactionTime_ = 0L;
+
         incomConfirm_ = false;
 
         if (operateInfoBuilder_ == null) {
@@ -4180,23 +3951,23 @@ public final class ContractDataOuterClass {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.internal_static_protos_ContractTransactionDetail_descriptor;
+        return com.xiangna.www.protos.contract.ContractData.internal_static_protos_ContractTransactionDetail_descriptor;
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail getDefaultInstanceForType() {
-        return com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.getDefaultInstance();
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getDefaultInstanceForType() {
+        return com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance();
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail build() {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail result = buildPartial();
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail build() {
+        com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail buildPartial() {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail result = new com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail(this);
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail buildPartial() {
+        com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail result = new com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (expensesBuilder_ == null) {
@@ -4230,11 +4001,7 @@ public final class ContractDataOuterClass {
         } else {
           result.tansactionNotes_ = tansactionNotesBuilder_.build();
         }
-        if (tansactionTimeBuilder_ == null) {
-          result.tansactionTime_ = tansactionTime_;
-        } else {
-          result.tansactionTime_ = tansactionTimeBuilder_.build();
-        }
+        result.tansactionTime_ = tansactionTime_;
         result.incomConfirm_ = incomConfirm_;
         if (operateInfoBuilder_ == null) {
           result.operateInfo_ = operateInfo_;
@@ -4273,16 +4040,16 @@ public final class ContractDataOuterClass {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail) {
-          return mergeFrom((com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail)other);
+        if (other instanceof com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail) {
+          return mergeFrom((com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail other) {
-        if (other == com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail other) {
+        if (other == com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance()) return this;
         if (other.hasExpenses()) {
           mergeExpenses(other.getExpenses());
         }
@@ -4328,8 +4095,8 @@ public final class ContractDataOuterClass {
             }
           }
         }
-        if (other.hasTansactionTime()) {
-          mergeTansactionTime(other.getTansactionTime());
+        if (other.getTansactionTime() != 0L) {
+          setTansactionTime(other.getTansactionTime());
         }
         if (other.getIncomConfirm() != false) {
           setIncomConfirm(other.getIncomConfirm());
@@ -4349,11 +4116,11 @@ public final class ContractDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail parsedMessage = null;
+        com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail) e.getUnfinishedMessage();
+          parsedMessage = (com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5415,157 +5182,42 @@ public final class ContractDataOuterClass {
         return tansactionNotesBuilder_;
       }
 
-      private com.google.protobuf.Timestamp tansactionTime_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> tansactionTimeBuilder_;
+      private long tansactionTime_ ;
       /**
        * <pre>
-       * 交易时间
+       * 交易时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
+       * <code>optional int64 tansaction_time = 9;</code>
        */
-      public boolean hasTansactionTime() {
-        return tansactionTimeBuilder_ != null || tansactionTime_ != null;
+      public long getTansactionTime() {
+        return tansactionTime_;
       }
       /**
        * <pre>
-       * 交易时间
+       * 交易时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
+       * <code>optional int64 tansaction_time = 9;</code>
        */
-      public com.google.protobuf.Timestamp getTansactionTime() {
-        if (tansactionTimeBuilder_ == null) {
-          return tansactionTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : tansactionTime_;
-        } else {
-          return tansactionTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 交易时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-       */
-      public Builder setTansactionTime(com.google.protobuf.Timestamp value) {
-        if (tansactionTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          tansactionTime_ = value;
-          onChanged();
-        } else {
-          tansactionTimeBuilder_.setMessage(value);
-        }
-
+      public Builder setTansactionTime(long value) {
+        
+        tansactionTime_ = value;
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * 交易时间
+       * 交易时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-       */
-      public Builder setTansactionTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (tansactionTimeBuilder_ == null) {
-          tansactionTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          tansactionTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-       */
-      public Builder mergeTansactionTime(com.google.protobuf.Timestamp value) {
-        if (tansactionTimeBuilder_ == null) {
-          if (tansactionTime_ != null) {
-            tansactionTime_ =
-              com.google.protobuf.Timestamp.newBuilder(tansactionTime_).mergeFrom(value).buildPartial();
-          } else {
-            tansactionTime_ = value;
-          }
-          onChanged();
-        } else {
-          tansactionTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
+       * <code>optional int64 tansaction_time = 9;</code>
        */
       public Builder clearTansactionTime() {
-        if (tansactionTimeBuilder_ == null) {
-          tansactionTime_ = null;
-          onChanged();
-        } else {
-          tansactionTime_ = null;
-          tansactionTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getTansactionTimeBuilder() {
         
+        tansactionTime_ = 0L;
         onChanged();
-        return getTansactionTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 交易时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getTansactionTimeOrBuilder() {
-        if (tansactionTimeBuilder_ != null) {
-          return tansactionTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return tansactionTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : tansactionTime_;
-        }
-      }
-      /**
-       * <pre>
-       * 交易时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp tansaction_time = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getTansactionTimeFieldBuilder() {
-        if (tansactionTimeBuilder_ == null) {
-          tansactionTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getTansactionTime(),
-                  getParentForChildren(),
-                  isClean());
-          tansactionTime_ = null;
-        }
-        return tansactionTimeBuilder_;
+        return this;
       }
 
       private boolean incomConfirm_ ;
@@ -5773,12 +5425,12 @@ public final class ContractDataOuterClass {
     }
 
     // @@protoc_insertion_point(class_scope:protos.ContractTransactionDetail)
-    private static final com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail DEFAULT_INSTANCE;
+    private static final com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail();
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail();
     }
 
-    public static com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail getDefaultInstance() {
+    public static com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5801,17 +5453,17 @@ public final class ContractDataOuterClass {
       return PARSER;
     }
 
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractTransactionDetail getDefaultInstanceForType() {
+    public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protos_ContractData_descriptor;
+    internal_static_protos_ContractFormData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protos_ContractData_fieldAccessorTable;
+      internal_static_protos_ContractFormData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protos_ContractMoneyCount_descriptor;
   private static final 
@@ -5831,35 +5483,34 @@ public final class ContractDataOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034contract/contract_data.proto\022\006protos\032\037" +
-      "google/protobuf/timestamp.proto\032\023common/" +
-      "common.proto\032 configuration/contractflow" +
-      ".proto\"\217\002\n\014ContractData\022\025\n\rexpect_amount" +
-      "\030\001 \001(\003\022\030\n\020financing_period\030\002 \001(\005\0227\n\023expe" +
-      "ct_expired_time\030\003 \001(\0132\032.google.protobuf." +
-      "Timestamp\022\030\n\020confirmed_amount\030\004 \001(\003\022:\n\026c" +
-      "onfirmed_expired_time\030\005 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\022\026\n\016confirmed_rate\030\006 \001(\003\022" +
-      "\'\n\013order_files\030\007 \003(\0132\022.protos.LedgerFile",
-      "\"\377\001\n\022ContractMoneyCount\022\027\n\017need_pay_amou" +
-      "nt\030\001 \001(\003\022\027\n\017expenses_amount\030\002 \001(\003\022\025\n\rinc" +
-      "ome_amount\030\003 \001(\003\022 \n\030need_payback_loan_am" +
-      "ount\030\004 \001(\003\022\037\n\027payback_expenses_amount\030\005 " +
-      "\001(\003\022\035\n\025payback_income_amount\030\006 \001(\003\022>\n\023tr" +
-      "ansaction_details\030\007 \003(\0132!.protos.Contrac" +
-      "tTransactionDetail\"\226\003\n\031ContractTransacti" +
-      "onDetail\022\037\n\010expenses\030\001 \001(\0132\r.protos.AppV" +
-      "o\022\027\n\017expenses_amount\030\002 \001(\003\0220\n\020expenses_a" +
-      "ccount\030\003 \001(\0132\026.protos.OrgBankAccount\022\035\n\006",
-      "income\030\004 \001(\0132\r.protos.AppVo\022.\n\016income_ac" +
-      "count\030\006 \001(\0132\026.protos.OrgBankAccount\022\031\n\021t" +
-      "ansaction_remark\030\007 \001(\t\022,\n\020tansaction_not" +
-      "es\030\010 \003(\0132\022.protos.LedgerFile\0223\n\017tansacti" +
-      "on_time\030\t \001(\0132\032.google.protobuf.Timestam" +
-      "p\022\025\n\rincom_confirm\030\n \001(\010\022)\n\014operate_info" +
-      "\030\013 \001(\0132\023.protos.OperateInfoBB\n\037com.xiang" +
-      "na.www.protos.contractZ\037github.com/xncc/" +
-      "protos/contractb\006proto3"
+      "\n\034contract/contract_data.proto\022\006protos\032\023" +
+      "common/common.proto\032 configuration/contr" +
+      "actflow.proto\"\231\002\n\020ContractFormData\022\032\n\022ex" +
+      "pect_loan_amount\030\001 \001(\003\022\032\n\022expect_loan_pe" +
+      "riod\030\002 \001(\005\022\030\n\020expect_loan_rate\030\003 \001(\003\022\034\n\024" +
+      "expect_loan_end_time\030\004 \001(\003\022\033\n\023confirm_lo" +
+      "an_amount\030\005 \001(\003\022\033\n\023confirm_loan_period\030\006" +
+      " \001(\005\022\031\n\021confirm_loan_rate\030\007 \001(\003\022\035\n\025confi" +
+      "rm_loan_end_time\030\010 \001(\003\022!\n\005files\030\t \003(\0132\022." +
+      "protos.LedgerFile\"\377\001\n\022ContractMoneyCount",
+      "\022\027\n\017need_pay_amount\030\001 \001(\003\022\027\n\017expenses_am" +
+      "ount\030\002 \001(\003\022\025\n\rincome_amount\030\003 \001(\003\022 \n\030nee" +
+      "d_payback_loan_amount\030\004 \001(\003\022\037\n\027payback_e" +
+      "xpenses_amount\030\005 \001(\003\022\035\n\025payback_income_a" +
+      "mount\030\006 \001(\003\022>\n\023transaction_details\030\007 \003(\013" +
+      "2!.protos.ContractTransactionDetail\"\372\002\n\031" +
+      "ContractTransactionDetail\022\037\n\010expenses\030\001 " +
+      "\001(\0132\r.protos.AppVo\022\027\n\017expenses_amount\030\002 " +
+      "\001(\003\0220\n\020expenses_account\030\003 \001(\0132\026.protos.O" +
+      "rgBankAccount\022\035\n\006income\030\004 \001(\0132\r.protos.A",
+      "ppVo\022.\n\016income_account\030\006 \001(\0132\026.protos.Or" +
+      "gBankAccount\022\031\n\021tansaction_remark\030\007 \001(\t\022" +
+      ",\n\020tansaction_notes\030\010 \003(\0132\022.protos.Ledge" +
+      "rFile\022\027\n\017tansaction_time\030\t \001(\003\022\025\n\rincom_" +
+      "confirm\030\n \001(\010\022)\n\014operate_info\030\013 \001(\0132\023.pr" +
+      "otos.OperateInfoBB\n\037com.xiangna.www.prot" +
+      "os.contractZ\037github.com/xncc/protos/cont" +
+      "ractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5872,16 +5523,15 @@ public final class ContractDataOuterClass {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
           com.xiangna.www.protos.common.Common.getDescriptor(),
           com.xiangna.www.protos.configuration.Contractflow.getDescriptor(),
         }, assigner);
-    internal_static_protos_ContractData_descriptor =
+    internal_static_protos_ContractFormData_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_protos_ContractData_fieldAccessorTable = new
+    internal_static_protos_ContractFormData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protos_ContractData_descriptor,
-        new java.lang.String[] { "ExpectAmount", "FinancingPeriod", "ExpectExpiredTime", "ConfirmedAmount", "ConfirmedExpiredTime", "ConfirmedRate", "OrderFiles", });
+        internal_static_protos_ContractFormData_descriptor,
+        new java.lang.String[] { "ExpectLoanAmount", "ExpectLoanPeriod", "ExpectLoanRate", "ExpectLoanEndTime", "ConfirmLoanAmount", "ConfirmLoanPeriod", "ConfirmLoanRate", "ConfirmLoanEndTime", "Files", });
     internal_static_protos_ContractMoneyCount_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protos_ContractMoneyCount_fieldAccessorTable = new
@@ -5894,7 +5544,6 @@ public final class ContractDataOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractTransactionDetail_descriptor,
         new java.lang.String[] { "Expenses", "ExpensesAmount", "ExpensesAccount", "Income", "IncomeAccount", "TansactionRemark", "TansactionNotes", "TansactionTime", "IncomConfirm", "OperateInfo", });
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.configuration.Contractflow.getDescriptor();
   }

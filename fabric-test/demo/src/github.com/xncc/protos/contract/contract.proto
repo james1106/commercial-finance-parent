@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 import "contract/contract_data.proto";
 import "contract/contract_status.proto";
@@ -19,7 +18,7 @@ message FinancingContract {
     AppVo enterprise = 3; // 核心企业信息
     AppVo factoring = 4; // 保理公司信息
 
-    ContractData contract_data = 5; // 订单数据
+    ContractFormData contract_data = 5; // 订单数据
     repeated FinancingInvoice invoices = 6; // 供应商提供的发票数据
     ContractMoneyCount money_count = 8; // 订单金额汇总
 
@@ -34,9 +33,9 @@ message FinancingInvoice {
     int64 expect_amount = 2; // 申请融资金额
     int64 confirm_amount = 3; // 审核确认可融资金额
     int64 confirm_rate = 4; // 融资利率
-    google.protobuf.Timestamp confirm_pay_time = 5; // 保理融资发放日期
-    google.protobuf.Timestamp confirm_return_time = 6; // 应收账款还款日期
-    google.protobuf.Timestamp confirm_end_time = 7; // 保理融资到期日期
+    int64 confirm_pay_time = 5; // 保理融资发放日期(unix时间戳)
+    int64 confirm_return_time = 6; // 应收账款还款日期(unix时间戳)
+    int64 confirm_end_time = 7; // 保理融资到期日期(unix时间戳)
     string confirm_rate_desc = 8; // 利息计收方式
     string confirm_urge_return_desc = 9; // 应收账款催收方式
 }
@@ -45,7 +44,7 @@ message FinancingInvoice {
 message Invoice {
     string invoice_no = 1; // 发票编号
     int64 invoice_amount = 2; // 应收账款发票金额
-    google.protobuf.Timestamp invoice_time = 3; // 开票日期
+    int64 invoice_time = 3; // 开票日期(unix时间戳)
     AppVo supplier = 4; // 销售方
     AppVo enterprise = 5; // 购买方
     string remark = 6; // 备注

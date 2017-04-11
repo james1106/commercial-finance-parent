@@ -59,15 +59,15 @@ message LedgerFile {
 // 账本链上文件流
 // key = LedgerFile#sha256
 message LedgerFileData {
-    bytes data = 1; // 文件数据
+    string key = 1; // 文件的sha256值
+    bytes data = 2; // 文件数据
 }
 
 // 文件列表
 // 用于查询单独返回文件列表
-message LedgerFileList{
+message LedgerFileList {
     repeated LedgerFile files = 1;
 }
-
 
 // 银行账户信息
 message OrgBankAccount {

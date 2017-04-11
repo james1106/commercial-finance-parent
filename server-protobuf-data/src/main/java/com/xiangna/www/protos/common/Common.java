@@ -5155,10 +5155,28 @@ public final class Common {
 
     /**
      * <pre>
+     * 文件的sha256值
+     * </pre>
+     *
+     * <code>optional string key = 1;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <pre>
+     * 文件的sha256值
+     * </pre>
+     *
+     * <code>optional string key = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
+
+    /**
+     * <pre>
      * 文件数据
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>optional bytes data = 2;</code>
      */
     com.google.protobuf.ByteString getData();
   }
@@ -5179,6 +5197,7 @@ public final class Common {
       super(builder);
     }
     private LedgerFileData() {
+      key_ = "";
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
 
@@ -5208,6 +5227,12 @@ public final class Common {
               break;
             }
             case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
+              break;
+            }
+            case 18: {
 
               data_ = input.readBytes();
               break;
@@ -5235,14 +5260,56 @@ public final class Common {
               com.xiangna.www.protos.common.Common.LedgerFileData.class, com.xiangna.www.protos.common.Common.LedgerFileData.Builder.class);
     }
 
-    public static final int DATA_FIELD_NUMBER = 1;
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
+    /**
+     * <pre>
+     * 文件的sha256值
+     * </pre>
+     *
+     * <code>optional string key = 1;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 文件的sha256值
+     * </pre>
+     *
+     * <code>optional string key = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DATA_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString data_;
     /**
      * <pre>
      * 文件数据
      * </pre>
      *
-     * <code>optional bytes data = 1;</code>
+     * <code>optional bytes data = 2;</code>
      */
     public com.google.protobuf.ByteString getData() {
       return data_;
@@ -5260,8 +5327,11 @@ public final class Common {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
       if (!data_.isEmpty()) {
-        output.writeBytes(1, data_);
+        output.writeBytes(2, data_);
       }
     }
 
@@ -5270,9 +5340,12 @@ public final class Common {
       if (size != -1) return size;
 
       size = 0;
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
       if (!data_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, data_);
+          .computeBytesSize(2, data_);
       }
       memoizedSize = size;
       return size;
@@ -5290,6 +5363,8 @@ public final class Common {
       com.xiangna.www.protos.common.Common.LedgerFileData other = (com.xiangna.www.protos.common.Common.LedgerFileData) obj;
 
       boolean result = true;
+      result = result && getKey()
+          .equals(other.getKey());
       result = result && getData()
           .equals(other.getData());
       return result;
@@ -5302,6 +5377,8 @@ public final class Common {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -5427,6 +5504,8 @@ public final class Common {
       }
       public Builder clear() {
         super.clear();
+        key_ = "";
+
         data_ = com.google.protobuf.ByteString.EMPTY;
 
         return this;
@@ -5451,6 +5530,7 @@ public final class Common {
 
       public com.xiangna.www.protos.common.Common.LedgerFileData buildPartial() {
         com.xiangna.www.protos.common.Common.LedgerFileData result = new com.xiangna.www.protos.common.Common.LedgerFileData(this);
+        result.key_ = key_;
         result.data_ = data_;
         onBuilt();
         return result;
@@ -5493,6 +5573,10 @@ public final class Common {
 
       public Builder mergeFrom(com.xiangna.www.protos.common.Common.LedgerFileData other) {
         if (other == com.xiangna.www.protos.common.Common.LedgerFileData.getDefaultInstance()) return this;
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
         if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
           setData(other.getData());
         }
@@ -5522,13 +5606,102 @@ public final class Common {
         return this;
       }
 
+      private java.lang.Object key_ = "";
+      /**
+       * <pre>
+       * 文件的sha256值
+       * </pre>
+       *
+       * <code>optional string key = 1;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件的sha256值
+       * </pre>
+       *
+       * <code>optional string key = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 文件的sha256值
+       * </pre>
+       *
+       * <code>optional string key = 1;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件的sha256值
+       * </pre>
+       *
+       * <code>optional string key = 1;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 文件的sha256值
+       * </pre>
+       *
+       * <code>optional string key = 1;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
        * 文件数据
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>optional bytes data = 2;</code>
        */
       public com.google.protobuf.ByteString getData() {
         return data_;
@@ -5538,7 +5711,7 @@ public final class Common {
        * 文件数据
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>optional bytes data = 2;</code>
        */
       public Builder setData(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -5554,7 +5727,7 @@ public final class Common {
        * 文件数据
        * </pre>
        *
-       * <code>optional bytes data = 1;</code>
+       * <code>optional bytes data = 2;</code>
        */
       public Builder clearData() {
         
@@ -7307,12 +7480,13 @@ public final class Common {
       " \001(\t\022\014\n\004name\030\003 \001(\t\022\014\n\004size\030\004 \001(\003\022\014\n\004type" +
       "\030\005 \001(\t\022\023\n\013isEncrypted\030\006 \001(\010\022\016\n\006appIds\030\007 " +
       "\003(\t\022)\n\014operate_info\030\010 \001(\0132\023.protos.Opera" +
-      "teInfo\"\036\n\016LedgerFileData\022\014\n\004data\030\001 \001(\014\"3" +
-      "\n\016LedgerFileList\022!\n\005files\030\001 \003(\0132\022.protos" +
-      ".LedgerFile\"I\n\016OrgBankAccount\022\017\n\007account" +
-      "\030\001 \001(\t\022\021\n\tbank_name\030\002 \001(\t\022\023\n\013bank_branch" +
-      "\030\003 \001(\tB>\n\035com.xiangna.www.protos.commonZ" +
-      "\035github.com/xncc/protos/commonb\006proto3"
+      "teInfo\"+\n\016LedgerFileData\022\013\n\003key\030\001 \001(\t\022\014\n" +
+      "\004data\030\002 \001(\014\"3\n\016LedgerFileList\022!\n\005files\030\001" +
+      " \003(\0132\022.protos.LedgerFile\"I\n\016OrgBankAccou" +
+      "nt\022\017\n\007account\030\001 \001(\t\022\021\n\tbank_name\030\002 \001(\t\022\023" +
+      "\n\013bank_branch\030\003 \001(\tB>\n\035com.xiangna.www.p" +
+      "rotos.commonZ\035github.com/xncc/protos/com",
+      "monb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7356,7 +7530,7 @@ public final class Common {
     internal_static_protos_LedgerFileData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_LedgerFileData_descriptor,
-        new java.lang.String[] { "Data", });
+        new java.lang.String[] { "Key", "Data", });
     internal_static_protos_LedgerFileList_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_protos_LedgerFileList_fieldAccessorTable = new

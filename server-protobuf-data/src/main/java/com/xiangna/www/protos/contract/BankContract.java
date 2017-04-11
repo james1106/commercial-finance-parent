@@ -91,7 +91,7 @@ public final class BankContract {
      * 订单数据
      * </pre>
      *
-     * <code>optional .protos.ContractData contract_data = 4;</code>
+     * <code>optional .protos.ContractFormData contract_data = 4;</code>
      */
     boolean hasContractData();
     /**
@@ -99,17 +99,17 @@ public final class BankContract {
      * 订单数据
      * </pre>
      *
-     * <code>optional .protos.ContractData contract_data = 4;</code>
+     * <code>optional .protos.ContractFormData contract_data = 4;</code>
      */
-    com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData getContractData();
+    com.xiangna.www.protos.contract.ContractData.ContractFormData getContractData();
     /**
      * <pre>
      * 订单数据
      * </pre>
      *
-     * <code>optional .protos.ContractData contract_data = 4;</code>
+     * <code>optional .protos.ContractFormData contract_data = 4;</code>
      */
-    com.xiangna.www.protos.contract.ContractDataOuterClass.ContractDataOrBuilder getContractDataOrBuilder();
+    com.xiangna.www.protos.contract.ContractData.ContractFormDataOrBuilder getContractDataOrBuilder();
 
     /**
      * <pre>
@@ -170,7 +170,7 @@ public final class BankContract {
      *
      * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
      */
-    com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount getMoneyCount();
+    com.xiangna.www.protos.contract.ContractData.ContractMoneyCount getMoneyCount();
     /**
      * <pre>
      * 订单金额汇总
@@ -178,7 +178,7 @@ public final class BankContract {
      *
      * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
      */
-    com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCountOrBuilder getMoneyCountOrBuilder();
+    com.xiangna.www.protos.contract.ContractData.ContractMoneyCountOrBuilder getMoneyCountOrBuilder();
 
     /**
      * <pre>
@@ -310,11 +310,11 @@ public final class BankContract {
               break;
             }
             case 34: {
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder subBuilder = null;
+              com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder subBuilder = null;
               if (contractData_ != null) {
                 subBuilder = contractData_.toBuilder();
               }
-              contractData_ = input.readMessage(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.parser(), extensionRegistry);
+              contractData_ = input.readMessage(com.xiangna.www.protos.contract.ContractData.ContractFormData.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(contractData_);
                 contractData_ = subBuilder.buildPartial();
@@ -332,11 +332,11 @@ public final class BankContract {
               break;
             }
             case 50: {
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder subBuilder = null;
+              com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder subBuilder = null;
               if (moneyCount_ != null) {
                 subBuilder = moneyCount_.toBuilder();
               }
-              moneyCount_ = input.readMessage(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.parser(), extensionRegistry);
+              moneyCount_ = input.readMessage(com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(moneyCount_);
                 moneyCount_ = subBuilder.buildPartial();
@@ -506,13 +506,13 @@ public final class BankContract {
     }
 
     public static final int CONTRACT_DATA_FIELD_NUMBER = 4;
-    private com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData contractData_;
+    private com.xiangna.www.protos.contract.ContractData.ContractFormData contractData_;
     /**
      * <pre>
      * 订单数据
      * </pre>
      *
-     * <code>optional .protos.ContractData contract_data = 4;</code>
+     * <code>optional .protos.ContractFormData contract_data = 4;</code>
      */
     public boolean hasContractData() {
       return contractData_ != null;
@@ -522,19 +522,19 @@ public final class BankContract {
      * 订单数据
      * </pre>
      *
-     * <code>optional .protos.ContractData contract_data = 4;</code>
+     * <code>optional .protos.ContractFormData contract_data = 4;</code>
      */
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData getContractData() {
-      return contractData_ == null ? com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.getDefaultInstance() : contractData_;
+    public com.xiangna.www.protos.contract.ContractData.ContractFormData getContractData() {
+      return contractData_ == null ? com.xiangna.www.protos.contract.ContractData.ContractFormData.getDefaultInstance() : contractData_;
     }
     /**
      * <pre>
      * 订单数据
      * </pre>
      *
-     * <code>optional .protos.ContractData contract_data = 4;</code>
+     * <code>optional .protos.ContractFormData contract_data = 4;</code>
      */
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractDataOrBuilder getContractDataOrBuilder() {
+    public com.xiangna.www.protos.contract.ContractData.ContractFormDataOrBuilder getContractDataOrBuilder() {
       return getContractData();
     }
 
@@ -594,7 +594,7 @@ public final class BankContract {
     }
 
     public static final int MONEY_COUNT_FIELD_NUMBER = 6;
-    private com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount moneyCount_;
+    private com.xiangna.www.protos.contract.ContractData.ContractMoneyCount moneyCount_;
     /**
      * <pre>
      * 订单金额汇总
@@ -612,8 +612,8 @@ public final class BankContract {
      *
      * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
      */
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount getMoneyCount() {
-      return moneyCount_ == null ? com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.getDefaultInstance() : moneyCount_;
+    public com.xiangna.www.protos.contract.ContractData.ContractMoneyCount getMoneyCount() {
+      return moneyCount_ == null ? com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.getDefaultInstance() : moneyCount_;
     }
     /**
      * <pre>
@@ -622,7 +622,7 @@ public final class BankContract {
      *
      * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
      */
-    public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCountOrBuilder getMoneyCountOrBuilder() {
+    public com.xiangna.www.protos.contract.ContractData.ContractMoneyCountOrBuilder getMoneyCountOrBuilder() {
       return getMoneyCount();
     }
 
@@ -1601,15 +1601,15 @@ public final class BankContract {
         return bankInfoBuilder_;
       }
 
-      private com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData contractData_ = null;
+      private com.xiangna.www.protos.contract.ContractData.ContractFormData contractData_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractDataOrBuilder> contractDataBuilder_;
+          com.xiangna.www.protos.contract.ContractData.ContractFormData, com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder, com.xiangna.www.protos.contract.ContractData.ContractFormDataOrBuilder> contractDataBuilder_;
       /**
        * <pre>
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
       public boolean hasContractData() {
         return contractDataBuilder_ != null || contractData_ != null;
@@ -1619,11 +1619,11 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData getContractData() {
+      public com.xiangna.www.protos.contract.ContractData.ContractFormData getContractData() {
         if (contractDataBuilder_ == null) {
-          return contractData_ == null ? com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.getDefaultInstance() : contractData_;
+          return contractData_ == null ? com.xiangna.www.protos.contract.ContractData.ContractFormData.getDefaultInstance() : contractData_;
         } else {
           return contractDataBuilder_.getMessage();
         }
@@ -1633,9 +1633,9 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
-      public Builder setContractData(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData value) {
+      public Builder setContractData(com.xiangna.www.protos.contract.ContractData.ContractFormData value) {
         if (contractDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1653,10 +1653,10 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
       public Builder setContractData(
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder builderForValue) {
+          com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder builderForValue) {
         if (contractDataBuilder_ == null) {
           contractData_ = builderForValue.build();
           onChanged();
@@ -1671,13 +1671,13 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
-      public Builder mergeContractData(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData value) {
+      public Builder mergeContractData(com.xiangna.www.protos.contract.ContractData.ContractFormData value) {
         if (contractDataBuilder_ == null) {
           if (contractData_ != null) {
             contractData_ =
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.newBuilder(contractData_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.contract.ContractData.ContractFormData.newBuilder(contractData_).mergeFrom(value).buildPartial();
           } else {
             contractData_ = value;
           }
@@ -1693,7 +1693,7 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
       public Builder clearContractData() {
         if (contractDataBuilder_ == null) {
@@ -1711,9 +1711,9 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder getContractDataBuilder() {
+      public com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder getContractDataBuilder() {
         
         onChanged();
         return getContractDataFieldBuilder().getBuilder();
@@ -1723,14 +1723,14 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractDataOrBuilder getContractDataOrBuilder() {
+      public com.xiangna.www.protos.contract.ContractData.ContractFormDataOrBuilder getContractDataOrBuilder() {
         if (contractDataBuilder_ != null) {
           return contractDataBuilder_.getMessageOrBuilder();
         } else {
           return contractData_ == null ?
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.getDefaultInstance() : contractData_;
+              com.xiangna.www.protos.contract.ContractData.ContractFormData.getDefaultInstance() : contractData_;
         }
       }
       /**
@@ -1738,14 +1738,14 @@ public final class BankContract {
        * 订单数据
        * </pre>
        *
-       * <code>optional .protos.ContractData contract_data = 4;</code>
+       * <code>optional .protos.ContractFormData contract_data = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractDataOrBuilder> 
+          com.xiangna.www.protos.contract.ContractData.ContractFormData, com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder, com.xiangna.www.protos.contract.ContractData.ContractFormDataOrBuilder> 
           getContractDataFieldBuilder() {
         if (contractDataBuilder_ == null) {
           contractDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractData.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractDataOrBuilder>(
+              com.xiangna.www.protos.contract.ContractData.ContractFormData, com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder, com.xiangna.www.protos.contract.ContractData.ContractFormDataOrBuilder>(
                   getContractData(),
                   getParentForChildren(),
                   isClean());
@@ -2066,9 +2066,9 @@ public final class BankContract {
         return financingContractReviewsBuilder_;
       }
 
-      private com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount moneyCount_ = null;
+      private com.xiangna.www.protos.contract.ContractData.ContractMoneyCount moneyCount_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCountOrBuilder> moneyCountBuilder_;
+          com.xiangna.www.protos.contract.ContractData.ContractMoneyCount, com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder, com.xiangna.www.protos.contract.ContractData.ContractMoneyCountOrBuilder> moneyCountBuilder_;
       /**
        * <pre>
        * 订单金额汇总
@@ -2086,9 +2086,9 @@ public final class BankContract {
        *
        * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount getMoneyCount() {
+      public com.xiangna.www.protos.contract.ContractData.ContractMoneyCount getMoneyCount() {
         if (moneyCountBuilder_ == null) {
-          return moneyCount_ == null ? com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.getDefaultInstance() : moneyCount_;
+          return moneyCount_ == null ? com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.getDefaultInstance() : moneyCount_;
         } else {
           return moneyCountBuilder_.getMessage();
         }
@@ -2100,7 +2100,7 @@ public final class BankContract {
        *
        * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
        */
-      public Builder setMoneyCount(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount value) {
+      public Builder setMoneyCount(com.xiangna.www.protos.contract.ContractData.ContractMoneyCount value) {
         if (moneyCountBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2121,7 +2121,7 @@ public final class BankContract {
        * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
        */
       public Builder setMoneyCount(
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder builderForValue) {
+          com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder builderForValue) {
         if (moneyCountBuilder_ == null) {
           moneyCount_ = builderForValue.build();
           onChanged();
@@ -2138,11 +2138,11 @@ public final class BankContract {
        *
        * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
        */
-      public Builder mergeMoneyCount(com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount value) {
+      public Builder mergeMoneyCount(com.xiangna.www.protos.contract.ContractData.ContractMoneyCount value) {
         if (moneyCountBuilder_ == null) {
           if (moneyCount_ != null) {
             moneyCount_ =
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.newBuilder(moneyCount_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.newBuilder(moneyCount_).mergeFrom(value).buildPartial();
           } else {
             moneyCount_ = value;
           }
@@ -2178,7 +2178,7 @@ public final class BankContract {
        *
        * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder getMoneyCountBuilder() {
+      public com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder getMoneyCountBuilder() {
         
         onChanged();
         return getMoneyCountFieldBuilder().getBuilder();
@@ -2190,12 +2190,12 @@ public final class BankContract {
        *
        * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
        */
-      public com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCountOrBuilder getMoneyCountOrBuilder() {
+      public com.xiangna.www.protos.contract.ContractData.ContractMoneyCountOrBuilder getMoneyCountOrBuilder() {
         if (moneyCountBuilder_ != null) {
           return moneyCountBuilder_.getMessageOrBuilder();
         } else {
           return moneyCount_ == null ?
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.getDefaultInstance() : moneyCount_;
+              com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.getDefaultInstance() : moneyCount_;
         }
       }
       /**
@@ -2206,11 +2206,11 @@ public final class BankContract {
        * <code>optional .protos.ContractMoneyCount money_count = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCountOrBuilder> 
+          com.xiangna.www.protos.contract.ContractData.ContractMoneyCount, com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder, com.xiangna.www.protos.contract.ContractData.ContractMoneyCountOrBuilder> 
           getMoneyCountFieldBuilder() {
         if (moneyCountBuilder_ == null) {
           moneyCountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCount.Builder, com.xiangna.www.protos.contract.ContractDataOuterClass.ContractMoneyCountOrBuilder>(
+              com.xiangna.www.protos.contract.ContractData.ContractMoneyCount, com.xiangna.www.protos.contract.ContractData.ContractMoneyCount.Builder, com.xiangna.www.protos.contract.ContractData.ContractMoneyCountOrBuilder>(
                   getMoneyCount(),
                   getParentForChildren(),
                   isClean());
@@ -2615,28 +2615,12 @@ public final class BankContract {
 
     /**
      * <pre>
-     * 质押的融资订单的过期时间
+     * 质押的融资订单的过期时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
+     * <code>optional int64 order_expired_time = 4;</code>
      */
-    boolean hasOrderExpiredTime();
-    /**
-     * <pre>
-     * 质押的融资订单的过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-     */
-    com.google.protobuf.Timestamp getOrderExpiredTime();
-    /**
-     * <pre>
-     * 质押的融资订单的过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getOrderExpiredTimeOrBuilder();
+    long getOrderExpiredTime();
 
     /**
      * <pre>
@@ -2751,28 +2735,12 @@ public final class BankContract {
 
     /**
      * <pre>
-     * 银行审批确认的融资过期时间
+     * 银行审批确认的融资过期时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
+     * <code>optional int64 confirm_expired_time = 12;</code>
      */
-    boolean hasConfirmExpiredTime();
-    /**
-     * <pre>
-     * 银行审批确认的融资过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-     */
-    com.google.protobuf.Timestamp getConfirmExpiredTime();
-    /**
-     * <pre>
-     * 银行审批确认的融资过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getConfirmExpiredTimeOrBuilder();
+    long getConfirmExpiredTime();
   }
   /**
    * <pre>
@@ -2793,10 +2761,12 @@ public final class BankContract {
       financingOrderNo_ = "";
       orderAmount_ = 0L;
       financingPeriod_ = 0;
+      orderExpiredTime_ = 0L;
       expectAmount_ = 0L;
       expectRate_ = 0L;
       confirmAmount_ = 0L;
       confirmRate_ = 0L;
+      confirmExpiredTime_ = 0L;
     }
 
     @java.lang.Override
@@ -2840,17 +2810,9 @@ public final class BankContract {
               financingPeriod_ = input.readInt32();
               break;
             }
-            case 34: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (orderExpiredTime_ != null) {
-                subBuilder = orderExpiredTime_.toBuilder();
-              }
-              orderExpiredTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(orderExpiredTime_);
-                orderExpiredTime_ = subBuilder.buildPartial();
-              }
+            case 32: {
 
+              orderExpiredTime_ = input.readInt64();
               break;
             }
             case 40: {
@@ -2912,17 +2874,9 @@ public final class BankContract {
 
               break;
             }
-            case 98: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (confirmExpiredTime_ != null) {
-                subBuilder = confirmExpiredTime_.toBuilder();
-              }
-              confirmExpiredTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(confirmExpiredTime_);
-                confirmExpiredTime_ = subBuilder.buildPartial();
-              }
+            case 96: {
 
+              confirmExpiredTime_ = input.readInt64();
               break;
             }
           }
@@ -3017,36 +2971,16 @@ public final class BankContract {
     }
 
     public static final int ORDER_EXPIRED_TIME_FIELD_NUMBER = 4;
-    private com.google.protobuf.Timestamp orderExpiredTime_;
+    private long orderExpiredTime_;
     /**
      * <pre>
-     * 质押的融资订单的过期时间
+     * 质押的融资订单的过期时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
+     * <code>optional int64 order_expired_time = 4;</code>
      */
-    public boolean hasOrderExpiredTime() {
-      return orderExpiredTime_ != null;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-     */
-    public com.google.protobuf.Timestamp getOrderExpiredTime() {
-      return orderExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : orderExpiredTime_;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getOrderExpiredTimeOrBuilder() {
-      return getOrderExpiredTime();
+    public long getOrderExpiredTime() {
+      return orderExpiredTime_;
     }
 
     public static final int EXPECT_AMOUNT_FIELD_NUMBER = 5;
@@ -3201,36 +3135,16 @@ public final class BankContract {
     }
 
     public static final int CONFIRM_EXPIRED_TIME_FIELD_NUMBER = 12;
-    private com.google.protobuf.Timestamp confirmExpiredTime_;
+    private long confirmExpiredTime_;
     /**
      * <pre>
-     * 银行审批确认的融资过期时间
+     * 银行审批确认的融资过期时间(unix时间戳)
      * </pre>
      *
-     * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
+     * <code>optional int64 confirm_expired_time = 12;</code>
      */
-    public boolean hasConfirmExpiredTime() {
-      return confirmExpiredTime_ != null;
-    }
-    /**
-     * <pre>
-     * 银行审批确认的融资过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-     */
-    public com.google.protobuf.Timestamp getConfirmExpiredTime() {
-      return confirmExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : confirmExpiredTime_;
-    }
-    /**
-     * <pre>
-     * 银行审批确认的融资过期时间
-     * </pre>
-     *
-     * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getConfirmExpiredTimeOrBuilder() {
-      return getConfirmExpiredTime();
+    public long getConfirmExpiredTime() {
+      return confirmExpiredTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3254,8 +3168,8 @@ public final class BankContract {
       if (financingPeriod_ != 0) {
         output.writeInt32(3, financingPeriod_);
       }
-      if (orderExpiredTime_ != null) {
-        output.writeMessage(4, getOrderExpiredTime());
+      if (orderExpiredTime_ != 0L) {
+        output.writeInt64(4, orderExpiredTime_);
       }
       if (expectAmount_ != 0L) {
         output.writeInt64(5, expectAmount_);
@@ -3278,8 +3192,8 @@ public final class BankContract {
       if (bankFactor_ != null) {
         output.writeMessage(11, getBankFactor());
       }
-      if (confirmExpiredTime_ != null) {
-        output.writeMessage(12, getConfirmExpiredTime());
+      if (confirmExpiredTime_ != 0L) {
+        output.writeInt64(12, confirmExpiredTime_);
       }
     }
 
@@ -3299,9 +3213,9 @@ public final class BankContract {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, financingPeriod_);
       }
-      if (orderExpiredTime_ != null) {
+      if (orderExpiredTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getOrderExpiredTime());
+          .computeInt64Size(4, orderExpiredTime_);
       }
       if (expectAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -3331,9 +3245,9 @@ public final class BankContract {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getBankFactor());
       }
-      if (confirmExpiredTime_ != null) {
+      if (confirmExpiredTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getConfirmExpiredTime());
+          .computeInt64Size(12, confirmExpiredTime_);
       }
       memoizedSize = size;
       return size;
@@ -3357,11 +3271,8 @@ public final class BankContract {
           == other.getOrderAmount());
       result = result && (getFinancingPeriod()
           == other.getFinancingPeriod());
-      result = result && (hasOrderExpiredTime() == other.hasOrderExpiredTime());
-      if (hasOrderExpiredTime()) {
-        result = result && getOrderExpiredTime()
-            .equals(other.getOrderExpiredTime());
-      }
+      result = result && (getOrderExpiredTime()
+          == other.getOrderExpiredTime());
       result = result && (getExpectAmount()
           == other.getExpectAmount());
       result = result && (getExpectRate()
@@ -3385,11 +3296,8 @@ public final class BankContract {
         result = result && getBankFactor()
             .equals(other.getBankFactor());
       }
-      result = result && (hasConfirmExpiredTime() == other.hasConfirmExpiredTime());
-      if (hasConfirmExpiredTime()) {
-        result = result && getConfirmExpiredTime()
-            .equals(other.getConfirmExpiredTime());
-      }
+      result = result && (getConfirmExpiredTime()
+          == other.getConfirmExpiredTime());
       return result;
     }
 
@@ -3407,10 +3315,9 @@ public final class BankContract {
           getOrderAmount());
       hash = (37 * hash) + FINANCING_PERIOD_FIELD_NUMBER;
       hash = (53 * hash) + getFinancingPeriod();
-      if (hasOrderExpiredTime()) {
-        hash = (37 * hash) + ORDER_EXPIRED_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getOrderExpiredTime().hashCode();
-      }
+      hash = (37 * hash) + ORDER_EXPIRED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOrderExpiredTime());
       hash = (37 * hash) + EXPECT_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExpectAmount());
@@ -3435,10 +3342,9 @@ public final class BankContract {
         hash = (37 * hash) + BANK_FACTOR_FIELD_NUMBER;
         hash = (53 * hash) + getBankFactor().hashCode();
       }
-      if (hasConfirmExpiredTime()) {
-        hash = (37 * hash) + CONFIRM_EXPIRED_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getConfirmExpiredTime().hashCode();
-      }
+      hash = (37 * hash) + CONFIRM_EXPIRED_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getConfirmExpiredTime());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3567,12 +3473,8 @@ public final class BankContract {
 
         financingPeriod_ = 0;
 
-        if (orderExpiredTimeBuilder_ == null) {
-          orderExpiredTime_ = null;
-        } else {
-          orderExpiredTime_ = null;
-          orderExpiredTimeBuilder_ = null;
-        }
+        orderExpiredTime_ = 0L;
+
         expectAmount_ = 0L;
 
         expectRate_ = 0L;
@@ -3599,12 +3501,8 @@ public final class BankContract {
           bankFactor_ = null;
           bankFactorBuilder_ = null;
         }
-        if (confirmExpiredTimeBuilder_ == null) {
-          confirmExpiredTime_ = null;
-        } else {
-          confirmExpiredTime_ = null;
-          confirmExpiredTimeBuilder_ = null;
-        }
+        confirmExpiredTime_ = 0L;
+
         return this;
       }
 
@@ -3630,11 +3528,7 @@ public final class BankContract {
         result.financingOrderNo_ = financingOrderNo_;
         result.orderAmount_ = orderAmount_;
         result.financingPeriod_ = financingPeriod_;
-        if (orderExpiredTimeBuilder_ == null) {
-          result.orderExpiredTime_ = orderExpiredTime_;
-        } else {
-          result.orderExpiredTime_ = orderExpiredTimeBuilder_.build();
-        }
+        result.orderExpiredTime_ = orderExpiredTime_;
         result.expectAmount_ = expectAmount_;
         result.expectRate_ = expectRate_;
         result.confirmAmount_ = confirmAmount_;
@@ -3654,11 +3548,7 @@ public final class BankContract {
         } else {
           result.bankFactor_ = bankFactorBuilder_.build();
         }
-        if (confirmExpiredTimeBuilder_ == null) {
-          result.confirmExpiredTime_ = confirmExpiredTime_;
-        } else {
-          result.confirmExpiredTime_ = confirmExpiredTimeBuilder_.build();
-        }
+        result.confirmExpiredTime_ = confirmExpiredTime_;
         onBuilt();
         return result;
       }
@@ -3710,8 +3600,8 @@ public final class BankContract {
         if (other.getFinancingPeriod() != 0) {
           setFinancingPeriod(other.getFinancingPeriod());
         }
-        if (other.hasOrderExpiredTime()) {
-          mergeOrderExpiredTime(other.getOrderExpiredTime());
+        if (other.getOrderExpiredTime() != 0L) {
+          setOrderExpiredTime(other.getOrderExpiredTime());
         }
         if (other.getExpectAmount() != 0L) {
           setExpectAmount(other.getExpectAmount());
@@ -3734,8 +3624,8 @@ public final class BankContract {
         if (other.hasBankFactor()) {
           mergeBankFactor(other.getBankFactor());
         }
-        if (other.hasConfirmExpiredTime()) {
-          mergeConfirmExpiredTime(other.getConfirmExpiredTime());
+        if (other.getConfirmExpiredTime() != 0L) {
+          setConfirmExpiredTime(other.getConfirmExpiredTime());
         }
         onChanged();
         return this;
@@ -3928,157 +3818,42 @@ public final class BankContract {
         return this;
       }
 
-      private com.google.protobuf.Timestamp orderExpiredTime_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> orderExpiredTimeBuilder_;
+      private long orderExpiredTime_ ;
       /**
        * <pre>
-       * 质押的融资订单的过期时间
+       * 质押的融资订单的过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
+       * <code>optional int64 order_expired_time = 4;</code>
        */
-      public boolean hasOrderExpiredTime() {
-        return orderExpiredTimeBuilder_ != null || orderExpiredTime_ != null;
+      public long getOrderExpiredTime() {
+        return orderExpiredTime_;
       }
       /**
        * <pre>
-       * 质押的融资订单的过期时间
+       * 质押的融资订单的过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
+       * <code>optional int64 order_expired_time = 4;</code>
        */
-      public com.google.protobuf.Timestamp getOrderExpiredTime() {
-        if (orderExpiredTimeBuilder_ == null) {
-          return orderExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : orderExpiredTime_;
-        } else {
-          return orderExpiredTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-       */
-      public Builder setOrderExpiredTime(com.google.protobuf.Timestamp value) {
-        if (orderExpiredTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          orderExpiredTime_ = value;
-          onChanged();
-        } else {
-          orderExpiredTimeBuilder_.setMessage(value);
-        }
-
+      public Builder setOrderExpiredTime(long value) {
+        
+        orderExpiredTime_ = value;
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * 质押的融资订单的过期时间
+       * 质押的融资订单的过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-       */
-      public Builder setOrderExpiredTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (orderExpiredTimeBuilder_ == null) {
-          orderExpiredTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          orderExpiredTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-       */
-      public Builder mergeOrderExpiredTime(com.google.protobuf.Timestamp value) {
-        if (orderExpiredTimeBuilder_ == null) {
-          if (orderExpiredTime_ != null) {
-            orderExpiredTime_ =
-              com.google.protobuf.Timestamp.newBuilder(orderExpiredTime_).mergeFrom(value).buildPartial();
-          } else {
-            orderExpiredTime_ = value;
-          }
-          onChanged();
-        } else {
-          orderExpiredTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
+       * <code>optional int64 order_expired_time = 4;</code>
        */
       public Builder clearOrderExpiredTime() {
-        if (orderExpiredTimeBuilder_ == null) {
-          orderExpiredTime_ = null;
-          onChanged();
-        } else {
-          orderExpiredTime_ = null;
-          orderExpiredTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getOrderExpiredTimeBuilder() {
         
+        orderExpiredTime_ = 0L;
         onChanged();
-        return getOrderExpiredTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getOrderExpiredTimeOrBuilder() {
-        if (orderExpiredTimeBuilder_ != null) {
-          return orderExpiredTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return orderExpiredTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : orderExpiredTime_;
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp order_expired_time = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getOrderExpiredTimeFieldBuilder() {
-        if (orderExpiredTimeBuilder_ == null) {
-          orderExpiredTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getOrderExpiredTime(),
-                  getParentForChildren(),
-                  isClean());
-          orderExpiredTime_ = null;
-        }
-        return orderExpiredTimeBuilder_;
+        return this;
       }
 
       private long expectAmount_ ;
@@ -4692,157 +4467,42 @@ public final class BankContract {
         return bankFactorBuilder_;
       }
 
-      private com.google.protobuf.Timestamp confirmExpiredTime_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> confirmExpiredTimeBuilder_;
+      private long confirmExpiredTime_ ;
       /**
        * <pre>
-       * 银行审批确认的融资过期时间
+       * 银行审批确认的融资过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
+       * <code>optional int64 confirm_expired_time = 12;</code>
        */
-      public boolean hasConfirmExpiredTime() {
-        return confirmExpiredTimeBuilder_ != null || confirmExpiredTime_ != null;
+      public long getConfirmExpiredTime() {
+        return confirmExpiredTime_;
       }
       /**
        * <pre>
-       * 银行审批确认的融资过期时间
+       * 银行审批确认的融资过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
+       * <code>optional int64 confirm_expired_time = 12;</code>
        */
-      public com.google.protobuf.Timestamp getConfirmExpiredTime() {
-        if (confirmExpiredTimeBuilder_ == null) {
-          return confirmExpiredTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : confirmExpiredTime_;
-        } else {
-          return confirmExpiredTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 银行审批确认的融资过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-       */
-      public Builder setConfirmExpiredTime(com.google.protobuf.Timestamp value) {
-        if (confirmExpiredTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          confirmExpiredTime_ = value;
-          onChanged();
-        } else {
-          confirmExpiredTimeBuilder_.setMessage(value);
-        }
-
+      public Builder setConfirmExpiredTime(long value) {
+        
+        confirmExpiredTime_ = value;
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * 银行审批确认的融资过期时间
+       * 银行审批确认的融资过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-       */
-      public Builder setConfirmExpiredTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (confirmExpiredTimeBuilder_ == null) {
-          confirmExpiredTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          confirmExpiredTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 银行审批确认的融资过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-       */
-      public Builder mergeConfirmExpiredTime(com.google.protobuf.Timestamp value) {
-        if (confirmExpiredTimeBuilder_ == null) {
-          if (confirmExpiredTime_ != null) {
-            confirmExpiredTime_ =
-              com.google.protobuf.Timestamp.newBuilder(confirmExpiredTime_).mergeFrom(value).buildPartial();
-          } else {
-            confirmExpiredTime_ = value;
-          }
-          onChanged();
-        } else {
-          confirmExpiredTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 银行审批确认的融资过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
+       * <code>optional int64 confirm_expired_time = 12;</code>
        */
       public Builder clearConfirmExpiredTime() {
-        if (confirmExpiredTimeBuilder_ == null) {
-          confirmExpiredTime_ = null;
-          onChanged();
-        } else {
-          confirmExpiredTime_ = null;
-          confirmExpiredTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 银行审批确认的融资过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getConfirmExpiredTimeBuilder() {
         
+        confirmExpiredTime_ = 0L;
         onChanged();
-        return getConfirmExpiredTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 银行审批确认的融资过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getConfirmExpiredTimeOrBuilder() {
-        if (confirmExpiredTimeBuilder_ != null) {
-          return confirmExpiredTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return confirmExpiredTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : confirmExpiredTime_;
-        }
-      }
-      /**
-       * <pre>
-       * 银行审批确认的融资过期时间
-       * </pre>
-       *
-       * <code>optional .google.protobuf.Timestamp confirm_expired_time = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getConfirmExpiredTimeFieldBuilder() {
-        if (confirmExpiredTimeBuilder_ == null) {
-          confirmExpiredTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getConfirmExpiredTime(),
-                  getParentForChildren(),
-                  isClean());
-          confirmExpiredTime_ = null;
-        }
-        return confirmExpiredTimeBuilder_;
+        return this;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4912,32 +4572,29 @@ public final class BankContract {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034contract/bank_contract.proto\022\006protos\032\037" +
-      "google/protobuf/timestamp.proto\032\023common/" +
-      "common.proto\032\034contract/contract_data.pro" +
-      "to\032\036contract/contract_status.proto\"\347\002\n\020B" +
-      "ankLoanContract\022\020\n\010order_no\030\001 \001(\t\022 \n\tfac" +
-      "toring\030\002 \001(\0132\r.protos.AppVo\022 \n\tbank_info" +
-      "\030\003 \001(\0132\r.protos.AppVo\022+\n\rcontract_data\030\004" +
-      " \001(\0132\024.protos.ContractData\022C\n\032financing_" +
-      "contract_reviews\030\005 \003(\0132\037.protos.Financin" +
-      "gContractReview\022/\n\013money_count\030\006 \001(\0132\032.p",
-      "rotos.ContractMoneyCount\022/\n\017contract_sta" +
-      "tus\030\007 \001(\0132\026.protos.ContractStatus\022)\n\014ope" +
-      "rate_info\030\010 \001(\0132\023.protos.OperateInfo\"\231\003\n" +
-      "\027FinancingContractReview\022\032\n\022financing_or" +
-      "der_no\030\001 \001(\t\022\024\n\014order_amount\030\002 \001(\003\022\030\n\020fi" +
-      "nancing_period\030\003 \001(\005\0226\n\022order_expired_ti" +
-      "me\030\004 \001(\0132\032.google.protobuf.Timestamp\022\025\n\r" +
-      "expect_amount\030\005 \001(\003\022\023\n\013expect_rate\030\006 \001(\003" +
-      "\022\026\n\016confirm_amount\030\007 \001(\003\022\024\n\014confirm_rate" +
-      "\030\010 \001(\003\022\037\n\010supplier\030\t \001(\0132\r.protos.AppVo\022",
-      "!\n\nenterprise\030\n \001(\0132\r.protos.AppVo\022\"\n\013ba" +
-      "nk_factor\030\013 \001(\0132\r.protos.AppVo\0228\n\024confir" +
-      "m_expired_time\030\014 \001(\0132\032.google.protobuf.T" +
-      "imestampBB\n\037com.xiangna.www.protos.contr" +
-      "actZ\037github.com/xncc/protos/contractb\006pr" +
-      "oto3"
+      "\n\034contract/bank_contract.proto\022\006protos\032\023" +
+      "common/common.proto\032\034contract/contract_d" +
+      "ata.proto\032\036contract/contract_status.prot" +
+      "o\"\353\002\n\020BankLoanContract\022\020\n\010order_no\030\001 \001(\t" +
+      "\022 \n\tfactoring\030\002 \001(\0132\r.protos.AppVo\022 \n\tba" +
+      "nk_info\030\003 \001(\0132\r.protos.AppVo\022/\n\rcontract" +
+      "_data\030\004 \001(\0132\030.protos.ContractFormData\022C\n" +
+      "\032financing_contract_reviews\030\005 \003(\0132\037.prot" +
+      "os.FinancingContractReview\022/\n\013money_coun" +
+      "t\030\006 \001(\0132\032.protos.ContractMoneyCount\022/\n\017c",
+      "ontract_status\030\007 \001(\0132\026.protos.ContractSt" +
+      "atus\022)\n\014operate_info\030\010 \001(\0132\023.protos.Oper" +
+      "ateInfo\"\341\002\n\027FinancingContractReview\022\032\n\022f" +
+      "inancing_order_no\030\001 \001(\t\022\024\n\014order_amount\030" +
+      "\002 \001(\003\022\030\n\020financing_period\030\003 \001(\005\022\032\n\022order" +
+      "_expired_time\030\004 \001(\003\022\025\n\rexpect_amount\030\005 \001" +
+      "(\003\022\023\n\013expect_rate\030\006 \001(\003\022\026\n\016confirm_amoun" +
+      "t\030\007 \001(\003\022\024\n\014confirm_rate\030\010 \001(\003\022\037\n\010supplie" +
+      "r\030\t \001(\0132\r.protos.AppVo\022!\n\nenterprise\030\n \001" +
+      "(\0132\r.protos.AppVo\022\"\n\013bank_factor\030\013 \001(\0132\r",
+      ".protos.AppVo\022\034\n\024confirm_expired_time\030\014 " +
+      "\001(\003BB\n\037com.xiangna.www.protos.contractZ\037" +
+      "github.com/xncc/protos/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4950,9 +4607,8 @@ public final class BankContract {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
           com.xiangna.www.protos.common.Common.getDescriptor(),
-          com.xiangna.www.protos.contract.ContractDataOuterClass.getDescriptor(),
+          com.xiangna.www.protos.contract.ContractData.getDescriptor(),
           com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor(),
         }, assigner);
     internal_static_protos_BankLoanContract_descriptor =
@@ -4967,9 +4623,8 @@ public final class BankContract {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_FinancingContractReview_descriptor,
         new java.lang.String[] { "FinancingOrderNo", "OrderAmount", "FinancingPeriod", "OrderExpiredTime", "ExpectAmount", "ExpectRate", "ConfirmAmount", "ConfirmRate", "Supplier", "Enterprise", "BankFactor", "ConfirmExpiredTime", });
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.xiangna.www.protos.common.Common.getDescriptor();
-    com.xiangna.www.protos.contract.ContractDataOuterClass.getDescriptor();
+    com.xiangna.www.protos.contract.ContractData.getDescriptor();
     com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor();
   }
 

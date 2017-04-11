@@ -10,6 +10,7 @@ message ContractExcuteRequest {
     string action = 1; // 操作
     string no = 2; // 合约编号
     bytes contractData = 3; // 合约数据
+    
 }
 
 // 合约新增审批日志请求参数
