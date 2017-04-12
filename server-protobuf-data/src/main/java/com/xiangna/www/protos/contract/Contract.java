@@ -220,7 +220,7 @@ public final class Contract {
      *
      * <code>optional .protos.ContractStatus contract_status = 9;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getContractStatus();
+    com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus getContractStatus();
     /**
      * <pre>
      * 订单状态
@@ -228,7 +228,7 @@ public final class Contract {
      *
      * <code>optional .protos.ContractStatus contract_status = 9;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getContractStatusOrBuilder();
+    com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder getContractStatusOrBuilder();
 
     /**
      * <pre>
@@ -237,7 +237,7 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> 
+    java.util.List<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus> 
         getStepHistoryList();
     /**
      * <pre>
@@ -246,7 +246,7 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getStepHistory(int index);
+    com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus getStepHistory(int index);
     /**
      * <pre>
      * 订单状态历史记录
@@ -262,7 +262,7 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+    java.util.List<? extends com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder> 
         getStepHistoryOrBuilderList();
     /**
      * <pre>
@@ -271,7 +271,51 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getStepHistoryOrBuilder(
+    com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder getStepHistoryOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> 
+        getFilesList();
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index);
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    int getFilesCount();
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+        getFilesOrBuilderList();
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
         int index);
 
     /**
@@ -279,25 +323,44 @@ public final class Contract {
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
      */
-    boolean hasOperateInfo();
+    java.util.List<com.xiangna.www.protos.common.Common.OperateInfo> 
+        getOperateInfoList();
     /**
      * <pre>
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
      */
-    com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo();
+    com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo(int index);
     /**
      * <pre>
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
      */
-    com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder();
+    int getOperateInfoCount();
+    /**
+     * <pre>
+     * 数据操作信息
+     * </pre>
+     *
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
+        getOperateInfoOrBuilderList();
+    /**
+     * <pre>
+     * 数据操作信息
+     * </pre>
+     *
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+     */
+    com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder(
+        int index);
   }
   /**
    * <pre>
@@ -319,6 +382,8 @@ public final class Contract {
       orderNo_ = "";
       invoices_ = java.util.Collections.emptyList();
       stepHistory_ = java.util.Collections.emptyList();
+      files_ = java.util.Collections.emptyList();
+      operateInfo_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -427,11 +492,11 @@ public final class Contract {
               break;
             }
             case 74: {
-              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder subBuilder = null;
+              com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder subBuilder = null;
               if (contractStatus_ != null) {
                 subBuilder = contractStatus_.toBuilder();
               }
-              contractStatus_ = input.readMessage(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.parser(), extensionRegistry);
+              contractStatus_ = input.readMessage(com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(contractStatus_);
                 contractStatus_ = subBuilder.buildPartial();
@@ -441,24 +506,29 @@ public final class Contract {
             }
             case 82: {
               if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus>();
+                stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus>();
                 mutable_bitField0_ |= 0x00000100;
               }
               stepHistory_.add(
-                  input.readMessage(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.parser(), extensionRegistry));
+                  input.readMessage(com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.parser(), extensionRegistry));
               break;
             }
             case 90: {
-              com.xiangna.www.protos.common.Common.OperateInfo.Builder subBuilder = null;
-              if (operateInfo_ != null) {
-                subBuilder = operateInfo_.toBuilder();
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                files_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
+                mutable_bitField0_ |= 0x00000200;
               }
-              operateInfo_ = input.readMessage(com.xiangna.www.protos.common.Common.OperateInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(operateInfo_);
-                operateInfo_ = subBuilder.buildPartial();
+              files_.add(
+                  input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
+              break;
+            }
+            case 98: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                operateInfo_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.OperateInfo>();
+                mutable_bitField0_ |= 0x00000400;
               }
-
+              operateInfo_.add(
+                  input.readMessage(com.xiangna.www.protos.common.Common.OperateInfo.parser(), extensionRegistry));
               break;
             }
           }
@@ -474,6 +544,12 @@ public final class Contract {
         }
         if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
           stepHistory_ = java.util.Collections.unmodifiableList(stepHistory_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+          files_ = java.util.Collections.unmodifiableList(files_);
+        }
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          operateInfo_ = java.util.Collections.unmodifiableList(operateInfo_);
         }
         makeExtensionsImmutable();
       }
@@ -754,7 +830,7 @@ public final class Contract {
     }
 
     public static final int CONTRACT_STATUS_FIELD_NUMBER = 9;
-    private com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus contractStatus_;
+    private com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus contractStatus_;
     /**
      * <pre>
      * 订单状态
@@ -772,8 +848,8 @@ public final class Contract {
      *
      * <code>optional .protos.ContractStatus contract_status = 9;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getContractStatus() {
-      return contractStatus_ == null ? com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.getDefaultInstance() : contractStatus_;
+    public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus getContractStatus() {
+      return contractStatus_ == null ? com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.getDefaultInstance() : contractStatus_;
     }
     /**
      * <pre>
@@ -782,12 +858,12 @@ public final class Contract {
      *
      * <code>optional .protos.ContractStatus contract_status = 9;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getContractStatusOrBuilder() {
+    public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder getContractStatusOrBuilder() {
       return getContractStatus();
     }
 
     public static final int STEP_HISTORY_FIELD_NUMBER = 10;
-    private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> stepHistory_;
+    private java.util.List<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus> stepHistory_;
     /**
      * <pre>
      * 订单状态历史记录
@@ -795,7 +871,7 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> getStepHistoryList() {
+    public java.util.List<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus> getStepHistoryList() {
       return stepHistory_;
     }
     /**
@@ -805,7 +881,7 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+    public java.util.List<? extends com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder> 
         getStepHistoryOrBuilderList() {
       return stepHistory_;
     }
@@ -826,7 +902,7 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getStepHistory(int index) {
+    public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus getStepHistory(int index) {
       return stepHistory_.get(index);
     }
     /**
@@ -836,42 +912,119 @@ public final class Contract {
      *
      * <code>repeated .protos.ContractStatus step_history = 10;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getStepHistoryOrBuilder(
+    public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder getStepHistoryOrBuilder(
         int index) {
       return stepHistory_.get(index);
     }
 
-    public static final int OPERATE_INFO_FIELD_NUMBER = 11;
-    private com.xiangna.www.protos.common.Common.OperateInfo operateInfo_;
+    public static final int FILES_FIELD_NUMBER = 11;
+    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> files_;
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFilesList() {
+      return files_;
+    }
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+        getFilesOrBuilderList() {
+      return files_;
+    }
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    public int getFilesCount() {
+      return files_.size();
+    }
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index) {
+      return files_.get(index);
+    }
+    /**
+     * <pre>
+     * 所有参与方维护
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile files = 11;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
+        int index) {
+      return files_.get(index);
+    }
+
+    public static final int OPERATE_INFO_FIELD_NUMBER = 12;
+    private java.util.List<com.xiangna.www.protos.common.Common.OperateInfo> operateInfo_;
     /**
      * <pre>
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
      */
-    public boolean hasOperateInfo() {
-      return operateInfo_ != null;
+    public java.util.List<com.xiangna.www.protos.common.Common.OperateInfo> getOperateInfoList() {
+      return operateInfo_;
     }
     /**
      * <pre>
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
      */
-    public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo() {
-      return operateInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : operateInfo_;
+    public java.util.List<? extends com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
+        getOperateInfoOrBuilderList() {
+      return operateInfo_;
     }
     /**
      * <pre>
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
      */
-    public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder() {
-      return getOperateInfo();
+    public int getOperateInfoCount() {
+      return operateInfo_.size();
+    }
+    /**
+     * <pre>
+     * 数据操作信息
+     * </pre>
+     *
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo(int index) {
+      return operateInfo_.get(index);
+    }
+    /**
+     * <pre>
+     * 数据操作信息
+     * </pre>
+     *
+     * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder(
+        int index) {
+      return operateInfo_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -913,8 +1066,11 @@ public final class Contract {
       for (int i = 0; i < stepHistory_.size(); i++) {
         output.writeMessage(10, stepHistory_.get(i));
       }
-      if (operateInfo_ != null) {
-        output.writeMessage(11, getOperateInfo());
+      for (int i = 0; i < files_.size(); i++) {
+        output.writeMessage(11, files_.get(i));
+      }
+      for (int i = 0; i < operateInfo_.size(); i++) {
+        output.writeMessage(12, operateInfo_.get(i));
       }
     }
 
@@ -958,9 +1114,13 @@ public final class Contract {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, stepHistory_.get(i));
       }
-      if (operateInfo_ != null) {
+      for (int i = 0; i < files_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getOperateInfo());
+          .computeMessageSize(11, files_.get(i));
+      }
+      for (int i = 0; i < operateInfo_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, operateInfo_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -1014,11 +1174,10 @@ public final class Contract {
       }
       result = result && getStepHistoryList()
           .equals(other.getStepHistoryList());
-      result = result && (hasOperateInfo() == other.hasOperateInfo());
-      if (hasOperateInfo()) {
-        result = result && getOperateInfo()
-            .equals(other.getOperateInfo());
-      }
+      result = result && getFilesList()
+          .equals(other.getFilesList());
+      result = result && getOperateInfoList()
+          .equals(other.getOperateInfoList());
       return result;
     }
 
@@ -1063,9 +1222,13 @@ public final class Contract {
         hash = (37 * hash) + STEP_HISTORY_FIELD_NUMBER;
         hash = (53 * hash) + getStepHistoryList().hashCode();
       }
-      if (hasOperateInfo()) {
+      if (getFilesCount() > 0) {
+        hash = (37 * hash) + FILES_FIELD_NUMBER;
+        hash = (53 * hash) + getFilesList().hashCode();
+      }
+      if (getOperateInfoCount() > 0) {
         hash = (37 * hash) + OPERATE_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getOperateInfo().hashCode();
+        hash = (53 * hash) + getOperateInfoList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1188,6 +1351,8 @@ public final class Contract {
                 .alwaysUseFieldBuilders) {
           getInvoicesFieldBuilder();
           getStepHistoryFieldBuilder();
+          getFilesFieldBuilder();
+          getOperateInfoFieldBuilder();
         }
       }
       public Builder clear() {
@@ -1242,11 +1407,17 @@ public final class Contract {
         } else {
           stepHistoryBuilder_.clear();
         }
-        if (operateInfoBuilder_ == null) {
-          operateInfo_ = null;
+        if (filesBuilder_ == null) {
+          files_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
         } else {
-          operateInfo_ = null;
-          operateInfoBuilder_ = null;
+          filesBuilder_.clear();
+        }
+        if (operateInfoBuilder_ == null) {
+          operateInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          operateInfoBuilder_.clear();
         }
         return this;
       }
@@ -1321,7 +1492,20 @@ public final class Contract {
         } else {
           result.stepHistory_ = stepHistoryBuilder_.build();
         }
+        if (filesBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+            files_ = java.util.Collections.unmodifiableList(files_);
+            bitField0_ = (bitField0_ & ~0x00000200);
+          }
+          result.files_ = files_;
+        } else {
+          result.files_ = filesBuilder_.build();
+        }
         if (operateInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            operateInfo_ = java.util.Collections.unmodifiableList(operateInfo_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
           result.operateInfo_ = operateInfo_;
         } else {
           result.operateInfo_ = operateInfoBuilder_.build();
@@ -1442,8 +1626,57 @@ public final class Contract {
             }
           }
         }
-        if (other.hasOperateInfo()) {
-          mergeOperateInfo(other.getOperateInfo());
+        if (filesBuilder_ == null) {
+          if (!other.files_.isEmpty()) {
+            if (files_.isEmpty()) {
+              files_ = other.files_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensureFilesIsMutable();
+              files_.addAll(other.files_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.files_.isEmpty()) {
+            if (filesBuilder_.isEmpty()) {
+              filesBuilder_.dispose();
+              filesBuilder_ = null;
+              files_ = other.files_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              filesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFilesFieldBuilder() : null;
+            } else {
+              filesBuilder_.addAllMessages(other.files_);
+            }
+          }
+        }
+        if (operateInfoBuilder_ == null) {
+          if (!other.operateInfo_.isEmpty()) {
+            if (operateInfo_.isEmpty()) {
+              operateInfo_ = other.operateInfo_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensureOperateInfoIsMutable();
+              operateInfo_.addAll(other.operateInfo_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.operateInfo_.isEmpty()) {
+            if (operateInfoBuilder_.isEmpty()) {
+              operateInfoBuilder_.dispose();
+              operateInfoBuilder_ = null;
+              operateInfo_ = other.operateInfo_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              operateInfoBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOperateInfoFieldBuilder() : null;
+            } else {
+              operateInfoBuilder_.addAllMessages(other.operateInfo_);
+            }
+          }
         }
         onChanged();
         return this;
@@ -2638,9 +2871,9 @@ public final class Contract {
         return moneyCountBuilder_;
       }
 
-      private com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus contractStatus_ = null;
+      private com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus contractStatus_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> contractStatusBuilder_;
+          com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder> contractStatusBuilder_;
       /**
        * <pre>
        * 订单状态
@@ -2658,9 +2891,9 @@ public final class Contract {
        *
        * <code>optional .protos.ContractStatus contract_status = 9;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getContractStatus() {
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus getContractStatus() {
         if (contractStatusBuilder_ == null) {
-          return contractStatus_ == null ? com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.getDefaultInstance() : contractStatus_;
+          return contractStatus_ == null ? com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.getDefaultInstance() : contractStatus_;
         } else {
           return contractStatusBuilder_.getMessage();
         }
@@ -2672,7 +2905,7 @@ public final class Contract {
        *
        * <code>optional .protos.ContractStatus contract_status = 9;</code>
        */
-      public Builder setContractStatus(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+      public Builder setContractStatus(com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus value) {
         if (contractStatusBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2693,7 +2926,7 @@ public final class Contract {
        * <code>optional .protos.ContractStatus contract_status = 9;</code>
        */
       public Builder setContractStatus(
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder builderForValue) {
+          com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder builderForValue) {
         if (contractStatusBuilder_ == null) {
           contractStatus_ = builderForValue.build();
           onChanged();
@@ -2710,11 +2943,11 @@ public final class Contract {
        *
        * <code>optional .protos.ContractStatus contract_status = 9;</code>
        */
-      public Builder mergeContractStatus(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+      public Builder mergeContractStatus(com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus value) {
         if (contractStatusBuilder_ == null) {
           if (contractStatus_ != null) {
             contractStatus_ =
-              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.newBuilder(contractStatus_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.newBuilder(contractStatus_).mergeFrom(value).buildPartial();
           } else {
             contractStatus_ = value;
           }
@@ -2750,7 +2983,7 @@ public final class Contract {
        *
        * <code>optional .protos.ContractStatus contract_status = 9;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder getContractStatusBuilder() {
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder getContractStatusBuilder() {
         
         onChanged();
         return getContractStatusFieldBuilder().getBuilder();
@@ -2762,12 +2995,12 @@ public final class Contract {
        *
        * <code>optional .protos.ContractStatus contract_status = 9;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getContractStatusOrBuilder() {
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder getContractStatusOrBuilder() {
         if (contractStatusBuilder_ != null) {
           return contractStatusBuilder_.getMessageOrBuilder();
         } else {
           return contractStatus_ == null ?
-              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.getDefaultInstance() : contractStatus_;
+              com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.getDefaultInstance() : contractStatus_;
         }
       }
       /**
@@ -2778,11 +3011,11 @@ public final class Contract {
        * <code>optional .protos.ContractStatus contract_status = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+          com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder> 
           getContractStatusFieldBuilder() {
         if (contractStatusBuilder_ == null) {
           contractStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder>(
+              com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder>(
                   getContractStatus(),
                   getParentForChildren(),
                   isClean());
@@ -2791,17 +3024,17 @@ public final class Contract {
         return contractStatusBuilder_;
       }
 
-      private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> stepHistory_ =
+      private java.util.List<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus> stepHistory_ =
         java.util.Collections.emptyList();
       private void ensureStepHistoryIsMutable() {
         if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-          stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus>(stepHistory_);
+          stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus>(stepHistory_);
           bitField0_ |= 0x00000100;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> stepHistoryBuilder_;
+          com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder> stepHistoryBuilder_;
 
       /**
        * <pre>
@@ -2810,7 +3043,7 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> getStepHistoryList() {
+      public java.util.List<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus> getStepHistoryList() {
         if (stepHistoryBuilder_ == null) {
           return java.util.Collections.unmodifiableList(stepHistory_);
         } else {
@@ -2838,7 +3071,7 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getStepHistory(int index) {
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus getStepHistory(int index) {
         if (stepHistoryBuilder_ == null) {
           return stepHistory_.get(index);
         } else {
@@ -2853,7 +3086,7 @@ public final class Contract {
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
       public Builder setStepHistory(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+          int index, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus value) {
         if (stepHistoryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2874,7 +3107,7 @@ public final class Contract {
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
       public Builder setStepHistory(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder builderForValue) {
+          int index, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder builderForValue) {
         if (stepHistoryBuilder_ == null) {
           ensureStepHistoryIsMutable();
           stepHistory_.set(index, builderForValue.build());
@@ -2891,7 +3124,7 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public Builder addStepHistory(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+      public Builder addStepHistory(com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus value) {
         if (stepHistoryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2912,7 +3145,7 @@ public final class Contract {
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
       public Builder addStepHistory(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+          int index, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus value) {
         if (stepHistoryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2933,7 +3166,7 @@ public final class Contract {
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
       public Builder addStepHistory(
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder builderForValue) {
+          com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder builderForValue) {
         if (stepHistoryBuilder_ == null) {
           ensureStepHistoryIsMutable();
           stepHistory_.add(builderForValue.build());
@@ -2951,7 +3184,7 @@ public final class Contract {
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
       public Builder addStepHistory(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder builderForValue) {
+          int index, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder builderForValue) {
         if (stepHistoryBuilder_ == null) {
           ensureStepHistoryIsMutable();
           stepHistory_.add(index, builderForValue.build());
@@ -2969,7 +3202,7 @@ public final class Contract {
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
       public Builder addAllStepHistory(
-          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> values) {
+          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus> values) {
         if (stepHistoryBuilder_ == null) {
           ensureStepHistoryIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3021,7 +3254,7 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder getStepHistoryBuilder(
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder getStepHistoryBuilder(
           int index) {
         return getStepHistoryFieldBuilder().getBuilder(index);
       }
@@ -3032,7 +3265,7 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getStepHistoryOrBuilder(
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder getStepHistoryOrBuilder(
           int index) {
         if (stepHistoryBuilder_ == null) {
           return stepHistory_.get(index);  } else {
@@ -3046,7 +3279,7 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+      public java.util.List<? extends com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder> 
            getStepHistoryOrBuilderList() {
         if (stepHistoryBuilder_ != null) {
           return stepHistoryBuilder_.getMessageOrBuilderList();
@@ -3061,9 +3294,9 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder addStepHistoryBuilder() {
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder addStepHistoryBuilder() {
         return getStepHistoryFieldBuilder().addBuilder(
-            com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.getDefaultInstance());
+            com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3072,10 +3305,10 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder addStepHistoryBuilder(
+      public com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder addStepHistoryBuilder(
           int index) {
         return getStepHistoryFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.getDefaultInstance());
+            index, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.getDefaultInstance());
       }
       /**
        * <pre>
@@ -3084,16 +3317,16 @@ public final class Contract {
        *
        * <code>repeated .protos.ContractStatus step_history = 10;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder> 
+      public java.util.List<com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder> 
            getStepHistoryBuilderList() {
         return getStepHistoryFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+          com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder> 
           getStepHistoryFieldBuilder() {
         if (stepHistoryBuilder_ == null) {
           stepHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder>(
+              com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractOrderStatus.ContractStatusOrBuilder>(
                   stepHistory_,
                   ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
@@ -3103,31 +3336,342 @@ public final class Contract {
         return stepHistoryBuilder_;
       }
 
-      private com.xiangna.www.protos.common.Common.OperateInfo operateInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> operateInfoBuilder_;
+      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> files_ =
+        java.util.Collections.emptyList();
+      private void ensureFilesIsMutable() {
+        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+          files_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(files_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> filesBuilder_;
+
       /**
        * <pre>
-       * 数据操作信息
+       * 所有参与方维护
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.LedgerFile files = 11;</code>
        */
-      public boolean hasOperateInfo() {
-        return operateInfoBuilder_ != null || operateInfo_ != null;
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFilesList() {
+        if (filesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(files_);
+        } else {
+          return filesBuilder_.getMessageList();
+        }
       }
       /**
        * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public int getFilesCount() {
+        if (filesBuilder_ == null) {
+          return files_.size();
+        } else {
+          return filesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index) {
+        if (filesBuilder_ == null) {
+          return files_.get(index);
+        } else {
+          return filesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder setFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (filesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilesIsMutable();
+          files_.set(index, value);
+          onChanged();
+        } else {
+          filesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder setFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          filesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder addFiles(com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (filesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilesIsMutable();
+          files_.add(value);
+          onChanged();
+        } else {
+          filesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder addFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (filesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFilesIsMutable();
+          files_.add(index, value);
+          onChanged();
+        } else {
+          filesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder addFiles(
+          com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.add(builderForValue.build());
+          onChanged();
+        } else {
+          filesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder addFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          filesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder addAllFiles(
+          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.LedgerFile> values) {
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, files_);
+          onChanged();
+        } else {
+          filesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder clearFiles() {
+        if (filesBuilder_ == null) {
+          files_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          filesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public Builder removeFiles(int index) {
+        if (filesBuilder_ == null) {
+          ensureFilesIsMutable();
+          files_.remove(index);
+          onChanged();
+        } else {
+          filesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder getFilesBuilder(
+          int index) {
+        return getFilesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
+          int index) {
+        if (filesBuilder_ == null) {
+          return files_.get(index);  } else {
+          return filesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+           getFilesOrBuilderList() {
+        if (filesBuilder_ != null) {
+          return filesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(files_);
+        }
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFilesBuilder() {
+        return getFilesFieldBuilder().addBuilder(
+            com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFilesBuilder(
+          int index) {
+        return getFilesFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 所有参与方维护
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile files = 11;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile.Builder> 
+           getFilesBuilderList() {
+        return getFilesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+          getFilesFieldBuilder() {
+        if (filesBuilder_ == null) {
+          filesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder>(
+                  files_,
+                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  getParentForChildren(),
+                  isClean());
+          files_ = null;
+        }
+        return filesBuilder_;
+      }
+
+      private java.util.List<com.xiangna.www.protos.common.Common.OperateInfo> operateInfo_ =
+        java.util.Collections.emptyList();
+      private void ensureOperateInfoIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          operateInfo_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.OperateInfo>(operateInfo_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> operateInfoBuilder_;
+
+      /**
+       * <pre>
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
-      public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo() {
+      public java.util.List<com.xiangna.www.protos.common.Common.OperateInfo> getOperateInfoList() {
         if (operateInfoBuilder_ == null) {
-          return operateInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : operateInfo_;
+          return java.util.Collections.unmodifiableList(operateInfo_);
         } else {
-          return operateInfoBuilder_.getMessage();
+          return operateInfoBuilder_.getMessageList();
         }
       }
       /**
@@ -3135,19 +3679,48 @@ public final class Contract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
-      public Builder setOperateInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
+      public int getOperateInfoCount() {
+        if (operateInfoBuilder_ == null) {
+          return operateInfo_.size();
+        } else {
+          return operateInfoBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo(int index) {
+        if (operateInfoBuilder_ == null) {
+          return operateInfo_.get(index);
+        } else {
+          return operateInfoBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public Builder setOperateInfo(
+          int index, com.xiangna.www.protos.common.Common.OperateInfo value) {
         if (operateInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          operateInfo_ = value;
+          ensureOperateInfoIsMutable();
+          operateInfo_.set(index, value);
           onChanged();
         } else {
-          operateInfoBuilder_.setMessage(value);
+          operateInfoBuilder_.setMessage(index, value);
         }
-
         return this;
       }
       /**
@@ -3155,17 +3728,76 @@ public final class Contract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
       public Builder setOperateInfo(
+          int index, com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
+        if (operateInfoBuilder_ == null) {
+          ensureOperateInfoIsMutable();
+          operateInfo_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          operateInfoBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public Builder addOperateInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
+        if (operateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOperateInfoIsMutable();
+          operateInfo_.add(value);
+          onChanged();
+        } else {
+          operateInfoBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public Builder addOperateInfo(
+          int index, com.xiangna.www.protos.common.Common.OperateInfo value) {
+        if (operateInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOperateInfoIsMutable();
+          operateInfo_.add(index, value);
+          onChanged();
+        } else {
+          operateInfoBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public Builder addOperateInfo(
           com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
         if (operateInfoBuilder_ == null) {
-          operateInfo_ = builderForValue.build();
+          ensureOperateInfoIsMutable();
+          operateInfo_.add(builderForValue.build());
           onChanged();
         } else {
-          operateInfoBuilder_.setMessage(builderForValue.build());
+          operateInfoBuilder_.addMessage(builderForValue.build());
         }
-
         return this;
       }
       /**
@@ -3173,21 +3805,17 @@ public final class Contract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
-      public Builder mergeOperateInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
+      public Builder addOperateInfo(
+          int index, com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
         if (operateInfoBuilder_ == null) {
-          if (operateInfo_ != null) {
-            operateInfo_ =
-              com.xiangna.www.protos.common.Common.OperateInfo.newBuilder(operateInfo_).mergeFrom(value).buildPartial();
-          } else {
-            operateInfo_ = value;
-          }
+          ensureOperateInfoIsMutable();
+          operateInfo_.add(index, builderForValue.build());
           onChanged();
         } else {
-          operateInfoBuilder_.mergeFrom(value);
+          operateInfoBuilder_.addMessage(index, builderForValue.build());
         }
-
         return this;
       }
       /**
@@ -3195,17 +3823,35 @@ public final class Contract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public Builder addAllOperateInfo(
+          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.OperateInfo> values) {
+        if (operateInfoBuilder_ == null) {
+          ensureOperateInfoIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, operateInfo_);
+          onChanged();
+        } else {
+          operateInfoBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
       public Builder clearOperateInfo() {
         if (operateInfoBuilder_ == null) {
-          operateInfo_ = null;
+          operateInfo_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
           onChanged();
         } else {
-          operateInfo_ = null;
-          operateInfoBuilder_ = null;
+          operateInfoBuilder_.clear();
         }
-
         return this;
       }
       /**
@@ -3213,26 +3859,41 @@ public final class Contract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
-      public com.xiangna.www.protos.common.Common.OperateInfo.Builder getOperateInfoBuilder() {
-        
-        onChanged();
-        return getOperateInfoFieldBuilder().getBuilder();
+      public Builder removeOperateInfo(int index) {
+        if (operateInfoBuilder_ == null) {
+          ensureOperateInfoIsMutable();
+          operateInfo_.remove(index);
+          onChanged();
+        } else {
+          operateInfoBuilder_.remove(index);
+        }
+        return this;
       }
       /**
        * <pre>
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
-      public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder() {
-        if (operateInfoBuilder_ != null) {
-          return operateInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return operateInfo_ == null ?
-              com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : operateInfo_;
+      public com.xiangna.www.protos.common.Common.OperateInfo.Builder getOperateInfoBuilder(
+          int index) {
+        return getOperateInfoFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder(
+          int index) {
+        if (operateInfoBuilder_ == null) {
+          return operateInfo_.get(index);  } else {
+          return operateInfoBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -3240,15 +3901,58 @@ public final class Contract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
+      public java.util.List<? extends com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
+           getOperateInfoOrBuilderList() {
+        if (operateInfoBuilder_ != null) {
+          return operateInfoBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(operateInfo_);
+        }
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfo.Builder addOperateInfoBuilder() {
+        return getOperateInfoFieldBuilder().addBuilder(
+            com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfo.Builder addOperateInfoBuilder(
+          int index) {
+        return getOperateInfoFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 数据操作信息
+       * </pre>
+       *
+       * <code>repeated .protos.OperateInfo operate_info = 12;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.OperateInfo.Builder> 
+           getOperateInfoBuilderList() {
+        return getOperateInfoFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
           getOperateInfoFieldBuilder() {
         if (operateInfoBuilder_ == null) {
-          operateInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          operateInfoBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder>(
-                  getOperateInfo(),
+                  operateInfo_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
                   getParentForChildren(),
                   isClean());
           operateInfo_ = null;
@@ -7284,7 +7988,7 @@ public final class Contract {
       "\n\027contract/contract.proto\022\006protos\032\023commo" +
       "n/common.proto\032\035configuration/appconfig." +
       "proto\032\034contract/contract_data.proto\032\036con" +
-      "tract/contract_status.proto\"\262\003\n\021Financin" +
+      "tract/contract_status.proto\"\325\003\n\021Financin" +
       "gContract\022\020\n\010order_no\030\001 \001(\t\022\'\n\010supplier\030" +
       "\002 \001(\0132\025.protos.CommercialOrg\022)\n\nenterpri" +
       "se\030\003 \001(\0132\025.protos.CommercialOrg\022(\n\tfacto" +
@@ -7294,25 +7998,26 @@ public final class Contract {
       "\013money_count\030\010 \001(\0132\032.protos.ContractMone" +
       "yCount\022/\n\017contract_status\030\t \001(\0132\026.protos" +
       ".ContractStatus\022,\n\014step_history\030\n \003(\0132\026." +
-      "protos.ContractStatus\022)\n\014operate_info\030\013 " +
-      "\001(\0132\023.protos.OperateInfo\"\323\004\n\007Invoice\022\022\n\n" +
-      "invoice_no\030\001 \001(\t\022\026\n\016invoice_amount\030\002 \001(\003" +
-      "\022\024\n\014invoice_time\030\003 \001(\003\0221\n\006seller\030\004 \001(\0132!" +
-      ".protos.Invoice.InvoiceCommercial\0224\n\tpur" +
-      "chaser\030\005 \001(\0132!.protos.Invoice.InvoiceCom" +
-      "mercial\022\026\n\016invoice_remark\030\006 \001(\t\022\026\n\016invoi",
-      "ce_images\030\007 \003(\014\022\030\n\020expe_loan_amount\030\010 \001(" +
-      "\003\022\026\n\016expe_loan_rate\030\t \001(\003\022\033\n\023confirm_loa" +
-      "n_amount\030\n \001(\003\022\031\n\021confirm_loan_rate\030\013 \001(" +
-      "\003\022\030\n\020confirm_pay_time\030\014 \001(\003\022\033\n\023confirm_r" +
-      "eturn_time\030\r \001(\003\022\030\n\020confirm_end_time\030\016 \001" +
-      "(\003\022\031\n\021confirm_rate_desc\030\017 \001(\t\022 \n\030confirm" +
-      "_urge_return_desc\030\020 \001(\t\032u\n\021InvoiceCommer" +
-      "cial\022\014\n\004name\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\017\n\007addre" +
-      "ss\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\020\n\010bankName\030\005 \001(" +
-      "\t\022\023\n\013bankAccount\030\006 \001(\tBB\n\037com.xiangna.ww",
-      "w.protos.contractZ\037github.com/xncc/proto" +
-      "s/contractb\006proto3"
+      "protos.ContractStatus\022!\n\005files\030\013 \003(\0132\022.p" +
+      "rotos.LedgerFile\022)\n\014operate_info\030\014 \003(\0132\023" +
+      ".protos.OperateInfo\"\323\004\n\007Invoice\022\022\n\ninvoi" +
+      "ce_no\030\001 \001(\t\022\026\n\016invoice_amount\030\002 \001(\003\022\024\n\014i" +
+      "nvoice_time\030\003 \001(\003\0221\n\006seller\030\004 \001(\0132!.prot" +
+      "os.Invoice.InvoiceCommercial\0224\n\tpurchase" +
+      "r\030\005 \001(\0132!.protos.Invoice.InvoiceCommerci",
+      "al\022\026\n\016invoice_remark\030\006 \001(\t\022\026\n\016invoice_im" +
+      "ages\030\007 \003(\014\022\030\n\020expe_loan_amount\030\010 \001(\003\022\026\n\016" +
+      "expe_loan_rate\030\t \001(\003\022\033\n\023confirm_loan_amo" +
+      "unt\030\n \001(\003\022\031\n\021confirm_loan_rate\030\013 \001(\003\022\030\n\020" +
+      "confirm_pay_time\030\014 \001(\003\022\033\n\023confirm_return" +
+      "_time\030\r \001(\003\022\030\n\020confirm_end_time\030\016 \001(\003\022\031\n" +
+      "\021confirm_rate_desc\030\017 \001(\t\022 \n\030confirm_urge" +
+      "_return_desc\030\020 \001(\t\032u\n\021InvoiceCommercial\022" +
+      "\014\n\004name\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\017\n\007address\030\003 " +
+      "\001(\t\022\r\n\005phone\030\004 \001(\t\022\020\n\010bankName\030\005 \001(\t\022\023\n\013",
+      "bankAccount\030\006 \001(\tBB\n\037com.xiangna.www.pro" +
+      "tos.contractZ\037github.com/xncc/protos/con" +
+      "tractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7328,14 +8033,14 @@ public final class Contract {
           com.xiangna.www.protos.common.Common.getDescriptor(),
           com.xiangna.www.protos.configuration.Appconfig.getDescriptor(),
           com.xiangna.www.protos.contract.ContractData.getDescriptor(),
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor(),
+          com.xiangna.www.protos.contract.ContractOrderStatus.getDescriptor(),
         }, assigner);
     internal_static_protos_FinancingContract_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_protos_FinancingContract_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_FinancingContract_descriptor,
-        new java.lang.String[] { "OrderNo", "Supplier", "Enterprise", "Factoring", "ContractData", "Invoices", "MoneyCount", "ContractStatus", "StepHistory", "OperateInfo", });
+        new java.lang.String[] { "OrderNo", "Supplier", "Enterprise", "Factoring", "ContractData", "Invoices", "MoneyCount", "ContractStatus", "StepHistory", "Files", "OperateInfo", });
     internal_static_protos_Invoice_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protos_Invoice_fieldAccessorTable = new
@@ -7351,7 +8056,7 @@ public final class Contract {
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.configuration.Appconfig.getDescriptor();
     com.xiangna.www.protos.contract.ContractData.getDescriptor();
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor();
+    com.xiangna.www.protos.contract.ContractOrderStatus.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

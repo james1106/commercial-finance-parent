@@ -1,7 +1,7 @@
 package com.xiangan.platform.chainserver.api.contract.vo.request;
 
-import com.xiangan.platform.chainserver.common.domain.BaseRequest;
-import com.xiangan.platform.chainserver.common.domain.FileDataRequest;
+import com.xiangan.platform.chainserver.common.domain.BaseEntity;
+import com.xiangna.www.protos.contract.ContractData;
 
 import java.util.List;
 
@@ -13,13 +13,8 @@ import java.util.List;
  * @Version 1.0
  * @Copyright
  */
-public class ContractInitRequest extends BaseRequest {
+public class ContractDataRequest extends BaseEntity {
     private static final long serialVersionUID = 5622200304815466511L;
-
-    /**
-     * 账本ID
-     */
-    private String ledgerId;
 
     /**
      * 期望融资金额
@@ -61,23 +56,17 @@ public class ContractInitRequest extends BaseRequest {
      */
     private long confirmLoanEndTime;
 
-
-    /**
-     * 融资抵押发票
-     */
-    private List<MortgageInvoice> invoices;
-
-    /**
-     * 附件
-     */
-    private List<FileDataRequest> attas;
-
-    public String getLedgerId() {
-        return ledgerId;
-    }
-
-    public void setLedgerId(String ledgerId) {
-        this.ledgerId = ledgerId;
+    public ContractData.ContractFormData convert() {
+        return ContractData.ContractFormData.newBuilder()
+                .setExpectLoanAmount(this.getExpectLoanAmount())
+                .setExpectLoanPeriod(this.getExpectLoanPeriod())
+                .setExpectLoanRate(this.getExpectLoanRate())
+                .setExpectLoanEndTime(this.getExpectLoanEndTime())
+                .setConfirmLoanAmount(this.getConfirmLoanAmount())
+                .setConfirmLoanEndTime(this.getConfirmLoanEndTime())
+                .setConfirmLoanRate(this.getConfirmLoanRate())
+                .setConfirmLoanPeriod(this.getConfirmLoanPeriod())
+                .build();
     }
 
     public long getExpectLoanAmount() {
@@ -102,22 +91,6 @@ public class ContractInitRequest extends BaseRequest {
 
     public void setExpectLoanRate(long expectLoanRate) {
         this.expectLoanRate = expectLoanRate;
-    }
-
-    public List<MortgageInvoice> getInvoices() {
-        return invoices;
-    }
-
-    public void setInvoices(List<MortgageInvoice> invoices) {
-        this.invoices = invoices;
-    }
-
-    public List<FileDataRequest> getAttas() {
-        return attas;
-    }
-
-    public void setAttas(List<FileDataRequest> attas) {
-        this.attas = attas;
     }
 
     public long getExpectLoanEndTime() {

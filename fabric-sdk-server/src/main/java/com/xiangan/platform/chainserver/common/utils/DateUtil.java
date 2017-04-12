@@ -36,10 +36,23 @@ public class DateUtil {
         return time.plusDays(day).toDate();
     }
 
+    /**
+     * 格式化日期
+     *
+     * @param date
+     * @param pattern
+     * @return
+     */
+    public static String format(Date date, String pattern) {
+        DateTime time = new DateTime(date);
+        return time.toString(pattern);
+    }
+
     public static void main(String[] args) {
         Date now = new Date();
         System.out.println(toUnixTime(now));
         System.out.println(addDays(now, 10));
+//        System.out.println(format(now));
     }
 
 

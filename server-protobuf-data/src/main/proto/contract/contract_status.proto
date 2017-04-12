@@ -5,6 +5,8 @@ import "configuration/contractflow.proto";
 
 option go_package = "github.com/xncc/protos/contract";
 option java_package = "com.xiangna.www.protos.contract";
+option java_outer_classname = "ContractOrderStatus";
+
 
 package protos;
 

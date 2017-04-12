@@ -25,7 +25,11 @@ message BankLoanContract {
 
     ContractStatus contract_status = 7; // 订单状态
     repeated ContractStatus step_history = 8; // 订单状态历史记录
-    OperateInfo operate_info = 9; // 数据操作信息
+
+    // 所有参与方维护
+    repeated LedgerFile files = 9; // 融资申请相关文件
+
+    OperateInfo operate_info = 10; // 数据操作信息
 
 }
 

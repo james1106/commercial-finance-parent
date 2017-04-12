@@ -89,50 +89,6 @@ public final class ContractData {
      * <code>optional int64 confirm_loan_end_time = 8;</code>
      */
     long getConfirmLoanEndTime();
-
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> 
-        getFilesList();
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index);
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    int getFilesCount();
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-        getFilesOrBuilderList();
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
-        int index);
   }
   /**
    * <pre>
@@ -159,7 +115,6 @@ public final class ContractData {
       confirmLoanPeriod_ = 0;
       confirmLoanRate_ = 0L;
       confirmLoanEndTime_ = 0L;
-      files_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -227,15 +182,6 @@ public final class ContractData {
               confirmLoanEndTime_ = input.readInt64();
               break;
             }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-                files_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
-                mutable_bitField0_ |= 0x00000100;
-              }
-              files_.add(
-                  input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -244,9 +190,6 @@ public final class ContractData {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-          files_ = java.util.Collections.unmodifiableList(files_);
-        }
         makeExtensionsImmutable();
       }
     }
@@ -262,7 +205,6 @@ public final class ContractData {
               com.xiangna.www.protos.contract.ContractData.ContractFormData.class, com.xiangna.www.protos.contract.ContractData.ContractFormData.Builder.class);
     }
 
-    private int bitField0_;
     public static final int EXPECT_LOAN_AMOUNT_FIELD_NUMBER = 1;
     private long expectLoanAmount_;
     /**
@@ -367,61 +309,6 @@ public final class ContractData {
       return confirmLoanEndTime_;
     }
 
-    public static final int FILES_FIELD_NUMBER = 9;
-    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> files_;
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFilesList() {
-      return files_;
-    }
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-        getFilesOrBuilderList() {
-      return files_;
-    }
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    public int getFilesCount() {
-      return files_.size();
-    }
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    public com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index) {
-      return files_.get(index);
-    }
-    /**
-     * <pre>
-     * 所有参与方维护
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile files = 9;</code>
-     */
-    public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
-        int index) {
-      return files_.get(index);
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -457,9 +344,6 @@ public final class ContractData {
       }
       if (confirmLoanEndTime_ != 0L) {
         output.writeInt64(8, confirmLoanEndTime_);
-      }
-      for (int i = 0; i < files_.size(); i++) {
-        output.writeMessage(9, files_.get(i));
       }
     }
 
@@ -500,10 +384,6 @@ public final class ContractData {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, confirmLoanEndTime_);
       }
-      for (int i = 0; i < files_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, files_.get(i));
-      }
       memoizedSize = size;
       return size;
     }
@@ -536,8 +416,6 @@ public final class ContractData {
           == other.getConfirmLoanRate());
       result = result && (getConfirmLoanEndTime()
           == other.getConfirmLoanEndTime());
-      result = result && getFilesList()
-          .equals(other.getFilesList());
       return result;
     }
 
@@ -570,10 +448,6 @@ public final class ContractData {
       hash = (37 * hash) + CONFIRM_LOAN_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getConfirmLoanEndTime());
-      if (getFilesCount() > 0) {
-        hash = (37 * hash) + FILES_FIELD_NUMBER;
-        hash = (53 * hash) + getFilesList().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -693,7 +567,6 @@ public final class ContractData {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getFilesFieldBuilder();
         }
       }
       public Builder clear() {
@@ -714,12 +587,6 @@ public final class ContractData {
 
         confirmLoanEndTime_ = 0L;
 
-        if (filesBuilder_ == null) {
-          files_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
-        } else {
-          filesBuilder_.clear();
-        }
         return this;
       }
 
@@ -742,8 +609,6 @@ public final class ContractData {
 
       public com.xiangna.www.protos.contract.ContractData.ContractFormData buildPartial() {
         com.xiangna.www.protos.contract.ContractData.ContractFormData result = new com.xiangna.www.protos.contract.ContractData.ContractFormData(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         result.expectLoanAmount_ = expectLoanAmount_;
         result.expectLoanPeriod_ = expectLoanPeriod_;
         result.expectLoanRate_ = expectLoanRate_;
@@ -752,16 +617,6 @@ public final class ContractData {
         result.confirmLoanPeriod_ = confirmLoanPeriod_;
         result.confirmLoanRate_ = confirmLoanRate_;
         result.confirmLoanEndTime_ = confirmLoanEndTime_;
-        if (filesBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100)) {
-            files_ = java.util.Collections.unmodifiableList(files_);
-            bitField0_ = (bitField0_ & ~0x00000100);
-          }
-          result.files_ = files_;
-        } else {
-          result.files_ = filesBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -827,32 +682,6 @@ public final class ContractData {
         if (other.getConfirmLoanEndTime() != 0L) {
           setConfirmLoanEndTime(other.getConfirmLoanEndTime());
         }
-        if (filesBuilder_ == null) {
-          if (!other.files_.isEmpty()) {
-            if (files_.isEmpty()) {
-              files_ = other.files_;
-              bitField0_ = (bitField0_ & ~0x00000100);
-            } else {
-              ensureFilesIsMutable();
-              files_.addAll(other.files_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.files_.isEmpty()) {
-            if (filesBuilder_.isEmpty()) {
-              filesBuilder_.dispose();
-              filesBuilder_ = null;
-              files_ = other.files_;
-              bitField0_ = (bitField0_ & ~0x00000100);
-              filesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getFilesFieldBuilder() : null;
-            } else {
-              filesBuilder_.addAllMessages(other.files_);
-            }
-          }
-        }
         onChanged();
         return this;
       }
@@ -878,7 +707,6 @@ public final class ContractData {
         }
         return this;
       }
-      private int bitField0_;
 
       private long expectLoanAmount_ ;
       /**
@@ -1182,318 +1010,6 @@ public final class ContractData {
         confirmLoanEndTime_ = 0L;
         onChanged();
         return this;
-      }
-
-      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> files_ =
-        java.util.Collections.emptyList();
-      private void ensureFilesIsMutable() {
-        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
-          files_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(files_);
-          bitField0_ |= 0x00000100;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> filesBuilder_;
-
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getFilesList() {
-        if (filesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(files_);
-        } else {
-          return filesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public int getFilesCount() {
-        if (filesBuilder_ == null) {
-          return files_.size();
-        } else {
-          return filesBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFile getFiles(int index) {
-        if (filesBuilder_ == null) {
-          return files_.get(index);
-        } else {
-          return filesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder setFiles(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (filesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFilesIsMutable();
-          files_.set(index, value);
-          onChanged();
-        } else {
-          filesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder setFiles(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (filesBuilder_ == null) {
-          ensureFilesIsMutable();
-          files_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          filesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder addFiles(com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (filesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFilesIsMutable();
-          files_.add(value);
-          onChanged();
-        } else {
-          filesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder addFiles(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (filesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureFilesIsMutable();
-          files_.add(index, value);
-          onChanged();
-        } else {
-          filesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder addFiles(
-          com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (filesBuilder_ == null) {
-          ensureFilesIsMutable();
-          files_.add(builderForValue.build());
-          onChanged();
-        } else {
-          filesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder addFiles(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (filesBuilder_ == null) {
-          ensureFilesIsMutable();
-          files_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          filesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder addAllFiles(
-          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.LedgerFile> values) {
-        if (filesBuilder_ == null) {
-          ensureFilesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, files_);
-          onChanged();
-        } else {
-          filesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder clearFiles() {
-        if (filesBuilder_ == null) {
-          files_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000100);
-          onChanged();
-        } else {
-          filesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public Builder removeFiles(int index) {
-        if (filesBuilder_ == null) {
-          ensureFilesIsMutable();
-          files_.remove(index);
-          onChanged();
-        } else {
-          filesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder getFilesBuilder(
-          int index) {
-        return getFilesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getFilesOrBuilder(
-          int index) {
-        if (filesBuilder_ == null) {
-          return files_.get(index);  } else {
-          return filesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-           getFilesOrBuilderList() {
-        if (filesBuilder_ != null) {
-          return filesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(files_);
-        }
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFilesBuilder() {
-        return getFilesFieldBuilder().addBuilder(
-            com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addFilesBuilder(
-          int index) {
-        return getFilesFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 所有参与方维护
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile files = 9;</code>
-       */
-      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile.Builder> 
-           getFilesBuilderList() {
-        return getFilesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-          getFilesFieldBuilder() {
-        if (filesBuilder_ == null) {
-          filesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder>(
-                  files_,
-                  ((bitField0_ & 0x00000100) == 0x00000100),
-                  getParentForChildren(),
-                  isClean());
-          files_ = null;
-        }
-        return filesBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4969,30 +4485,29 @@ public final class ContractData {
     java.lang.String[] descriptorData = {
       "\n\034contract/contract_data.proto\022\006protos\032\023" +
       "common/common.proto\032 configuration/contr" +
-      "actflow.proto\"\231\002\n\020ContractFormData\022\032\n\022ex" +
+      "actflow.proto\"\366\001\n\020ContractFormData\022\032\n\022ex" +
       "pect_loan_amount\030\001 \001(\003\022\032\n\022expect_loan_pe" +
       "riod\030\002 \001(\005\022\030\n\020expect_loan_rate\030\003 \001(\003\022\034\n\024" +
       "expect_loan_end_time\030\004 \001(\003\022\033\n\023confirm_lo" +
       "an_amount\030\005 \001(\003\022\033\n\023confirm_loan_period\030\006" +
       " \001(\005\022\031\n\021confirm_loan_rate\030\007 \001(\003\022\035\n\025confi" +
-      "rm_loan_end_time\030\010 \001(\003\022!\n\005files\030\t \003(\0132\022." +
-      "protos.LedgerFile\"\377\001\n\022ContractMoneyCount",
-      "\022\027\n\017need_pay_amount\030\001 \001(\003\022\027\n\017expenses_am" +
-      "ount\030\002 \001(\003\022\025\n\rincome_amount\030\003 \001(\003\022 \n\030nee" +
-      "d_payback_loan_amount\030\004 \001(\003\022\037\n\027payback_e" +
-      "xpenses_amount\030\005 \001(\003\022\035\n\025payback_income_a" +
-      "mount\030\006 \001(\003\022>\n\023transaction_details\030\007 \003(\013" +
-      "2!.protos.ContractTransactionDetail\"\251\002\n\031" +
-      "ContractTransactionDetail\022\n\n\002no\030\001 \001(\t\022\020\n" +
-      "\010expenses\030\002 \001(\t\022\027\n\017expenses_amount\030\003 \001(\003" +
-      "\0220\n\020expenses_account\030\004 \001(\0132\026.protos.OrgB" +
-      "ankAccount\022\016\n\006income\030\005 \001(\t\022.\n\016income_acc",
-      "ount\030\006 \001(\0132\026.protos.OrgBankAccount\022\031\n\021ta" +
-      "nsaction_remark\030\007 \001(\t\022\030\n\020tansaction_note" +
-      "s\030\010 \003(\014\022\027\n\017tansaction_time\030\t \001(\003\022\025\n\rinco" +
-      "m_confirm\030\n \001(\010BB\n\037com.xiangna.www.proto" +
-      "s.contractZ\037github.com/xncc/protos/contr" +
-      "actb\006proto3"
+      "rm_loan_end_time\030\010 \001(\003\"\377\001\n\022ContractMoney" +
+      "Count\022\027\n\017need_pay_amount\030\001 \001(\003\022\027\n\017expens",
+      "es_amount\030\002 \001(\003\022\025\n\rincome_amount\030\003 \001(\003\022 " +
+      "\n\030need_payback_loan_amount\030\004 \001(\003\022\037\n\027payb" +
+      "ack_expenses_amount\030\005 \001(\003\022\035\n\025payback_inc" +
+      "ome_amount\030\006 \001(\003\022>\n\023transaction_details\030" +
+      "\007 \003(\0132!.protos.ContractTransactionDetail" +
+      "\"\251\002\n\031ContractTransactionDetail\022\n\n\002no\030\001 \001" +
+      "(\t\022\020\n\010expenses\030\002 \001(\t\022\027\n\017expenses_amount\030" +
+      "\003 \001(\003\0220\n\020expenses_account\030\004 \001(\0132\026.protos" +
+      ".OrgBankAccount\022\016\n\006income\030\005 \001(\t\022.\n\016incom" +
+      "e_account\030\006 \001(\0132\026.protos.OrgBankAccount\022",
+      "\031\n\021tansaction_remark\030\007 \001(\t\022\030\n\020tansaction" +
+      "_notes\030\010 \003(\014\022\027\n\017tansaction_time\030\t \001(\003\022\025\n" +
+      "\rincom_confirm\030\n \001(\010BB\n\037com.xiangna.www." +
+      "protos.contractZ\037github.com/xncc/protos/" +
+      "contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5013,7 +4528,7 @@ public final class ContractData {
     internal_static_protos_ContractFormData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractFormData_descriptor,
-        new java.lang.String[] { "ExpectLoanAmount", "ExpectLoanPeriod", "ExpectLoanRate", "ExpectLoanEndTime", "ConfirmLoanAmount", "ConfirmLoanPeriod", "ConfirmLoanRate", "ConfirmLoanEndTime", "Files", });
+        new java.lang.String[] { "ExpectLoanAmount", "ExpectLoanPeriod", "ExpectLoanRate", "ExpectLoanEndTime", "ConfirmLoanAmount", "ConfirmLoanPeriod", "ConfirmLoanRate", "ConfirmLoanEndTime", });
     internal_static_protos_ContractMoneyCount_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protos_ContractMoneyCount_fieldAccessorTable = new

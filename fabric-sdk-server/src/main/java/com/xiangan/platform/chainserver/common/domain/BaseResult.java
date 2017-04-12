@@ -14,12 +14,12 @@ public class BaseResult extends BaseEntity {
     /**
      * 响应状态编码
      */
-    private int code;
+    private int code = 0;
 
     /**
      * 响应状态消息描述
      */
-    private String message;
+    private String message = "OK";
 
     /**
      * 返回结果
@@ -51,5 +51,14 @@ public class BaseResult extends BaseEntity {
 
     public void setResult(String result) {
         this.result = result;
+    }
+
+    public BaseResult(){
+
+    }
+
+    public BaseResult(ApiResponseCode code){
+        this.code = code.getCode();
+        this.message = code.getMessage();
     }
 }
