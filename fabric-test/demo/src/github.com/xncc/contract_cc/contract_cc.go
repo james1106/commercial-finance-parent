@@ -11,6 +11,7 @@ import (
 	"github.com/xncc/protos/contract"
 	"github.com/xncc/util/ccutil"
 	"github.com/xncc/util/ledgerfile"
+	"strings"
 )
 
 // SimpleChaincode example simple Chaincode implementation
@@ -85,7 +86,7 @@ func (t *SimpleChaincode) excute(stub shim.ChaincodeStubInterface, data []byte) 
 
 	switch request.Action {
 	case "init":
-		return t.init(stub, request.ContractData)
+		return t.init(stub, request.ContractData, request.ContractFile)
 	case "check":
 		return t.check(stub, request.No, request.ContractData)
 	default:
@@ -95,14 +96,32 @@ func (t *SimpleChaincode) excute(stub shim.ChaincodeStubInterface, data []byte) 
 }
 
 // 初始化合约
-func (t *SimpleChaincode) init(stub shim.ChaincodeStubInterface, data []byte) pb.Response {
+func (t *SimpleChaincode) init(stub shim.ChaincodeStubInterface, data []byte, files []byte) pb.Response {
 	// 将数据解码用于数据操作
 	request := &contract.FinancingContract{}
 	if err := proto.Unmarshal(data, request); err != nil {
 		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数错误", nil)
 	}
-
 	fmt.Printf("合约数据初始化编号: %s", request.OrderNo)
+
+	fileRequest := &contract.FileAddRequest{}
+	if err := proto.Unmarshal(data, fileRequest); err != nil {
+		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数错误", nil)
+	}
+
+	if strings.EqualFold(request.OrderNo, fileRequest.No) {
+		// 处理合约文件
+		request.ContractData.Files = fileRequest.FileInfos
+		fileDatas := fileRequest.FileDatas
+		if fileDatas != nil {
+			for _, fileData := range fileDatas {
+				ledgerfile.SaveFileData(stub, fileData.Key, fileData.Data)
+			}
+		}
+	}
+
+	fmt.Printf("初始化合约数据: %s \n", request.String())
+
 	// 数据编码存储
 	out, err := proto.Marshal(request)
 	if err != nil {
@@ -258,7 +277,7 @@ func (t *SimpleChaincode) queryFileList(order *contract.FinancingContract) *comm
 	result := &common.LedgerFileList{}
 
 	if order.ContractData != nil {
-		result.Files = order.ContractData.OrderFiles
+		result.Files = order.ContractData.Files
 	}
 
 	return result

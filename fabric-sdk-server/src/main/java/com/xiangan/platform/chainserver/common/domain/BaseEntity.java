@@ -1,8 +1,5 @@
 package com.xiangan.platform.chainserver.common.domain;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-
 import java.io.Serializable;
 
 /**
@@ -16,8 +13,4 @@ import java.io.Serializable;
 public class BaseEntity implements Serializable {
     private static final long serialVersionUID = 6828627851398481806L;
 
-    @Override
-    public String toString() {
-        return JSON.toJSONString(this, SerializerFeature.WriteMapNullValue);
-    }
 }

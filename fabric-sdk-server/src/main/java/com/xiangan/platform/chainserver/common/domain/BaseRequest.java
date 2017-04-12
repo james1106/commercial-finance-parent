@@ -1,5 +1,7 @@
 package com.xiangan.platform.chainserver.common.domain;
 
+import com.xiangna.www.protos.common.Common;
+
 /**
  * API请求参数基类
  *
@@ -33,6 +35,21 @@ public class BaseRequest extends BaseEntity {
      */
     private String source;
 
+    /**
+     * 请求来源IP
+     */
+    private String sourceIP;
+
+    private Common.OperateInfo operateInfo;
+
+    public Common.OperateInfo getOperateInfo() {
+        return operateInfo;
+    }
+
+    public void setOperateInfo(Common.OperateInfo operateInfo) {
+        this.operateInfo = operateInfo;
+    }
+
     public String getAppId() {
         return appId;
     }
@@ -63,5 +80,13 @@ public class BaseRequest extends BaseEntity {
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public String getSourceIP() {
+        return sourceIP;
+    }
+
+    public void setSourceIP(String sourceIP) {
+        this.sourceIP = sourceIP;
     }
 }

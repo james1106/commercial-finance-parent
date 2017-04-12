@@ -1,11 +1,17 @@
 package com.xiangan.platform.chainserver.api.contract.vo.request;
 
+import com.google.protobuf.ByteString;
 import com.xiangan.platform.chainserver.common.domain.BaseEntity;
 import com.xiangan.platform.chainserver.common.domain.BaseRequest;
 import com.xiangan.platform.chainserver.common.domain.FileDataRequest;
+import com.xiangan.platform.chainserver.common.utils.DateUtil;
+import com.xiangan.platform.chainserver.common.utils.FileUtil;
+import com.xiangna.www.protos.contract.Contract;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 发起融资申请请求参数
@@ -26,7 +32,7 @@ public class ContractInitRequest extends BaseRequest {
     /**
      * 期望融资金额
      */
-    private double expectLoanAmount;
+    private long expectLoanAmount;
 
     /**
      * 期望融资期限
@@ -36,17 +42,17 @@ public class ContractInitRequest extends BaseRequest {
     /**
      * 期望融资利率
      */
-    private double expectLoanRate;
+    private long expectLoanRate;
 
     /**
      * 融资抵押发票
      */
-    private ArrayList<MortgageInvoice> invoices;
+    private List<MortgageInvoice> invoices;
 
     /**
      * 附件
      */
-    private ArrayList<FileDataRequest> attas;
+    private List<FileDataRequest> attas;
 
     public String getLedgerId() {
         return ledgerId;
@@ -56,11 +62,11 @@ public class ContractInitRequest extends BaseRequest {
         this.ledgerId = ledgerId;
     }
 
-    public double getExpectLoanAmount() {
+    public long getExpectLoanAmount() {
         return expectLoanAmount;
     }
 
-    public void setExpectLoanAmount(double expectLoanAmount) {
+    public void setExpectLoanAmount(long expectLoanAmount) {
         this.expectLoanAmount = expectLoanAmount;
     }
 
@@ -72,27 +78,27 @@ public class ContractInitRequest extends BaseRequest {
         this.expectLoanPeriod = expectLoanPeriod;
     }
 
-    public double getExpectLoanRate() {
+    public long getExpectLoanRate() {
         return expectLoanRate;
     }
 
-    public void setExpectLoanRate(double expectLoanRate) {
+    public void setExpectLoanRate(long expectLoanRate) {
         this.expectLoanRate = expectLoanRate;
     }
 
-    public ArrayList<MortgageInvoice> getInvoices() {
+    public List<MortgageInvoice> getInvoices() {
         return invoices;
     }
 
-    public void setInvoices(ArrayList<MortgageInvoice> invoices) {
+    public void setInvoices(List<MortgageInvoice> invoices) {
         this.invoices = invoices;
     }
 
-    public ArrayList<FileDataRequest> getAttas() {
+    public List<FileDataRequest> getAttas() {
         return attas;
     }
 
-    public void setAttas(ArrayList<FileDataRequest> attas) {
+    public void setAttas(List<FileDataRequest> attas) {
         this.attas = attas;
     }
 
@@ -111,7 +117,7 @@ public class ContractInitRequest extends BaseRequest {
         /**
          * 发票金额
          */
-        private double invoiceAmount;
+        private long invoiceAmount;
 
         /**
          * 销售方
@@ -136,12 +142,12 @@ public class ContractInitRequest extends BaseRequest {
         /**
          * 期望融资金额
          */
-        private double expectLoanAmount;
+        private long expectLoanAmount;
 
         /**
          * 期望融资利率
          */
-        private double expectLoanRate;
+        private long expectLoanRate;
 
         /**
          * 发票扫描件
@@ -149,7 +155,30 @@ public class ContractInitRequest extends BaseRequest {
          * Base64编码的图片字符串
          * </p>
          */
-        private ArrayList<String> images;
+        private List<String> images;
+
+        public Contract.Invoice convert() throws IOException {
+            List<ByteString> invoiceImages = null;
+            if (images != null) {
+                invoiceImages = new ArrayList<>(images.size());
+                for (String data : images) {
+                    invoiceImages.add(FileUtil.decoderToByteString(data));
+                }
+            }
+
+            return Contract.Invoice.newBuilder()
+                    .setInvoiceNo(this.getInvoiceNO())
+                    .setInvoiceAmount(this.getInvoiceAmount())
+                    .setExpeLoanAmount(this.getExpectLoanAmount())
+                    .setExpeLoanRate(this.getExpectLoanRate())
+                    .setSeller(this.getSeller().convert())
+                    .setPurchaser(this.getPurchaser().convert())
+                    .setInvoiceRemark(this.getInvoiceRemark())
+                    .setInvoiceTime(DateUtil.toUnixTime(this.getInvoiceTime()))
+                    .addAllInvoiceImages(invoiceImages)
+                    .build();
+        }
+
 
         public String getInvoiceNO() {
             return invoiceNO;
@@ -159,11 +188,11 @@ public class ContractInitRequest extends BaseRequest {
             this.invoiceNO = invoiceNO;
         }
 
-        public double getInvoiceAmount() {
+        public long getInvoiceAmount() {
             return invoiceAmount;
         }
 
-        public void setInvoiceAmount(double invoiceAmount) {
+        public void setInvoiceAmount(long invoiceAmount) {
             this.invoiceAmount = invoiceAmount;
         }
 
@@ -199,27 +228,27 @@ public class ContractInitRequest extends BaseRequest {
             this.invoiceTime = invoiceTime;
         }
 
-        public double getExpectLoanAmount() {
+        public long getExpectLoanAmount() {
             return expectLoanAmount;
         }
 
-        public void setExpectLoanAmount(double expectLoanAmount) {
+        public void setExpectLoanAmount(long expectLoanAmount) {
             this.expectLoanAmount = expectLoanAmount;
         }
 
-        public double getExpectLoanRate() {
+        public long getExpectLoanRate() {
             return expectLoanRate;
         }
 
-        public void setExpectLoanRate(double expectLoanRate) {
+        public void setExpectLoanRate(long expectLoanRate) {
             this.expectLoanRate = expectLoanRate;
         }
 
-        public ArrayList<String> getImages() {
+        public List<String> getImages() {
             return images;
         }
 
-        public void setImages(ArrayList<String> images) {
+        public void setImages(List<String> images) {
             this.images = images;
         }
     }
@@ -259,6 +288,17 @@ public class ContractInitRequest extends BaseRequest {
          * 开户银行账户
          */
         private String bankAccount;
+
+        public Contract.Invoice.InvoiceCommercial convert() {
+            return Contract.Invoice.InvoiceCommercial.newBuilder()
+                    .setName(this.getName())
+                    .setKey(this.getKey())
+                    .setAddress(this.getAddress())
+                    .setBankName(this.getBankName())
+                    .setBankAccount(this.getBankAccount())
+                    .setPhone(this.getPhone())
+                    .build();
+        }
 
         public String getName() {
             return name;

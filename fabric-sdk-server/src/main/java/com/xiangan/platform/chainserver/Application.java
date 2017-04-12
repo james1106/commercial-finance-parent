@@ -15,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
     public static void main(String[] args) {
+        System.setProperty("spring.config.location","fabric-sdk-server/src/main/resources/config/userinfo.properties");
         SpringApplication.run(Application.class, args);
     }
 
