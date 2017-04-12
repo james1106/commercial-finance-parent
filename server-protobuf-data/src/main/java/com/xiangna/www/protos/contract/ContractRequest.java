@@ -65,7 +65,7 @@ public final class ContractRequest {
 
     /**
      * <pre>
-     * 合约文件
+     * 合约文件 see message FileAddRequest
      * </pre>
      *
      * <code>optional bytes contractFile = 4;</code>
@@ -265,7 +265,7 @@ public final class ContractRequest {
     private com.google.protobuf.ByteString contractFile_;
     /**
      * <pre>
-     * 合约文件
+     * 合约文件 see message FileAddRequest
      * </pre>
      *
      * <code>optional bytes contractFile = 4;</code>
@@ -820,7 +820,7 @@ public final class ContractRequest {
       private com.google.protobuf.ByteString contractFile_ = com.google.protobuf.ByteString.EMPTY;
       /**
        * <pre>
-       * 合约文件
+       * 合约文件 see message FileAddRequest
        * </pre>
        *
        * <code>optional bytes contractFile = 4;</code>
@@ -830,7 +830,7 @@ public final class ContractRequest {
       }
       /**
        * <pre>
-       * 合约文件
+       * 合约文件 see message FileAddRequest
        * </pre>
        *
        * <code>optional bytes contractFile = 4;</code>
@@ -846,7 +846,7 @@ public final class ContractRequest {
       }
       /**
        * <pre>
-       * 合约文件
+       * 合约文件 see message FileAddRequest
        * </pre>
        *
        * <code>optional bytes contractFile = 4;</code>

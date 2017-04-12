@@ -12,7 +12,7 @@ message ContractExcuteRequest {
     string action = 1; // 操作
     string no = 2; // 合约编号
     bytes contractData = 3; // 合约数据
-    bytes contractFile = 4; // 合约文件
+    bytes contractFile = 4; // 合约文件 see message FileAddRequest
 
 }
 

@@ -41,7 +41,7 @@ public final class BankContract {
      * 保理公司信息
      * </pre>
      *
-     * <code>optional .protos.AppVo factoring = 2;</code>
+     * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
     boolean hasFactoring();
     /**
@@ -49,24 +49,24 @@ public final class BankContract {
      * 保理公司信息
      * </pre>
      *
-     * <code>optional .protos.AppVo factoring = 2;</code>
+     * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getFactoring();
+    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring();
     /**
      * <pre>
      * 保理公司信息
      * </pre>
      *
-     * <code>optional .protos.AppVo factoring = 2;</code>
+     * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder();
+    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder();
 
     /**
      * <pre>
      * 银行信息
      * </pre>
      *
-     * <code>optional .protos.AppVo bank_info = 3;</code>
+     * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
     boolean hasBankInfo();
     /**
@@ -74,17 +74,17 @@ public final class BankContract {
      * 银行信息
      * </pre>
      *
-     * <code>optional .protos.AppVo bank_info = 3;</code>
+     * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getBankInfo();
+    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getBankInfo();
     /**
      * <pre>
      * 银行信息
      * </pre>
      *
-     * <code>optional .protos.AppVo bank_info = 3;</code>
+     * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankInfoOrBuilder();
+    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getBankInfoOrBuilder();
 
     /**
      * <pre>
@@ -207,10 +207,54 @@ public final class BankContract {
 
     /**
      * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> 
+        getStepHistoryList();
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getStepHistory(int index);
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    int getStepHistoryCount();
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+        getStepHistoryOrBuilderList();
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getStepHistoryOrBuilder(
+        int index);
+
+    /**
+     * <pre>
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 8;</code>
+     * <code>optional .protos.OperateInfo operate_info = 9;</code>
      */
     boolean hasOperateInfo();
     /**
@@ -218,7 +262,7 @@ public final class BankContract {
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 8;</code>
+     * <code>optional .protos.OperateInfo operate_info = 9;</code>
      */
     com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo();
     /**
@@ -226,7 +270,7 @@ public final class BankContract {
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 8;</code>
+     * <code>optional .protos.OperateInfo operate_info = 9;</code>
      */
     com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder();
   }
@@ -250,6 +294,7 @@ public final class BankContract {
     private BankLoanContract() {
       orderNo_ = "";
       financingContractReviews_ = java.util.Collections.emptyList();
+      stepHistory_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -284,11 +329,11 @@ public final class BankContract {
               break;
             }
             case 18: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder subBuilder = null;
               if (factoring_ != null) {
                 subBuilder = factoring_.toBuilder();
               }
-              factoring_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              factoring_ = input.readMessage(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(factoring_);
                 factoring_ = subBuilder.buildPartial();
@@ -297,11 +342,11 @@ public final class BankContract {
               break;
             }
             case 26: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder subBuilder = null;
               if (bankInfo_ != null) {
                 subBuilder = bankInfo_.toBuilder();
               }
-              bankInfo_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              bankInfo_ = input.readMessage(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(bankInfo_);
                 bankInfo_ = subBuilder.buildPartial();
@@ -358,6 +403,15 @@ public final class BankContract {
               break;
             }
             case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+                stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              stepHistory_.add(
+                  input.readMessage(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.parser(), extensionRegistry));
+              break;
+            }
+            case 74: {
               com.xiangna.www.protos.common.Common.OperateInfo.Builder subBuilder = null;
               if (operateInfo_ != null) {
                 subBuilder = operateInfo_.toBuilder();
@@ -380,6 +434,9 @@ public final class BankContract {
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           financingContractReviews_ = java.util.Collections.unmodifiableList(financingContractReviews_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+          stepHistory_ = java.util.Collections.unmodifiableList(stepHistory_);
         }
         makeExtensionsImmutable();
       }
@@ -440,13 +497,13 @@ public final class BankContract {
     }
 
     public static final int FACTORING_FIELD_NUMBER = 2;
-    private com.xiangna.www.protos.common.Common.AppVo factoring_;
+    private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg factoring_;
     /**
      * <pre>
      * 保理公司信息
      * </pre>
      *
-     * <code>optional .protos.AppVo factoring = 2;</code>
+     * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
     public boolean hasFactoring() {
       return factoring_ != null;
@@ -456,30 +513,30 @@ public final class BankContract {
      * 保理公司信息
      * </pre>
      *
-     * <code>optional .protos.AppVo factoring = 2;</code>
+     * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getFactoring() {
-      return factoring_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring() {
+      return factoring_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
     }
     /**
      * <pre>
      * 保理公司信息
      * </pre>
      *
-     * <code>optional .protos.AppVo factoring = 2;</code>
+     * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder() {
+    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
       return getFactoring();
     }
 
     public static final int BANK_INFO_FIELD_NUMBER = 3;
-    private com.xiangna.www.protos.common.Common.AppVo bankInfo_;
+    private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg bankInfo_;
     /**
      * <pre>
      * 银行信息
      * </pre>
      *
-     * <code>optional .protos.AppVo bank_info = 3;</code>
+     * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
     public boolean hasBankInfo() {
       return bankInfo_ != null;
@@ -489,19 +546,19 @@ public final class BankContract {
      * 银行信息
      * </pre>
      *
-     * <code>optional .protos.AppVo bank_info = 3;</code>
+     * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getBankInfo() {
-      return bankInfo_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bankInfo_;
+    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getBankInfo() {
+      return bankInfo_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
     }
     /**
      * <pre>
      * 银行信息
      * </pre>
      *
-     * <code>optional .protos.AppVo bank_info = 3;</code>
+     * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankInfoOrBuilder() {
+    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getBankInfoOrBuilder() {
       return getBankInfo();
     }
 
@@ -659,14 +716,69 @@ public final class BankContract {
       return getContractStatus();
     }
 
-    public static final int OPERATE_INFO_FIELD_NUMBER = 8;
+    public static final int STEP_HISTORY_FIELD_NUMBER = 8;
+    private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> stepHistory_;
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> getStepHistoryList() {
+      return stepHistory_;
+    }
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+        getStepHistoryOrBuilderList() {
+      return stepHistory_;
+    }
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    public int getStepHistoryCount() {
+      return stepHistory_.size();
+    }
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getStepHistory(int index) {
+      return stepHistory_.get(index);
+    }
+    /**
+     * <pre>
+     * 订单状态历史记录
+     * </pre>
+     *
+     * <code>repeated .protos.ContractStatus step_history = 8;</code>
+     */
+    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getStepHistoryOrBuilder(
+        int index) {
+      return stepHistory_.get(index);
+    }
+
+    public static final int OPERATE_INFO_FIELD_NUMBER = 9;
     private com.xiangna.www.protos.common.Common.OperateInfo operateInfo_;
     /**
      * <pre>
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 8;</code>
+     * <code>optional .protos.OperateInfo operate_info = 9;</code>
      */
     public boolean hasOperateInfo() {
       return operateInfo_ != null;
@@ -676,7 +788,7 @@ public final class BankContract {
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 8;</code>
+     * <code>optional .protos.OperateInfo operate_info = 9;</code>
      */
     public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo() {
       return operateInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : operateInfo_;
@@ -686,7 +798,7 @@ public final class BankContract {
      * 数据操作信息
      * </pre>
      *
-     * <code>optional .protos.OperateInfo operate_info = 8;</code>
+     * <code>optional .protos.OperateInfo operate_info = 9;</code>
      */
     public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder() {
       return getOperateInfo();
@@ -725,8 +837,11 @@ public final class BankContract {
       if (contractStatus_ != null) {
         output.writeMessage(7, getContractStatus());
       }
+      for (int i = 0; i < stepHistory_.size(); i++) {
+        output.writeMessage(8, stepHistory_.get(i));
+      }
       if (operateInfo_ != null) {
-        output.writeMessage(8, getOperateInfo());
+        output.writeMessage(9, getOperateInfo());
       }
     }
 
@@ -762,9 +877,13 @@ public final class BankContract {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getContractStatus());
       }
+      for (int i = 0; i < stepHistory_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, stepHistory_.get(i));
+      }
       if (operateInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getOperateInfo());
+          .computeMessageSize(9, getOperateInfo());
       }
       memoizedSize = size;
       return size;
@@ -811,6 +930,8 @@ public final class BankContract {
         result = result && getContractStatus()
             .equals(other.getContractStatus());
       }
+      result = result && getStepHistoryList()
+          .equals(other.getStepHistoryList());
       result = result && (hasOperateInfo() == other.hasOperateInfo());
       if (hasOperateInfo()) {
         result = result && getOperateInfo()
@@ -851,6 +972,10 @@ public final class BankContract {
       if (hasContractStatus()) {
         hash = (37 * hash) + CONTRACT_STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getContractStatus().hashCode();
+      }
+      if (getStepHistoryCount() > 0) {
+        hash = (37 * hash) + STEP_HISTORY_FIELD_NUMBER;
+        hash = (53 * hash) + getStepHistoryList().hashCode();
       }
       if (hasOperateInfo()) {
         hash = (37 * hash) + OPERATE_INFO_FIELD_NUMBER;
@@ -977,6 +1102,7 @@ public final class BankContract {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getFinancingContractReviewsFieldBuilder();
+          getStepHistoryFieldBuilder();
         }
       }
       public Builder clear() {
@@ -1018,6 +1144,12 @@ public final class BankContract {
         } else {
           contractStatus_ = null;
           contractStatusBuilder_ = null;
+        }
+        if (stepHistoryBuilder_ == null) {
+          stepHistory_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          stepHistoryBuilder_.clear();
         }
         if (operateInfoBuilder_ == null) {
           operateInfo_ = null;
@@ -1083,6 +1215,15 @@ public final class BankContract {
           result.contractStatus_ = contractStatus_;
         } else {
           result.contractStatus_ = contractStatusBuilder_.build();
+        }
+        if (stepHistoryBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+            stepHistory_ = java.util.Collections.unmodifiableList(stepHistory_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.stepHistory_ = stepHistory_;
+        } else {
+          result.stepHistory_ = stepHistoryBuilder_.build();
         }
         if (operateInfoBuilder_ == null) {
           result.operateInfo_ = operateInfo_;
@@ -1175,6 +1316,32 @@ public final class BankContract {
         }
         if (other.hasContractStatus()) {
           mergeContractStatus(other.getContractStatus());
+        }
+        if (stepHistoryBuilder_ == null) {
+          if (!other.stepHistory_.isEmpty()) {
+            if (stepHistory_.isEmpty()) {
+              stepHistory_ = other.stepHistory_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureStepHistoryIsMutable();
+              stepHistory_.addAll(other.stepHistory_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.stepHistory_.isEmpty()) {
+            if (stepHistoryBuilder_.isEmpty()) {
+              stepHistoryBuilder_.dispose();
+              stepHistoryBuilder_ = null;
+              stepHistory_ = other.stepHistory_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              stepHistoryBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getStepHistoryFieldBuilder() : null;
+            } else {
+              stepHistoryBuilder_.addAllMessages(other.stepHistory_);
+            }
+          }
         }
         if (other.hasOperateInfo()) {
           mergeOperateInfo(other.getOperateInfo());
@@ -1295,15 +1462,15 @@ public final class BankContract {
         return this;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo factoring_ = null;
+      private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg factoring_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> factoringBuilder_;
+          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> factoringBuilder_;
       /**
        * <pre>
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
       public boolean hasFactoring() {
         return factoringBuilder_ != null || factoring_ != null;
@@ -1313,11 +1480,11 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getFactoring() {
+      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring() {
         if (factoringBuilder_ == null) {
-          return factoring_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+          return factoring_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
         } else {
           return factoringBuilder_.getMessage();
         }
@@ -1327,9 +1494,9 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public Builder setFactoring(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder setFactoring(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
         if (factoringBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1347,10 +1514,10 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
       public Builder setFactoring(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder builderForValue) {
         if (factoringBuilder_ == null) {
           factoring_ = builderForValue.build();
           onChanged();
@@ -1365,13 +1532,13 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public Builder mergeFactoring(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder mergeFactoring(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
         if (factoringBuilder_ == null) {
           if (factoring_ != null) {
             factoring_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(factoring_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.newBuilder(factoring_).mergeFrom(value).buildPartial();
           } else {
             factoring_ = value;
           }
@@ -1387,7 +1554,7 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
       public Builder clearFactoring() {
         if (factoringBuilder_ == null) {
@@ -1405,9 +1572,9 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getFactoringBuilder() {
+      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder getFactoringBuilder() {
         
         onChanged();
         return getFactoringFieldBuilder().getBuilder();
@@ -1417,14 +1584,14 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder() {
+      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
         if (factoringBuilder_ != null) {
           return factoringBuilder_.getMessageOrBuilder();
         } else {
           return factoring_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
         }
       }
       /**
@@ -1432,14 +1599,14 @@ public final class BankContract {
        * 保理公司信息
        * </pre>
        *
-       * <code>optional .protos.AppVo factoring = 2;</code>
+       * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
+          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> 
           getFactoringFieldBuilder() {
         if (factoringBuilder_ == null) {
           factoringBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder>(
                   getFactoring(),
                   getParentForChildren(),
                   isClean());
@@ -1448,15 +1615,15 @@ public final class BankContract {
         return factoringBuilder_;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo bankInfo_ = null;
+      private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg bankInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> bankInfoBuilder_;
+          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> bankInfoBuilder_;
       /**
        * <pre>
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
       public boolean hasBankInfo() {
         return bankInfoBuilder_ != null || bankInfo_ != null;
@@ -1466,11 +1633,11 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getBankInfo() {
+      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getBankInfo() {
         if (bankInfoBuilder_ == null) {
-          return bankInfo_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bankInfo_;
+          return bankInfo_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
         } else {
           return bankInfoBuilder_.getMessage();
         }
@@ -1480,9 +1647,9 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public Builder setBankInfo(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder setBankInfo(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
         if (bankInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1500,10 +1667,10 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
       public Builder setBankInfo(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder builderForValue) {
         if (bankInfoBuilder_ == null) {
           bankInfo_ = builderForValue.build();
           onChanged();
@@ -1518,13 +1685,13 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public Builder mergeBankInfo(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder mergeBankInfo(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
         if (bankInfoBuilder_ == null) {
           if (bankInfo_ != null) {
             bankInfo_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(bankInfo_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.newBuilder(bankInfo_).mergeFrom(value).buildPartial();
           } else {
             bankInfo_ = value;
           }
@@ -1540,7 +1707,7 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
       public Builder clearBankInfo() {
         if (bankInfoBuilder_ == null) {
@@ -1558,9 +1725,9 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getBankInfoBuilder() {
+      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder getBankInfoBuilder() {
         
         onChanged();
         return getBankInfoFieldBuilder().getBuilder();
@@ -1570,14 +1737,14 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankInfoOrBuilder() {
+      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getBankInfoOrBuilder() {
         if (bankInfoBuilder_ != null) {
           return bankInfoBuilder_.getMessageOrBuilder();
         } else {
           return bankInfo_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bankInfo_;
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
         }
       }
       /**
@@ -1585,14 +1752,14 @@ public final class BankContract {
        * 银行信息
        * </pre>
        *
-       * <code>optional .protos.AppVo bank_info = 3;</code>
+       * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
+          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> 
           getBankInfoFieldBuilder() {
         if (bankInfoBuilder_ == null) {
           bankInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
+              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder>(
                   getBankInfo(),
                   getParentForChildren(),
                   isClean());
@@ -2372,6 +2539,318 @@ public final class BankContract {
         return contractStatusBuilder_;
       }
 
+      private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> stepHistory_ =
+        java.util.Collections.emptyList();
+      private void ensureStepHistoryIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus>(stepHistory_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> stepHistoryBuilder_;
+
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> getStepHistoryList() {
+        if (stepHistoryBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(stepHistory_);
+        } else {
+          return stepHistoryBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public int getStepHistoryCount() {
+        if (stepHistoryBuilder_ == null) {
+          return stepHistory_.size();
+        } else {
+          return stepHistoryBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus getStepHistory(int index) {
+        if (stepHistoryBuilder_ == null) {
+          return stepHistory_.get(index);
+        } else {
+          return stepHistoryBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder setStepHistory(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+        if (stepHistoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepHistoryIsMutable();
+          stepHistory_.set(index, value);
+          onChanged();
+        } else {
+          stepHistoryBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder setStepHistory(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder builderForValue) {
+        if (stepHistoryBuilder_ == null) {
+          ensureStepHistoryIsMutable();
+          stepHistory_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          stepHistoryBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder addStepHistory(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+        if (stepHistoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepHistoryIsMutable();
+          stepHistory_.add(value);
+          onChanged();
+        } else {
+          stepHistoryBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder addStepHistory(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus value) {
+        if (stepHistoryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStepHistoryIsMutable();
+          stepHistory_.add(index, value);
+          onChanged();
+        } else {
+          stepHistoryBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder addStepHistory(
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder builderForValue) {
+        if (stepHistoryBuilder_ == null) {
+          ensureStepHistoryIsMutable();
+          stepHistory_.add(builderForValue.build());
+          onChanged();
+        } else {
+          stepHistoryBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder addStepHistory(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder builderForValue) {
+        if (stepHistoryBuilder_ == null) {
+          ensureStepHistoryIsMutable();
+          stepHistory_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          stepHistoryBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder addAllStepHistory(
+          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus> values) {
+        if (stepHistoryBuilder_ == null) {
+          ensureStepHistoryIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, stepHistory_);
+          onChanged();
+        } else {
+          stepHistoryBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder clearStepHistory() {
+        if (stepHistoryBuilder_ == null) {
+          stepHistory_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          stepHistoryBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public Builder removeStepHistory(int index) {
+        if (stepHistoryBuilder_ == null) {
+          ensureStepHistoryIsMutable();
+          stepHistory_.remove(index);
+          onChanged();
+        } else {
+          stepHistoryBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder getStepHistoryBuilder(
+          int index) {
+        return getStepHistoryFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder getStepHistoryOrBuilder(
+          int index) {
+        if (stepHistoryBuilder_ == null) {
+          return stepHistory_.get(index);  } else {
+          return stepHistoryBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+           getStepHistoryOrBuilderList() {
+        if (stepHistoryBuilder_ != null) {
+          return stepHistoryBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(stepHistory_);
+        }
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder addStepHistoryBuilder() {
+        return getStepHistoryFieldBuilder().addBuilder(
+            com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder addStepHistoryBuilder(
+          int index) {
+        return getStepHistoryFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 订单状态历史记录
+       * </pre>
+       *
+       * <code>repeated .protos.ContractStatus step_history = 8;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder> 
+           getStepHistoryBuilderList() {
+        return getStepHistoryFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder> 
+          getStepHistoryFieldBuilder() {
+        if (stepHistoryBuilder_ == null) {
+          stepHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatus.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStatusOrBuilder>(
+                  stepHistory_,
+                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  getParentForChildren(),
+                  isClean());
+          stepHistory_ = null;
+        }
+        return stepHistoryBuilder_;
+      }
+
       private com.xiangna.www.protos.common.Common.OperateInfo operateInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> operateInfoBuilder_;
@@ -2380,7 +2859,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public boolean hasOperateInfo() {
         return operateInfoBuilder_ != null || operateInfo_ != null;
@@ -2390,7 +2869,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo() {
         if (operateInfoBuilder_ == null) {
@@ -2404,7 +2883,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public Builder setOperateInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
         if (operateInfoBuilder_ == null) {
@@ -2424,7 +2903,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public Builder setOperateInfo(
           com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
@@ -2442,7 +2921,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public Builder mergeOperateInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
         if (operateInfoBuilder_ == null) {
@@ -2464,7 +2943,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public Builder clearOperateInfo() {
         if (operateInfoBuilder_ == null) {
@@ -2482,7 +2961,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public com.xiangna.www.protos.common.Common.OperateInfo.Builder getOperateInfoBuilder() {
         
@@ -2494,7 +2973,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder() {
         if (operateInfoBuilder_ != null) {
@@ -2509,7 +2988,7 @@ public final class BankContract {
        * 数据操作信息
        * </pre>
        *
-       * <code>optional .protos.OperateInfo operate_info = 8;</code>
+       * <code>optional .protos.OperateInfo operate_info = 9;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
@@ -2660,85 +3139,10 @@ public final class BankContract {
 
     /**
      * <pre>
-     * 质押的融资订单的供应商
-     * </pre>
-     *
-     * <code>optional .protos.AppVo supplier = 9;</code>
-     */
-    boolean hasSupplier();
-    /**
-     * <pre>
-     * 质押的融资订单的供应商
-     * </pre>
-     *
-     * <code>optional .protos.AppVo supplier = 9;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVo getSupplier();
-    /**
-     * <pre>
-     * 质押的融资订单的供应商
-     * </pre>
-     *
-     * <code>optional .protos.AppVo supplier = 9;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getSupplierOrBuilder();
-
-    /**
-     * <pre>
-     * 质押的融资订单的核心企业
-     * </pre>
-     *
-     * <code>optional .protos.AppVo enterprise = 10;</code>
-     */
-    boolean hasEnterprise();
-    /**
-     * <pre>
-     * 质押的融资订单的核心企业
-     * </pre>
-     *
-     * <code>optional .protos.AppVo enterprise = 10;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVo getEnterprise();
-    /**
-     * <pre>
-     * 质押的融资订单的核心企业
-     * </pre>
-     *
-     * <code>optional .protos.AppVo enterprise = 10;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getEnterpriseOrBuilder();
-
-    /**
-     * <pre>
-     * 质押的融资订单的保理
-     * </pre>
-     *
-     * <code>optional .protos.AppVo bank_factor = 11;</code>
-     */
-    boolean hasBankFactor();
-    /**
-     * <pre>
-     * 质押的融资订单的保理
-     * </pre>
-     *
-     * <code>optional .protos.AppVo bank_factor = 11;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVo getBankFactor();
-    /**
-     * <pre>
-     * 质押的融资订单的保理
-     * </pre>
-     *
-     * <code>optional .protos.AppVo bank_factor = 11;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankFactorOrBuilder();
-
-    /**
-     * <pre>
      * 银行审批确认的融资过期时间(unix时间戳)
      * </pre>
      *
-     * <code>optional int64 confirm_expired_time = 12;</code>
+     * <code>optional int64 confirm_expired_time = 9;</code>
      */
     long getConfirmExpiredTime();
   }
@@ -2835,46 +3239,7 @@ public final class BankContract {
               confirmRate_ = input.readInt64();
               break;
             }
-            case 74: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (supplier_ != null) {
-                subBuilder = supplier_.toBuilder();
-              }
-              supplier_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(supplier_);
-                supplier_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 82: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (enterprise_ != null) {
-                subBuilder = enterprise_.toBuilder();
-              }
-              enterprise_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(enterprise_);
-                enterprise_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (bankFactor_ != null) {
-                subBuilder = bankFactor_.toBuilder();
-              }
-              bankFactor_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bankFactor_);
-                bankFactor_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
+            case 72: {
 
               confirmExpiredTime_ = input.readInt64();
               break;
@@ -3035,113 +3400,14 @@ public final class BankContract {
       return confirmRate_;
     }
 
-    public static final int SUPPLIER_FIELD_NUMBER = 9;
-    private com.xiangna.www.protos.common.Common.AppVo supplier_;
-    /**
-     * <pre>
-     * 质押的融资订单的供应商
-     * </pre>
-     *
-     * <code>optional .protos.AppVo supplier = 9;</code>
-     */
-    public boolean hasSupplier() {
-      return supplier_ != null;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的供应商
-     * </pre>
-     *
-     * <code>optional .protos.AppVo supplier = 9;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVo getSupplier() {
-      return supplier_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : supplier_;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的供应商
-     * </pre>
-     *
-     * <code>optional .protos.AppVo supplier = 9;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getSupplierOrBuilder() {
-      return getSupplier();
-    }
-
-    public static final int ENTERPRISE_FIELD_NUMBER = 10;
-    private com.xiangna.www.protos.common.Common.AppVo enterprise_;
-    /**
-     * <pre>
-     * 质押的融资订单的核心企业
-     * </pre>
-     *
-     * <code>optional .protos.AppVo enterprise = 10;</code>
-     */
-    public boolean hasEnterprise() {
-      return enterprise_ != null;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的核心企业
-     * </pre>
-     *
-     * <code>optional .protos.AppVo enterprise = 10;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVo getEnterprise() {
-      return enterprise_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : enterprise_;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的核心企业
-     * </pre>
-     *
-     * <code>optional .protos.AppVo enterprise = 10;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getEnterpriseOrBuilder() {
-      return getEnterprise();
-    }
-
-    public static final int BANK_FACTOR_FIELD_NUMBER = 11;
-    private com.xiangna.www.protos.common.Common.AppVo bankFactor_;
-    /**
-     * <pre>
-     * 质押的融资订单的保理
-     * </pre>
-     *
-     * <code>optional .protos.AppVo bank_factor = 11;</code>
-     */
-    public boolean hasBankFactor() {
-      return bankFactor_ != null;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的保理
-     * </pre>
-     *
-     * <code>optional .protos.AppVo bank_factor = 11;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVo getBankFactor() {
-      return bankFactor_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bankFactor_;
-    }
-    /**
-     * <pre>
-     * 质押的融资订单的保理
-     * </pre>
-     *
-     * <code>optional .protos.AppVo bank_factor = 11;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankFactorOrBuilder() {
-      return getBankFactor();
-    }
-
-    public static final int CONFIRM_EXPIRED_TIME_FIELD_NUMBER = 12;
+    public static final int CONFIRM_EXPIRED_TIME_FIELD_NUMBER = 9;
     private long confirmExpiredTime_;
     /**
      * <pre>
      * 银行审批确认的融资过期时间(unix时间戳)
      * </pre>
      *
-     * <code>optional int64 confirm_expired_time = 12;</code>
+     * <code>optional int64 confirm_expired_time = 9;</code>
      */
     public long getConfirmExpiredTime() {
       return confirmExpiredTime_;
@@ -3183,17 +3449,8 @@ public final class BankContract {
       if (confirmRate_ != 0L) {
         output.writeInt64(8, confirmRate_);
       }
-      if (supplier_ != null) {
-        output.writeMessage(9, getSupplier());
-      }
-      if (enterprise_ != null) {
-        output.writeMessage(10, getEnterprise());
-      }
-      if (bankFactor_ != null) {
-        output.writeMessage(11, getBankFactor());
-      }
       if (confirmExpiredTime_ != 0L) {
-        output.writeInt64(12, confirmExpiredTime_);
+        output.writeInt64(9, confirmExpiredTime_);
       }
     }
 
@@ -3233,21 +3490,9 @@ public final class BankContract {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, confirmRate_);
       }
-      if (supplier_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getSupplier());
-      }
-      if (enterprise_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getEnterprise());
-      }
-      if (bankFactor_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getBankFactor());
-      }
       if (confirmExpiredTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(12, confirmExpiredTime_);
+          .computeInt64Size(9, confirmExpiredTime_);
       }
       memoizedSize = size;
       return size;
@@ -3281,21 +3526,6 @@ public final class BankContract {
           == other.getConfirmAmount());
       result = result && (getConfirmRate()
           == other.getConfirmRate());
-      result = result && (hasSupplier() == other.hasSupplier());
-      if (hasSupplier()) {
-        result = result && getSupplier()
-            .equals(other.getSupplier());
-      }
-      result = result && (hasEnterprise() == other.hasEnterprise());
-      if (hasEnterprise()) {
-        result = result && getEnterprise()
-            .equals(other.getEnterprise());
-      }
-      result = result && (hasBankFactor() == other.hasBankFactor());
-      if (hasBankFactor()) {
-        result = result && getBankFactor()
-            .equals(other.getBankFactor());
-      }
       result = result && (getConfirmExpiredTime()
           == other.getConfirmExpiredTime());
       return result;
@@ -3330,18 +3560,6 @@ public final class BankContract {
       hash = (37 * hash) + CONFIRM_RATE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getConfirmRate());
-      if (hasSupplier()) {
-        hash = (37 * hash) + SUPPLIER_FIELD_NUMBER;
-        hash = (53 * hash) + getSupplier().hashCode();
-      }
-      if (hasEnterprise()) {
-        hash = (37 * hash) + ENTERPRISE_FIELD_NUMBER;
-        hash = (53 * hash) + getEnterprise().hashCode();
-      }
-      if (hasBankFactor()) {
-        hash = (37 * hash) + BANK_FACTOR_FIELD_NUMBER;
-        hash = (53 * hash) + getBankFactor().hashCode();
-      }
       hash = (37 * hash) + CONFIRM_EXPIRED_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getConfirmExpiredTime());
@@ -3483,24 +3701,6 @@ public final class BankContract {
 
         confirmRate_ = 0L;
 
-        if (supplierBuilder_ == null) {
-          supplier_ = null;
-        } else {
-          supplier_ = null;
-          supplierBuilder_ = null;
-        }
-        if (enterpriseBuilder_ == null) {
-          enterprise_ = null;
-        } else {
-          enterprise_ = null;
-          enterpriseBuilder_ = null;
-        }
-        if (bankFactorBuilder_ == null) {
-          bankFactor_ = null;
-        } else {
-          bankFactor_ = null;
-          bankFactorBuilder_ = null;
-        }
         confirmExpiredTime_ = 0L;
 
         return this;
@@ -3533,21 +3733,6 @@ public final class BankContract {
         result.expectRate_ = expectRate_;
         result.confirmAmount_ = confirmAmount_;
         result.confirmRate_ = confirmRate_;
-        if (supplierBuilder_ == null) {
-          result.supplier_ = supplier_;
-        } else {
-          result.supplier_ = supplierBuilder_.build();
-        }
-        if (enterpriseBuilder_ == null) {
-          result.enterprise_ = enterprise_;
-        } else {
-          result.enterprise_ = enterpriseBuilder_.build();
-        }
-        if (bankFactorBuilder_ == null) {
-          result.bankFactor_ = bankFactor_;
-        } else {
-          result.bankFactor_ = bankFactorBuilder_.build();
-        }
         result.confirmExpiredTime_ = confirmExpiredTime_;
         onBuilt();
         return result;
@@ -3614,15 +3799,6 @@ public final class BankContract {
         }
         if (other.getConfirmRate() != 0L) {
           setConfirmRate(other.getConfirmRate());
-        }
-        if (other.hasSupplier()) {
-          mergeSupplier(other.getSupplier());
-        }
-        if (other.hasEnterprise()) {
-          mergeEnterprise(other.getEnterprise());
-        }
-        if (other.hasBankFactor()) {
-          mergeBankFactor(other.getBankFactor());
         }
         if (other.getConfirmExpiredTime() != 0L) {
           setConfirmExpiredTime(other.getConfirmExpiredTime());
@@ -4008,472 +4184,13 @@ public final class BankContract {
         return this;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo supplier_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> supplierBuilder_;
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public boolean hasSupplier() {
-        return supplierBuilder_ != null || supplier_ != null;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo getSupplier() {
-        if (supplierBuilder_ == null) {
-          return supplier_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : supplier_;
-        } else {
-          return supplierBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public Builder setSupplier(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (supplierBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          supplier_ = value;
-          onChanged();
-        } else {
-          supplierBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public Builder setSupplier(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (supplierBuilder_ == null) {
-          supplier_ = builderForValue.build();
-          onChanged();
-        } else {
-          supplierBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public Builder mergeSupplier(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (supplierBuilder_ == null) {
-          if (supplier_ != null) {
-            supplier_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(supplier_).mergeFrom(value).buildPartial();
-          } else {
-            supplier_ = value;
-          }
-          onChanged();
-        } else {
-          supplierBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public Builder clearSupplier() {
-        if (supplierBuilder_ == null) {
-          supplier_ = null;
-          onChanged();
-        } else {
-          supplier_ = null;
-          supplierBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getSupplierBuilder() {
-        
-        onChanged();
-        return getSupplierFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getSupplierOrBuilder() {
-        if (supplierBuilder_ != null) {
-          return supplierBuilder_.getMessageOrBuilder();
-        } else {
-          return supplier_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : supplier_;
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的供应商
-       * </pre>
-       *
-       * <code>optional .protos.AppVo supplier = 9;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getSupplierFieldBuilder() {
-        if (supplierBuilder_ == null) {
-          supplierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getSupplier(),
-                  getParentForChildren(),
-                  isClean());
-          supplier_ = null;
-        }
-        return supplierBuilder_;
-      }
-
-      private com.xiangna.www.protos.common.Common.AppVo enterprise_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> enterpriseBuilder_;
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public boolean hasEnterprise() {
-        return enterpriseBuilder_ != null || enterprise_ != null;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo getEnterprise() {
-        if (enterpriseBuilder_ == null) {
-          return enterprise_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : enterprise_;
-        } else {
-          return enterpriseBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public Builder setEnterprise(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (enterpriseBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          enterprise_ = value;
-          onChanged();
-        } else {
-          enterpriseBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public Builder setEnterprise(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (enterpriseBuilder_ == null) {
-          enterprise_ = builderForValue.build();
-          onChanged();
-        } else {
-          enterpriseBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public Builder mergeEnterprise(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (enterpriseBuilder_ == null) {
-          if (enterprise_ != null) {
-            enterprise_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(enterprise_).mergeFrom(value).buildPartial();
-          } else {
-            enterprise_ = value;
-          }
-          onChanged();
-        } else {
-          enterpriseBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public Builder clearEnterprise() {
-        if (enterpriseBuilder_ == null) {
-          enterprise_ = null;
-          onChanged();
-        } else {
-          enterprise_ = null;
-          enterpriseBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getEnterpriseBuilder() {
-        
-        onChanged();
-        return getEnterpriseFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getEnterpriseOrBuilder() {
-        if (enterpriseBuilder_ != null) {
-          return enterpriseBuilder_.getMessageOrBuilder();
-        } else {
-          return enterprise_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : enterprise_;
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的核心企业
-       * </pre>
-       *
-       * <code>optional .protos.AppVo enterprise = 10;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getEnterpriseFieldBuilder() {
-        if (enterpriseBuilder_ == null) {
-          enterpriseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getEnterprise(),
-                  getParentForChildren(),
-                  isClean());
-          enterprise_ = null;
-        }
-        return enterpriseBuilder_;
-      }
-
-      private com.xiangna.www.protos.common.Common.AppVo bankFactor_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> bankFactorBuilder_;
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public boolean hasBankFactor() {
-        return bankFactorBuilder_ != null || bankFactor_ != null;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo getBankFactor() {
-        if (bankFactorBuilder_ == null) {
-          return bankFactor_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bankFactor_;
-        } else {
-          return bankFactorBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public Builder setBankFactor(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (bankFactorBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          bankFactor_ = value;
-          onChanged();
-        } else {
-          bankFactorBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public Builder setBankFactor(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (bankFactorBuilder_ == null) {
-          bankFactor_ = builderForValue.build();
-          onChanged();
-        } else {
-          bankFactorBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public Builder mergeBankFactor(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (bankFactorBuilder_ == null) {
-          if (bankFactor_ != null) {
-            bankFactor_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(bankFactor_).mergeFrom(value).buildPartial();
-          } else {
-            bankFactor_ = value;
-          }
-          onChanged();
-        } else {
-          bankFactorBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public Builder clearBankFactor() {
-        if (bankFactorBuilder_ == null) {
-          bankFactor_ = null;
-          onChanged();
-        } else {
-          bankFactor_ = null;
-          bankFactorBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getBankFactorBuilder() {
-        
-        onChanged();
-        return getBankFactorFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankFactorOrBuilder() {
-        if (bankFactorBuilder_ != null) {
-          return bankFactorBuilder_.getMessageOrBuilder();
-        } else {
-          return bankFactor_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bankFactor_;
-        }
-      }
-      /**
-       * <pre>
-       * 质押的融资订单的保理
-       * </pre>
-       *
-       * <code>optional .protos.AppVo bank_factor = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getBankFactorFieldBuilder() {
-        if (bankFactorBuilder_ == null) {
-          bankFactorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getBankFactor(),
-                  getParentForChildren(),
-                  isClean());
-          bankFactor_ = null;
-        }
-        return bankFactorBuilder_;
-      }
-
       private long confirmExpiredTime_ ;
       /**
        * <pre>
        * 银行审批确认的融资过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional int64 confirm_expired_time = 12;</code>
+       * <code>optional int64 confirm_expired_time = 9;</code>
        */
       public long getConfirmExpiredTime() {
         return confirmExpiredTime_;
@@ -4483,7 +4200,7 @@ public final class BankContract {
        * 银行审批确认的融资过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional int64 confirm_expired_time = 12;</code>
+       * <code>optional int64 confirm_expired_time = 9;</code>
        */
       public Builder setConfirmExpiredTime(long value) {
         
@@ -4496,7 +4213,7 @@ public final class BankContract {
        * 银行审批确认的融资过期时间(unix时间戳)
        * </pre>
        *
-       * <code>optional int64 confirm_expired_time = 12;</code>
+       * <code>optional int64 confirm_expired_time = 9;</code>
        */
       public Builder clearConfirmExpiredTime() {
         
@@ -4573,28 +4290,28 @@ public final class BankContract {
   static {
     java.lang.String[] descriptorData = {
       "\n\034contract/bank_contract.proto\022\006protos\032\023" +
-      "common/common.proto\032\034contract/contract_d" +
-      "ata.proto\032\036contract/contract_status.prot" +
-      "o\"\353\002\n\020BankLoanContract\022\020\n\010order_no\030\001 \001(\t" +
-      "\022 \n\tfactoring\030\002 \001(\0132\r.protos.AppVo\022 \n\tba" +
-      "nk_info\030\003 \001(\0132\r.protos.AppVo\022/\n\rcontract" +
-      "_data\030\004 \001(\0132\030.protos.ContractFormData\022C\n" +
-      "\032financing_contract_reviews\030\005 \003(\0132\037.prot" +
-      "os.FinancingContractReview\022/\n\013money_coun" +
-      "t\030\006 \001(\0132\032.protos.ContractMoneyCount\022/\n\017c",
-      "ontract_status\030\007 \001(\0132\026.protos.ContractSt" +
-      "atus\022)\n\014operate_info\030\010 \001(\0132\023.protos.Oper" +
-      "ateInfo\"\341\002\n\027FinancingContractReview\022\032\n\022f" +
-      "inancing_order_no\030\001 \001(\t\022\024\n\014order_amount\030" +
-      "\002 \001(\003\022\030\n\020financing_period\030\003 \001(\005\022\032\n\022order" +
-      "_expired_time\030\004 \001(\003\022\025\n\rexpect_amount\030\005 \001" +
-      "(\003\022\023\n\013expect_rate\030\006 \001(\003\022\026\n\016confirm_amoun" +
-      "t\030\007 \001(\003\022\024\n\014confirm_rate\030\010 \001(\003\022\037\n\010supplie" +
-      "r\030\t \001(\0132\r.protos.AppVo\022!\n\nenterprise\030\n \001" +
-      "(\0132\r.protos.AppVo\022\"\n\013bank_factor\030\013 \001(\0132\r",
-      ".protos.AppVo\022\034\n\024confirm_expired_time\030\014 " +
-      "\001(\003BB\n\037com.xiangna.www.protos.contractZ\037" +
-      "github.com/xncc/protos/contractb\006proto3"
+      "common/common.proto\032\037configuration/model" +
+      "config.proto\032\034contract/contract_data.pro" +
+      "to\032\036contract/contract_status.proto\"\251\003\n\020B" +
+      "ankLoanContract\022\020\n\010order_no\030\001 \001(\t\022(\n\tfac" +
+      "toring\030\002 \001(\0132\025.protos.CommercialOrg\022(\n\tb" +
+      "ank_info\030\003 \001(\0132\025.protos.CommercialOrg\022/\n" +
+      "\rcontract_data\030\004 \001(\0132\030.protos.ContractFo" +
+      "rmData\022C\n\032financing_contract_reviews\030\005 \003" +
+      "(\0132\037.protos.FinancingContractReview\022/\n\013m",
+      "oney_count\030\006 \001(\0132\032.protos.ContractMoneyC" +
+      "ount\022/\n\017contract_status\030\007 \001(\0132\026.protos.C" +
+      "ontractStatus\022,\n\014step_history\030\010 \003(\0132\026.pr" +
+      "otos.ContractStatus\022)\n\014operate_info\030\t \001(" +
+      "\0132\023.protos.OperateInfo\"\371\001\n\027FinancingCont" +
+      "ractReview\022\032\n\022financing_order_no\030\001 \001(\t\022\024" +
+      "\n\014order_amount\030\002 \001(\003\022\030\n\020financing_period" +
+      "\030\003 \001(\005\022\032\n\022order_expired_time\030\004 \001(\003\022\025\n\rex" +
+      "pect_amount\030\005 \001(\003\022\023\n\013expect_rate\030\006 \001(\003\022\026" +
+      "\n\016confirm_amount\030\007 \001(\003\022\024\n\014confirm_rate\030\010",
+      " \001(\003\022\034\n\024confirm_expired_time\030\t \001(\003BB\n\037co" +
+      "m.xiangna.www.protos.contractZ\037github.co" +
+      "m/xncc/protos/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4608,6 +4325,7 @@ public final class BankContract {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.xiangna.www.protos.common.Common.getDescriptor(),
+          com.xiangna.www.protos.configuration.Modelconfig.getDescriptor(),
           com.xiangna.www.protos.contract.ContractData.getDescriptor(),
           com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor(),
         }, assigner);
@@ -4616,14 +4334,15 @@ public final class BankContract {
     internal_static_protos_BankLoanContract_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_BankLoanContract_descriptor,
-        new java.lang.String[] { "OrderNo", "Factoring", "BankInfo", "ContractData", "FinancingContractReviews", "MoneyCount", "ContractStatus", "OperateInfo", });
+        new java.lang.String[] { "OrderNo", "Factoring", "BankInfo", "ContractData", "FinancingContractReviews", "MoneyCount", "ContractStatus", "StepHistory", "OperateInfo", });
     internal_static_protos_FinancingContractReview_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protos_FinancingContractReview_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_FinancingContractReview_descriptor,
-        new java.lang.String[] { "FinancingOrderNo", "OrderAmount", "FinancingPeriod", "OrderExpiredTime", "ExpectAmount", "ExpectRate", "ConfirmAmount", "ConfirmRate", "Supplier", "Enterprise", "BankFactor", "ConfirmExpiredTime", });
+        new java.lang.String[] { "FinancingOrderNo", "OrderAmount", "FinancingPeriod", "OrderExpiredTime", "ExpectAmount", "ExpectRate", "ConfirmAmount", "ConfirmRate", "ConfirmExpiredTime", });
     com.xiangna.www.protos.common.Common.getDescriptor();
+    com.xiangna.www.protos.configuration.Modelconfig.getDescriptor();
     com.xiangna.www.protos.contract.ContractData.getDescriptor();
     com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor();
   }

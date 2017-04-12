@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-
 option go_package = "github.com/xncc/protos/common";
 option java_package = "com.xiangna.www.protos.common";
 
@@ -31,17 +29,15 @@ message AppVo {
     string type = 3; // 机构类型(供应商,核心企业,保理公司,银行)
 }
 
-// 数据操作信息
+// 操作信息
 message OperateInfo {
-    // 创建操作信息
-    AppVo creater = 1; // 创建者
-    google.protobuf.Timestamp create_time = 2; // 创建时间
-    string creater_ip = 3; // 创建者IP
-
-    // 更新操作信息
-    AppVo last_user = 4; // 最新更新者
-    google.protobuf.Timestamp last_time = 5; // 最新更新时间
-    string last_ip = 6; // 最新更新者IP
+    string appId = 1; //APPID
+    string userId = 2; // USER ID
+    string caAccount = 3; // CA USER
+    string cert = 4; // USER CERT
+    string sourceIP = 5; // 请求操作来源IP
+    string operateDesc = 6; // 请求操作描述
+    int64 operateTime = 7; // 操作时间
 }
 
 // 账本链上文件

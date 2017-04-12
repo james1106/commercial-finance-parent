@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "common/common.proto";
+import "configuration/modelconfig.proto";
 import "contract/contract_data.proto";
 import "contract/contract_status.proto";
 
@@ -15,15 +16,16 @@ package protos;
 message BankLoanContract {
     string order_no = 1; // 订单编号
 
-    AppVo factoring = 2; // 保理公司信息
-    AppVo bank_info = 3; // 银行信息
+    CommercialOrg factoring = 2; // 保理公司信息
+    CommercialOrg bank_info = 3; // 银行信息
 
     ContractFormData contract_data = 4; // 订单数据
     repeated FinancingContractReview financing_contract_reviews = 5; // 质押的供应商到保理融资申请订单
     ContractMoneyCount money_count = 6; // 订单金额汇总
 
     ContractStatus contract_status = 7; // 订单状态
-    OperateInfo operate_info = 8; // 数据操作信息
+    repeated ContractStatus step_history = 8; // 订单状态历史记录
+    OperateInfo operate_info = 9; // 数据操作信息
 
 }
 
@@ -41,9 +43,6 @@ message FinancingContractReview {
     // 银行审批确认的融资金额
     int64 confirm_amount = 7; // 银行审批确认的融资金额
     int64 confirm_rate = 8; // 银行审批确认的融资利率
-    AppVo supplier = 9; // 质押的融资订单的供应商
-    AppVo enterprise = 10; // 质押的融资订单的核心企业
-    AppVo bank_factor = 11; // 质押的融资订单的保理
-    int64 confirm_expired_time = 12; // 银行审批确认的融资过期时间(unix时间戳)
+    int64 confirm_expired_time = 9; // 银行审批确认的融资过期时间(unix时间戳)
 
 }

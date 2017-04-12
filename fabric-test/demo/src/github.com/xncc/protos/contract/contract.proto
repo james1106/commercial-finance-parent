@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "common/common.proto";
+import "configuration/modelconfig.proto";
 import "contract/contract_data.proto";
 import "contract/contract_status.proto";
 
@@ -14,16 +15,17 @@ package protos;
 message FinancingContract {
     string order_no = 1; // 订单编号
 
-    AppVo supplier = 2; // 供应商信息
-    AppVo enterprise = 3; // 核心企业信息
-    AppVo factoring = 4; // 保理公司信息
+    CommercialOrg supplier = 2; // 供应商信息
+    CommercialOrg enterprise = 3; // 核心企业信息
+    CommercialOrg factoring = 4; // 保理公司信息
 
     ContractFormData contract_data = 5; // 订单数据
     repeated Invoice invoices = 6; // 供应商提供的发票数据
     ContractMoneyCount money_count = 8; // 订单金额汇总
 
     ContractStatus contract_status = 9; // 订单状态
-    OperateInfo operate_info = 10; // 数据操作信息
+    repeated ContractStatus step_history = 10; // 订单状态历史记录
+    OperateInfo operate_info = 11; // 数据操作信息
 
 }
 

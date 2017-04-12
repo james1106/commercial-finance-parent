@@ -2915,25 +2915,18 @@ public final class ContractData {
      * 支出方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo expenses = 1;</code>
+     * <code>optional string expenses = 1;</code>
      */
-    boolean hasExpenses();
+    java.lang.String getExpenses();
     /**
      * <pre>
      * 支出方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo expenses = 1;</code>
+     * <code>optional string expenses = 1;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getExpenses();
-    /**
-     * <pre>
-     * 支出方信息
-     * </pre>
-     *
-     * <code>optional .protos.AppVo expenses = 1;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getExpensesOrBuilder();
+    com.google.protobuf.ByteString
+        getExpensesBytes();
 
     /**
      * <pre>
@@ -2974,25 +2967,18 @@ public final class ContractData {
      * 收入方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo income = 4;</code>
+     * <code>optional string income = 4;</code>
      */
-    boolean hasIncome();
+    java.lang.String getIncome();
     /**
      * <pre>
      * 收入方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo income = 4;</code>
+     * <code>optional string income = 4;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getIncome();
-    /**
-     * <pre>
-     * 收入方信息
-     * </pre>
-     *
-     * <code>optional .protos.AppVo income = 4;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getIncomeOrBuilder();
+    com.google.protobuf.ByteString
+        getIncomeBytes();
 
     /**
      * <pre>
@@ -3098,31 +3084,6 @@ public final class ContractData {
      * <code>optional bool incom_confirm = 10;</code>
      */
     boolean getIncomConfirm();
-
-    /**
-     * <pre>
-     * 数据操作信息
-     * </pre>
-     *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
-     */
-    boolean hasOperateInfo();
-    /**
-     * <pre>
-     * 数据操作信息
-     * </pre>
-     *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
-     */
-    com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo();
-    /**
-     * <pre>
-     * 数据操作信息
-     * </pre>
-     *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
-     */
-    com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder();
   }
   /**
    * <pre>
@@ -3140,7 +3101,9 @@ public final class ContractData {
       super(builder);
     }
     private ContractTransactionDetail() {
+      expenses_ = "";
       expensesAmount_ = 0L;
+      income_ = "";
       tansactionRemark_ = "";
       tansactionNotes_ = java.util.Collections.emptyList();
       tansactionTime_ = 0L;
@@ -3173,16 +3136,9 @@ public final class ContractData {
               break;
             }
             case 10: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (expenses_ != null) {
-                subBuilder = expenses_.toBuilder();
-              }
-              expenses_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(expenses_);
-                expenses_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              expenses_ = s;
               break;
             }
             case 16: {
@@ -3204,16 +3160,9 @@ public final class ContractData {
               break;
             }
             case 34: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (income_ != null) {
-                subBuilder = income_.toBuilder();
-              }
-              income_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(income_);
-                income_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              income_ = s;
               break;
             }
             case 50: {
@@ -3254,19 +3203,6 @@ public final class ContractData {
               incomConfirm_ = input.readBool();
               break;
             }
-            case 90: {
-              com.xiangna.www.protos.common.Common.OperateInfo.Builder subBuilder = null;
-              if (operateInfo_ != null) {
-                subBuilder = operateInfo_.toBuilder();
-              }
-              operateInfo_ = input.readMessage(com.xiangna.www.protos.common.Common.OperateInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(operateInfo_);
-                operateInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3295,36 +3231,45 @@ public final class ContractData {
 
     private int bitField0_;
     public static final int EXPENSES_FIELD_NUMBER = 1;
-    private com.xiangna.www.protos.common.Common.AppVo expenses_;
+    private volatile java.lang.Object expenses_;
     /**
      * <pre>
      * 支出方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo expenses = 1;</code>
+     * <code>optional string expenses = 1;</code>
      */
-    public boolean hasExpenses() {
-      return expenses_ != null;
+    public java.lang.String getExpenses() {
+      java.lang.Object ref = expenses_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        expenses_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
      * 支出方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo expenses = 1;</code>
+     * <code>optional string expenses = 1;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getExpenses() {
-      return expenses_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : expenses_;
-    }
-    /**
-     * <pre>
-     * 支出方信息
-     * </pre>
-     *
-     * <code>optional .protos.AppVo expenses = 1;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getExpensesOrBuilder() {
-      return getExpenses();
+    public com.google.protobuf.ByteString
+        getExpensesBytes() {
+      java.lang.Object ref = expenses_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        expenses_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int EXPENSES_AMOUNT_FIELD_NUMBER = 2;
@@ -3374,36 +3319,45 @@ public final class ContractData {
     }
 
     public static final int INCOME_FIELD_NUMBER = 4;
-    private com.xiangna.www.protos.common.Common.AppVo income_;
+    private volatile java.lang.Object income_;
     /**
      * <pre>
      * 收入方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo income = 4;</code>
+     * <code>optional string income = 4;</code>
      */
-    public boolean hasIncome() {
-      return income_ != null;
+    public java.lang.String getIncome() {
+      java.lang.Object ref = income_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        income_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
      * 收入方信息
      * </pre>
      *
-     * <code>optional .protos.AppVo income = 4;</code>
+     * <code>optional string income = 4;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getIncome() {
-      return income_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : income_;
-    }
-    /**
-     * <pre>
-     * 收入方信息
-     * </pre>
-     *
-     * <code>optional .protos.AppVo income = 4;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getIncomeOrBuilder() {
-      return getIncome();
+    public com.google.protobuf.ByteString
+        getIncomeBytes() {
+      java.lang.Object ref = income_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        income_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int INCOME_ACCOUNT_FIELD_NUMBER = 6;
@@ -3562,39 +3516,6 @@ public final class ContractData {
       return incomConfirm_;
     }
 
-    public static final int OPERATE_INFO_FIELD_NUMBER = 11;
-    private com.xiangna.www.protos.common.Common.OperateInfo operateInfo_;
-    /**
-     * <pre>
-     * 数据操作信息
-     * </pre>
-     *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
-     */
-    public boolean hasOperateInfo() {
-      return operateInfo_ != null;
-    }
-    /**
-     * <pre>
-     * 数据操作信息
-     * </pre>
-     *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
-     */
-    public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo() {
-      return operateInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : operateInfo_;
-    }
-    /**
-     * <pre>
-     * 数据操作信息
-     * </pre>
-     *
-     * <code>optional .protos.OperateInfo operate_info = 11;</code>
-     */
-    public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder() {
-      return getOperateInfo();
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3607,8 +3528,8 @@ public final class ContractData {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (expenses_ != null) {
-        output.writeMessage(1, getExpenses());
+      if (!getExpensesBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, expenses_);
       }
       if (expensesAmount_ != 0L) {
         output.writeInt64(2, expensesAmount_);
@@ -3616,8 +3537,8 @@ public final class ContractData {
       if (expensesAccount_ != null) {
         output.writeMessage(3, getExpensesAccount());
       }
-      if (income_ != null) {
-        output.writeMessage(4, getIncome());
+      if (!getIncomeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, income_);
       }
       if (incomeAccount_ != null) {
         output.writeMessage(6, getIncomeAccount());
@@ -3634,9 +3555,6 @@ public final class ContractData {
       if (incomConfirm_ != false) {
         output.writeBool(10, incomConfirm_);
       }
-      if (operateInfo_ != null) {
-        output.writeMessage(11, getOperateInfo());
-      }
     }
 
     public int getSerializedSize() {
@@ -3644,9 +3562,8 @@ public final class ContractData {
       if (size != -1) return size;
 
       size = 0;
-      if (expenses_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getExpenses());
+      if (!getExpensesBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, expenses_);
       }
       if (expensesAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -3656,9 +3573,8 @@ public final class ContractData {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getExpensesAccount());
       }
-      if (income_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getIncome());
+      if (!getIncomeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, income_);
       }
       if (incomeAccount_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -3679,10 +3595,6 @@ public final class ContractData {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, incomConfirm_);
       }
-      if (operateInfo_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getOperateInfo());
-      }
       memoizedSize = size;
       return size;
     }
@@ -3699,11 +3611,8 @@ public final class ContractData {
       com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail other = (com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail) obj;
 
       boolean result = true;
-      result = result && (hasExpenses() == other.hasExpenses());
-      if (hasExpenses()) {
-        result = result && getExpenses()
-            .equals(other.getExpenses());
-      }
+      result = result && getExpenses()
+          .equals(other.getExpenses());
       result = result && (getExpensesAmount()
           == other.getExpensesAmount());
       result = result && (hasExpensesAccount() == other.hasExpensesAccount());
@@ -3711,11 +3620,8 @@ public final class ContractData {
         result = result && getExpensesAccount()
             .equals(other.getExpensesAccount());
       }
-      result = result && (hasIncome() == other.hasIncome());
-      if (hasIncome()) {
-        result = result && getIncome()
-            .equals(other.getIncome());
-      }
+      result = result && getIncome()
+          .equals(other.getIncome());
       result = result && (hasIncomeAccount() == other.hasIncomeAccount());
       if (hasIncomeAccount()) {
         result = result && getIncomeAccount()
@@ -3729,11 +3635,6 @@ public final class ContractData {
           == other.getTansactionTime());
       result = result && (getIncomConfirm()
           == other.getIncomConfirm());
-      result = result && (hasOperateInfo() == other.hasOperateInfo());
-      if (hasOperateInfo()) {
-        result = result && getOperateInfo()
-            .equals(other.getOperateInfo());
-      }
       return result;
     }
 
@@ -3744,10 +3645,8 @@ public final class ContractData {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasExpenses()) {
-        hash = (37 * hash) + EXPENSES_FIELD_NUMBER;
-        hash = (53 * hash) + getExpenses().hashCode();
-      }
+      hash = (37 * hash) + EXPENSES_FIELD_NUMBER;
+      hash = (53 * hash) + getExpenses().hashCode();
       hash = (37 * hash) + EXPENSES_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExpensesAmount());
@@ -3755,10 +3654,8 @@ public final class ContractData {
         hash = (37 * hash) + EXPENSES_ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getExpensesAccount().hashCode();
       }
-      if (hasIncome()) {
-        hash = (37 * hash) + INCOME_FIELD_NUMBER;
-        hash = (53 * hash) + getIncome().hashCode();
-      }
+      hash = (37 * hash) + INCOME_FIELD_NUMBER;
+      hash = (53 * hash) + getIncome().hashCode();
       if (hasIncomeAccount()) {
         hash = (37 * hash) + INCOME_ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getIncomeAccount().hashCode();
@@ -3775,10 +3672,6 @@ public final class ContractData {
       hash = (37 * hash) + INCOM_CONFIRM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIncomConfirm());
-      if (hasOperateInfo()) {
-        hash = (37 * hash) + OPERATE_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getOperateInfo().hashCode();
-      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3902,12 +3795,8 @@ public final class ContractData {
       }
       public Builder clear() {
         super.clear();
-        if (expensesBuilder_ == null) {
-          expenses_ = null;
-        } else {
-          expenses_ = null;
-          expensesBuilder_ = null;
-        }
+        expenses_ = "";
+
         expensesAmount_ = 0L;
 
         if (expensesAccountBuilder_ == null) {
@@ -3916,12 +3805,8 @@ public final class ContractData {
           expensesAccount_ = null;
           expensesAccountBuilder_ = null;
         }
-        if (incomeBuilder_ == null) {
-          income_ = null;
-        } else {
-          income_ = null;
-          incomeBuilder_ = null;
-        }
+        income_ = "";
+
         if (incomeAccountBuilder_ == null) {
           incomeAccount_ = null;
         } else {
@@ -3940,12 +3825,6 @@ public final class ContractData {
 
         incomConfirm_ = false;
 
-        if (operateInfoBuilder_ == null) {
-          operateInfo_ = null;
-        } else {
-          operateInfo_ = null;
-          operateInfoBuilder_ = null;
-        }
         return this;
       }
 
@@ -3970,22 +3849,14 @@ public final class ContractData {
         com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail result = new com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (expensesBuilder_ == null) {
-          result.expenses_ = expenses_;
-        } else {
-          result.expenses_ = expensesBuilder_.build();
-        }
+        result.expenses_ = expenses_;
         result.expensesAmount_ = expensesAmount_;
         if (expensesAccountBuilder_ == null) {
           result.expensesAccount_ = expensesAccount_;
         } else {
           result.expensesAccount_ = expensesAccountBuilder_.build();
         }
-        if (incomeBuilder_ == null) {
-          result.income_ = income_;
-        } else {
-          result.income_ = incomeBuilder_.build();
-        }
+        result.income_ = income_;
         if (incomeAccountBuilder_ == null) {
           result.incomeAccount_ = incomeAccount_;
         } else {
@@ -4003,11 +3874,6 @@ public final class ContractData {
         }
         result.tansactionTime_ = tansactionTime_;
         result.incomConfirm_ = incomConfirm_;
-        if (operateInfoBuilder_ == null) {
-          result.operateInfo_ = operateInfo_;
-        } else {
-          result.operateInfo_ = operateInfoBuilder_.build();
-        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4050,8 +3916,9 @@ public final class ContractData {
 
       public Builder mergeFrom(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail other) {
         if (other == com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance()) return this;
-        if (other.hasExpenses()) {
-          mergeExpenses(other.getExpenses());
+        if (!other.getExpenses().isEmpty()) {
+          expenses_ = other.expenses_;
+          onChanged();
         }
         if (other.getExpensesAmount() != 0L) {
           setExpensesAmount(other.getExpensesAmount());
@@ -4059,8 +3926,9 @@ public final class ContractData {
         if (other.hasExpensesAccount()) {
           mergeExpensesAccount(other.getExpensesAccount());
         }
-        if (other.hasIncome()) {
-          mergeIncome(other.getIncome());
+        if (!other.getIncome().isEmpty()) {
+          income_ = other.income_;
+          onChanged();
         }
         if (other.hasIncomeAccount()) {
           mergeIncomeAccount(other.getIncomeAccount());
@@ -4101,9 +3969,6 @@ public final class ContractData {
         if (other.getIncomConfirm() != false) {
           setIncomConfirm(other.getIncomConfirm());
         }
-        if (other.hasOperateInfo()) {
-          mergeOperateInfo(other.getOperateInfo());
-        }
         onChanged();
         return this;
       }
@@ -4131,31 +3996,24 @@ public final class ContractData {
       }
       private int bitField0_;
 
-      private com.xiangna.www.protos.common.Common.AppVo expenses_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> expensesBuilder_;
+      private java.lang.Object expenses_ = "";
       /**
        * <pre>
        * 支出方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo expenses = 1;</code>
+       * <code>optional string expenses = 1;</code>
        */
-      public boolean hasExpenses() {
-        return expensesBuilder_ != null || expenses_ != null;
-      }
-      /**
-       * <pre>
-       * 支出方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo expenses = 1;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo getExpenses() {
-        if (expensesBuilder_ == null) {
-          return expenses_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : expenses_;
+      public java.lang.String getExpenses() {
+        java.lang.Object ref = expenses_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          expenses_ = s;
+          return s;
         } else {
-          return expensesBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4163,37 +4021,36 @@ public final class ContractData {
        * 支出方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo expenses = 1;</code>
+       * <code>optional string expenses = 1;</code>
        */
-      public Builder setExpenses(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (expensesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          expenses_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getExpensesBytes() {
+        java.lang.Object ref = expenses_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          expenses_ = b;
+          return b;
         } else {
-          expensesBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
        * <pre>
        * 支出方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo expenses = 1;</code>
+       * <code>optional string expenses = 1;</code>
        */
       public Builder setExpenses(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (expensesBuilder_ == null) {
-          expenses_ = builderForValue.build();
-          onChanged();
-        } else {
-          expensesBuilder_.setMessage(builderForValue.build());
-        }
-
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        expenses_ = value;
+        onChanged();
         return this;
       }
       /**
@@ -4201,39 +4058,12 @@ public final class ContractData {
        * 支出方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo expenses = 1;</code>
-       */
-      public Builder mergeExpenses(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (expensesBuilder_ == null) {
-          if (expenses_ != null) {
-            expenses_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(expenses_).mergeFrom(value).buildPartial();
-          } else {
-            expenses_ = value;
-          }
-          onChanged();
-        } else {
-          expensesBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 支出方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo expenses = 1;</code>
+       * <code>optional string expenses = 1;</code>
        */
       public Builder clearExpenses() {
-        if (expensesBuilder_ == null) {
-          expenses_ = null;
-          onChanged();
-        } else {
-          expenses_ = null;
-          expensesBuilder_ = null;
-        }
-
+        
+        expenses_ = getDefaultInstance().getExpenses();
+        onChanged();
         return this;
       }
       /**
@@ -4241,47 +4071,18 @@ public final class ContractData {
        * 支出方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo expenses = 1;</code>
+       * <code>optional string expenses = 1;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getExpensesBuilder() {
+      public Builder setExpensesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
+        expenses_ = value;
         onChanged();
-        return getExpensesFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 支出方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo expenses = 1;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getExpensesOrBuilder() {
-        if (expensesBuilder_ != null) {
-          return expensesBuilder_.getMessageOrBuilder();
-        } else {
-          return expenses_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : expenses_;
-        }
-      }
-      /**
-       * <pre>
-       * 支出方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo expenses = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getExpensesFieldBuilder() {
-        if (expensesBuilder_ == null) {
-          expensesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getExpenses(),
-                  getParentForChildren(),
-                  isClean());
-          expenses_ = null;
-        }
-        return expensesBuilder_;
+        return this;
       }
 
       private long expensesAmount_ ;
@@ -4475,31 +4276,24 @@ public final class ContractData {
         return expensesAccountBuilder_;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo income_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> incomeBuilder_;
+      private java.lang.Object income_ = "";
       /**
        * <pre>
        * 收入方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo income = 4;</code>
+       * <code>optional string income = 4;</code>
        */
-      public boolean hasIncome() {
-        return incomeBuilder_ != null || income_ != null;
-      }
-      /**
-       * <pre>
-       * 收入方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo income = 4;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo getIncome() {
-        if (incomeBuilder_ == null) {
-          return income_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : income_;
+      public java.lang.String getIncome() {
+        java.lang.Object ref = income_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          income_ = s;
+          return s;
         } else {
-          return incomeBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4507,37 +4301,36 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo income = 4;</code>
+       * <code>optional string income = 4;</code>
        */
-      public Builder setIncome(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (incomeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          income_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getIncomeBytes() {
+        java.lang.Object ref = income_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          income_ = b;
+          return b;
         } else {
-          incomeBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
        * <pre>
        * 收入方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo income = 4;</code>
+       * <code>optional string income = 4;</code>
        */
       public Builder setIncome(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (incomeBuilder_ == null) {
-          income_ = builderForValue.build();
-          onChanged();
-        } else {
-          incomeBuilder_.setMessage(builderForValue.build());
-        }
-
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        income_ = value;
+        onChanged();
         return this;
       }
       /**
@@ -4545,39 +4338,12 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo income = 4;</code>
-       */
-      public Builder mergeIncome(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (incomeBuilder_ == null) {
-          if (income_ != null) {
-            income_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(income_).mergeFrom(value).buildPartial();
-          } else {
-            income_ = value;
-          }
-          onChanged();
-        } else {
-          incomeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 收入方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo income = 4;</code>
+       * <code>optional string income = 4;</code>
        */
       public Builder clearIncome() {
-        if (incomeBuilder_ == null) {
-          income_ = null;
-          onChanged();
-        } else {
-          income_ = null;
-          incomeBuilder_ = null;
-        }
-
+        
+        income_ = getDefaultInstance().getIncome();
+        onChanged();
         return this;
       }
       /**
@@ -4585,47 +4351,18 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional .protos.AppVo income = 4;</code>
+       * <code>optional string income = 4;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getIncomeBuilder() {
+      public Builder setIncomeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
+        income_ = value;
         onChanged();
-        return getIncomeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 收入方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo income = 4;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getIncomeOrBuilder() {
-        if (incomeBuilder_ != null) {
-          return incomeBuilder_.getMessageOrBuilder();
-        } else {
-          return income_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : income_;
-        }
-      }
-      /**
-       * <pre>
-       * 收入方信息
-       * </pre>
-       *
-       * <code>optional .protos.AppVo income = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getIncomeFieldBuilder() {
-        if (incomeBuilder_ == null) {
-          incomeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getIncome(),
-                  getParentForChildren(),
-                  isClean());
-          income_ = null;
-        }
-        return incomeBuilder_;
+        return this;
       }
 
       private com.xiangna.www.protos.common.Common.OrgBankAccount incomeAccount_ = null;
@@ -5257,159 +4994,6 @@ public final class ContractData {
         onChanged();
         return this;
       }
-
-      private com.xiangna.www.protos.common.Common.OperateInfo operateInfo_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> operateInfoBuilder_;
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public boolean hasOperateInfo() {
-        return operateInfoBuilder_ != null || operateInfo_ != null;
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public com.xiangna.www.protos.common.Common.OperateInfo getOperateInfo() {
-        if (operateInfoBuilder_ == null) {
-          return operateInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : operateInfo_;
-        } else {
-          return operateInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public Builder setOperateInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
-        if (operateInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          operateInfo_ = value;
-          onChanged();
-        } else {
-          operateInfoBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public Builder setOperateInfo(
-          com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
-        if (operateInfoBuilder_ == null) {
-          operateInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          operateInfoBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public Builder mergeOperateInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
-        if (operateInfoBuilder_ == null) {
-          if (operateInfo_ != null) {
-            operateInfo_ =
-              com.xiangna.www.protos.common.Common.OperateInfo.newBuilder(operateInfo_).mergeFrom(value).buildPartial();
-          } else {
-            operateInfo_ = value;
-          }
-          onChanged();
-        } else {
-          operateInfoBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public Builder clearOperateInfo() {
-        if (operateInfoBuilder_ == null) {
-          operateInfo_ = null;
-          onChanged();
-        } else {
-          operateInfo_ = null;
-          operateInfoBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public com.xiangna.www.protos.common.Common.OperateInfo.Builder getOperateInfoBuilder() {
-        
-        onChanged();
-        return getOperateInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOperateInfoOrBuilder() {
-        if (operateInfoBuilder_ != null) {
-          return operateInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return operateInfo_ == null ?
-              com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : operateInfo_;
-        }
-      }
-      /**
-       * <pre>
-       * 数据操作信息
-       * </pre>
-       *
-       * <code>optional .protos.OperateInfo operate_info = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
-          getOperateInfoFieldBuilder() {
-        if (operateInfoBuilder_ == null) {
-          operateInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder>(
-                  getOperateInfo(),
-                  getParentForChildren(),
-                  isClean());
-          operateInfo_ = null;
-        }
-        return operateInfoBuilder_;
-      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -5498,19 +5082,17 @@ public final class ContractData {
       "d_payback_loan_amount\030\004 \001(\003\022\037\n\027payback_e" +
       "xpenses_amount\030\005 \001(\003\022\035\n\025payback_income_a" +
       "mount\030\006 \001(\003\022>\n\023transaction_details\030\007 \003(\013" +
-      "2!.protos.ContractTransactionDetail\"\372\002\n\031" +
-      "ContractTransactionDetail\022\037\n\010expenses\030\001 " +
-      "\001(\0132\r.protos.AppVo\022\027\n\017expenses_amount\030\002 " +
-      "\001(\003\0220\n\020expenses_account\030\003 \001(\0132\026.protos.O" +
-      "rgBankAccount\022\035\n\006income\030\004 \001(\0132\r.protos.A",
-      "ppVo\022.\n\016income_account\030\006 \001(\0132\026.protos.Or" +
-      "gBankAccount\022\031\n\021tansaction_remark\030\007 \001(\t\022" +
-      ",\n\020tansaction_notes\030\010 \003(\0132\022.protos.Ledge" +
-      "rFile\022\027\n\017tansaction_time\030\t \001(\003\022\025\n\rincom_" +
-      "confirm\030\n \001(\010\022)\n\014operate_info\030\013 \001(\0132\023.pr" +
-      "otos.OperateInfoBB\n\037com.xiangna.www.prot" +
-      "os.contractZ\037github.com/xncc/protos/cont" +
-      "ractb\006proto3"
+      "2!.protos.ContractTransactionDetail\"\261\002\n\031" +
+      "ContractTransactionDetail\022\020\n\010expenses\030\001 " +
+      "\001(\t\022\027\n\017expenses_amount\030\002 \001(\003\0220\n\020expenses" +
+      "_account\030\003 \001(\0132\026.protos.OrgBankAccount\022\016" +
+      "\n\006income\030\004 \001(\t\022.\n\016income_account\030\006 \001(\0132\026",
+      ".protos.OrgBankAccount\022\031\n\021tansaction_rem" +
+      "ark\030\007 \001(\t\022,\n\020tansaction_notes\030\010 \003(\0132\022.pr" +
+      "otos.LedgerFile\022\027\n\017tansaction_time\030\t \001(\003" +
+      "\022\025\n\rincom_confirm\030\n \001(\010BB\n\037com.xiangna.w" +
+      "ww.protos.contractZ\037github.com/xncc/prot" +
+      "os/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5543,7 +5125,7 @@ public final class ContractData {
     internal_static_protos_ContractTransactionDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractTransactionDetail_descriptor,
-        new java.lang.String[] { "Expenses", "ExpensesAmount", "ExpensesAccount", "Income", "IncomeAccount", "TansactionRemark", "TansactionNotes", "TansactionTime", "IncomConfirm", "OperateInfo", });
+        new java.lang.String[] { "Expenses", "ExpensesAmount", "ExpensesAccount", "Income", "IncomeAccount", "TansactionRemark", "TansactionNotes", "TansactionTime", "IncomConfirm", });
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.configuration.Contractflow.getDescriptor();
   }

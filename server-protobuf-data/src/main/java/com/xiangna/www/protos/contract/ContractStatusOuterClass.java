@@ -48,24 +48,24 @@ public final class ContractStatusOuterClass {
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData> 
+    java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData> 
         getCheckDatasList();
     /**
      * <pre>
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData getCheckDatas(int index);
+    com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData getCheckDatas(int index);
     /**
      * <pre>
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
     int getCheckDatasCount();
     /**
@@ -73,18 +73,18 @@ public final class ContractStatusOuterClass {
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder> 
+    java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder> 
         getCheckDatasOrBuilderList();
     /**
      * <pre>
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder getCheckDatasOrBuilder(
+    com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder getCheckDatasOrBuilder(
         int index);
 
     /**
@@ -92,87 +92,43 @@ public final class ContractStatusOuterClass {
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo> 
-        getCheckFlowInfosList();
+    java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData> 
+        getCheckFlowDatasList();
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo getCheckFlowInfos(int index);
+    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData getCheckFlowDatas(int index);
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    int getCheckFlowInfosCount();
+    int getCheckFlowDatasCount();
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder> 
-        getCheckFlowInfosOrBuilderList();
+    java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder> 
+        getCheckFlowDatasOrBuilderList();
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder getCheckFlowInfosOrBuilder(
-        int index);
-
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    java.util.List<com.xiangna.www.protos.configuration.Contractflow.ContractStep> 
-        getStepHistoryList();
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    com.xiangna.www.protos.configuration.Contractflow.ContractStep getStepHistory(int index);
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    int getStepHistoryCount();
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    java.util.List<? extends com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder> 
-        getStepHistoryOrBuilderList();
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder getStepHistoryOrBuilder(
+    com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder getCheckFlowDatasOrBuilder(
         int index);
   }
   /**
@@ -192,8 +148,7 @@ public final class ContractStatusOuterClass {
     }
     private ContractStatus() {
       checkDatas_ = java.util.Collections.emptyList();
-      checkFlowInfos_ = java.util.Collections.emptyList();
-      stepHistory_ = java.util.Collections.emptyList();
+      checkFlowDatas_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -236,29 +191,20 @@ public final class ContractStatusOuterClass {
             }
             case 18: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                checkDatas_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData>();
+                checkDatas_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData>();
                 mutable_bitField0_ |= 0x00000002;
               }
               checkDatas_.add(
-                  input.readMessage(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.parser(), extensionRegistry));
+                  input.readMessage(com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.parser(), extensionRegistry));
               break;
             }
             case 26: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                checkFlowInfos_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo>();
+                checkFlowDatas_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              checkFlowInfos_.add(
-                  input.readMessage(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Contractflow.ContractStep>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              stepHistory_.add(
-                  input.readMessage(com.xiangna.www.protos.configuration.Contractflow.ContractStep.parser(), extensionRegistry));
+              checkFlowDatas_.add(
+                  input.readMessage(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.parser(), extensionRegistry));
               break;
             }
           }
@@ -273,10 +219,7 @@ public final class ContractStatusOuterClass {
           checkDatas_ = java.util.Collections.unmodifiableList(checkDatas_);
         }
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          checkFlowInfos_ = java.util.Collections.unmodifiableList(checkFlowInfos_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          stepHistory_ = java.util.Collections.unmodifiableList(stepHistory_);
+          checkFlowDatas_ = java.util.Collections.unmodifiableList(checkFlowDatas_);
         }
         makeExtensionsImmutable();
       }
@@ -328,15 +271,15 @@ public final class ContractStatusOuterClass {
     }
 
     public static final int CHECK_DATAS_FIELD_NUMBER = 2;
-    private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData> checkDatas_;
+    private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData> checkDatas_;
     /**
      * <pre>
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData> getCheckDatasList() {
+    public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData> getCheckDatasList() {
       return checkDatas_;
     }
     /**
@@ -344,9 +287,9 @@ public final class ContractStatusOuterClass {
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder> 
+    public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder> 
         getCheckDatasOrBuilderList() {
       return checkDatas_;
     }
@@ -355,7 +298,7 @@ public final class ContractStatusOuterClass {
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
     public int getCheckDatasCount() {
       return checkDatas_.size();
@@ -365,9 +308,9 @@ public final class ContractStatusOuterClass {
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData getCheckDatas(int index) {
+    public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData getCheckDatas(int index) {
       return checkDatas_.get(index);
     }
     /**
@@ -375,121 +318,66 @@ public final class ContractStatusOuterClass {
      * 是否已通过认所有确认项
      * </pre>
      *
-     * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+     * <code>repeated .protos.CheckData check_datas = 2;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder getCheckDatasOrBuilder(
+    public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder getCheckDatasOrBuilder(
         int index) {
       return checkDatas_.get(index);
     }
 
-    public static final int CHECK_FLOW_INFOS_FIELD_NUMBER = 3;
-    private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo> checkFlowInfos_;
+    public static final int CHECK_FLOW_DATAS_FIELD_NUMBER = 3;
+    private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData> checkFlowDatas_;
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo> getCheckFlowInfosList() {
-      return checkFlowInfos_;
+    public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData> getCheckFlowDatasList() {
+      return checkFlowDatas_;
     }
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder> 
-        getCheckFlowInfosOrBuilderList() {
-      return checkFlowInfos_;
+    public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder> 
+        getCheckFlowDatasOrBuilderList() {
+      return checkFlowDatas_;
     }
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    public int getCheckFlowInfosCount() {
-      return checkFlowInfos_.size();
+    public int getCheckFlowDatasCount() {
+      return checkFlowDatas_.size();
     }
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo getCheckFlowInfos(int index) {
-      return checkFlowInfos_.get(index);
+    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData getCheckFlowDatas(int index) {
+      return checkFlowDatas_.get(index);
     }
     /**
      * <pre>
      * 申请订单审批流数据(历史记录)
      * </pre>
      *
-     * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+     * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
      */
-    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder getCheckFlowInfosOrBuilder(
+    public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder getCheckFlowDatasOrBuilder(
         int index) {
-      return checkFlowInfos_.get(index);
-    }
-
-    public static final int STEP_HISTORY_FIELD_NUMBER = 5;
-    private java.util.List<com.xiangna.www.protos.configuration.Contractflow.ContractStep> stepHistory_;
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    public java.util.List<com.xiangna.www.protos.configuration.Contractflow.ContractStep> getStepHistoryList() {
-      return stepHistory_;
-    }
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    public java.util.List<? extends com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder> 
-        getStepHistoryOrBuilderList() {
-      return stepHistory_;
-    }
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    public int getStepHistoryCount() {
-      return stepHistory_.size();
-    }
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    public com.xiangna.www.protos.configuration.Contractflow.ContractStep getStepHistory(int index) {
-      return stepHistory_.get(index);
-    }
-    /**
-     * <pre>
-     * 订单阶段历史记录
-     * </pre>
-     *
-     * <code>repeated .protos.ContractStep step_history = 5;</code>
-     */
-    public com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder getStepHistoryOrBuilder(
-        int index) {
-      return stepHistory_.get(index);
+      return checkFlowDatas_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -510,11 +398,8 @@ public final class ContractStatusOuterClass {
       for (int i = 0; i < checkDatas_.size(); i++) {
         output.writeMessage(2, checkDatas_.get(i));
       }
-      for (int i = 0; i < checkFlowInfos_.size(); i++) {
-        output.writeMessage(3, checkFlowInfos_.get(i));
-      }
-      for (int i = 0; i < stepHistory_.size(); i++) {
-        output.writeMessage(5, stepHistory_.get(i));
+      for (int i = 0; i < checkFlowDatas_.size(); i++) {
+        output.writeMessage(3, checkFlowDatas_.get(i));
       }
     }
 
@@ -531,13 +416,9 @@ public final class ContractStatusOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, checkDatas_.get(i));
       }
-      for (int i = 0; i < checkFlowInfos_.size(); i++) {
+      for (int i = 0; i < checkFlowDatas_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, checkFlowInfos_.get(i));
-      }
-      for (int i = 0; i < stepHistory_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, stepHistory_.get(i));
+          .computeMessageSize(3, checkFlowDatas_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -562,10 +443,8 @@ public final class ContractStatusOuterClass {
       }
       result = result && getCheckDatasList()
           .equals(other.getCheckDatasList());
-      result = result && getCheckFlowInfosList()
-          .equals(other.getCheckFlowInfosList());
-      result = result && getStepHistoryList()
-          .equals(other.getStepHistoryList());
+      result = result && getCheckFlowDatasList()
+          .equals(other.getCheckFlowDatasList());
       return result;
     }
 
@@ -584,13 +463,9 @@ public final class ContractStatusOuterClass {
         hash = (37 * hash) + CHECK_DATAS_FIELD_NUMBER;
         hash = (53 * hash) + getCheckDatasList().hashCode();
       }
-      if (getCheckFlowInfosCount() > 0) {
-        hash = (37 * hash) + CHECK_FLOW_INFOS_FIELD_NUMBER;
-        hash = (53 * hash) + getCheckFlowInfosList().hashCode();
-      }
-      if (getStepHistoryCount() > 0) {
-        hash = (37 * hash) + STEP_HISTORY_FIELD_NUMBER;
-        hash = (53 * hash) + getStepHistoryList().hashCode();
+      if (getCheckFlowDatasCount() > 0) {
+        hash = (37 * hash) + CHECK_FLOW_DATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getCheckFlowDatasList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -711,8 +586,7 @@ public final class ContractStatusOuterClass {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getCheckDatasFieldBuilder();
-          getCheckFlowInfosFieldBuilder();
-          getStepHistoryFieldBuilder();
+          getCheckFlowDatasFieldBuilder();
         }
       }
       public Builder clear() {
@@ -729,17 +603,11 @@ public final class ContractStatusOuterClass {
         } else {
           checkDatasBuilder_.clear();
         }
-        if (checkFlowInfosBuilder_ == null) {
-          checkFlowInfos_ = java.util.Collections.emptyList();
+        if (checkFlowDatasBuilder_ == null) {
+          checkFlowDatas_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          checkFlowInfosBuilder_.clear();
-        }
-        if (stepHistoryBuilder_ == null) {
-          stepHistory_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        } else {
-          stepHistoryBuilder_.clear();
+          checkFlowDatasBuilder_.clear();
         }
         return this;
       }
@@ -779,23 +647,14 @@ public final class ContractStatusOuterClass {
         } else {
           result.checkDatas_ = checkDatasBuilder_.build();
         }
-        if (checkFlowInfosBuilder_ == null) {
+        if (checkFlowDatasBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            checkFlowInfos_ = java.util.Collections.unmodifiableList(checkFlowInfos_);
+            checkFlowDatas_ = java.util.Collections.unmodifiableList(checkFlowDatas_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.checkFlowInfos_ = checkFlowInfos_;
+          result.checkFlowDatas_ = checkFlowDatas_;
         } else {
-          result.checkFlowInfos_ = checkFlowInfosBuilder_.build();
-        }
-        if (stepHistoryBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
-            stepHistory_ = java.util.Collections.unmodifiableList(stepHistory_);
-            bitField0_ = (bitField0_ & ~0x00000008);
-          }
-          result.stepHistory_ = stepHistory_;
-        } else {
-          result.stepHistory_ = stepHistoryBuilder_.build();
+          result.checkFlowDatas_ = checkFlowDatasBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -868,55 +727,29 @@ public final class ContractStatusOuterClass {
             }
           }
         }
-        if (checkFlowInfosBuilder_ == null) {
-          if (!other.checkFlowInfos_.isEmpty()) {
-            if (checkFlowInfos_.isEmpty()) {
-              checkFlowInfos_ = other.checkFlowInfos_;
+        if (checkFlowDatasBuilder_ == null) {
+          if (!other.checkFlowDatas_.isEmpty()) {
+            if (checkFlowDatas_.isEmpty()) {
+              checkFlowDatas_ = other.checkFlowDatas_;
               bitField0_ = (bitField0_ & ~0x00000004);
             } else {
-              ensureCheckFlowInfosIsMutable();
-              checkFlowInfos_.addAll(other.checkFlowInfos_);
+              ensureCheckFlowDatasIsMutable();
+              checkFlowDatas_.addAll(other.checkFlowDatas_);
             }
             onChanged();
           }
         } else {
-          if (!other.checkFlowInfos_.isEmpty()) {
-            if (checkFlowInfosBuilder_.isEmpty()) {
-              checkFlowInfosBuilder_.dispose();
-              checkFlowInfosBuilder_ = null;
-              checkFlowInfos_ = other.checkFlowInfos_;
+          if (!other.checkFlowDatas_.isEmpty()) {
+            if (checkFlowDatasBuilder_.isEmpty()) {
+              checkFlowDatasBuilder_.dispose();
+              checkFlowDatasBuilder_ = null;
+              checkFlowDatas_ = other.checkFlowDatas_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              checkFlowInfosBuilder_ = 
+              checkFlowDatasBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getCheckFlowInfosFieldBuilder() : null;
+                   getCheckFlowDatasFieldBuilder() : null;
             } else {
-              checkFlowInfosBuilder_.addAllMessages(other.checkFlowInfos_);
-            }
-          }
-        }
-        if (stepHistoryBuilder_ == null) {
-          if (!other.stepHistory_.isEmpty()) {
-            if (stepHistory_.isEmpty()) {
-              stepHistory_ = other.stepHistory_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-            } else {
-              ensureStepHistoryIsMutable();
-              stepHistory_.addAll(other.stepHistory_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.stepHistory_.isEmpty()) {
-            if (stepHistoryBuilder_.isEmpty()) {
-              stepHistoryBuilder_.dispose();
-              stepHistoryBuilder_ = null;
-              stepHistory_ = other.stepHistory_;
-              bitField0_ = (bitField0_ & ~0x00000008);
-              stepHistoryBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getStepHistoryFieldBuilder() : null;
-            } else {
-              stepHistoryBuilder_.addAllMessages(other.stepHistory_);
+              checkFlowDatasBuilder_.addAllMessages(other.checkFlowDatas_);
             }
           }
         }
@@ -1100,26 +933,26 @@ public final class ContractStatusOuterClass {
         return currentStepBuilder_;
       }
 
-      private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData> checkDatas_ =
+      private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData> checkDatas_ =
         java.util.Collections.emptyList();
       private void ensureCheckDatasIsMutable() {
         if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          checkDatas_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData>(checkDatas_);
+          checkDatas_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData>(checkDatas_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder> checkDatasBuilder_;
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder> checkDatasBuilder_;
 
       /**
        * <pre>
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData> getCheckDatasList() {
+      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData> getCheckDatasList() {
         if (checkDatasBuilder_ == null) {
           return java.util.Collections.unmodifiableList(checkDatas_);
         } else {
@@ -1131,7 +964,7 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public int getCheckDatasCount() {
         if (checkDatasBuilder_ == null) {
@@ -1145,9 +978,9 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData getCheckDatas(int index) {
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData getCheckDatas(int index) {
         if (checkDatasBuilder_ == null) {
           return checkDatas_.get(index);
         } else {
@@ -1159,10 +992,10 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder setCheckDatas(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData value) {
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData value) {
         if (checkDatasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1180,10 +1013,10 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder setCheckDatas(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder builderForValue) {
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder builderForValue) {
         if (checkDatasBuilder_ == null) {
           ensureCheckDatasIsMutable();
           checkDatas_.set(index, builderForValue.build());
@@ -1198,9 +1031,9 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public Builder addCheckDatas(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData value) {
+      public Builder addCheckDatas(com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData value) {
         if (checkDatasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1218,10 +1051,10 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder addCheckDatas(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData value) {
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData value) {
         if (checkDatasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1239,10 +1072,10 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder addCheckDatas(
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder builderForValue) {
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder builderForValue) {
         if (checkDatasBuilder_ == null) {
           ensureCheckDatasIsMutable();
           checkDatas_.add(builderForValue.build());
@@ -1257,10 +1090,10 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder addCheckDatas(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder builderForValue) {
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder builderForValue) {
         if (checkDatasBuilder_ == null) {
           ensureCheckDatasIsMutable();
           checkDatas_.add(index, builderForValue.build());
@@ -1275,10 +1108,10 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder addAllCheckDatas(
-          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData> values) {
+          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData> values) {
         if (checkDatasBuilder_ == null) {
           ensureCheckDatasIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1294,7 +1127,7 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder clearCheckDatas() {
         if (checkDatasBuilder_ == null) {
@@ -1311,7 +1144,7 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
       public Builder removeCheckDatas(int index) {
         if (checkDatasBuilder_ == null) {
@@ -1328,9 +1161,9 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder getCheckDatasBuilder(
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder getCheckDatasBuilder(
           int index) {
         return getCheckDatasFieldBuilder().getBuilder(index);
       }
@@ -1339,9 +1172,9 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder getCheckDatasOrBuilder(
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder getCheckDatasOrBuilder(
           int index) {
         if (checkDatasBuilder_ == null) {
           return checkDatas_.get(index);  } else {
@@ -1353,9 +1186,9 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder> 
+      public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder> 
            getCheckDatasOrBuilderList() {
         if (checkDatasBuilder_ != null) {
           return checkDatasBuilder_.getMessageOrBuilderList();
@@ -1368,41 +1201,41 @@ public final class ContractStatusOuterClass {
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder addCheckDatasBuilder() {
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder addCheckDatasBuilder() {
         return getCheckDatasFieldBuilder().addBuilder(
-            com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.getDefaultInstance());
+            com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.getDefaultInstance());
       }
       /**
        * <pre>
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder addCheckDatasBuilder(
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder addCheckDatasBuilder(
           int index) {
         return getCheckDatasFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.getDefaultInstance());
+            index, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.getDefaultInstance());
       }
       /**
        * <pre>
        * 是否已通过认所有确认项
        * </pre>
        *
-       * <code>repeated .protos.ContractStepCheckData check_datas = 2;</code>
+       * <code>repeated .protos.CheckData check_datas = 2;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder> 
+      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder> 
            getCheckDatasBuilderList() {
         return getCheckDatasFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder> 
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder> 
           getCheckDatasFieldBuilder() {
         if (checkDatasBuilder_ == null) {
           checkDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractStepCheckDataOrBuilder>(
+              com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckDataOrBuilder>(
                   checkDatas_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
@@ -1412,30 +1245,30 @@ public final class ContractStatusOuterClass {
         return checkDatasBuilder_;
       }
 
-      private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo> checkFlowInfos_ =
+      private java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData> checkFlowDatas_ =
         java.util.Collections.emptyList();
-      private void ensureCheckFlowInfosIsMutable() {
+      private void ensureCheckFlowDatasIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          checkFlowInfos_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo>(checkFlowInfos_);
+          checkFlowDatas_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData>(checkFlowDatas_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder> checkFlowInfosBuilder_;
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder> checkFlowDatasBuilder_;
 
       /**
        * <pre>
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo> getCheckFlowInfosList() {
-        if (checkFlowInfosBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(checkFlowInfos_);
+      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData> getCheckFlowDatasList() {
+        if (checkFlowDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(checkFlowDatas_);
         } else {
-          return checkFlowInfosBuilder_.getMessageList();
+          return checkFlowDatasBuilder_.getMessageList();
         }
       }
       /**
@@ -1443,13 +1276,13 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public int getCheckFlowInfosCount() {
-        if (checkFlowInfosBuilder_ == null) {
-          return checkFlowInfos_.size();
+      public int getCheckFlowDatasCount() {
+        if (checkFlowDatasBuilder_ == null) {
+          return checkFlowDatas_.size();
         } else {
-          return checkFlowInfosBuilder_.getCount();
+          return checkFlowDatasBuilder_.getCount();
         }
       }
       /**
@@ -1457,13 +1290,13 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo getCheckFlowInfos(int index) {
-        if (checkFlowInfosBuilder_ == null) {
-          return checkFlowInfos_.get(index);
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData getCheckFlowDatas(int index) {
+        if (checkFlowDatasBuilder_ == null) {
+          return checkFlowDatas_.get(index);
         } else {
-          return checkFlowInfosBuilder_.getMessage(index);
+          return checkFlowDatasBuilder_.getMessage(index);
         }
       }
       /**
@@ -1471,19 +1304,19 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder setCheckFlowInfos(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo value) {
-        if (checkFlowInfosBuilder_ == null) {
+      public Builder setCheckFlowDatas(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData value) {
+        if (checkFlowDatasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCheckFlowInfosIsMutable();
-          checkFlowInfos_.set(index, value);
+          ensureCheckFlowDatasIsMutable();
+          checkFlowDatas_.set(index, value);
           onChanged();
         } else {
-          checkFlowInfosBuilder_.setMessage(index, value);
+          checkFlowDatasBuilder_.setMessage(index, value);
         }
         return this;
       }
@@ -1492,16 +1325,16 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder setCheckFlowInfos(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder builderForValue) {
-        if (checkFlowInfosBuilder_ == null) {
-          ensureCheckFlowInfosIsMutable();
-          checkFlowInfos_.set(index, builderForValue.build());
+      public Builder setCheckFlowDatas(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder builderForValue) {
+        if (checkFlowDatasBuilder_ == null) {
+          ensureCheckFlowDatasIsMutable();
+          checkFlowDatas_.set(index, builderForValue.build());
           onChanged();
         } else {
-          checkFlowInfosBuilder_.setMessage(index, builderForValue.build());
+          checkFlowDatasBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -1510,18 +1343,18 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder addCheckFlowInfos(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo value) {
-        if (checkFlowInfosBuilder_ == null) {
+      public Builder addCheckFlowDatas(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData value) {
+        if (checkFlowDatasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCheckFlowInfosIsMutable();
-          checkFlowInfos_.add(value);
+          ensureCheckFlowDatasIsMutable();
+          checkFlowDatas_.add(value);
           onChanged();
         } else {
-          checkFlowInfosBuilder_.addMessage(value);
+          checkFlowDatasBuilder_.addMessage(value);
         }
         return this;
       }
@@ -1530,19 +1363,19 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder addCheckFlowInfos(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo value) {
-        if (checkFlowInfosBuilder_ == null) {
+      public Builder addCheckFlowDatas(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData value) {
+        if (checkFlowDatasBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureCheckFlowInfosIsMutable();
-          checkFlowInfos_.add(index, value);
+          ensureCheckFlowDatasIsMutable();
+          checkFlowDatas_.add(index, value);
           onChanged();
         } else {
-          checkFlowInfosBuilder_.addMessage(index, value);
+          checkFlowDatasBuilder_.addMessage(index, value);
         }
         return this;
       }
@@ -1551,16 +1384,16 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder addCheckFlowInfos(
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder builderForValue) {
-        if (checkFlowInfosBuilder_ == null) {
-          ensureCheckFlowInfosIsMutable();
-          checkFlowInfos_.add(builderForValue.build());
+      public Builder addCheckFlowDatas(
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder builderForValue) {
+        if (checkFlowDatasBuilder_ == null) {
+          ensureCheckFlowDatasIsMutable();
+          checkFlowDatas_.add(builderForValue.build());
           onChanged();
         } else {
-          checkFlowInfosBuilder_.addMessage(builderForValue.build());
+          checkFlowDatasBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
@@ -1569,16 +1402,16 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder addCheckFlowInfos(
-          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder builderForValue) {
-        if (checkFlowInfosBuilder_ == null) {
-          ensureCheckFlowInfosIsMutable();
-          checkFlowInfos_.add(index, builderForValue.build());
+      public Builder addCheckFlowDatas(
+          int index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder builderForValue) {
+        if (checkFlowDatasBuilder_ == null) {
+          ensureCheckFlowDatasIsMutable();
+          checkFlowDatas_.add(index, builderForValue.build());
           onChanged();
         } else {
-          checkFlowInfosBuilder_.addMessage(index, builderForValue.build());
+          checkFlowDatasBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -1587,17 +1420,17 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder addAllCheckFlowInfos(
-          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo> values) {
-        if (checkFlowInfosBuilder_ == null) {
-          ensureCheckFlowInfosIsMutable();
+      public Builder addAllCheckFlowDatas(
+          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData> values) {
+        if (checkFlowDatasBuilder_ == null) {
+          ensureCheckFlowDatasIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, checkFlowInfos_);
+              values, checkFlowDatas_);
           onChanged();
         } else {
-          checkFlowInfosBuilder_.addAllMessages(values);
+          checkFlowDatasBuilder_.addAllMessages(values);
         }
         return this;
       }
@@ -1606,15 +1439,15 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder clearCheckFlowInfos() {
-        if (checkFlowInfosBuilder_ == null) {
-          checkFlowInfos_ = java.util.Collections.emptyList();
+      public Builder clearCheckFlowDatas() {
+        if (checkFlowDatasBuilder_ == null) {
+          checkFlowDatas_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          checkFlowInfosBuilder_.clear();
+          checkFlowDatasBuilder_.clear();
         }
         return this;
       }
@@ -1623,15 +1456,15 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public Builder removeCheckFlowInfos(int index) {
-        if (checkFlowInfosBuilder_ == null) {
-          ensureCheckFlowInfosIsMutable();
-          checkFlowInfos_.remove(index);
+      public Builder removeCheckFlowDatas(int index) {
+        if (checkFlowDatasBuilder_ == null) {
+          ensureCheckFlowDatasIsMutable();
+          checkFlowDatas_.remove(index);
           onChanged();
         } else {
-          checkFlowInfosBuilder_.remove(index);
+          checkFlowDatasBuilder_.remove(index);
         }
         return this;
       }
@@ -1640,24 +1473,24 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder getCheckFlowInfosBuilder(
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder getCheckFlowDatasBuilder(
           int index) {
-        return getCheckFlowInfosFieldBuilder().getBuilder(index);
+        return getCheckFlowDatasFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder getCheckFlowInfosOrBuilder(
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder getCheckFlowDatasOrBuilder(
           int index) {
-        if (checkFlowInfosBuilder_ == null) {
-          return checkFlowInfos_.get(index);  } else {
-          return checkFlowInfosBuilder_.getMessageOrBuilder(index);
+        if (checkFlowDatasBuilder_ == null) {
+          return checkFlowDatas_.get(index);  } else {
+          return checkFlowDatasBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -1665,14 +1498,14 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder> 
-           getCheckFlowInfosOrBuilderList() {
-        if (checkFlowInfosBuilder_ != null) {
-          return checkFlowInfosBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder> 
+           getCheckFlowDatasOrBuilderList() {
+        if (checkFlowDatasBuilder_ != null) {
+          return checkFlowDatasBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(checkFlowInfos_);
+          return java.util.Collections.unmodifiableList(checkFlowDatas_);
         }
       }
       /**
@@ -1680,360 +1513,48 @@ public final class ContractStatusOuterClass {
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder addCheckFlowInfosBuilder() {
-        return getCheckFlowInfosFieldBuilder().addBuilder(
-            com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.getDefaultInstance());
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder addCheckFlowDatasBuilder() {
+        return getCheckFlowDatasFieldBuilder().addBuilder(
+            com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.getDefaultInstance());
       }
       /**
        * <pre>
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder addCheckFlowInfosBuilder(
+      public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder addCheckFlowDatasBuilder(
           int index) {
-        return getCheckFlowInfosFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.getDefaultInstance());
+        return getCheckFlowDatasFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.getDefaultInstance());
       }
       /**
        * <pre>
        * 申请订单审批流数据(历史记录)
        * </pre>
        *
-       * <code>repeated .protos.ContractCheckFlowInfo check_flow_infos = 3;</code>
+       * <code>repeated .protos.ContractCheckFlowData check_flow_datas = 3;</code>
        */
-      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder> 
-           getCheckFlowInfosBuilderList() {
-        return getCheckFlowInfosFieldBuilder().getBuilderList();
+      public java.util.List<com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder> 
+           getCheckFlowDatasBuilderList() {
+        return getCheckFlowDatasFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder> 
-          getCheckFlowInfosFieldBuilder() {
-        if (checkFlowInfosBuilder_ == null) {
-          checkFlowInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfo.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowInfoOrBuilder>(
-                  checkFlowInfos_,
+          com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder> 
+          getCheckFlowDatasFieldBuilder() {
+        if (checkFlowDatasBuilder_ == null) {
+          checkFlowDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.Builder, com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowDataOrBuilder>(
+                  checkFlowDatas_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
-          checkFlowInfos_ = null;
+          checkFlowDatas_ = null;
         }
-        return checkFlowInfosBuilder_;
-      }
-
-      private java.util.List<com.xiangna.www.protos.configuration.Contractflow.ContractStep> stepHistory_ =
-        java.util.Collections.emptyList();
-      private void ensureStepHistoryIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          stepHistory_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Contractflow.ContractStep>(stepHistory_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Contractflow.ContractStep, com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder, com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder> stepHistoryBuilder_;
-
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public java.util.List<com.xiangna.www.protos.configuration.Contractflow.ContractStep> getStepHistoryList() {
-        if (stepHistoryBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(stepHistory_);
-        } else {
-          return stepHistoryBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public int getStepHistoryCount() {
-        if (stepHistoryBuilder_ == null) {
-          return stepHistory_.size();
-        } else {
-          return stepHistoryBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public com.xiangna.www.protos.configuration.Contractflow.ContractStep getStepHistory(int index) {
-        if (stepHistoryBuilder_ == null) {
-          return stepHistory_.get(index);
-        } else {
-          return stepHistoryBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder setStepHistory(
-          int index, com.xiangna.www.protos.configuration.Contractflow.ContractStep value) {
-        if (stepHistoryBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureStepHistoryIsMutable();
-          stepHistory_.set(index, value);
-          onChanged();
-        } else {
-          stepHistoryBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder setStepHistory(
-          int index, com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder builderForValue) {
-        if (stepHistoryBuilder_ == null) {
-          ensureStepHistoryIsMutable();
-          stepHistory_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          stepHistoryBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder addStepHistory(com.xiangna.www.protos.configuration.Contractflow.ContractStep value) {
-        if (stepHistoryBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureStepHistoryIsMutable();
-          stepHistory_.add(value);
-          onChanged();
-        } else {
-          stepHistoryBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder addStepHistory(
-          int index, com.xiangna.www.protos.configuration.Contractflow.ContractStep value) {
-        if (stepHistoryBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureStepHistoryIsMutable();
-          stepHistory_.add(index, value);
-          onChanged();
-        } else {
-          stepHistoryBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder addStepHistory(
-          com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder builderForValue) {
-        if (stepHistoryBuilder_ == null) {
-          ensureStepHistoryIsMutable();
-          stepHistory_.add(builderForValue.build());
-          onChanged();
-        } else {
-          stepHistoryBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder addStepHistory(
-          int index, com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder builderForValue) {
-        if (stepHistoryBuilder_ == null) {
-          ensureStepHistoryIsMutable();
-          stepHistory_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          stepHistoryBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder addAllStepHistory(
-          java.lang.Iterable<? extends com.xiangna.www.protos.configuration.Contractflow.ContractStep> values) {
-        if (stepHistoryBuilder_ == null) {
-          ensureStepHistoryIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, stepHistory_);
-          onChanged();
-        } else {
-          stepHistoryBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder clearStepHistory() {
-        if (stepHistoryBuilder_ == null) {
-          stepHistory_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
-          onChanged();
-        } else {
-          stepHistoryBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public Builder removeStepHistory(int index) {
-        if (stepHistoryBuilder_ == null) {
-          ensureStepHistoryIsMutable();
-          stepHistory_.remove(index);
-          onChanged();
-        } else {
-          stepHistoryBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder getStepHistoryBuilder(
-          int index) {
-        return getStepHistoryFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder getStepHistoryOrBuilder(
-          int index) {
-        if (stepHistoryBuilder_ == null) {
-          return stepHistory_.get(index);  } else {
-          return stepHistoryBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public java.util.List<? extends com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder> 
-           getStepHistoryOrBuilderList() {
-        if (stepHistoryBuilder_ != null) {
-          return stepHistoryBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(stepHistory_);
-        }
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder addStepHistoryBuilder() {
-        return getStepHistoryFieldBuilder().addBuilder(
-            com.xiangna.www.protos.configuration.Contractflow.ContractStep.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder addStepHistoryBuilder(
-          int index) {
-        return getStepHistoryFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.configuration.Contractflow.ContractStep.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 订单阶段历史记录
-       * </pre>
-       *
-       * <code>repeated .protos.ContractStep step_history = 5;</code>
-       */
-      public java.util.List<com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder> 
-           getStepHistoryBuilderList() {
-        return getStepHistoryFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Contractflow.ContractStep, com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder, com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder> 
-          getStepHistoryFieldBuilder() {
-        if (stepHistoryBuilder_ == null) {
-          stepHistoryBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.configuration.Contractflow.ContractStep, com.xiangna.www.protos.configuration.Contractflow.ContractStep.Builder, com.xiangna.www.protos.configuration.Contractflow.ContractStepOrBuilder>(
-                  stepHistory_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
-                  getParentForChildren(),
-                  isClean());
-          stepHistory_ = null;
-        }
-        return stepHistoryBuilder_;
+        return checkFlowDatasBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2975,25 +2496,18 @@ public final class ContractStatusOuterClass {
      * 审核App
      * </pre>
      *
-     * <code>optional .protos.AppVo check_app = 1;</code>
+     * <code>optional string check_app = 1;</code>
      */
-    boolean hasCheckApp();
+    java.lang.String getCheckApp();
     /**
      * <pre>
      * 审核App
      * </pre>
      *
-     * <code>optional .protos.AppVo check_app = 1;</code>
+     * <code>optional string check_app = 1;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getCheckApp();
-    /**
-     * <pre>
-     * 审核App
-     * </pre>
-     *
-     * <code>optional .protos.AppVo check_app = 1;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getCheckAppOrBuilder();
+    com.google.protobuf.ByteString
+        getCheckAppBytes();
 
     /**
      * <pre>
@@ -3060,39 +2574,39 @@ public final class ContractStatusOuterClass {
 
     /**
      * <pre>
-     * 流程审批状态
+     * 流程审批记录
      * </pre>
      *
-     * <code>optional string status = 6;</code>
+     * <code>optional string check_record = 6;</code>
      */
-    java.lang.String getStatus();
+    java.lang.String getCheckRecord();
     /**
      * <pre>
-     * 流程审批状态
+     * 流程审批记录
      * </pre>
      *
-     * <code>optional string status = 6;</code>
+     * <code>optional string check_record = 6;</code>
      */
     com.google.protobuf.ByteString
-        getStatusBytes();
+        getCheckRecordBytes();
 
     /**
      * <pre>
      * 流程审批备注
      * </pre>
      *
-     * <code>optional string remark = 7;</code>
+     * <code>optional string check_remark = 7;</code>
      */
-    java.lang.String getRemark();
+    java.lang.String getCheckRemark();
     /**
      * <pre>
      * 流程审批备注
      * </pre>
      *
-     * <code>optional string remark = 7;</code>
+     * <code>optional string check_remark = 7;</code>
      */
     com.google.protobuf.ByteString
-        getRemarkBytes();
+        getCheckRemarkBytes();
   }
   /**
    * <pre>
@@ -3110,12 +2624,13 @@ public final class ContractStatusOuterClass {
       super(builder);
     }
     private ContractCheckFlowData() {
+      checkApp_ = "";
       checkUserName_ = "";
       checkUserMobile_ = "";
       checkTime_ = 0L;
       checkIp_ = "";
-      status_ = "";
-      remark_ = "";
+      checkRecord_ = "";
+      checkRemark_ = "";
     }
 
     @java.lang.Override
@@ -3144,16 +2659,9 @@ public final class ContractStatusOuterClass {
               break;
             }
             case 10: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (checkApp_ != null) {
-                subBuilder = checkApp_.toBuilder();
-              }
-              checkApp_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(checkApp_);
-                checkApp_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              checkApp_ = s;
               break;
             }
             case 18: {
@@ -3182,13 +2690,13 @@ public final class ContractStatusOuterClass {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              status_ = s;
+              checkRecord_ = s;
               break;
             }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              remark_ = s;
+              checkRemark_ = s;
               break;
             }
           }
@@ -3215,36 +2723,45 @@ public final class ContractStatusOuterClass {
     }
 
     public static final int CHECK_APP_FIELD_NUMBER = 1;
-    private com.xiangna.www.protos.common.Common.AppVo checkApp_;
+    private volatile java.lang.Object checkApp_;
     /**
      * <pre>
      * 审核App
      * </pre>
      *
-     * <code>optional .protos.AppVo check_app = 1;</code>
+     * <code>optional string check_app = 1;</code>
      */
-    public boolean hasCheckApp() {
-      return checkApp_ != null;
+    public java.lang.String getCheckApp() {
+      java.lang.Object ref = checkApp_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        checkApp_ = s;
+        return s;
+      }
     }
     /**
      * <pre>
      * 审核App
      * </pre>
      *
-     * <code>optional .protos.AppVo check_app = 1;</code>
+     * <code>optional string check_app = 1;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getCheckApp() {
-      return checkApp_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : checkApp_;
-    }
-    /**
-     * <pre>
-     * 审核App
-     * </pre>
-     *
-     * <code>optional .protos.AppVo check_app = 1;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getCheckAppOrBuilder() {
-      return getCheckApp();
+    public com.google.protobuf.ByteString
+        getCheckAppBytes() {
+      java.lang.Object ref = checkApp_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        checkApp_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int CHECK_USER_NAME_FIELD_NUMBER = 2;
@@ -3386,66 +2903,66 @@ public final class ContractStatusOuterClass {
       }
     }
 
-    public static final int STATUS_FIELD_NUMBER = 6;
-    private volatile java.lang.Object status_;
+    public static final int CHECK_RECORD_FIELD_NUMBER = 6;
+    private volatile java.lang.Object checkRecord_;
     /**
      * <pre>
-     * 流程审批状态
+     * 流程审批记录
      * </pre>
      *
-     * <code>optional string status = 6;</code>
+     * <code>optional string check_record = 6;</code>
      */
-    public java.lang.String getStatus() {
-      java.lang.Object ref = status_;
+    public java.lang.String getCheckRecord() {
+      java.lang.Object ref = checkRecord_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        status_ = s;
+        checkRecord_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 流程审批状态
+     * 流程审批记录
      * </pre>
      *
-     * <code>optional string status = 6;</code>
+     * <code>optional string check_record = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getStatusBytes() {
-      java.lang.Object ref = status_;
+        getCheckRecordBytes() {
+      java.lang.Object ref = checkRecord_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        status_ = b;
+        checkRecord_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int REMARK_FIELD_NUMBER = 7;
-    private volatile java.lang.Object remark_;
+    public static final int CHECK_REMARK_FIELD_NUMBER = 7;
+    private volatile java.lang.Object checkRemark_;
     /**
      * <pre>
      * 流程审批备注
      * </pre>
      *
-     * <code>optional string remark = 7;</code>
+     * <code>optional string check_remark = 7;</code>
      */
-    public java.lang.String getRemark() {
-      java.lang.Object ref = remark_;
+    public java.lang.String getCheckRemark() {
+      java.lang.Object ref = checkRemark_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        remark_ = s;
+        checkRemark_ = s;
         return s;
       }
     }
@@ -3454,16 +2971,16 @@ public final class ContractStatusOuterClass {
      * 流程审批备注
      * </pre>
      *
-     * <code>optional string remark = 7;</code>
+     * <code>optional string check_remark = 7;</code>
      */
     public com.google.protobuf.ByteString
-        getRemarkBytes() {
-      java.lang.Object ref = remark_;
+        getCheckRemarkBytes() {
+      java.lang.Object ref = checkRemark_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        remark_ = b;
+        checkRemark_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -3482,8 +2999,8 @@ public final class ContractStatusOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (checkApp_ != null) {
-        output.writeMessage(1, getCheckApp());
+      if (!getCheckAppBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, checkApp_);
       }
       if (!getCheckUserNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, checkUserName_);
@@ -3497,11 +3014,11 @@ public final class ContractStatusOuterClass {
       if (!getCheckIpBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, checkIp_);
       }
-      if (!getStatusBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, status_);
+      if (!getCheckRecordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, checkRecord_);
       }
-      if (!getRemarkBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, remark_);
+      if (!getCheckRemarkBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, checkRemark_);
       }
     }
 
@@ -3510,9 +3027,8 @@ public final class ContractStatusOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (checkApp_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getCheckApp());
+      if (!getCheckAppBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, checkApp_);
       }
       if (!getCheckUserNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, checkUserName_);
@@ -3527,11 +3043,11 @@ public final class ContractStatusOuterClass {
       if (!getCheckIpBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, checkIp_);
       }
-      if (!getStatusBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, status_);
+      if (!getCheckRecordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, checkRecord_);
       }
-      if (!getRemarkBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, remark_);
+      if (!getCheckRemarkBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, checkRemark_);
       }
       memoizedSize = size;
       return size;
@@ -3549,11 +3065,8 @@ public final class ContractStatusOuterClass {
       com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData other = (com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData) obj;
 
       boolean result = true;
-      result = result && (hasCheckApp() == other.hasCheckApp());
-      if (hasCheckApp()) {
-        result = result && getCheckApp()
-            .equals(other.getCheckApp());
-      }
+      result = result && getCheckApp()
+          .equals(other.getCheckApp());
       result = result && getCheckUserName()
           .equals(other.getCheckUserName());
       result = result && getCheckUserMobile()
@@ -3562,10 +3075,10 @@ public final class ContractStatusOuterClass {
           == other.getCheckTime());
       result = result && getCheckIp()
           .equals(other.getCheckIp());
-      result = result && getStatus()
-          .equals(other.getStatus());
-      result = result && getRemark()
-          .equals(other.getRemark());
+      result = result && getCheckRecord()
+          .equals(other.getCheckRecord());
+      result = result && getCheckRemark()
+          .equals(other.getCheckRemark());
       return result;
     }
 
@@ -3576,10 +3089,8 @@ public final class ContractStatusOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasCheckApp()) {
-        hash = (37 * hash) + CHECK_APP_FIELD_NUMBER;
-        hash = (53 * hash) + getCheckApp().hashCode();
-      }
+      hash = (37 * hash) + CHECK_APP_FIELD_NUMBER;
+      hash = (53 * hash) + getCheckApp().hashCode();
       hash = (37 * hash) + CHECK_USER_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getCheckUserName().hashCode();
       hash = (37 * hash) + CHECK_USER_MOBILE_FIELD_NUMBER;
@@ -3589,10 +3100,10 @@ public final class ContractStatusOuterClass {
           getCheckTime());
       hash = (37 * hash) + CHECK_IP_FIELD_NUMBER;
       hash = (53 * hash) + getCheckIp().hashCode();
-      hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + getStatus().hashCode();
-      hash = (37 * hash) + REMARK_FIELD_NUMBER;
-      hash = (53 * hash) + getRemark().hashCode();
+      hash = (37 * hash) + CHECK_RECORD_FIELD_NUMBER;
+      hash = (53 * hash) + getCheckRecord().hashCode();
+      hash = (37 * hash) + CHECK_REMARK_FIELD_NUMBER;
+      hash = (53 * hash) + getCheckRemark().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3715,12 +3226,8 @@ public final class ContractStatusOuterClass {
       }
       public Builder clear() {
         super.clear();
-        if (checkAppBuilder_ == null) {
-          checkApp_ = null;
-        } else {
-          checkApp_ = null;
-          checkAppBuilder_ = null;
-        }
+        checkApp_ = "";
+
         checkUserName_ = "";
 
         checkUserMobile_ = "";
@@ -3729,9 +3236,9 @@ public final class ContractStatusOuterClass {
 
         checkIp_ = "";
 
-        status_ = "";
+        checkRecord_ = "";
 
-        remark_ = "";
+        checkRemark_ = "";
 
         return this;
       }
@@ -3755,17 +3262,13 @@ public final class ContractStatusOuterClass {
 
       public com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData buildPartial() {
         com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData result = new com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData(this);
-        if (checkAppBuilder_ == null) {
-          result.checkApp_ = checkApp_;
-        } else {
-          result.checkApp_ = checkAppBuilder_.build();
-        }
+        result.checkApp_ = checkApp_;
         result.checkUserName_ = checkUserName_;
         result.checkUserMobile_ = checkUserMobile_;
         result.checkTime_ = checkTime_;
         result.checkIp_ = checkIp_;
-        result.status_ = status_;
-        result.remark_ = remark_;
+        result.checkRecord_ = checkRecord_;
+        result.checkRemark_ = checkRemark_;
         onBuilt();
         return result;
       }
@@ -3807,8 +3310,9 @@ public final class ContractStatusOuterClass {
 
       public Builder mergeFrom(com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData other) {
         if (other == com.xiangna.www.protos.contract.ContractStatusOuterClass.ContractCheckFlowData.getDefaultInstance()) return this;
-        if (other.hasCheckApp()) {
-          mergeCheckApp(other.getCheckApp());
+        if (!other.getCheckApp().isEmpty()) {
+          checkApp_ = other.checkApp_;
+          onChanged();
         }
         if (!other.getCheckUserName().isEmpty()) {
           checkUserName_ = other.checkUserName_;
@@ -3825,12 +3329,12 @@ public final class ContractStatusOuterClass {
           checkIp_ = other.checkIp_;
           onChanged();
         }
-        if (!other.getStatus().isEmpty()) {
-          status_ = other.status_;
+        if (!other.getCheckRecord().isEmpty()) {
+          checkRecord_ = other.checkRecord_;
           onChanged();
         }
-        if (!other.getRemark().isEmpty()) {
-          remark_ = other.remark_;
+        if (!other.getCheckRemark().isEmpty()) {
+          checkRemark_ = other.checkRemark_;
           onChanged();
         }
         onChanged();
@@ -3859,31 +3363,24 @@ public final class ContractStatusOuterClass {
         return this;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo checkApp_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> checkAppBuilder_;
+      private java.lang.Object checkApp_ = "";
       /**
        * <pre>
        * 审核App
        * </pre>
        *
-       * <code>optional .protos.AppVo check_app = 1;</code>
+       * <code>optional string check_app = 1;</code>
        */
-      public boolean hasCheckApp() {
-        return checkAppBuilder_ != null || checkApp_ != null;
-      }
-      /**
-       * <pre>
-       * 审核App
-       * </pre>
-       *
-       * <code>optional .protos.AppVo check_app = 1;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo getCheckApp() {
-        if (checkAppBuilder_ == null) {
-          return checkApp_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : checkApp_;
+      public java.lang.String getCheckApp() {
+        java.lang.Object ref = checkApp_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          checkApp_ = s;
+          return s;
         } else {
-          return checkAppBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3891,37 +3388,36 @@ public final class ContractStatusOuterClass {
        * 审核App
        * </pre>
        *
-       * <code>optional .protos.AppVo check_app = 1;</code>
+       * <code>optional string check_app = 1;</code>
        */
-      public Builder setCheckApp(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (checkAppBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          checkApp_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getCheckAppBytes() {
+        java.lang.Object ref = checkApp_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          checkApp_ = b;
+          return b;
         } else {
-          checkAppBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
        * <pre>
        * 审核App
        * </pre>
        *
-       * <code>optional .protos.AppVo check_app = 1;</code>
+       * <code>optional string check_app = 1;</code>
        */
       public Builder setCheckApp(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (checkAppBuilder_ == null) {
-          checkApp_ = builderForValue.build();
-          onChanged();
-        } else {
-          checkAppBuilder_.setMessage(builderForValue.build());
-        }
-
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        checkApp_ = value;
+        onChanged();
         return this;
       }
       /**
@@ -3929,39 +3425,12 @@ public final class ContractStatusOuterClass {
        * 审核App
        * </pre>
        *
-       * <code>optional .protos.AppVo check_app = 1;</code>
-       */
-      public Builder mergeCheckApp(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (checkAppBuilder_ == null) {
-          if (checkApp_ != null) {
-            checkApp_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(checkApp_).mergeFrom(value).buildPartial();
-          } else {
-            checkApp_ = value;
-          }
-          onChanged();
-        } else {
-          checkAppBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 审核App
-       * </pre>
-       *
-       * <code>optional .protos.AppVo check_app = 1;</code>
+       * <code>optional string check_app = 1;</code>
        */
       public Builder clearCheckApp() {
-        if (checkAppBuilder_ == null) {
-          checkApp_ = null;
-          onChanged();
-        } else {
-          checkApp_ = null;
-          checkAppBuilder_ = null;
-        }
-
+        
+        checkApp_ = getDefaultInstance().getCheckApp();
+        onChanged();
         return this;
       }
       /**
@@ -3969,47 +3438,18 @@ public final class ContractStatusOuterClass {
        * 审核App
        * </pre>
        *
-       * <code>optional .protos.AppVo check_app = 1;</code>
+       * <code>optional string check_app = 1;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getCheckAppBuilder() {
+      public Builder setCheckAppBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
         
+        checkApp_ = value;
         onChanged();
-        return getCheckAppFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 审核App
-       * </pre>
-       *
-       * <code>optional .protos.AppVo check_app = 1;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getCheckAppOrBuilder() {
-        if (checkAppBuilder_ != null) {
-          return checkAppBuilder_.getMessageOrBuilder();
-        } else {
-          return checkApp_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : checkApp_;
-        }
-      }
-      /**
-       * <pre>
-       * 审核App
-       * </pre>
-       *
-       * <code>optional .protos.AppVo check_app = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getCheckAppFieldBuilder() {
-        if (checkAppBuilder_ == null) {
-          checkAppBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getCheckApp(),
-                  getParentForChildren(),
-                  isClean());
-          checkApp_ = null;
-        }
-        return checkAppBuilder_;
+        return this;
       }
 
       private java.lang.Object checkUserName_ = "";
@@ -4317,21 +3757,21 @@ public final class ContractStatusOuterClass {
         return this;
       }
 
-      private java.lang.Object status_ = "";
+      private java.lang.Object checkRecord_ = "";
       /**
        * <pre>
-       * 流程审批状态
+       * 流程审批记录
        * </pre>
        *
-       * <code>optional string status = 6;</code>
+       * <code>optional string check_record = 6;</code>
        */
-      public java.lang.String getStatus() {
-        java.lang.Object ref = status_;
+      public java.lang.String getCheckRecord() {
+        java.lang.Object ref = checkRecord_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          status_ = s;
+          checkRecord_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4339,19 +3779,19 @@ public final class ContractStatusOuterClass {
       }
       /**
        * <pre>
-       * 流程审批状态
+       * 流程审批记录
        * </pre>
        *
-       * <code>optional string status = 6;</code>
+       * <code>optional string check_record = 6;</code>
        */
       public com.google.protobuf.ByteString
-          getStatusBytes() {
-        java.lang.Object ref = status_;
+          getCheckRecordBytes() {
+        java.lang.Object ref = checkRecord_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          status_ = b;
+          checkRecord_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4359,68 +3799,68 @@ public final class ContractStatusOuterClass {
       }
       /**
        * <pre>
-       * 流程审批状态
+       * 流程审批记录
        * </pre>
        *
-       * <code>optional string status = 6;</code>
+       * <code>optional string check_record = 6;</code>
        */
-      public Builder setStatus(
+      public Builder setCheckRecord(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        status_ = value;
+        checkRecord_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 流程审批状态
+       * 流程审批记录
        * </pre>
        *
-       * <code>optional string status = 6;</code>
+       * <code>optional string check_record = 6;</code>
        */
-      public Builder clearStatus() {
+      public Builder clearCheckRecord() {
         
-        status_ = getDefaultInstance().getStatus();
+        checkRecord_ = getDefaultInstance().getCheckRecord();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 流程审批状态
+       * 流程审批记录
        * </pre>
        *
-       * <code>optional string status = 6;</code>
+       * <code>optional string check_record = 6;</code>
        */
-      public Builder setStatusBytes(
+      public Builder setCheckRecordBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        status_ = value;
+        checkRecord_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object remark_ = "";
+      private java.lang.Object checkRemark_ = "";
       /**
        * <pre>
        * 流程审批备注
        * </pre>
        *
-       * <code>optional string remark = 7;</code>
+       * <code>optional string check_remark = 7;</code>
        */
-      public java.lang.String getRemark() {
-        java.lang.Object ref = remark_;
+      public java.lang.String getCheckRemark() {
+        java.lang.Object ref = checkRemark_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          remark_ = s;
+          checkRemark_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4431,16 +3871,16 @@ public final class ContractStatusOuterClass {
        * 流程审批备注
        * </pre>
        *
-       * <code>optional string remark = 7;</code>
+       * <code>optional string check_remark = 7;</code>
        */
       public com.google.protobuf.ByteString
-          getRemarkBytes() {
-        java.lang.Object ref = remark_;
+          getCheckRemarkBytes() {
+        java.lang.Object ref = checkRemark_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          remark_ = b;
+          checkRemark_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4451,15 +3891,15 @@ public final class ContractStatusOuterClass {
        * 流程审批备注
        * </pre>
        *
-       * <code>optional string remark = 7;</code>
+       * <code>optional string check_remark = 7;</code>
        */
-      public Builder setRemark(
+      public Builder setCheckRemark(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        remark_ = value;
+        checkRemark_ = value;
         onChanged();
         return this;
       }
@@ -4468,11 +3908,11 @@ public final class ContractStatusOuterClass {
        * 流程审批备注
        * </pre>
        *
-       * <code>optional string remark = 7;</code>
+       * <code>optional string check_remark = 7;</code>
        */
-      public Builder clearRemark() {
+      public Builder clearCheckRemark() {
         
-        remark_ = getDefaultInstance().getRemark();
+        checkRemark_ = getDefaultInstance().getCheckRemark();
         onChanged();
         return this;
       }
@@ -4481,16 +3921,16 @@ public final class ContractStatusOuterClass {
        * 流程审批备注
        * </pre>
        *
-       * <code>optional string remark = 7;</code>
+       * <code>optional string check_remark = 7;</code>
        */
-      public Builder setRemarkBytes(
+      public Builder setCheckRemarkBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        remark_ = value;
+        checkRemark_ = value;
         onChanged();
         return this;
       }
@@ -5549,35 +4989,10 @@ public final class ContractStatusOuterClass {
 
     /**
      * <pre>
-     * 此阶段分属机构
-     * </pre>
-     *
-     * <code>optional .protos.AppVo org = 1;</code>
-     */
-    boolean hasOrg();
-    /**
-     * <pre>
-     * 此阶段分属机构
-     * </pre>
-     *
-     * <code>optional .protos.AppVo org = 1;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVo getOrg();
-    /**
-     * <pre>
-     * 此阶段分属机构
-     * </pre>
-     *
-     * <code>optional .protos.AppVo org = 1;</code>
-     */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getOrgOrBuilder();
-
-    /**
-     * <pre>
      * 确认项
      * </pre>
      *
-     * <code>optional string title = 2;</code>
+     * <code>optional string title = 1;</code>
      */
     java.lang.String getTitle();
     /**
@@ -5585,7 +5000,7 @@ public final class ContractStatusOuterClass {
      * 确认项
      * </pre>
      *
-     * <code>optional string title = 2;</code>
+     * <code>optional string title = 1;</code>
      */
     com.google.protobuf.ByteString
         getTitleBytes();
@@ -5595,7 +5010,7 @@ public final class ContractStatusOuterClass {
      *确认结果
      * </pre>
      *
-     * <code>optional string value = 3;</code>
+     * <code>optional string value = 2;</code>
      */
     java.lang.String getValue();
     /**
@@ -5603,10 +5018,19 @@ public final class ContractStatusOuterClass {
      *确认结果
      * </pre>
      *
-     * <code>optional string value = 3;</code>
+     * <code>optional string value = 2;</code>
      */
     com.google.protobuf.ByteString
         getValueBytes();
+
+    /**
+     * <pre>
+     * 确认时间
+     * </pre>
+     *
+     * <code>optional int64 checkTime = 3;</code>
+     */
+    long getCheckTime();
   }
   /**
    * <pre>
@@ -5626,6 +5050,7 @@ public final class ContractStatusOuterClass {
     private CheckData() {
       title_ = "";
       value_ = "";
+      checkTime_ = 0L;
     }
 
     @java.lang.Override
@@ -5654,28 +5079,20 @@ public final class ContractStatusOuterClass {
               break;
             }
             case 10: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (org_ != null) {
-                subBuilder = org_.toBuilder();
-              }
-              org_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(org_);
-                org_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               title_ = s;
               break;
             }
-            case 26: {
+            case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
               value_ = s;
+              break;
+            }
+            case 24: {
+
+              checkTime_ = input.readInt64();
               break;
             }
           }
@@ -5701,47 +5118,14 @@ public final class ContractStatusOuterClass {
               com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.class, com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.Builder.class);
     }
 
-    public static final int ORG_FIELD_NUMBER = 1;
-    private com.xiangna.www.protos.common.Common.AppVo org_;
-    /**
-     * <pre>
-     * 此阶段分属机构
-     * </pre>
-     *
-     * <code>optional .protos.AppVo org = 1;</code>
-     */
-    public boolean hasOrg() {
-      return org_ != null;
-    }
-    /**
-     * <pre>
-     * 此阶段分属机构
-     * </pre>
-     *
-     * <code>optional .protos.AppVo org = 1;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVo getOrg() {
-      return org_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : org_;
-    }
-    /**
-     * <pre>
-     * 此阶段分属机构
-     * </pre>
-     *
-     * <code>optional .protos.AppVo org = 1;</code>
-     */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getOrgOrBuilder() {
-      return getOrg();
-    }
-
-    public static final int TITLE_FIELD_NUMBER = 2;
+    public static final int TITLE_FIELD_NUMBER = 1;
     private volatile java.lang.Object title_;
     /**
      * <pre>
      * 确认项
      * </pre>
      *
-     * <code>optional string title = 2;</code>
+     * <code>optional string title = 1;</code>
      */
     public java.lang.String getTitle() {
       java.lang.Object ref = title_;
@@ -5760,7 +5144,7 @@ public final class ContractStatusOuterClass {
      * 确认项
      * </pre>
      *
-     * <code>optional string title = 2;</code>
+     * <code>optional string title = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTitleBytes() {
@@ -5776,14 +5160,14 @@ public final class ContractStatusOuterClass {
       }
     }
 
-    public static final int VALUE_FIELD_NUMBER = 3;
+    public static final int VALUE_FIELD_NUMBER = 2;
     private volatile java.lang.Object value_;
     /**
      * <pre>
      *确认结果
      * </pre>
      *
-     * <code>optional string value = 3;</code>
+     * <code>optional string value = 2;</code>
      */
     public java.lang.String getValue() {
       java.lang.Object ref = value_;
@@ -5802,7 +5186,7 @@ public final class ContractStatusOuterClass {
      *确认结果
      * </pre>
      *
-     * <code>optional string value = 3;</code>
+     * <code>optional string value = 2;</code>
      */
     public com.google.protobuf.ByteString
         getValueBytes() {
@@ -5818,6 +5202,19 @@ public final class ContractStatusOuterClass {
       }
     }
 
+    public static final int CHECKTIME_FIELD_NUMBER = 3;
+    private long checkTime_;
+    /**
+     * <pre>
+     * 确认时间
+     * </pre>
+     *
+     * <code>optional int64 checkTime = 3;</code>
+     */
+    public long getCheckTime() {
+      return checkTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -5830,14 +5227,14 @@ public final class ContractStatusOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (org_ != null) {
-        output.writeMessage(1, getOrg());
-      }
       if (!getTitleBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, title_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, title_);
       }
       if (!getValueBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, value_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
+      if (checkTime_ != 0L) {
+        output.writeInt64(3, checkTime_);
       }
     }
 
@@ -5846,15 +5243,15 @@ public final class ContractStatusOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (org_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getOrg());
-      }
       if (!getTitleBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, title_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, title_);
       }
       if (!getValueBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, value_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      if (checkTime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, checkTime_);
       }
       memoizedSize = size;
       return size;
@@ -5872,15 +5269,12 @@ public final class ContractStatusOuterClass {
       com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData other = (com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData) obj;
 
       boolean result = true;
-      result = result && (hasOrg() == other.hasOrg());
-      if (hasOrg()) {
-        result = result && getOrg()
-            .equals(other.getOrg());
-      }
       result = result && getTitle()
           .equals(other.getTitle());
       result = result && getValue()
           .equals(other.getValue());
+      result = result && (getCheckTime()
+          == other.getCheckTime());
       return result;
     }
 
@@ -5891,14 +5285,13 @@ public final class ContractStatusOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (hasOrg()) {
-        hash = (37 * hash) + ORG_FIELD_NUMBER;
-        hash = (53 * hash) + getOrg().hashCode();
-      }
       hash = (37 * hash) + TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getTitle().hashCode();
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue().hashCode();
+      hash = (37 * hash) + CHECKTIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCheckTime());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6021,15 +5414,11 @@ public final class ContractStatusOuterClass {
       }
       public Builder clear() {
         super.clear();
-        if (orgBuilder_ == null) {
-          org_ = null;
-        } else {
-          org_ = null;
-          orgBuilder_ = null;
-        }
         title_ = "";
 
         value_ = "";
+
+        checkTime_ = 0L;
 
         return this;
       }
@@ -6053,13 +5442,9 @@ public final class ContractStatusOuterClass {
 
       public com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData buildPartial() {
         com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData result = new com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData(this);
-        if (orgBuilder_ == null) {
-          result.org_ = org_;
-        } else {
-          result.org_ = orgBuilder_.build();
-        }
         result.title_ = title_;
         result.value_ = value_;
+        result.checkTime_ = checkTime_;
         onBuilt();
         return result;
       }
@@ -6101,9 +5486,6 @@ public final class ContractStatusOuterClass {
 
       public Builder mergeFrom(com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData other) {
         if (other == com.xiangna.www.protos.contract.ContractStatusOuterClass.CheckData.getDefaultInstance()) return this;
-        if (other.hasOrg()) {
-          mergeOrg(other.getOrg());
-        }
         if (!other.getTitle().isEmpty()) {
           title_ = other.title_;
           onChanged();
@@ -6111,6 +5493,9 @@ public final class ContractStatusOuterClass {
         if (!other.getValue().isEmpty()) {
           value_ = other.value_;
           onChanged();
+        }
+        if (other.getCheckTime() != 0L) {
+          setCheckTime(other.getCheckTime());
         }
         onChanged();
         return this;
@@ -6138,166 +5523,13 @@ public final class ContractStatusOuterClass {
         return this;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo org_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> orgBuilder_;
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public boolean hasOrg() {
-        return orgBuilder_ != null || org_ != null;
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo getOrg() {
-        if (orgBuilder_ == null) {
-          return org_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : org_;
-        } else {
-          return orgBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public Builder setOrg(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (orgBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          org_ = value;
-          onChanged();
-        } else {
-          orgBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public Builder setOrg(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (orgBuilder_ == null) {
-          org_ = builderForValue.build();
-          onChanged();
-        } else {
-          orgBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public Builder mergeOrg(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (orgBuilder_ == null) {
-          if (org_ != null) {
-            org_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(org_).mergeFrom(value).buildPartial();
-          } else {
-            org_ = value;
-          }
-          onChanged();
-        } else {
-          orgBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public Builder clearOrg() {
-        if (orgBuilder_ == null) {
-          org_ = null;
-          onChanged();
-        } else {
-          org_ = null;
-          orgBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getOrgBuilder() {
-        
-        onChanged();
-        return getOrgFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getOrgOrBuilder() {
-        if (orgBuilder_ != null) {
-          return orgBuilder_.getMessageOrBuilder();
-        } else {
-          return org_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : org_;
-        }
-      }
-      /**
-       * <pre>
-       * 此阶段分属机构
-       * </pre>
-       *
-       * <code>optional .protos.AppVo org = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getOrgFieldBuilder() {
-        if (orgBuilder_ == null) {
-          orgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getOrg(),
-                  getParentForChildren(),
-                  isClean());
-          org_ = null;
-        }
-        return orgBuilder_;
-      }
-
       private java.lang.Object title_ = "";
       /**
        * <pre>
        * 确认项
        * </pre>
        *
-       * <code>optional string title = 2;</code>
+       * <code>optional string title = 1;</code>
        */
       public java.lang.String getTitle() {
         java.lang.Object ref = title_;
@@ -6316,7 +5548,7 @@ public final class ContractStatusOuterClass {
        * 确认项
        * </pre>
        *
-       * <code>optional string title = 2;</code>
+       * <code>optional string title = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTitleBytes() {
@@ -6336,7 +5568,7 @@ public final class ContractStatusOuterClass {
        * 确认项
        * </pre>
        *
-       * <code>optional string title = 2;</code>
+       * <code>optional string title = 1;</code>
        */
       public Builder setTitle(
           java.lang.String value) {
@@ -6353,7 +5585,7 @@ public final class ContractStatusOuterClass {
        * 确认项
        * </pre>
        *
-       * <code>optional string title = 2;</code>
+       * <code>optional string title = 1;</code>
        */
       public Builder clearTitle() {
         
@@ -6366,7 +5598,7 @@ public final class ContractStatusOuterClass {
        * 确认项
        * </pre>
        *
-       * <code>optional string title = 2;</code>
+       * <code>optional string title = 1;</code>
        */
       public Builder setTitleBytes(
           com.google.protobuf.ByteString value) {
@@ -6386,7 +5618,7 @@ public final class ContractStatusOuterClass {
        *确认结果
        * </pre>
        *
-       * <code>optional string value = 3;</code>
+       * <code>optional string value = 2;</code>
        */
       public java.lang.String getValue() {
         java.lang.Object ref = value_;
@@ -6405,7 +5637,7 @@ public final class ContractStatusOuterClass {
        *确认结果
        * </pre>
        *
-       * <code>optional string value = 3;</code>
+       * <code>optional string value = 2;</code>
        */
       public com.google.protobuf.ByteString
           getValueBytes() {
@@ -6425,7 +5657,7 @@ public final class ContractStatusOuterClass {
        *确认结果
        * </pre>
        *
-       * <code>optional string value = 3;</code>
+       * <code>optional string value = 2;</code>
        */
       public Builder setValue(
           java.lang.String value) {
@@ -6442,7 +5674,7 @@ public final class ContractStatusOuterClass {
        *确认结果
        * </pre>
        *
-       * <code>optional string value = 3;</code>
+       * <code>optional string value = 2;</code>
        */
       public Builder clearValue() {
         
@@ -6455,7 +5687,7 @@ public final class ContractStatusOuterClass {
        *确认结果
        * </pre>
        *
-       * <code>optional string value = 3;</code>
+       * <code>optional string value = 2;</code>
        */
       public Builder setValueBytes(
           com.google.protobuf.ByteString value) {
@@ -6465,6 +5697,44 @@ public final class ContractStatusOuterClass {
   checkByteStringIsUtf8(value);
         
         value_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long checkTime_ ;
+      /**
+       * <pre>
+       * 确认时间
+       * </pre>
+       *
+       * <code>optional int64 checkTime = 3;</code>
+       */
+      public long getCheckTime() {
+        return checkTime_;
+      }
+      /**
+       * <pre>
+       * 确认时间
+       * </pre>
+       *
+       * <code>optional int64 checkTime = 3;</code>
+       */
+      public Builder setCheckTime(long value) {
+        
+        checkTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 确认时间
+       * </pre>
+       *
+       * <code>optional int64 checkTime = 3;</code>
+       */
+      public Builder clearCheckTime() {
+        
+        checkTime_ = 0L;
         onChanged();
         return this;
       }
@@ -6553,26 +5823,25 @@ public final class ContractStatusOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036contract/contract_status.proto\022\006protos" +
       "\032\023common/common.proto\032 configuration/con" +
-      "tractflow.proto\"\325\001\n\016ContractStatus\022*\n\014cu" +
-      "rrent_step\030\001 \001(\0132\024.protos.ContractStep\0222" +
-      "\n\013check_datas\030\002 \003(\0132\035.protos.ContractSte" +
-      "pCheckData\0227\n\020check_flow_infos\030\003 \003(\0132\035.p" +
-      "rotos.ContractCheckFlowInfo\022*\n\014step_hist" +
-      "ory\030\005 \003(\0132\024.protos.ContractStep\"}\n\025Contr" +
-      "actCheckFlowInfo\022+\n\rcontract_step\030\001 \001(\0132" +
-      "\024.protos.ContractStep\0227\n\020check_flow_data",
-      "s\030\002 \001(\0132\035.protos.ContractCheckFlowData\"\263" +
-      "\001\n\025ContractCheckFlowData\022 \n\tcheck_app\030\001 " +
-      "\001(\0132\r.protos.AppVo\022\027\n\017check_user_name\030\002 " +
-      "\001(\t\022\031\n\021check_user_mobile\030\003 \001(\t\022\022\n\ncheck_" +
-      "time\030\004 \001(\003\022\020\n\010check_ip\030\005 \001(\t\022\016\n\006status\030\006" +
-      " \001(\t\022\016\n\006remark\030\007 \001(\t\"k\n\025ContractStepChec" +
-      "kData\022*\n\014current_step\030\001 \001(\0132\024.protos.Con" +
-      "tractStep\022&\n\013check_datas\030\002 \003(\0132\021.protos." +
-      "CheckData\"E\n\tCheckData\022\032\n\003org\030\001 \001(\0132\r.pr" +
-      "otos.AppVo\022\r\n\005title\030\002 \001(\t\022\r\n\005value\030\003 \001(\t",
-      "BB\n\037com.xiangna.www.protos.contractZ\037git" +
-      "hub.com/xncc/protos/contractb\006proto3"
+      "tractflow.proto\"\235\001\n\016ContractStatus\022*\n\014cu" +
+      "rrent_step\030\001 \001(\0132\024.protos.ContractStep\022&" +
+      "\n\013check_datas\030\002 \003(\0132\021.protos.CheckData\0227" +
+      "\n\020check_flow_datas\030\003 \003(\0132\035.protos.Contra" +
+      "ctCheckFlowData\"}\n\025ContractCheckFlowInfo" +
+      "\022+\n\rcontract_step\030\001 \001(\0132\024.protos.Contrac" +
+      "tStep\0227\n\020check_flow_datas\030\002 \001(\0132\035.protos" +
+      ".ContractCheckFlowData\"\260\001\n\025ContractCheck",
+      "FlowData\022\021\n\tcheck_app\030\001 \001(\t\022\027\n\017check_use" +
+      "r_name\030\002 \001(\t\022\031\n\021check_user_mobile\030\003 \001(\t\022" +
+      "\022\n\ncheck_time\030\004 \001(\003\022\020\n\010check_ip\030\005 \001(\t\022\024\n" +
+      "\014check_record\030\006 \001(\t\022\024\n\014check_remark\030\007 \001(" +
+      "\t\"k\n\025ContractStepCheckData\022*\n\014current_st" +
+      "ep\030\001 \001(\0132\024.protos.ContractStep\022&\n\013check_" +
+      "datas\030\002 \003(\0132\021.protos.CheckData\"<\n\tCheckD" +
+      "ata\022\r\n\005title\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\022\021\n\tche" +
+      "ckTime\030\003 \001(\003BB\n\037com.xiangna.www.protos.c" +
+      "ontractZ\037github.com/xncc/protos/contract",
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6593,7 +5862,7 @@ public final class ContractStatusOuterClass {
     internal_static_protos_ContractStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractStatus_descriptor,
-        new java.lang.String[] { "CurrentStep", "CheckDatas", "CheckFlowInfos", "StepHistory", });
+        new java.lang.String[] { "CurrentStep", "CheckDatas", "CheckFlowDatas", });
     internal_static_protos_ContractCheckFlowInfo_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protos_ContractCheckFlowInfo_fieldAccessorTable = new
@@ -6605,7 +5874,7 @@ public final class ContractStatusOuterClass {
     internal_static_protos_ContractCheckFlowData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractCheckFlowData_descriptor,
-        new java.lang.String[] { "CheckApp", "CheckUserName", "CheckUserMobile", "CheckTime", "CheckIp", "Status", "Remark", });
+        new java.lang.String[] { "CheckApp", "CheckUserName", "CheckUserMobile", "CheckTime", "CheckIp", "CheckRecord", "CheckRemark", });
     internal_static_protos_ContractStepCheckData_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_protos_ContractStepCheckData_fieldAccessorTable = new
@@ -6617,7 +5886,7 @@ public final class ContractStatusOuterClass {
     internal_static_protos_CheckData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_CheckData_descriptor,
-        new java.lang.String[] { "Org", "Title", "Value", });
+        new java.lang.String[] { "Title", "Value", "CheckTime", });
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.configuration.Contractflow.getDescriptor();
   }

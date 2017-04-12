@@ -13,9 +13,8 @@ package protos;
 // 订单状态
 message ContractStatus {
     ContractStep current_step = 1; // 当前订单阶段
-    repeated ContractStepCheckData check_datas = 2; // 是否已通过认所有确认项
-    repeated ContractCheckFlowInfo check_flow_infos = 3; // 申请订单审批流数据(历史记录)
-    repeated ContractStep step_history = 5; // 订单阶段历史记录
+    repeated CheckData check_datas = 2; // 是否已通过认所有确认项
+    repeated ContractCheckFlowData check_flow_datas = 3; // 申请订单审批流数据(历史记录)
 }
 
 // 订单审核流程信息
@@ -26,13 +25,13 @@ message ContractCheckFlowInfo {
 
 // 订单审核流程数据
 message ContractCheckFlowData {
-    AppVo check_app = 1; // 审核App
+    string check_app = 1; // 审核App
     string check_user_name = 2; // 审核操作员名称
     string check_user_mobile = 3; // 审核操作员手机号
     int64 check_time = 4; // 审核时间(unix时间戳)
     string check_ip = 5; // 审核操作员IP
-    string status = 6; // 流程审批状态
-    string remark = 7; // 流程审批备注
+    string check_record = 6; // 流程审批记录
+    string check_remark = 7; // 流程审批备注
 }
 
 // 具体阶段的检查确认项
@@ -43,8 +42,7 @@ message ContractStepCheckData {
 
 // 检查项的内容
 message CheckData {
-    AppVo org = 1; // 此阶段分属机构
-    string title = 2; // 确认项
-    string value = 3; //确认结果
-
+    string title = 1; // 确认项
+    string value = 2; //确认结果
+    int64 checkTime = 3; // 确认时间
 }
