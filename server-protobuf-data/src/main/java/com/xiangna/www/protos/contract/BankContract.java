@@ -51,7 +51,7 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getFactoring();
     /**
      * <pre>
      * 保理公司信息
@@ -59,7 +59,7 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getFactoringOrBuilder();
 
     /**
      * <pre>
@@ -76,7 +76,7 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getBankInfo();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getBankInfo();
     /**
      * <pre>
      * 银行信息
@@ -84,7 +84,7 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getBankInfoOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getBankInfoOrBuilder();
 
     /**
      * <pre>
@@ -329,11 +329,11 @@ public final class BankContract {
               break;
             }
             case 18: {
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder subBuilder = null;
               if (factoring_ != null) {
                 subBuilder = factoring_.toBuilder();
               }
-              factoring_ = input.readMessage(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.parser(), extensionRegistry);
+              factoring_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(factoring_);
                 factoring_ = subBuilder.buildPartial();
@@ -342,11 +342,11 @@ public final class BankContract {
               break;
             }
             case 26: {
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder subBuilder = null;
               if (bankInfo_ != null) {
                 subBuilder = bankInfo_.toBuilder();
               }
-              bankInfo_ = input.readMessage(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.parser(), extensionRegistry);
+              bankInfo_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(bankInfo_);
                 bankInfo_ = subBuilder.buildPartial();
@@ -497,7 +497,7 @@ public final class BankContract {
     }
 
     public static final int FACTORING_FIELD_NUMBER = 2;
-    private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg factoring_;
+    private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg factoring_;
     /**
      * <pre>
      * 保理公司信息
@@ -515,8 +515,8 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring() {
-      return factoring_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getFactoring() {
+      return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : factoring_;
     }
     /**
      * <pre>
@@ -525,12 +525,12 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg factoring = 2;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
       return getFactoring();
     }
 
     public static final int BANK_INFO_FIELD_NUMBER = 3;
-    private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg bankInfo_;
+    private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg bankInfo_;
     /**
      * <pre>
      * 银行信息
@@ -548,8 +548,8 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getBankInfo() {
-      return bankInfo_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getBankInfo() {
+      return bankInfo_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
     }
     /**
      * <pre>
@@ -558,7 +558,7 @@ public final class BankContract {
      *
      * <code>optional .protos.CommercialOrg bank_info = 3;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getBankInfoOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getBankInfoOrBuilder() {
       return getBankInfo();
     }
 
@@ -1462,9 +1462,9 @@ public final class BankContract {
         return this;
       }
 
-      private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg factoring_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg factoring_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> factoringBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> factoringBuilder_;
       /**
        * <pre>
        * 保理公司信息
@@ -1482,9 +1482,9 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getFactoring() {
         if (factoringBuilder_ == null) {
-          return factoring_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
+          return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : factoring_;
         } else {
           return factoringBuilder_.getMessage();
         }
@@ -1496,7 +1496,7 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public Builder setFactoring(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder setFactoring(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (factoringBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1517,7 +1517,7 @@ public final class BankContract {
        * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
       public Builder setFactoring(
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder builderForValue) {
         if (factoringBuilder_ == null) {
           factoring_ = builderForValue.build();
           onChanged();
@@ -1534,11 +1534,11 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public Builder mergeFactoring(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder mergeFactoring(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (factoringBuilder_ == null) {
           if (factoring_ != null) {
             factoring_ =
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.newBuilder(factoring_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.newBuilder(factoring_).mergeFrom(value).buildPartial();
           } else {
             factoring_ = value;
           }
@@ -1574,7 +1574,7 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder getFactoringBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder getFactoringBuilder() {
         
         onChanged();
         return getFactoringFieldBuilder().getBuilder();
@@ -1586,12 +1586,12 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
         if (factoringBuilder_ != null) {
           return factoringBuilder_.getMessageOrBuilder();
         } else {
           return factoring_ == null ?
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : factoring_;
         }
       }
       /**
@@ -1602,11 +1602,11 @@ public final class BankContract {
        * <code>optional .protos.CommercialOrg factoring = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> 
           getFactoringFieldBuilder() {
         if (factoringBuilder_ == null) {
           factoringBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder>(
                   getFactoring(),
                   getParentForChildren(),
                   isClean());
@@ -1615,9 +1615,9 @@ public final class BankContract {
         return factoringBuilder_;
       }
 
-      private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg bankInfo_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg bankInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> bankInfoBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> bankInfoBuilder_;
       /**
        * <pre>
        * 银行信息
@@ -1635,9 +1635,9 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getBankInfo() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getBankInfo() {
         if (bankInfoBuilder_ == null) {
-          return bankInfo_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
+          return bankInfo_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
         } else {
           return bankInfoBuilder_.getMessage();
         }
@@ -1649,7 +1649,7 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public Builder setBankInfo(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder setBankInfo(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (bankInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1670,7 +1670,7 @@ public final class BankContract {
        * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
       public Builder setBankInfo(
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder builderForValue) {
         if (bankInfoBuilder_ == null) {
           bankInfo_ = builderForValue.build();
           onChanged();
@@ -1687,11 +1687,11 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public Builder mergeBankInfo(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder mergeBankInfo(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (bankInfoBuilder_ == null) {
           if (bankInfo_ != null) {
             bankInfo_ =
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.newBuilder(bankInfo_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.newBuilder(bankInfo_).mergeFrom(value).buildPartial();
           } else {
             bankInfo_ = value;
           }
@@ -1727,7 +1727,7 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder getBankInfoBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder getBankInfoBuilder() {
         
         onChanged();
         return getBankInfoFieldBuilder().getBuilder();
@@ -1739,12 +1739,12 @@ public final class BankContract {
        *
        * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getBankInfoOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getBankInfoOrBuilder() {
         if (bankInfoBuilder_ != null) {
           return bankInfoBuilder_.getMessageOrBuilder();
         } else {
           return bankInfo_ == null ?
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : bankInfo_;
         }
       }
       /**
@@ -1755,11 +1755,11 @@ public final class BankContract {
        * <code>optional .protos.CommercialOrg bank_info = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> 
           getBankInfoFieldBuilder() {
         if (bankInfoBuilder_ == null) {
           bankInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder>(
                   getBankInfo(),
                   getParentForChildren(),
                   isClean());
@@ -4290,28 +4290,28 @@ public final class BankContract {
   static {
     java.lang.String[] descriptorData = {
       "\n\034contract/bank_contract.proto\022\006protos\032\023" +
-      "common/common.proto\032\037configuration/model" +
-      "config.proto\032\034contract/contract_data.pro" +
-      "to\032\036contract/contract_status.proto\"\251\003\n\020B" +
-      "ankLoanContract\022\020\n\010order_no\030\001 \001(\t\022(\n\tfac" +
-      "toring\030\002 \001(\0132\025.protos.CommercialOrg\022(\n\tb" +
-      "ank_info\030\003 \001(\0132\025.protos.CommercialOrg\022/\n" +
-      "\rcontract_data\030\004 \001(\0132\030.protos.ContractFo" +
-      "rmData\022C\n\032financing_contract_reviews\030\005 \003" +
-      "(\0132\037.protos.FinancingContractReview\022/\n\013m",
-      "oney_count\030\006 \001(\0132\032.protos.ContractMoneyC" +
-      "ount\022/\n\017contract_status\030\007 \001(\0132\026.protos.C" +
-      "ontractStatus\022,\n\014step_history\030\010 \003(\0132\026.pr" +
-      "otos.ContractStatus\022)\n\014operate_info\030\t \001(" +
-      "\0132\023.protos.OperateInfo\"\371\001\n\027FinancingCont" +
-      "ractReview\022\032\n\022financing_order_no\030\001 \001(\t\022\024" +
-      "\n\014order_amount\030\002 \001(\003\022\030\n\020financing_period" +
-      "\030\003 \001(\005\022\032\n\022order_expired_time\030\004 \001(\003\022\025\n\rex" +
-      "pect_amount\030\005 \001(\003\022\023\n\013expect_rate\030\006 \001(\003\022\026" +
-      "\n\016confirm_amount\030\007 \001(\003\022\024\n\014confirm_rate\030\010",
-      " \001(\003\022\034\n\024confirm_expired_time\030\t \001(\003BB\n\037co" +
-      "m.xiangna.www.protos.contractZ\037github.co" +
-      "m/xncc/protos/contractb\006proto3"
+      "common/common.proto\032\035configuration/appco" +
+      "nfig.proto\032\034contract/contract_data.proto" +
+      "\032\036contract/contract_status.proto\"\251\003\n\020Ban" +
+      "kLoanContract\022\020\n\010order_no\030\001 \001(\t\022(\n\tfacto" +
+      "ring\030\002 \001(\0132\025.protos.CommercialOrg\022(\n\tban" +
+      "k_info\030\003 \001(\0132\025.protos.CommercialOrg\022/\n\rc" +
+      "ontract_data\030\004 \001(\0132\030.protos.ContractForm" +
+      "Data\022C\n\032financing_contract_reviews\030\005 \003(\013" +
+      "2\037.protos.FinancingContractReview\022/\n\013mon",
+      "ey_count\030\006 \001(\0132\032.protos.ContractMoneyCou" +
+      "nt\022/\n\017contract_status\030\007 \001(\0132\026.protos.Con" +
+      "tractStatus\022,\n\014step_history\030\010 \003(\0132\026.prot" +
+      "os.ContractStatus\022)\n\014operate_info\030\t \001(\0132" +
+      "\023.protos.OperateInfo\"\371\001\n\027FinancingContra" +
+      "ctReview\022\032\n\022financing_order_no\030\001 \001(\t\022\024\n\014" +
+      "order_amount\030\002 \001(\003\022\030\n\020financing_period\030\003" +
+      " \001(\005\022\032\n\022order_expired_time\030\004 \001(\003\022\025\n\rexpe" +
+      "ct_amount\030\005 \001(\003\022\023\n\013expect_rate\030\006 \001(\003\022\026\n\016" +
+      "confirm_amount\030\007 \001(\003\022\024\n\014confirm_rate\030\010 \001",
+      "(\003\022\034\n\024confirm_expired_time\030\t \001(\003BB\n\037com." +
+      "xiangna.www.protos.contractZ\037github.com/" +
+      "xncc/protos/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4325,7 +4325,7 @@ public final class BankContract {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.xiangna.www.protos.common.Common.getDescriptor(),
-          com.xiangna.www.protos.configuration.Modelconfig.getDescriptor(),
+          com.xiangna.www.protos.configuration.Appconfig.getDescriptor(),
           com.xiangna.www.protos.contract.ContractData.getDescriptor(),
           com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor(),
         }, assigner);
@@ -4342,7 +4342,7 @@ public final class BankContract {
         internal_static_protos_FinancingContractReview_descriptor,
         new java.lang.String[] { "FinancingOrderNo", "OrderAmount", "FinancingPeriod", "OrderExpiredTime", "ExpectAmount", "ExpectRate", "ConfirmAmount", "ConfirmRate", "ConfirmExpiredTime", });
     com.xiangna.www.protos.common.Common.getDescriptor();
-    com.xiangna.www.protos.configuration.Modelconfig.getDescriptor();
+    com.xiangna.www.protos.configuration.Appconfig.getDescriptor();
     com.xiangna.www.protos.contract.ContractData.getDescriptor();
     com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor();
   }

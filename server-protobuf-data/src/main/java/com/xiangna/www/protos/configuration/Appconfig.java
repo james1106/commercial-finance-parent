@@ -14,102 +14,3156 @@ public final class Appconfig {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface UserPrivateInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.UserPrivateInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *用户ID, 在
+     * </pre>
+     *
+     * <code>optional string user_id = 1;</code>
+     */
+    java.lang.String getUserId();
+    /**
+     * <pre>
+     *用户ID, 在
+     * </pre>
+     *
+     * <code>optional string user_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <pre>
+     *公钥, 在公有账本中暴露
+     * </pre>
+     *
+     * <code>optional string public_key = 2;</code>
+     */
+    java.lang.String getPublicKey();
+    /**
+     * <pre>
+     *公钥, 在公有账本中暴露
+     * </pre>
+     *
+     * <code>optional string public_key = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getPublicKeyBytes();
+
+    /**
+     * <pre>
+     *私钥, 账本数据加解密使用
+     * </pre>
+     *
+     * <code>optional string private_key = 3;</code>
+     */
+    java.lang.String getPrivateKey();
+    /**
+     * <pre>
+     *私钥, 账本数据加解密使用
+     * </pre>
+     *
+     * <code>optional string private_key = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getPrivateKeyBytes();
+
+    /**
+     * <pre>
+     *sdk  用户名
+     * </pre>
+     *
+     * <code>optional string sdk_user_name = 4;</code>
+     */
+    java.lang.String getSdkUserName();
+    /**
+     * <pre>
+     *sdk  用户名
+     * </pre>
+     *
+     * <code>optional string sdk_user_name = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getSdkUserNameBytes();
+
+    /**
+     * <pre>
+     *sdk  密码
+     * </pre>
+     *
+     * <code>optional string sdk_user_pwd = 5;</code>
+     */
+    java.lang.String getSdkUserPwd();
+    /**
+     * <pre>
+     *sdk  密码
+     * </pre>
+     *
+     * <code>optional string sdk_user_pwd = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getSdkUserPwdBytes();
+
+    /**
+     * <pre>
+     *sdk  证书信息
+     * </pre>
+     *
+     * <code>optional string sdk_ecert = 6;</code>
+     */
+    java.lang.String getSdkEcert();
+    /**
+     * <pre>
+     *sdk  证书信息
+     * </pre>
+     *
+     * <code>optional string sdk_ecert = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getSdkEcertBytes();
+
+    /**
+     * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+     */
+    boolean hasBuzContact();
+    /**
+     * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+     */
+    com.xiangna.www.protos.configuration.Appconfig.ContactPerson getBuzContact();
+    /**
+     * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+     */
+    com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getBuzContactOrBuilder();
+
+    /**
+     * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+     */
+    boolean hasTechContact();
+    /**
+     * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+     */
+    com.xiangna.www.protos.configuration.Appconfig.ContactPerson getTechContact();
+    /**
+     * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+     */
+    com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getTechContactOrBuilder();
+
+    /**
+     * <pre>
+     * 调用OA系统的url地址
+     * </pre>
+     *
+     * <code>optional string app_callback_url = 9;</code>
+     */
+    java.lang.String getAppCallbackUrl();
+    /**
+     * <pre>
+     * 调用OA系统的url地址
+     * </pre>
+     *
+     * <code>optional string app_callback_url = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getAppCallbackUrlBytes();
+
+    /**
+     * <pre>
+     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+     * </pre>
+     *
+     * <code>optional string secure_ips = 10;</code>
+     */
+    java.lang.String getSecureIps();
+    /**
+     * <pre>
+     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+     * </pre>
+     *
+     * <code>optional string secure_ips = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getSecureIpsBytes();
+  }
+  /**
+   * <pre>
+   *======================================================私有配置信息=======================================
+   *key 为 APPID
+   * </pre>
+   *
+   * Protobuf type {@code protos.UserPrivateInfo}
+   */
+  public  static final class UserPrivateInfo extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protos.UserPrivateInfo)
+      UserPrivateInfoOrBuilder {
+    // Use UserPrivateInfo.newBuilder() to construct.
+    private UserPrivateInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UserPrivateInfo() {
+      userId_ = "";
+      publicKey_ = "";
+      privateKey_ = "";
+      sdkUserName_ = "";
+      sdkUserPwd_ = "";
+      sdkEcert_ = "";
+      appCallbackUrl_ = "";
+      secureIps_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private UserPrivateInfo(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              userId_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              publicKey_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              privateKey_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sdkUserName_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sdkUserPwd_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sdkEcert_ = s;
+              break;
+            }
+            case 58: {
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder subBuilder = null;
+              if (buzContact_ != null) {
+                subBuilder = buzContact_.toBuilder();
+              }
+              buzContact_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.ContactPerson.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(buzContact_);
+                buzContact_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 66: {
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder subBuilder = null;
+              if (techContact_ != null) {
+                subBuilder = techContact_.toBuilder();
+              }
+              techContact_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.ContactPerson.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(techContact_);
+                techContact_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              appCallbackUrl_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secureIps_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserPrivateInfo_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserPrivateInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo.class, com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo.Builder.class);
+    }
+
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
+    /**
+     * <pre>
+     *用户ID, 在
+     * </pre>
+     *
+     * <code>optional string user_id = 1;</code>
+     */
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *用户ID, 在
+     * </pre>
+     *
+     * <code>optional string user_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PUBLIC_KEY_FIELD_NUMBER = 2;
+    private volatile java.lang.Object publicKey_;
+    /**
+     * <pre>
+     *公钥, 在公有账本中暴露
+     * </pre>
+     *
+     * <code>optional string public_key = 2;</code>
+     */
+    public java.lang.String getPublicKey() {
+      java.lang.Object ref = publicKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publicKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *公钥, 在公有账本中暴露
+     * </pre>
+     *
+     * <code>optional string public_key = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPublicKeyBytes() {
+      java.lang.Object ref = publicKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        publicKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PRIVATE_KEY_FIELD_NUMBER = 3;
+    private volatile java.lang.Object privateKey_;
+    /**
+     * <pre>
+     *私钥, 账本数据加解密使用
+     * </pre>
+     *
+     * <code>optional string private_key = 3;</code>
+     */
+    public java.lang.String getPrivateKey() {
+      java.lang.Object ref = privateKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privateKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *私钥, 账本数据加解密使用
+     * </pre>
+     *
+     * <code>optional string private_key = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPrivateKeyBytes() {
+      java.lang.Object ref = privateKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        privateKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SDK_USER_NAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object sdkUserName_;
+    /**
+     * <pre>
+     *sdk  用户名
+     * </pre>
+     *
+     * <code>optional string sdk_user_name = 4;</code>
+     */
+    public java.lang.String getSdkUserName() {
+      java.lang.Object ref = sdkUserName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sdkUserName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *sdk  用户名
+     * </pre>
+     *
+     * <code>optional string sdk_user_name = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSdkUserNameBytes() {
+      java.lang.Object ref = sdkUserName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sdkUserName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SDK_USER_PWD_FIELD_NUMBER = 5;
+    private volatile java.lang.Object sdkUserPwd_;
+    /**
+     * <pre>
+     *sdk  密码
+     * </pre>
+     *
+     * <code>optional string sdk_user_pwd = 5;</code>
+     */
+    public java.lang.String getSdkUserPwd() {
+      java.lang.Object ref = sdkUserPwd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sdkUserPwd_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *sdk  密码
+     * </pre>
+     *
+     * <code>optional string sdk_user_pwd = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSdkUserPwdBytes() {
+      java.lang.Object ref = sdkUserPwd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sdkUserPwd_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SDK_ECERT_FIELD_NUMBER = 6;
+    private volatile java.lang.Object sdkEcert_;
+    /**
+     * <pre>
+     *sdk  证书信息
+     * </pre>
+     *
+     * <code>optional string sdk_ecert = 6;</code>
+     */
+    public java.lang.String getSdkEcert() {
+      java.lang.Object ref = sdkEcert_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sdkEcert_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *sdk  证书信息
+     * </pre>
+     *
+     * <code>optional string sdk_ecert = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSdkEcertBytes() {
+      java.lang.Object ref = sdkEcert_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sdkEcert_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BUZ_CONTACT_FIELD_NUMBER = 7;
+    private com.xiangna.www.protos.configuration.Appconfig.ContactPerson buzContact_;
+    /**
+     * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+     */
+    public boolean hasBuzContact() {
+      return buzContact_ != null;
+    }
+    /**
+     * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+     */
+    public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getBuzContact() {
+      return buzContact_ == null ? com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance() : buzContact_;
+    }
+    /**
+     * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+     */
+    public com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getBuzContactOrBuilder() {
+      return getBuzContact();
+    }
+
+    public static final int TECH_CONTACT_FIELD_NUMBER = 8;
+    private com.xiangna.www.protos.configuration.Appconfig.ContactPerson techContact_;
+    /**
+     * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+     */
+    public boolean hasTechContact() {
+      return techContact_ != null;
+    }
+    /**
+     * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+     */
+    public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getTechContact() {
+      return techContact_ == null ? com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance() : techContact_;
+    }
+    /**
+     * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+     */
+    public com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getTechContactOrBuilder() {
+      return getTechContact();
+    }
+
+    public static final int APP_CALLBACK_URL_FIELD_NUMBER = 9;
+    private volatile java.lang.Object appCallbackUrl_;
+    /**
+     * <pre>
+     * 调用OA系统的url地址
+     * </pre>
+     *
+     * <code>optional string app_callback_url = 9;</code>
+     */
+    public java.lang.String getAppCallbackUrl() {
+      java.lang.Object ref = appCallbackUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        appCallbackUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 调用OA系统的url地址
+     * </pre>
+     *
+     * <code>optional string app_callback_url = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAppCallbackUrlBytes() {
+      java.lang.Object ref = appCallbackUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        appCallbackUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECURE_IPS_FIELD_NUMBER = 10;
+    private volatile java.lang.Object secureIps_;
+    /**
+     * <pre>
+     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+     * </pre>
+     *
+     * <code>optional string secure_ips = 10;</code>
+     */
+    public java.lang.String getSecureIps() {
+      java.lang.Object ref = secureIps_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secureIps_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+     * </pre>
+     *
+     * <code>optional string secure_ips = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSecureIpsBytes() {
+      java.lang.Object ref = secureIps_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secureIps_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
+      }
+      if (!getPublicKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, publicKey_);
+      }
+      if (!getPrivateKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, privateKey_);
+      }
+      if (!getSdkUserNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sdkUserName_);
+      }
+      if (!getSdkUserPwdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, sdkUserPwd_);
+      }
+      if (!getSdkEcertBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, sdkEcert_);
+      }
+      if (buzContact_ != null) {
+        output.writeMessage(7, getBuzContact());
+      }
+      if (techContact_ != null) {
+        output.writeMessage(8, getTechContact());
+      }
+      if (!getAppCallbackUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, appCallbackUrl_);
+      }
+      if (!getSecureIpsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, secureIps_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
+      }
+      if (!getPublicKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, publicKey_);
+      }
+      if (!getPrivateKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, privateKey_);
+      }
+      if (!getSdkUserNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sdkUserName_);
+      }
+      if (!getSdkUserPwdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, sdkUserPwd_);
+      }
+      if (!getSdkEcertBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, sdkEcert_);
+      }
+      if (buzContact_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getBuzContact());
+      }
+      if (techContact_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, getTechContact());
+      }
+      if (!getAppCallbackUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, appCallbackUrl_);
+      }
+      if (!getSecureIpsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, secureIps_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo)) {
+        return super.equals(obj);
+      }
+      com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo other = (com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo) obj;
+
+      boolean result = true;
+      result = result && getUserId()
+          .equals(other.getUserId());
+      result = result && getPublicKey()
+          .equals(other.getPublicKey());
+      result = result && getPrivateKey()
+          .equals(other.getPrivateKey());
+      result = result && getSdkUserName()
+          .equals(other.getSdkUserName());
+      result = result && getSdkUserPwd()
+          .equals(other.getSdkUserPwd());
+      result = result && getSdkEcert()
+          .equals(other.getSdkEcert());
+      result = result && (hasBuzContact() == other.hasBuzContact());
+      if (hasBuzContact()) {
+        result = result && getBuzContact()
+            .equals(other.getBuzContact());
+      }
+      result = result && (hasTechContact() == other.hasTechContact());
+      if (hasTechContact()) {
+        result = result && getTechContact()
+            .equals(other.getTechContact());
+      }
+      result = result && getAppCallbackUrl()
+          .equals(other.getAppCallbackUrl());
+      result = result && getSecureIps()
+          .equals(other.getSecureIps());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPublicKey().hashCode();
+      hash = (37 * hash) + PRIVATE_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivateKey().hashCode();
+      hash = (37 * hash) + SDK_USER_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getSdkUserName().hashCode();
+      hash = (37 * hash) + SDK_USER_PWD_FIELD_NUMBER;
+      hash = (53 * hash) + getSdkUserPwd().hashCode();
+      hash = (37 * hash) + SDK_ECERT_FIELD_NUMBER;
+      hash = (53 * hash) + getSdkEcert().hashCode();
+      if (hasBuzContact()) {
+        hash = (37 * hash) + BUZ_CONTACT_FIELD_NUMBER;
+        hash = (53 * hash) + getBuzContact().hashCode();
+      }
+      if (hasTechContact()) {
+        hash = (37 * hash) + TECH_CONTACT_FIELD_NUMBER;
+        hash = (53 * hash) + getTechContact().hashCode();
+      }
+      hash = (37 * hash) + APP_CALLBACK_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getAppCallbackUrl().hashCode();
+      hash = (37 * hash) + SECURE_IPS_FIELD_NUMBER;
+      hash = (53 * hash) + getSecureIps().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *======================================================私有配置信息=======================================
+     *key 为 APPID
+     * </pre>
+     *
+     * Protobuf type {@code protos.UserPrivateInfo}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protos.UserPrivateInfo)
+        com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserPrivateInfo_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserPrivateInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo.class, com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo.Builder.class);
+      }
+
+      // Construct using com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        userId_ = "";
+
+        publicKey_ = "";
+
+        privateKey_ = "";
+
+        sdkUserName_ = "";
+
+        sdkUserPwd_ = "";
+
+        sdkEcert_ = "";
+
+        if (buzContactBuilder_ == null) {
+          buzContact_ = null;
+        } else {
+          buzContact_ = null;
+          buzContactBuilder_ = null;
+        }
+        if (techContactBuilder_ == null) {
+          techContact_ = null;
+        } else {
+          techContact_ = null;
+          techContactBuilder_ = null;
+        }
+        appCallbackUrl_ = "";
+
+        secureIps_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserPrivateInfo_descriptor;
+      }
+
+      public com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo getDefaultInstanceForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo.getDefaultInstance();
+      }
+
+      public com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo build() {
+        com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo buildPartial() {
+        com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo result = new com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo(this);
+        result.userId_ = userId_;
+        result.publicKey_ = publicKey_;
+        result.privateKey_ = privateKey_;
+        result.sdkUserName_ = sdkUserName_;
+        result.sdkUserPwd_ = sdkUserPwd_;
+        result.sdkEcert_ = sdkEcert_;
+        if (buzContactBuilder_ == null) {
+          result.buzContact_ = buzContact_;
+        } else {
+          result.buzContact_ = buzContactBuilder_.build();
+        }
+        if (techContactBuilder_ == null) {
+          result.techContact_ = techContact_;
+        } else {
+          result.techContact_ = techContactBuilder_.build();
+        }
+        result.appCallbackUrl_ = appCallbackUrl_;
+        result.secureIps_ = secureIps_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo) {
+          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo other) {
+        if (other == com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          onChanged();
+        }
+        if (!other.getPublicKey().isEmpty()) {
+          publicKey_ = other.publicKey_;
+          onChanged();
+        }
+        if (!other.getPrivateKey().isEmpty()) {
+          privateKey_ = other.privateKey_;
+          onChanged();
+        }
+        if (!other.getSdkUserName().isEmpty()) {
+          sdkUserName_ = other.sdkUserName_;
+          onChanged();
+        }
+        if (!other.getSdkUserPwd().isEmpty()) {
+          sdkUserPwd_ = other.sdkUserPwd_;
+          onChanged();
+        }
+        if (!other.getSdkEcert().isEmpty()) {
+          sdkEcert_ = other.sdkEcert_;
+          onChanged();
+        }
+        if (other.hasBuzContact()) {
+          mergeBuzContact(other.getBuzContact());
+        }
+        if (other.hasTechContact()) {
+          mergeTechContact(other.getTechContact());
+        }
+        if (!other.getAppCallbackUrl().isEmpty()) {
+          appCallbackUrl_ = other.appCallbackUrl_;
+          onChanged();
+        }
+        if (!other.getSecureIps().isEmpty()) {
+          secureIps_ = other.secureIps_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object userId_ = "";
+      /**
+       * <pre>
+       *用户ID, 在
+       * </pre>
+       *
+       * <code>optional string user_id = 1;</code>
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *用户ID, 在
+       * </pre>
+       *
+       * <code>optional string user_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *用户ID, 在
+       * </pre>
+       *
+       * <code>optional string user_id = 1;</code>
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *用户ID, 在
+       * </pre>
+       *
+       * <code>optional string user_id = 1;</code>
+       */
+      public Builder clearUserId() {
+        
+        userId_ = getDefaultInstance().getUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *用户ID, 在
+       * </pre>
+       *
+       * <code>optional string user_id = 1;</code>
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object publicKey_ = "";
+      /**
+       * <pre>
+       *公钥, 在公有账本中暴露
+       * </pre>
+       *
+       * <code>optional string public_key = 2;</code>
+       */
+      public java.lang.String getPublicKey() {
+        java.lang.Object ref = publicKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          publicKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *公钥, 在公有账本中暴露
+       * </pre>
+       *
+       * <code>optional string public_key = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPublicKeyBytes() {
+        java.lang.Object ref = publicKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          publicKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *公钥, 在公有账本中暴露
+       * </pre>
+       *
+       * <code>optional string public_key = 2;</code>
+       */
+      public Builder setPublicKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        publicKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *公钥, 在公有账本中暴露
+       * </pre>
+       *
+       * <code>optional string public_key = 2;</code>
+       */
+      public Builder clearPublicKey() {
+        
+        publicKey_ = getDefaultInstance().getPublicKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *公钥, 在公有账本中暴露
+       * </pre>
+       *
+       * <code>optional string public_key = 2;</code>
+       */
+      public Builder setPublicKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        publicKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object privateKey_ = "";
+      /**
+       * <pre>
+       *私钥, 账本数据加解密使用
+       * </pre>
+       *
+       * <code>optional string private_key = 3;</code>
+       */
+      public java.lang.String getPrivateKey() {
+        java.lang.Object ref = privateKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          privateKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *私钥, 账本数据加解密使用
+       * </pre>
+       *
+       * <code>optional string private_key = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPrivateKeyBytes() {
+        java.lang.Object ref = privateKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          privateKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *私钥, 账本数据加解密使用
+       * </pre>
+       *
+       * <code>optional string private_key = 3;</code>
+       */
+      public Builder setPrivateKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        privateKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *私钥, 账本数据加解密使用
+       * </pre>
+       *
+       * <code>optional string private_key = 3;</code>
+       */
+      public Builder clearPrivateKey() {
+        
+        privateKey_ = getDefaultInstance().getPrivateKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *私钥, 账本数据加解密使用
+       * </pre>
+       *
+       * <code>optional string private_key = 3;</code>
+       */
+      public Builder setPrivateKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        privateKey_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sdkUserName_ = "";
+      /**
+       * <pre>
+       *sdk  用户名
+       * </pre>
+       *
+       * <code>optional string sdk_user_name = 4;</code>
+       */
+      public java.lang.String getSdkUserName() {
+        java.lang.Object ref = sdkUserName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sdkUserName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *sdk  用户名
+       * </pre>
+       *
+       * <code>optional string sdk_user_name = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSdkUserNameBytes() {
+        java.lang.Object ref = sdkUserName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sdkUserName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *sdk  用户名
+       * </pre>
+       *
+       * <code>optional string sdk_user_name = 4;</code>
+       */
+      public Builder setSdkUserName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sdkUserName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *sdk  用户名
+       * </pre>
+       *
+       * <code>optional string sdk_user_name = 4;</code>
+       */
+      public Builder clearSdkUserName() {
+        
+        sdkUserName_ = getDefaultInstance().getSdkUserName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *sdk  用户名
+       * </pre>
+       *
+       * <code>optional string sdk_user_name = 4;</code>
+       */
+      public Builder setSdkUserNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sdkUserName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sdkUserPwd_ = "";
+      /**
+       * <pre>
+       *sdk  密码
+       * </pre>
+       *
+       * <code>optional string sdk_user_pwd = 5;</code>
+       */
+      public java.lang.String getSdkUserPwd() {
+        java.lang.Object ref = sdkUserPwd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sdkUserPwd_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *sdk  密码
+       * </pre>
+       *
+       * <code>optional string sdk_user_pwd = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSdkUserPwdBytes() {
+        java.lang.Object ref = sdkUserPwd_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sdkUserPwd_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *sdk  密码
+       * </pre>
+       *
+       * <code>optional string sdk_user_pwd = 5;</code>
+       */
+      public Builder setSdkUserPwd(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sdkUserPwd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *sdk  密码
+       * </pre>
+       *
+       * <code>optional string sdk_user_pwd = 5;</code>
+       */
+      public Builder clearSdkUserPwd() {
+        
+        sdkUserPwd_ = getDefaultInstance().getSdkUserPwd();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *sdk  密码
+       * </pre>
+       *
+       * <code>optional string sdk_user_pwd = 5;</code>
+       */
+      public Builder setSdkUserPwdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sdkUserPwd_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object sdkEcert_ = "";
+      /**
+       * <pre>
+       *sdk  证书信息
+       * </pre>
+       *
+       * <code>optional string sdk_ecert = 6;</code>
+       */
+      public java.lang.String getSdkEcert() {
+        java.lang.Object ref = sdkEcert_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sdkEcert_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *sdk  证书信息
+       * </pre>
+       *
+       * <code>optional string sdk_ecert = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSdkEcertBytes() {
+        java.lang.Object ref = sdkEcert_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sdkEcert_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *sdk  证书信息
+       * </pre>
+       *
+       * <code>optional string sdk_ecert = 6;</code>
+       */
+      public Builder setSdkEcert(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sdkEcert_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *sdk  证书信息
+       * </pre>
+       *
+       * <code>optional string sdk_ecert = 6;</code>
+       */
+      public Builder clearSdkEcert() {
+        
+        sdkEcert_ = getDefaultInstance().getSdkEcert();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *sdk  证书信息
+       * </pre>
+       *
+       * <code>optional string sdk_ecert = 6;</code>
+       */
+      public Builder setSdkEcertBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sdkEcert_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.xiangna.www.protos.configuration.Appconfig.ContactPerson buzContact_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> buzContactBuilder_;
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public boolean hasBuzContact() {
+        return buzContactBuilder_ != null || buzContact_ != null;
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getBuzContact() {
+        if (buzContactBuilder_ == null) {
+          return buzContact_ == null ? com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance() : buzContact_;
+        } else {
+          return buzContactBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public Builder setBuzContact(com.xiangna.www.protos.configuration.Appconfig.ContactPerson value) {
+        if (buzContactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          buzContact_ = value;
+          onChanged();
+        } else {
+          buzContactBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public Builder setBuzContact(
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder builderForValue) {
+        if (buzContactBuilder_ == null) {
+          buzContact_ = builderForValue.build();
+          onChanged();
+        } else {
+          buzContactBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public Builder mergeBuzContact(com.xiangna.www.protos.configuration.Appconfig.ContactPerson value) {
+        if (buzContactBuilder_ == null) {
+          if (buzContact_ != null) {
+            buzContact_ =
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson.newBuilder(buzContact_).mergeFrom(value).buildPartial();
+          } else {
+            buzContact_ = value;
+          }
+          onChanged();
+        } else {
+          buzContactBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public Builder clearBuzContact() {
+        if (buzContactBuilder_ == null) {
+          buzContact_ = null;
+          onChanged();
+        } else {
+          buzContact_ = null;
+          buzContactBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder getBuzContactBuilder() {
+        
+        onChanged();
+        return getBuzContactFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getBuzContactOrBuilder() {
+        if (buzContactBuilder_ != null) {
+          return buzContactBuilder_.getMessageOrBuilder();
+        } else {
+          return buzContact_ == null ?
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance() : buzContact_;
+        }
+      }
+      /**
+       * <code>optional .protos.ContactPerson buz_contact = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> 
+          getBuzContactFieldBuilder() {
+        if (buzContactBuilder_ == null) {
+          buzContactBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder>(
+                  getBuzContact(),
+                  getParentForChildren(),
+                  isClean());
+          buzContact_ = null;
+        }
+        return buzContactBuilder_;
+      }
+
+      private com.xiangna.www.protos.configuration.Appconfig.ContactPerson techContact_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> techContactBuilder_;
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public boolean hasTechContact() {
+        return techContactBuilder_ != null || techContact_ != null;
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getTechContact() {
+        if (techContactBuilder_ == null) {
+          return techContact_ == null ? com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance() : techContact_;
+        } else {
+          return techContactBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public Builder setTechContact(com.xiangna.www.protos.configuration.Appconfig.ContactPerson value) {
+        if (techContactBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          techContact_ = value;
+          onChanged();
+        } else {
+          techContactBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public Builder setTechContact(
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder builderForValue) {
+        if (techContactBuilder_ == null) {
+          techContact_ = builderForValue.build();
+          onChanged();
+        } else {
+          techContactBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public Builder mergeTechContact(com.xiangna.www.protos.configuration.Appconfig.ContactPerson value) {
+        if (techContactBuilder_ == null) {
+          if (techContact_ != null) {
+            techContact_ =
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson.newBuilder(techContact_).mergeFrom(value).buildPartial();
+          } else {
+            techContact_ = value;
+          }
+          onChanged();
+        } else {
+          techContactBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public Builder clearTechContact() {
+        if (techContactBuilder_ == null) {
+          techContact_ = null;
+          onChanged();
+        } else {
+          techContact_ = null;
+          techContactBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder getTechContactBuilder() {
+        
+        onChanged();
+        return getTechContactFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getTechContactOrBuilder() {
+        if (techContactBuilder_ != null) {
+          return techContactBuilder_.getMessageOrBuilder();
+        } else {
+          return techContact_ == null ?
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance() : techContact_;
+        }
+      }
+      /**
+       * <code>optional .protos.ContactPerson tech_contact = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> 
+          getTechContactFieldBuilder() {
+        if (techContactBuilder_ == null) {
+          techContactBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder>(
+                  getTechContact(),
+                  getParentForChildren(),
+                  isClean());
+          techContact_ = null;
+        }
+        return techContactBuilder_;
+      }
+
+      private java.lang.Object appCallbackUrl_ = "";
+      /**
+       * <pre>
+       * 调用OA系统的url地址
+       * </pre>
+       *
+       * <code>optional string app_callback_url = 9;</code>
+       */
+      public java.lang.String getAppCallbackUrl() {
+        java.lang.Object ref = appCallbackUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          appCallbackUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 调用OA系统的url地址
+       * </pre>
+       *
+       * <code>optional string app_callback_url = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAppCallbackUrlBytes() {
+        java.lang.Object ref = appCallbackUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          appCallbackUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 调用OA系统的url地址
+       * </pre>
+       *
+       * <code>optional string app_callback_url = 9;</code>
+       */
+      public Builder setAppCallbackUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        appCallbackUrl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 调用OA系统的url地址
+       * </pre>
+       *
+       * <code>optional string app_callback_url = 9;</code>
+       */
+      public Builder clearAppCallbackUrl() {
+        
+        appCallbackUrl_ = getDefaultInstance().getAppCallbackUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 调用OA系统的url地址
+       * </pre>
+       *
+       * <code>optional string app_callback_url = 9;</code>
+       */
+      public Builder setAppCallbackUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        appCallbackUrl_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object secureIps_ = "";
+      /**
+       * <pre>
+       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+       * </pre>
+       *
+       * <code>optional string secure_ips = 10;</code>
+       */
+      public java.lang.String getSecureIps() {
+        java.lang.Object ref = secureIps_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secureIps_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+       * </pre>
+       *
+       * <code>optional string secure_ips = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSecureIpsBytes() {
+        java.lang.Object ref = secureIps_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secureIps_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+       * </pre>
+       *
+       * <code>optional string secure_ips = 10;</code>
+       */
+      public Builder setSecureIps(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secureIps_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+       * </pre>
+       *
+       * <code>optional string secure_ips = 10;</code>
+       */
+      public Builder clearSecureIps() {
+        
+        secureIps_ = getDefaultInstance().getSecureIps();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+       * </pre>
+       *
+       * <code>optional string secure_ips = 10;</code>
+       */
+      public Builder setSecureIpsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secureIps_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protos.UserPrivateInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:protos.UserPrivateInfo)
+    private static final com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo();
+    }
+
+    public static com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserPrivateInfo>
+        PARSER = new com.google.protobuf.AbstractParser<UserPrivateInfo>() {
+      public UserPrivateInfo parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UserPrivateInfo(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserPrivateInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserPrivateInfo> getParserForType() {
+      return PARSER;
+    }
+
+    public com.xiangna.www.protos.configuration.Appconfig.UserPrivateInfo getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ContactPersonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.ContactPerson)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * 姓名
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <pre>
+     * 姓名
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <pre>
+     * 电话
+     * </pre>
+     *
+     * <code>optional string mobile = 2;</code>
+     */
+    java.lang.String getMobile();
+    /**
+     * <pre>
+     * 电话
+     * </pre>
+     *
+     * <code>optional string mobile = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMobileBytes();
+
+    /**
+     * <pre>
+     * email
+     * </pre>
+     *
+     * <code>optional string email = 3;</code>
+     */
+    java.lang.String getEmail();
+    /**
+     * <pre>
+     * email
+     * </pre>
+     *
+     * <code>optional string email = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+  }
+  /**
+   * <pre>
+   *======================================================公有配置信息=======================================
+   * </pre>
+   *
+   * Protobuf type {@code protos.ContactPerson}
+   */
+  public  static final class ContactPerson extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protos.ContactPerson)
+      ContactPersonOrBuilder {
+    // Use ContactPerson.newBuilder() to construct.
+    private ContactPerson(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ContactPerson() {
+      name_ = "";
+      mobile_ = "";
+      email_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ContactPerson(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mobile_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              email_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_ContactPerson_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_ContactPerson_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson.class, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object name_;
+    /**
+     * <pre>
+     * 姓名
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 姓名
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MOBILE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object mobile_;
+    /**
+     * <pre>
+     * 电话
+     * </pre>
+     *
+     * <code>optional string mobile = 2;</code>
+     */
+    public java.lang.String getMobile() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mobile_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 电话
+     * </pre>
+     *
+     * <code>optional string mobile = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMobileBytes() {
+      java.lang.Object ref = mobile_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mobile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMAIL_FIELD_NUMBER = 3;
+    private volatile java.lang.Object email_;
+    /**
+     * <pre>
+     * email
+     * </pre>
+     *
+     * <code>optional string email = 3;</code>
+     */
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * email
+     * </pre>
+     *
+     * <code>optional string email = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getMobileBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mobile_);
+      }
+      if (!getEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getMobileBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mobile_);
+      }
+      if (!getEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.ContactPerson)) {
+        return super.equals(obj);
+      }
+      com.xiangna.www.protos.configuration.Appconfig.ContactPerson other = (com.xiangna.www.protos.configuration.Appconfig.ContactPerson) obj;
+
+      boolean result = true;
+      result = result && getName()
+          .equals(other.getName());
+      result = result && getMobile()
+          .equals(other.getMobile());
+      result = result && getEmail()
+          .equals(other.getEmail());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + MOBILE_FIELD_NUMBER;
+      hash = (53 * hash) + getMobile().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.ContactPerson prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *======================================================公有配置信息=======================================
+     * </pre>
+     *
+     * Protobuf type {@code protos.ContactPerson}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protos.ContactPerson)
+        com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_ContactPerson_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_ContactPerson_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.xiangna.www.protos.configuration.Appconfig.ContactPerson.class, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder.class);
+      }
+
+      // Construct using com.xiangna.www.protos.configuration.Appconfig.ContactPerson.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        mobile_ = "";
+
+        email_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_ContactPerson_descriptor;
+      }
+
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getDefaultInstanceForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance();
+      }
+
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson build() {
+        com.xiangna.www.protos.configuration.Appconfig.ContactPerson result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson buildPartial() {
+        com.xiangna.www.protos.configuration.Appconfig.ContactPerson result = new com.xiangna.www.protos.configuration.Appconfig.ContactPerson(this);
+        result.name_ = name_;
+        result.mobile_ = mobile_;
+        result.email_ = email_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.ContactPerson) {
+          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.ContactPerson)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.ContactPerson other) {
+        if (other == com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getMobile().isEmpty()) {
+          mobile_ = other.mobile_;
+          onChanged();
+        }
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.xiangna.www.protos.configuration.Appconfig.ContactPerson parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.ContactPerson) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <pre>
+       * 姓名
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 姓名
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 姓名
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 姓名
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 姓名
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mobile_ = "";
+      /**
+       * <pre>
+       * 电话
+       * </pre>
+       *
+       * <code>optional string mobile = 2;</code>
+       */
+      public java.lang.String getMobile() {
+        java.lang.Object ref = mobile_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mobile_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 电话
+       * </pre>
+       *
+       * <code>optional string mobile = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMobileBytes() {
+        java.lang.Object ref = mobile_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mobile_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 电话
+       * </pre>
+       *
+       * <code>optional string mobile = 2;</code>
+       */
+      public Builder setMobile(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        mobile_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 电话
+       * </pre>
+       *
+       * <code>optional string mobile = 2;</code>
+       */
+      public Builder clearMobile() {
+        
+        mobile_ = getDefaultInstance().getMobile();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 电话
+       * </pre>
+       *
+       * <code>optional string mobile = 2;</code>
+       */
+      public Builder setMobileBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        mobile_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object email_ = "";
+      /**
+       * <pre>
+       * email
+       * </pre>
+       *
+       * <code>optional string email = 3;</code>
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * email
+       * </pre>
+       *
+       * <code>optional string email = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * email
+       * </pre>
+       *
+       * <code>optional string email = 3;</code>
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * email
+       * </pre>
+       *
+       * <code>optional string email = 3;</code>
+       */
+      public Builder clearEmail() {
+        
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * email
+       * </pre>
+       *
+       * <code>optional string email = 3;</code>
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protos.ContactPerson)
+    }
+
+    // @@protoc_insertion_point(class_scope:protos.ContactPerson)
+    private static final com.xiangna.www.protos.configuration.Appconfig.ContactPerson DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.ContactPerson();
+    }
+
+    public static com.xiangna.www.protos.configuration.Appconfig.ContactPerson getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ContactPerson>
+        PARSER = new com.google.protobuf.AbstractParser<ContactPerson>() {
+      public ContactPerson parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ContactPerson(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ContactPerson> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContactPerson> getParserForType() {
+      return PARSER;
+    }
+
+    public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface MultiPartiesInfoOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protos.MultiPartiesInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
-    java.lang.String getLedgerID();
+    java.lang.String getLedgerId();
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
     com.google.protobuf.ByteString
-        getLedgerIDBytes();
+        getLedgerIdBytes();
 
     /**
-     * <code>optional .protos.AppVo enterprise = 2;</code>
+     * <code>optional .protos.UserInfo enterprise = 2;</code>
      */
     boolean hasEnterprise();
     /**
-     * <code>optional .protos.AppVo enterprise = 2;</code>
+     * <code>optional .protos.UserInfo enterprise = 2;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getEnterprise();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfo getEnterprise();
     /**
-     * <code>optional .protos.AppVo enterprise = 2;</code>
+     * <code>optional .protos.UserInfo enterprise = 2;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getEnterpriseOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getEnterpriseOrBuilder();
 
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
     boolean hasFactoring();
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getFactoring();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfo getFactoring();
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getFactoringOrBuilder();
 
     /**
-     * <code>optional .protos.AppVo supplier = 4;</code>
+     * <code>optional .protos.UserInfo supplier = 4;</code>
      */
     boolean hasSupplier();
     /**
-     * <code>optional .protos.AppVo supplier = 4;</code>
+     * <code>optional .protos.UserInfo supplier = 4;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getSupplier();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfo getSupplier();
     /**
-     * <code>optional .protos.AppVo supplier = 4;</code>
+     * <code>optional .protos.UserInfo supplier = 4;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getSupplierOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getSupplierOrBuilder();
 
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    java.util.List<com.xiangna.www.protos.common.Common.AppVo> 
-        getBanksList();
+    java.util.List<com.xiangna.www.protos.configuration.Appconfig.UserInfo> 
+        getBankInfosList();
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getBanks(int index);
+    com.xiangna.www.protos.configuration.Appconfig.UserInfo getBankInfos(int index);
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    int getBanksCount();
+    int getBankInfosCount();
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    java.util.List<? extends com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-        getBanksOrBuilderList();
+    java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
+        getBankInfosOrBuilderList();
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getBanksOrBuilder(
+    com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getBankInfosOrBuilder(
         int index);
+
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    boolean hasOpInfo();
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    com.xiangna.www.protos.common.Common.OperateInfo getOpInfo();
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder();
   }
   /**
    * Protobuf type {@code protos.MultiPartiesInfo}
@@ -123,8 +3177,8 @@ public final class Appconfig {
       super(builder);
     }
     private MultiPartiesInfo() {
-      ledgerID_ = "";
-      banks_ = java.util.Collections.emptyList();
+      ledgerId_ = "";
+      bankInfos_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -155,15 +3209,15 @@ public final class Appconfig {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              ledgerID_ = s;
+              ledgerId_ = s;
               break;
             }
             case 18: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder subBuilder = null;
               if (enterprise_ != null) {
                 subBuilder = enterprise_.toBuilder();
               }
-              enterprise_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              enterprise_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.UserInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(enterprise_);
                 enterprise_ = subBuilder.buildPartial();
@@ -172,11 +3226,11 @@ public final class Appconfig {
               break;
             }
             case 26: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder subBuilder = null;
               if (factoring_ != null) {
                 subBuilder = factoring_.toBuilder();
               }
-              factoring_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              factoring_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.UserInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(factoring_);
                 factoring_ = subBuilder.buildPartial();
@@ -185,11 +3239,11 @@ public final class Appconfig {
               break;
             }
             case 34: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder subBuilder = null;
               if (supplier_ != null) {
                 subBuilder = supplier_.toBuilder();
               }
-              supplier_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              supplier_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.UserInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(supplier_);
                 supplier_ = subBuilder.buildPartial();
@@ -199,11 +3253,24 @@ public final class Appconfig {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                banks_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.AppVo>();
+                bankInfos_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.UserInfo>();
                 mutable_bitField0_ |= 0x00000010;
               }
-              banks_.add(
-                  input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry));
+              bankInfos_.add(
+                  input.readMessage(com.xiangna.www.protos.configuration.Appconfig.UserInfo.parser(), extensionRegistry));
+              break;
+            }
+            case 138: {
+              com.xiangna.www.protos.common.Common.OperateInfo.Builder subBuilder = null;
+              if (opInfo_ != null) {
+                subBuilder = opInfo_.toBuilder();
+              }
+              opInfo_ = input.readMessage(com.xiangna.www.protos.common.Common.OperateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(opInfo_);
+                opInfo_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -215,7 +3282,7 @@ public final class Appconfig {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-          banks_ = java.util.Collections.unmodifiableList(banks_);
+          bankInfos_ = java.util.Collections.unmodifiableList(bankInfos_);
         }
         makeExtensionsImmutable();
       }
@@ -233,34 +3300,34 @@ public final class Appconfig {
     }
 
     private int bitField0_;
-    public static final int LEDGERID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ledgerID_;
+    public static final int LEDGER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ledgerId_;
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
-    public java.lang.String getLedgerID() {
-      java.lang.Object ref = ledgerID_;
+    public java.lang.String getLedgerId() {
+      java.lang.Object ref = ledgerId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ledgerID_ = s;
+        ledgerId_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getLedgerIDBytes() {
-      java.lang.Object ref = ledgerID_;
+        getLedgerIdBytes() {
+      java.lang.Object ref = ledgerId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        ledgerID_ = b;
+        ledgerId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -268,121 +3335,142 @@ public final class Appconfig {
     }
 
     public static final int ENTERPRISE_FIELD_NUMBER = 2;
-    private com.xiangna.www.protos.common.Common.AppVo enterprise_;
+    private com.xiangna.www.protos.configuration.Appconfig.UserInfo enterprise_;
     /**
-     * <code>optional .protos.AppVo enterprise = 2;</code>
+     * <code>optional .protos.UserInfo enterprise = 2;</code>
      */
     public boolean hasEnterprise() {
       return enterprise_ != null;
     }
     /**
-     * <code>optional .protos.AppVo enterprise = 2;</code>
+     * <code>optional .protos.UserInfo enterprise = 2;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getEnterprise() {
-      return enterprise_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : enterprise_;
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getEnterprise() {
+      return enterprise_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : enterprise_;
     }
     /**
-     * <code>optional .protos.AppVo enterprise = 2;</code>
+     * <code>optional .protos.UserInfo enterprise = 2;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getEnterpriseOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getEnterpriseOrBuilder() {
       return getEnterprise();
     }
 
     public static final int FACTORING_FIELD_NUMBER = 3;
-    private com.xiangna.www.protos.common.Common.AppVo factoring_;
+    private com.xiangna.www.protos.configuration.Appconfig.UserInfo factoring_;
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
     public boolean hasFactoring() {
       return factoring_ != null;
     }
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getFactoring() {
-      return factoring_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getFactoring() {
+      return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : factoring_;
     }
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getFactoringOrBuilder() {
       return getFactoring();
     }
 
     public static final int SUPPLIER_FIELD_NUMBER = 4;
-    private com.xiangna.www.protos.common.Common.AppVo supplier_;
+    private com.xiangna.www.protos.configuration.Appconfig.UserInfo supplier_;
     /**
-     * <code>optional .protos.AppVo supplier = 4;</code>
+     * <code>optional .protos.UserInfo supplier = 4;</code>
      */
     public boolean hasSupplier() {
       return supplier_ != null;
     }
     /**
-     * <code>optional .protos.AppVo supplier = 4;</code>
+     * <code>optional .protos.UserInfo supplier = 4;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getSupplier() {
-      return supplier_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : supplier_;
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getSupplier() {
+      return supplier_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : supplier_;
     }
     /**
-     * <code>optional .protos.AppVo supplier = 4;</code>
+     * <code>optional .protos.UserInfo supplier = 4;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getSupplierOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getSupplierOrBuilder() {
       return getSupplier();
     }
 
-    public static final int BANKS_FIELD_NUMBER = 5;
-    private java.util.List<com.xiangna.www.protos.common.Common.AppVo> banks_;
+    public static final int BANK_INFOS_FIELD_NUMBER = 5;
+    private java.util.List<com.xiangna.www.protos.configuration.Appconfig.UserInfo> bankInfos_;
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    public java.util.List<com.xiangna.www.protos.common.Common.AppVo> getBanksList() {
-      return banks_;
+    public java.util.List<com.xiangna.www.protos.configuration.Appconfig.UserInfo> getBankInfosList() {
+      return bankInfos_;
     }
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    public java.util.List<? extends com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-        getBanksOrBuilderList() {
-      return banks_;
+    public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
+        getBankInfosOrBuilderList() {
+      return bankInfos_;
     }
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    public int getBanksCount() {
-      return banks_.size();
+    public int getBankInfosCount() {
+      return bankInfos_.size();
     }
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getBanks(int index) {
-      return banks_.get(index);
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getBankInfos(int index) {
+      return bankInfos_.get(index);
     }
     /**
      * <pre>
      * 关联银行
      * </pre>
      *
-     * <code>repeated .protos.AppVo banks = 5;</code>
+     * <code>repeated .protos.UserInfo bank_infos = 5;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBanksOrBuilder(
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getBankInfosOrBuilder(
         int index) {
-      return banks_.get(index);
+      return bankInfos_.get(index);
+    }
+
+    public static final int OP_INFO_FIELD_NUMBER = 17;
+    private com.xiangna.www.protos.common.Common.OperateInfo opInfo_;
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    public boolean hasOpInfo() {
+      return opInfo_ != null;
+    }
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OperateInfo getOpInfo() {
+      return opInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : opInfo_;
+    }
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder() {
+      return getOpInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -397,8 +3485,8 @@ public final class Appconfig {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getLedgerIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ledgerID_);
+      if (!getLedgerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ledgerId_);
       }
       if (enterprise_ != null) {
         output.writeMessage(2, getEnterprise());
@@ -409,8 +3497,11 @@ public final class Appconfig {
       if (supplier_ != null) {
         output.writeMessage(4, getSupplier());
       }
-      for (int i = 0; i < banks_.size(); i++) {
-        output.writeMessage(5, banks_.get(i));
+      for (int i = 0; i < bankInfos_.size(); i++) {
+        output.writeMessage(5, bankInfos_.get(i));
+      }
+      if (opInfo_ != null) {
+        output.writeMessage(17, getOpInfo());
       }
     }
 
@@ -419,8 +3510,8 @@ public final class Appconfig {
       if (size != -1) return size;
 
       size = 0;
-      if (!getLedgerIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ledgerID_);
+      if (!getLedgerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ledgerId_);
       }
       if (enterprise_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -434,9 +3525,13 @@ public final class Appconfig {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getSupplier());
       }
-      for (int i = 0; i < banks_.size(); i++) {
+      for (int i = 0; i < bankInfos_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, banks_.get(i));
+          .computeMessageSize(5, bankInfos_.get(i));
+      }
+      if (opInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getOpInfo());
       }
       memoizedSize = size;
       return size;
@@ -454,8 +3549,8 @@ public final class Appconfig {
       com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo other = (com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo) obj;
 
       boolean result = true;
-      result = result && getLedgerID()
-          .equals(other.getLedgerID());
+      result = result && getLedgerId()
+          .equals(other.getLedgerId());
       result = result && (hasEnterprise() == other.hasEnterprise());
       if (hasEnterprise()) {
         result = result && getEnterprise()
@@ -471,8 +3566,13 @@ public final class Appconfig {
         result = result && getSupplier()
             .equals(other.getSupplier());
       }
-      result = result && getBanksList()
-          .equals(other.getBanksList());
+      result = result && getBankInfosList()
+          .equals(other.getBankInfosList());
+      result = result && (hasOpInfo() == other.hasOpInfo());
+      if (hasOpInfo()) {
+        result = result && getOpInfo()
+            .equals(other.getOpInfo());
+      }
       return result;
     }
 
@@ -483,8 +3583,8 @@ public final class Appconfig {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + LEDGERID_FIELD_NUMBER;
-      hash = (53 * hash) + getLedgerID().hashCode();
+      hash = (37 * hash) + LEDGER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLedgerId().hashCode();
       if (hasEnterprise()) {
         hash = (37 * hash) + ENTERPRISE_FIELD_NUMBER;
         hash = (53 * hash) + getEnterprise().hashCode();
@@ -497,9 +3597,13 @@ public final class Appconfig {
         hash = (37 * hash) + SUPPLIER_FIELD_NUMBER;
         hash = (53 * hash) + getSupplier().hashCode();
       }
-      if (getBanksCount() > 0) {
-        hash = (37 * hash) + BANKS_FIELD_NUMBER;
-        hash = (53 * hash) + getBanksList().hashCode();
+      if (getBankInfosCount() > 0) {
+        hash = (37 * hash) + BANK_INFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getBankInfosList().hashCode();
+      }
+      if (hasOpInfo()) {
+        hash = (37 * hash) + OP_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getOpInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -615,12 +3719,12 @@ public final class Appconfig {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getBanksFieldBuilder();
+          getBankInfosFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        ledgerID_ = "";
+        ledgerId_ = "";
 
         if (enterpriseBuilder_ == null) {
           enterprise_ = null;
@@ -640,11 +3744,17 @@ public final class Appconfig {
           supplier_ = null;
           supplierBuilder_ = null;
         }
-        if (banksBuilder_ == null) {
-          banks_ = java.util.Collections.emptyList();
+        if (bankInfosBuilder_ == null) {
+          bankInfos_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
         } else {
-          banksBuilder_.clear();
+          bankInfosBuilder_.clear();
+        }
+        if (opInfoBuilder_ == null) {
+          opInfo_ = null;
+        } else {
+          opInfo_ = null;
+          opInfoBuilder_ = null;
         }
         return this;
       }
@@ -670,7 +3780,7 @@ public final class Appconfig {
         com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo result = new com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        result.ledgerID_ = ledgerID_;
+        result.ledgerId_ = ledgerId_;
         if (enterpriseBuilder_ == null) {
           result.enterprise_ = enterprise_;
         } else {
@@ -686,14 +3796,19 @@ public final class Appconfig {
         } else {
           result.supplier_ = supplierBuilder_.build();
         }
-        if (banksBuilder_ == null) {
+        if (bankInfosBuilder_ == null) {
           if (((bitField0_ & 0x00000010) == 0x00000010)) {
-            banks_ = java.util.Collections.unmodifiableList(banks_);
+            bankInfos_ = java.util.Collections.unmodifiableList(bankInfos_);
             bitField0_ = (bitField0_ & ~0x00000010);
           }
-          result.banks_ = banks_;
+          result.bankInfos_ = bankInfos_;
         } else {
-          result.banks_ = banksBuilder_.build();
+          result.bankInfos_ = bankInfosBuilder_.build();
+        }
+        if (opInfoBuilder_ == null) {
+          result.opInfo_ = opInfo_;
+        } else {
+          result.opInfo_ = opInfoBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -737,8 +3852,8 @@ public final class Appconfig {
 
       public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo other) {
         if (other == com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.getDefaultInstance()) return this;
-        if (!other.getLedgerID().isEmpty()) {
-          ledgerID_ = other.ledgerID_;
+        if (!other.getLedgerId().isEmpty()) {
+          ledgerId_ = other.ledgerId_;
           onChanged();
         }
         if (other.hasEnterprise()) {
@@ -750,31 +3865,34 @@ public final class Appconfig {
         if (other.hasSupplier()) {
           mergeSupplier(other.getSupplier());
         }
-        if (banksBuilder_ == null) {
-          if (!other.banks_.isEmpty()) {
-            if (banks_.isEmpty()) {
-              banks_ = other.banks_;
+        if (bankInfosBuilder_ == null) {
+          if (!other.bankInfos_.isEmpty()) {
+            if (bankInfos_.isEmpty()) {
+              bankInfos_ = other.bankInfos_;
               bitField0_ = (bitField0_ & ~0x00000010);
             } else {
-              ensureBanksIsMutable();
-              banks_.addAll(other.banks_);
+              ensureBankInfosIsMutable();
+              bankInfos_.addAll(other.bankInfos_);
             }
             onChanged();
           }
         } else {
-          if (!other.banks_.isEmpty()) {
-            if (banksBuilder_.isEmpty()) {
-              banksBuilder_.dispose();
-              banksBuilder_ = null;
-              banks_ = other.banks_;
+          if (!other.bankInfos_.isEmpty()) {
+            if (bankInfosBuilder_.isEmpty()) {
+              bankInfosBuilder_.dispose();
+              bankInfosBuilder_ = null;
+              bankInfos_ = other.bankInfos_;
               bitField0_ = (bitField0_ & ~0x00000010);
-              banksBuilder_ = 
+              bankInfosBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getBanksFieldBuilder() : null;
+                   getBankInfosFieldBuilder() : null;
             } else {
-              banksBuilder_.addAllMessages(other.banks_);
+              bankInfosBuilder_.addAllMessages(other.bankInfos_);
             }
           }
+        }
+        if (other.hasOpInfo()) {
+          mergeOpInfo(other.getOpInfo());
         }
         onChanged();
         return this;
@@ -803,98 +3921,98 @@ public final class Appconfig {
       }
       private int bitField0_;
 
-      private java.lang.Object ledgerID_ = "";
+      private java.lang.Object ledgerId_ = "";
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public java.lang.String getLedgerID() {
-        java.lang.Object ref = ledgerID_;
+      public java.lang.String getLedgerId() {
+        java.lang.Object ref = ledgerId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ledgerID_ = s;
+          ledgerId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getLedgerIDBytes() {
-        java.lang.Object ref = ledgerID_;
+          getLedgerIdBytes() {
+        java.lang.Object ref = ledgerId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          ledgerID_ = b;
+          ledgerId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public Builder setLedgerID(
+      public Builder setLedgerId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        ledgerID_ = value;
+        ledgerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public Builder clearLedgerID() {
+      public Builder clearLedgerId() {
         
-        ledgerID_ = getDefaultInstance().getLedgerID();
+        ledgerId_ = getDefaultInstance().getLedgerId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public Builder setLedgerIDBytes(
+      public Builder setLedgerIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        ledgerID_ = value;
+        ledgerId_ = value;
         onChanged();
         return this;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo enterprise_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.UserInfo enterprise_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> enterpriseBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> enterpriseBuilder_;
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
       public boolean hasEnterprise() {
         return enterpriseBuilder_ != null || enterprise_ != null;
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getEnterprise() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getEnterprise() {
         if (enterpriseBuilder_ == null) {
-          return enterprise_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : enterprise_;
+          return enterprise_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : enterprise_;
         } else {
           return enterpriseBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
-      public Builder setEnterprise(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder setEnterprise(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (enterpriseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -908,10 +4026,10 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
       public Builder setEnterprise(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
         if (enterpriseBuilder_ == null) {
           enterprise_ = builderForValue.build();
           onChanged();
@@ -922,13 +4040,13 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
-      public Builder mergeEnterprise(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder mergeEnterprise(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (enterpriseBuilder_ == null) {
           if (enterprise_ != null) {
             enterprise_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(enterprise_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.newBuilder(enterprise_).mergeFrom(value).buildPartial();
           } else {
             enterprise_ = value;
           }
@@ -940,7 +4058,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
       public Builder clearEnterprise() {
         if (enterpriseBuilder_ == null) {
@@ -954,33 +4072,33 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getEnterpriseBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder getEnterpriseBuilder() {
         
         onChanged();
         return getEnterpriseFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getEnterpriseOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getEnterpriseOrBuilder() {
         if (enterpriseBuilder_ != null) {
           return enterpriseBuilder_.getMessageOrBuilder();
         } else {
           return enterprise_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : enterprise_;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : enterprise_;
         }
       }
       /**
-       * <code>optional .protos.AppVo enterprise = 2;</code>
+       * <code>optional .protos.UserInfo enterprise = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
           getEnterpriseFieldBuilder() {
         if (enterpriseBuilder_ == null) {
           enterpriseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder>(
                   getEnterprise(),
                   getParentForChildren(),
                   isClean());
@@ -989,29 +4107,29 @@ public final class Appconfig {
         return enterpriseBuilder_;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo factoring_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.UserInfo factoring_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> factoringBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> factoringBuilder_;
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       public boolean hasFactoring() {
         return factoringBuilder_ != null || factoring_ != null;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getFactoring() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getFactoring() {
         if (factoringBuilder_ == null) {
-          return factoring_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+          return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : factoring_;
         } else {
           return factoringBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public Builder setFactoring(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder setFactoring(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (factoringBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1025,10 +4143,10 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       public Builder setFactoring(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
         if (factoringBuilder_ == null) {
           factoring_ = builderForValue.build();
           onChanged();
@@ -1039,13 +4157,13 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public Builder mergeFactoring(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder mergeFactoring(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (factoringBuilder_ == null) {
           if (factoring_ != null) {
             factoring_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(factoring_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.newBuilder(factoring_).mergeFrom(value).buildPartial();
           } else {
             factoring_ = value;
           }
@@ -1057,7 +4175,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       public Builder clearFactoring() {
         if (factoringBuilder_ == null) {
@@ -1071,33 +4189,33 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getFactoringBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder getFactoringBuilder() {
         
         onChanged();
         return getFactoringFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getFactoringOrBuilder() {
         if (factoringBuilder_ != null) {
           return factoringBuilder_.getMessageOrBuilder();
         } else {
           return factoring_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : factoring_;
         }
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
           getFactoringFieldBuilder() {
         if (factoringBuilder_ == null) {
           factoringBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder>(
                   getFactoring(),
                   getParentForChildren(),
                   isClean());
@@ -1106,29 +4224,29 @@ public final class Appconfig {
         return factoringBuilder_;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo supplier_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.UserInfo supplier_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> supplierBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> supplierBuilder_;
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
       public boolean hasSupplier() {
         return supplierBuilder_ != null || supplier_ != null;
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getSupplier() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getSupplier() {
         if (supplierBuilder_ == null) {
-          return supplier_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : supplier_;
+          return supplier_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : supplier_;
         } else {
           return supplierBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
-      public Builder setSupplier(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder setSupplier(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (supplierBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1142,10 +4260,10 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
       public Builder setSupplier(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
         if (supplierBuilder_ == null) {
           supplier_ = builderForValue.build();
           onChanged();
@@ -1156,13 +4274,13 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
-      public Builder mergeSupplier(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder mergeSupplier(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (supplierBuilder_ == null) {
           if (supplier_ != null) {
             supplier_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(supplier_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.newBuilder(supplier_).mergeFrom(value).buildPartial();
           } else {
             supplier_ = value;
           }
@@ -1174,7 +4292,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
       public Builder clearSupplier() {
         if (supplierBuilder_ == null) {
@@ -1188,33 +4306,33 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getSupplierBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder getSupplierBuilder() {
         
         onChanged();
         return getSupplierFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getSupplierOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getSupplierOrBuilder() {
         if (supplierBuilder_ != null) {
           return supplierBuilder_.getMessageOrBuilder();
         } else {
           return supplier_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : supplier_;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : supplier_;
         }
       }
       /**
-       * <code>optional .protos.AppVo supplier = 4;</code>
+       * <code>optional .protos.UserInfo supplier = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
           getSupplierFieldBuilder() {
         if (supplierBuilder_ == null) {
           supplierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder>(
                   getSupplier(),
                   getParentForChildren(),
                   isClean());
@@ -1223,30 +4341,30 @@ public final class Appconfig {
         return supplierBuilder_;
       }
 
-      private java.util.List<com.xiangna.www.protos.common.Common.AppVo> banks_ =
+      private java.util.List<com.xiangna.www.protos.configuration.Appconfig.UserInfo> bankInfos_ =
         java.util.Collections.emptyList();
-      private void ensureBanksIsMutable() {
+      private void ensureBankInfosIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          banks_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.AppVo>(banks_);
+          bankInfos_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.UserInfo>(bankInfos_);
           bitField0_ |= 0x00000010;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> banksBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> bankInfosBuilder_;
 
       /**
        * <pre>
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public java.util.List<com.xiangna.www.protos.common.Common.AppVo> getBanksList() {
-        if (banksBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(banks_);
+      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.UserInfo> getBankInfosList() {
+        if (bankInfosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(bankInfos_);
         } else {
-          return banksBuilder_.getMessageList();
+          return bankInfosBuilder_.getMessageList();
         }
       }
       /**
@@ -1254,13 +4372,13 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public int getBanksCount() {
-        if (banksBuilder_ == null) {
-          return banks_.size();
+      public int getBankInfosCount() {
+        if (bankInfosBuilder_ == null) {
+          return bankInfos_.size();
         } else {
-          return banksBuilder_.getCount();
+          return bankInfosBuilder_.getCount();
         }
       }
       /**
@@ -1268,13 +4386,13 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getBanks(int index) {
-        if (banksBuilder_ == null) {
-          return banks_.get(index);
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getBankInfos(int index) {
+        if (bankInfosBuilder_ == null) {
+          return bankInfos_.get(index);
         } else {
-          return banksBuilder_.getMessage(index);
+          return bankInfosBuilder_.getMessage(index);
         }
       }
       /**
@@ -1282,19 +4400,19 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder setBanks(
-          int index, com.xiangna.www.protos.common.Common.AppVo value) {
-        if (banksBuilder_ == null) {
+      public Builder setBankInfos(
+          int index, com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
+        if (bankInfosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureBanksIsMutable();
-          banks_.set(index, value);
+          ensureBankInfosIsMutable();
+          bankInfos_.set(index, value);
           onChanged();
         } else {
-          banksBuilder_.setMessage(index, value);
+          bankInfosBuilder_.setMessage(index, value);
         }
         return this;
       }
@@ -1303,16 +4421,16 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder setBanks(
-          int index, com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (banksBuilder_ == null) {
-          ensureBanksIsMutable();
-          banks_.set(index, builderForValue.build());
+      public Builder setBankInfos(
+          int index, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
+        if (bankInfosBuilder_ == null) {
+          ensureBankInfosIsMutable();
+          bankInfos_.set(index, builderForValue.build());
           onChanged();
         } else {
-          banksBuilder_.setMessage(index, builderForValue.build());
+          bankInfosBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -1321,18 +4439,18 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder addBanks(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (banksBuilder_ == null) {
+      public Builder addBankInfos(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
+        if (bankInfosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureBanksIsMutable();
-          banks_.add(value);
+          ensureBankInfosIsMutable();
+          bankInfos_.add(value);
           onChanged();
         } else {
-          banksBuilder_.addMessage(value);
+          bankInfosBuilder_.addMessage(value);
         }
         return this;
       }
@@ -1341,19 +4459,19 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder addBanks(
-          int index, com.xiangna.www.protos.common.Common.AppVo value) {
-        if (banksBuilder_ == null) {
+      public Builder addBankInfos(
+          int index, com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
+        if (bankInfosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureBanksIsMutable();
-          banks_.add(index, value);
+          ensureBankInfosIsMutable();
+          bankInfos_.add(index, value);
           onChanged();
         } else {
-          banksBuilder_.addMessage(index, value);
+          bankInfosBuilder_.addMessage(index, value);
         }
         return this;
       }
@@ -1362,16 +4480,16 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder addBanks(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (banksBuilder_ == null) {
-          ensureBanksIsMutable();
-          banks_.add(builderForValue.build());
+      public Builder addBankInfos(
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
+        if (bankInfosBuilder_ == null) {
+          ensureBankInfosIsMutable();
+          bankInfos_.add(builderForValue.build());
           onChanged();
         } else {
-          banksBuilder_.addMessage(builderForValue.build());
+          bankInfosBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
@@ -1380,16 +4498,16 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder addBanks(
-          int index, com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (banksBuilder_ == null) {
-          ensureBanksIsMutable();
-          banks_.add(index, builderForValue.build());
+      public Builder addBankInfos(
+          int index, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
+        if (bankInfosBuilder_ == null) {
+          ensureBankInfosIsMutable();
+          bankInfos_.add(index, builderForValue.build());
           onChanged();
         } else {
-          banksBuilder_.addMessage(index, builderForValue.build());
+          bankInfosBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
@@ -1398,17 +4516,17 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder addAllBanks(
-          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.AppVo> values) {
-        if (banksBuilder_ == null) {
-          ensureBanksIsMutable();
+      public Builder addAllBankInfos(
+          java.lang.Iterable<? extends com.xiangna.www.protos.configuration.Appconfig.UserInfo> values) {
+        if (bankInfosBuilder_ == null) {
+          ensureBankInfosIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, banks_);
+              values, bankInfos_);
           onChanged();
         } else {
-          banksBuilder_.addAllMessages(values);
+          bankInfosBuilder_.addAllMessages(values);
         }
         return this;
       }
@@ -1417,15 +4535,15 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder clearBanks() {
-        if (banksBuilder_ == null) {
-          banks_ = java.util.Collections.emptyList();
+      public Builder clearBankInfos() {
+        if (bankInfosBuilder_ == null) {
+          bankInfos_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
-          banksBuilder_.clear();
+          bankInfosBuilder_.clear();
         }
         return this;
       }
@@ -1434,15 +4552,15 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public Builder removeBanks(int index) {
-        if (banksBuilder_ == null) {
-          ensureBanksIsMutable();
-          banks_.remove(index);
+      public Builder removeBankInfos(int index) {
+        if (bankInfosBuilder_ == null) {
+          ensureBankInfosIsMutable();
+          bankInfos_.remove(index);
           onChanged();
         } else {
-          banksBuilder_.remove(index);
+          bankInfosBuilder_.remove(index);
         }
         return this;
       }
@@ -1451,24 +4569,24 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getBanksBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder getBankInfosBuilder(
           int index) {
-        return getBanksFieldBuilder().getBuilder(index);
+        return getBankInfosFieldBuilder().getBuilder(index);
       }
       /**
        * <pre>
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBanksOrBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getBankInfosOrBuilder(
           int index) {
-        if (banksBuilder_ == null) {
-          return banks_.get(index);  } else {
-          return banksBuilder_.getMessageOrBuilder(index);
+        if (bankInfosBuilder_ == null) {
+          return bankInfos_.get(index);  } else {
+          return bankInfosBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
@@ -1476,14 +4594,14 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public java.util.List<? extends com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-           getBanksOrBuilderList() {
-        if (banksBuilder_ != null) {
-          return banksBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
+           getBankInfosOrBuilderList() {
+        if (bankInfosBuilder_ != null) {
+          return bankInfosBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(banks_);
+          return java.util.Collections.unmodifiableList(bankInfos_);
         }
       }
       /**
@@ -1491,48 +4609,165 @@ public final class Appconfig {
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder addBanksBuilder() {
-        return getBanksFieldBuilder().addBuilder(
-            com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance());
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder addBankInfosBuilder() {
+        return getBankInfosFieldBuilder().addBuilder(
+            com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance());
       }
       /**
        * <pre>
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder addBanksBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder addBankInfosBuilder(
           int index) {
-        return getBanksFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance());
+        return getBankInfosFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance());
       }
       /**
        * <pre>
        * 关联银行
        * </pre>
        *
-       * <code>repeated .protos.AppVo banks = 5;</code>
+       * <code>repeated .protos.UserInfo bank_infos = 5;</code>
        */
-      public java.util.List<com.xiangna.www.protos.common.Common.AppVo.Builder> 
-           getBanksBuilderList() {
-        return getBanksFieldBuilder().getBuilderList();
+      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder> 
+           getBankInfosBuilderList() {
+        return getBankInfosFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getBanksFieldBuilder() {
-        if (banksBuilder_ == null) {
-          banksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  banks_,
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
+          getBankInfosFieldBuilder() {
+        if (bankInfosBuilder_ == null) {
+          bankInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder>(
+                  bankInfos_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
-          banks_ = null;
+          bankInfos_ = null;
         }
-        return banksBuilder_;
+        return bankInfosBuilder_;
+      }
+
+      private com.xiangna.www.protos.common.Common.OperateInfo opInfo_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> opInfoBuilder_;
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public boolean hasOpInfo() {
+        return opInfoBuilder_ != null || opInfo_ != null;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfo getOpInfo() {
+        if (opInfoBuilder_ == null) {
+          return opInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : opInfo_;
+        } else {
+          return opInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder setOpInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
+        if (opInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          opInfo_ = value;
+          onChanged();
+        } else {
+          opInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder setOpInfo(
+          com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
+        if (opInfoBuilder_ == null) {
+          opInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          opInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder mergeOpInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
+        if (opInfoBuilder_ == null) {
+          if (opInfo_ != null) {
+            opInfo_ =
+              com.xiangna.www.protos.common.Common.OperateInfo.newBuilder(opInfo_).mergeFrom(value).buildPartial();
+          } else {
+            opInfo_ = value;
+          }
+          onChanged();
+        } else {
+          opInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder clearOpInfo() {
+        if (opInfoBuilder_ == null) {
+          opInfo_ = null;
+          onChanged();
+        } else {
+          opInfo_ = null;
+          opInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfo.Builder getOpInfoBuilder() {
+        
+        onChanged();
+        return getOpInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder() {
+        if (opInfoBuilder_ != null) {
+          return opInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return opInfo_ == null ?
+              com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : opInfo_;
+        }
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
+          getOpInfoFieldBuilder() {
+        if (opInfoBuilder_ == null) {
+          opInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder>(
+                  getOpInfo(),
+                  getParentForChildren(),
+                  isClean());
+          opInfo_ = null;
+        }
+        return opInfoBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1588,40 +4823,53 @@ public final class Appconfig {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
-    java.lang.String getLedgerID();
+    java.lang.String getLedgerId();
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
     com.google.protobuf.ByteString
-        getLedgerIDBytes();
+        getLedgerIdBytes();
 
     /**
-     * <code>optional .protos.AppVo bank = 2;</code>
+     * <code>optional .protos.UserInfo bank_info = 2;</code>
      */
-    boolean hasBank();
+    boolean hasBankInfo();
     /**
-     * <code>optional .protos.AppVo bank = 2;</code>
+     * <code>optional .protos.UserInfo bank_info = 2;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getBank();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfo getBankInfo();
     /**
-     * <code>optional .protos.AppVo bank = 2;</code>
+     * <code>optional .protos.UserInfo bank_info = 2;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getBankInfoOrBuilder();
 
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
     boolean hasFactoring();
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getFactoring();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfo getFactoring();
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getFactoringOrBuilder();
+
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    boolean hasOpInfo();
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    com.xiangna.www.protos.common.Common.OperateInfo getOpInfo();
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder();
   }
   /**
    * Protobuf type {@code protos.TwoPartiesInfo}
@@ -1635,7 +4883,7 @@ public final class Appconfig {
       super(builder);
     }
     private TwoPartiesInfo() {
-      ledgerID_ = "";
+      ledgerId_ = "";
     }
 
     @java.lang.Override
@@ -1666,31 +4914,44 @@ public final class Appconfig {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              ledgerID_ = s;
+              ledgerId_ = s;
               break;
             }
             case 18: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (bank_ != null) {
-                subBuilder = bank_.toBuilder();
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder subBuilder = null;
+              if (bankInfo_ != null) {
+                subBuilder = bankInfo_.toBuilder();
               }
-              bank_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              bankInfo_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.UserInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(bank_);
-                bank_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(bankInfo_);
+                bankInfo_ = subBuilder.buildPartial();
               }
 
               break;
             }
             case 26: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder subBuilder = null;
               if (factoring_ != null) {
                 subBuilder = factoring_.toBuilder();
               }
-              factoring_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              factoring_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.UserInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(factoring_);
                 factoring_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 138: {
+              com.xiangna.www.protos.common.Common.OperateInfo.Builder subBuilder = null;
+              if (opInfo_ != null) {
+                subBuilder = opInfo_.toBuilder();
+              }
+              opInfo_ = input.readMessage(com.xiangna.www.protos.common.Common.OperateInfo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(opInfo_);
+                opInfo_ = subBuilder.buildPartial();
               }
 
               break;
@@ -1718,80 +4979,101 @@ public final class Appconfig {
               com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.class, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder.class);
     }
 
-    public static final int LEDGERID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object ledgerID_;
+    public static final int LEDGER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object ledgerId_;
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
-    public java.lang.String getLedgerID() {
-      java.lang.Object ref = ledgerID_;
+    public java.lang.String getLedgerId() {
+      java.lang.Object ref = ledgerId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ledgerID_ = s;
+        ledgerId_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string ledgerID = 1;</code>
+     * <code>optional string ledger_id = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getLedgerIDBytes() {
-      java.lang.Object ref = ledgerID_;
+        getLedgerIdBytes() {
+      java.lang.Object ref = ledgerId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        ledgerID_ = b;
+        ledgerId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BANK_FIELD_NUMBER = 2;
-    private com.xiangna.www.protos.common.Common.AppVo bank_;
+    public static final int BANK_INFO_FIELD_NUMBER = 2;
+    private com.xiangna.www.protos.configuration.Appconfig.UserInfo bankInfo_;
     /**
-     * <code>optional .protos.AppVo bank = 2;</code>
+     * <code>optional .protos.UserInfo bank_info = 2;</code>
      */
-    public boolean hasBank() {
-      return bank_ != null;
+    public boolean hasBankInfo() {
+      return bankInfo_ != null;
     }
     /**
-     * <code>optional .protos.AppVo bank = 2;</code>
+     * <code>optional .protos.UserInfo bank_info = 2;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getBank() {
-      return bank_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bank_;
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getBankInfo() {
+      return bankInfo_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : bankInfo_;
     }
     /**
-     * <code>optional .protos.AppVo bank = 2;</code>
+     * <code>optional .protos.UserInfo bank_info = 2;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankOrBuilder() {
-      return getBank();
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getBankInfoOrBuilder() {
+      return getBankInfo();
     }
 
     public static final int FACTORING_FIELD_NUMBER = 3;
-    private com.xiangna.www.protos.common.Common.AppVo factoring_;
+    private com.xiangna.www.protos.configuration.Appconfig.UserInfo factoring_;
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
     public boolean hasFactoring() {
       return factoring_ != null;
     }
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getFactoring() {
-      return factoring_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getFactoring() {
+      return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : factoring_;
     }
     /**
-     * <code>optional .protos.AppVo factoring = 3;</code>
+     * <code>optional .protos.UserInfo factoring = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getFactoringOrBuilder() {
       return getFactoring();
+    }
+
+    public static final int OP_INFO_FIELD_NUMBER = 17;
+    private com.xiangna.www.protos.common.Common.OperateInfo opInfo_;
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    public boolean hasOpInfo() {
+      return opInfo_ != null;
+    }
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OperateInfo getOpInfo() {
+      return opInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : opInfo_;
+    }
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder() {
+      return getOpInfo();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1806,14 +5088,17 @@ public final class Appconfig {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getLedgerIDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ledgerID_);
+      if (!getLedgerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, ledgerId_);
       }
-      if (bank_ != null) {
-        output.writeMessage(2, getBank());
+      if (bankInfo_ != null) {
+        output.writeMessage(2, getBankInfo());
       }
       if (factoring_ != null) {
         output.writeMessage(3, getFactoring());
+      }
+      if (opInfo_ != null) {
+        output.writeMessage(17, getOpInfo());
       }
     }
 
@@ -1822,16 +5107,20 @@ public final class Appconfig {
       if (size != -1) return size;
 
       size = 0;
-      if (!getLedgerIDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ledgerID_);
+      if (!getLedgerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, ledgerId_);
       }
-      if (bank_ != null) {
+      if (bankInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getBank());
+          .computeMessageSize(2, getBankInfo());
       }
       if (factoring_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getFactoring());
+      }
+      if (opInfo_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, getOpInfo());
       }
       memoizedSize = size;
       return size;
@@ -1849,17 +5138,22 @@ public final class Appconfig {
       com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo other = (com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo) obj;
 
       boolean result = true;
-      result = result && getLedgerID()
-          .equals(other.getLedgerID());
-      result = result && (hasBank() == other.hasBank());
-      if (hasBank()) {
-        result = result && getBank()
-            .equals(other.getBank());
+      result = result && getLedgerId()
+          .equals(other.getLedgerId());
+      result = result && (hasBankInfo() == other.hasBankInfo());
+      if (hasBankInfo()) {
+        result = result && getBankInfo()
+            .equals(other.getBankInfo());
       }
       result = result && (hasFactoring() == other.hasFactoring());
       if (hasFactoring()) {
         result = result && getFactoring()
             .equals(other.getFactoring());
+      }
+      result = result && (hasOpInfo() == other.hasOpInfo());
+      if (hasOpInfo()) {
+        result = result && getOpInfo()
+            .equals(other.getOpInfo());
       }
       return result;
     }
@@ -1871,15 +5165,19 @@ public final class Appconfig {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + LEDGERID_FIELD_NUMBER;
-      hash = (53 * hash) + getLedgerID().hashCode();
-      if (hasBank()) {
-        hash = (37 * hash) + BANK_FIELD_NUMBER;
-        hash = (53 * hash) + getBank().hashCode();
+      hash = (37 * hash) + LEDGER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLedgerId().hashCode();
+      if (hasBankInfo()) {
+        hash = (37 * hash) + BANK_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getBankInfo().hashCode();
       }
       if (hasFactoring()) {
         hash = (37 * hash) + FACTORING_FIELD_NUMBER;
         hash = (53 * hash) + getFactoring().hashCode();
+      }
+      if (hasOpInfo()) {
+        hash = (37 * hash) + OP_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getOpInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1999,19 +5297,25 @@ public final class Appconfig {
       }
       public Builder clear() {
         super.clear();
-        ledgerID_ = "";
+        ledgerId_ = "";
 
-        if (bankBuilder_ == null) {
-          bank_ = null;
+        if (bankInfoBuilder_ == null) {
+          bankInfo_ = null;
         } else {
-          bank_ = null;
-          bankBuilder_ = null;
+          bankInfo_ = null;
+          bankInfoBuilder_ = null;
         }
         if (factoringBuilder_ == null) {
           factoring_ = null;
         } else {
           factoring_ = null;
           factoringBuilder_ = null;
+        }
+        if (opInfoBuilder_ == null) {
+          opInfo_ = null;
+        } else {
+          opInfo_ = null;
+          opInfoBuilder_ = null;
         }
         return this;
       }
@@ -2035,16 +5339,21 @@ public final class Appconfig {
 
       public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo buildPartial() {
         com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo result = new com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo(this);
-        result.ledgerID_ = ledgerID_;
-        if (bankBuilder_ == null) {
-          result.bank_ = bank_;
+        result.ledgerId_ = ledgerId_;
+        if (bankInfoBuilder_ == null) {
+          result.bankInfo_ = bankInfo_;
         } else {
-          result.bank_ = bankBuilder_.build();
+          result.bankInfo_ = bankInfoBuilder_.build();
         }
         if (factoringBuilder_ == null) {
           result.factoring_ = factoring_;
         } else {
           result.factoring_ = factoringBuilder_.build();
+        }
+        if (opInfoBuilder_ == null) {
+          result.opInfo_ = opInfo_;
+        } else {
+          result.opInfo_ = opInfoBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2087,15 +5396,18 @@ public final class Appconfig {
 
       public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo other) {
         if (other == com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.getDefaultInstance()) return this;
-        if (!other.getLedgerID().isEmpty()) {
-          ledgerID_ = other.ledgerID_;
+        if (!other.getLedgerId().isEmpty()) {
+          ledgerId_ = other.ledgerId_;
           onChanged();
         }
-        if (other.hasBank()) {
-          mergeBank(other.getBank());
+        if (other.hasBankInfo()) {
+          mergeBankInfo(other.getBankInfo());
         }
         if (other.hasFactoring()) {
           mergeFactoring(other.getFactoring());
+        }
+        if (other.hasOpInfo()) {
+          mergeOpInfo(other.getOpInfo());
         }
         onChanged();
         return this;
@@ -2123,215 +5435,215 @@ public final class Appconfig {
         return this;
       }
 
-      private java.lang.Object ledgerID_ = "";
+      private java.lang.Object ledgerId_ = "";
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public java.lang.String getLedgerID() {
-        java.lang.Object ref = ledgerID_;
+      public java.lang.String getLedgerId() {
+        java.lang.Object ref = ledgerId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ledgerID_ = s;
+          ledgerId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getLedgerIDBytes() {
-        java.lang.Object ref = ledgerID_;
+          getLedgerIdBytes() {
+        java.lang.Object ref = ledgerId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          ledgerID_ = b;
+          ledgerId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public Builder setLedgerID(
+      public Builder setLedgerId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        ledgerID_ = value;
+        ledgerId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public Builder clearLedgerID() {
+      public Builder clearLedgerId() {
         
-        ledgerID_ = getDefaultInstance().getLedgerID();
+        ledgerId_ = getDefaultInstance().getLedgerId();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string ledgerID = 1;</code>
+       * <code>optional string ledger_id = 1;</code>
        */
-      public Builder setLedgerIDBytes(
+      public Builder setLedgerIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        ledgerID_ = value;
+        ledgerId_ = value;
         onChanged();
         return this;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo bank_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.UserInfo bankInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> bankBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> bankInfoBuilder_;
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public boolean hasBank() {
-        return bankBuilder_ != null || bank_ != null;
+      public boolean hasBankInfo() {
+        return bankInfoBuilder_ != null || bankInfo_ != null;
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getBank() {
-        if (bankBuilder_ == null) {
-          return bank_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bank_;
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getBankInfo() {
+        if (bankInfoBuilder_ == null) {
+          return bankInfo_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : bankInfo_;
         } else {
-          return bankBuilder_.getMessage();
+          return bankInfoBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public Builder setBank(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (bankBuilder_ == null) {
+      public Builder setBankInfo(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
+        if (bankInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          bank_ = value;
+          bankInfo_ = value;
           onChanged();
         } else {
-          bankBuilder_.setMessage(value);
+          bankInfoBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public Builder setBank(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (bankBuilder_ == null) {
-          bank_ = builderForValue.build();
+      public Builder setBankInfo(
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
+        if (bankInfoBuilder_ == null) {
+          bankInfo_ = builderForValue.build();
           onChanged();
         } else {
-          bankBuilder_.setMessage(builderForValue.build());
+          bankInfoBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public Builder mergeBank(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (bankBuilder_ == null) {
-          if (bank_ != null) {
-            bank_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(bank_).mergeFrom(value).buildPartial();
+      public Builder mergeBankInfo(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
+        if (bankInfoBuilder_ == null) {
+          if (bankInfo_ != null) {
+            bankInfo_ =
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.newBuilder(bankInfo_).mergeFrom(value).buildPartial();
           } else {
-            bank_ = value;
+            bankInfo_ = value;
           }
           onChanged();
         } else {
-          bankBuilder_.mergeFrom(value);
+          bankInfoBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public Builder clearBank() {
-        if (bankBuilder_ == null) {
-          bank_ = null;
+      public Builder clearBankInfo() {
+        if (bankInfoBuilder_ == null) {
+          bankInfo_ = null;
           onChanged();
         } else {
-          bank_ = null;
-          bankBuilder_ = null;
+          bankInfo_ = null;
+          bankInfoBuilder_ = null;
         }
 
         return this;
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getBankBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder getBankInfoBuilder() {
         
         onChanged();
-        return getBankFieldBuilder().getBuilder();
+        return getBankInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getBankOrBuilder() {
-        if (bankBuilder_ != null) {
-          return bankBuilder_.getMessageOrBuilder();
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getBankInfoOrBuilder() {
+        if (bankInfoBuilder_ != null) {
+          return bankInfoBuilder_.getMessageOrBuilder();
         } else {
-          return bank_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : bank_;
+          return bankInfo_ == null ?
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : bankInfo_;
         }
       }
       /**
-       * <code>optional .protos.AppVo bank = 2;</code>
+       * <code>optional .protos.UserInfo bank_info = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getBankFieldBuilder() {
-        if (bankBuilder_ == null) {
-          bankBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getBank(),
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
+          getBankInfoFieldBuilder() {
+        if (bankInfoBuilder_ == null) {
+          bankInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder>(
+                  getBankInfo(),
                   getParentForChildren(),
                   isClean());
-          bank_ = null;
+          bankInfo_ = null;
         }
-        return bankBuilder_;
+        return bankInfoBuilder_;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo factoring_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.UserInfo factoring_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> factoringBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> factoringBuilder_;
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       public boolean hasFactoring() {
         return factoringBuilder_ != null || factoring_ != null;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getFactoring() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getFactoring() {
         if (factoringBuilder_ == null) {
-          return factoring_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+          return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : factoring_;
         } else {
           return factoringBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public Builder setFactoring(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder setFactoring(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (factoringBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2345,10 +5657,10 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       public Builder setFactoring(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
         if (factoringBuilder_ == null) {
           factoring_ = builderForValue.build();
           onChanged();
@@ -2359,13 +5671,13 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public Builder mergeFactoring(com.xiangna.www.protos.common.Common.AppVo value) {
+      public Builder mergeFactoring(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
         if (factoringBuilder_ == null) {
           if (factoring_ != null) {
             factoring_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(factoring_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.newBuilder(factoring_).mergeFrom(value).buildPartial();
           } else {
             factoring_ = value;
           }
@@ -2377,7 +5689,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       public Builder clearFactoring() {
         if (factoringBuilder_ == null) {
@@ -2391,39 +5703,156 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getFactoringBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder getFactoringBuilder() {
         
         onChanged();
         return getFactoringFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getFactoringOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getFactoringOrBuilder() {
         if (factoringBuilder_ != null) {
           return factoringBuilder_.getMessageOrBuilder();
         } else {
           return factoring_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : factoring_;
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : factoring_;
         }
       }
       /**
-       * <code>optional .protos.AppVo factoring = 3;</code>
+       * <code>optional .protos.UserInfo factoring = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
           getFactoringFieldBuilder() {
         if (factoringBuilder_ == null) {
           factoringBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder>(
                   getFactoring(),
                   getParentForChildren(),
                   isClean());
           factoring_ = null;
         }
         return factoringBuilder_;
+      }
+
+      private com.xiangna.www.protos.common.Common.OperateInfo opInfo_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> opInfoBuilder_;
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public boolean hasOpInfo() {
+        return opInfoBuilder_ != null || opInfo_ != null;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfo getOpInfo() {
+        if (opInfoBuilder_ == null) {
+          return opInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : opInfo_;
+        } else {
+          return opInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder setOpInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
+        if (opInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          opInfo_ = value;
+          onChanged();
+        } else {
+          opInfoBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder setOpInfo(
+          com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
+        if (opInfoBuilder_ == null) {
+          opInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          opInfoBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder mergeOpInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
+        if (opInfoBuilder_ == null) {
+          if (opInfo_ != null) {
+            opInfo_ =
+              com.xiangna.www.protos.common.Common.OperateInfo.newBuilder(opInfo_).mergeFrom(value).buildPartial();
+          } else {
+            opInfo_ = value;
+          }
+          onChanged();
+        } else {
+          opInfoBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public Builder clearOpInfo() {
+        if (opInfoBuilder_ == null) {
+          opInfo_ = null;
+          onChanged();
+        } else {
+          opInfo_ = null;
+          opInfoBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfo.Builder getOpInfoBuilder() {
+        
+        onChanged();
+        return getOpInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder() {
+        if (opInfoBuilder_ != null) {
+          return opInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return opInfo_ == null ?
+              com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : opInfo_;
+        }
+      }
+      /**
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
+          getOpInfoFieldBuilder() {
+        if (opInfoBuilder_ == null) {
+          opInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder>(
+                  getOpInfo(),
+                  getParentForChildren(),
+                  isClean());
+          opInfo_ = null;
+        }
+        return opInfoBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2474,51 +5903,51 @@ public final class Appconfig {
 
   }
 
-  public interface MultiPartiesInfoListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protos.MultiPartiesInfoList)
+  public interface MultiPInfosOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.MultiPInfos)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
     java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> 
-        getMultiInfoListList();
+        getInfosList();
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
-    com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo getMultiInfoList(int index);
+    com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo getInfos(int index);
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
-    int getMultiInfoListCount();
+    int getInfosCount();
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
     java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder> 
-        getMultiInfoListOrBuilderList();
+        getInfosOrBuilderList();
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
-    com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder getMultiInfoListOrBuilder(
+    com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder getInfosOrBuilder(
         int index);
   }
   /**
    * <pre>
-   *key 为 HAMC(APPID, "MultiPartiesInfos")
+   *key 为 MP-userID
    * </pre>
    *
-   * Protobuf type {@code protos.MultiPartiesInfoList}
+   * Protobuf type {@code protos.MultiPInfos}
    */
-  public  static final class MultiPartiesInfoList extends
+  public  static final class MultiPInfos extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protos.MultiPartiesInfoList)
-      MultiPartiesInfoListOrBuilder {
-    // Use MultiPartiesInfoList.newBuilder() to construct.
-    private MultiPartiesInfoList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:protos.MultiPInfos)
+      MultiPInfosOrBuilder {
+    // Use MultiPInfos.newBuilder() to construct.
+    private MultiPInfos(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private MultiPartiesInfoList() {
-      multiInfoList_ = java.util.Collections.emptyList();
+    private MultiPInfos() {
+      infos_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2526,7 +5955,7 @@ public final class Appconfig {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private MultiPartiesInfoList(
+    private MultiPInfos(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2548,10 +5977,10 @@ public final class Appconfig {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                multiInfoList_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo>();
+                infos_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              multiInfoList_.add(
+              infos_.add(
                   input.readMessage(com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.parser(), extensionRegistry));
               break;
             }
@@ -2564,56 +5993,56 @@ public final class Appconfig {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          multiInfoList_ = java.util.Collections.unmodifiableList(multiInfoList_);
+          infos_ = java.util.Collections.unmodifiableList(infos_);
         }
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPartiesInfoList_descriptor;
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPInfos_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPartiesInfoList_fieldAccessorTable
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPInfos_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList.class, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList.Builder.class);
+              com.xiangna.www.protos.configuration.Appconfig.MultiPInfos.class, com.xiangna.www.protos.configuration.Appconfig.MultiPInfos.Builder.class);
     }
 
-    public static final int MULTIINFOLIST_FIELD_NUMBER = 1;
-    private java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> multiInfoList_;
+    public static final int INFOS_FIELD_NUMBER = 1;
+    private java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> infos_;
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
-    public java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> getMultiInfoListList() {
-      return multiInfoList_;
+    public java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> getInfosList() {
+      return infos_;
     }
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
     public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder> 
-        getMultiInfoListOrBuilderList() {
-      return multiInfoList_;
+        getInfosOrBuilderList() {
+      return infos_;
     }
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
-    public int getMultiInfoListCount() {
-      return multiInfoList_.size();
+    public int getInfosCount() {
+      return infos_.size();
     }
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
-    public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo getMultiInfoList(int index) {
-      return multiInfoList_.get(index);
+    public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo getInfos(int index) {
+      return infos_.get(index);
     }
     /**
-     * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+     * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
      */
-    public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder getMultiInfoListOrBuilder(
+    public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder getInfosOrBuilder(
         int index) {
-      return multiInfoList_.get(index);
+      return infos_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2628,8 +6057,8 @@ public final class Appconfig {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < multiInfoList_.size(); i++) {
-        output.writeMessage(1, multiInfoList_.get(i));
+      for (int i = 0; i < infos_.size(); i++) {
+        output.writeMessage(1, infos_.get(i));
       }
     }
 
@@ -2638,9 +6067,9 @@ public final class Appconfig {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < multiInfoList_.size(); i++) {
+      for (int i = 0; i < infos_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, multiInfoList_.get(i));
+          .computeMessageSize(1, infos_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -2652,14 +6081,14 @@ public final class Appconfig {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList)) {
+      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.MultiPInfos)) {
         return super.equals(obj);
       }
-      com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList other = (com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList) obj;
+      com.xiangna.www.protos.configuration.Appconfig.MultiPInfos other = (com.xiangna.www.protos.configuration.Appconfig.MultiPInfos) obj;
 
       boolean result = true;
-      result = result && getMultiInfoListList()
-          .equals(other.getMultiInfoListList());
+      result = result && getInfosList()
+          .equals(other.getInfosList());
       return result;
     }
 
@@ -2670,67 +6099,67 @@ public final class Appconfig {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getMultiInfoListCount() > 0) {
-        hash = (37 * hash) + MULTIINFOLIST_FIELD_NUMBER;
-        hash = (53 * hash) + getMultiInfoListList().hashCode();
+      if (getInfosCount() > 0) {
+        hash = (37 * hash) + INFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getInfosList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(byte[] data)
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseDelimitedFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseDelimitedFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2742,7 +6171,7 @@ public final class Appconfig {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList prototype) {
+    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.MultiPInfos prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2758,28 +6187,28 @@ public final class Appconfig {
     }
     /**
      * <pre>
-     *key 为 HAMC(APPID, "MultiPartiesInfos")
+     *key 为 MP-userID
      * </pre>
      *
-     * Protobuf type {@code protos.MultiPartiesInfoList}
+     * Protobuf type {@code protos.MultiPInfos}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protos.MultiPartiesInfoList)
-        com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protos.MultiPInfos)
+        com.xiangna.www.protos.configuration.Appconfig.MultiPInfosOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPartiesInfoList_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPInfos_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPartiesInfoList_fieldAccessorTable
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPInfos_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList.class, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList.Builder.class);
+                com.xiangna.www.protos.configuration.Appconfig.MultiPInfos.class, com.xiangna.www.protos.configuration.Appconfig.MultiPInfos.Builder.class);
       }
 
-      // Construct using com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList.newBuilder()
+      // Construct using com.xiangna.www.protos.configuration.Appconfig.MultiPInfos.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2792,48 +6221,48 @@ public final class Appconfig {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getMultiInfoListFieldBuilder();
+          getInfosFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (multiInfoListBuilder_ == null) {
-          multiInfoList_ = java.util.Collections.emptyList();
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          multiInfoListBuilder_.clear();
+          infosBuilder_.clear();
         }
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPartiesInfoList_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_MultiPInfos_descriptor;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList getDefaultInstanceForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList.getDefaultInstance();
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPInfos getDefaultInstanceForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.MultiPInfos.getDefaultInstance();
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList build() {
-        com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList result = buildPartial();
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPInfos build() {
+        com.xiangna.www.protos.configuration.Appconfig.MultiPInfos result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList buildPartial() {
-        com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList result = new com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList(this);
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPInfos buildPartial() {
+        com.xiangna.www.protos.configuration.Appconfig.MultiPInfos result = new com.xiangna.www.protos.configuration.Appconfig.MultiPInfos(this);
         int from_bitField0_ = bitField0_;
-        if (multiInfoListBuilder_ == null) {
+        if (infosBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            multiInfoList_ = java.util.Collections.unmodifiableList(multiInfoList_);
+            infos_ = java.util.Collections.unmodifiableList(infos_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.multiInfoList_ = multiInfoList_;
+          result.infos_ = infos_;
         } else {
-          result.multiInfoList_ = multiInfoListBuilder_.build();
+          result.infos_ = infosBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2866,39 +6295,39 @@ public final class Appconfig {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList) {
-          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList)other);
+        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.MultiPInfos) {
+          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.MultiPInfos)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList other) {
-        if (other == com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList.getDefaultInstance()) return this;
-        if (multiInfoListBuilder_ == null) {
-          if (!other.multiInfoList_.isEmpty()) {
-            if (multiInfoList_.isEmpty()) {
-              multiInfoList_ = other.multiInfoList_;
+      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.MultiPInfos other) {
+        if (other == com.xiangna.www.protos.configuration.Appconfig.MultiPInfos.getDefaultInstance()) return this;
+        if (infosBuilder_ == null) {
+          if (!other.infos_.isEmpty()) {
+            if (infos_.isEmpty()) {
+              infos_ = other.infos_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureMultiInfoListIsMutable();
-              multiInfoList_.addAll(other.multiInfoList_);
+              ensureInfosIsMutable();
+              infos_.addAll(other.infos_);
             }
             onChanged();
           }
         } else {
-          if (!other.multiInfoList_.isEmpty()) {
-            if (multiInfoListBuilder_.isEmpty()) {
-              multiInfoListBuilder_.dispose();
-              multiInfoListBuilder_ = null;
-              multiInfoList_ = other.multiInfoList_;
+          if (!other.infos_.isEmpty()) {
+            if (infosBuilder_.isEmpty()) {
+              infosBuilder_.dispose();
+              infosBuilder_ = null;
+              infos_ = other.infos_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              multiInfoListBuilder_ = 
+              infosBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getMultiInfoListFieldBuilder() : null;
+                   getInfosFieldBuilder() : null;
             } else {
-              multiInfoListBuilder_.addAllMessages(other.multiInfoList_);
+              infosBuilder_.addAllMessages(other.infos_);
             }
           }
         }
@@ -2914,11 +6343,11 @@ public final class Appconfig {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList parsedMessage = null;
+        com.xiangna.www.protos.configuration.Appconfig.MultiPInfos parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList) e.getUnfinishedMessage();
+          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.MultiPInfos) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2929,244 +6358,244 @@ public final class Appconfig {
       }
       private int bitField0_;
 
-      private java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> multiInfoList_ =
+      private java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> infos_ =
         java.util.Collections.emptyList();
-      private void ensureMultiInfoListIsMutable() {
+      private void ensureInfosIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          multiInfoList_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo>(multiInfoList_);
+          infos_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo>(infos_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder> multiInfoListBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder> infosBuilder_;
 
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> getMultiInfoListList() {
-        if (multiInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(multiInfoList_);
+      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> getInfosList() {
+        if (infosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(infos_);
         } else {
-          return multiInfoListBuilder_.getMessageList();
+          return infosBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public int getMultiInfoListCount() {
-        if (multiInfoListBuilder_ == null) {
-          return multiInfoList_.size();
+      public int getInfosCount() {
+        if (infosBuilder_ == null) {
+          return infos_.size();
         } else {
-          return multiInfoListBuilder_.getCount();
+          return infosBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo getMultiInfoList(int index) {
-        if (multiInfoListBuilder_ == null) {
-          return multiInfoList_.get(index);
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo getInfos(int index) {
+        if (infosBuilder_ == null) {
+          return infos_.get(index);
         } else {
-          return multiInfoListBuilder_.getMessage(index);
+          return infosBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder setMultiInfoList(
+      public Builder setInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo value) {
-        if (multiInfoListBuilder_ == null) {
+        if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMultiInfoListIsMutable();
-          multiInfoList_.set(index, value);
+          ensureInfosIsMutable();
+          infos_.set(index, value);
           onChanged();
         } else {
-          multiInfoListBuilder_.setMessage(index, value);
+          infosBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder setMultiInfoList(
+      public Builder setInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder builderForValue) {
-        if (multiInfoListBuilder_ == null) {
-          ensureMultiInfoListIsMutable();
-          multiInfoList_.set(index, builderForValue.build());
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.set(index, builderForValue.build());
           onChanged();
         } else {
-          multiInfoListBuilder_.setMessage(index, builderForValue.build());
+          infosBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder addMultiInfoList(com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo value) {
-        if (multiInfoListBuilder_ == null) {
+      public Builder addInfos(com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo value) {
+        if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMultiInfoListIsMutable();
-          multiInfoList_.add(value);
+          ensureInfosIsMutable();
+          infos_.add(value);
           onChanged();
         } else {
-          multiInfoListBuilder_.addMessage(value);
+          infosBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder addMultiInfoList(
+      public Builder addInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo value) {
-        if (multiInfoListBuilder_ == null) {
+        if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureMultiInfoListIsMutable();
-          multiInfoList_.add(index, value);
+          ensureInfosIsMutable();
+          infos_.add(index, value);
           onChanged();
         } else {
-          multiInfoListBuilder_.addMessage(index, value);
+          infosBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder addMultiInfoList(
+      public Builder addInfos(
           com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder builderForValue) {
-        if (multiInfoListBuilder_ == null) {
-          ensureMultiInfoListIsMutable();
-          multiInfoList_.add(builderForValue.build());
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(builderForValue.build());
           onChanged();
         } else {
-          multiInfoListBuilder_.addMessage(builderForValue.build());
+          infosBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder addMultiInfoList(
+      public Builder addInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder builderForValue) {
-        if (multiInfoListBuilder_ == null) {
-          ensureMultiInfoListIsMutable();
-          multiInfoList_.add(index, builderForValue.build());
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(index, builderForValue.build());
           onChanged();
         } else {
-          multiInfoListBuilder_.addMessage(index, builderForValue.build());
+          infosBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder addAllMultiInfoList(
+      public Builder addAllInfos(
           java.lang.Iterable<? extends com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo> values) {
-        if (multiInfoListBuilder_ == null) {
-          ensureMultiInfoListIsMutable();
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, multiInfoList_);
+              values, infos_);
           onChanged();
         } else {
-          multiInfoListBuilder_.addAllMessages(values);
+          infosBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder clearMultiInfoList() {
-        if (multiInfoListBuilder_ == null) {
-          multiInfoList_ = java.util.Collections.emptyList();
+      public Builder clearInfos() {
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          multiInfoListBuilder_.clear();
+          infosBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public Builder removeMultiInfoList(int index) {
-        if (multiInfoListBuilder_ == null) {
-          ensureMultiInfoListIsMutable();
-          multiInfoList_.remove(index);
+      public Builder removeInfos(int index) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.remove(index);
           onChanged();
         } else {
-          multiInfoListBuilder_.remove(index);
+          infosBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder getMultiInfoListBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder getInfosBuilder(
           int index) {
-        return getMultiInfoListFieldBuilder().getBuilder(index);
+        return getInfosFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder getMultiInfoListOrBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder getInfosOrBuilder(
           int index) {
-        if (multiInfoListBuilder_ == null) {
-          return multiInfoList_.get(index);  } else {
-          return multiInfoListBuilder_.getMessageOrBuilder(index);
+        if (infosBuilder_ == null) {
+          return infos_.get(index);  } else {
+          return infosBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
       public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder> 
-           getMultiInfoListOrBuilderList() {
-        if (multiInfoListBuilder_ != null) {
-          return multiInfoListBuilder_.getMessageOrBuilderList();
+           getInfosOrBuilderList() {
+        if (infosBuilder_ != null) {
+          return infosBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(multiInfoList_);
+          return java.util.Collections.unmodifiableList(infos_);
         }
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder addMultiInfoListBuilder() {
-        return getMultiInfoListFieldBuilder().addBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder addInfosBuilder() {
+        return getInfosFieldBuilder().addBuilder(
             com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder addMultiInfoListBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder addInfosBuilder(
           int index) {
-        return getMultiInfoListFieldBuilder().addBuilder(
+        return getInfosFieldBuilder().addBuilder(
             index, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .protos.MultiPartiesInfo multiInfoList = 1;</code>
+       * <code>repeated .protos.MultiPartiesInfo infos = 1;</code>
        */
       public java.util.List<com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder> 
-           getMultiInfoListBuilderList() {
-        return getMultiInfoListFieldBuilder().getBuilderList();
+           getInfosBuilderList() {
+        return getInfosFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder> 
-          getMultiInfoListFieldBuilder() {
-        if (multiInfoListBuilder_ == null) {
-          multiInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getInfosFieldBuilder() {
+        if (infosBuilder_ == null) {
+          infosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoOrBuilder>(
-                  multiInfoList_,
+                  infos_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
-          multiInfoList_ = null;
+          infos_ = null;
         }
-        return multiInfoListBuilder_;
+        return infosBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3179,89 +6608,89 @@ public final class Appconfig {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protos.MultiPartiesInfoList)
+      // @@protoc_insertion_point(builder_scope:protos.MultiPInfos)
     }
 
-    // @@protoc_insertion_point(class_scope:protos.MultiPartiesInfoList)
-    private static final com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protos.MultiPInfos)
+    private static final com.xiangna.www.protos.configuration.Appconfig.MultiPInfos DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList();
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.MultiPInfos();
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList getDefaultInstance() {
+    public static com.xiangna.www.protos.configuration.Appconfig.MultiPInfos getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<MultiPartiesInfoList>
-        PARSER = new com.google.protobuf.AbstractParser<MultiPartiesInfoList>() {
-      public MultiPartiesInfoList parsePartialFrom(
+    private static final com.google.protobuf.Parser<MultiPInfos>
+        PARSER = new com.google.protobuf.AbstractParser<MultiPInfos>() {
+      public MultiPInfos parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new MultiPartiesInfoList(input, extensionRegistry);
+          return new MultiPInfos(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<MultiPartiesInfoList> parser() {
+    public static com.google.protobuf.Parser<MultiPInfos> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<MultiPartiesInfoList> getParserForType() {
+    public com.google.protobuf.Parser<MultiPInfos> getParserForType() {
       return PARSER;
     }
 
-    public com.xiangna.www.protos.configuration.Appconfig.MultiPartiesInfoList getDefaultInstanceForType() {
+    public com.xiangna.www.protos.configuration.Appconfig.MultiPInfos getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface TwoPartiesInfoListOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protos.TwoPartiesInfoList)
+  public interface TwoPInfosOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.TwoPInfos)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
     java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> 
-        getTwoPartiesInfoListList();
+        getInfosList();
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
-    com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo getTwoPartiesInfoList(int index);
+    com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo getInfos(int index);
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
-    int getTwoPartiesInfoListCount();
+    int getInfosCount();
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
     java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder> 
-        getTwoPartiesInfoListOrBuilderList();
+        getInfosOrBuilderList();
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
-    com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder getTwoPartiesInfoListOrBuilder(
+    com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder getInfosOrBuilder(
         int index);
   }
   /**
    * <pre>
-   *key 为 HAMC(APPID, "TwoPartiesInfoList")
+   *key 为 TP-userID
    * </pre>
    *
-   * Protobuf type {@code protos.TwoPartiesInfoList}
+   * Protobuf type {@code protos.TwoPInfos}
    */
-  public  static final class TwoPartiesInfoList extends
+  public  static final class TwoPInfos extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protos.TwoPartiesInfoList)
-      TwoPartiesInfoListOrBuilder {
-    // Use TwoPartiesInfoList.newBuilder() to construct.
-    private TwoPartiesInfoList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:protos.TwoPInfos)
+      TwoPInfosOrBuilder {
+    // Use TwoPInfos.newBuilder() to construct.
+    private TwoPInfos(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private TwoPartiesInfoList() {
-      twoPartiesInfoList_ = java.util.Collections.emptyList();
+    private TwoPInfos() {
+      infos_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3269,7 +6698,7 @@ public final class Appconfig {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private TwoPartiesInfoList(
+    private TwoPInfos(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3291,10 +6720,10 @@ public final class Appconfig {
             }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                twoPartiesInfoList_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo>();
+                infos_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo>();
                 mutable_bitField0_ |= 0x00000001;
               }
-              twoPartiesInfoList_.add(
+              infos_.add(
                   input.readMessage(com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.parser(), extensionRegistry));
               break;
             }
@@ -3307,56 +6736,56 @@ public final class Appconfig {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          twoPartiesInfoList_ = java.util.Collections.unmodifiableList(twoPartiesInfoList_);
+          infos_ = java.util.Collections.unmodifiableList(infos_);
         }
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPartiesInfoList_descriptor;
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPInfos_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPartiesInfoList_fieldAccessorTable
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPInfos_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList.class, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList.Builder.class);
+              com.xiangna.www.protos.configuration.Appconfig.TwoPInfos.class, com.xiangna.www.protos.configuration.Appconfig.TwoPInfos.Builder.class);
     }
 
-    public static final int TWOPARTIESINFOLIST_FIELD_NUMBER = 1;
-    private java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> twoPartiesInfoList_;
+    public static final int INFOS_FIELD_NUMBER = 1;
+    private java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> infos_;
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
-    public java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> getTwoPartiesInfoListList() {
-      return twoPartiesInfoList_;
+    public java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> getInfosList() {
+      return infos_;
     }
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
     public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder> 
-        getTwoPartiesInfoListOrBuilderList() {
-      return twoPartiesInfoList_;
+        getInfosOrBuilderList() {
+      return infos_;
     }
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
-    public int getTwoPartiesInfoListCount() {
-      return twoPartiesInfoList_.size();
+    public int getInfosCount() {
+      return infos_.size();
     }
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
-    public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo getTwoPartiesInfoList(int index) {
-      return twoPartiesInfoList_.get(index);
+    public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo getInfos(int index) {
+      return infos_.get(index);
     }
     /**
-     * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+     * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
      */
-    public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder getTwoPartiesInfoListOrBuilder(
+    public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder getInfosOrBuilder(
         int index) {
-      return twoPartiesInfoList_.get(index);
+      return infos_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3371,8 +6800,8 @@ public final class Appconfig {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < twoPartiesInfoList_.size(); i++) {
-        output.writeMessage(1, twoPartiesInfoList_.get(i));
+      for (int i = 0; i < infos_.size(); i++) {
+        output.writeMessage(1, infos_.get(i));
       }
     }
 
@@ -3381,9 +6810,9 @@ public final class Appconfig {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < twoPartiesInfoList_.size(); i++) {
+      for (int i = 0; i < infos_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, twoPartiesInfoList_.get(i));
+          .computeMessageSize(1, infos_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -3395,14 +6824,14 @@ public final class Appconfig {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList)) {
+      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.TwoPInfos)) {
         return super.equals(obj);
       }
-      com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList other = (com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList) obj;
+      com.xiangna.www.protos.configuration.Appconfig.TwoPInfos other = (com.xiangna.www.protos.configuration.Appconfig.TwoPInfos) obj;
 
       boolean result = true;
-      result = result && getTwoPartiesInfoListList()
-          .equals(other.getTwoPartiesInfoListList());
+      result = result && getInfosList()
+          .equals(other.getInfosList());
       return result;
     }
 
@@ -3413,67 +6842,67 @@ public final class Appconfig {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getTwoPartiesInfoListCount() > 0) {
-        hash = (37 * hash) + TWOPARTIESINFOLIST_FIELD_NUMBER;
-        hash = (53 * hash) + getTwoPartiesInfoListList().hashCode();
+      if (getInfosCount() > 0) {
+        hash = (37 * hash) + INFOS_FIELD_NUMBER;
+        hash = (53 * hash) + getInfosList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(byte[] data)
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseDelimitedFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseDelimitedFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3485,7 +6914,7 @@ public final class Appconfig {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList prototype) {
+    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.TwoPInfos prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3501,28 +6930,28 @@ public final class Appconfig {
     }
     /**
      * <pre>
-     *key 为 HAMC(APPID, "TwoPartiesInfoList")
+     *key 为 TP-userID
      * </pre>
      *
-     * Protobuf type {@code protos.TwoPartiesInfoList}
+     * Protobuf type {@code protos.TwoPInfos}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protos.TwoPartiesInfoList)
-        com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoListOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protos.TwoPInfos)
+        com.xiangna.www.protos.configuration.Appconfig.TwoPInfosOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPartiesInfoList_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPInfos_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPartiesInfoList_fieldAccessorTable
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPInfos_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList.class, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList.Builder.class);
+                com.xiangna.www.protos.configuration.Appconfig.TwoPInfos.class, com.xiangna.www.protos.configuration.Appconfig.TwoPInfos.Builder.class);
       }
 
-      // Construct using com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList.newBuilder()
+      // Construct using com.xiangna.www.protos.configuration.Appconfig.TwoPInfos.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -3535,48 +6964,48 @@ public final class Appconfig {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getTwoPartiesInfoListFieldBuilder();
+          getInfosFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (twoPartiesInfoListBuilder_ == null) {
-          twoPartiesInfoList_ = java.util.Collections.emptyList();
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          twoPartiesInfoListBuilder_.clear();
+          infosBuilder_.clear();
         }
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPartiesInfoList_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_TwoPInfos_descriptor;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList getDefaultInstanceForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList.getDefaultInstance();
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPInfos getDefaultInstanceForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.TwoPInfos.getDefaultInstance();
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList build() {
-        com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList result = buildPartial();
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPInfos build() {
+        com.xiangna.www.protos.configuration.Appconfig.TwoPInfos result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList buildPartial() {
-        com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList result = new com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList(this);
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPInfos buildPartial() {
+        com.xiangna.www.protos.configuration.Appconfig.TwoPInfos result = new com.xiangna.www.protos.configuration.Appconfig.TwoPInfos(this);
         int from_bitField0_ = bitField0_;
-        if (twoPartiesInfoListBuilder_ == null) {
+        if (infosBuilder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            twoPartiesInfoList_ = java.util.Collections.unmodifiableList(twoPartiesInfoList_);
+            infos_ = java.util.Collections.unmodifiableList(infos_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.twoPartiesInfoList_ = twoPartiesInfoList_;
+          result.infos_ = infos_;
         } else {
-          result.twoPartiesInfoList_ = twoPartiesInfoListBuilder_.build();
+          result.infos_ = infosBuilder_.build();
         }
         onBuilt();
         return result;
@@ -3609,39 +7038,39 @@ public final class Appconfig {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList) {
-          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList)other);
+        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.TwoPInfos) {
+          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.TwoPInfos)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList other) {
-        if (other == com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList.getDefaultInstance()) return this;
-        if (twoPartiesInfoListBuilder_ == null) {
-          if (!other.twoPartiesInfoList_.isEmpty()) {
-            if (twoPartiesInfoList_.isEmpty()) {
-              twoPartiesInfoList_ = other.twoPartiesInfoList_;
+      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.TwoPInfos other) {
+        if (other == com.xiangna.www.protos.configuration.Appconfig.TwoPInfos.getDefaultInstance()) return this;
+        if (infosBuilder_ == null) {
+          if (!other.infos_.isEmpty()) {
+            if (infos_.isEmpty()) {
+              infos_ = other.infos_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureTwoPartiesInfoListIsMutable();
-              twoPartiesInfoList_.addAll(other.twoPartiesInfoList_);
+              ensureInfosIsMutable();
+              infos_.addAll(other.infos_);
             }
             onChanged();
           }
         } else {
-          if (!other.twoPartiesInfoList_.isEmpty()) {
-            if (twoPartiesInfoListBuilder_.isEmpty()) {
-              twoPartiesInfoListBuilder_.dispose();
-              twoPartiesInfoListBuilder_ = null;
-              twoPartiesInfoList_ = other.twoPartiesInfoList_;
+          if (!other.infos_.isEmpty()) {
+            if (infosBuilder_.isEmpty()) {
+              infosBuilder_.dispose();
+              infosBuilder_ = null;
+              infos_ = other.infos_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              twoPartiesInfoListBuilder_ = 
+              infosBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTwoPartiesInfoListFieldBuilder() : null;
+                   getInfosFieldBuilder() : null;
             } else {
-              twoPartiesInfoListBuilder_.addAllMessages(other.twoPartiesInfoList_);
+              infosBuilder_.addAllMessages(other.infos_);
             }
           }
         }
@@ -3657,11 +7086,11 @@ public final class Appconfig {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList parsedMessage = null;
+        com.xiangna.www.protos.configuration.Appconfig.TwoPInfos parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList) e.getUnfinishedMessage();
+          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.TwoPInfos) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3672,244 +7101,244 @@ public final class Appconfig {
       }
       private int bitField0_;
 
-      private java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> twoPartiesInfoList_ =
+      private java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> infos_ =
         java.util.Collections.emptyList();
-      private void ensureTwoPartiesInfoListIsMutable() {
+      private void ensureInfosIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          twoPartiesInfoList_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo>(twoPartiesInfoList_);
+          infos_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo>(infos_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder> twoPartiesInfoListBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder> infosBuilder_;
 
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> getTwoPartiesInfoListList() {
-        if (twoPartiesInfoListBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(twoPartiesInfoList_);
+      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> getInfosList() {
+        if (infosBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(infos_);
         } else {
-          return twoPartiesInfoListBuilder_.getMessageList();
+          return infosBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public int getTwoPartiesInfoListCount() {
-        if (twoPartiesInfoListBuilder_ == null) {
-          return twoPartiesInfoList_.size();
+      public int getInfosCount() {
+        if (infosBuilder_ == null) {
+          return infos_.size();
         } else {
-          return twoPartiesInfoListBuilder_.getCount();
+          return infosBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo getTwoPartiesInfoList(int index) {
-        if (twoPartiesInfoListBuilder_ == null) {
-          return twoPartiesInfoList_.get(index);
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo getInfos(int index) {
+        if (infosBuilder_ == null) {
+          return infos_.get(index);
         } else {
-          return twoPartiesInfoListBuilder_.getMessage(index);
+          return infosBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder setTwoPartiesInfoList(
+      public Builder setInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo value) {
-        if (twoPartiesInfoListBuilder_ == null) {
+        if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTwoPartiesInfoListIsMutable();
-          twoPartiesInfoList_.set(index, value);
+          ensureInfosIsMutable();
+          infos_.set(index, value);
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.setMessage(index, value);
+          infosBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder setTwoPartiesInfoList(
+      public Builder setInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder builderForValue) {
-        if (twoPartiesInfoListBuilder_ == null) {
-          ensureTwoPartiesInfoListIsMutable();
-          twoPartiesInfoList_.set(index, builderForValue.build());
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.set(index, builderForValue.build());
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.setMessage(index, builderForValue.build());
+          infosBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder addTwoPartiesInfoList(com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo value) {
-        if (twoPartiesInfoListBuilder_ == null) {
+      public Builder addInfos(com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo value) {
+        if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTwoPartiesInfoListIsMutable();
-          twoPartiesInfoList_.add(value);
+          ensureInfosIsMutable();
+          infos_.add(value);
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.addMessage(value);
+          infosBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder addTwoPartiesInfoList(
+      public Builder addInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo value) {
-        if (twoPartiesInfoListBuilder_ == null) {
+        if (infosBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureTwoPartiesInfoListIsMutable();
-          twoPartiesInfoList_.add(index, value);
+          ensureInfosIsMutable();
+          infos_.add(index, value);
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.addMessage(index, value);
+          infosBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder addTwoPartiesInfoList(
+      public Builder addInfos(
           com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder builderForValue) {
-        if (twoPartiesInfoListBuilder_ == null) {
-          ensureTwoPartiesInfoListIsMutable();
-          twoPartiesInfoList_.add(builderForValue.build());
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(builderForValue.build());
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.addMessage(builderForValue.build());
+          infosBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder addTwoPartiesInfoList(
+      public Builder addInfos(
           int index, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder builderForValue) {
-        if (twoPartiesInfoListBuilder_ == null) {
-          ensureTwoPartiesInfoListIsMutable();
-          twoPartiesInfoList_.add(index, builderForValue.build());
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.add(index, builderForValue.build());
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.addMessage(index, builderForValue.build());
+          infosBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder addAllTwoPartiesInfoList(
+      public Builder addAllInfos(
           java.lang.Iterable<? extends com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo> values) {
-        if (twoPartiesInfoListBuilder_ == null) {
-          ensureTwoPartiesInfoListIsMutable();
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, twoPartiesInfoList_);
+              values, infos_);
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.addAllMessages(values);
+          infosBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder clearTwoPartiesInfoList() {
-        if (twoPartiesInfoListBuilder_ == null) {
-          twoPartiesInfoList_ = java.util.Collections.emptyList();
+      public Builder clearInfos() {
+        if (infosBuilder_ == null) {
+          infos_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.clear();
+          infosBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public Builder removeTwoPartiesInfoList(int index) {
-        if (twoPartiesInfoListBuilder_ == null) {
-          ensureTwoPartiesInfoListIsMutable();
-          twoPartiesInfoList_.remove(index);
+      public Builder removeInfos(int index) {
+        if (infosBuilder_ == null) {
+          ensureInfosIsMutable();
+          infos_.remove(index);
           onChanged();
         } else {
-          twoPartiesInfoListBuilder_.remove(index);
+          infosBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder getTwoPartiesInfoListBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder getInfosBuilder(
           int index) {
-        return getTwoPartiesInfoListFieldBuilder().getBuilder(index);
+        return getInfosFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder getTwoPartiesInfoListOrBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder getInfosOrBuilder(
           int index) {
-        if (twoPartiesInfoListBuilder_ == null) {
-          return twoPartiesInfoList_.get(index);  } else {
-          return twoPartiesInfoListBuilder_.getMessageOrBuilder(index);
+        if (infosBuilder_ == null) {
+          return infos_.get(index);  } else {
+          return infosBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
       public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder> 
-           getTwoPartiesInfoListOrBuilderList() {
-        if (twoPartiesInfoListBuilder_ != null) {
-          return twoPartiesInfoListBuilder_.getMessageOrBuilderList();
+           getInfosOrBuilderList() {
+        if (infosBuilder_ != null) {
+          return infosBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(twoPartiesInfoList_);
+          return java.util.Collections.unmodifiableList(infos_);
         }
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder addTwoPartiesInfoListBuilder() {
-        return getTwoPartiesInfoListFieldBuilder().addBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder addInfosBuilder() {
+        return getInfosFieldBuilder().addBuilder(
             com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
-      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder addTwoPartiesInfoListBuilder(
+      public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder addInfosBuilder(
           int index) {
-        return getTwoPartiesInfoListFieldBuilder().addBuilder(
+        return getInfosFieldBuilder().addBuilder(
             index, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.getDefaultInstance());
       }
       /**
-       * <code>repeated .protos.TwoPartiesInfo TwoPartiesInfoList = 1;</code>
+       * <code>repeated .protos.TwoPartiesInfo infos = 1;</code>
        */
       public java.util.List<com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder> 
-           getTwoPartiesInfoListBuilderList() {
-        return getTwoPartiesInfoListFieldBuilder().getBuilderList();
+           getInfosBuilderList() {
+        return getInfosFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder> 
-          getTwoPartiesInfoListFieldBuilder() {
-        if (twoPartiesInfoListBuilder_ == null) {
-          twoPartiesInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getInfosFieldBuilder() {
+        if (infosBuilder_ == null) {
+          infosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoOrBuilder>(
-                  twoPartiesInfoList_,
+                  infos_,
                   ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
-          twoPartiesInfoList_ = null;
+          infos_ = null;
         }
-        return twoPartiesInfoListBuilder_;
+        return infosBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3922,121 +7351,132 @@ public final class Appconfig {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protos.TwoPartiesInfoList)
+      // @@protoc_insertion_point(builder_scope:protos.TwoPInfos)
     }
 
-    // @@protoc_insertion_point(class_scope:protos.TwoPartiesInfoList)
-    private static final com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protos.TwoPInfos)
+    private static final com.xiangna.www.protos.configuration.Appconfig.TwoPInfos DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList();
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.TwoPInfos();
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList getDefaultInstance() {
+    public static com.xiangna.www.protos.configuration.Appconfig.TwoPInfos getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<TwoPartiesInfoList>
-        PARSER = new com.google.protobuf.AbstractParser<TwoPartiesInfoList>() {
-      public TwoPartiesInfoList parsePartialFrom(
+    private static final com.google.protobuf.Parser<TwoPInfos>
+        PARSER = new com.google.protobuf.AbstractParser<TwoPInfos>() {
+      public TwoPInfos parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new TwoPartiesInfoList(input, extensionRegistry);
+          return new TwoPInfos(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<TwoPartiesInfoList> parser() {
+    public static com.google.protobuf.Parser<TwoPInfos> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<TwoPartiesInfoList> getParserForType() {
+    public com.google.protobuf.Parser<TwoPInfos> getParserForType() {
       return PARSER;
     }
 
-    public com.xiangna.www.protos.configuration.Appconfig.TwoPartiesInfoList getDefaultInstanceForType() {
+    public com.xiangna.www.protos.configuration.Appconfig.TwoPInfos getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface SDKUserInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protos.SDKUserInfo)
+  public interface UserInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.UserInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-     * </pre>
-     *
-     * <code>optional string sdkUserName = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
-    java.lang.String getSdkUserName();
+    java.lang.String getUserId();
     /**
-     * <pre>
-     *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-     * </pre>
-     *
-     * <code>optional string sdkUserName = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
     com.google.protobuf.ByteString
-        getSdkUserNameBytes();
+        getUserIdBytes();
 
     /**
      * <pre>
-     *sdk  密码
+     * 应用的名称，例如香纳保理业务系统
      * </pre>
      *
-     * <code>optional string sdkUserPWD = 2;</code>
+     * <code>optional string app_name = 2;</code>
      */
-    java.lang.String getSdkUserPWD();
+    java.lang.String getAppName();
     /**
      * <pre>
-     *sdk  密码
+     * 应用的名称，例如香纳保理业务系统
      * </pre>
      *
-     * <code>optional string sdkUserPWD = 2;</code>
+     * <code>optional string app_name = 2;</code>
      */
     com.google.protobuf.ByteString
-        getSdkUserPWDBytes();
+        getAppNameBytes();
 
     /**
      * <pre>
-     *sdk  证书信息
+     * 应用的类型，例如供应商、保理、核心企业、银行
      * </pre>
      *
-     * <code>optional string sdkEnrollment = 3;</code>
+     * <code>optional string app_type = 3;</code>
      */
-    java.lang.String getSdkEnrollment();
+    java.lang.String getAppType();
     /**
      * <pre>
-     *sdk  证书信息
+     * 应用的类型，例如供应商、保理、核心企业、银行
      * </pre>
      *
-     * <code>optional string sdkEnrollment = 3;</code>
+     * <code>optional string app_type = 3;</code>
      */
     com.google.protobuf.ByteString
-        getSdkEnrollmentBytes();
+        getAppTypeBytes();
+
+    /**
+     * <pre>
+     *公钥信息
+     * </pre>
+     *
+     * <code>optional string public_key = 4;</code>
+     */
+    java.lang.String getPublicKey();
+    /**
+     * <pre>
+     *公钥信息
+     * </pre>
+     *
+     * <code>optional string public_key = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getPublicKeyBytes();
   }
   /**
    * <pre>
-   *key 为 HAMC(APPID, "SDKUserInfo")
+   *key 为 userID
    * </pre>
    *
-   * Protobuf type {@code protos.SDKUserInfo}
+   * Protobuf type {@code protos.UserInfo}
    */
-  public  static final class SDKUserInfo extends
+  public  static final class UserInfo extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protos.SDKUserInfo)
-      SDKUserInfoOrBuilder {
-    // Use SDKUserInfo.newBuilder() to construct.
-    private SDKUserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:protos.UserInfo)
+      UserInfoOrBuilder {
+    // Use UserInfo.newBuilder() to construct.
+    private UserInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private SDKUserInfo() {
-      sdkUserName_ = "";
-      sdkUserPWD_ = "";
-      sdkEnrollment_ = "";
+    private UserInfo() {
+      userId_ = "";
+      appName_ = "";
+      appType_ = "";
+      publicKey_ = "";
     }
 
     @java.lang.Override
@@ -4044,7 +7484,7 @@ public final class Appconfig {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private SDKUserInfo(
+    private UserInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4067,19 +7507,25 @@ public final class Appconfig {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sdkUserName_ = s;
+              userId_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sdkUserPWD_ = s;
+              appName_ = s;
               break;
             }
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              sdkEnrollment_ = s;
+              appType_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              publicKey_ = s;
               break;
             }
           }
@@ -4095,136 +7541,170 @@ public final class Appconfig {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_SDKUserInfo_descriptor;
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_SDKUserInfo_fieldAccessorTable
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo.class, com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo.Builder.class);
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.class, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder.class);
     }
 
-    public static final int SDKUSERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object sdkUserName_;
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
     /**
-     * <pre>
-     *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-     * </pre>
-     *
-     * <code>optional string sdkUserName = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
-    public java.lang.String getSdkUserName() {
-      java.lang.Object ref = sdkUserName_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sdkUserName_ = s;
+        userId_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-     * </pre>
-     *
-     * <code>optional string sdkUserName = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getSdkUserNameBytes() {
-      java.lang.Object ref = sdkUserName_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sdkUserName_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SDKUSERPWD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object sdkUserPWD_;
+    public static final int APP_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object appName_;
     /**
      * <pre>
-     *sdk  密码
+     * 应用的名称，例如香纳保理业务系统
      * </pre>
      *
-     * <code>optional string sdkUserPWD = 2;</code>
+     * <code>optional string app_name = 2;</code>
      */
-    public java.lang.String getSdkUserPWD() {
-      java.lang.Object ref = sdkUserPWD_;
+    public java.lang.String getAppName() {
+      java.lang.Object ref = appName_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sdkUserPWD_ = s;
+        appName_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     *sdk  密码
+     * 应用的名称，例如香纳保理业务系统
      * </pre>
      *
-     * <code>optional string sdkUserPWD = 2;</code>
+     * <code>optional string app_name = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getSdkUserPWDBytes() {
-      java.lang.Object ref = sdkUserPWD_;
+        getAppNameBytes() {
+      java.lang.Object ref = appName_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sdkUserPWD_ = b;
+        appName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SDKENROLLMENT_FIELD_NUMBER = 3;
-    private volatile java.lang.Object sdkEnrollment_;
+    public static final int APP_TYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object appType_;
     /**
      * <pre>
-     *sdk  证书信息
+     * 应用的类型，例如供应商、保理、核心企业、银行
      * </pre>
      *
-     * <code>optional string sdkEnrollment = 3;</code>
+     * <code>optional string app_type = 3;</code>
      */
-    public java.lang.String getSdkEnrollment() {
-      java.lang.Object ref = sdkEnrollment_;
+    public java.lang.String getAppType() {
+      java.lang.Object ref = appType_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sdkEnrollment_ = s;
+        appType_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     *sdk  证书信息
+     * 应用的类型，例如供应商、保理、核心企业、银行
      * </pre>
      *
-     * <code>optional string sdkEnrollment = 3;</code>
+     * <code>optional string app_type = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getSdkEnrollmentBytes() {
-      java.lang.Object ref = sdkEnrollment_;
+        getAppTypeBytes() {
+      java.lang.Object ref = appType_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sdkEnrollment_ = b;
+        appType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PUBLIC_KEY_FIELD_NUMBER = 4;
+    private volatile java.lang.Object publicKey_;
+    /**
+     * <pre>
+     *公钥信息
+     * </pre>
+     *
+     * <code>optional string public_key = 4;</code>
+     */
+    public java.lang.String getPublicKey() {
+      java.lang.Object ref = publicKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publicKey_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *公钥信息
+     * </pre>
+     *
+     * <code>optional string public_key = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPublicKeyBytes() {
+      java.lang.Object ref = publicKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        publicKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4243,14 +7723,17 @@ public final class Appconfig {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getSdkUserNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sdkUserName_);
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
-      if (!getSdkUserPWDBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, sdkUserPWD_);
+      if (!getAppNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appName_);
       }
-      if (!getSdkEnrollmentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sdkEnrollment_);
+      if (!getAppTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appType_);
+      }
+      if (!getPublicKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, publicKey_);
       }
     }
 
@@ -4259,14 +7742,17 @@ public final class Appconfig {
       if (size != -1) return size;
 
       size = 0;
-      if (!getSdkUserNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sdkUserName_);
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
-      if (!getSdkUserPWDBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, sdkUserPWD_);
+      if (!getAppNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appName_);
       }
-      if (!getSdkEnrollmentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sdkEnrollment_);
+      if (!getAppTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appType_);
+      }
+      if (!getPublicKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, publicKey_);
       }
       memoizedSize = size;
       return size;
@@ -4278,18 +7764,20 @@ public final class Appconfig {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo)) {
+      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.UserInfo)) {
         return super.equals(obj);
       }
-      com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo other = (com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo) obj;
+      com.xiangna.www.protos.configuration.Appconfig.UserInfo other = (com.xiangna.www.protos.configuration.Appconfig.UserInfo) obj;
 
       boolean result = true;
-      result = result && getSdkUserName()
-          .equals(other.getSdkUserName());
-      result = result && getSdkUserPWD()
-          .equals(other.getSdkUserPWD());
-      result = result && getSdkEnrollment()
-          .equals(other.getSdkEnrollment());
+      result = result && getUserId()
+          .equals(other.getUserId());
+      result = result && getAppName()
+          .equals(other.getAppName());
+      result = result && getAppType()
+          .equals(other.getAppType());
+      result = result && getPublicKey()
+          .equals(other.getPublicKey());
       return result;
     }
 
@@ -4300,69 +7788,71 @@ public final class Appconfig {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + SDKUSERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getSdkUserName().hashCode();
-      hash = (37 * hash) + SDKUSERPWD_FIELD_NUMBER;
-      hash = (53 * hash) + getSdkUserPWD().hashCode();
-      hash = (37 * hash) + SDKENROLLMENT_FIELD_NUMBER;
-      hash = (53 * hash) + getSdkEnrollment().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + APP_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getAppName().hashCode();
+      hash = (37 * hash) + APP_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getAppType().hashCode();
+      hash = (37 * hash) + PUBLIC_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPublicKey().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(byte[] data)
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseDelimitedFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4374,7 +7864,7 @@ public final class Appconfig {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo prototype) {
+    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.UserInfo prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4390,28 +7880,28 @@ public final class Appconfig {
     }
     /**
      * <pre>
-     *key 为 HAMC(APPID, "SDKUserInfo")
+     *key 为 userID
      * </pre>
      *
-     * Protobuf type {@code protos.SDKUserInfo}
+     * Protobuf type {@code protos.UserInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protos.SDKUserInfo)
-        com.xiangna.www.protos.configuration.Appconfig.SDKUserInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protos.UserInfo)
+        com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_SDKUserInfo_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_SDKUserInfo_fieldAccessorTable
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo.class, com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo.Builder.class);
+                com.xiangna.www.protos.configuration.Appconfig.UserInfo.class, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder.class);
       }
 
-      // Construct using com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo.newBuilder()
+      // Construct using com.xiangna.www.protos.configuration.Appconfig.UserInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -4428,37 +7918,40 @@ public final class Appconfig {
       }
       public Builder clear() {
         super.clear();
-        sdkUserName_ = "";
+        userId_ = "";
 
-        sdkUserPWD_ = "";
+        appName_ = "";
 
-        sdkEnrollment_ = "";
+        appType_ = "";
+
+        publicKey_ = "";
 
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_SDKUserInfo_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_UserInfo_descriptor;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo getDefaultInstanceForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo.getDefaultInstance();
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getDefaultInstanceForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance();
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo build() {
-        com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo result = buildPartial();
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo build() {
+        com.xiangna.www.protos.configuration.Appconfig.UserInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo buildPartial() {
-        com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo result = new com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo(this);
-        result.sdkUserName_ = sdkUserName_;
-        result.sdkUserPWD_ = sdkUserPWD_;
-        result.sdkEnrollment_ = sdkEnrollment_;
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo buildPartial() {
+        com.xiangna.www.protos.configuration.Appconfig.UserInfo result = new com.xiangna.www.protos.configuration.Appconfig.UserInfo(this);
+        result.userId_ = userId_;
+        result.appName_ = appName_;
+        result.appType_ = appType_;
+        result.publicKey_ = publicKey_;
         onBuilt();
         return result;
       }
@@ -4490,26 +7983,30 @@ public final class Appconfig {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo) {
-          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo)other);
+        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.UserInfo) {
+          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.UserInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo other) {
-        if (other == com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo.getDefaultInstance()) return this;
-        if (!other.getSdkUserName().isEmpty()) {
-          sdkUserName_ = other.sdkUserName_;
+      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.UserInfo other) {
+        if (other == com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
           onChanged();
         }
-        if (!other.getSdkUserPWD().isEmpty()) {
-          sdkUserPWD_ = other.sdkUserPWD_;
+        if (!other.getAppName().isEmpty()) {
+          appName_ = other.appName_;
           onChanged();
         }
-        if (!other.getSdkEnrollment().isEmpty()) {
-          sdkEnrollment_ = other.sdkEnrollment_;
+        if (!other.getAppType().isEmpty()) {
+          appType_ = other.appType_;
+          onChanged();
+        }
+        if (!other.getPublicKey().isEmpty()) {
+          publicKey_ = other.publicKey_;
           onChanged();
         }
         onChanged();
@@ -4524,11 +8021,11 @@ public final class Appconfig {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo parsedMessage = null;
+        com.xiangna.www.protos.configuration.Appconfig.UserInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.UserInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4538,110 +8035,90 @@ public final class Appconfig {
         return this;
       }
 
-      private java.lang.Object sdkUserName_ = "";
+      private java.lang.Object userId_ = "";
       /**
-       * <pre>
-       *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-       * </pre>
-       *
-       * <code>optional string sdkUserName = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public java.lang.String getSdkUserName() {
-        java.lang.Object ref = sdkUserName_;
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          sdkUserName_ = s;
+          userId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-       * </pre>
-       *
-       * <code>optional string sdkUserName = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getSdkUserNameBytes() {
-        java.lang.Object ref = sdkUserName_;
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          sdkUserName_ = b;
+          userId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-       * </pre>
-       *
-       * <code>optional string sdkUserName = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public Builder setSdkUserName(
+      public Builder setUserId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        sdkUserName_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-       * </pre>
-       *
-       * <code>optional string sdkUserName = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public Builder clearSdkUserName() {
+      public Builder clearUserId() {
         
-        sdkUserName_ = getDefaultInstance().getSdkUserName();
+        userId_ = getDefaultInstance().getUserId();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       *一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-       * </pre>
-       *
-       * <code>optional string sdkUserName = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public Builder setSdkUserNameBytes(
+      public Builder setUserIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        sdkUserName_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object sdkUserPWD_ = "";
+      private java.lang.Object appName_ = "";
       /**
        * <pre>
-       *sdk  密码
+       * 应用的名称，例如香纳保理业务系统
        * </pre>
        *
-       * <code>optional string sdkUserPWD = 2;</code>
+       * <code>optional string app_name = 2;</code>
        */
-      public java.lang.String getSdkUserPWD() {
-        java.lang.Object ref = sdkUserPWD_;
+      public java.lang.String getAppName() {
+        java.lang.Object ref = appName_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          sdkUserPWD_ = s;
+          appName_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4649,19 +8126,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       *sdk  密码
+       * 应用的名称，例如香纳保理业务系统
        * </pre>
        *
-       * <code>optional string sdkUserPWD = 2;</code>
+       * <code>optional string app_name = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getSdkUserPWDBytes() {
-        java.lang.Object ref = sdkUserPWD_;
+          getAppNameBytes() {
+        java.lang.Object ref = appName_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          sdkUserPWD_ = b;
+          appName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4669,68 +8146,68 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       *sdk  密码
+       * 应用的名称，例如香纳保理业务系统
        * </pre>
        *
-       * <code>optional string sdkUserPWD = 2;</code>
+       * <code>optional string app_name = 2;</code>
        */
-      public Builder setSdkUserPWD(
+      public Builder setAppName(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        sdkUserPWD_ = value;
+        appName_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *sdk  密码
+       * 应用的名称，例如香纳保理业务系统
        * </pre>
        *
-       * <code>optional string sdkUserPWD = 2;</code>
+       * <code>optional string app_name = 2;</code>
        */
-      public Builder clearSdkUserPWD() {
+      public Builder clearAppName() {
         
-        sdkUserPWD_ = getDefaultInstance().getSdkUserPWD();
+        appName_ = getDefaultInstance().getAppName();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *sdk  密码
+       * 应用的名称，例如香纳保理业务系统
        * </pre>
        *
-       * <code>optional string sdkUserPWD = 2;</code>
+       * <code>optional string app_name = 2;</code>
        */
-      public Builder setSdkUserPWDBytes(
+      public Builder setAppNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        sdkUserPWD_ = value;
+        appName_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object sdkEnrollment_ = "";
+      private java.lang.Object appType_ = "";
       /**
        * <pre>
-       *sdk  证书信息
+       * 应用的类型，例如供应商、保理、核心企业、银行
        * </pre>
        *
-       * <code>optional string sdkEnrollment = 3;</code>
+       * <code>optional string app_type = 3;</code>
        */
-      public java.lang.String getSdkEnrollment() {
-        java.lang.Object ref = sdkEnrollment_;
+      public java.lang.String getAppType() {
+        java.lang.Object ref = appType_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          sdkEnrollment_ = s;
+          appType_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -4738,19 +8215,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       *sdk  证书信息
+       * 应用的类型，例如供应商、保理、核心企业、银行
        * </pre>
        *
-       * <code>optional string sdkEnrollment = 3;</code>
+       * <code>optional string app_type = 3;</code>
        */
       public com.google.protobuf.ByteString
-          getSdkEnrollmentBytes() {
-        java.lang.Object ref = sdkEnrollment_;
+          getAppTypeBytes() {
+        java.lang.Object ref = appType_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          sdkEnrollment_ = b;
+          appType_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -4758,49 +8235,138 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       *sdk  证书信息
+       * 应用的类型，例如供应商、保理、核心企业、银行
        * </pre>
        *
-       * <code>optional string sdkEnrollment = 3;</code>
+       * <code>optional string app_type = 3;</code>
        */
-      public Builder setSdkEnrollment(
+      public Builder setAppType(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        sdkEnrollment_ = value;
+        appType_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *sdk  证书信息
+       * 应用的类型，例如供应商、保理、核心企业、银行
        * </pre>
        *
-       * <code>optional string sdkEnrollment = 3;</code>
+       * <code>optional string app_type = 3;</code>
        */
-      public Builder clearSdkEnrollment() {
+      public Builder clearAppType() {
         
-        sdkEnrollment_ = getDefaultInstance().getSdkEnrollment();
+        appType_ = getDefaultInstance().getAppType();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       *sdk  证书信息
+       * 应用的类型，例如供应商、保理、核心企业、银行
        * </pre>
        *
-       * <code>optional string sdkEnrollment = 3;</code>
+       * <code>optional string app_type = 3;</code>
        */
-      public Builder setSdkEnrollmentBytes(
+      public Builder setAppTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        sdkEnrollment_ = value;
+        appType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object publicKey_ = "";
+      /**
+       * <pre>
+       *公钥信息
+       * </pre>
+       *
+       * <code>optional string public_key = 4;</code>
+       */
+      public java.lang.String getPublicKey() {
+        java.lang.Object ref = publicKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          publicKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *公钥信息
+       * </pre>
+       *
+       * <code>optional string public_key = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPublicKeyBytes() {
+        java.lang.Object ref = publicKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          publicKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *公钥信息
+       * </pre>
+       *
+       * <code>optional string public_key = 4;</code>
+       */
+      public Builder setPublicKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        publicKey_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *公钥信息
+       * </pre>
+       *
+       * <code>optional string public_key = 4;</code>
+       */
+      public Builder clearPublicKey() {
+        
+        publicKey_ = getDefaultInstance().getPublicKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *公钥信息
+       * </pre>
+       *
+       * <code>optional string public_key = 4;</code>
+       */
+      public Builder setPublicKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        publicKey_ = value;
         onChanged();
         return this;
       }
@@ -4815,162 +8381,64 @@ public final class Appconfig {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protos.SDKUserInfo)
+      // @@protoc_insertion_point(builder_scope:protos.UserInfo)
     }
 
-    // @@protoc_insertion_point(class_scope:protos.SDKUserInfo)
-    private static final com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protos.UserInfo)
+    private static final com.xiangna.www.protos.configuration.Appconfig.UserInfo DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo();
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.UserInfo();
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo getDefaultInstance() {
+    public static com.xiangna.www.protos.configuration.Appconfig.UserInfo getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SDKUserInfo>
-        PARSER = new com.google.protobuf.AbstractParser<SDKUserInfo>() {
-      public SDKUserInfo parsePartialFrom(
+    private static final com.google.protobuf.Parser<UserInfo>
+        PARSER = new com.google.protobuf.AbstractParser<UserInfo>() {
+      public UserInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SDKUserInfo(input, extensionRegistry);
+          return new UserInfo(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<SDKUserInfo> parser() {
+    public static com.google.protobuf.Parser<UserInfo> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SDKUserInfo> getParserForType() {
+    public com.google.protobuf.Parser<UserInfo> getParserForType() {
       return PARSER;
     }
 
-    public com.xiangna.www.protos.configuration.Appconfig.SDKUserInfo getDefaultInstanceForType() {
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface APPConfigOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:protos.APPConfig)
+  public interface CommercialOrgOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.CommercialOrg)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-     * </pre>
-     *
-     * <code>optional string appId = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
-    java.lang.String getAppId();
+    java.lang.String getUserId();
     /**
-     * <pre>
-     * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-     * </pre>
-     *
-     * <code>optional string appId = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
     com.google.protobuf.ByteString
-        getAppIdBytes();
-
-    /**
-     * <pre>
-     * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-     * </pre>
-     *
-     * <code>optional string appKey = 2;</code>
-     */
-    java.lang.String getAppKey();
-    /**
-     * <pre>
-     * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-     * </pre>
-     *
-     * <code>optional string appKey = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getAppKeyBytes();
-
-    /**
-     * <pre>
-     * 该应用的名称，例如香纳保理业务系统
-     * </pre>
-     *
-     * <code>optional string appName = 3;</code>
-     */
-    java.lang.String getAppName();
-    /**
-     * <pre>
-     * 该应用的名称，例如香纳保理业务系统
-     * </pre>
-     *
-     * <code>optional string appName = 3;</code>
-     */
-    com.google.protobuf.ByteString
-        getAppNameBytes();
-
-    /**
-     * <pre>
-     * 该应用的类型，例如供应商、保理、核心企业、银行
-     * </pre>
-     *
-     * <code>optional string appType = 4;</code>
-     */
-    java.lang.String getAppType();
-    /**
-     * <pre>
-     * 该应用的类型，例如供应商、保理、核心企业、银行
-     * </pre>
-     *
-     * <code>optional string appType = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getAppTypeBytes();
-
-    /**
-     * <pre>
-     * 调用OA系统的url地址
-     * </pre>
-     *
-     * <code>optional string appCallbackUrl = 5;</code>
-     */
-    java.lang.String getAppCallbackUrl();
-    /**
-     * <pre>
-     * 调用OA系统的url地址
-     * </pre>
-     *
-     * <code>optional string appCallbackUrl = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getAppCallbackUrlBytes();
-
-    /**
-     * <pre>
-     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-     * </pre>
-     *
-     * <code>optional string secureIp = 6;</code>
-     */
-    java.lang.String getSecureIp();
-    /**
-     * <pre>
-     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-     * </pre>
-     *
-     * <code>optional string secureIp = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getSecureIpBytes();
+        getUserIdBytes();
 
     /**
      * <pre>
      * 机构名称
      * </pre>
      *
-     * <code>optional string orgName = 7;</code>
+     * <code>optional string org_name = 4;</code>
      */
     java.lang.String getOrgName();
     /**
@@ -4978,7 +8446,7 @@ public final class Appconfig {
      * 机构名称
      * </pre>
      *
-     * <code>optional string orgName = 7;</code>
+     * <code>optional string org_name = 4;</code>
      */
     com.google.protobuf.ByteString
         getOrgNameBytes();
@@ -4988,7 +8456,7 @@ public final class Appconfig {
      * 机构地址
      * </pre>
      *
-     * <code>optional string orgAddress = 8;</code>
+     * <code>optional string org_address = 5;</code>
      */
     java.lang.String getOrgAddress();
     /**
@@ -4996,162 +8464,296 @@ public final class Appconfig {
      * 机构地址
      * </pre>
      *
-     * <code>optional string orgAddress = 8;</code>
+     * <code>optional string org_address = 5;</code>
      */
     com.google.protobuf.ByteString
         getOrgAddressBytes();
 
     /**
      * <pre>
-     * 业务接口人姓名，与User表没联系
+     *机构注册地址
      * </pre>
      *
-     * <code>optional string bizContactName = 9;</code>
+     * <code>optional string org_register_address = 6;</code>
      */
-    java.lang.String getBizContactName();
+    java.lang.String getOrgRegisterAddress();
     /**
      * <pre>
-     * 业务接口人姓名，与User表没联系
+     *机构注册地址
      * </pre>
      *
-     * <code>optional string bizContactName = 9;</code>
+     * <code>optional string org_register_address = 6;</code>
      */
     com.google.protobuf.ByteString
-        getBizContactNameBytes();
+        getOrgRegisterAddressBytes();
 
     /**
      * <pre>
-     * 业务接口人电话
+     * 联系电话
      * </pre>
      *
-     * <code>optional string bizContactTel = 10;</code>
+     * <code>optional string telephone = 7;</code>
      */
-    java.lang.String getBizContactTel();
+    java.lang.String getTelephone();
     /**
      * <pre>
-     * 业务接口人电话
+     * 联系电话
      * </pre>
      *
-     * <code>optional string bizContactTel = 10;</code>
+     * <code>optional string telephone = 7;</code>
      */
     com.google.protobuf.ByteString
-        getBizContactTelBytes();
+        getTelephoneBytes();
 
     /**
      * <pre>
-     * 业务接口人email
+     * 邮箱
      * </pre>
      *
-     * <code>optional string bizContaceEmail = 11;</code>
+     * <code>optional string email = 8;</code>
      */
-    java.lang.String getBizContaceEmail();
+    java.lang.String getEmail();
     /**
      * <pre>
-     * 业务接口人email
+     * 邮箱
      * </pre>
      *
-     * <code>optional string bizContaceEmail = 11;</code>
+     * <code>optional string email = 8;</code>
      */
     com.google.protobuf.ByteString
-        getBizContaceEmailBytes();
+        getEmailBytes();
 
     /**
      * <pre>
-     * 技术接口人姓名，与User表没联系
+     *机构法人
      * </pre>
      *
-     * <code>optional string techContactName = 12;</code>
+     * <code>optional string org_legal_person = 9;</code>
      */
-    java.lang.String getTechContactName();
+    java.lang.String getOrgLegalPerson();
     /**
      * <pre>
-     * 技术接口人姓名，与User表没联系
+     *机构法人
      * </pre>
      *
-     * <code>optional string techContactName = 12;</code>
+     * <code>optional string org_legal_person = 9;</code>
      */
     com.google.protobuf.ByteString
-        getTechContactNameBytes();
+        getOrgLegalPersonBytes();
 
     /**
      * <pre>
-     * 技术接口人电话
+     * 机构代码或统一社会信用代码
      * </pre>
      *
-     * <code>optional string techContactTel = 13;</code>
+     * <code>optional string orgnization_code = 10;</code>
      */
-    java.lang.String getTechContactTel();
+    java.lang.String getOrgnizationCode();
     /**
      * <pre>
-     * 技术接口人电话
+     * 机构代码或统一社会信用代码
      * </pre>
      *
-     * <code>optional string techContactTel = 13;</code>
+     * <code>optional string orgnization_code = 10;</code>
      */
     com.google.protobuf.ByteString
-        getTechContactTelBytes();
+        getOrgnizationCodeBytes();
 
     /**
      * <pre>
-     * 技术接口人电话email
+     * 工商营业执照编号
      * </pre>
      *
-     * <code>optional string techContactEmail = 14;</code>
+     * <code>optional string business_licence_no = 11;</code>
      */
-    java.lang.String getTechContactEmail();
+    java.lang.String getBusinessLicenceNo();
     /**
      * <pre>
-     * 技术接口人电话email
+     * 工商营业执照编号
      * </pre>
      *
-     * <code>optional string techContactEmail = 14;</code>
+     * <code>optional string business_licence_no = 11;</code>
      */
     com.google.protobuf.ByteString
-        getTechContactEmailBytes();
+        getBusinessLicenceNoBytes();
 
     /**
-     * <code>optional .protos.OperateInfo opInfo = 15;</code>
+     * <pre>
+     * 税务登记证编号
+     * </pre>
+     *
+     * <code>optional string tax_registration_no = 12;</code>
+     */
+    java.lang.String getTaxRegistrationNo();
+    /**
+     * <pre>
+     * 税务登记证编号
+     * </pre>
+     *
+     * <code>optional string tax_registration_no = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getTaxRegistrationNoBytes();
+
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    java.util.List<com.xiangna.www.protos.configuration.Appconfig.ContactPerson> 
+        getContactsList();
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    com.xiangna.www.protos.configuration.Appconfig.ContactPerson getContacts(int index);
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    int getContactsCount();
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> 
+        getContactsOrBuilderList();
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getContactsOrBuilder(
+        int index);
+
+    /**
+     * <pre>
+     * 结算账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+     */
+    boolean hasSettlementAccount();
+    /**
+     * <pre>
+     * 结算账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+     */
+    com.xiangna.www.protos.common.Common.OrgBankAccount getSettlementAccount();
+    /**
+     * <pre>
+     * 结算账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+     */
+    com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getSettlementAccountOrBuilder();
+
+    /**
+     * <pre>
+     * 保理账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+     */
+    boolean hasPolicyAccount();
+    /**
+     * <pre>
+     * 保理账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+     */
+    com.xiangna.www.protos.common.Common.OrgBankAccount getPolicyAccount();
+    /**
+     * <pre>
+     * 保理账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+     */
+    com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getPolicyAccountOrBuilder();
+
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> 
+        getOrgFilesList();
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFile getOrgFiles(int index);
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    int getOrgFilesCount();
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+        getOrgFilesOrBuilderList();
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getOrgFilesOrBuilder(
+        int index);
+
+    /**
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
      */
     boolean hasOpInfo();
     /**
-     * <code>optional .protos.OperateInfo opInfo = 15;</code>
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
      */
     com.xiangna.www.protos.common.Common.OperateInfo getOpInfo();
     /**
-     * <code>optional .protos.OperateInfo opInfo = 15;</code>
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
      */
     com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder();
   }
   /**
    * <pre>
-   *key 为 HAMC(APPID, "APPConfig")
+   *key 为 ORG-userID
    * </pre>
    *
-   * Protobuf type {@code protos.APPConfig}
+   * Protobuf type {@code protos.CommercialOrg}
    */
-  public  static final class APPConfig extends
+  public  static final class CommercialOrg extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:protos.APPConfig)
-      APPConfigOrBuilder {
-    // Use APPConfig.newBuilder() to construct.
-    private APPConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:protos.CommercialOrg)
+      CommercialOrgOrBuilder {
+    // Use CommercialOrg.newBuilder() to construct.
+    private CommercialOrg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private APPConfig() {
-      appId_ = "";
-      appKey_ = "";
-      appName_ = "";
-      appType_ = "";
-      appCallbackUrl_ = "";
-      secureIp_ = "";
+    private CommercialOrg() {
+      userId_ = "";
       orgName_ = "";
       orgAddress_ = "";
-      bizContactName_ = "";
-      bizContactTel_ = "";
-      bizContaceEmail_ = "";
-      techContactName_ = "";
-      techContactTel_ = "";
-      techContactEmail_ = "";
+      orgRegisterAddress_ = "";
+      telephone_ = "";
+      email_ = "";
+      orgLegalPerson_ = "";
+      orgnizationCode_ = "";
+      businessLicenceNo_ = "";
+      taxRegistrationNo_ = "";
+      contacts_ = java.util.Collections.emptyList();
+      orgFiles_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5159,7 +8761,7 @@ public final class Appconfig {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private APPConfig(
+    private CommercialOrg(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5182,88 +8784,108 @@ public final class Appconfig {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              appId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              appKey_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              appName_ = s;
+              userId_ = s;
               break;
             }
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              appType_ = s;
+              orgName_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              appCallbackUrl_ = s;
+              orgAddress_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              secureIp_ = s;
+              orgRegisterAddress_ = s;
               break;
             }
             case 58: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              orgName_ = s;
+              telephone_ = s;
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              orgAddress_ = s;
+              email_ = s;
               break;
             }
             case 74: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              bizContactName_ = s;
+              orgLegalPerson_ = s;
               break;
             }
             case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              bizContactTel_ = s;
+              orgnizationCode_ = s;
               break;
             }
             case 90: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              bizContaceEmail_ = s;
+              businessLicenceNo_ = s;
               break;
             }
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              techContactName_ = s;
+              taxRegistrationNo_ = s;
               break;
             }
             case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              techContactTel_ = s;
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                contacts_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.ContactPerson>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              contacts_.add(
+                  input.readMessage(com.xiangna.www.protos.configuration.Appconfig.ContactPerson.parser(), extensionRegistry));
               break;
             }
             case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
+              com.xiangna.www.protos.common.Common.OrgBankAccount.Builder subBuilder = null;
+              if (settlementAccount_ != null) {
+                subBuilder = settlementAccount_.toBuilder();
+              }
+              settlementAccount_ = input.readMessage(com.xiangna.www.protos.common.Common.OrgBankAccount.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(settlementAccount_);
+                settlementAccount_ = subBuilder.buildPartial();
+              }
 
-              techContactEmail_ = s;
               break;
             }
             case 122: {
+              com.xiangna.www.protos.common.Common.OrgBankAccount.Builder subBuilder = null;
+              if (policyAccount_ != null) {
+                subBuilder = policyAccount_.toBuilder();
+              }
+              policyAccount_ = input.readMessage(com.xiangna.www.protos.common.Common.OrgBankAccount.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(policyAccount_);
+                policyAccount_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+                orgFiles_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              orgFiles_.add(
+                  input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
+              break;
+            }
+            case 138: {
               com.xiangna.www.protos.common.Common.OperateInfo.Builder subBuilder = null;
               if (opInfo_ != null) {
                 subBuilder = opInfo_.toBuilder();
@@ -5284,281 +8906,70 @@ public final class Appconfig {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          contacts_ = java.util.Collections.unmodifiableList(contacts_);
+        }
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+          orgFiles_ = java.util.Collections.unmodifiableList(orgFiles_);
+        }
         makeExtensionsImmutable();
       }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_APPConfig_descriptor;
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_CommercialOrg_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_APPConfig_fieldAccessorTable
+      return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_CommercialOrg_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.xiangna.www.protos.configuration.Appconfig.APPConfig.class, com.xiangna.www.protos.configuration.Appconfig.APPConfig.Builder.class);
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.class, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder.class);
     }
 
-    public static final int APPID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object appId_;
+    private int bitField0_;
+    public static final int USER_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object userId_;
     /**
-     * <pre>
-     * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-     * </pre>
-     *
-     * <code>optional string appId = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
-    public java.lang.String getAppId() {
-      java.lang.Object ref = appId_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        appId_ = s;
+        userId_ = s;
         return s;
       }
     }
     /**
-     * <pre>
-     * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-     * </pre>
-     *
-     * <code>optional string appId = 1;</code>
+     * <code>optional string user_id = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getAppIdBytes() {
-      java.lang.Object ref = appId_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        appId_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int APPKEY_FIELD_NUMBER = 2;
-    private volatile java.lang.Object appKey_;
-    /**
-     * <pre>
-     * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-     * </pre>
-     *
-     * <code>optional string appKey = 2;</code>
-     */
-    public java.lang.String getAppKey() {
-      java.lang.Object ref = appKey_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appKey_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-     * </pre>
-     *
-     * <code>optional string appKey = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAppKeyBytes() {
-      java.lang.Object ref = appKey_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appKey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int APPNAME_FIELD_NUMBER = 3;
-    private volatile java.lang.Object appName_;
-    /**
-     * <pre>
-     * 该应用的名称，例如香纳保理业务系统
-     * </pre>
-     *
-     * <code>optional string appName = 3;</code>
-     */
-    public java.lang.String getAppName() {
-      java.lang.Object ref = appName_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appName_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 该应用的名称，例如香纳保理业务系统
-     * </pre>
-     *
-     * <code>optional string appName = 3;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAppNameBytes() {
-      java.lang.Object ref = appName_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int APPTYPE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object appType_;
-    /**
-     * <pre>
-     * 该应用的类型，例如供应商、保理、核心企业、银行
-     * </pre>
-     *
-     * <code>optional string appType = 4;</code>
-     */
-    public java.lang.String getAppType() {
-      java.lang.Object ref = appType_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appType_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 该应用的类型，例如供应商、保理、核心企业、银行
-     * </pre>
-     *
-     * <code>optional string appType = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAppTypeBytes() {
-      java.lang.Object ref = appType_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int APPCALLBACKURL_FIELD_NUMBER = 5;
-    private volatile java.lang.Object appCallbackUrl_;
-    /**
-     * <pre>
-     * 调用OA系统的url地址
-     * </pre>
-     *
-     * <code>optional string appCallbackUrl = 5;</code>
-     */
-    public java.lang.String getAppCallbackUrl() {
-      java.lang.Object ref = appCallbackUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        appCallbackUrl_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 调用OA系统的url地址
-     * </pre>
-     *
-     * <code>optional string appCallbackUrl = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getAppCallbackUrlBytes() {
-      java.lang.Object ref = appCallbackUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        appCallbackUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int SECUREIP_FIELD_NUMBER = 6;
-    private volatile java.lang.Object secureIp_;
-    /**
-     * <pre>
-     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-     * </pre>
-     *
-     * <code>optional string secureIp = 6;</code>
-     */
-    public java.lang.String getSecureIp() {
-      java.lang.Object ref = secureIp_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        secureIp_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-     * </pre>
-     *
-     * <code>optional string secureIp = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSecureIpBytes() {
-      java.lang.Object ref = secureIp_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        secureIp_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ORGNAME_FIELD_NUMBER = 7;
+    public static final int ORG_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object orgName_;
     /**
      * <pre>
      * 机构名称
      * </pre>
      *
-     * <code>optional string orgName = 7;</code>
+     * <code>optional string org_name = 4;</code>
      */
     public java.lang.String getOrgName() {
       java.lang.Object ref = orgName_;
@@ -5577,7 +8988,7 @@ public final class Appconfig {
      * 机构名称
      * </pre>
      *
-     * <code>optional string orgName = 7;</code>
+     * <code>optional string org_name = 4;</code>
      */
     public com.google.protobuf.ByteString
         getOrgNameBytes() {
@@ -5593,14 +9004,14 @@ public final class Appconfig {
       }
     }
 
-    public static final int ORGADDRESS_FIELD_NUMBER = 8;
+    public static final int ORG_ADDRESS_FIELD_NUMBER = 5;
     private volatile java.lang.Object orgAddress_;
     /**
      * <pre>
      * 机构地址
      * </pre>
      *
-     * <code>optional string orgAddress = 8;</code>
+     * <code>optional string org_address = 5;</code>
      */
     public java.lang.String getOrgAddress() {
       java.lang.Object ref = orgAddress_;
@@ -5619,7 +9030,7 @@ public final class Appconfig {
      * 机构地址
      * </pre>
      *
-     * <code>optional string orgAddress = 8;</code>
+     * <code>optional string org_address = 5;</code>
      */
     public com.google.protobuf.ByteString
         getOrgAddressBytes() {
@@ -5635,274 +9046,472 @@ public final class Appconfig {
       }
     }
 
-    public static final int BIZCONTACTNAME_FIELD_NUMBER = 9;
-    private volatile java.lang.Object bizContactName_;
+    public static final int ORG_REGISTER_ADDRESS_FIELD_NUMBER = 6;
+    private volatile java.lang.Object orgRegisterAddress_;
     /**
      * <pre>
-     * 业务接口人姓名，与User表没联系
+     *机构注册地址
      * </pre>
      *
-     * <code>optional string bizContactName = 9;</code>
+     * <code>optional string org_register_address = 6;</code>
      */
-    public java.lang.String getBizContactName() {
-      java.lang.Object ref = bizContactName_;
+    public java.lang.String getOrgRegisterAddress() {
+      java.lang.Object ref = orgRegisterAddress_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        bizContactName_ = s;
+        orgRegisterAddress_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 业务接口人姓名，与User表没联系
+     *机构注册地址
      * </pre>
      *
-     * <code>optional string bizContactName = 9;</code>
+     * <code>optional string org_register_address = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getBizContactNameBytes() {
-      java.lang.Object ref = bizContactName_;
+        getOrgRegisterAddressBytes() {
+      java.lang.Object ref = orgRegisterAddress_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        bizContactName_ = b;
+        orgRegisterAddress_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BIZCONTACTTEL_FIELD_NUMBER = 10;
-    private volatile java.lang.Object bizContactTel_;
+    public static final int TELEPHONE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object telephone_;
     /**
      * <pre>
-     * 业务接口人电话
+     * 联系电话
      * </pre>
      *
-     * <code>optional string bizContactTel = 10;</code>
+     * <code>optional string telephone = 7;</code>
      */
-    public java.lang.String getBizContactTel() {
-      java.lang.Object ref = bizContactTel_;
+    public java.lang.String getTelephone() {
+      java.lang.Object ref = telephone_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        bizContactTel_ = s;
+        telephone_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 业务接口人电话
+     * 联系电话
      * </pre>
      *
-     * <code>optional string bizContactTel = 10;</code>
+     * <code>optional string telephone = 7;</code>
      */
     public com.google.protobuf.ByteString
-        getBizContactTelBytes() {
-      java.lang.Object ref = bizContactTel_;
+        getTelephoneBytes() {
+      java.lang.Object ref = telephone_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        bizContactTel_ = b;
+        telephone_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int BIZCONTACEEMAIL_FIELD_NUMBER = 11;
-    private volatile java.lang.Object bizContaceEmail_;
+    public static final int EMAIL_FIELD_NUMBER = 8;
+    private volatile java.lang.Object email_;
     /**
      * <pre>
-     * 业务接口人email
+     * 邮箱
      * </pre>
      *
-     * <code>optional string bizContaceEmail = 11;</code>
+     * <code>optional string email = 8;</code>
      */
-    public java.lang.String getBizContaceEmail() {
-      java.lang.Object ref = bizContaceEmail_;
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        bizContaceEmail_ = s;
+        email_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 业务接口人email
+     * 邮箱
      * </pre>
      *
-     * <code>optional string bizContaceEmail = 11;</code>
+     * <code>optional string email = 8;</code>
      */
     public com.google.protobuf.ByteString
-        getBizContaceEmailBytes() {
-      java.lang.Object ref = bizContaceEmail_;
+        getEmailBytes() {
+      java.lang.Object ref = email_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        bizContaceEmail_ = b;
+        email_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TECHCONTACTNAME_FIELD_NUMBER = 12;
-    private volatile java.lang.Object techContactName_;
+    public static final int ORG_LEGAL_PERSON_FIELD_NUMBER = 9;
+    private volatile java.lang.Object orgLegalPerson_;
     /**
      * <pre>
-     * 技术接口人姓名，与User表没联系
+     *机构法人
      * </pre>
      *
-     * <code>optional string techContactName = 12;</code>
+     * <code>optional string org_legal_person = 9;</code>
      */
-    public java.lang.String getTechContactName() {
-      java.lang.Object ref = techContactName_;
+    public java.lang.String getOrgLegalPerson() {
+      java.lang.Object ref = orgLegalPerson_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        techContactName_ = s;
+        orgLegalPerson_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 技术接口人姓名，与User表没联系
+     *机构法人
      * </pre>
      *
-     * <code>optional string techContactName = 12;</code>
+     * <code>optional string org_legal_person = 9;</code>
      */
     public com.google.protobuf.ByteString
-        getTechContactNameBytes() {
-      java.lang.Object ref = techContactName_;
+        getOrgLegalPersonBytes() {
+      java.lang.Object ref = orgLegalPerson_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        techContactName_ = b;
+        orgLegalPerson_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TECHCONTACTTEL_FIELD_NUMBER = 13;
-    private volatile java.lang.Object techContactTel_;
+    public static final int ORGNIZATION_CODE_FIELD_NUMBER = 10;
+    private volatile java.lang.Object orgnizationCode_;
     /**
      * <pre>
-     * 技术接口人电话
+     * 机构代码或统一社会信用代码
      * </pre>
      *
-     * <code>optional string techContactTel = 13;</code>
+     * <code>optional string orgnization_code = 10;</code>
      */
-    public java.lang.String getTechContactTel() {
-      java.lang.Object ref = techContactTel_;
+    public java.lang.String getOrgnizationCode() {
+      java.lang.Object ref = orgnizationCode_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        techContactTel_ = s;
+        orgnizationCode_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 技术接口人电话
+     * 机构代码或统一社会信用代码
      * </pre>
      *
-     * <code>optional string techContactTel = 13;</code>
+     * <code>optional string orgnization_code = 10;</code>
      */
     public com.google.protobuf.ByteString
-        getTechContactTelBytes() {
-      java.lang.Object ref = techContactTel_;
+        getOrgnizationCodeBytes() {
+      java.lang.Object ref = orgnizationCode_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        techContactTel_ = b;
+        orgnizationCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TECHCONTACTEMAIL_FIELD_NUMBER = 14;
-    private volatile java.lang.Object techContactEmail_;
+    public static final int BUSINESS_LICENCE_NO_FIELD_NUMBER = 11;
+    private volatile java.lang.Object businessLicenceNo_;
     /**
      * <pre>
-     * 技术接口人电话email
+     * 工商营业执照编号
      * </pre>
      *
-     * <code>optional string techContactEmail = 14;</code>
+     * <code>optional string business_licence_no = 11;</code>
      */
-    public java.lang.String getTechContactEmail() {
-      java.lang.Object ref = techContactEmail_;
+    public java.lang.String getBusinessLicenceNo() {
+      java.lang.Object ref = businessLicenceNo_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        techContactEmail_ = s;
+        businessLicenceNo_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 技术接口人电话email
+     * 工商营业执照编号
      * </pre>
      *
-     * <code>optional string techContactEmail = 14;</code>
+     * <code>optional string business_licence_no = 11;</code>
      */
     public com.google.protobuf.ByteString
-        getTechContactEmailBytes() {
-      java.lang.Object ref = techContactEmail_;
+        getBusinessLicenceNoBytes() {
+      java.lang.Object ref = businessLicenceNo_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        techContactEmail_ = b;
+        businessLicenceNo_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int OPINFO_FIELD_NUMBER = 15;
+    public static final int TAX_REGISTRATION_NO_FIELD_NUMBER = 12;
+    private volatile java.lang.Object taxRegistrationNo_;
+    /**
+     * <pre>
+     * 税务登记证编号
+     * </pre>
+     *
+     * <code>optional string tax_registration_no = 12;</code>
+     */
+    public java.lang.String getTaxRegistrationNo() {
+      java.lang.Object ref = taxRegistrationNo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        taxRegistrationNo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 税务登记证编号
+     * </pre>
+     *
+     * <code>optional string tax_registration_no = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTaxRegistrationNoBytes() {
+      java.lang.Object ref = taxRegistrationNo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        taxRegistrationNo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTACTS_FIELD_NUMBER = 13;
+    private java.util.List<com.xiangna.www.protos.configuration.Appconfig.ContactPerson> contacts_;
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.configuration.Appconfig.ContactPerson> getContactsList() {
+      return contacts_;
+    }
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> 
+        getContactsOrBuilderList() {
+      return contacts_;
+    }
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    public int getContactsCount() {
+      return contacts_.size();
+    }
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getContacts(int index) {
+      return contacts_.get(index);
+    }
+    /**
+     * <code>repeated .protos.ContactPerson contacts = 13;</code>
+     */
+    public com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getContactsOrBuilder(
+        int index) {
+      return contacts_.get(index);
+    }
+
+    public static final int SETTLEMENT_ACCOUNT_FIELD_NUMBER = 14;
+    private com.xiangna.www.protos.common.Common.OrgBankAccount settlementAccount_;
+    /**
+     * <pre>
+     * 结算账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+     */
+    public boolean hasSettlementAccount() {
+      return settlementAccount_ != null;
+    }
+    /**
+     * <pre>
+     * 结算账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OrgBankAccount getSettlementAccount() {
+      return settlementAccount_ == null ? com.xiangna.www.protos.common.Common.OrgBankAccount.getDefaultInstance() : settlementAccount_;
+    }
+    /**
+     * <pre>
+     * 结算账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getSettlementAccountOrBuilder() {
+      return getSettlementAccount();
+    }
+
+    public static final int POLICY_ACCOUNT_FIELD_NUMBER = 15;
+    private com.xiangna.www.protos.common.Common.OrgBankAccount policyAccount_;
+    /**
+     * <pre>
+     * 保理账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+     */
+    public boolean hasPolicyAccount() {
+      return policyAccount_ != null;
+    }
+    /**
+     * <pre>
+     * 保理账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OrgBankAccount getPolicyAccount() {
+      return policyAccount_ == null ? com.xiangna.www.protos.common.Common.OrgBankAccount.getDefaultInstance() : policyAccount_;
+    }
+    /**
+     * <pre>
+     * 保理账户
+     * </pre>
+     *
+     * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+     */
+    public com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getPolicyAccountOrBuilder() {
+      return getPolicyAccount();
+    }
+
+    public static final int ORG_FILES_FIELD_NUMBER = 16;
+    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> orgFiles_;
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getOrgFilesList() {
+      return orgFiles_;
+    }
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+        getOrgFilesOrBuilderList() {
+      return orgFiles_;
+    }
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    public int getOrgFilesCount() {
+      return orgFiles_.size();
+    }
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFile getOrgFiles(int index) {
+      return orgFiles_.get(index);
+    }
+    /**
+     * <pre>
+     * 机构相关文件存放
+     * </pre>
+     *
+     * <code>repeated .protos.LedgerFile org_files = 16;</code>
+     */
+    public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getOrgFilesOrBuilder(
+        int index) {
+      return orgFiles_.get(index);
+    }
+
+    public static final int OP_INFO_FIELD_NUMBER = 17;
     private com.xiangna.www.protos.common.Common.OperateInfo opInfo_;
     /**
-     * <code>optional .protos.OperateInfo opInfo = 15;</code>
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
      */
     public boolean hasOpInfo() {
       return opInfo_ != null;
     }
     /**
-     * <code>optional .protos.OperateInfo opInfo = 15;</code>
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
      */
     public com.xiangna.www.protos.common.Common.OperateInfo getOpInfo() {
       return opInfo_ == null ? com.xiangna.www.protos.common.Common.OperateInfo.getDefaultInstance() : opInfo_;
     }
     /**
-     * <code>optional .protos.OperateInfo opInfo = 15;</code>
+     * <code>optional .protos.OperateInfo op_info = 17;</code>
      */
     public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder() {
       return getOpInfo();
@@ -5920,50 +9529,50 @@ public final class Appconfig {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getAppIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, appId_);
-      }
-      if (!getAppKeyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appKey_);
-      }
-      if (!getAppNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, appName_);
-      }
-      if (!getAppTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, appType_);
-      }
-      if (!getAppCallbackUrlBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, appCallbackUrl_);
-      }
-      if (!getSecureIpBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, secureIp_);
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, userId_);
       }
       if (!getOrgNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, orgName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, orgName_);
       }
       if (!getOrgAddressBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, orgAddress_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, orgAddress_);
       }
-      if (!getBizContactNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, bizContactName_);
+      if (!getOrgRegisterAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, orgRegisterAddress_);
       }
-      if (!getBizContactTelBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, bizContactTel_);
+      if (!getTelephoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, telephone_);
       }
-      if (!getBizContaceEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, bizContaceEmail_);
+      if (!getEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, email_);
       }
-      if (!getTechContactNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, techContactName_);
+      if (!getOrgLegalPersonBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, orgLegalPerson_);
       }
-      if (!getTechContactTelBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, techContactTel_);
+      if (!getOrgnizationCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, orgnizationCode_);
       }
-      if (!getTechContactEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, techContactEmail_);
+      if (!getBusinessLicenceNoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, businessLicenceNo_);
+      }
+      if (!getTaxRegistrationNoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, taxRegistrationNo_);
+      }
+      for (int i = 0; i < contacts_.size(); i++) {
+        output.writeMessage(13, contacts_.get(i));
+      }
+      if (settlementAccount_ != null) {
+        output.writeMessage(14, getSettlementAccount());
+      }
+      if (policyAccount_ != null) {
+        output.writeMessage(15, getPolicyAccount());
+      }
+      for (int i = 0; i < orgFiles_.size(); i++) {
+        output.writeMessage(16, orgFiles_.get(i));
       }
       if (opInfo_ != null) {
-        output.writeMessage(15, getOpInfo());
+        output.writeMessage(17, getOpInfo());
       }
     }
 
@@ -5972,51 +9581,55 @@ public final class Appconfig {
       if (size != -1) return size;
 
       size = 0;
-      if (!getAppIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, appId_);
-      }
-      if (!getAppKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appKey_);
-      }
-      if (!getAppNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, appName_);
-      }
-      if (!getAppTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, appType_);
-      }
-      if (!getAppCallbackUrlBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, appCallbackUrl_);
-      }
-      if (!getSecureIpBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, secureIp_);
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, userId_);
       }
       if (!getOrgNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, orgName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, orgName_);
       }
       if (!getOrgAddressBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, orgAddress_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, orgAddress_);
       }
-      if (!getBizContactNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, bizContactName_);
+      if (!getOrgRegisterAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, orgRegisterAddress_);
       }
-      if (!getBizContactTelBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, bizContactTel_);
+      if (!getTelephoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, telephone_);
       }
-      if (!getBizContaceEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, bizContaceEmail_);
+      if (!getEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, email_);
       }
-      if (!getTechContactNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, techContactName_);
+      if (!getOrgLegalPersonBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, orgLegalPerson_);
       }
-      if (!getTechContactTelBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, techContactTel_);
+      if (!getOrgnizationCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, orgnizationCode_);
       }
-      if (!getTechContactEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, techContactEmail_);
+      if (!getBusinessLicenceNoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, businessLicenceNo_);
+      }
+      if (!getTaxRegistrationNoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, taxRegistrationNo_);
+      }
+      for (int i = 0; i < contacts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, contacts_.get(i));
+      }
+      if (settlementAccount_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, getSettlementAccount());
+      }
+      if (policyAccount_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, getPolicyAccount());
+      }
+      for (int i = 0; i < orgFiles_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, orgFiles_.get(i));
       }
       if (opInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getOpInfo());
+          .computeMessageSize(17, getOpInfo());
       }
       memoizedSize = size;
       return size;
@@ -6028,40 +9641,46 @@ public final class Appconfig {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.APPConfig)) {
+      if (!(obj instanceof com.xiangna.www.protos.configuration.Appconfig.CommercialOrg)) {
         return super.equals(obj);
       }
-      com.xiangna.www.protos.configuration.Appconfig.APPConfig other = (com.xiangna.www.protos.configuration.Appconfig.APPConfig) obj;
+      com.xiangna.www.protos.configuration.Appconfig.CommercialOrg other = (com.xiangna.www.protos.configuration.Appconfig.CommercialOrg) obj;
 
       boolean result = true;
-      result = result && getAppId()
-          .equals(other.getAppId());
-      result = result && getAppKey()
-          .equals(other.getAppKey());
-      result = result && getAppName()
-          .equals(other.getAppName());
-      result = result && getAppType()
-          .equals(other.getAppType());
-      result = result && getAppCallbackUrl()
-          .equals(other.getAppCallbackUrl());
-      result = result && getSecureIp()
-          .equals(other.getSecureIp());
+      result = result && getUserId()
+          .equals(other.getUserId());
       result = result && getOrgName()
           .equals(other.getOrgName());
       result = result && getOrgAddress()
           .equals(other.getOrgAddress());
-      result = result && getBizContactName()
-          .equals(other.getBizContactName());
-      result = result && getBizContactTel()
-          .equals(other.getBizContactTel());
-      result = result && getBizContaceEmail()
-          .equals(other.getBizContaceEmail());
-      result = result && getTechContactName()
-          .equals(other.getTechContactName());
-      result = result && getTechContactTel()
-          .equals(other.getTechContactTel());
-      result = result && getTechContactEmail()
-          .equals(other.getTechContactEmail());
+      result = result && getOrgRegisterAddress()
+          .equals(other.getOrgRegisterAddress());
+      result = result && getTelephone()
+          .equals(other.getTelephone());
+      result = result && getEmail()
+          .equals(other.getEmail());
+      result = result && getOrgLegalPerson()
+          .equals(other.getOrgLegalPerson());
+      result = result && getOrgnizationCode()
+          .equals(other.getOrgnizationCode());
+      result = result && getBusinessLicenceNo()
+          .equals(other.getBusinessLicenceNo());
+      result = result && getTaxRegistrationNo()
+          .equals(other.getTaxRegistrationNo());
+      result = result && getContactsList()
+          .equals(other.getContactsList());
+      result = result && (hasSettlementAccount() == other.hasSettlementAccount());
+      if (hasSettlementAccount()) {
+        result = result && getSettlementAccount()
+            .equals(other.getSettlementAccount());
+      }
+      result = result && (hasPolicyAccount() == other.hasPolicyAccount());
+      if (hasPolicyAccount()) {
+        result = result && getPolicyAccount()
+            .equals(other.getPolicyAccount());
+      }
+      result = result && getOrgFilesList()
+          .equals(other.getOrgFilesList());
       result = result && (hasOpInfo() == other.hasOpInfo());
       if (hasOpInfo()) {
         result = result && getOpInfo()
@@ -6077,36 +9696,44 @@ public final class Appconfig {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + APPID_FIELD_NUMBER;
-      hash = (53 * hash) + getAppId().hashCode();
-      hash = (37 * hash) + APPKEY_FIELD_NUMBER;
-      hash = (53 * hash) + getAppKey().hashCode();
-      hash = (37 * hash) + APPNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getAppName().hashCode();
-      hash = (37 * hash) + APPTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getAppType().hashCode();
-      hash = (37 * hash) + APPCALLBACKURL_FIELD_NUMBER;
-      hash = (53 * hash) + getAppCallbackUrl().hashCode();
-      hash = (37 * hash) + SECUREIP_FIELD_NUMBER;
-      hash = (53 * hash) + getSecureIp().hashCode();
-      hash = (37 * hash) + ORGNAME_FIELD_NUMBER;
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
+      hash = (37 * hash) + ORG_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getOrgName().hashCode();
-      hash = (37 * hash) + ORGADDRESS_FIELD_NUMBER;
+      hash = (37 * hash) + ORG_ADDRESS_FIELD_NUMBER;
       hash = (53 * hash) + getOrgAddress().hashCode();
-      hash = (37 * hash) + BIZCONTACTNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getBizContactName().hashCode();
-      hash = (37 * hash) + BIZCONTACTTEL_FIELD_NUMBER;
-      hash = (53 * hash) + getBizContactTel().hashCode();
-      hash = (37 * hash) + BIZCONTACEEMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getBizContaceEmail().hashCode();
-      hash = (37 * hash) + TECHCONTACTNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getTechContactName().hashCode();
-      hash = (37 * hash) + TECHCONTACTTEL_FIELD_NUMBER;
-      hash = (53 * hash) + getTechContactTel().hashCode();
-      hash = (37 * hash) + TECHCONTACTEMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getTechContactEmail().hashCode();
+      hash = (37 * hash) + ORG_REGISTER_ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getOrgRegisterAddress().hashCode();
+      hash = (37 * hash) + TELEPHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getTelephone().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + ORG_LEGAL_PERSON_FIELD_NUMBER;
+      hash = (53 * hash) + getOrgLegalPerson().hashCode();
+      hash = (37 * hash) + ORGNIZATION_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getOrgnizationCode().hashCode();
+      hash = (37 * hash) + BUSINESS_LICENCE_NO_FIELD_NUMBER;
+      hash = (53 * hash) + getBusinessLicenceNo().hashCode();
+      hash = (37 * hash) + TAX_REGISTRATION_NO_FIELD_NUMBER;
+      hash = (53 * hash) + getTaxRegistrationNo().hashCode();
+      if (getContactsCount() > 0) {
+        hash = (37 * hash) + CONTACTS_FIELD_NUMBER;
+        hash = (53 * hash) + getContactsList().hashCode();
+      }
+      if (hasSettlementAccount()) {
+        hash = (37 * hash) + SETTLEMENT_ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getSettlementAccount().hashCode();
+      }
+      if (hasPolicyAccount()) {
+        hash = (37 * hash) + POLICY_ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getPolicyAccount().hashCode();
+      }
+      if (getOrgFilesCount() > 0) {
+        hash = (37 * hash) + ORG_FILES_FIELD_NUMBER;
+        hash = (53 * hash) + getOrgFilesList().hashCode();
+      }
       if (hasOpInfo()) {
-        hash = (37 * hash) + OPINFO_FIELD_NUMBER;
+        hash = (37 * hash) + OP_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getOpInfo().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
@@ -6114,58 +9741,58 @@ public final class Appconfig {
       return hash;
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(byte[] data)
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseDelimitedFrom(java.io.InputStream input)
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseDelimitedFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig parseFrom(
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6177,7 +9804,7 @@ public final class Appconfig {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.APPConfig prototype) {
+    public static Builder newBuilder(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6193,28 +9820,28 @@ public final class Appconfig {
     }
     /**
      * <pre>
-     *key 为 HAMC(APPID, "APPConfig")
+     *key 为 ORG-userID
      * </pre>
      *
-     * Protobuf type {@code protos.APPConfig}
+     * Protobuf type {@code protos.CommercialOrg}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:protos.APPConfig)
-        com.xiangna.www.protos.configuration.Appconfig.APPConfigOrBuilder {
+        // @@protoc_insertion_point(builder_implements:protos.CommercialOrg)
+        com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_APPConfig_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_CommercialOrg_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_APPConfig_fieldAccessorTable
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_CommercialOrg_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.xiangna.www.protos.configuration.Appconfig.APPConfig.class, com.xiangna.www.protos.configuration.Appconfig.APPConfig.Builder.class);
+                com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.class, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder.class);
       }
 
-      // Construct using com.xiangna.www.protos.configuration.Appconfig.APPConfig.newBuilder()
+      // Construct using com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6227,38 +9854,56 @@ public final class Appconfig {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getContactsFieldBuilder();
+          getOrgFilesFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        appId_ = "";
-
-        appKey_ = "";
-
-        appName_ = "";
-
-        appType_ = "";
-
-        appCallbackUrl_ = "";
-
-        secureIp_ = "";
+        userId_ = "";
 
         orgName_ = "";
 
         orgAddress_ = "";
 
-        bizContactName_ = "";
+        orgRegisterAddress_ = "";
 
-        bizContactTel_ = "";
+        telephone_ = "";
 
-        bizContaceEmail_ = "";
+        email_ = "";
 
-        techContactName_ = "";
+        orgLegalPerson_ = "";
 
-        techContactTel_ = "";
+        orgnizationCode_ = "";
 
-        techContactEmail_ = "";
+        businessLicenceNo_ = "";
 
+        taxRegistrationNo_ = "";
+
+        if (contactsBuilder_ == null) {
+          contacts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          contactsBuilder_.clear();
+        }
+        if (settlementAccountBuilder_ == null) {
+          settlementAccount_ = null;
+        } else {
+          settlementAccount_ = null;
+          settlementAccountBuilder_ = null;
+        }
+        if (policyAccountBuilder_ == null) {
+          policyAccount_ = null;
+        } else {
+          policyAccount_ = null;
+          policyAccountBuilder_ = null;
+        }
+        if (orgFilesBuilder_ == null) {
+          orgFiles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          orgFilesBuilder_.clear();
+        }
         if (opInfoBuilder_ == null) {
           opInfo_ = null;
         } else {
@@ -6270,42 +9915,69 @@ public final class Appconfig {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_APPConfig_descriptor;
+        return com.xiangna.www.protos.configuration.Appconfig.internal_static_protos_CommercialOrg_descriptor;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.APPConfig getDefaultInstanceForType() {
-        return com.xiangna.www.protos.configuration.Appconfig.APPConfig.getDefaultInstance();
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getDefaultInstanceForType() {
+        return com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance();
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.APPConfig build() {
-        com.xiangna.www.protos.configuration.Appconfig.APPConfig result = buildPartial();
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg build() {
+        com.xiangna.www.protos.configuration.Appconfig.CommercialOrg result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.xiangna.www.protos.configuration.Appconfig.APPConfig buildPartial() {
-        com.xiangna.www.protos.configuration.Appconfig.APPConfig result = new com.xiangna.www.protos.configuration.Appconfig.APPConfig(this);
-        result.appId_ = appId_;
-        result.appKey_ = appKey_;
-        result.appName_ = appName_;
-        result.appType_ = appType_;
-        result.appCallbackUrl_ = appCallbackUrl_;
-        result.secureIp_ = secureIp_;
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg buildPartial() {
+        com.xiangna.www.protos.configuration.Appconfig.CommercialOrg result = new com.xiangna.www.protos.configuration.Appconfig.CommercialOrg(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.userId_ = userId_;
         result.orgName_ = orgName_;
         result.orgAddress_ = orgAddress_;
-        result.bizContactName_ = bizContactName_;
-        result.bizContactTel_ = bizContactTel_;
-        result.bizContaceEmail_ = bizContaceEmail_;
-        result.techContactName_ = techContactName_;
-        result.techContactTel_ = techContactTel_;
-        result.techContactEmail_ = techContactEmail_;
+        result.orgRegisterAddress_ = orgRegisterAddress_;
+        result.telephone_ = telephone_;
+        result.email_ = email_;
+        result.orgLegalPerson_ = orgLegalPerson_;
+        result.orgnizationCode_ = orgnizationCode_;
+        result.businessLicenceNo_ = businessLicenceNo_;
+        result.taxRegistrationNo_ = taxRegistrationNo_;
+        if (contactsBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            contacts_ = java.util.Collections.unmodifiableList(contacts_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
+          result.contacts_ = contacts_;
+        } else {
+          result.contacts_ = contactsBuilder_.build();
+        }
+        if (settlementAccountBuilder_ == null) {
+          result.settlementAccount_ = settlementAccount_;
+        } else {
+          result.settlementAccount_ = settlementAccountBuilder_.build();
+        }
+        if (policyAccountBuilder_ == null) {
+          result.policyAccount_ = policyAccount_;
+        } else {
+          result.policyAccount_ = policyAccountBuilder_.build();
+        }
+        if (orgFilesBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
+            orgFiles_ = java.util.Collections.unmodifiableList(orgFiles_);
+            bitField0_ = (bitField0_ & ~0x00002000);
+          }
+          result.orgFiles_ = orgFiles_;
+        } else {
+          result.orgFiles_ = orgFilesBuilder_.build();
+        }
         if (opInfoBuilder_ == null) {
           result.opInfo_ = opInfo_;
         } else {
           result.opInfo_ = opInfoBuilder_.build();
         }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -6337,38 +10009,18 @@ public final class Appconfig {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.APPConfig) {
-          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.APPConfig)other);
+        if (other instanceof com.xiangna.www.protos.configuration.Appconfig.CommercialOrg) {
+          return mergeFrom((com.xiangna.www.protos.configuration.Appconfig.CommercialOrg)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.APPConfig other) {
-        if (other == com.xiangna.www.protos.configuration.Appconfig.APPConfig.getDefaultInstance()) return this;
-        if (!other.getAppId().isEmpty()) {
-          appId_ = other.appId_;
-          onChanged();
-        }
-        if (!other.getAppKey().isEmpty()) {
-          appKey_ = other.appKey_;
-          onChanged();
-        }
-        if (!other.getAppName().isEmpty()) {
-          appName_ = other.appName_;
-          onChanged();
-        }
-        if (!other.getAppType().isEmpty()) {
-          appType_ = other.appType_;
-          onChanged();
-        }
-        if (!other.getAppCallbackUrl().isEmpty()) {
-          appCallbackUrl_ = other.appCallbackUrl_;
-          onChanged();
-        }
-        if (!other.getSecureIp().isEmpty()) {
-          secureIp_ = other.secureIp_;
+      public Builder mergeFrom(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg other) {
+        if (other == com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance()) return this;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
           onChanged();
         }
         if (!other.getOrgName().isEmpty()) {
@@ -6379,29 +10031,91 @@ public final class Appconfig {
           orgAddress_ = other.orgAddress_;
           onChanged();
         }
-        if (!other.getBizContactName().isEmpty()) {
-          bizContactName_ = other.bizContactName_;
+        if (!other.getOrgRegisterAddress().isEmpty()) {
+          orgRegisterAddress_ = other.orgRegisterAddress_;
           onChanged();
         }
-        if (!other.getBizContactTel().isEmpty()) {
-          bizContactTel_ = other.bizContactTel_;
+        if (!other.getTelephone().isEmpty()) {
+          telephone_ = other.telephone_;
           onChanged();
         }
-        if (!other.getBizContaceEmail().isEmpty()) {
-          bizContaceEmail_ = other.bizContaceEmail_;
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
           onChanged();
         }
-        if (!other.getTechContactName().isEmpty()) {
-          techContactName_ = other.techContactName_;
+        if (!other.getOrgLegalPerson().isEmpty()) {
+          orgLegalPerson_ = other.orgLegalPerson_;
           onChanged();
         }
-        if (!other.getTechContactTel().isEmpty()) {
-          techContactTel_ = other.techContactTel_;
+        if (!other.getOrgnizationCode().isEmpty()) {
+          orgnizationCode_ = other.orgnizationCode_;
           onChanged();
         }
-        if (!other.getTechContactEmail().isEmpty()) {
-          techContactEmail_ = other.techContactEmail_;
+        if (!other.getBusinessLicenceNo().isEmpty()) {
+          businessLicenceNo_ = other.businessLicenceNo_;
           onChanged();
+        }
+        if (!other.getTaxRegistrationNo().isEmpty()) {
+          taxRegistrationNo_ = other.taxRegistrationNo_;
+          onChanged();
+        }
+        if (contactsBuilder_ == null) {
+          if (!other.contacts_.isEmpty()) {
+            if (contacts_.isEmpty()) {
+              contacts_ = other.contacts_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensureContactsIsMutable();
+              contacts_.addAll(other.contacts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.contacts_.isEmpty()) {
+            if (contactsBuilder_.isEmpty()) {
+              contactsBuilder_.dispose();
+              contactsBuilder_ = null;
+              contacts_ = other.contacts_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              contactsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getContactsFieldBuilder() : null;
+            } else {
+              contactsBuilder_.addAllMessages(other.contacts_);
+            }
+          }
+        }
+        if (other.hasSettlementAccount()) {
+          mergeSettlementAccount(other.getSettlementAccount());
+        }
+        if (other.hasPolicyAccount()) {
+          mergePolicyAccount(other.getPolicyAccount());
+        }
+        if (orgFilesBuilder_ == null) {
+          if (!other.orgFiles_.isEmpty()) {
+            if (orgFiles_.isEmpty()) {
+              orgFiles_ = other.orgFiles_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+            } else {
+              ensureOrgFilesIsMutable();
+              orgFiles_.addAll(other.orgFiles_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.orgFiles_.isEmpty()) {
+            if (orgFilesBuilder_.isEmpty()) {
+              orgFilesBuilder_.dispose();
+              orgFilesBuilder_ = null;
+              orgFiles_ = other.orgFiles_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+              orgFilesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getOrgFilesFieldBuilder() : null;
+            } else {
+              orgFilesBuilder_.addAllMessages(other.orgFiles_);
+            }
+          }
         }
         if (other.hasOpInfo()) {
           mergeOpInfo(other.getOpInfo());
@@ -6418,11 +10132,11 @@ public final class Appconfig {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.xiangna.www.protos.configuration.Appconfig.APPConfig parsedMessage = null;
+        com.xiangna.www.protos.configuration.Appconfig.CommercialOrg parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.APPConfig) e.getUnfinishedMessage();
+          parsedMessage = (com.xiangna.www.protos.configuration.Appconfig.CommercialOrg) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6431,537 +10145,73 @@ public final class Appconfig {
         }
         return this;
       }
+      private int bitField0_;
 
-      private java.lang.Object appId_ = "";
+      private java.lang.Object userId_ = "";
       /**
-       * <pre>
-       * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-       * </pre>
-       *
-       * <code>optional string appId = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public java.lang.String getAppId() {
-        java.lang.Object ref = appId_;
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          appId_ = s;
+          userId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <pre>
-       * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-       * </pre>
-       *
-       * <code>optional string appId = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getAppIdBytes() {
-        java.lang.Object ref = appId_;
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          appId_ = b;
+          userId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <pre>
-       * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-       * </pre>
-       *
-       * <code>optional string appId = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public Builder setAppId(
+      public Builder setUserId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        appId_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-       * </pre>
-       *
-       * <code>optional string appId = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public Builder clearAppId() {
+      public Builder clearUserId() {
         
-        appId_ = getDefaultInstance().getAppId();
+        userId_ = getDefaultInstance().getUserId();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-       * </pre>
-       *
-       * <code>optional string appId = 1;</code>
+       * <code>optional string user_id = 1;</code>
        */
-      public Builder setAppIdBytes(
+      public Builder setUserIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        appId_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object appKey_ = "";
-      /**
-       * <pre>
-       * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-       * </pre>
-       *
-       * <code>optional string appKey = 2;</code>
-       */
-      public java.lang.String getAppKey() {
-        java.lang.Object ref = appKey_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appKey_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-       * </pre>
-       *
-       * <code>optional string appKey = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAppKeyBytes() {
-        java.lang.Object ref = appKey_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appKey_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-       * </pre>
-       *
-       * <code>optional string appKey = 2;</code>
-       */
-      public Builder setAppKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appKey_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-       * </pre>
-       *
-       * <code>optional string appKey = 2;</code>
-       */
-      public Builder clearAppKey() {
-        
-        appKey_ = getDefaultInstance().getAppKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-       * </pre>
-       *
-       * <code>optional string appKey = 2;</code>
-       */
-      public Builder setAppKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appKey_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object appName_ = "";
-      /**
-       * <pre>
-       * 该应用的名称，例如香纳保理业务系统
-       * </pre>
-       *
-       * <code>optional string appName = 3;</code>
-       */
-      public java.lang.String getAppName() {
-        java.lang.Object ref = appName_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appName_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 该应用的名称，例如香纳保理业务系统
-       * </pre>
-       *
-       * <code>optional string appName = 3;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAppNameBytes() {
-        java.lang.Object ref = appName_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appName_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 该应用的名称，例如香纳保理业务系统
-       * </pre>
-       *
-       * <code>optional string appName = 3;</code>
-       */
-      public Builder setAppName(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appName_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 该应用的名称，例如香纳保理业务系统
-       * </pre>
-       *
-       * <code>optional string appName = 3;</code>
-       */
-      public Builder clearAppName() {
-        
-        appName_ = getDefaultInstance().getAppName();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 该应用的名称，例如香纳保理业务系统
-       * </pre>
-       *
-       * <code>optional string appName = 3;</code>
-       */
-      public Builder setAppNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appName_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object appType_ = "";
-      /**
-       * <pre>
-       * 该应用的类型，例如供应商、保理、核心企业、银行
-       * </pre>
-       *
-       * <code>optional string appType = 4;</code>
-       */
-      public java.lang.String getAppType() {
-        java.lang.Object ref = appType_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appType_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 该应用的类型，例如供应商、保理、核心企业、银行
-       * </pre>
-       *
-       * <code>optional string appType = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAppTypeBytes() {
-        java.lang.Object ref = appType_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appType_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 该应用的类型，例如供应商、保理、核心企业、银行
-       * </pre>
-       *
-       * <code>optional string appType = 4;</code>
-       */
-      public Builder setAppType(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 该应用的类型，例如供应商、保理、核心企业、银行
-       * </pre>
-       *
-       * <code>optional string appType = 4;</code>
-       */
-      public Builder clearAppType() {
-        
-        appType_ = getDefaultInstance().getAppType();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 该应用的类型，例如供应商、保理、核心企业、银行
-       * </pre>
-       *
-       * <code>optional string appType = 4;</code>
-       */
-      public Builder setAppTypeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appType_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object appCallbackUrl_ = "";
-      /**
-       * <pre>
-       * 调用OA系统的url地址
-       * </pre>
-       *
-       * <code>optional string appCallbackUrl = 5;</code>
-       */
-      public java.lang.String getAppCallbackUrl() {
-        java.lang.Object ref = appCallbackUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          appCallbackUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 调用OA系统的url地址
-       * </pre>
-       *
-       * <code>optional string appCallbackUrl = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getAppCallbackUrlBytes() {
-        java.lang.Object ref = appCallbackUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          appCallbackUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 调用OA系统的url地址
-       * </pre>
-       *
-       * <code>optional string appCallbackUrl = 5;</code>
-       */
-      public Builder setAppCallbackUrl(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        appCallbackUrl_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 调用OA系统的url地址
-       * </pre>
-       *
-       * <code>optional string appCallbackUrl = 5;</code>
-       */
-      public Builder clearAppCallbackUrl() {
-        
-        appCallbackUrl_ = getDefaultInstance().getAppCallbackUrl();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 调用OA系统的url地址
-       * </pre>
-       *
-       * <code>optional string appCallbackUrl = 5;</code>
-       */
-      public Builder setAppCallbackUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        appCallbackUrl_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object secureIp_ = "";
-      /**
-       * <pre>
-       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-       * </pre>
-       *
-       * <code>optional string secureIp = 6;</code>
-       */
-      public java.lang.String getSecureIp() {
-        java.lang.Object ref = secureIp_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          secureIp_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-       * </pre>
-       *
-       * <code>optional string secureIp = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSecureIpBytes() {
-        java.lang.Object ref = secureIp_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          secureIp_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-       * </pre>
-       *
-       * <code>optional string secureIp = 6;</code>
-       */
-      public Builder setSecureIp(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        secureIp_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-       * </pre>
-       *
-       * <code>optional string secureIp = 6;</code>
-       */
-      public Builder clearSecureIp() {
-        
-        secureIp_ = getDefaultInstance().getSecureIp();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
-       * </pre>
-       *
-       * <code>optional string secureIp = 6;</code>
-       */
-      public Builder setSecureIpBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        secureIp_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -6972,7 +10222,7 @@ public final class Appconfig {
        * 机构名称
        * </pre>
        *
-       * <code>optional string orgName = 7;</code>
+       * <code>optional string org_name = 4;</code>
        */
       public java.lang.String getOrgName() {
         java.lang.Object ref = orgName_;
@@ -6991,7 +10241,7 @@ public final class Appconfig {
        * 机构名称
        * </pre>
        *
-       * <code>optional string orgName = 7;</code>
+       * <code>optional string org_name = 4;</code>
        */
       public com.google.protobuf.ByteString
           getOrgNameBytes() {
@@ -7011,7 +10261,7 @@ public final class Appconfig {
        * 机构名称
        * </pre>
        *
-       * <code>optional string orgName = 7;</code>
+       * <code>optional string org_name = 4;</code>
        */
       public Builder setOrgName(
           java.lang.String value) {
@@ -7028,7 +10278,7 @@ public final class Appconfig {
        * 机构名称
        * </pre>
        *
-       * <code>optional string orgName = 7;</code>
+       * <code>optional string org_name = 4;</code>
        */
       public Builder clearOrgName() {
         
@@ -7041,7 +10291,7 @@ public final class Appconfig {
        * 机构名称
        * </pre>
        *
-       * <code>optional string orgName = 7;</code>
+       * <code>optional string org_name = 4;</code>
        */
       public Builder setOrgNameBytes(
           com.google.protobuf.ByteString value) {
@@ -7061,7 +10311,7 @@ public final class Appconfig {
        * 机构地址
        * </pre>
        *
-       * <code>optional string orgAddress = 8;</code>
+       * <code>optional string org_address = 5;</code>
        */
       public java.lang.String getOrgAddress() {
         java.lang.Object ref = orgAddress_;
@@ -7080,7 +10330,7 @@ public final class Appconfig {
        * 机构地址
        * </pre>
        *
-       * <code>optional string orgAddress = 8;</code>
+       * <code>optional string org_address = 5;</code>
        */
       public com.google.protobuf.ByteString
           getOrgAddressBytes() {
@@ -7100,7 +10350,7 @@ public final class Appconfig {
        * 机构地址
        * </pre>
        *
-       * <code>optional string orgAddress = 8;</code>
+       * <code>optional string org_address = 5;</code>
        */
       public Builder setOrgAddress(
           java.lang.String value) {
@@ -7117,7 +10367,7 @@ public final class Appconfig {
        * 机构地址
        * </pre>
        *
-       * <code>optional string orgAddress = 8;</code>
+       * <code>optional string org_address = 5;</code>
        */
       public Builder clearOrgAddress() {
         
@@ -7130,7 +10380,7 @@ public final class Appconfig {
        * 机构地址
        * </pre>
        *
-       * <code>optional string orgAddress = 8;</code>
+       * <code>optional string org_address = 5;</code>
        */
       public Builder setOrgAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -7144,21 +10394,21 @@ public final class Appconfig {
         return this;
       }
 
-      private java.lang.Object bizContactName_ = "";
+      private java.lang.Object orgRegisterAddress_ = "";
       /**
        * <pre>
-       * 业务接口人姓名，与User表没联系
+       *机构注册地址
        * </pre>
        *
-       * <code>optional string bizContactName = 9;</code>
+       * <code>optional string org_register_address = 6;</code>
        */
-      public java.lang.String getBizContactName() {
-        java.lang.Object ref = bizContactName_;
+      public java.lang.String getOrgRegisterAddress() {
+        java.lang.Object ref = orgRegisterAddress_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          bizContactName_ = s;
+          orgRegisterAddress_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7166,19 +10416,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 业务接口人姓名，与User表没联系
+       *机构注册地址
        * </pre>
        *
-       * <code>optional string bizContactName = 9;</code>
+       * <code>optional string org_register_address = 6;</code>
        */
       public com.google.protobuf.ByteString
-          getBizContactNameBytes() {
-        java.lang.Object ref = bizContactName_;
+          getOrgRegisterAddressBytes() {
+        java.lang.Object ref = orgRegisterAddress_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          bizContactName_ = b;
+          orgRegisterAddress_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7186,68 +10436,68 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 业务接口人姓名，与User表没联系
+       *机构注册地址
        * </pre>
        *
-       * <code>optional string bizContactName = 9;</code>
+       * <code>optional string org_register_address = 6;</code>
        */
-      public Builder setBizContactName(
+      public Builder setOrgRegisterAddress(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        bizContactName_ = value;
+        orgRegisterAddress_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 业务接口人姓名，与User表没联系
+       *机构注册地址
        * </pre>
        *
-       * <code>optional string bizContactName = 9;</code>
+       * <code>optional string org_register_address = 6;</code>
        */
-      public Builder clearBizContactName() {
+      public Builder clearOrgRegisterAddress() {
         
-        bizContactName_ = getDefaultInstance().getBizContactName();
+        orgRegisterAddress_ = getDefaultInstance().getOrgRegisterAddress();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 业务接口人姓名，与User表没联系
+       *机构注册地址
        * </pre>
        *
-       * <code>optional string bizContactName = 9;</code>
+       * <code>optional string org_register_address = 6;</code>
        */
-      public Builder setBizContactNameBytes(
+      public Builder setOrgRegisterAddressBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        bizContactName_ = value;
+        orgRegisterAddress_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object bizContactTel_ = "";
+      private java.lang.Object telephone_ = "";
       /**
        * <pre>
-       * 业务接口人电话
+       * 联系电话
        * </pre>
        *
-       * <code>optional string bizContactTel = 10;</code>
+       * <code>optional string telephone = 7;</code>
        */
-      public java.lang.String getBizContactTel() {
-        java.lang.Object ref = bizContactTel_;
+      public java.lang.String getTelephone() {
+        java.lang.Object ref = telephone_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          bizContactTel_ = s;
+          telephone_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7255,19 +10505,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 业务接口人电话
+       * 联系电话
        * </pre>
        *
-       * <code>optional string bizContactTel = 10;</code>
+       * <code>optional string telephone = 7;</code>
        */
       public com.google.protobuf.ByteString
-          getBizContactTelBytes() {
-        java.lang.Object ref = bizContactTel_;
+          getTelephoneBytes() {
+        java.lang.Object ref = telephone_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          bizContactTel_ = b;
+          telephone_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7275,68 +10525,68 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 业务接口人电话
+       * 联系电话
        * </pre>
        *
-       * <code>optional string bizContactTel = 10;</code>
+       * <code>optional string telephone = 7;</code>
        */
-      public Builder setBizContactTel(
+      public Builder setTelephone(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        bizContactTel_ = value;
+        telephone_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 业务接口人电话
+       * 联系电话
        * </pre>
        *
-       * <code>optional string bizContactTel = 10;</code>
+       * <code>optional string telephone = 7;</code>
        */
-      public Builder clearBizContactTel() {
+      public Builder clearTelephone() {
         
-        bizContactTel_ = getDefaultInstance().getBizContactTel();
+        telephone_ = getDefaultInstance().getTelephone();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 业务接口人电话
+       * 联系电话
        * </pre>
        *
-       * <code>optional string bizContactTel = 10;</code>
+       * <code>optional string telephone = 7;</code>
        */
-      public Builder setBizContactTelBytes(
+      public Builder setTelephoneBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        bizContactTel_ = value;
+        telephone_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object bizContaceEmail_ = "";
+      private java.lang.Object email_ = "";
       /**
        * <pre>
-       * 业务接口人email
+       * 邮箱
        * </pre>
        *
-       * <code>optional string bizContaceEmail = 11;</code>
+       * <code>optional string email = 8;</code>
        */
-      public java.lang.String getBizContaceEmail() {
-        java.lang.Object ref = bizContaceEmail_;
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          bizContaceEmail_ = s;
+          email_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7344,19 +10594,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 业务接口人email
+       * 邮箱
        * </pre>
        *
-       * <code>optional string bizContaceEmail = 11;</code>
+       * <code>optional string email = 8;</code>
        */
       public com.google.protobuf.ByteString
-          getBizContaceEmailBytes() {
-        java.lang.Object ref = bizContaceEmail_;
+          getEmailBytes() {
+        java.lang.Object ref = email_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          bizContaceEmail_ = b;
+          email_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7364,68 +10614,68 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 业务接口人email
+       * 邮箱
        * </pre>
        *
-       * <code>optional string bizContaceEmail = 11;</code>
+       * <code>optional string email = 8;</code>
        */
-      public Builder setBizContaceEmail(
+      public Builder setEmail(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        bizContaceEmail_ = value;
+        email_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 业务接口人email
+       * 邮箱
        * </pre>
        *
-       * <code>optional string bizContaceEmail = 11;</code>
+       * <code>optional string email = 8;</code>
        */
-      public Builder clearBizContaceEmail() {
+      public Builder clearEmail() {
         
-        bizContaceEmail_ = getDefaultInstance().getBizContaceEmail();
+        email_ = getDefaultInstance().getEmail();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 业务接口人email
+       * 邮箱
        * </pre>
        *
-       * <code>optional string bizContaceEmail = 11;</code>
+       * <code>optional string email = 8;</code>
        */
-      public Builder setBizContaceEmailBytes(
+      public Builder setEmailBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        bizContaceEmail_ = value;
+        email_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object techContactName_ = "";
+      private java.lang.Object orgLegalPerson_ = "";
       /**
        * <pre>
-       * 技术接口人姓名，与User表没联系
+       *机构法人
        * </pre>
        *
-       * <code>optional string techContactName = 12;</code>
+       * <code>optional string org_legal_person = 9;</code>
        */
-      public java.lang.String getTechContactName() {
-        java.lang.Object ref = techContactName_;
+      public java.lang.String getOrgLegalPerson() {
+        java.lang.Object ref = orgLegalPerson_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          techContactName_ = s;
+          orgLegalPerson_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7433,19 +10683,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 技术接口人姓名，与User表没联系
+       *机构法人
        * </pre>
        *
-       * <code>optional string techContactName = 12;</code>
+       * <code>optional string org_legal_person = 9;</code>
        */
       public com.google.protobuf.ByteString
-          getTechContactNameBytes() {
-        java.lang.Object ref = techContactName_;
+          getOrgLegalPersonBytes() {
+        java.lang.Object ref = orgLegalPerson_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          techContactName_ = b;
+          orgLegalPerson_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7453,68 +10703,68 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 技术接口人姓名，与User表没联系
+       *机构法人
        * </pre>
        *
-       * <code>optional string techContactName = 12;</code>
+       * <code>optional string org_legal_person = 9;</code>
        */
-      public Builder setTechContactName(
+      public Builder setOrgLegalPerson(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        techContactName_ = value;
+        orgLegalPerson_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 技术接口人姓名，与User表没联系
+       *机构法人
        * </pre>
        *
-       * <code>optional string techContactName = 12;</code>
+       * <code>optional string org_legal_person = 9;</code>
        */
-      public Builder clearTechContactName() {
+      public Builder clearOrgLegalPerson() {
         
-        techContactName_ = getDefaultInstance().getTechContactName();
+        orgLegalPerson_ = getDefaultInstance().getOrgLegalPerson();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 技术接口人姓名，与User表没联系
+       *机构法人
        * </pre>
        *
-       * <code>optional string techContactName = 12;</code>
+       * <code>optional string org_legal_person = 9;</code>
        */
-      public Builder setTechContactNameBytes(
+      public Builder setOrgLegalPersonBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        techContactName_ = value;
+        orgLegalPerson_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object techContactTel_ = "";
+      private java.lang.Object orgnizationCode_ = "";
       /**
        * <pre>
-       * 技术接口人电话
+       * 机构代码或统一社会信用代码
        * </pre>
        *
-       * <code>optional string techContactTel = 13;</code>
+       * <code>optional string orgnization_code = 10;</code>
        */
-      public java.lang.String getTechContactTel() {
-        java.lang.Object ref = techContactTel_;
+      public java.lang.String getOrgnizationCode() {
+        java.lang.Object ref = orgnizationCode_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          techContactTel_ = s;
+          orgnizationCode_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7522,19 +10772,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 技术接口人电话
+       * 机构代码或统一社会信用代码
        * </pre>
        *
-       * <code>optional string techContactTel = 13;</code>
+       * <code>optional string orgnization_code = 10;</code>
        */
       public com.google.protobuf.ByteString
-          getTechContactTelBytes() {
-        java.lang.Object ref = techContactTel_;
+          getOrgnizationCodeBytes() {
+        java.lang.Object ref = orgnizationCode_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          techContactTel_ = b;
+          orgnizationCode_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7542,68 +10792,68 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 技术接口人电话
+       * 机构代码或统一社会信用代码
        * </pre>
        *
-       * <code>optional string techContactTel = 13;</code>
+       * <code>optional string orgnization_code = 10;</code>
        */
-      public Builder setTechContactTel(
+      public Builder setOrgnizationCode(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        techContactTel_ = value;
+        orgnizationCode_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 技术接口人电话
+       * 机构代码或统一社会信用代码
        * </pre>
        *
-       * <code>optional string techContactTel = 13;</code>
+       * <code>optional string orgnization_code = 10;</code>
        */
-      public Builder clearTechContactTel() {
+      public Builder clearOrgnizationCode() {
         
-        techContactTel_ = getDefaultInstance().getTechContactTel();
+        orgnizationCode_ = getDefaultInstance().getOrgnizationCode();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 技术接口人电话
+       * 机构代码或统一社会信用代码
        * </pre>
        *
-       * <code>optional string techContactTel = 13;</code>
+       * <code>optional string orgnization_code = 10;</code>
        */
-      public Builder setTechContactTelBytes(
+      public Builder setOrgnizationCodeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        techContactTel_ = value;
+        orgnizationCode_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object techContactEmail_ = "";
+      private java.lang.Object businessLicenceNo_ = "";
       /**
        * <pre>
-       * 技术接口人电话email
+       * 工商营业执照编号
        * </pre>
        *
-       * <code>optional string techContactEmail = 14;</code>
+       * <code>optional string business_licence_no = 11;</code>
        */
-      public java.lang.String getTechContactEmail() {
-        java.lang.Object ref = techContactEmail_;
+      public java.lang.String getBusinessLicenceNo() {
+        java.lang.Object ref = businessLicenceNo_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          techContactEmail_ = s;
+          businessLicenceNo_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7611,19 +10861,19 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 技术接口人电话email
+       * 工商营业执照编号
        * </pre>
        *
-       * <code>optional string techContactEmail = 14;</code>
+       * <code>optional string business_licence_no = 11;</code>
        */
       public com.google.protobuf.ByteString
-          getTechContactEmailBytes() {
-        java.lang.Object ref = techContactEmail_;
+          getBusinessLicenceNoBytes() {
+        java.lang.Object ref = businessLicenceNo_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          techContactEmail_ = b;
+          businessLicenceNo_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -7631,64 +10881,1011 @@ public final class Appconfig {
       }
       /**
        * <pre>
-       * 技术接口人电话email
+       * 工商营业执照编号
        * </pre>
        *
-       * <code>optional string techContactEmail = 14;</code>
+       * <code>optional string business_licence_no = 11;</code>
        */
-      public Builder setTechContactEmail(
+      public Builder setBusinessLicenceNo(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        techContactEmail_ = value;
+        businessLicenceNo_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 技术接口人电话email
+       * 工商营业执照编号
        * </pre>
        *
-       * <code>optional string techContactEmail = 14;</code>
+       * <code>optional string business_licence_no = 11;</code>
        */
-      public Builder clearTechContactEmail() {
+      public Builder clearBusinessLicenceNo() {
         
-        techContactEmail_ = getDefaultInstance().getTechContactEmail();
+        businessLicenceNo_ = getDefaultInstance().getBusinessLicenceNo();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 技术接口人电话email
+       * 工商营业执照编号
        * </pre>
        *
-       * <code>optional string techContactEmail = 14;</code>
+       * <code>optional string business_licence_no = 11;</code>
        */
-      public Builder setTechContactEmailBytes(
+      public Builder setBusinessLicenceNoBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        techContactEmail_ = value;
+        businessLicenceNo_ = value;
         onChanged();
         return this;
+      }
+
+      private java.lang.Object taxRegistrationNo_ = "";
+      /**
+       * <pre>
+       * 税务登记证编号
+       * </pre>
+       *
+       * <code>optional string tax_registration_no = 12;</code>
+       */
+      public java.lang.String getTaxRegistrationNo() {
+        java.lang.Object ref = taxRegistrationNo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          taxRegistrationNo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 税务登记证编号
+       * </pre>
+       *
+       * <code>optional string tax_registration_no = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTaxRegistrationNoBytes() {
+        java.lang.Object ref = taxRegistrationNo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          taxRegistrationNo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 税务登记证编号
+       * </pre>
+       *
+       * <code>optional string tax_registration_no = 12;</code>
+       */
+      public Builder setTaxRegistrationNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        taxRegistrationNo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 税务登记证编号
+       * </pre>
+       *
+       * <code>optional string tax_registration_no = 12;</code>
+       */
+      public Builder clearTaxRegistrationNo() {
+        
+        taxRegistrationNo_ = getDefaultInstance().getTaxRegistrationNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 税务登记证编号
+       * </pre>
+       *
+       * <code>optional string tax_registration_no = 12;</code>
+       */
+      public Builder setTaxRegistrationNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        taxRegistrationNo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.xiangna.www.protos.configuration.Appconfig.ContactPerson> contacts_ =
+        java.util.Collections.emptyList();
+      private void ensureContactsIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          contacts_ = new java.util.ArrayList<com.xiangna.www.protos.configuration.Appconfig.ContactPerson>(contacts_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> contactsBuilder_;
+
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.ContactPerson> getContactsList() {
+        if (contactsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(contacts_);
+        } else {
+          return contactsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public int getContactsCount() {
+        if (contactsBuilder_ == null) {
+          return contacts_.size();
+        } else {
+          return contactsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson getContacts(int index) {
+        if (contactsBuilder_ == null) {
+          return contacts_.get(index);
+        } else {
+          return contactsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder setContacts(
+          int index, com.xiangna.www.protos.configuration.Appconfig.ContactPerson value) {
+        if (contactsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContactsIsMutable();
+          contacts_.set(index, value);
+          onChanged();
+        } else {
+          contactsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder setContacts(
+          int index, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder builderForValue) {
+        if (contactsBuilder_ == null) {
+          ensureContactsIsMutable();
+          contacts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          contactsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder addContacts(com.xiangna.www.protos.configuration.Appconfig.ContactPerson value) {
+        if (contactsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContactsIsMutable();
+          contacts_.add(value);
+          onChanged();
+        } else {
+          contactsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder addContacts(
+          int index, com.xiangna.www.protos.configuration.Appconfig.ContactPerson value) {
+        if (contactsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureContactsIsMutable();
+          contacts_.add(index, value);
+          onChanged();
+        } else {
+          contactsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder addContacts(
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder builderForValue) {
+        if (contactsBuilder_ == null) {
+          ensureContactsIsMutable();
+          contacts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          contactsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder addContacts(
+          int index, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder builderForValue) {
+        if (contactsBuilder_ == null) {
+          ensureContactsIsMutable();
+          contacts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          contactsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder addAllContacts(
+          java.lang.Iterable<? extends com.xiangna.www.protos.configuration.Appconfig.ContactPerson> values) {
+        if (contactsBuilder_ == null) {
+          ensureContactsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, contacts_);
+          onChanged();
+        } else {
+          contactsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder clearContacts() {
+        if (contactsBuilder_ == null) {
+          contacts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+        } else {
+          contactsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public Builder removeContacts(int index) {
+        if (contactsBuilder_ == null) {
+          ensureContactsIsMutable();
+          contacts_.remove(index);
+          onChanged();
+        } else {
+          contactsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder getContactsBuilder(
+          int index) {
+        return getContactsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder getContactsOrBuilder(
+          int index) {
+        if (contactsBuilder_ == null) {
+          return contacts_.get(index);  } else {
+          return contactsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public java.util.List<? extends com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> 
+           getContactsOrBuilderList() {
+        if (contactsBuilder_ != null) {
+          return contactsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(contacts_);
+        }
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder addContactsBuilder() {
+        return getContactsFieldBuilder().addBuilder(
+            com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder addContactsBuilder(
+          int index) {
+        return getContactsFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protos.ContactPerson contacts = 13;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder> 
+           getContactsBuilderList() {
+        return getContactsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder> 
+          getContactsFieldBuilder() {
+        if (contactsBuilder_ == null) {
+          contactsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.configuration.Appconfig.ContactPerson, com.xiangna.www.protos.configuration.Appconfig.ContactPerson.Builder, com.xiangna.www.protos.configuration.Appconfig.ContactPersonOrBuilder>(
+                  contacts_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  getParentForChildren(),
+                  isClean());
+          contacts_ = null;
+        }
+        return contactsBuilder_;
+      }
+
+      private com.xiangna.www.protos.common.Common.OrgBankAccount settlementAccount_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OrgBankAccount, com.xiangna.www.protos.common.Common.OrgBankAccount.Builder, com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder> settlementAccountBuilder_;
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public boolean hasSettlementAccount() {
+        return settlementAccountBuilder_ != null || settlementAccount_ != null;
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OrgBankAccount getSettlementAccount() {
+        if (settlementAccountBuilder_ == null) {
+          return settlementAccount_ == null ? com.xiangna.www.protos.common.Common.OrgBankAccount.getDefaultInstance() : settlementAccount_;
+        } else {
+          return settlementAccountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public Builder setSettlementAccount(com.xiangna.www.protos.common.Common.OrgBankAccount value) {
+        if (settlementAccountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          settlementAccount_ = value;
+          onChanged();
+        } else {
+          settlementAccountBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public Builder setSettlementAccount(
+          com.xiangna.www.protos.common.Common.OrgBankAccount.Builder builderForValue) {
+        if (settlementAccountBuilder_ == null) {
+          settlementAccount_ = builderForValue.build();
+          onChanged();
+        } else {
+          settlementAccountBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public Builder mergeSettlementAccount(com.xiangna.www.protos.common.Common.OrgBankAccount value) {
+        if (settlementAccountBuilder_ == null) {
+          if (settlementAccount_ != null) {
+            settlementAccount_ =
+              com.xiangna.www.protos.common.Common.OrgBankAccount.newBuilder(settlementAccount_).mergeFrom(value).buildPartial();
+          } else {
+            settlementAccount_ = value;
+          }
+          onChanged();
+        } else {
+          settlementAccountBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public Builder clearSettlementAccount() {
+        if (settlementAccountBuilder_ == null) {
+          settlementAccount_ = null;
+          onChanged();
+        } else {
+          settlementAccount_ = null;
+          settlementAccountBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OrgBankAccount.Builder getSettlementAccountBuilder() {
+        
+        onChanged();
+        return getSettlementAccountFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getSettlementAccountOrBuilder() {
+        if (settlementAccountBuilder_ != null) {
+          return settlementAccountBuilder_.getMessageOrBuilder();
+        } else {
+          return settlementAccount_ == null ?
+              com.xiangna.www.protos.common.Common.OrgBankAccount.getDefaultInstance() : settlementAccount_;
+        }
+      }
+      /**
+       * <pre>
+       * 结算账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount settlement_account = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OrgBankAccount, com.xiangna.www.protos.common.Common.OrgBankAccount.Builder, com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder> 
+          getSettlementAccountFieldBuilder() {
+        if (settlementAccountBuilder_ == null) {
+          settlementAccountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.OrgBankAccount, com.xiangna.www.protos.common.Common.OrgBankAccount.Builder, com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder>(
+                  getSettlementAccount(),
+                  getParentForChildren(),
+                  isClean());
+          settlementAccount_ = null;
+        }
+        return settlementAccountBuilder_;
+      }
+
+      private com.xiangna.www.protos.common.Common.OrgBankAccount policyAccount_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OrgBankAccount, com.xiangna.www.protos.common.Common.OrgBankAccount.Builder, com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder> policyAccountBuilder_;
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public boolean hasPolicyAccount() {
+        return policyAccountBuilder_ != null || policyAccount_ != null;
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OrgBankAccount getPolicyAccount() {
+        if (policyAccountBuilder_ == null) {
+          return policyAccount_ == null ? com.xiangna.www.protos.common.Common.OrgBankAccount.getDefaultInstance() : policyAccount_;
+        } else {
+          return policyAccountBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public Builder setPolicyAccount(com.xiangna.www.protos.common.Common.OrgBankAccount value) {
+        if (policyAccountBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          policyAccount_ = value;
+          onChanged();
+        } else {
+          policyAccountBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public Builder setPolicyAccount(
+          com.xiangna.www.protos.common.Common.OrgBankAccount.Builder builderForValue) {
+        if (policyAccountBuilder_ == null) {
+          policyAccount_ = builderForValue.build();
+          onChanged();
+        } else {
+          policyAccountBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public Builder mergePolicyAccount(com.xiangna.www.protos.common.Common.OrgBankAccount value) {
+        if (policyAccountBuilder_ == null) {
+          if (policyAccount_ != null) {
+            policyAccount_ =
+              com.xiangna.www.protos.common.Common.OrgBankAccount.newBuilder(policyAccount_).mergeFrom(value).buildPartial();
+          } else {
+            policyAccount_ = value;
+          }
+          onChanged();
+        } else {
+          policyAccountBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public Builder clearPolicyAccount() {
+        if (policyAccountBuilder_ == null) {
+          policyAccount_ = null;
+          onChanged();
+        } else {
+          policyAccount_ = null;
+          policyAccountBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OrgBankAccount.Builder getPolicyAccountBuilder() {
+        
+        onChanged();
+        return getPolicyAccountFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      public com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getPolicyAccountOrBuilder() {
+        if (policyAccountBuilder_ != null) {
+          return policyAccountBuilder_.getMessageOrBuilder();
+        } else {
+          return policyAccount_ == null ?
+              com.xiangna.www.protos.common.Common.OrgBankAccount.getDefaultInstance() : policyAccount_;
+        }
+      }
+      /**
+       * <pre>
+       * 保理账户
+       * </pre>
+       *
+       * <code>optional .protos.OrgBankAccount policy_account = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.OrgBankAccount, com.xiangna.www.protos.common.Common.OrgBankAccount.Builder, com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder> 
+          getPolicyAccountFieldBuilder() {
+        if (policyAccountBuilder_ == null) {
+          policyAccountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.OrgBankAccount, com.xiangna.www.protos.common.Common.OrgBankAccount.Builder, com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder>(
+                  getPolicyAccount(),
+                  getParentForChildren(),
+                  isClean());
+          policyAccount_ = null;
+        }
+        return policyAccountBuilder_;
+      }
+
+      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> orgFiles_ =
+        java.util.Collections.emptyList();
+      private void ensureOrgFilesIsMutable() {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+          orgFiles_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(orgFiles_);
+          bitField0_ |= 0x00002000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> orgFilesBuilder_;
+
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getOrgFilesList() {
+        if (orgFilesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(orgFiles_);
+        } else {
+          return orgFilesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public int getOrgFilesCount() {
+        if (orgFilesBuilder_ == null) {
+          return orgFiles_.size();
+        } else {
+          return orgFilesBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile getOrgFiles(int index) {
+        if (orgFilesBuilder_ == null) {
+          return orgFiles_.get(index);
+        } else {
+          return orgFilesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder setOrgFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (orgFilesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrgFilesIsMutable();
+          orgFiles_.set(index, value);
+          onChanged();
+        } else {
+          orgFilesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder setOrgFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (orgFilesBuilder_ == null) {
+          ensureOrgFilesIsMutable();
+          orgFiles_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          orgFilesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder addOrgFiles(com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (orgFilesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrgFilesIsMutable();
+          orgFiles_.add(value);
+          onChanged();
+        } else {
+          orgFilesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder addOrgFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
+        if (orgFilesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureOrgFilesIsMutable();
+          orgFiles_.add(index, value);
+          onChanged();
+        } else {
+          orgFilesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder addOrgFiles(
+          com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (orgFilesBuilder_ == null) {
+          ensureOrgFilesIsMutable();
+          orgFiles_.add(builderForValue.build());
+          onChanged();
+        } else {
+          orgFilesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder addOrgFiles(
+          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
+        if (orgFilesBuilder_ == null) {
+          ensureOrgFilesIsMutable();
+          orgFiles_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          orgFilesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder addAllOrgFiles(
+          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.LedgerFile> values) {
+        if (orgFilesBuilder_ == null) {
+          ensureOrgFilesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, orgFiles_);
+          onChanged();
+        } else {
+          orgFilesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder clearOrgFiles() {
+        if (orgFilesBuilder_ == null) {
+          orgFiles_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+          onChanged();
+        } else {
+          orgFilesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public Builder removeOrgFiles(int index) {
+        if (orgFilesBuilder_ == null) {
+          ensureOrgFilesIsMutable();
+          orgFiles_.remove(index);
+          onChanged();
+        } else {
+          orgFilesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder getOrgFilesBuilder(
+          int index) {
+        return getOrgFilesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getOrgFilesOrBuilder(
+          int index) {
+        if (orgFilesBuilder_ == null) {
+          return orgFiles_.get(index);  } else {
+          return orgFilesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+           getOrgFilesOrBuilderList() {
+        if (orgFilesBuilder_ != null) {
+          return orgFilesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(orgFiles_);
+        }
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addOrgFilesBuilder() {
+        return getOrgFilesFieldBuilder().addBuilder(
+            com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addOrgFilesBuilder(
+          int index) {
+        return getOrgFilesFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * 机构相关文件存放
+       * </pre>
+       *
+       * <code>repeated .protos.LedgerFile org_files = 16;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile.Builder> 
+           getOrgFilesBuilderList() {
+        return getOrgFilesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
+          getOrgFilesFieldBuilder() {
+        if (orgFilesBuilder_ == null) {
+          orgFilesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder>(
+                  orgFiles_,
+                  ((bitField0_ & 0x00002000) == 0x00002000),
+                  getParentForChildren(),
+                  isClean());
+          orgFiles_ = null;
+        }
+        return orgFilesBuilder_;
       }
 
       private com.xiangna.www.protos.common.Common.OperateInfo opInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> opInfoBuilder_;
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public boolean hasOpInfo() {
         return opInfoBuilder_ != null || opInfo_ != null;
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public com.xiangna.www.protos.common.Common.OperateInfo getOpInfo() {
         if (opInfoBuilder_ == null) {
@@ -7698,7 +11895,7 @@ public final class Appconfig {
         }
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public Builder setOpInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
         if (opInfoBuilder_ == null) {
@@ -7714,7 +11911,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public Builder setOpInfo(
           com.xiangna.www.protos.common.Common.OperateInfo.Builder builderForValue) {
@@ -7728,7 +11925,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public Builder mergeOpInfo(com.xiangna.www.protos.common.Common.OperateInfo value) {
         if (opInfoBuilder_ == null) {
@@ -7746,7 +11943,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public Builder clearOpInfo() {
         if (opInfoBuilder_ == null) {
@@ -7760,7 +11957,7 @@ public final class Appconfig {
         return this;
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public com.xiangna.www.protos.common.Common.OperateInfo.Builder getOpInfoBuilder() {
         
@@ -7768,7 +11965,7 @@ public final class Appconfig {
         return getOpInfoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       public com.xiangna.www.protos.common.Common.OperateInfoOrBuilder getOpInfoOrBuilder() {
         if (opInfoBuilder_ != null) {
@@ -7779,7 +11976,7 @@ public final class Appconfig {
         }
       }
       /**
-       * <code>optional .protos.OperateInfo opInfo = 15;</code>
+       * <code>optional .protos.OperateInfo op_info = 17;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.xiangna.www.protos.common.Common.OperateInfo, com.xiangna.www.protos.common.Common.OperateInfo.Builder, com.xiangna.www.protos.common.Common.OperateInfoOrBuilder> 
@@ -7805,44 +12002,54 @@ public final class Appconfig {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:protos.APPConfig)
+      // @@protoc_insertion_point(builder_scope:protos.CommercialOrg)
     }
 
-    // @@protoc_insertion_point(class_scope:protos.APPConfig)
-    private static final com.xiangna.www.protos.configuration.Appconfig.APPConfig DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:protos.CommercialOrg)
+    private static final com.xiangna.www.protos.configuration.Appconfig.CommercialOrg DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.APPConfig();
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.configuration.Appconfig.CommercialOrg();
     }
 
-    public static com.xiangna.www.protos.configuration.Appconfig.APPConfig getDefaultInstance() {
+    public static com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<APPConfig>
-        PARSER = new com.google.protobuf.AbstractParser<APPConfig>() {
-      public APPConfig parsePartialFrom(
+    private static final com.google.protobuf.Parser<CommercialOrg>
+        PARSER = new com.google.protobuf.AbstractParser<CommercialOrg>() {
+      public CommercialOrg parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new APPConfig(input, extensionRegistry);
+          return new CommercialOrg(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<APPConfig> parser() {
+    public static com.google.protobuf.Parser<CommercialOrg> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<APPConfig> getParserForType() {
+    public com.google.protobuf.Parser<CommercialOrg> getParserForType() {
       return PARSER;
     }
 
-    public com.xiangna.www.protos.configuration.Appconfig.APPConfig getDefaultInstanceForType() {
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protos_UserPrivateInfo_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protos_UserPrivateInfo_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protos_ContactPerson_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protos_ContactPerson_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protos_MultiPartiesInfo_descriptor;
   private static final 
@@ -7854,25 +12061,25 @@ public final class Appconfig {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protos_TwoPartiesInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protos_MultiPartiesInfoList_descriptor;
+    internal_static_protos_MultiPInfos_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protos_MultiPartiesInfoList_fieldAccessorTable;
+      internal_static_protos_MultiPInfos_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protos_TwoPartiesInfoList_descriptor;
+    internal_static_protos_TwoPInfos_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protos_TwoPartiesInfoList_fieldAccessorTable;
+      internal_static_protos_TwoPInfos_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protos_SDKUserInfo_descriptor;
+    internal_static_protos_UserInfo_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protos_SDKUserInfo_fieldAccessorTable;
+      internal_static_protos_UserInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_protos_APPConfig_descriptor;
+    internal_static_protos_CommercialOrg_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_protos_APPConfig_fieldAccessorTable;
+      internal_static_protos_CommercialOrg_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -7883,30 +12090,44 @@ public final class Appconfig {
   static {
     java.lang.String[] descriptorData = {
       "\n\035configuration/appconfig.proto\022\006protos\032" +
-      "\023common/common.proto\"\250\001\n\020MultiPartiesInf" +
-      "o\022\020\n\010ledgerID\030\001 \001(\t\022!\n\nenterprise\030\002 \001(\0132" +
-      "\r.protos.AppVo\022 \n\tfactoring\030\003 \001(\0132\r.prot" +
-      "os.AppVo\022\037\n\010supplier\030\004 \001(\0132\r.protos.AppV" +
-      "o\022\034\n\005banks\030\005 \003(\0132\r.protos.AppVo\"a\n\016TwoPa" +
-      "rtiesInfo\022\020\n\010ledgerID\030\001 \001(\t\022\033\n\004bank\030\002 \001(" +
-      "\0132\r.protos.AppVo\022 \n\tfactoring\030\003 \001(\0132\r.pr" +
-      "otos.AppVo\"G\n\024MultiPartiesInfoList\022/\n\rmu" +
-      "ltiInfoList\030\001 \003(\0132\030.protos.MultiPartiesI",
-      "nfo\"H\n\022TwoPartiesInfoList\0222\n\022TwoPartiesI" +
-      "nfoList\030\001 \003(\0132\026.protos.TwoPartiesInfo\"M\n" +
-      "\013SDKUserInfo\022\023\n\013sdkUserName\030\001 \001(\t\022\022\n\nsdk" +
-      "UserPWD\030\002 \001(\t\022\025\n\rsdkEnrollment\030\003 \001(\t\"\323\002\n" +
-      "\tAPPConfig\022\r\n\005appId\030\001 \001(\t\022\016\n\006appKey\030\002 \001(" +
-      "\t\022\017\n\007appName\030\003 \001(\t\022\017\n\007appType\030\004 \001(\t\022\026\n\016a" +
-      "ppCallbackUrl\030\005 \001(\t\022\020\n\010secureIp\030\006 \001(\t\022\017\n" +
-      "\007orgName\030\007 \001(\t\022\022\n\norgAddress\030\010 \001(\t\022\026\n\016bi" +
-      "zContactName\030\t \001(\t\022\025\n\rbizContactTel\030\n \001(" +
-      "\t\022\027\n\017bizContaceEmail\030\013 \001(\t\022\027\n\017techContac",
-      "tName\030\014 \001(\t\022\026\n\016techContactTel\030\r \001(\t\022\030\n\020t" +
-      "echContactEmail\030\016 \001(\t\022#\n\006opInfo\030\017 \001(\0132\023." +
-      "protos.OperateInfoBL\n$com.xiangna.www.pr" +
-      "otos.configurationZ$github.com/xncc/prot" +
-      "os/configurationb\006proto3"
+      "\023common/common.proto\"\222\002\n\017UserPrivateInfo" +
+      "\022\017\n\007user_id\030\001 \001(\t\022\022\n\npublic_key\030\002 \001(\t\022\023\n" +
+      "\013private_key\030\003 \001(\t\022\025\n\rsdk_user_name\030\004 \001(" +
+      "\t\022\024\n\014sdk_user_pwd\030\005 \001(\t\022\021\n\tsdk_ecert\030\006 \001" +
+      "(\t\022*\n\013buz_contact\030\007 \001(\0132\025.protos.Contact" +
+      "Person\022+\n\014tech_contact\030\010 \001(\0132\025.protos.Co" +
+      "ntactPerson\022\030\n\020app_callback_url\030\t \001(\t\022\022\n" +
+      "\nsecure_ips\030\n \001(\t\"<\n\rContactPerson\022\014\n\004na" +
+      "me\030\001 \001(\t\022\016\n\006mobile\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\"",
+      "\340\001\n\020MultiPartiesInfo\022\021\n\tledger_id\030\001 \001(\t\022" +
+      "$\n\nenterprise\030\002 \001(\0132\020.protos.UserInfo\022#\n" +
+      "\tfactoring\030\003 \001(\0132\020.protos.UserInfo\022\"\n\010su" +
+      "pplier\030\004 \001(\0132\020.protos.UserInfo\022$\n\nbank_i" +
+      "nfos\030\005 \003(\0132\020.protos.UserInfo\022$\n\007op_info\030" +
+      "\021 \001(\0132\023.protos.OperateInfo\"\223\001\n\016TwoPartie" +
+      "sInfo\022\021\n\tledger_id\030\001 \001(\t\022#\n\tbank_info\030\002 " +
+      "\001(\0132\020.protos.UserInfo\022#\n\tfactoring\030\003 \001(\013" +
+      "2\020.protos.UserInfo\022$\n\007op_info\030\021 \001(\0132\023.pr" +
+      "otos.OperateInfo\"6\n\013MultiPInfos\022\'\n\005infos",
+      "\030\001 \003(\0132\030.protos.MultiPartiesInfo\"2\n\tTwoP" +
+      "Infos\022%\n\005infos\030\001 \003(\0132\026.protos.TwoParties" +
+      "Info\"S\n\010UserInfo\022\017\n\007user_id\030\001 \001(\t\022\020\n\010app" +
+      "_name\030\002 \001(\t\022\020\n\010app_type\030\003 \001(\t\022\022\n\npublic_" +
+      "key\030\004 \001(\t\"\317\003\n\rCommercialOrg\022\017\n\007user_id\030\001" +
+      " \001(\t\022\020\n\010org_name\030\004 \001(\t\022\023\n\013org_address\030\005 " +
+      "\001(\t\022\034\n\024org_register_address\030\006 \001(\t\022\021\n\ttel" +
+      "ephone\030\007 \001(\t\022\r\n\005email\030\010 \001(\t\022\030\n\020org_legal" +
+      "_person\030\t \001(\t\022\030\n\020orgnization_code\030\n \001(\t\022" +
+      "\033\n\023business_licence_no\030\013 \001(\t\022\033\n\023tax_regi",
+      "stration_no\030\014 \001(\t\022\'\n\010contacts\030\r \003(\0132\025.pr" +
+      "otos.ContactPerson\0222\n\022settlement_account" +
+      "\030\016 \001(\0132\026.protos.OrgBankAccount\022.\n\016policy" +
+      "_account\030\017 \001(\0132\026.protos.OrgBankAccount\022%" +
+      "\n\torg_files\030\020 \003(\0132\022.protos.LedgerFile\022$\n" +
+      "\007op_info\030\021 \001(\0132\023.protos.OperateInfoBL\n$c" +
+      "om.xiangna.www.protos.configurationZ$git" +
+      "hub.com/xncc/protos/configurationb\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7921,42 +12142,54 @@ public final class Appconfig {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.xiangna.www.protos.common.Common.getDescriptor(),
         }, assigner);
-    internal_static_protos_MultiPartiesInfo_descriptor =
+    internal_static_protos_UserPrivateInfo_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_protos_UserPrivateInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protos_UserPrivateInfo_descriptor,
+        new java.lang.String[] { "UserId", "PublicKey", "PrivateKey", "SdkUserName", "SdkUserPwd", "SdkEcert", "BuzContact", "TechContact", "AppCallbackUrl", "SecureIps", });
+    internal_static_protos_ContactPerson_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_protos_ContactPerson_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protos_ContactPerson_descriptor,
+        new java.lang.String[] { "Name", "Mobile", "Email", });
+    internal_static_protos_MultiPartiesInfo_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_protos_MultiPartiesInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_MultiPartiesInfo_descriptor,
-        new java.lang.String[] { "LedgerID", "Enterprise", "Factoring", "Supplier", "Banks", });
+        new java.lang.String[] { "LedgerId", "Enterprise", "Factoring", "Supplier", "BankInfos", "OpInfo", });
     internal_static_protos_TwoPartiesInfo_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_protos_TwoPartiesInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_TwoPartiesInfo_descriptor,
-        new java.lang.String[] { "LedgerID", "Bank", "Factoring", });
-    internal_static_protos_MultiPartiesInfoList_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_protos_MultiPartiesInfoList_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protos_MultiPartiesInfoList_descriptor,
-        new java.lang.String[] { "MultiInfoList", });
-    internal_static_protos_TwoPartiesInfoList_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_protos_TwoPartiesInfoList_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protos_TwoPartiesInfoList_descriptor,
-        new java.lang.String[] { "TwoPartiesInfoList", });
-    internal_static_protos_SDKUserInfo_descriptor =
+        new java.lang.String[] { "LedgerId", "BankInfo", "Factoring", "OpInfo", });
+    internal_static_protos_MultiPInfos_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_protos_SDKUserInfo_fieldAccessorTable = new
+    internal_static_protos_MultiPInfos_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protos_SDKUserInfo_descriptor,
-        new java.lang.String[] { "SdkUserName", "SdkUserPWD", "SdkEnrollment", });
-    internal_static_protos_APPConfig_descriptor =
+        internal_static_protos_MultiPInfos_descriptor,
+        new java.lang.String[] { "Infos", });
+    internal_static_protos_TwoPInfos_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_protos_APPConfig_fieldAccessorTable = new
+    internal_static_protos_TwoPInfos_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_protos_APPConfig_descriptor,
-        new java.lang.String[] { "AppId", "AppKey", "AppName", "AppType", "AppCallbackUrl", "SecureIp", "OrgName", "OrgAddress", "BizContactName", "BizContactTel", "BizContaceEmail", "TechContactName", "TechContactTel", "TechContactEmail", "OpInfo", });
+        internal_static_protos_TwoPInfos_descriptor,
+        new java.lang.String[] { "Infos", });
+    internal_static_protos_UserInfo_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_protos_UserInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protos_UserInfo_descriptor,
+        new java.lang.String[] { "UserId", "AppName", "AppType", "PublicKey", });
+    internal_static_protos_CommercialOrg_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_protos_CommercialOrg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protos_CommercialOrg_descriptor,
+        new java.lang.String[] { "UserId", "OrgName", "OrgAddress", "OrgRegisterAddress", "Telephone", "Email", "OrgLegalPerson", "OrgnizationCode", "BusinessLicenceNo", "TaxRegistrationNo", "Contacts", "SettlementAccount", "PolicyAccount", "OrgFiles", "OpInfo", });
     com.xiangna.www.protos.common.Common.getDescriptor();
   }
 

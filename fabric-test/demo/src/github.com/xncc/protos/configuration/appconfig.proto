@@ -6,59 +6,91 @@ option go_package = "github.com/xncc/protos/configuration";
 option java_package = "com.xiangna.www.protos.configuration";
 
 package protos;
+
+//以下信息存储在"Global" 账本中, Global 为公有账本
+
+
 //======================================================私有配置信息=======================================
-//所有这些信息都是不公开的，加密存储在"GlobalConfig"账本中, GlobalConfig 为公有账本
-// 节点信息
+//key 为 APPID
+message UserPrivateInfo {
+    string user_id = 1;    //用户ID, 在
+    string public_key = 2; //公钥, 在公有账本中暴露
+    string private_key = 3;//私钥, 账本数据加解密使用
+
+    string sdk_user_name = 4; //sdk  用户名
+    string sdk_user_pwd = 5; //sdk  密码
+    string sdk_ecert = 6; //sdk  证书信息
+
+    ContactPerson buz_contact = 7;
+    ContactPerson tech_contact = 8;
+
+    string app_callback_url = 9; // 调用OA系统的url地址
+    string secure_ips = 10; // 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+}
+
+//======================================================公有配置信息=======================================
+message ContactPerson{
+    string name = 1; // 姓名
+    string mobile = 2; // 电话
+    string email = 3; // email
+}
 
 message MultiPartiesInfo {
-    string ledgerID = 1;
-    AppVo enterprise = 2;
-    AppVo factoring = 3;
-    AppVo supplier = 4;
-    repeated AppVo banks = 5; // 关联银行
+    string ledger_id = 1;
+    UserInfo enterprise = 2;
+    UserInfo factoring = 3;
+    UserInfo supplier = 4;
+    repeated UserInfo bank_infos = 5; // 关联银行
+
+    OperateInfo op_info = 17;
 }
 
 message TwoPartiesInfo {
-    string ledgerID = 1;
-    AppVo bank = 2;
-    AppVo factoring = 3;
+    string ledger_id = 1;
+    UserInfo bank_info = 2;
+    UserInfo factoring = 3;
+
+    OperateInfo op_info = 17;
 }
 
-//key 为 HAMC(APPID, "MultiPartiesInfos")
-message MultiPartiesInfoList{
-    repeated MultiPartiesInfo multiInfoList = 1;
+//key 为 MP-userID
+message MultiPInfos{
+    repeated MultiPartiesInfo infos = 1;
 }
 
-//key 为 HAMC(APPID, "TwoPartiesInfoList")
-message TwoPartiesInfoList{
-    repeated TwoPartiesInfo TwoPartiesInfoList = 1;
+//key 为 TP-userID
+message TwoPInfos{
+    repeated TwoPartiesInfo infos = 1;
 }
 
-//key 为 HAMC(APPID, "SDKUserInfo")
-message SDKUserInfo {
-    //一般 情况，有多少个 peer就会有多少个 sdk， 每个 sdk 带有一个 user
-    string sdkUserName = 1; //sdk  用户名
-    string sdkUserPWD = 2; //sdk  密码
-    string sdkEnrollment = 3; //sdk  证书信息
+//key 为 userID
+message UserInfo{
+    string user_id = 1;
+    string app_name = 2;  // 应用的名称，例如香纳保理业务系统
+    string app_type = 3;  // 应用的类型，例如供应商、保理、核心企业、银行
+    string public_key = 4;//公钥信息
 }
 
-//key 为 HAMC(APPID, "APPConfig")
-message APPConfig {
-    string appId = 1; // 主键，不同的app代表不同的机构，核心企业、供应商、保理公司都是不同的appId
-    string appKey = 2; // 分配的密钥，用于和区块链系统之间的一些加密、验证用途
-    string appName = 3; // 该应用的名称，例如香纳保理业务系统
-    string appType = 4; // 该应用的类型，例如供应商、保理、核心企业、银行
-    string appCallbackUrl = 5; // 调用OA系统的url地址
-    string secureIp = 6; // 区块链会调用第三方ERP的IP列表，用于IP限制，用;分割
+//key 为 ORG-userID
+message CommercialOrg {
+    string user_id = 1;
 
-    string orgName = 7; // 机构名称
-    string orgAddress = 8; // 机构地址
-    string bizContactName = 9; // 业务接口人姓名，与User表没联系
-    string bizContactTel = 10; // 业务接口人电话
-    string bizContaceEmail = 11; // 业务接口人email
-    string techContactName = 12; // 技术接口人姓名，与User表没联系
-    string techContactTel = 13; // 技术接口人电话
-    string techContactEmail = 14; // 技术接口人电话email
+    string org_name = 4; // 机构名称
+    string org_address = 5; // 机构地址
+    string org_register_address = 6;//机构注册地址
+    string telephone = 7; // 联系电话
+    string email = 8; // 邮箱
 
-    OperateInfo opInfo = 15;
+    string org_legal_person = 9;//机构法人
+    string orgnization_code = 10; // 机构代码或统一社会信用代码
+    string business_licence_no = 11; // 工商营业执照编号
+    string tax_registration_no = 12; // 税务登记证编号
+
+    repeated ContactPerson contacts = 13;
+
+    OrgBankAccount settlement_account = 14; // 结算账户
+    OrgBankAccount policy_account = 15; // 保理账户
+    repeated LedgerFile org_files = 16; // 机构相关文件存放
+
+    OperateInfo op_info = 17;
 }

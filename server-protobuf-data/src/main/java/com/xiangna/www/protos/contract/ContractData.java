@@ -3043,47 +3043,28 @@ public final class ContractData {
 
     /**
      * <pre>
-     * 交易票据(图)
+     * 交易票据(图)直接存图片流
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+     * <code>repeated bytes tansaction_notes = 8;</code>
      */
-    java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> 
-        getTansactionNotesList();
+    java.util.List<com.google.protobuf.ByteString> getTansactionNotesList();
     /**
      * <pre>
-     * 交易票据(图)
+     * 交易票据(图)直接存图片流
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-     */
-    com.xiangna.www.protos.common.Common.LedgerFile getTansactionNotes(int index);
-    /**
-     * <pre>
-     * 交易票据(图)
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+     * <code>repeated bytes tansaction_notes = 8;</code>
      */
     int getTansactionNotesCount();
     /**
      * <pre>
-     * 交易票据(图)
+     * 交易票据(图)直接存图片流
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+     * <code>repeated bytes tansaction_notes = 8;</code>
      */
-    java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-        getTansactionNotesOrBuilderList();
-    /**
-     * <pre>
-     * 交易票据(图)
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-     */
-    com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getTansactionNotesOrBuilder(
-        int index);
+    com.google.protobuf.ByteString getTansactionNotes(int index);
 
     /**
      * <pre>
@@ -3211,11 +3192,10 @@ public final class ContractData {
             }
             case 66: {
               if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
-                tansactionNotes_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
+                tansactionNotes_ = new java.util.ArrayList<com.google.protobuf.ByteString>();
                 mutable_bitField0_ |= 0x00000080;
               }
-              tansactionNotes_.add(
-                  input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
+              tansactionNotes_.add(input.readBytes());
               break;
             }
             case 72: {
@@ -3503,57 +3483,36 @@ public final class ContractData {
     }
 
     public static final int TANSACTION_NOTES_FIELD_NUMBER = 8;
-    private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> tansactionNotes_;
+    private java.util.List<com.google.protobuf.ByteString> tansactionNotes_;
     /**
      * <pre>
-     * 交易票据(图)
+     * 交易票据(图)直接存图片流
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+     * <code>repeated bytes tansaction_notes = 8;</code>
      */
-    public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getTansactionNotesList() {
+    public java.util.List<com.google.protobuf.ByteString>
+        getTansactionNotesList() {
       return tansactionNotes_;
     }
     /**
      * <pre>
-     * 交易票据(图)
+     * 交易票据(图)直接存图片流
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-     */
-    public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-        getTansactionNotesOrBuilderList() {
-      return tansactionNotes_;
-    }
-    /**
-     * <pre>
-     * 交易票据(图)
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+     * <code>repeated bytes tansaction_notes = 8;</code>
      */
     public int getTansactionNotesCount() {
       return tansactionNotes_.size();
     }
     /**
      * <pre>
-     * 交易票据(图)
+     * 交易票据(图)直接存图片流
      * </pre>
      *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+     * <code>repeated bytes tansaction_notes = 8;</code>
      */
-    public com.xiangna.www.protos.common.Common.LedgerFile getTansactionNotes(int index) {
-      return tansactionNotes_.get(index);
-    }
-    /**
-     * <pre>
-     * 交易票据(图)
-     * </pre>
-     *
-     * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-     */
-    public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getTansactionNotesOrBuilder(
-        int index) {
+    public com.google.protobuf.ByteString getTansactionNotes(int index) {
       return tansactionNotes_.get(index);
     }
 
@@ -3617,7 +3576,7 @@ public final class ContractData {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, tansactionRemark_);
       }
       for (int i = 0; i < tansactionNotes_.size(); i++) {
-        output.writeMessage(8, tansactionNotes_.get(i));
+        output.writeBytes(8, tansactionNotes_.get(i));
       }
       if (tansactionTime_ != 0L) {
         output.writeInt64(9, tansactionTime_);
@@ -3656,9 +3615,14 @@ public final class ContractData {
       if (!getTansactionRemarkBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, tansactionRemark_);
       }
-      for (int i = 0; i < tansactionNotes_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, tansactionNotes_.get(i));
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tansactionNotes_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(tansactionNotes_.get(i));
+        }
+        size += dataSize;
+        size += 1 * getTansactionNotesList().size();
       }
       if (tansactionTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -3867,7 +3831,6 @@ public final class ContractData {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getTansactionNotesFieldBuilder();
         }
       }
       public Builder clear() {
@@ -3894,12 +3857,8 @@ public final class ContractData {
         }
         tansactionRemark_ = "";
 
-        if (tansactionNotesBuilder_ == null) {
-          tansactionNotes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
-        } else {
-          tansactionNotesBuilder_.clear();
-        }
+        tansactionNotes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
         tansactionTime_ = 0L;
 
         incomConfirm_ = false;
@@ -3943,15 +3902,11 @@ public final class ContractData {
           result.incomeAccount_ = incomeAccountBuilder_.build();
         }
         result.tansactionRemark_ = tansactionRemark_;
-        if (tansactionNotesBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
-            tansactionNotes_ = java.util.Collections.unmodifiableList(tansactionNotes_);
-            bitField0_ = (bitField0_ & ~0x00000080);
-          }
-          result.tansactionNotes_ = tansactionNotes_;
-        } else {
-          result.tansactionNotes_ = tansactionNotesBuilder_.build();
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          tansactionNotes_ = java.util.Collections.unmodifiableList(tansactionNotes_);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
+        result.tansactionNotes_ = tansactionNotes_;
         result.tansactionTime_ = tansactionTime_;
         result.incomConfirm_ = incomConfirm_;
         result.bitField0_ = to_bitField0_;
@@ -4021,31 +3976,15 @@ public final class ContractData {
           tansactionRemark_ = other.tansactionRemark_;
           onChanged();
         }
-        if (tansactionNotesBuilder_ == null) {
-          if (!other.tansactionNotes_.isEmpty()) {
-            if (tansactionNotes_.isEmpty()) {
-              tansactionNotes_ = other.tansactionNotes_;
-              bitField0_ = (bitField0_ & ~0x00000080);
-            } else {
-              ensureTansactionNotesIsMutable();
-              tansactionNotes_.addAll(other.tansactionNotes_);
-            }
-            onChanged();
+        if (!other.tansactionNotes_.isEmpty()) {
+          if (tansactionNotes_.isEmpty()) {
+            tansactionNotes_ = other.tansactionNotes_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureTansactionNotesIsMutable();
+            tansactionNotes_.addAll(other.tansactionNotes_);
           }
-        } else {
-          if (!other.tansactionNotes_.isEmpty()) {
-            if (tansactionNotesBuilder_.isEmpty()) {
-              tansactionNotesBuilder_.dispose();
-              tansactionNotesBuilder_ = null;
-              tansactionNotes_ = other.tansactionNotes_;
-              bitField0_ = (bitField0_ & ~0x00000080);
-              tansactionNotesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getTansactionNotesFieldBuilder() : null;
-            } else {
-              tansactionNotesBuilder_.addAllMessages(other.tansactionNotes_);
-            }
-          }
+          onChanged();
         }
         if (other.getTansactionTime() != 0L) {
           setTansactionTime(other.getTansactionTime());
@@ -4780,316 +4719,104 @@ public final class ContractData {
         return this;
       }
 
-      private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> tansactionNotes_ =
-        java.util.Collections.emptyList();
+      private java.util.List<com.google.protobuf.ByteString> tansactionNotes_ = java.util.Collections.emptyList();
       private void ensureTansactionNotesIsMutable() {
         if (!((bitField0_ & 0x00000080) == 0x00000080)) {
-          tansactionNotes_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(tansactionNotes_);
+          tansactionNotes_ = new java.util.ArrayList<com.google.protobuf.ByteString>(tansactionNotes_);
           bitField0_ |= 0x00000080;
          }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> tansactionNotesBuilder_;
-
       /**
        * <pre>
-       * 交易票据(图)
+       * 交易票据(图)直接存图片流
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+       * <code>repeated bytes tansaction_notes = 8;</code>
        */
-      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> getTansactionNotesList() {
-        if (tansactionNotesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(tansactionNotes_);
-        } else {
-          return tansactionNotesBuilder_.getMessageList();
-        }
+      public java.util.List<com.google.protobuf.ByteString>
+          getTansactionNotesList() {
+        return java.util.Collections.unmodifiableList(tansactionNotes_);
       }
       /**
        * <pre>
-       * 交易票据(图)
+       * 交易票据(图)直接存图片流
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+       * <code>repeated bytes tansaction_notes = 8;</code>
        */
       public int getTansactionNotesCount() {
-        if (tansactionNotesBuilder_ == null) {
-          return tansactionNotes_.size();
-        } else {
-          return tansactionNotesBuilder_.getCount();
-        }
+        return tansactionNotes_.size();
       }
       /**
        * <pre>
-       * 交易票据(图)
+       * 交易票据(图)直接存图片流
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+       * <code>repeated bytes tansaction_notes = 8;</code>
        */
-      public com.xiangna.www.protos.common.Common.LedgerFile getTansactionNotes(int index) {
-        if (tansactionNotesBuilder_ == null) {
-          return tansactionNotes_.get(index);
-        } else {
-          return tansactionNotesBuilder_.getMessage(index);
-        }
+      public com.google.protobuf.ByteString getTansactionNotes(int index) {
+        return tansactionNotes_.get(index);
       }
       /**
        * <pre>
-       * 交易票据(图)
+       * 交易票据(图)直接存图片流
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+       * <code>repeated bytes tansaction_notes = 8;</code>
        */
       public Builder setTansactionNotes(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (tansactionNotesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTansactionNotesIsMutable();
-          tansactionNotes_.set(index, value);
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.setMessage(index, value);
-        }
+          int index, com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTansactionNotesIsMutable();
+        tansactionNotes_.set(index, value);
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * 交易票据(图)
+       * 交易票据(图)直接存图片流
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+       * <code>repeated bytes tansaction_notes = 8;</code>
        */
-      public Builder setTansactionNotes(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (tansactionNotesBuilder_ == null) {
-          ensureTansactionNotesIsMutable();
-          tansactionNotes_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.setMessage(index, builderForValue.build());
-        }
+      public Builder addTansactionNotes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTansactionNotesIsMutable();
+        tansactionNotes_.add(value);
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * 交易票据(图)
+       * 交易票据(图)直接存图片流
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public Builder addTansactionNotes(com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (tansactionNotesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTansactionNotesIsMutable();
-          tansactionNotes_.add(value);
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public Builder addTansactionNotes(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile value) {
-        if (tansactionNotesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTansactionNotesIsMutable();
-          tansactionNotes_.add(index, value);
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public Builder addTansactionNotes(
-          com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (tansactionNotesBuilder_ == null) {
-          ensureTansactionNotesIsMutable();
-          tansactionNotes_.add(builderForValue.build());
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public Builder addTansactionNotes(
-          int index, com.xiangna.www.protos.common.Common.LedgerFile.Builder builderForValue) {
-        if (tansactionNotesBuilder_ == null) {
-          ensureTansactionNotesIsMutable();
-          tansactionNotes_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+       * <code>repeated bytes tansaction_notes = 8;</code>
        */
       public Builder addAllTansactionNotes(
-          java.lang.Iterable<? extends com.xiangna.www.protos.common.Common.LedgerFile> values) {
-        if (tansactionNotesBuilder_ == null) {
-          ensureTansactionNotesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, tansactionNotes_);
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.addAllMessages(values);
-        }
+          java.lang.Iterable<? extends com.google.protobuf.ByteString> values) {
+        ensureTansactionNotesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tansactionNotes_);
+        onChanged();
         return this;
       }
       /**
        * <pre>
-       * 交易票据(图)
+       * 交易票据(图)直接存图片流
        * </pre>
        *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
+       * <code>repeated bytes tansaction_notes = 8;</code>
        */
       public Builder clearTansactionNotes() {
-        if (tansactionNotesBuilder_ == null) {
-          tansactionNotes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.clear();
-        }
+        tansactionNotes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
         return this;
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public Builder removeTansactionNotes(int index) {
-        if (tansactionNotesBuilder_ == null) {
-          ensureTansactionNotesIsMutable();
-          tansactionNotes_.remove(index);
-          onChanged();
-        } else {
-          tansactionNotesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder getTansactionNotesBuilder(
-          int index) {
-        return getTansactionNotesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFileOrBuilder getTansactionNotesOrBuilder(
-          int index) {
-        if (tansactionNotesBuilder_ == null) {
-          return tansactionNotes_.get(index);  } else {
-          return tansactionNotesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public java.util.List<? extends com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-           getTansactionNotesOrBuilderList() {
-        if (tansactionNotesBuilder_ != null) {
-          return tansactionNotesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(tansactionNotes_);
-        }
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addTansactionNotesBuilder() {
-        return getTansactionNotesFieldBuilder().addBuilder(
-            com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public com.xiangna.www.protos.common.Common.LedgerFile.Builder addTansactionNotesBuilder(
-          int index) {
-        return getTansactionNotesFieldBuilder().addBuilder(
-            index, com.xiangna.www.protos.common.Common.LedgerFile.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 交易票据(图)
-       * </pre>
-       *
-       * <code>repeated .protos.LedgerFile tansaction_notes = 8;</code>
-       */
-      public java.util.List<com.xiangna.www.protos.common.Common.LedgerFile.Builder> 
-           getTansactionNotesBuilderList() {
-        return getTansactionNotesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder> 
-          getTansactionNotesFieldBuilder() {
-        if (tansactionNotesBuilder_ == null) {
-          tansactionNotesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder>(
-                  tansactionNotes_,
-                  ((bitField0_ & 0x00000080) == 0x00000080),
-                  getParentForChildren(),
-                  isClean());
-          tansactionNotes_ = null;
-        }
-        return tansactionNotesBuilder_;
       }
 
       private long tansactionTime_ ;
@@ -5255,17 +4982,17 @@ public final class ContractData {
       "d_payback_loan_amount\030\004 \001(\003\022\037\n\027payback_e" +
       "xpenses_amount\030\005 \001(\003\022\035\n\025payback_income_a" +
       "mount\030\006 \001(\003\022>\n\023transaction_details\030\007 \003(\013" +
-      "2!.protos.ContractTransactionDetail\"\275\002\n\031" +
+      "2!.protos.ContractTransactionDetail\"\251\002\n\031" +
       "ContractTransactionDetail\022\n\n\002no\030\001 \001(\t\022\020\n" +
       "\010expenses\030\002 \001(\t\022\027\n\017expenses_amount\030\003 \001(\003" +
       "\0220\n\020expenses_account\030\004 \001(\0132\026.protos.OrgB" +
       "ankAccount\022\016\n\006income\030\005 \001(\t\022.\n\016income_acc",
       "ount\030\006 \001(\0132\026.protos.OrgBankAccount\022\031\n\021ta" +
-      "nsaction_remark\030\007 \001(\t\022,\n\020tansaction_note" +
-      "s\030\010 \003(\0132\022.protos.LedgerFile\022\027\n\017tansactio" +
-      "n_time\030\t \001(\003\022\025\n\rincom_confirm\030\n \001(\010BB\n\037c" +
-      "om.xiangna.www.protos.contractZ\037github.c" +
-      "om/xncc/protos/contractb\006proto3"
+      "nsaction_remark\030\007 \001(\t\022\030\n\020tansaction_note" +
+      "s\030\010 \003(\014\022\027\n\017tansaction_time\030\t \001(\003\022\025\n\rinco" +
+      "m_confirm\030\n \001(\010BB\n\037com.xiangna.www.proto" +
+      "s.contractZ\037github.com/xncc/protos/contr" +
+      "actb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

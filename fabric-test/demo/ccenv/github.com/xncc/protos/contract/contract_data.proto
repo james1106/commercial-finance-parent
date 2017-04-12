@@ -55,7 +55,7 @@ message ContractTransactionDetail {
     string income = 5; // 收入方信息
     OrgBankAccount income_account = 6; // 收入方账户
     string tansaction_remark = 7; // 交易备注
-    repeated LedgerFile tansaction_notes = 8; // 交易票据(图)
+    repeated bytes tansaction_notes = 8; // 交易票据(图)直接存图片流
     int64 tansaction_time = 9; // 交易时间(unix时间戳)
 
     bool incom_confirm = 10; // 收入方确认

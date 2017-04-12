@@ -1,6 +1,8 @@
 syntax = "proto3";
 
 import "common/common.proto";
+import "configuration/appconfig.proto";
+
 
 option go_package = "github.com/xncc/protos/configuration";
 option java_package = "com.xiangna.www.protos.configuration";
@@ -11,15 +13,18 @@ package protos;
 
 // 订单节点数据
 message ContractStep {
-    string step_id = 1; // 订单阶段ID
-    string step_name = 2; // 订单阶段名称
-    AppVo org = 3; // 此阶段分属机构
+    string step_id = 1; // 阶段ID
+    string step_name = 2; // 阶段名称
+    UserInfo  user_info = 3; // 此阶段分属机构userid
     string remark = 4; // 备注
+
     bool is_start_node = 5; // 是否是开始节点
     bool is_end_node = 6; // 是否是结束节点
     string oa_url = 7; // 每个节点都可以调用外部 URL
+
     ContractStep next = 8; // 下一节点
     ContractStep previous = 9;// 上一节点
+
     OperateInfo operate_info = 10;
 }
 

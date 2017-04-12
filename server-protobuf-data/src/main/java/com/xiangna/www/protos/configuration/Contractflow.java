@@ -20,7 +20,7 @@ public final class Contractflow {
 
     /**
      * <pre>
-     * 订单阶段ID
+     * 阶段ID
      * </pre>
      *
      * <code>optional string step_id = 1;</code>
@@ -28,7 +28,7 @@ public final class Contractflow {
     java.lang.String getStepId();
     /**
      * <pre>
-     * 订单阶段ID
+     * 阶段ID
      * </pre>
      *
      * <code>optional string step_id = 1;</code>
@@ -38,7 +38,7 @@ public final class Contractflow {
 
     /**
      * <pre>
-     * 订单阶段名称
+     * 阶段名称
      * </pre>
      *
      * <code>optional string step_name = 2;</code>
@@ -46,7 +46,7 @@ public final class Contractflow {
     java.lang.String getStepName();
     /**
      * <pre>
-     * 订单阶段名称
+     * 阶段名称
      * </pre>
      *
      * <code>optional string step_name = 2;</code>
@@ -56,28 +56,28 @@ public final class Contractflow {
 
     /**
      * <pre>
-     * 此阶段分属机构
+     * 此阶段分属机构userid
      * </pre>
      *
-     * <code>optional .protos.AppVo org = 3;</code>
+     * <code>optional .protos.UserInfo user_info = 3;</code>
      */
-    boolean hasOrg();
+    boolean hasUserInfo();
     /**
      * <pre>
-     * 此阶段分属机构
+     * 此阶段分属机构userid
      * </pre>
      *
-     * <code>optional .protos.AppVo org = 3;</code>
+     * <code>optional .protos.UserInfo user_info = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVo getOrg();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfo getUserInfo();
     /**
      * <pre>
-     * 此阶段分属机构
+     * 此阶段分属机构userid
      * </pre>
      *
-     * <code>optional .protos.AppVo org = 3;</code>
+     * <code>optional .protos.UserInfo user_info = 3;</code>
      */
-    com.xiangna.www.protos.common.Common.AppVoOrBuilder getOrgOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getUserInfoOrBuilder();
 
     /**
      * <pre>
@@ -258,14 +258,14 @@ public final class Contractflow {
               break;
             }
             case 26: {
-              com.xiangna.www.protos.common.Common.AppVo.Builder subBuilder = null;
-              if (org_ != null) {
-                subBuilder = org_.toBuilder();
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder subBuilder = null;
+              if (userInfo_ != null) {
+                subBuilder = userInfo_.toBuilder();
               }
-              org_ = input.readMessage(com.xiangna.www.protos.common.Common.AppVo.parser(), extensionRegistry);
+              userInfo_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.UserInfo.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(org_);
-                org_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(userInfo_);
+                userInfo_ = subBuilder.buildPartial();
               }
 
               break;
@@ -358,7 +358,7 @@ public final class Contractflow {
     private volatile java.lang.Object stepId_;
     /**
      * <pre>
-     * 订单阶段ID
+     * 阶段ID
      * </pre>
      *
      * <code>optional string step_id = 1;</code>
@@ -377,7 +377,7 @@ public final class Contractflow {
     }
     /**
      * <pre>
-     * 订单阶段ID
+     * 阶段ID
      * </pre>
      *
      * <code>optional string step_id = 1;</code>
@@ -400,7 +400,7 @@ public final class Contractflow {
     private volatile java.lang.Object stepName_;
     /**
      * <pre>
-     * 订单阶段名称
+     * 阶段名称
      * </pre>
      *
      * <code>optional string step_name = 2;</code>
@@ -419,7 +419,7 @@ public final class Contractflow {
     }
     /**
      * <pre>
-     * 订单阶段名称
+     * 阶段名称
      * </pre>
      *
      * <code>optional string step_name = 2;</code>
@@ -438,37 +438,37 @@ public final class Contractflow {
       }
     }
 
-    public static final int ORG_FIELD_NUMBER = 3;
-    private com.xiangna.www.protos.common.Common.AppVo org_;
+    public static final int USER_INFO_FIELD_NUMBER = 3;
+    private com.xiangna.www.protos.configuration.Appconfig.UserInfo userInfo_;
     /**
      * <pre>
-     * 此阶段分属机构
+     * 此阶段分属机构userid
      * </pre>
      *
-     * <code>optional .protos.AppVo org = 3;</code>
+     * <code>optional .protos.UserInfo user_info = 3;</code>
      */
-    public boolean hasOrg() {
-      return org_ != null;
+    public boolean hasUserInfo() {
+      return userInfo_ != null;
     }
     /**
      * <pre>
-     * 此阶段分属机构
+     * 此阶段分属机构userid
      * </pre>
      *
-     * <code>optional .protos.AppVo org = 3;</code>
+     * <code>optional .protos.UserInfo user_info = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVo getOrg() {
-      return org_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : org_;
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfo getUserInfo() {
+      return userInfo_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : userInfo_;
     }
     /**
      * <pre>
-     * 此阶段分属机构
+     * 此阶段分属机构userid
      * </pre>
      *
-     * <code>optional .protos.AppVo org = 3;</code>
+     * <code>optional .protos.UserInfo user_info = 3;</code>
      */
-    public com.xiangna.www.protos.common.Common.AppVoOrBuilder getOrgOrBuilder() {
-      return getOrg();
+    public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getUserInfoOrBuilder() {
+      return getUserInfo();
     }
 
     public static final int REMARK_FIELD_NUMBER = 4;
@@ -686,8 +686,8 @@ public final class Contractflow {
       if (!getStepNameBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stepName_);
       }
-      if (org_ != null) {
-        output.writeMessage(3, getOrg());
+      if (userInfo_ != null) {
+        output.writeMessage(3, getUserInfo());
       }
       if (!getRemarkBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, remark_);
@@ -723,9 +723,9 @@ public final class Contractflow {
       if (!getStepNameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stepName_);
       }
-      if (org_ != null) {
+      if (userInfo_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getOrg());
+          .computeMessageSize(3, getUserInfo());
       }
       if (!getRemarkBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, remark_);
@@ -773,10 +773,10 @@ public final class Contractflow {
           .equals(other.getStepId());
       result = result && getStepName()
           .equals(other.getStepName());
-      result = result && (hasOrg() == other.hasOrg());
-      if (hasOrg()) {
-        result = result && getOrg()
-            .equals(other.getOrg());
+      result = result && (hasUserInfo() == other.hasUserInfo());
+      if (hasUserInfo()) {
+        result = result && getUserInfo()
+            .equals(other.getUserInfo());
       }
       result = result && getRemark()
           .equals(other.getRemark());
@@ -815,9 +815,9 @@ public final class Contractflow {
       hash = (53 * hash) + getStepId().hashCode();
       hash = (37 * hash) + STEP_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getStepName().hashCode();
-      if (hasOrg()) {
-        hash = (37 * hash) + ORG_FIELD_NUMBER;
-        hash = (53 * hash) + getOrg().hashCode();
+      if (hasUserInfo()) {
+        hash = (37 * hash) + USER_INFO_FIELD_NUMBER;
+        hash = (53 * hash) + getUserInfo().hashCode();
       }
       hash = (37 * hash) + REMARK_FIELD_NUMBER;
       hash = (53 * hash) + getRemark().hashCode();
@@ -967,11 +967,11 @@ public final class Contractflow {
 
         stepName_ = "";
 
-        if (orgBuilder_ == null) {
-          org_ = null;
+        if (userInfoBuilder_ == null) {
+          userInfo_ = null;
         } else {
-          org_ = null;
-          orgBuilder_ = null;
+          userInfo_ = null;
+          userInfoBuilder_ = null;
         }
         remark_ = "";
 
@@ -1023,10 +1023,10 @@ public final class Contractflow {
         com.xiangna.www.protos.configuration.Contractflow.ContractStep result = new com.xiangna.www.protos.configuration.Contractflow.ContractStep(this);
         result.stepId_ = stepId_;
         result.stepName_ = stepName_;
-        if (orgBuilder_ == null) {
-          result.org_ = org_;
+        if (userInfoBuilder_ == null) {
+          result.userInfo_ = userInfo_;
         } else {
-          result.org_ = orgBuilder_.build();
+          result.userInfo_ = userInfoBuilder_.build();
         }
         result.remark_ = remark_;
         result.isStartNode_ = isStartNode_;
@@ -1096,8 +1096,8 @@ public final class Contractflow {
           stepName_ = other.stepName_;
           onChanged();
         }
-        if (other.hasOrg()) {
-          mergeOrg(other.getOrg());
+        if (other.hasUserInfo()) {
+          mergeUserInfo(other.getUserInfo());
         }
         if (!other.getRemark().isEmpty()) {
           remark_ = other.remark_;
@@ -1151,7 +1151,7 @@ public final class Contractflow {
       private java.lang.Object stepId_ = "";
       /**
        * <pre>
-       * 订单阶段ID
+       * 阶段ID
        * </pre>
        *
        * <code>optional string step_id = 1;</code>
@@ -1170,7 +1170,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段ID
+       * 阶段ID
        * </pre>
        *
        * <code>optional string step_id = 1;</code>
@@ -1190,7 +1190,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段ID
+       * 阶段ID
        * </pre>
        *
        * <code>optional string step_id = 1;</code>
@@ -1207,7 +1207,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段ID
+       * 阶段ID
        * </pre>
        *
        * <code>optional string step_id = 1;</code>
@@ -1220,7 +1220,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段ID
+       * 阶段ID
        * </pre>
        *
        * <code>optional string step_id = 1;</code>
@@ -1240,7 +1240,7 @@ public final class Contractflow {
       private java.lang.Object stepName_ = "";
       /**
        * <pre>
-       * 订单阶段名称
+       * 阶段名称
        * </pre>
        *
        * <code>optional string step_name = 2;</code>
@@ -1259,7 +1259,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段名称
+       * 阶段名称
        * </pre>
        *
        * <code>optional string step_name = 2;</code>
@@ -1279,7 +1279,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段名称
+       * 阶段名称
        * </pre>
        *
        * <code>optional string step_name = 2;</code>
@@ -1296,7 +1296,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段名称
+       * 阶段名称
        * </pre>
        *
        * <code>optional string step_name = 2;</code>
@@ -1309,7 +1309,7 @@ public final class Contractflow {
       }
       /**
        * <pre>
-       * 订单阶段名称
+       * 阶段名称
        * </pre>
        *
        * <code>optional string step_name = 2;</code>
@@ -1326,157 +1326,157 @@ public final class Contractflow {
         return this;
       }
 
-      private com.xiangna.www.protos.common.Common.AppVo org_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.UserInfo userInfo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> orgBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> userInfoBuilder_;
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public boolean hasOrg() {
-        return orgBuilder_ != null || org_ != null;
+      public boolean hasUserInfo() {
+        return userInfoBuilder_ != null || userInfo_ != null;
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo getOrg() {
-        if (orgBuilder_ == null) {
-          return org_ == null ? com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : org_;
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo getUserInfo() {
+        if (userInfoBuilder_ == null) {
+          return userInfo_ == null ? com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : userInfo_;
         } else {
-          return orgBuilder_.getMessage();
+          return userInfoBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public Builder setOrg(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (orgBuilder_ == null) {
+      public Builder setUserInfo(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
+        if (userInfoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          org_ = value;
+          userInfo_ = value;
           onChanged();
         } else {
-          orgBuilder_.setMessage(value);
+          userInfoBuilder_.setMessage(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public Builder setOrg(
-          com.xiangna.www.protos.common.Common.AppVo.Builder builderForValue) {
-        if (orgBuilder_ == null) {
-          org_ = builderForValue.build();
+      public Builder setUserInfo(
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder builderForValue) {
+        if (userInfoBuilder_ == null) {
+          userInfo_ = builderForValue.build();
           onChanged();
         } else {
-          orgBuilder_.setMessage(builderForValue.build());
+          userInfoBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public Builder mergeOrg(com.xiangna.www.protos.common.Common.AppVo value) {
-        if (orgBuilder_ == null) {
-          if (org_ != null) {
-            org_ =
-              com.xiangna.www.protos.common.Common.AppVo.newBuilder(org_).mergeFrom(value).buildPartial();
+      public Builder mergeUserInfo(com.xiangna.www.protos.configuration.Appconfig.UserInfo value) {
+        if (userInfoBuilder_ == null) {
+          if (userInfo_ != null) {
+            userInfo_ =
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.newBuilder(userInfo_).mergeFrom(value).buildPartial();
           } else {
-            org_ = value;
+            userInfo_ = value;
           }
           onChanged();
         } else {
-          orgBuilder_.mergeFrom(value);
+          userInfoBuilder_.mergeFrom(value);
         }
 
         return this;
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public Builder clearOrg() {
-        if (orgBuilder_ == null) {
-          org_ = null;
+      public Builder clearUserInfo() {
+        if (userInfoBuilder_ == null) {
+          userInfo_ = null;
           onChanged();
         } else {
-          org_ = null;
-          orgBuilder_ = null;
+          userInfo_ = null;
+          userInfoBuilder_ = null;
         }
 
         return this;
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVo.Builder getOrgBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder getUserInfoBuilder() {
         
         onChanged();
-        return getOrgFieldBuilder().getBuilder();
+        return getUserInfoFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
-      public com.xiangna.www.protos.common.Common.AppVoOrBuilder getOrgOrBuilder() {
-        if (orgBuilder_ != null) {
-          return orgBuilder_.getMessageOrBuilder();
+      public com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder getUserInfoOrBuilder() {
+        if (userInfoBuilder_ != null) {
+          return userInfoBuilder_.getMessageOrBuilder();
         } else {
-          return org_ == null ?
-              com.xiangna.www.protos.common.Common.AppVo.getDefaultInstance() : org_;
+          return userInfo_ == null ?
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo.getDefaultInstance() : userInfo_;
         }
       }
       /**
        * <pre>
-       * 此阶段分属机构
+       * 此阶段分属机构userid
        * </pre>
        *
-       * <code>optional .protos.AppVo org = 3;</code>
+       * <code>optional .protos.UserInfo user_info = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder> 
-          getOrgFieldBuilder() {
-        if (orgBuilder_ == null) {
-          orgBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.common.Common.AppVo, com.xiangna.www.protos.common.Common.AppVo.Builder, com.xiangna.www.protos.common.Common.AppVoOrBuilder>(
-                  getOrg(),
+          com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder> 
+          getUserInfoFieldBuilder() {
+        if (userInfoBuilder_ == null) {
+          userInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.xiangna.www.protos.configuration.Appconfig.UserInfo, com.xiangna.www.protos.configuration.Appconfig.UserInfo.Builder, com.xiangna.www.protos.configuration.Appconfig.UserInfoOrBuilder>(
+                  getUserInfo(),
                   getParentForChildren(),
                   isClean());
-          org_ = null;
+          userInfo_ = null;
         }
-        return orgBuilder_;
+        return userInfoBuilder_;
       }
 
       private java.lang.Object remark_ = "";
@@ -3164,15 +3164,16 @@ public final class Contractflow {
   static {
     java.lang.String[] descriptorData = {
       "\n configuration/contractflow.proto\022\006prot" +
-      "os\032\023common/common.proto\"\221\002\n\014ContractStep" +
-      "\022\017\n\007step_id\030\001 \001(\t\022\021\n\tstep_name\030\002 \001(\t\022\032\n\003" +
-      "org\030\003 \001(\0132\r.protos.AppVo\022\016\n\006remark\030\004 \001(\t" +
+      "os\032\023common/common.proto\032\035configuration/a" +
+      "ppconfig.proto\"\232\002\n\014ContractStep\022\017\n\007step_" +
+      "id\030\001 \001(\t\022\021\n\tstep_name\030\002 \001(\t\022#\n\tuser_info" +
+      "\030\003 \001(\0132\020.protos.UserInfo\022\016\n\006remark\030\004 \001(\t" +
       "\022\025\n\ris_start_node\030\005 \001(\010\022\023\n\013is_end_node\030\006" +
       " \001(\010\022\016\n\006oa_url\030\007 \001(\t\022\"\n\004next\030\010 \001(\0132\024.pro" +
       "tos.ContractStep\022&\n\010previous\030\t \001(\0132\024.pro" +
       "tos.ContractStep\022)\n\014operate_info\030\n \001(\0132\023" +
-      ".protos.OperateInfo\"^\n\014ContractFlow\022#\n\005s" +
-      "teps\030\001 \003(\0132\024.protos.ContractStep\022)\n\014oper",
+      ".protos.OperateInfo\"^\n\014ContractFlow\022#\n\005s",
+      "teps\030\001 \003(\0132\024.protos.ContractStep\022)\n\014oper" +
       "ate_info\030\002 \001(\0132\023.protos.OperateInfoBL\n$c" +
       "om.xiangna.www.protos.configurationZ$git" +
       "hub.com/xncc/protos/configurationb\006proto" +
@@ -3190,13 +3191,14 @@ public final class Contractflow {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.xiangna.www.protos.common.Common.getDescriptor(),
+          com.xiangna.www.protos.configuration.Appconfig.getDescriptor(),
         }, assigner);
     internal_static_protos_ContractStep_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_protos_ContractStep_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractStep_descriptor,
-        new java.lang.String[] { "StepId", "StepName", "Org", "Remark", "IsStartNode", "IsEndNode", "OaUrl", "Next", "Previous", "OperateInfo", });
+        new java.lang.String[] { "StepId", "StepName", "UserInfo", "Remark", "IsStartNode", "IsEndNode", "OaUrl", "Next", "Previous", "OperateInfo", });
     internal_static_protos_ContractFlow_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_protos_ContractFlow_fieldAccessorTable = new
@@ -3204,6 +3206,7 @@ public final class Contractflow {
         internal_static_protos_ContractFlow_descriptor,
         new java.lang.String[] { "Steps", "OperateInfo", });
     com.xiangna.www.protos.common.Common.getDescriptor();
+    com.xiangna.www.protos.configuration.Appconfig.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

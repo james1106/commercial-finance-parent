@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 import "common/common.proto";
-import "configuration/modelconfig.proto";
+import "configuration/appconfig.proto";
 import "contract/contract_data.proto";
 import "contract/contract_status.proto";
 

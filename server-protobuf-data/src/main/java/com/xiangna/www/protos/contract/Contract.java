@@ -51,7 +51,7 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg supplier = 2;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getSupplier();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getSupplier();
     /**
      * <pre>
      * 供应商信息
@@ -59,7 +59,7 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg supplier = 2;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getSupplierOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getSupplierOrBuilder();
 
     /**
      * <pre>
@@ -76,7 +76,7 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg enterprise = 3;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getEnterprise();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getEnterprise();
     /**
      * <pre>
      * 核心企业信息
@@ -84,7 +84,7 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg enterprise = 3;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getEnterpriseOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getEnterpriseOrBuilder();
 
     /**
      * <pre>
@@ -101,7 +101,7 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg factoring = 4;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getFactoring();
     /**
      * <pre>
      * 保理公司信息
@@ -109,7 +109,7 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg factoring = 4;</code>
      */
-    com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder();
+    com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getFactoringOrBuilder();
 
     /**
      * <pre>
@@ -353,11 +353,11 @@ public final class Contract {
               break;
             }
             case 18: {
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder subBuilder = null;
               if (supplier_ != null) {
                 subBuilder = supplier_.toBuilder();
               }
-              supplier_ = input.readMessage(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.parser(), extensionRegistry);
+              supplier_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(supplier_);
                 supplier_ = subBuilder.buildPartial();
@@ -366,11 +366,11 @@ public final class Contract {
               break;
             }
             case 26: {
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder subBuilder = null;
               if (enterprise_ != null) {
                 subBuilder = enterprise_.toBuilder();
               }
-              enterprise_ = input.readMessage(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.parser(), extensionRegistry);
+              enterprise_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(enterprise_);
                 enterprise_ = subBuilder.buildPartial();
@@ -379,11 +379,11 @@ public final class Contract {
               break;
             }
             case 34: {
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder subBuilder = null;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder subBuilder = null;
               if (factoring_ != null) {
                 subBuilder = factoring_.toBuilder();
               }
-              factoring_ = input.readMessage(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.parser(), extensionRegistry);
+              factoring_ = input.readMessage(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.parser(), extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(factoring_);
                 factoring_ = subBuilder.buildPartial();
@@ -534,7 +534,7 @@ public final class Contract {
     }
 
     public static final int SUPPLIER_FIELD_NUMBER = 2;
-    private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg supplier_;
+    private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg supplier_;
     /**
      * <pre>
      * 供应商信息
@@ -552,8 +552,8 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg supplier = 2;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getSupplier() {
-      return supplier_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : supplier_;
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getSupplier() {
+      return supplier_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : supplier_;
     }
     /**
      * <pre>
@@ -562,12 +562,12 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg supplier = 2;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getSupplierOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getSupplierOrBuilder() {
       return getSupplier();
     }
 
     public static final int ENTERPRISE_FIELD_NUMBER = 3;
-    private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg enterprise_;
+    private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg enterprise_;
     /**
      * <pre>
      * 核心企业信息
@@ -585,8 +585,8 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg enterprise = 3;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getEnterprise() {
-      return enterprise_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : enterprise_;
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getEnterprise() {
+      return enterprise_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : enterprise_;
     }
     /**
      * <pre>
@@ -595,12 +595,12 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg enterprise = 3;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getEnterpriseOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getEnterpriseOrBuilder() {
       return getEnterprise();
     }
 
     public static final int FACTORING_FIELD_NUMBER = 4;
-    private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg factoring_;
+    private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg factoring_;
     /**
      * <pre>
      * 保理公司信息
@@ -618,8 +618,8 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg factoring = 4;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring() {
-      return factoring_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getFactoring() {
+      return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : factoring_;
     }
     /**
      * <pre>
@@ -628,7 +628,7 @@ public final class Contract {
      *
      * <code>optional .protos.CommercialOrg factoring = 4;</code>
      */
-    public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
+    public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
       return getFactoring();
     }
 
@@ -1561,9 +1561,9 @@ public final class Contract {
         return this;
       }
 
-      private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg supplier_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg supplier_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> supplierBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> supplierBuilder_;
       /**
        * <pre>
        * 供应商信息
@@ -1581,9 +1581,9 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg supplier = 2;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getSupplier() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getSupplier() {
         if (supplierBuilder_ == null) {
-          return supplier_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : supplier_;
+          return supplier_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : supplier_;
         } else {
           return supplierBuilder_.getMessage();
         }
@@ -1595,7 +1595,7 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg supplier = 2;</code>
        */
-      public Builder setSupplier(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder setSupplier(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (supplierBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1616,7 +1616,7 @@ public final class Contract {
        * <code>optional .protos.CommercialOrg supplier = 2;</code>
        */
       public Builder setSupplier(
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder builderForValue) {
         if (supplierBuilder_ == null) {
           supplier_ = builderForValue.build();
           onChanged();
@@ -1633,11 +1633,11 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg supplier = 2;</code>
        */
-      public Builder mergeSupplier(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder mergeSupplier(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (supplierBuilder_ == null) {
           if (supplier_ != null) {
             supplier_ =
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.newBuilder(supplier_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.newBuilder(supplier_).mergeFrom(value).buildPartial();
           } else {
             supplier_ = value;
           }
@@ -1673,7 +1673,7 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg supplier = 2;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder getSupplierBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder getSupplierBuilder() {
         
         onChanged();
         return getSupplierFieldBuilder().getBuilder();
@@ -1685,12 +1685,12 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg supplier = 2;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getSupplierOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getSupplierOrBuilder() {
         if (supplierBuilder_ != null) {
           return supplierBuilder_.getMessageOrBuilder();
         } else {
           return supplier_ == null ?
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : supplier_;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : supplier_;
         }
       }
       /**
@@ -1701,11 +1701,11 @@ public final class Contract {
        * <code>optional .protos.CommercialOrg supplier = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> 
           getSupplierFieldBuilder() {
         if (supplierBuilder_ == null) {
           supplierBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder>(
                   getSupplier(),
                   getParentForChildren(),
                   isClean());
@@ -1714,9 +1714,9 @@ public final class Contract {
         return supplierBuilder_;
       }
 
-      private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg enterprise_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg enterprise_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> enterpriseBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> enterpriseBuilder_;
       /**
        * <pre>
        * 核心企业信息
@@ -1734,9 +1734,9 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg enterprise = 3;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getEnterprise() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getEnterprise() {
         if (enterpriseBuilder_ == null) {
-          return enterprise_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : enterprise_;
+          return enterprise_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : enterprise_;
         } else {
           return enterpriseBuilder_.getMessage();
         }
@@ -1748,7 +1748,7 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg enterprise = 3;</code>
        */
-      public Builder setEnterprise(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder setEnterprise(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (enterpriseBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1769,7 +1769,7 @@ public final class Contract {
        * <code>optional .protos.CommercialOrg enterprise = 3;</code>
        */
       public Builder setEnterprise(
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder builderForValue) {
         if (enterpriseBuilder_ == null) {
           enterprise_ = builderForValue.build();
           onChanged();
@@ -1786,11 +1786,11 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg enterprise = 3;</code>
        */
-      public Builder mergeEnterprise(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder mergeEnterprise(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (enterpriseBuilder_ == null) {
           if (enterprise_ != null) {
             enterprise_ =
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.newBuilder(enterprise_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.newBuilder(enterprise_).mergeFrom(value).buildPartial();
           } else {
             enterprise_ = value;
           }
@@ -1826,7 +1826,7 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg enterprise = 3;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder getEnterpriseBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder getEnterpriseBuilder() {
         
         onChanged();
         return getEnterpriseFieldBuilder().getBuilder();
@@ -1838,12 +1838,12 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg enterprise = 3;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getEnterpriseOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getEnterpriseOrBuilder() {
         if (enterpriseBuilder_ != null) {
           return enterpriseBuilder_.getMessageOrBuilder();
         } else {
           return enterprise_ == null ?
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : enterprise_;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : enterprise_;
         }
       }
       /**
@@ -1854,11 +1854,11 @@ public final class Contract {
        * <code>optional .protos.CommercialOrg enterprise = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> 
           getEnterpriseFieldBuilder() {
         if (enterpriseBuilder_ == null) {
           enterpriseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder>(
                   getEnterprise(),
                   getParentForChildren(),
                   isClean());
@@ -1867,9 +1867,9 @@ public final class Contract {
         return enterpriseBuilder_;
       }
 
-      private com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg factoring_ = null;
+      private com.xiangna.www.protos.configuration.Appconfig.CommercialOrg factoring_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> factoringBuilder_;
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> factoringBuilder_;
       /**
        * <pre>
        * 保理公司信息
@@ -1887,9 +1887,9 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg factoring = 4;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg getFactoring() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg getFactoring() {
         if (factoringBuilder_ == null) {
-          return factoring_ == null ? com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
+          return factoring_ == null ? com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : factoring_;
         } else {
           return factoringBuilder_.getMessage();
         }
@@ -1901,7 +1901,7 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg factoring = 4;</code>
        */
-      public Builder setFactoring(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder setFactoring(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (factoringBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1922,7 +1922,7 @@ public final class Contract {
        * <code>optional .protos.CommercialOrg factoring = 4;</code>
        */
       public Builder setFactoring(
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder builderForValue) {
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder builderForValue) {
         if (factoringBuilder_ == null) {
           factoring_ = builderForValue.build();
           onChanged();
@@ -1939,11 +1939,11 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg factoring = 4;</code>
        */
-      public Builder mergeFactoring(com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg value) {
+      public Builder mergeFactoring(com.xiangna.www.protos.configuration.Appconfig.CommercialOrg value) {
         if (factoringBuilder_ == null) {
           if (factoring_ != null) {
             factoring_ =
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.newBuilder(factoring_).mergeFrom(value).buildPartial();
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.newBuilder(factoring_).mergeFrom(value).buildPartial();
           } else {
             factoring_ = value;
           }
@@ -1979,7 +1979,7 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg factoring = 4;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder getFactoringBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder getFactoringBuilder() {
         
         onChanged();
         return getFactoringFieldBuilder().getBuilder();
@@ -1991,12 +1991,12 @@ public final class Contract {
        *
        * <code>optional .protos.CommercialOrg factoring = 4;</code>
        */
-      public com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
+      public com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder getFactoringOrBuilder() {
         if (factoringBuilder_ != null) {
           return factoringBuilder_.getMessageOrBuilder();
         } else {
           return factoring_ == null ?
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.getDefaultInstance() : factoring_;
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.getDefaultInstance() : factoring_;
         }
       }
       /**
@@ -2007,11 +2007,11 @@ public final class Contract {
        * <code>optional .protos.CommercialOrg factoring = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder> 
+          com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder> 
           getFactoringFieldBuilder() {
         if (factoringBuilder_ == null) {
           factoringBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Modelconfig.CommercialOrgOrBuilder>(
+              com.xiangna.www.protos.configuration.Appconfig.CommercialOrg, com.xiangna.www.protos.configuration.Appconfig.CommercialOrg.Builder, com.xiangna.www.protos.configuration.Appconfig.CommercialOrgOrBuilder>(
                   getFactoring(),
                   getParentForChildren(),
                   isClean());
@@ -3414,7 +3414,7 @@ public final class Contract {
 
     /**
      * <pre>
-     * 发票扫描件(图)
+     * 发票扫描件(图)直接保存流
      * </pre>
      *
      * <code>repeated bytes invoice_images = 7;</code>
@@ -3422,7 +3422,7 @@ public final class Contract {
     java.util.List<com.google.protobuf.ByteString> getInvoiceImagesList();
     /**
      * <pre>
-     * 发票扫描件(图)
+     * 发票扫描件(图)直接保存流
      * </pre>
      *
      * <code>repeated bytes invoice_images = 7;</code>
@@ -3430,7 +3430,7 @@ public final class Contract {
     int getInvoiceImagesCount();
     /**
      * <pre>
-     * 发票扫描件(图)
+     * 发票扫描件(图)直接保存流
      * </pre>
      *
      * <code>repeated bytes invoice_images = 7;</code>
@@ -5315,7 +5315,7 @@ public final class Contract {
     private java.util.List<com.google.protobuf.ByteString> invoiceImages_;
     /**
      * <pre>
-     * 发票扫描件(图)
+     * 发票扫描件(图)直接保存流
      * </pre>
      *
      * <code>repeated bytes invoice_images = 7;</code>
@@ -5326,7 +5326,7 @@ public final class Contract {
     }
     /**
      * <pre>
-     * 发票扫描件(图)
+     * 发票扫描件(图)直接保存流
      * </pre>
      *
      * <code>repeated bytes invoice_images = 7;</code>
@@ -5336,7 +5336,7 @@ public final class Contract {
     }
     /**
      * <pre>
-     * 发票扫描件(图)
+     * 发票扫描件(图)直接保存流
      * </pre>
      *
      * <code>repeated bytes invoice_images = 7;</code>
@@ -6674,7 +6674,7 @@ public final class Contract {
       }
       /**
        * <pre>
-       * 发票扫描件(图)
+       * 发票扫描件(图)直接保存流
        * </pre>
        *
        * <code>repeated bytes invoice_images = 7;</code>
@@ -6685,7 +6685,7 @@ public final class Contract {
       }
       /**
        * <pre>
-       * 发票扫描件(图)
+       * 发票扫描件(图)直接保存流
        * </pre>
        *
        * <code>repeated bytes invoice_images = 7;</code>
@@ -6695,7 +6695,7 @@ public final class Contract {
       }
       /**
        * <pre>
-       * 发票扫描件(图)
+       * 发票扫描件(图)直接保存流
        * </pre>
        *
        * <code>repeated bytes invoice_images = 7;</code>
@@ -6705,7 +6705,7 @@ public final class Contract {
       }
       /**
        * <pre>
-       * 发票扫描件(图)
+       * 发票扫描件(图)直接保存流
        * </pre>
        *
        * <code>repeated bytes invoice_images = 7;</code>
@@ -6722,7 +6722,7 @@ public final class Contract {
       }
       /**
        * <pre>
-       * 发票扫描件(图)
+       * 发票扫描件(图)直接保存流
        * </pre>
        *
        * <code>repeated bytes invoice_images = 7;</code>
@@ -6738,7 +6738,7 @@ public final class Contract {
       }
       /**
        * <pre>
-       * 发票扫描件(图)
+       * 发票扫描件(图)直接保存流
        * </pre>
        *
        * <code>repeated bytes invoice_images = 7;</code>
@@ -6753,7 +6753,7 @@ public final class Contract {
       }
       /**
        * <pre>
-       * 发票扫描件(图)
+       * 发票扫描件(图)直接保存流
        * </pre>
        *
        * <code>repeated bytes invoice_images = 7;</code>
@@ -7282,37 +7282,37 @@ public final class Contract {
   static {
     java.lang.String[] descriptorData = {
       "\n\027contract/contract.proto\022\006protos\032\023commo" +
-      "n/common.proto\032\037configuration/modelconfi" +
-      "g.proto\032\034contract/contract_data.proto\032\036c" +
-      "ontract/contract_status.proto\"\262\003\n\021Financ" +
-      "ingContract\022\020\n\010order_no\030\001 \001(\t\022\'\n\010supplie" +
-      "r\030\002 \001(\0132\025.protos.CommercialOrg\022)\n\nenterp" +
-      "rise\030\003 \001(\0132\025.protos.CommercialOrg\022(\n\tfac" +
-      "toring\030\004 \001(\0132\025.protos.CommercialOrg\022/\n\rc" +
-      "ontract_data\030\005 \001(\0132\030.protos.ContractForm" +
-      "Data\022!\n\010invoices\030\006 \003(\0132\017.protos.Invoice\022",
-      "/\n\013money_count\030\010 \001(\0132\032.protos.ContractMo" +
-      "neyCount\022/\n\017contract_status\030\t \001(\0132\026.prot" +
-      "os.ContractStatus\022,\n\014step_history\030\n \003(\0132" +
-      "\026.protos.ContractStatus\022)\n\014operate_info\030" +
-      "\013 \001(\0132\023.protos.OperateInfo\"\323\004\n\007Invoice\022\022" +
-      "\n\ninvoice_no\030\001 \001(\t\022\026\n\016invoice_amount\030\002 \001" +
-      "(\003\022\024\n\014invoice_time\030\003 \001(\003\0221\n\006seller\030\004 \001(\013" +
-      "2!.protos.Invoice.InvoiceCommercial\0224\n\tp" +
-      "urchaser\030\005 \001(\0132!.protos.Invoice.InvoiceC" +
-      "ommercial\022\026\n\016invoice_remark\030\006 \001(\t\022\026\n\016inv",
-      "oice_images\030\007 \003(\014\022\030\n\020expe_loan_amount\030\010 " +
-      "\001(\003\022\026\n\016expe_loan_rate\030\t \001(\003\022\033\n\023confirm_l" +
-      "oan_amount\030\n \001(\003\022\031\n\021confirm_loan_rate\030\013 " +
-      "\001(\003\022\030\n\020confirm_pay_time\030\014 \001(\003\022\033\n\023confirm" +
-      "_return_time\030\r \001(\003\022\030\n\020confirm_end_time\030\016" +
-      " \001(\003\022\031\n\021confirm_rate_desc\030\017 \001(\t\022 \n\030confi" +
-      "rm_urge_return_desc\030\020 \001(\t\032u\n\021InvoiceComm" +
-      "ercial\022\014\n\004name\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\017\n\007add" +
-      "ress\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\020\n\010bankName\030\005 " +
-      "\001(\t\022\023\n\013bankAccount\030\006 \001(\tBB\n\037com.xiangna.",
-      "www.protos.contractZ\037github.com/xncc/pro" +
-      "tos/contractb\006proto3"
+      "n/common.proto\032\035configuration/appconfig." +
+      "proto\032\034contract/contract_data.proto\032\036con" +
+      "tract/contract_status.proto\"\262\003\n\021Financin" +
+      "gContract\022\020\n\010order_no\030\001 \001(\t\022\'\n\010supplier\030" +
+      "\002 \001(\0132\025.protos.CommercialOrg\022)\n\nenterpri" +
+      "se\030\003 \001(\0132\025.protos.CommercialOrg\022(\n\tfacto" +
+      "ring\030\004 \001(\0132\025.protos.CommercialOrg\022/\n\rcon" +
+      "tract_data\030\005 \001(\0132\030.protos.ContractFormDa" +
+      "ta\022!\n\010invoices\030\006 \003(\0132\017.protos.Invoice\022/\n",
+      "\013money_count\030\010 \001(\0132\032.protos.ContractMone" +
+      "yCount\022/\n\017contract_status\030\t \001(\0132\026.protos" +
+      ".ContractStatus\022,\n\014step_history\030\n \003(\0132\026." +
+      "protos.ContractStatus\022)\n\014operate_info\030\013 " +
+      "\001(\0132\023.protos.OperateInfo\"\323\004\n\007Invoice\022\022\n\n" +
+      "invoice_no\030\001 \001(\t\022\026\n\016invoice_amount\030\002 \001(\003" +
+      "\022\024\n\014invoice_time\030\003 \001(\003\0221\n\006seller\030\004 \001(\0132!" +
+      ".protos.Invoice.InvoiceCommercial\0224\n\tpur" +
+      "chaser\030\005 \001(\0132!.protos.Invoice.InvoiceCom" +
+      "mercial\022\026\n\016invoice_remark\030\006 \001(\t\022\026\n\016invoi",
+      "ce_images\030\007 \003(\014\022\030\n\020expe_loan_amount\030\010 \001(" +
+      "\003\022\026\n\016expe_loan_rate\030\t \001(\003\022\033\n\023confirm_loa" +
+      "n_amount\030\n \001(\003\022\031\n\021confirm_loan_rate\030\013 \001(" +
+      "\003\022\030\n\020confirm_pay_time\030\014 \001(\003\022\033\n\023confirm_r" +
+      "eturn_time\030\r \001(\003\022\030\n\020confirm_end_time\030\016 \001" +
+      "(\003\022\031\n\021confirm_rate_desc\030\017 \001(\t\022 \n\030confirm" +
+      "_urge_return_desc\030\020 \001(\t\032u\n\021InvoiceCommer" +
+      "cial\022\014\n\004name\030\001 \001(\t\022\013\n\003key\030\002 \001(\t\022\017\n\007addre" +
+      "ss\030\003 \001(\t\022\r\n\005phone\030\004 \001(\t\022\020\n\010bankName\030\005 \001(" +
+      "\t\022\023\n\013bankAccount\030\006 \001(\tBB\n\037com.xiangna.ww",
+      "w.protos.contractZ\037github.com/xncc/proto" +
+      "s/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -7326,7 +7326,7 @@ public final class Contract {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.xiangna.www.protos.common.Common.getDescriptor(),
-          com.xiangna.www.protos.configuration.Modelconfig.getDescriptor(),
+          com.xiangna.www.protos.configuration.Appconfig.getDescriptor(),
           com.xiangna.www.protos.contract.ContractData.getDescriptor(),
           com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor(),
         }, assigner);
@@ -7349,7 +7349,7 @@ public final class Contract {
         internal_static_protos_Invoice_InvoiceCommercial_descriptor,
         new java.lang.String[] { "Name", "Key", "Address", "Phone", "BankName", "BankAccount", });
     com.xiangna.www.protos.common.Common.getDescriptor();
-    com.xiangna.www.protos.configuration.Modelconfig.getDescriptor();
+    com.xiangna.www.protos.configuration.Appconfig.getDescriptor();
     com.xiangna.www.protos.contract.ContractData.getDescriptor();
     com.xiangna.www.protos.contract.ContractStatusOuterClass.getDescriptor();
   }

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 import "common/common.proto";
-import "configuration/modelconfig.proto";
+import "configuration/appconfig.proto";
 import "contract/contract_data.proto";
 import "contract/contract_status.proto";
 
@@ -50,7 +50,7 @@ message Invoice {
     InvoiceCommercial seller = 4; // 销售方
     InvoiceCommercial purchaser = 5; // 购买方
     string invoice_remark = 6; // 发票备注备注
-    repeated bytes invoice_images = 7; // 发票扫描件(图)
+    repeated bytes invoice_images = 7; // 发票扫描件(图)直接保存流
 
     // 供应商维护字段
     int64 expe_loan_amount = 8; // 期望融资金额
