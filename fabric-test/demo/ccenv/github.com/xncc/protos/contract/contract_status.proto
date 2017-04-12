@@ -5,16 +5,29 @@ import "configuration/contractflow.proto";
 
 option go_package = "github.com/xncc/protos/contract";
 option java_package = "com.xiangna.www.protos.contract";
+option java_outer_classname = "ContractOrderStatus";
+
 
 package protos;
 
 // ==============================订单状态=====================================================
+
+// 订单状态类型
+enum StatusType {
+    DEFAULT = 0;
+    CREATE = 1; // 创建融资申请
+    CHECK_CONFIRM = 2; // 审核确认
+    PAY_LOAN = 3; // 放款中
+    PAYBACK_LOAN = 4; // 还款中
+    OVER = 5; // 结束
+}
 
 // 订单状态
 message ContractStatus {
     ContractStep current_step = 1; // 当前订单阶段
     repeated CheckData check_datas = 2; // 是否已通过认所有确认项
     repeated ContractCheckFlowData check_flow_datas = 3; // 申请订单审批流数据(历史记录)
+    StatusType status = 4; // 订单状态类型
 }
 
 // 订单审核流程信息

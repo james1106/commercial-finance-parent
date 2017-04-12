@@ -1,6 +1,8 @@
 package com.xiangan.platform.chainserver.service.contract.impl;
 
-import com.xiangan.platform.chainserver.api.contract.vo.request.ContractInitRequest;
+import com.xiangan.platform.chainserver.api.contract.vo.request.ContractOrderRequest;
+import com.xiangan.platform.chainserver.api.contract.vo.request.MortgageInvoice;
+import com.xiangan.platform.chainserver.common.domain.BaseRequest;
 import com.xiangan.platform.chainserver.common.entity.user.OrdererConfig;
 import com.xiangan.platform.chainserver.common.entity.user.PeerConfig;
 import com.xiangan.platform.chainserver.common.entity.user.UserInfo;
@@ -11,8 +13,9 @@ import com.xiangan.platform.chainserver.sdk.ChainCodeService;
 import com.xiangan.platform.chainserver.sdk.ChainService;
 import com.xiangan.platform.chainserver.sdk.SDKClientFactory;
 import com.xiangan.platform.chainserver.service.contract.ContractService;
+import com.xiangan.platform.chainserver.service.contract.constant.ContractConstant;
+import com.xiangna.www.protos.common.Common;
 import com.xiangna.www.protos.contract.Contract;
-import com.xiangna.www.protos.contract.ContractData;
 import com.xiangna.www.protos.contract.ContractRequest;
 import com.xiangna.www.protos.contract.ContractRequest.ContractExcuteRequest;
 import org.hyperledger.fabric.sdk.Chain;
@@ -46,48 +49,81 @@ public class ContractServiceImpl implements ContractService {
     @Autowired
     private ChainService chainService;
 
-    @Override
-    public void init(ContractInitRequest contractInitRequest, UserInfo userInfo) throws Exception {
-
-        long now = new Date().getTime() / 1000;
-
-        // 合约表单数据
-        ContractData.ContractFormData.Builder contractFormData = ContractData.ContractFormData.newBuilder();
-        contractFormData.setExpectLoanAmount(contractInitRequest.getExpectLoanAmount());
-        contractFormData.setExpectLoanPeriod(contractInitRequest.getExpectLoanPeriod());
-        contractFormData.setExpectLoanRate(contractInitRequest.getExpectLoanRate());
-        contractFormData.setExpectLoanEndTime(DateUtil.toUnixTime(DateUtil.addDays(new Date(),
-                contractInitRequest.getExpectLoanPeriod())));
-
-        // 合约发票数据
-        List<Contract.Invoice> invoices = new ArrayList<>(contractInitRequest.getInvoices().size());
-        for (ContractInitRequest.MortgageInvoice invoice : contractInitRequest.getInvoices()) {
-            invoices.add(invoice.convert());
-        }
-
-        // 合约数据
-        Contract.FinancingContract order = Contract.FinancingContract.newBuilder()
-                .setOrderNo(IDUtil.generateContractNO())
-                .setContractData(contractFormData.build())
-                .addAllInvoices(invoices)
-                .setOperateInfo(contractInitRequest.getOperateInfo())
+    /**
+     * 构建操作记录
+     *
+     * @param request
+     * @param userInfo
+     * @param operate
+     * @return
+     */
+    private Common.OperateInfo operate(BaseRequest request, UserInfo userInfo, String operate) {
+        return Common.OperateInfo.newBuilder()
+                .setAppId(request.getAppId())
+//                .setUserId()
+                .setCaAccount(userInfo.getUserAccount().getName())
+                .setCert(userInfo.getUserAccount().getEnrollment().getCert())
+                .setOperateDesc(operate)
+                .setSourceIP(request.getSourceIP())
+                .setOperateTime(DateUtil.toUnixTime(new Date()))
                 .build();
+    }
+
+    @Override
+    public void init(ContractOrderRequest request, UserInfo userInfo) throws Exception {
+
+        String no = IDUtil.generateContractNO();
+        String key = IDUtil.generateContractKey(new Date(), no);
 
         // 请求参数
         ContractExcuteRequest.Builder requestBuilder = ContractExcuteRequest.newBuilder();
         requestBuilder.setAction("init");
-        requestBuilder.setContractData(order.toByteString());
+        requestBuilder.setContractKey(key);
+        requestBuilder.setContractNO(no);
 
-        // 合约附件处理
-        ContractRequest.FileAddRequest fileAddRequest = FileUtil.convertData(order.getOrderNo(), contractInitRequest.getAttas());
-        if (fileAddRequest != null) {
-            requestBuilder.setContractFile(fileAddRequest.toByteString());
+        // 合约表单数据
+        requestBuilder.setPlayload(0, request.getContractData().convert().toByteString());
+
+        // 合约发票数据
+        if (request.getInvoices() != null && !request.getInvoices().isEmpty()) {
+            List<Contract.Invoice> invoices = new ArrayList<>(request.getInvoices().size());
+            for (MortgageInvoice invoice : request.getInvoices()) {
+                invoices.add(invoice.convert());
+            }
+            requestBuilder.setPlayload(1, ContractRequest.InvoiceAddRequest.newBuilder().addAllInvoice(invoices).build().toByteString());
         }
 
+        // 合约附件处理
+        if (request.getAttas() != null && !request.getAttas().isEmpty()) {
+            requestBuilder.setPlayload(2, FileUtil.convertData(request.getAttas()).toByteString());
+        }
+
+        // 合约操作数据
+        requestBuilder.setPlayload(3, operate(request, userInfo, ContractConstant.OperateDesc.INIT).toByteString());
+
+        excute(request.getLedgerId(), requestBuilder.build(), userInfo);
+
+    }
+
+    private List<Common.ChainCodeResponse> excute(String chainName, ContractRequest.ContractExcuteRequest request, UserInfo userInfo) throws Exception {
         ArrayList<Object> bytes = new ArrayList<>(2);
         bytes.add("excute");
-        bytes.add(requestBuilder.build());
+        bytes.add(request);
+        return chainCodeExcute(chainName, true, bytes, userInfo);
 
+    }
+
+    private List<Common.ChainCodeResponse> query(String chainName, ContractRequest.ContractQueryRequest request, UserInfo userInfo) throws Exception {
+        ArrayList<Object> bytes = new ArrayList<>(2);
+        bytes.add("query");
+        bytes.add(request);
+        return chainCodeExcute(chainName, false, bytes, userInfo);
+    }
+
+    private List<Common.ChainCodeResponse> chainCodeExcute(String chainName,
+                                                           boolean invokeFlag,
+                                                           ArrayList<Object> args,
+                                                           UserInfo userInfo) throws Exception {
         // 执行chaincode操作
         HFClient client = SDKClientFactory.getClient();
 
@@ -109,15 +145,17 @@ public class ContractServiceImpl implements ContractService {
             eventHubs.add(client.newEventHub(peerConfig.getName(), peerConfig.getEventHub()));
         }
 
-        Chain chain = chainService.getChain(contractInitRequest.getLedgerId(), orderers, peers, eventHubs, client);
+        Chain chain = chainService.getChain(chainName, orderers, peers, eventHubs, client);
 
         String chainCodeName = "contract_cc_go";
         String chainCodePath = "github.com/xncc/contract_cc";
         String chainCodeVersion = "1";
 
         ChainCodeID chainCodeID = chainCodeService.getChainCodeId(chainCodeName, chainCodePath, chainCodeVersion);
-
-        chainCodeService.invoke(chainCodeID, bytes, client, chain);
+        if (invokeFlag) {
+            return chainCodeService.invoke(chainCodeID, args, client, chain);
+        }
+        return chainCodeService.query(chainCodeID, args, client, chain);
     }
 
 

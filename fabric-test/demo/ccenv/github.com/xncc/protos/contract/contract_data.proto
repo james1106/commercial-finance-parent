@@ -23,8 +23,6 @@ message ContractFormData {
     int64 confirm_loan_rate = 7; // 确认融资利率
     int64 confirm_loan_end_time = 8; // 确认融资到期时间(unix时间戳)
 
-    // 所有参与方维护
-    repeated LedgerFile files = 9; // 融资申请相关文件
 }
 
 // 订单款项金额汇总

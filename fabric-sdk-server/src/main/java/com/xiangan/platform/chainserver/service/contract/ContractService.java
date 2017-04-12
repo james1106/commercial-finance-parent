@@ -1,6 +1,6 @@
 package com.xiangan.platform.chainserver.service.contract;
 
-import com.xiangan.platform.chainserver.api.contract.vo.request.ContractInitRequest;
+import com.xiangan.platform.chainserver.api.contract.vo.request.ContractOrderRequest;
 import com.xiangan.platform.chainserver.common.entity.user.UserInfo;
 
 /**
@@ -16,9 +16,9 @@ public interface ContractService {
     /**
      * 发起融资申请
      *
-     * @param contractInitRequest
-     * @param userInfo
+     * @param request  融资申请数据
+     * @param userInfo 用户信息
      * @throws Exception
      */
-    void init(ContractInitRequest contractInitRequest, UserInfo userInfo) throws Exception;
+    void init(ContractOrderRequest request, UserInfo userInfo) throws Exception;
 }

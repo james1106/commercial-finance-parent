@@ -61,18 +61,16 @@ public class FileUtil {
     /**
      * 接口请求参数转换成chaincode执行参数
      *
-     * @param contractNO
      * @param requests
      * @return
      * @throws IOException
      * @throws NoSuchAlgorithmException
      */
-    public static ContractRequest.FileAddRequest convertData(String contractNO, List<FileDataRequest> requests) throws IOException, NoSuchAlgorithmException {
+    public static ContractRequest.FileAddRequest convertData(List<FileDataRequest> requests) throws IOException, NoSuchAlgorithmException {
         if (requests == null) {
             return null;
         }
         ContractRequest.FileAddRequest.Builder builder = ContractRequest.FileAddRequest.newBuilder();
-        builder.setNo(contractNO);
 
         Common.LedgerFileData fileData;
         for (FileDataRequest request : requests) {

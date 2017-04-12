@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "common/common.proto";
+import "contract/contract.proto";
 
 option go_package = "github.com/xncc/protos/contract";
 option java_package = "com.xiangna.www.protos.contract";
@@ -10,17 +11,21 @@ package protos;
 // 执行合约请求参数
 message ContractExcuteRequest {
     string action = 1; // 操作
-    string no = 2; // 合约编号
-    bytes contractData = 3; // 合约数据
-    bytes contractFile = 4; // 合约文件 see message FileAddRequest
+    string contractKey = 2; // 合约数据KEY
+    string contractNO = 3; // 合约订单编号
+    repeated bytes playload = 4; // 请求参数
 
 }
 
 // 执行文件新增请求参数
-message FileAddRequest{
-    string no = 1; // 合约编号
-    repeated LedgerFileData fileDatas = 2; // 文件流
-    repeated LedgerFile fileInfos = 3; // 文件信息
+message FileAddRequest {
+    repeated LedgerFileData fileDatas = 1; // 文件流
+    repeated LedgerFile fileInfos = 2; // 文件信息
+}
+
+// 发票数据
+message InvoiceAddRequest {
+    repeated Invoice invoice = 1; // 发票数据
 }
 
 // 合约新增审批日志请求参数

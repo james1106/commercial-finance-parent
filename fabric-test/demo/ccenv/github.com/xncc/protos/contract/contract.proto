@@ -25,8 +25,11 @@ message FinancingContract {
 
     ContractStatus contract_status = 9; // 订单状态
     repeated ContractStatus step_history = 10; // 订单状态历史记录
-    OperateInfo operate_info = 11; // 数据操作信息
 
+    // 所有参与方维护
+    repeated LedgerFile files = 11; // 融资申请相关文件
+
+    repeated OperateInfo operate_info = 12; // 数据操作信息
 }
 
 // 一张发票的融资信息
