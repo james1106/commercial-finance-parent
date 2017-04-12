@@ -2912,10 +2912,28 @@ public final class ContractData {
 
     /**
      * <pre>
+     * 流水编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    java.lang.String getNo();
+    /**
+     * <pre>
+     * 流水编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNoBytes();
+
+    /**
+     * <pre>
      * 支出方信息
      * </pre>
      *
-     * <code>optional string expenses = 1;</code>
+     * <code>optional string expenses = 2;</code>
      */
     java.lang.String getExpenses();
     /**
@@ -2923,7 +2941,7 @@ public final class ContractData {
      * 支出方信息
      * </pre>
      *
-     * <code>optional string expenses = 1;</code>
+     * <code>optional string expenses = 2;</code>
      */
     com.google.protobuf.ByteString
         getExpensesBytes();
@@ -2933,7 +2951,7 @@ public final class ContractData {
      * 支出金额
      * </pre>
      *
-     * <code>optional int64 expenses_amount = 2;</code>
+     * <code>optional int64 expenses_amount = 3;</code>
      */
     long getExpensesAmount();
 
@@ -2942,7 +2960,7 @@ public final class ContractData {
      * 支出账户
      * </pre>
      *
-     * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+     * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
      */
     boolean hasExpensesAccount();
     /**
@@ -2950,7 +2968,7 @@ public final class ContractData {
      * 支出账户
      * </pre>
      *
-     * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+     * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
      */
     com.xiangna.www.protos.common.Common.OrgBankAccount getExpensesAccount();
     /**
@@ -2958,7 +2976,7 @@ public final class ContractData {
      * 支出账户
      * </pre>
      *
-     * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+     * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
      */
     com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getExpensesAccountOrBuilder();
 
@@ -2967,7 +2985,7 @@ public final class ContractData {
      * 收入方信息
      * </pre>
      *
-     * <code>optional string income = 4;</code>
+     * <code>optional string income = 5;</code>
      */
     java.lang.String getIncome();
     /**
@@ -2975,7 +2993,7 @@ public final class ContractData {
      * 收入方信息
      * </pre>
      *
-     * <code>optional string income = 4;</code>
+     * <code>optional string income = 5;</code>
      */
     com.google.protobuf.ByteString
         getIncomeBytes();
@@ -3101,6 +3119,7 @@ public final class ContractData {
       super(builder);
     }
     private ContractTransactionDetail() {
+      no_ = "";
       expenses_ = "";
       expensesAmount_ = 0L;
       income_ = "";
@@ -3138,15 +3157,21 @@ public final class ContractData {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              no_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               expenses_ = s;
               break;
             }
-            case 16: {
+            case 24: {
 
               expensesAmount_ = input.readInt64();
               break;
             }
-            case 26: {
+            case 34: {
               com.xiangna.www.protos.common.Common.OrgBankAccount.Builder subBuilder = null;
               if (expensesAccount_ != null) {
                 subBuilder = expensesAccount_.toBuilder();
@@ -3159,7 +3184,7 @@ public final class ContractData {
 
               break;
             }
-            case 34: {
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               income_ = s;
@@ -3185,9 +3210,9 @@ public final class ContractData {
               break;
             }
             case 66: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
                 tansactionNotes_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000080;
               }
               tansactionNotes_.add(
                   input.readMessage(com.xiangna.www.protos.common.Common.LedgerFile.parser(), extensionRegistry));
@@ -3211,7 +3236,7 @@ public final class ContractData {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
           tansactionNotes_ = java.util.Collections.unmodifiableList(tansactionNotes_);
         }
         makeExtensionsImmutable();
@@ -3230,14 +3255,56 @@ public final class ContractData {
     }
 
     private int bitField0_;
-    public static final int EXPENSES_FIELD_NUMBER = 1;
+    public static final int NO_FIELD_NUMBER = 1;
+    private volatile java.lang.Object no_;
+    /**
+     * <pre>
+     * 流水编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    public java.lang.String getNo() {
+      java.lang.Object ref = no_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        no_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * 流水编号
+     * </pre>
+     *
+     * <code>optional string no = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNoBytes() {
+      java.lang.Object ref = no_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        no_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXPENSES_FIELD_NUMBER = 2;
     private volatile java.lang.Object expenses_;
     /**
      * <pre>
      * 支出方信息
      * </pre>
      *
-     * <code>optional string expenses = 1;</code>
+     * <code>optional string expenses = 2;</code>
      */
     public java.lang.String getExpenses() {
       java.lang.Object ref = expenses_;
@@ -3256,7 +3323,7 @@ public final class ContractData {
      * 支出方信息
      * </pre>
      *
-     * <code>optional string expenses = 1;</code>
+     * <code>optional string expenses = 2;</code>
      */
     public com.google.protobuf.ByteString
         getExpensesBytes() {
@@ -3272,27 +3339,27 @@ public final class ContractData {
       }
     }
 
-    public static final int EXPENSES_AMOUNT_FIELD_NUMBER = 2;
+    public static final int EXPENSES_AMOUNT_FIELD_NUMBER = 3;
     private long expensesAmount_;
     /**
      * <pre>
      * 支出金额
      * </pre>
      *
-     * <code>optional int64 expenses_amount = 2;</code>
+     * <code>optional int64 expenses_amount = 3;</code>
      */
     public long getExpensesAmount() {
       return expensesAmount_;
     }
 
-    public static final int EXPENSES_ACCOUNT_FIELD_NUMBER = 3;
+    public static final int EXPENSES_ACCOUNT_FIELD_NUMBER = 4;
     private com.xiangna.www.protos.common.Common.OrgBankAccount expensesAccount_;
     /**
      * <pre>
      * 支出账户
      * </pre>
      *
-     * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+     * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
      */
     public boolean hasExpensesAccount() {
       return expensesAccount_ != null;
@@ -3302,7 +3369,7 @@ public final class ContractData {
      * 支出账户
      * </pre>
      *
-     * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+     * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
      */
     public com.xiangna.www.protos.common.Common.OrgBankAccount getExpensesAccount() {
       return expensesAccount_ == null ? com.xiangna.www.protos.common.Common.OrgBankAccount.getDefaultInstance() : expensesAccount_;
@@ -3312,20 +3379,20 @@ public final class ContractData {
      * 支出账户
      * </pre>
      *
-     * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+     * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
      */
     public com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getExpensesAccountOrBuilder() {
       return getExpensesAccount();
     }
 
-    public static final int INCOME_FIELD_NUMBER = 4;
+    public static final int INCOME_FIELD_NUMBER = 5;
     private volatile java.lang.Object income_;
     /**
      * <pre>
      * 收入方信息
      * </pre>
      *
-     * <code>optional string income = 4;</code>
+     * <code>optional string income = 5;</code>
      */
     public java.lang.String getIncome() {
       java.lang.Object ref = income_;
@@ -3344,7 +3411,7 @@ public final class ContractData {
      * 收入方信息
      * </pre>
      *
-     * <code>optional string income = 4;</code>
+     * <code>optional string income = 5;</code>
      */
     public com.google.protobuf.ByteString
         getIncomeBytes() {
@@ -3528,17 +3595,20 @@ public final class ContractData {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getNoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, no_);
+      }
       if (!getExpensesBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, expenses_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, expenses_);
       }
       if (expensesAmount_ != 0L) {
-        output.writeInt64(2, expensesAmount_);
+        output.writeInt64(3, expensesAmount_);
       }
       if (expensesAccount_ != null) {
-        output.writeMessage(3, getExpensesAccount());
+        output.writeMessage(4, getExpensesAccount());
       }
       if (!getIncomeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, income_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, income_);
       }
       if (incomeAccount_ != null) {
         output.writeMessage(6, getIncomeAccount());
@@ -3562,19 +3632,22 @@ public final class ContractData {
       if (size != -1) return size;
 
       size = 0;
+      if (!getNoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, no_);
+      }
       if (!getExpensesBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, expenses_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, expenses_);
       }
       if (expensesAmount_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, expensesAmount_);
+          .computeInt64Size(3, expensesAmount_);
       }
       if (expensesAccount_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getExpensesAccount());
+          .computeMessageSize(4, getExpensesAccount());
       }
       if (!getIncomeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, income_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, income_);
       }
       if (incomeAccount_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -3611,6 +3684,8 @@ public final class ContractData {
       com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail other = (com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail) obj;
 
       boolean result = true;
+      result = result && getNo()
+          .equals(other.getNo());
       result = result && getExpenses()
           .equals(other.getExpenses());
       result = result && (getExpensesAmount()
@@ -3645,6 +3720,8 @@ public final class ContractData {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + NO_FIELD_NUMBER;
+      hash = (53 * hash) + getNo().hashCode();
       hash = (37 * hash) + EXPENSES_FIELD_NUMBER;
       hash = (53 * hash) + getExpenses().hashCode();
       hash = (37 * hash) + EXPENSES_AMOUNT_FIELD_NUMBER;
@@ -3795,6 +3872,8 @@ public final class ContractData {
       }
       public Builder clear() {
         super.clear();
+        no_ = "";
+
         expenses_ = "";
 
         expensesAmount_ = 0L;
@@ -3817,7 +3896,7 @@ public final class ContractData {
 
         if (tansactionNotesBuilder_ == null) {
           tansactionNotes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           tansactionNotesBuilder_.clear();
         }
@@ -3849,6 +3928,7 @@ public final class ContractData {
         com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail result = new com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
+        result.no_ = no_;
         result.expenses_ = expenses_;
         result.expensesAmount_ = expensesAmount_;
         if (expensesAccountBuilder_ == null) {
@@ -3864,9 +3944,9 @@ public final class ContractData {
         }
         result.tansactionRemark_ = tansactionRemark_;
         if (tansactionNotesBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
             tansactionNotes_ = java.util.Collections.unmodifiableList(tansactionNotes_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.tansactionNotes_ = tansactionNotes_;
         } else {
@@ -3916,6 +3996,10 @@ public final class ContractData {
 
       public Builder mergeFrom(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail other) {
         if (other == com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance()) return this;
+        if (!other.getNo().isEmpty()) {
+          no_ = other.no_;
+          onChanged();
+        }
         if (!other.getExpenses().isEmpty()) {
           expenses_ = other.expenses_;
           onChanged();
@@ -3941,7 +4025,7 @@ public final class ContractData {
           if (!other.tansactionNotes_.isEmpty()) {
             if (tansactionNotes_.isEmpty()) {
               tansactionNotes_ = other.tansactionNotes_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureTansactionNotesIsMutable();
               tansactionNotes_.addAll(other.tansactionNotes_);
@@ -3954,7 +4038,7 @@ public final class ContractData {
               tansactionNotesBuilder_.dispose();
               tansactionNotesBuilder_ = null;
               tansactionNotes_ = other.tansactionNotes_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000080);
               tansactionNotesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTansactionNotesFieldBuilder() : null;
@@ -3996,13 +4080,102 @@ public final class ContractData {
       }
       private int bitField0_;
 
+      private java.lang.Object no_ = "";
+      /**
+       * <pre>
+       * 流水编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public java.lang.String getNo() {
+        java.lang.Object ref = no_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          no_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 流水编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNoBytes() {
+        java.lang.Object ref = no_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          no_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * 流水编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public Builder setNo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        no_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 流水编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public Builder clearNo() {
+        
+        no_ = getDefaultInstance().getNo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 流水编号
+       * </pre>
+       *
+       * <code>optional string no = 1;</code>
+       */
+      public Builder setNoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        no_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object expenses_ = "";
       /**
        * <pre>
        * 支出方信息
        * </pre>
        *
-       * <code>optional string expenses = 1;</code>
+       * <code>optional string expenses = 2;</code>
        */
       public java.lang.String getExpenses() {
         java.lang.Object ref = expenses_;
@@ -4021,7 +4194,7 @@ public final class ContractData {
        * 支出方信息
        * </pre>
        *
-       * <code>optional string expenses = 1;</code>
+       * <code>optional string expenses = 2;</code>
        */
       public com.google.protobuf.ByteString
           getExpensesBytes() {
@@ -4041,7 +4214,7 @@ public final class ContractData {
        * 支出方信息
        * </pre>
        *
-       * <code>optional string expenses = 1;</code>
+       * <code>optional string expenses = 2;</code>
        */
       public Builder setExpenses(
           java.lang.String value) {
@@ -4058,7 +4231,7 @@ public final class ContractData {
        * 支出方信息
        * </pre>
        *
-       * <code>optional string expenses = 1;</code>
+       * <code>optional string expenses = 2;</code>
        */
       public Builder clearExpenses() {
         
@@ -4071,7 +4244,7 @@ public final class ContractData {
        * 支出方信息
        * </pre>
        *
-       * <code>optional string expenses = 1;</code>
+       * <code>optional string expenses = 2;</code>
        */
       public Builder setExpensesBytes(
           com.google.protobuf.ByteString value) {
@@ -4091,7 +4264,7 @@ public final class ContractData {
        * 支出金额
        * </pre>
        *
-       * <code>optional int64 expenses_amount = 2;</code>
+       * <code>optional int64 expenses_amount = 3;</code>
        */
       public long getExpensesAmount() {
         return expensesAmount_;
@@ -4101,7 +4274,7 @@ public final class ContractData {
        * 支出金额
        * </pre>
        *
-       * <code>optional int64 expenses_amount = 2;</code>
+       * <code>optional int64 expenses_amount = 3;</code>
        */
       public Builder setExpensesAmount(long value) {
         
@@ -4114,7 +4287,7 @@ public final class ContractData {
        * 支出金额
        * </pre>
        *
-       * <code>optional int64 expenses_amount = 2;</code>
+       * <code>optional int64 expenses_amount = 3;</code>
        */
       public Builder clearExpensesAmount() {
         
@@ -4131,7 +4304,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public boolean hasExpensesAccount() {
         return expensesAccountBuilder_ != null || expensesAccount_ != null;
@@ -4141,7 +4314,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public com.xiangna.www.protos.common.Common.OrgBankAccount getExpensesAccount() {
         if (expensesAccountBuilder_ == null) {
@@ -4155,7 +4328,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public Builder setExpensesAccount(com.xiangna.www.protos.common.Common.OrgBankAccount value) {
         if (expensesAccountBuilder_ == null) {
@@ -4175,7 +4348,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public Builder setExpensesAccount(
           com.xiangna.www.protos.common.Common.OrgBankAccount.Builder builderForValue) {
@@ -4193,7 +4366,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public Builder mergeExpensesAccount(com.xiangna.www.protos.common.Common.OrgBankAccount value) {
         if (expensesAccountBuilder_ == null) {
@@ -4215,7 +4388,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public Builder clearExpensesAccount() {
         if (expensesAccountBuilder_ == null) {
@@ -4233,7 +4406,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public com.xiangna.www.protos.common.Common.OrgBankAccount.Builder getExpensesAccountBuilder() {
         
@@ -4245,7 +4418,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       public com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder getExpensesAccountOrBuilder() {
         if (expensesAccountBuilder_ != null) {
@@ -4260,7 +4433,7 @@ public final class ContractData {
        * 支出账户
        * </pre>
        *
-       * <code>optional .protos.OrgBankAccount expenses_account = 3;</code>
+       * <code>optional .protos.OrgBankAccount expenses_account = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.xiangna.www.protos.common.Common.OrgBankAccount, com.xiangna.www.protos.common.Common.OrgBankAccount.Builder, com.xiangna.www.protos.common.Common.OrgBankAccountOrBuilder> 
@@ -4282,7 +4455,7 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional string income = 4;</code>
+       * <code>optional string income = 5;</code>
        */
       public java.lang.String getIncome() {
         java.lang.Object ref = income_;
@@ -4301,7 +4474,7 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional string income = 4;</code>
+       * <code>optional string income = 5;</code>
        */
       public com.google.protobuf.ByteString
           getIncomeBytes() {
@@ -4321,7 +4494,7 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional string income = 4;</code>
+       * <code>optional string income = 5;</code>
        */
       public Builder setIncome(
           java.lang.String value) {
@@ -4338,7 +4511,7 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional string income = 4;</code>
+       * <code>optional string income = 5;</code>
        */
       public Builder clearIncome() {
         
@@ -4351,7 +4524,7 @@ public final class ContractData {
        * 收入方信息
        * </pre>
        *
-       * <code>optional string income = 4;</code>
+       * <code>optional string income = 5;</code>
        */
       public Builder setIncomeBytes(
           com.google.protobuf.ByteString value) {
@@ -4610,9 +4783,9 @@ public final class ContractData {
       private java.util.List<com.xiangna.www.protos.common.Common.LedgerFile> tansactionNotes_ =
         java.util.Collections.emptyList();
       private void ensureTansactionNotesIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
           tansactionNotes_ = new java.util.ArrayList<com.xiangna.www.protos.common.Common.LedgerFile>(tansactionNotes_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -4806,7 +4979,7 @@ public final class ContractData {
       public Builder clearTansactionNotes() {
         if (tansactionNotesBuilder_ == null) {
           tansactionNotes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           tansactionNotesBuilder_.clear();
@@ -4911,7 +5084,7 @@ public final class ContractData {
           tansactionNotesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.xiangna.www.protos.common.Common.LedgerFile, com.xiangna.www.protos.common.Common.LedgerFile.Builder, com.xiangna.www.protos.common.Common.LedgerFileOrBuilder>(
                   tansactionNotes_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
                   isClean());
           tansactionNotes_ = null;
@@ -5082,17 +5255,17 @@ public final class ContractData {
       "d_payback_loan_amount\030\004 \001(\003\022\037\n\027payback_e" +
       "xpenses_amount\030\005 \001(\003\022\035\n\025payback_income_a" +
       "mount\030\006 \001(\003\022>\n\023transaction_details\030\007 \003(\013" +
-      "2!.protos.ContractTransactionDetail\"\261\002\n\031" +
-      "ContractTransactionDetail\022\020\n\010expenses\030\001 " +
-      "\001(\t\022\027\n\017expenses_amount\030\002 \001(\003\0220\n\020expenses" +
-      "_account\030\003 \001(\0132\026.protos.OrgBankAccount\022\016" +
-      "\n\006income\030\004 \001(\t\022.\n\016income_account\030\006 \001(\0132\026",
-      ".protos.OrgBankAccount\022\031\n\021tansaction_rem" +
-      "ark\030\007 \001(\t\022,\n\020tansaction_notes\030\010 \003(\0132\022.pr" +
-      "otos.LedgerFile\022\027\n\017tansaction_time\030\t \001(\003" +
-      "\022\025\n\rincom_confirm\030\n \001(\010BB\n\037com.xiangna.w" +
-      "ww.protos.contractZ\037github.com/xncc/prot" +
-      "os/contractb\006proto3"
+      "2!.protos.ContractTransactionDetail\"\275\002\n\031" +
+      "ContractTransactionDetail\022\n\n\002no\030\001 \001(\t\022\020\n" +
+      "\010expenses\030\002 \001(\t\022\027\n\017expenses_amount\030\003 \001(\003" +
+      "\0220\n\020expenses_account\030\004 \001(\0132\026.protos.OrgB" +
+      "ankAccount\022\016\n\006income\030\005 \001(\t\022.\n\016income_acc",
+      "ount\030\006 \001(\0132\026.protos.OrgBankAccount\022\031\n\021ta" +
+      "nsaction_remark\030\007 \001(\t\022,\n\020tansaction_note" +
+      "s\030\010 \003(\0132\022.protos.LedgerFile\022\027\n\017tansactio" +
+      "n_time\030\t \001(\003\022\025\n\rincom_confirm\030\n \001(\010BB\n\037c" +
+      "om.xiangna.www.protos.contractZ\037github.c" +
+      "om/xncc/protos/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5125,7 +5298,7 @@ public final class ContractData {
     internal_static_protos_ContractTransactionDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractTransactionDetail_descriptor,
-        new java.lang.String[] { "Expenses", "ExpensesAmount", "ExpensesAccount", "Income", "IncomeAccount", "TansactionRemark", "TansactionNotes", "TansactionTime", "IncomConfirm", });
+        new java.lang.String[] { "No", "Expenses", "ExpensesAmount", "ExpensesAccount", "Income", "IncomeAccount", "TansactionRemark", "TansactionNotes", "TansactionTime", "IncomConfirm", });
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.configuration.Contractflow.getDescriptor();
   }

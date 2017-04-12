@@ -47,11 +47,12 @@ message ContractMoneyCount {
 
 // 订单款项转移金额流水
 message ContractTransactionDetail {
-    string expenses = 1; // 支出方信息
-    int64 expenses_amount = 2; // 支出金额
-    OrgBankAccount expenses_account = 3; // 支出账户
+    string no = 1; // 流水编号
+    string expenses = 2; // 支出方信息
+    int64 expenses_amount = 3; // 支出金额
+    OrgBankAccount expenses_account = 4; // 支出账户
 
-    string income = 4; // 收入方信息
+    string income = 5; // 收入方信息
     OrgBankAccount income_account = 6; // 收入方账户
     string tansaction_remark = 7; // 交易备注
     repeated LedgerFile tansaction_notes = 8; // 交易票据(图)
