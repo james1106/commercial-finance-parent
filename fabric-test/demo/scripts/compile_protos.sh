@@ -76,6 +76,16 @@ mkdir -p ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 cp -r ${PROTOC_PATH}/protos ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 cp -r ${PROTOC_PATH}/util ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/xncc
 
+## 复制protobuf 代码
+echo "------------- go get proto "
+go get github.com/golang/protobuf/proto
+rm -r ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/golang/protobuf/proto
+mkdir -p ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/golang/protobuf/proto
+
+echo "------------- copy golang/protobuf/proto "
+cp -r ${GOPATH}/src/github.com/golang/protobuf/proto/ ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv/github.com/golang/protobuf/proto
+
+echo "------------- docker build "
 docker-compose -f ${PROJECT_BASE_PATH}/fabric-test/demo/ccenv-build.yaml build
 
 ## 删除空的docker image
