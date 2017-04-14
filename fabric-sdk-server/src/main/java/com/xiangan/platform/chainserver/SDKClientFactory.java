@@ -1,4 +1,4 @@
-package com.xiangan.platform.chainserver.sdk;
+package com.xiangan.platform.chainserver;
 
 import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric.sdk.exception.CryptoException;

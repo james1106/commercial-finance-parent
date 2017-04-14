@@ -1,9 +1,10 @@
 package com.xiangan.platform.chainserver.api;
 
+import com.xiangan.platform.chainserver.sdk.config.SDKConfigFactory;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,13 +26,15 @@ public class TestApi {
 
     final Logger logger = LoggerFactory.getLogger(TestApi.class);
 
-    @Value("${test.message}")
-    private String message;
+    private String message = "test message";
+
+    @Autowired
+    private SDKConfigFactory sdkConfig;
 
     @RequestMapping("/test/get/{id}/{action}")
     public String test(@PathVariable int id, @PathVariable String action) {
         logger.info("tets api params:id={},action={}", id, action);
-
+        System.out.println(sdkConfig);
         return String.format(message + " id = %s , action = %s .", id, action);
     }
 

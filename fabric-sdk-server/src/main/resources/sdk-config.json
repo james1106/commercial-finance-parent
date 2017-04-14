@@ -1,0 +1,34 @@
+{
+  "config": {
+    "deployWaitTime": 12000,
+    "transactionWaitTime": 12000
+  },
+  "orderers": [
+    {
+      "url": "grpc://localhost:7050",
+      "server_hostname": "orderer0",
+      "tls_cacerts": "../../fixtures/tls/orderer/ca-cert.pem"
+    }
+  ],
+  "orgs": [
+    {
+      "name": "peerOrg1",
+      "mspid": "Org1MSP",
+      "ca": "http://localhost:7054",
+      "peers": [
+        {
+          "requests": "grpc://localhost:7051",
+          "events": "grpc://localhost:7053",
+          "server_hostname": "peer0",
+          "tls_cacerts": "../../fixtures/tls/peers/peer0/ca-cert.pem"
+        },
+        {
+          "requests": "grpc://localhost:7056",
+          "events": "grpc://localhost:7058",
+          "server_hostname": "peer1",
+          "tls_cacerts": "../../fixtures/tls/peers/peer1/ca-cert.pem"
+        }
+      ]
+    }
+  ]
+}

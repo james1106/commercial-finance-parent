@@ -17,6 +17,8 @@ public class ContractConstant {
 
         public static final String INIT = "创建融资申请";
 
+        public static final String CHECK = "融资申请审核确认";
+
         public static final String ADD_ATTA = "添加融资申请相关附件";
 
         public static final String ADD_CHECKFLOW_RECORD = "添加融资申请流程审批记录";

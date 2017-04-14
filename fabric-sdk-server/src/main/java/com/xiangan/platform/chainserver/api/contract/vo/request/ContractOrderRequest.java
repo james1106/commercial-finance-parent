@@ -22,6 +22,11 @@ public class ContractOrderRequest extends BaseRequest {
     private String ledgerId;
 
     /**
+     * 订单存储KEY
+     */
+    private String orderKey;
+
+    /**
      * 订单编号
      */
     private String orderNo;
@@ -120,5 +125,11 @@ public class ContractOrderRequest extends BaseRequest {
         this.invoices = invoices;
     }
 
+    public String getOrderKey() {
+        return orderKey;
+    }
 
+    public void setOrderKey(String orderKey) {
+        this.orderKey = orderKey;
+    }
 }

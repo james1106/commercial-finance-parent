@@ -342,6 +342,18 @@ public class ChainCodeService {
             throw new InvokeChainCodeException(String.format("chaincode invoke send transaction to endorser response not all success. (%s/%s)",
                     successful.size(), responses.size()));
         }
+        result = null;
+        for (ChainCodeResponse chainCodeResponse : oks) {
+            if (result == null) {
+                result = chainCodeResponse;
+                continue;
+            }
+
+            if (!result.equals(chainCodeResponse)) {
+                // 返回结果不一致
+                throw new InvokeChainCodeException("chaincode invoke send transaction to endorser success response not same. ");
+            }
+        }
 
         // 提交操作数据到order共识
         final TransactionResult transactionResult = new TransactionResult();

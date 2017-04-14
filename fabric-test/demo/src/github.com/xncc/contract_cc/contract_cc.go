@@ -78,10 +78,9 @@ func (t *SimpleChaincode) excute(stub shim.ChaincodeStubInterface, data []byte) 
 	case "init":
 		return t.init(stub, request)
 	case "check":
-		return ccutil.Response(ccutil.CODE_OK, "OK", nil)
+		return t.check(stub, request)
 	case "excute":
-		return ccutil.Response(ccutil.CODE_OK, "OK", nil)
-	//return t.check(stub, request.No, request.ContractData)
+		return t.excuteContract(stub, request)
 	default:
 		return ccutil.Response(ccutil.CODE_UNKNOWN_FUNCTION, "未知操作", nil)
 	}
@@ -127,7 +126,6 @@ func (t *SimpleChaincode) init(stub shim.ChaincodeStubInterface, request *contra
 			}
 		}
 	}
-
 
 	// 操作数据
 	if request.Playload[3] != nil {
@@ -362,7 +360,7 @@ func (t *SimpleChaincode) excuteContract(stub shim.ChaincodeStubInterface, reque
 	}
 
 	// 操作数据
-	if request.Playload[3] != nil {
+	if request.Playload[0] != nil {
 		operateInfo := &common.OperateInfo{}
 		if err := proto.Unmarshal(request.Playload[3], operateInfo); err != nil {
 			return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "合约操作信息数据格式错误", nil)
@@ -461,7 +459,7 @@ func (t *SimpleChaincode) query(stub shim.ChaincodeStubInterface, data []byte) p
 		return ccutil.Response(ccutil.CODE_PROTOBUF_DATA_PARSE, "请求参数格式错误:"+err.Error(), nil)
 	}
 
-	contractData, result := t.getContract(stub, request.No)
+	contractData, result := t.getContract(stub, request.ContractKey)
 	if result.Code != 0 {
 		return ccutil.ResponseOut(result)
 	}

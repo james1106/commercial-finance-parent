@@ -4,7 +4,6 @@ import com.xiangan.platform.chainserver.common.entity.user.OrdererConfig;
 import com.xiangan.platform.chainserver.common.entity.user.PeerConfig;
 import com.xiangan.platform.chainserver.common.entity.user.UserAccount;
 import com.xiangan.platform.chainserver.common.entity.user.UserInfo;
-import com.xiangan.platform.chainserver.sdk.SDKClientFactory;
 import org.bouncycastle.util.encoders.Hex;
 import org.hyperledger.fabric.sdk.HFClient;
 import org.hyperledger.fabric_ca.sdk.HFCAClient;

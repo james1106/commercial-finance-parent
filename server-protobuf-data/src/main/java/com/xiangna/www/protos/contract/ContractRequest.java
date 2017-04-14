@@ -4972,21 +4972,21 @@ public final class ContractRequest {
 
     /**
      * <pre>
-     * 合约编号
+     * 合约数据KEY
      * </pre>
      *
-     * <code>optional string no = 1;</code>
+     * <code>optional string contractKey = 1;</code>
      */
-    java.lang.String getNo();
+    java.lang.String getContractKey();
     /**
      * <pre>
-     * 合约编号
+     * 合约数据KEY
      * </pre>
      *
-     * <code>optional string no = 1;</code>
+     * <code>optional string contractKey = 1;</code>
      */
     com.google.protobuf.ByteString
-        getNoBytes();
+        getContractKeyBytes();
 
     /**
      * <code>optional .protos.ContractQueryRequest.QueryType type = 2;</code>
@@ -5031,7 +5031,7 @@ public final class ContractRequest {
       super(builder);
     }
     private ContractQueryRequest() {
-      no_ = "";
+      contractKey_ = "";
       type_ = 0;
       fileKey_ = "";
     }
@@ -5064,7 +5064,7 @@ public final class ContractRequest {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              no_ = s;
+              contractKey_ = s;
               break;
             }
             case 16: {
@@ -5237,42 +5237,42 @@ public final class ContractRequest {
       // @@protoc_insertion_point(enum_scope:protos.ContractQueryRequest.QueryType)
     }
 
-    public static final int NO_FIELD_NUMBER = 1;
-    private volatile java.lang.Object no_;
+    public static final int CONTRACTKEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object contractKey_;
     /**
      * <pre>
-     * 合约编号
+     * 合约数据KEY
      * </pre>
      *
-     * <code>optional string no = 1;</code>
+     * <code>optional string contractKey = 1;</code>
      */
-    public java.lang.String getNo() {
-      java.lang.Object ref = no_;
+    public java.lang.String getContractKey() {
+      java.lang.Object ref = contractKey_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        no_ = s;
+        contractKey_ = s;
         return s;
       }
     }
     /**
      * <pre>
-     * 合约编号
+     * 合约数据KEY
      * </pre>
      *
-     * <code>optional string no = 1;</code>
+     * <code>optional string contractKey = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getNoBytes() {
-      java.lang.Object ref = no_;
+        getContractKeyBytes() {
+      java.lang.Object ref = contractKey_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        no_ = b;
+        contractKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -5349,8 +5349,8 @@ public final class ContractRequest {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNoBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, no_);
+      if (!getContractKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, contractKey_);
       }
       if (type_ != com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest.QueryType.ALL.getNumber()) {
         output.writeEnum(2, type_);
@@ -5365,8 +5365,8 @@ public final class ContractRequest {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNoBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, no_);
+      if (!getContractKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, contractKey_);
       }
       if (type_ != com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest.QueryType.ALL.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
@@ -5391,8 +5391,8 @@ public final class ContractRequest {
       com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest other = (com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest) obj;
 
       boolean result = true;
-      result = result && getNo()
-          .equals(other.getNo());
+      result = result && getContractKey()
+          .equals(other.getContractKey());
       result = result && type_ == other.type_;
       result = result && getFileKey()
           .equals(other.getFileKey());
@@ -5406,8 +5406,8 @@ public final class ContractRequest {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + NO_FIELD_NUMBER;
-      hash = (53 * hash) + getNo().hashCode();
+      hash = (37 * hash) + CONTRACTKEY_FIELD_NUMBER;
+      hash = (53 * hash) + getContractKey().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (37 * hash) + FILEKEY_FIELD_NUMBER;
@@ -5534,7 +5534,7 @@ public final class ContractRequest {
       }
       public Builder clear() {
         super.clear();
-        no_ = "";
+        contractKey_ = "";
 
         type_ = 0;
 
@@ -5562,7 +5562,7 @@ public final class ContractRequest {
 
       public com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest buildPartial() {
         com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest result = new com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest(this);
-        result.no_ = no_;
+        result.contractKey_ = contractKey_;
         result.type_ = type_;
         result.fileKey_ = fileKey_;
         onBuilt();
@@ -5606,8 +5606,8 @@ public final class ContractRequest {
 
       public Builder mergeFrom(com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest other) {
         if (other == com.xiangna.www.protos.contract.ContractRequest.ContractQueryRequest.getDefaultInstance()) return this;
-        if (!other.getNo().isEmpty()) {
-          no_ = other.no_;
+        if (!other.getContractKey().isEmpty()) {
+          contractKey_ = other.contractKey_;
           onChanged();
         }
         if (other.type_ != 0) {
@@ -5643,21 +5643,21 @@ public final class ContractRequest {
         return this;
       }
 
-      private java.lang.Object no_ = "";
+      private java.lang.Object contractKey_ = "";
       /**
        * <pre>
-       * 合约编号
+       * 合约数据KEY
        * </pre>
        *
-       * <code>optional string no = 1;</code>
+       * <code>optional string contractKey = 1;</code>
        */
-      public java.lang.String getNo() {
-        java.lang.Object ref = no_;
+      public java.lang.String getContractKey() {
+        java.lang.Object ref = contractKey_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          no_ = s;
+          contractKey_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -5665,19 +5665,19 @@ public final class ContractRequest {
       }
       /**
        * <pre>
-       * 合约编号
+       * 合约数据KEY
        * </pre>
        *
-       * <code>optional string no = 1;</code>
+       * <code>optional string contractKey = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getNoBytes() {
-        java.lang.Object ref = no_;
+          getContractKeyBytes() {
+        java.lang.Object ref = contractKey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          no_ = b;
+          contractKey_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -5685,49 +5685,49 @@ public final class ContractRequest {
       }
       /**
        * <pre>
-       * 合约编号
+       * 合约数据KEY
        * </pre>
        *
-       * <code>optional string no = 1;</code>
+       * <code>optional string contractKey = 1;</code>
        */
-      public Builder setNo(
+      public Builder setContractKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        no_ = value;
+        contractKey_ = value;
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 合约编号
+       * 合约数据KEY
        * </pre>
        *
-       * <code>optional string no = 1;</code>
+       * <code>optional string contractKey = 1;</code>
        */
-      public Builder clearNo() {
+      public Builder clearContractKey() {
         
-        no_ = getDefaultInstance().getNo();
+        contractKey_ = getDefaultInstance().getContractKey();
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * 合约编号
+       * 合约数据KEY
        * </pre>
        *
-       * <code>optional string no = 1;</code>
+       * <code>optional string contractKey = 1;</code>
        */
-      public Builder setNoBytes(
+      public Builder setContractKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        no_ = value;
+        contractKey_ = value;
         onChanged();
         return this;
       }
@@ -5964,13 +5964,13 @@ public final class ContractRequest {
       "invoice\030\001 \003(\0132\017.protos.Invoice\"E\n\020CheckF",
       "lowRequest\0221\n\ncheckFlows\030\001 \003(\0132\035.protos." +
       "ContractCheckFlowData\"1\n\014CheckRequest\022!\n" +
-      "\006checks\030\001 \003(\0132\021.protos.CheckData\"\230\001\n\024Con" +
-      "tractQueryRequest\022\n\n\002no\030\001 \001(\t\0224\n\004type\030\002 " +
-      "\001(\0162&.protos.ContractQueryRequest.QueryT" +
-      "ype\022\017\n\007fileKey\030\003 \001(\t\"-\n\tQueryType\022\007\n\003ALL" +
-      "\020\000\022\010\n\004FILE\020\001\022\r\n\tFILELILST\020\002BB\n\037com.xiang" +
-      "na.www.protos.contractZ\037github.com/xncc/" +
-      "protos/contractb\006proto3"
+      "\006checks\030\001 \003(\0132\021.protos.CheckData\"\241\001\n\024Con" +
+      "tractQueryRequest\022\023\n\013contractKey\030\001 \001(\t\0224" +
+      "\n\004type\030\002 \001(\0162&.protos.ContractQueryReque" +
+      "st.QueryType\022\017\n\007fileKey\030\003 \001(\t\"-\n\tQueryTy" +
+      "pe\022\007\n\003ALL\020\000\022\010\n\004FILE\020\001\022\r\n\tFILELILST\020\002BB\n\037" +
+      "com.xiangna.www.protos.contractZ\037github." +
+      "com/xncc/protos/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6022,7 +6022,7 @@ public final class ContractRequest {
     internal_static_protos_ContractQueryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractQueryRequest_descriptor,
-        new java.lang.String[] { "No", "Type", "FileKey", });
+        new java.lang.String[] { "ContractKey", "Type", "FileKey", });
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.contract.Contract.getDescriptor();
     com.xiangna.www.protos.contract.ContractOrderStatus.getDescriptor();

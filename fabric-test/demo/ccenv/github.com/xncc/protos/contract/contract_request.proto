@@ -41,7 +41,7 @@ message CheckRequest {
 
 // 合约查询请求参数
 message ContractQueryRequest {
-    string no = 1; // 合约编号
+    string contractKey = 1; // 合约数据KEY
 
     // 查询类型
     enum QueryType {

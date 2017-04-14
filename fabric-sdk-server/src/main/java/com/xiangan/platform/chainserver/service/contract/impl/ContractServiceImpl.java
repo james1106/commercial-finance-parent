@@ -1,34 +1,33 @@
 package com.xiangan.platform.chainserver.service.contract.impl;
 
 import com.google.protobuf.ByteString;
+import com.xiangan.platform.chainserver.api.contract.vo.request.CheckFlowRequest;
+import com.xiangan.platform.chainserver.api.contract.vo.request.CheckRequest;
+import com.xiangan.platform.chainserver.api.contract.vo.request.ContractOrderQueryRequest;
 import com.xiangan.platform.chainserver.api.contract.vo.request.ContractOrderRequest;
+import com.xiangan.platform.chainserver.api.contract.vo.request.ExcuteRequest;
 import com.xiangan.platform.chainserver.api.contract.vo.request.MortgageInvoice;
 import com.xiangan.platform.chainserver.common.domain.BaseRequest;
-import com.xiangan.platform.chainserver.common.entity.user.OrdererConfig;
-import com.xiangan.platform.chainserver.common.entity.user.PeerConfig;
 import com.xiangan.platform.chainserver.common.entity.user.UserInfo;
 import com.xiangan.platform.chainserver.common.utils.DateUtil;
 import com.xiangan.platform.chainserver.common.utils.FileUtil;
 import com.xiangan.platform.chainserver.common.utils.IDUtil;
-import com.xiangan.platform.chainserver.sdk.ChainCodeService;
-import com.xiangan.platform.chainserver.sdk.ChainService;
-import com.xiangan.platform.chainserver.sdk.SDKClientFactory;
+import com.xiangan.platform.chainserver.sdk.ChainTemplate;
 import com.xiangan.platform.chainserver.service.contract.ContractService;
 import com.xiangan.platform.chainserver.service.contract.constant.ContractConstant;
 import com.xiangna.www.protos.common.Common;
 import com.xiangna.www.protos.contract.Contract;
+import com.xiangna.www.protos.contract.ContractOrderStatus;
 import com.xiangna.www.protos.contract.ContractRequest;
 import com.xiangna.www.protos.contract.ContractRequest.ContractExcuteRequest;
-import org.hyperledger.fabric.sdk.Chain;
 import org.hyperledger.fabric.sdk.ChainCodeID;
-import org.hyperledger.fabric.sdk.EventHub;
-import org.hyperledger.fabric.sdk.HFClient;
-import org.hyperledger.fabric.sdk.Orderer;
-import org.hyperledger.fabric.sdk.Peer;
-import org.hyperledger.fabric_ca.sdk.HFCAClient;
+import org.hyperledger.fabric.sdk.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -44,11 +43,93 @@ import java.util.List;
 @Service
 public class ContractServiceImpl implements ContractService {
 
-    @Autowired
-    private ChainCodeService chainCodeService;
+    private final ChainTemplate chainTemplate;
+
+//    @Value("${}")
+    private String chainCodeName = "contract_cc_go";
+
+//    @Value("${}")
+    private String chainCodePath = "github.com/xncc/contract_cc";
+
+//    @Value("${}")
+    private String chainCodeVersion = "1";
 
     @Autowired
-    private ChainService chainService;
+    public ContractServiceImpl(ChainTemplate chainTemplate) {
+        this.chainTemplate = chainTemplate;
+    }
+
+    @Override
+    public void init(ContractOrderRequest request, UserInfo userInfo) throws Exception {
+
+        String no = IDUtil.generateContractNO();
+        String key = IDUtil.generateContractKey(new Date(), no);
+
+        // 请求参数
+        ContractExcuteRequest.Builder requestBuilder = ContractExcuteRequest.newBuilder();
+        requestBuilder.setAction("init");
+        requestBuilder.setContractKey(key);
+        requestBuilder.setContractNO(no);
+        requestBuilder.addAllPlayload(getPlayload(request, userInfo, ContractConstant.OperateDesc.INIT));
+
+        excute(request.getLedgerId(), requestBuilder.build(), userInfo.getUserAccount());
+
+    }
+
+    @Override
+    public void check(ContractOrderRequest request, UserInfo userInfo) throws Exception {
+
+        // 请求参数
+        ContractExcuteRequest.Builder requestBuilder = ContractExcuteRequest.newBuilder();
+        requestBuilder.setAction("check");
+        requestBuilder.setContractKey(request.getOrderKey());
+        requestBuilder.addAllPlayload(getPlayload(request, userInfo, ContractConstant.OperateDesc.CHECK));
+
+        excute(request.getLedgerId(), requestBuilder.build(), userInfo.getUserAccount());
+
+    }
+
+    @Override
+    public void excute(ExcuteRequest request, UserInfo userInfo) throws Exception {
+        // 请求参数
+        ContractExcuteRequest.Builder requestBuilder = ContractExcuteRequest.newBuilder();
+        requestBuilder.setAction("check");
+        requestBuilder.setContractKey(request.getOrderKey());
+        requestBuilder.setAction(request.getActionType().getCode());
+        requestBuilder.addPlayload(operate(request, userInfo, request.getActionType().getMessage()).toByteString());
+        // TODO 不同处理操作的具体实现
+//        switch (request.getActionType()){
+//            case SUBMIT:
+//            case CHECKPASS:
+//            case PAYLOANS:
+//            case PAYOFFLOANS:
+//            case NEXT:
+//        }
+        excute(request.getLedgerId(), requestBuilder.build(), userInfo.getUserAccount());
+    }
+
+    @Override
+    public Contract.FinancingContract get(ContractOrderQueryRequest request, UserInfo userInfo) throws Exception {
+        ContractRequest.ContractQueryRequest.Builder requestBuilder = ContractRequest.ContractQueryRequest.newBuilder();
+        requestBuilder.setContractKey(request.getOrderKey());
+        requestBuilder.setType(ContractRequest.ContractQueryRequest.QueryType.ALL)
+                .build();
+        ByteString bs = query(request.getLedgerId(), requestBuilder.build(), userInfo.getUserAccount());
+
+        return Contract.FinancingContract.parseFrom(bs);
+    }
+
+    @Override
+    public ByteString getFile(ContractOrderQueryRequest request, UserInfo userInfo) throws Exception {
+        ContractRequest.ContractQueryRequest.Builder requestBuilder = ContractRequest.ContractQueryRequest.newBuilder();
+        requestBuilder.setContractKey(request.getOrderKey());
+        requestBuilder.setFileKey(request.getFileKey());
+        requestBuilder.setType(ContractRequest.ContractQueryRequest.QueryType.FILE)
+                .build();
+        ByteString bs = query(request.getLedgerId(), requestBuilder.build(), userInfo.getUserAccount());
+        Common.LedgerFileData data = Common.LedgerFileData.parseFrom(bs);
+        return data.getData();
+    }
 
     /**
      * 构建操作记录
@@ -70,18 +151,17 @@ public class ContractServiceImpl implements ContractService {
                 .build();
     }
 
-    @Override
-    public void init(ContractOrderRequest request, UserInfo userInfo) throws Exception {
-
-        String no = IDUtil.generateContractNO();
-        String key = IDUtil.generateContractKey(new Date(), no);
-
-        // 请求参数
-        ContractExcuteRequest.Builder requestBuilder = ContractExcuteRequest.newBuilder();
-        requestBuilder.setAction("init");
-        requestBuilder.setContractKey(key);
-        requestBuilder.setContractNO(no);
-        ByteString[] playloads = new ByteString[4];
+    /**
+     * 组装请求操作数据
+     *
+     * @param request
+     * @param userInfo
+     * @return
+     * @throws IOException
+     * @throws NoSuchAlgorithmException
+     */
+    private List<ByteString> getPlayload(ContractOrderRequest request, UserInfo userInfo, String operateDesc) throws IOException, NoSuchAlgorithmException {
+        ByteString[] playloads = new ByteString[6];
 
         // 合约表单数据
         playloads[0] = request.getContractData().convert().toByteString();
@@ -101,7 +181,25 @@ public class ContractServiceImpl implements ContractService {
         }
 
         // 合约操作数据
-        playloads[3] = operate(request, userInfo, ContractConstant.OperateDesc.INIT).toByteString();
+        playloads[3] = operate(request, userInfo, operateDesc).toByteString();
+
+        // 流程审批记录
+        if (request.getCheckFlow() != null && !request.getCheckFlow().isEmpty()) {
+            List<ContractOrderStatus.ContractCheckFlowData> datas = new ArrayList<>(request.getCheckFlow().size());
+            for (CheckFlowRequest data : request.getCheckFlow()) {
+                datas.add(data.convert());
+            }
+            playloads[4] = ContractRequest.CheckFlowRequest.newBuilder().addAllCheckFlows(datas).build().toByteString();
+        }
+
+        // 确认检查项
+        if (request.getCheck() != null && !request.getCheck().isEmpty()) {
+            List<ContractOrderStatus.CheckData> datas = new ArrayList<>(request.getCheck().size());
+            for (CheckRequest data : request.getCheck()) {
+                datas.add(data.convert());
+            }
+            playloads[5] = ContractRequest.CheckRequest.newBuilder().addAllChecks(datas).build().toByteString();
+        }
 
         List<ByteString> playload = new ArrayList<>(playloads.length);
         for (ByteString byteString : playloads) {
@@ -111,65 +209,25 @@ public class ContractServiceImpl implements ContractService {
             }
             playload.add(byteString);
         }
-        requestBuilder.addAllPlayload(playload);
-
-        excute(request.getLedgerId(), requestBuilder.build(), userInfo);
-
+        return playload;
     }
 
-    private List<Common.ChainCodeResponse> excute(String chainName, ContractRequest.ContractExcuteRequest request, UserInfo userInfo) throws Exception {
+    private ByteString excute(String chainName, ContractRequest.ContractExcuteRequest request, User user) throws Exception {
         ArrayList<Object> bytes = new ArrayList<>(2);
         bytes.add("excute");
         bytes.add(request);
-        return chainCodeExcute(chainName, true, bytes, userInfo);
+        ChainCodeID chainCodeID = chainTemplate.getChainCodeId(chainCodeName, chainCodePath, chainCodeVersion);
+        return chainTemplate.invoke(chainName, user, chainCodeID, bytes);
 
     }
 
-    private List<Common.ChainCodeResponse> query(String chainName, ContractRequest.ContractQueryRequest request, UserInfo userInfo) throws Exception {
+    private ByteString query(String chainName, ContractRequest.ContractQueryRequest request, User user) throws Exception {
         ArrayList<Object> bytes = new ArrayList<>(2);
         bytes.add("query");
         bytes.add(request);
-        return chainCodeExcute(chainName, false, bytes, userInfo);
-    }
 
-    private List<Common.ChainCodeResponse> chainCodeExcute(String chainName,
-                                                           boolean invokeFlag,
-                                                           ArrayList<Object> args,
-                                                           UserInfo userInfo) throws Exception {
-        // 执行chaincode操作
-        HFClient client = SDKClientFactory.getClient();
-
-        HFCAClient memberServices = SDKClientFactory.getCaClient(userInfo.getUserAccount().getCaServerURL());
-        client.setMemberServices(memberServices);
-
-        // 设置操作用户
-        client.setUserContext(userInfo.getUserAccount());
-
-        List<Orderer> orderers = new ArrayList<>();
-        for (OrdererConfig ordererConfig : userInfo.getOrderers()) {
-            orderers.add(client.newOrderer(ordererConfig.getName(), ordererConfig.getUrl()));
-        }
-
-        List<Peer> peers = new ArrayList<>();
-        List<EventHub> eventHubs = new ArrayList<>();
-        for (PeerConfig peerConfig : userInfo.getPeers()) {
-            peers.add(client.newPeer(peerConfig.getName(), peerConfig.getUrl()));
-            eventHubs.add(client.newEventHub(peerConfig.getName(), peerConfig.getEventHub()));
-        }
-
-        Chain chain = chainService.getChain(chainName, orderers, peers, eventHubs, client);
-
-        String chainCodeName = "contract_cc_go";
-        String chainCodePath = "github.com/xncc/contract_cc";
-        String chainCodeVersion = "1";
-
-        ChainCodeID chainCodeID = chainCodeService.getChainCodeId(chainCodeName, chainCodePath, chainCodeVersion);
-        chain.setDeployWaitTime(120000);
-        chain.setTransactionWaitTime(120000);
-        if (invokeFlag) {
-            return chainCodeService.invoke(chainCodeID, args, client, chain);
-        }
-        return chainCodeService.query(chainCodeID, args, client, chain);
+        ChainCodeID chainCodeID = chainTemplate.getChainCodeId(chainCodeName, chainCodePath, chainCodeVersion);
+        return chainTemplate.query(chainName, user, chainCodeID, bytes);
     }
 
 
