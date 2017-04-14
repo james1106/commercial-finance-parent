@@ -1,5 +1,6 @@
 package com.xiangan.platform.chainserver.service.contract.impl;
 
+import com.google.protobuf.ByteString;
 import com.xiangan.platform.chainserver.api.contract.vo.request.ContractOrderRequest;
 import com.xiangan.platform.chainserver.api.contract.vo.request.MortgageInvoice;
 import com.xiangan.platform.chainserver.common.domain.BaseRequest;
@@ -80,9 +81,10 @@ public class ContractServiceImpl implements ContractService {
         requestBuilder.setAction("init");
         requestBuilder.setContractKey(key);
         requestBuilder.setContractNO(no);
+        ByteString[] playloads = new ByteString[4];
 
         // 合约表单数据
-        requestBuilder.setPlayload(0, request.getContractData().convert().toByteString());
+        playloads[0] = request.getContractData().convert().toByteString();
 
         // 合约发票数据
         if (request.getInvoices() != null && !request.getInvoices().isEmpty()) {
@@ -90,16 +92,26 @@ public class ContractServiceImpl implements ContractService {
             for (MortgageInvoice invoice : request.getInvoices()) {
                 invoices.add(invoice.convert());
             }
-            requestBuilder.setPlayload(1, ContractRequest.InvoiceAddRequest.newBuilder().addAllInvoice(invoices).build().toByteString());
+            playloads[1] = ContractRequest.InvoiceAddRequest.newBuilder().addAllInvoice(invoices).build().toByteString();
         }
 
         // 合约附件处理
         if (request.getAttas() != null && !request.getAttas().isEmpty()) {
-            requestBuilder.setPlayload(2, FileUtil.convertData(request.getAttas()).toByteString());
+            playloads[2] = FileUtil.convertData(request.getAttas()).toByteString();
         }
 
         // 合约操作数据
-        requestBuilder.setPlayload(3, operate(request, userInfo, ContractConstant.OperateDesc.INIT).toByteString());
+        playloads[3] = operate(request, userInfo, ContractConstant.OperateDesc.INIT).toByteString();
+
+        List<ByteString> playload = new ArrayList<>(playloads.length);
+        for (ByteString byteString : playloads) {
+            if (byteString == null) {
+                playload.add(ByteString.EMPTY);
+                continue;
+            }
+            playload.add(byteString);
+        }
+        requestBuilder.addAllPlayload(playload);
 
         excute(request.getLedgerId(), requestBuilder.build(), userInfo);
 
@@ -152,6 +164,8 @@ public class ContractServiceImpl implements ContractService {
         String chainCodeVersion = "1";
 
         ChainCodeID chainCodeID = chainCodeService.getChainCodeId(chainCodeName, chainCodePath, chainCodeVersion);
+        chain.setDeployWaitTime(120000);
+        chain.setTransactionWaitTime(120000);
         if (invokeFlag) {
             return chainCodeService.invoke(chainCodeID, args, client, chain);
         }

@@ -2,6 +2,7 @@ syntax = "proto3";
 
 import "common/common.proto";
 import "contract/contract.proto";
+import "contract/contract_status.proto";
 
 option go_package = "github.com/xncc/protos/contract";
 option java_package = "com.xiangna.www.protos.contract";
@@ -14,7 +15,7 @@ message ContractExcuteRequest {
     string contractKey = 2; // 合约数据KEY
     string contractNO = 3; // 合约订单编号
     repeated bytes playload = 4; // 请求参数
-
+    string excute = 5; // 执行合约操作
 }
 
 // 执行文件新增请求参数
@@ -28,13 +29,14 @@ message InvoiceAddRequest {
     repeated Invoice invoice = 1; // 发票数据
 }
 
-// 合约新增审批日志请求参数
-message ContractAddCheckLogRequest {
-    string no = 1; // 合约编号
+// 流程审批记录
+message CheckFlowRequest {
+    repeated ContractCheckFlowData checkFlows = 1;
+}
 
-    // refer message contract.ContractCheckFlowData
-    bytes contractCheckFlowData = 2; // 审批日志
-
+// 确认检查项
+message CheckRequest {
+    repeated CheckData checks = 1;
 }
 
 // 合约查询请求参数

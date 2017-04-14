@@ -30,12 +30,6 @@ message ContractStatus {
     StatusType status = 4; // 订单状态类型
 }
 
-// 订单审核流程信息
-message ContractCheckFlowInfo {
-    ContractStep contract_step = 1; // 订单阶段
-    ContractCheckFlowData check_flow_datas = 2; // 订单审核流程数据
-}
-
 // 订单审核流程数据
 message ContractCheckFlowData {
     string check_app = 1; // 审核App
@@ -45,12 +39,6 @@ message ContractCheckFlowData {
     string check_ip = 5; // 审核操作员IP
     string check_record = 6; // 流程审批记录
     string check_remark = 7; // 流程审批备注
-}
-
-// 具体阶段的检查确认项
-message ContractStepCheckData {
-    ContractStep current_step = 1; // 订单阶段
-    repeated CheckData check_datas = 2;
 }
 
 // 检查项的内容

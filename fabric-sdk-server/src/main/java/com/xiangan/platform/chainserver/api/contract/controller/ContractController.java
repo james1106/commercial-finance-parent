@@ -25,18 +25,16 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("contract")
 public class ContractController {
 
-    @Value("${org1.user1}")
-    private String userInfoStr;
-
     @Resource
     private ContractService contractService;
 
     /**
-     * 发起融资申请
+     * 创建融资申请
      */
     @RequestMapping("init")
     public BaseResult init(ContractOrderRequest orderRequest, HttpServletRequest request) throws Exception {
-        UserInfo userInfo = UserInfoFactory.restoreState(userInfoStr);
+//        UserInfo userInfo = UserInfoFactory.restoreState(userInfoStr);
+        UserInfo userInfo = new UserInfo();
         System.out.println(userInfo.getUserAccount().getName());
         contractService.init(orderRequest, userInfo);
         return new BaseResult(ApiResponseConstant.SUCCESS);

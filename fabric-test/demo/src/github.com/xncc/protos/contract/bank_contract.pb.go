@@ -23,12 +23,11 @@ It has these top-level messages:
 	ContractExcuteRequest
 	FileAddRequest
 	InvoiceAddRequest
-	ContractAddCheckLogRequest
+	CheckFlowRequest
+	CheckRequest
 	ContractQueryRequest
 	ContractStatus
-	ContractCheckFlowInfo
 	ContractCheckFlowData
-	ContractStepCheckData
 	CheckData
 */
 package contract

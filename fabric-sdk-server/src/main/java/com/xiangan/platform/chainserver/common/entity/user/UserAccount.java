@@ -94,7 +94,7 @@ public class UserAccount extends BaseEntity implements User {
 
     @Override
     public String getMSPID() {
-        return getMSPID();
+        return MSPID;
     }
 
     public void setMSPID(String MSPID) {

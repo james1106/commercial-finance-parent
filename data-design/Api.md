@@ -240,9 +240,30 @@
 ```
 
 #### 融资申请列表查询
+
 ```json
 {
   "ledgerId": "账本ID"
+}
+```
+响应数据
+```json
+{
+  "code": 0, // 接口状态 0 = 成功  !0 = 失败
+  "message": "OK", // 状态描述
+  "serverTime": 0, // 服务器时间
+  // 接口返回数据
+  "result": [
+    {
+      "ledgerId": "账本ID",
+      "contractKey": "数据存储key",
+      "no": "融资申请编号",
+      "loanAmount": 0, // 融资总金额
+      "loadPeriod": 0, // 融资期限
+      "loanEndTime": 0, // 融资截止日期
+      "status": 0 // 融资状态
+    }
+  ]
 }
 ```
 
