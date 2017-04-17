@@ -20,7 +20,9 @@
 * 融资申请详情查询
 * 融资申请具体附件查看
 
-#### 接口必须能参数
+#### 接口参数通用定义
+BasePath:接口请求服务地址<br/>
+BaseRequest:通用接口请求参数
 ```json
 {
   "appId": "应用ID",
@@ -30,9 +32,22 @@
   "sourceIP": "请求来源IP"
 }
 ```
+BaseResult:接口通用返回数据格式
+```json
+{
+  "code": 0, // 接口返回状态:0 = 成功; !0 = 失败
+  "message": "OK", // 状态描述
+  "serverTime": 0, // 服务器时间(unix时间戳)
+  "result": "接口实际返回数据对象格式"
+}
+```
 
 #### 创建融资申请
 接口将会初始化融资申请编号并初始化融资申请数据
+```
+POST  {BasePath}/api/contract/init
+```
+请求参数
 ```json
 {
   "ledgerId": "账本ID",
@@ -89,9 +104,19 @@
 }
 
 ```
+响应结果
+```json
+{
+  "result":true
+}
+```
 
 #### 融资数据流程审批确认
 接口记录融资申请订单数据在流程审批中更新,并新增流程审批记录和确认检查项
+```
+POST  {BasePath}/api/contract/check
+```
+请求参数
 ```json
 {
   "ledgerId": "账本ID",
@@ -179,6 +204,12 @@
 }
 
 ```
+响应结果
+```json
+{
+  "result":true
+}
+```
 
 #### 执行合约
 请求执行合约，合约会根据请求参数和当前数据状态做相应的数据处理
@@ -188,17 +219,33 @@
 * 已完成放款
 * 已完成还款
 * 流转申请到下一处理节点
+* 转账记录确认
 
+```
+POST  {BasePath}/api/contract/excute
+```
+请求参数
 ```json
 {
   "ledgerId": "账本ID",
   "orderKey": "订单key（账本存储对应的key）",
-  "action": "具体操作"
+  "action": "具体操作",
+  "transactionData": ["转账流水编号"]
+}
+```
+响应结果
+```json
+{
+  "result":true
 }
 ```
 
 #### 添加转账记录
 接口记录放款时和还款时对应的转账记录
+```
+POST  {BasePath}/api/contract/transactionEnroll
+```
+请求参数
 ```json
 {
   "ledgerId": "账本ID",
@@ -228,19 +275,18 @@
   ]
 }
 ```
-
-#### 转账记录确认
-对已经添加的转账记录进行确认
+响应结果
 ```json
 {
-  "ledgerId": "账本ID",
-  "orderKey": "订单key（账本存储对应的key）",
-  "transactionData": ["转账流水编号"]
+  "result":true
 }
 ```
 
 #### 融资申请列表查询
-
+```
+GET  {BasePath}/api/contract/list
+```
+请求参数
 ```json
 {
   "ledgerId": "账本ID"
@@ -249,10 +295,6 @@
 响应数据
 ```json
 {
-  "code": 0, // 接口状态 0 = 成功  !0 = 失败
-  "message": "OK", // 状态描述
-  "serverTime": 0, // 服务器时间
-  // 接口返回数据
   "result": [
     {
       "ledgerId": "账本ID",
@@ -268,19 +310,39 @@
 ```
 
 #### 融资申请详情查询
+```
+GET  {BasePath}/api/contract/get
+```
+请求参数
 ```json
 {
   "ledgerId": "账本ID",
   "orderKey": "订单key（账本存储对应的key）"
 }
 ```
+响应数据
+```json
+{
+  "result": {}
+}
+```
 
 #### 融资申请具体附件查看
+```
+GET  {BasePath}/api/contract/getAttachmentFile
+```
+请求参数
 ```json
 {
   "ledgerId": "账本ID",
   "orderKey": "订单key（账本存储对应的key）",
   "fileKey" : "文件的sha256值"
+}
+```
+响应数据
+```json
+{
+  "result": "文件Base64编码字符串"
 }
 ```
 

@@ -25,6 +25,7 @@ It has these top-level messages:
 	InvoiceAddRequest
 	CheckFlowRequest
 	CheckRequest
+	ContractTransactionRequest
 	ContractQueryRequest
 	ContractStatus
 	ContractCheckFlowData

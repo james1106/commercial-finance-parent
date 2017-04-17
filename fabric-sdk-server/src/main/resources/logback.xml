@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5level %logger{1} - %msg%n</pattern>

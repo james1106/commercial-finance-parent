@@ -19,15 +19,9 @@ public class ContractConstant {
 
         public static final String CHECK = "融资申请审核确认";
 
-        public static final String ADD_ATTA = "添加融资申请相关附件";
+        public static final String TRANSACTION_ENROLL = "(放款|还款)转账登记";
 
-        public static final String ADD_CHECKFLOW_RECORD = "添加融资申请流程审批记录";
-
-        public static final String ADD_CHECKDATA = "添加融资申请确认检查项";
-
-        public static final String ADD_TRANSACTION_RECORD = "添加融资申请转账记录";
-
-        public static final String ADD_TRANSACTION_CONFIRM = "添加融资申请转账确认";
+        public static final String TRANSACTION_ENROLL_CONFIRM = "(放款|还款)转账确认";
 
         public static final String EXCUTE = "执行融资申请合约";
 

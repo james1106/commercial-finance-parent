@@ -4966,6 +4966,749 @@ public final class ContractRequest {
 
   }
 
+  public interface ContractTransactionRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:protos.ContractTransactionRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> 
+        getTransactionsList();
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getTransactions(int index);
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    int getTransactionsCount();
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    java.util.List<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
+        getTransactionsOrBuilderList();
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder getTransactionsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * 转账记录
+   * </pre>
+   *
+   * Protobuf type {@code protos.ContractTransactionRequest}
+   */
+  public  static final class ContractTransactionRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:protos.ContractTransactionRequest)
+      ContractTransactionRequestOrBuilder {
+    // Use ContractTransactionRequest.newBuilder() to construct.
+    private ContractTransactionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ContractTransactionRequest() {
+      transactions_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ContractTransactionRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                transactions_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              transactions_.add(
+                  input.readMessage(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          transactions_ = java.util.Collections.unmodifiableList(transactions_);
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_ContractTransactionRequest_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_ContractTransactionRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest.class, com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest.Builder.class);
+    }
+
+    public static final int TRANSACTIONS_FIELD_NUMBER = 1;
+    private java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> transactions_;
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    public java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> getTransactionsList() {
+      return transactions_;
+    }
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    public java.util.List<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
+        getTransactionsOrBuilderList() {
+      return transactions_;
+    }
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    public int getTransactionsCount() {
+      return transactions_.size();
+    }
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getTransactions(int index) {
+      return transactions_.get(index);
+    }
+    /**
+     * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+     */
+    public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder getTransactionsOrBuilder(
+        int index) {
+      return transactions_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < transactions_.size(); i++) {
+        output.writeMessage(1, transactions_.get(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < transactions_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, transactions_.get(i));
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest)) {
+        return super.equals(obj);
+      }
+      com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest other = (com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest) obj;
+
+      boolean result = true;
+      result = result && getTransactionsList()
+          .equals(other.getTransactionsList());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (getTransactionsCount() > 0) {
+        hash = (37 * hash) + TRANSACTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getTransactionsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * 转账记录
+     * </pre>
+     *
+     * Protobuf type {@code protos.ContractTransactionRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:protos.ContractTransactionRequest)
+        com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_ContractTransactionRequest_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_ContractTransactionRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest.class, com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest.Builder.class);
+      }
+
+      // Construct using com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getTransactionsFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        if (transactionsBuilder_ == null) {
+          transactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          transactionsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.xiangna.www.protos.contract.ContractRequest.internal_static_protos_ContractTransactionRequest_descriptor;
+      }
+
+      public com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest getDefaultInstanceForType() {
+        return com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest.getDefaultInstance();
+      }
+
+      public com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest build() {
+        com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest buildPartial() {
+        com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest result = new com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest(this);
+        int from_bitField0_ = bitField0_;
+        if (transactionsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            transactions_ = java.util.Collections.unmodifiableList(transactions_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.transactions_ = transactions_;
+        } else {
+          result.transactions_ = transactionsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest) {
+          return mergeFrom((com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest other) {
+        if (other == com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest.getDefaultInstance()) return this;
+        if (transactionsBuilder_ == null) {
+          if (!other.transactions_.isEmpty()) {
+            if (transactions_.isEmpty()) {
+              transactions_ = other.transactions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTransactionsIsMutable();
+              transactions_.addAll(other.transactions_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.transactions_.isEmpty()) {
+            if (transactionsBuilder_.isEmpty()) {
+              transactionsBuilder_.dispose();
+              transactionsBuilder_ = null;
+              transactions_ = other.transactions_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              transactionsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTransactionsFieldBuilder() : null;
+            } else {
+              transactionsBuilder_.addAllMessages(other.transactions_);
+            }
+          }
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> transactions_ =
+        java.util.Collections.emptyList();
+      private void ensureTransactionsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          transactions_ = new java.util.ArrayList<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail>(transactions_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> transactionsBuilder_;
+
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> getTransactionsList() {
+        if (transactionsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(transactions_);
+        } else {
+          return transactionsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public int getTransactionsCount() {
+        if (transactionsBuilder_ == null) {
+          return transactions_.size();
+        } else {
+          return transactionsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail getTransactions(int index) {
+        if (transactionsBuilder_ == null) {
+          return transactions_.get(index);
+        } else {
+          return transactionsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder setTransactions(
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail value) {
+        if (transactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactionsIsMutable();
+          transactions_.set(index, value);
+          onChanged();
+        } else {
+          transactionsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder setTransactions(
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder builderForValue) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          transactionsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder addTransactions(com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail value) {
+        if (transactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactionsIsMutable();
+          transactions_.add(value);
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder addTransactions(
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail value) {
+        if (transactionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransactionsIsMutable();
+          transactions_.add(index, value);
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder addTransactions(
+          com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder builderForValue) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.add(builderForValue.build());
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder addTransactions(
+          int index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder builderForValue) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          transactionsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder addAllTransactions(
+          java.lang.Iterable<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail> values) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, transactions_);
+          onChanged();
+        } else {
+          transactionsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder clearTransactions() {
+        if (transactionsBuilder_ == null) {
+          transactions_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          transactionsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public Builder removeTransactions(int index) {
+        if (transactionsBuilder_ == null) {
+          ensureTransactionsIsMutable();
+          transactions_.remove(index);
+          onChanged();
+        } else {
+          transactionsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder getTransactionsBuilder(
+          int index) {
+        return getTransactionsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder getTransactionsOrBuilder(
+          int index) {
+        if (transactionsBuilder_ == null) {
+          return transactions_.get(index);  } else {
+          return transactionsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public java.util.List<? extends com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
+           getTransactionsOrBuilderList() {
+        if (transactionsBuilder_ != null) {
+          return transactionsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(transactions_);
+        }
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder addTransactionsBuilder() {
+        return getTransactionsFieldBuilder().addBuilder(
+            com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder addTransactionsBuilder(
+          int index) {
+        return getTransactionsFieldBuilder().addBuilder(
+            index, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .protos.ContractTransactionDetail transactions = 1;</code>
+       */
+      public java.util.List<com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder> 
+           getTransactionsBuilderList() {
+        return getTransactionsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder> 
+          getTransactionsFieldBuilder() {
+        if (transactionsBuilder_ == null) {
+          transactionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetail.Builder, com.xiangna.www.protos.contract.ContractData.ContractTransactionDetailOrBuilder>(
+                  transactions_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          transactions_ = null;
+        }
+        return transactionsBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:protos.ContractTransactionRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:protos.ContractTransactionRequest)
+    private static final com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest();
+    }
+
+    public static com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ContractTransactionRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ContractTransactionRequest>() {
+      public ContractTransactionRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ContractTransactionRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ContractTransactionRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ContractTransactionRequest> getParserForType() {
+      return PARSER;
+    }
+
+    public com.xiangna.www.protos.contract.ContractRequest.ContractTransactionRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ContractQueryRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:protos.ContractQueryRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -5939,6 +6682,11 @@ public final class ContractRequest {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_protos_CheckRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_protos_ContractTransactionRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_protos_ContractTransactionRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_protos_ContractQueryRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5954,23 +6702,26 @@ public final class ContractRequest {
     java.lang.String[] descriptorData = {
       "\n\037contract/contract_request.proto\022\006proto" +
       "s\032\023common/common.proto\032\027contract/contrac" +
-      "t.proto\032\036contract/contract_status.proto\"" +
-      "r\n\025ContractExcuteRequest\022\016\n\006action\030\001 \001(\t" +
-      "\022\023\n\013contractKey\030\002 \001(\t\022\022\n\ncontractNO\030\003 \001(" +
-      "\t\022\020\n\010playload\030\004 \003(\014\022\016\n\006excute\030\005 \001(\t\"b\n\016F" +
-      "ileAddRequest\022)\n\tfileDatas\030\001 \003(\0132\026.proto" +
-      "s.LedgerFileData\022%\n\tfileInfos\030\002 \003(\0132\022.pr" +
-      "otos.LedgerFile\"5\n\021InvoiceAddRequest\022 \n\007" +
-      "invoice\030\001 \003(\0132\017.protos.Invoice\"E\n\020CheckF",
-      "lowRequest\0221\n\ncheckFlows\030\001 \003(\0132\035.protos." +
-      "ContractCheckFlowData\"1\n\014CheckRequest\022!\n" +
-      "\006checks\030\001 \003(\0132\021.protos.CheckData\"\241\001\n\024Con" +
-      "tractQueryRequest\022\023\n\013contractKey\030\001 \001(\t\0224" +
-      "\n\004type\030\002 \001(\0162&.protos.ContractQueryReque" +
-      "st.QueryType\022\017\n\007fileKey\030\003 \001(\t\"-\n\tQueryTy" +
-      "pe\022\007\n\003ALL\020\000\022\010\n\004FILE\020\001\022\r\n\tFILELILST\020\002BB\n\037" +
-      "com.xiangna.www.protos.contractZ\037github." +
-      "com/xncc/protos/contractb\006proto3"
+      "t.proto\032\036contract/contract_status.proto\032" +
+      "\034contract/contract_data.proto\"r\n\025Contrac" +
+      "tExcuteRequest\022\016\n\006action\030\001 \001(\t\022\023\n\013contra" +
+      "ctKey\030\002 \001(\t\022\022\n\ncontractNO\030\003 \001(\t\022\020\n\010playl" +
+      "oad\030\004 \003(\014\022\016\n\006excute\030\005 \001(\t\"b\n\016FileAddRequ" +
+      "est\022)\n\tfileDatas\030\001 \003(\0132\026.protos.LedgerFi" +
+      "leData\022%\n\tfileInfos\030\002 \003(\0132\022.protos.Ledge" +
+      "rFile\"5\n\021InvoiceAddRequest\022 \n\007invoice\030\001 ",
+      "\003(\0132\017.protos.Invoice\"E\n\020CheckFlowRequest" +
+      "\0221\n\ncheckFlows\030\001 \003(\0132\035.protos.ContractCh" +
+      "eckFlowData\"1\n\014CheckRequest\022!\n\006checks\030\001 " +
+      "\003(\0132\021.protos.CheckData\"U\n\032ContractTransa" +
+      "ctionRequest\0227\n\014transactions\030\001 \003(\0132!.pro" +
+      "tos.ContractTransactionDetail\"\241\001\n\024Contra" +
+      "ctQueryRequest\022\023\n\013contractKey\030\001 \001(\t\0224\n\004t" +
+      "ype\030\002 \001(\0162&.protos.ContractQueryRequest." +
+      "QueryType\022\017\n\007fileKey\030\003 \001(\t\"-\n\tQueryType\022" +
+      "\007\n\003ALL\020\000\022\010\n\004FILE\020\001\022\r\n\tFILELILST\020\002BB\n\037com",
+      ".xiangna.www.protos.contractZ\037github.com" +
+      "/xncc/protos/contractb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5986,6 +6737,7 @@ public final class ContractRequest {
           com.xiangna.www.protos.common.Common.getDescriptor(),
           com.xiangna.www.protos.contract.Contract.getDescriptor(),
           com.xiangna.www.protos.contract.ContractOrderStatus.getDescriptor(),
+          com.xiangna.www.protos.contract.ContractData.getDescriptor(),
         }, assigner);
     internal_static_protos_ContractExcuteRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -6017,8 +6769,14 @@ public final class ContractRequest {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_CheckRequest_descriptor,
         new java.lang.String[] { "Checks", });
-    internal_static_protos_ContractQueryRequest_descriptor =
+    internal_static_protos_ContractTransactionRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
+    internal_static_protos_ContractTransactionRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_protos_ContractTransactionRequest_descriptor,
+        new java.lang.String[] { "Transactions", });
+    internal_static_protos_ContractQueryRequest_descriptor =
+      getDescriptor().getMessageTypes().get(6);
     internal_static_protos_ContractQueryRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_protos_ContractQueryRequest_descriptor,
@@ -6026,6 +6784,7 @@ public final class ContractRequest {
     com.xiangna.www.protos.common.Common.getDescriptor();
     com.xiangna.www.protos.contract.Contract.getDescriptor();
     com.xiangna.www.protos.contract.ContractOrderStatus.getDescriptor();
+    com.xiangna.www.protos.contract.ContractData.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

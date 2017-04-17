@@ -51,6 +51,15 @@ public class ContractController {
     }
 
     /**
+     * 融资放款还款转账登记
+     */
+    @RequestMapping("transactionEnroll")
+    public void transactionEnroll(ContractOrderRequest orderRequest) throws Exception {
+        UserInfo userInfo = new UserInfo();
+        contractService.check(orderRequest, userInfo);
+    }
+
+    /**
      * 执行融资合约
      * <p>
      * 将按照设定好的融资申请流程执行

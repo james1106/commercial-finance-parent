@@ -7,6 +7,7 @@ import com.xiangan.platform.chainserver.api.contract.vo.request.ContractOrderQue
 import com.xiangan.platform.chainserver.api.contract.vo.request.ContractOrderRequest;
 import com.xiangan.platform.chainserver.api.contract.vo.request.ExcuteRequest;
 import com.xiangan.platform.chainserver.api.contract.vo.request.MortgageInvoice;
+import com.xiangan.platform.chainserver.api.contract.vo.request.TransactionDataRequest;
 import com.xiangan.platform.chainserver.common.domain.BaseRequest;
 import com.xiangan.platform.chainserver.common.entity.user.UserInfo;
 import com.xiangan.platform.chainserver.common.utils.DateUtil;
@@ -17,13 +18,13 @@ import com.xiangan.platform.chainserver.service.contract.ContractService;
 import com.xiangan.platform.chainserver.service.contract.constant.ContractConstant;
 import com.xiangna.www.protos.common.Common;
 import com.xiangna.www.protos.contract.Contract;
+import com.xiangna.www.protos.contract.ContractData;
 import com.xiangna.www.protos.contract.ContractOrderStatus;
 import com.xiangna.www.protos.contract.ContractRequest;
 import com.xiangna.www.protos.contract.ContractRequest.ContractExcuteRequest;
 import org.hyperledger.fabric.sdk.ChainCodeID;
 import org.hyperledger.fabric.sdk.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -45,13 +46,13 @@ public class ContractServiceImpl implements ContractService {
 
     private final ChainTemplate chainTemplate;
 
-//    @Value("${}")
+    //    @Value("${}")
     private String chainCodeName = "contract_cc_go";
 
-//    @Value("${}")
+    //    @Value("${}")
     private String chainCodePath = "github.com/xncc/contract_cc";
 
-//    @Value("${}")
+    //    @Value("${}")
     private String chainCodeVersion = "1";
 
     @Autowired
@@ -84,6 +85,18 @@ public class ContractServiceImpl implements ContractService {
         requestBuilder.setAction("check");
         requestBuilder.setContractKey(request.getOrderKey());
         requestBuilder.addAllPlayload(getPlayload(request, userInfo, ContractConstant.OperateDesc.CHECK));
+
+        excute(request.getLedgerId(), requestBuilder.build(), userInfo.getUserAccount());
+
+    }
+
+    @Override
+    public void transactionEnroll(ContractOrderRequest request, UserInfo userInfo) throws Exception {
+        // 请求参数
+        ContractExcuteRequest.Builder requestBuilder = ContractExcuteRequest.newBuilder();
+        requestBuilder.setAction("transactionEnroll");
+        requestBuilder.setContractKey(request.getOrderKey());
+        requestBuilder.addAllPlayload(getPlayload(request, userInfo, ContractConstant.OperateDesc.TRANSACTION_ENROLL));
 
         excute(request.getLedgerId(), requestBuilder.build(), userInfo.getUserAccount());
 
@@ -161,10 +174,12 @@ public class ContractServiceImpl implements ContractService {
      * @throws NoSuchAlgorithmException
      */
     private List<ByteString> getPlayload(ContractOrderRequest request, UserInfo userInfo, String operateDesc) throws IOException, NoSuchAlgorithmException {
-        ByteString[] playloads = new ByteString[6];
+        ByteString[] playloads = new ByteString[7];
 
         // 合约表单数据
-        playloads[0] = request.getContractData().convert().toByteString();
+        if (request.getContractData() != null) {
+            playloads[0] = request.getContractData().convert().toByteString();
+        }
 
         // 合约发票数据
         if (request.getInvoices() != null && !request.getInvoices().isEmpty()) {
@@ -199,6 +214,16 @@ public class ContractServiceImpl implements ContractService {
                 datas.add(data.convert());
             }
             playloads[5] = ContractRequest.CheckRequest.newBuilder().addAllChecks(datas).build().toByteString();
+        }
+
+        // 转账记录
+        if (request.getTransactionData() != null && !request.getTransactionData().isEmpty()) {
+            List<ContractData.ContractTransactionDetail> datas = new ArrayList<>(request.getCheck().size());
+            for (TransactionDataRequest data : request.getTransactionData()) {
+                datas.add(data.convert());
+            }
+            playloads[6] = ContractRequest.ContractTransactionRequest.newBuilder()
+                    .addAllTransactions(datas).build().toByteString();
         }
 
         List<ByteString> playload = new ArrayList<>(playloads.length);

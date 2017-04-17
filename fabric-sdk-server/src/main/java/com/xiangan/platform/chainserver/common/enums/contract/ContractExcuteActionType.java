@@ -24,7 +24,10 @@ public enum ContractExcuteActionType {
     PAYOFFLOANS("payOffLoans", "完成还款"),
 
     // 此操作是执行融资流程,融资流程是已经在三方确立时配置好的
-    NEXT("next", "流转融资申请"),;
+    NEXT("next", "流转融资申请"),
+
+    // 此操作是对已经登记的转账记录进行确认,在放款和还款状态下才可以进行
+    TRANSACTION_CONFIRM("transactionConfirm", "转账确认"),;
 
     private String code;
 

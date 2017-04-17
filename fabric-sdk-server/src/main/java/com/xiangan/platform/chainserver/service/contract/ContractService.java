@@ -36,6 +36,15 @@ public interface ContractService {
     void check(ContractOrderRequest request, UserInfo userInfo) throws Exception;
 
     /**
+     * 放款还款转账登记
+     *
+     * @param request
+     * @param userInfo
+     * @throws Exception
+     */
+    void transactionEnroll(ContractOrderRequest request, UserInfo userInfo) throws Exception;
+
+    /**
      * 执行合约操作
      *
      * @param request

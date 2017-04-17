@@ -3,6 +3,7 @@ syntax = "proto3";
 import "common/common.proto";
 import "contract/contract.proto";
 import "contract/contract_status.proto";
+import "contract/contract_data.proto";
 
 option go_package = "github.com/xncc/protos/contract";
 option java_package = "com.xiangna.www.protos.contract";
@@ -37,6 +38,11 @@ message CheckFlowRequest {
 // 确认检查项
 message CheckRequest {
     repeated CheckData checks = 1;
+}
+
+// 转账记录
+message ContractTransactionRequest{
+    repeated ContractTransactionDetail transactions = 1;
 }
 
 // 合约查询请求参数
